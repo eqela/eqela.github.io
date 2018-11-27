@@ -1,0 +1,67 @@
+<html>
+<head>
+<title>sympathy.HTTPServerRequestHandlerAdapter | Jkop 20181127</title>
+<link rel="stylesheet" type="text/css" href="style.css" />
+<meta name="viewport" content="initial-scale=1,maximum-scale=1" />
+<meta property="og:description" content="sympathy.HTTPServerRequestHandlerAdapter | Jkop 20181127" />
+<meta property="og:title" content="sympathy.HTTPServerRequestHandlerAdapter | Jkop 20181127" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:description" content="sympathy.HTTPServerRequestHandlerAdapter | Jkop 20181127" />
+</head>
+<body><div class="content">
+<a class="back" href="index.html">&laquo; Jkop 20181127</a><div class="intro">
+<h1><span class="keyword">class</span> <span class="symbol">sympathy.HTTPServerRequestHandlerAdapter</span></h1>
+<p></p>
+</div>
+<div class="list">
+<div class="title">Base Types</div>
+<div class="entry">
+<div class="name"><span class="keyword">implements</span> <a class="datatype" href="sympathy.HTTPServerRequestHandler.html">sympathy.HTTPServerRequestHandler</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">implements</span> <a class="datatype" href="sympathy.HTTPServerComponent.html">sympathy.HTTPServerComponent</a></div></div>
+</div>
+<div class="list">
+<div class="title">Instance Variables</div>
+<div class="entry">
+<div class="name"><span class="keyword">var</span> <span class="symbol">logContext</span> <span class="keyword">as</span> <a class="datatype" href="cape.LoggingContext.html">cape.LoggingContext</a></div></div>
+</div>
+<div class="list">
+<div class="title">Instance Methods</div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getServer</span> <span class="keyword">as</span> <a class="datatype" href="sympathy.HTTPServerBase.html">sympathy.HTTPServerBase</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">isInitialized</span> <span class="keyword">as</span> <span class="datatype">bool</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">initialize</span> ( server <span class="keyword">as</span> <a class="datatype" href="sympathy.HTTPServerBase.html">sympathy.HTTPServerBase</a> ) <span class="modifier">virtual</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">onMaintenance</span> <span class="modifier">virtual</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">onRefresh</span> <span class="modifier">virtual</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">cleanup</span> <span class="modifier">virtual</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">onGET</span> ( req <span class="keyword">as</span> <a class="datatype" href="sympathy.HTTPServerRequest.html">sympathy.HTTPServerRequest</a> ) <span class="modifier">virtual</span> <span class="keyword">as</span> <span class="datatype">bool</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">onGET</span> ( req <span class="keyword">as</span> <a class="datatype" href="sympathy.HTTPServerRequest.html">sympathy.HTTPServerRequest</a> , next <span class="keyword">as</span> <span class="datatype">function&lt;void&gt;</span> ) <span class="modifier">virtual</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">onPOST</span> ( req <span class="keyword">as</span> <a class="datatype" href="sympathy.HTTPServerRequest.html">sympathy.HTTPServerRequest</a> ) <span class="modifier">virtual</span> <span class="keyword">as</span> <span class="datatype">bool</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">onPOST</span> ( req <span class="keyword">as</span> <a class="datatype" href="sympathy.HTTPServerRequest.html">sympathy.HTTPServerRequest</a> , next <span class="keyword">as</span> <span class="datatype">function&lt;void&gt;</span> ) <span class="modifier">virtual</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">onPUT</span> ( req <span class="keyword">as</span> <a class="datatype" href="sympathy.HTTPServerRequest.html">sympathy.HTTPServerRequest</a> ) <span class="modifier">virtual</span> <span class="keyword">as</span> <span class="datatype">bool</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">onPUT</span> ( req <span class="keyword">as</span> <a class="datatype" href="sympathy.HTTPServerRequest.html">sympathy.HTTPServerRequest</a> , next <span class="keyword">as</span> <span class="datatype">function&lt;void&gt;</span> ) <span class="modifier">virtual</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">onDELETE</span> ( req <span class="keyword">as</span> <a class="datatype" href="sympathy.HTTPServerRequest.html">sympathy.HTTPServerRequest</a> ) <span class="modifier">virtual</span> <span class="keyword">as</span> <span class="datatype">bool</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">onDELETE</span> ( req <span class="keyword">as</span> <a class="datatype" href="sympathy.HTTPServerRequest.html">sympathy.HTTPServerRequest</a> , next <span class="keyword">as</span> <span class="datatype">function&lt;void&gt;</span> ) <span class="modifier">virtual</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">onPATCH</span> ( req <span class="keyword">as</span> <a class="datatype" href="sympathy.HTTPServerRequest.html">sympathy.HTTPServerRequest</a> ) <span class="modifier">virtual</span> <span class="keyword">as</span> <span class="datatype">bool</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">onPATCH</span> ( req <span class="keyword">as</span> <a class="datatype" href="sympathy.HTTPServerRequest.html">sympathy.HTTPServerRequest</a> , next <span class="keyword">as</span> <span class="datatype">function&lt;void&gt;</span> ) <span class="modifier">virtual</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">handleRequest</span> ( req <span class="keyword">as</span> <a class="datatype" href="sympathy.HTTPServerRequest.html">sympathy.HTTPServerRequest</a> , next <span class="keyword">as</span> <span class="datatype">function&lt;void&gt;</span> ) <span class="modifier">virtual</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<html>
+<head>
+<title>sympathy.WSServerConnectionHandler | Jkop 20181127</title>
+<link rel="stylesheet" type="text/css" href="style.css" />
+<meta name="viewport" content="initial-scale=1,maximum-scale=1" />
+<meta property="og:description" content="sympathy.WSServerConnectionHandler | Jkop 20181127" />
+<meta property="og:title" content="sympathy.WSServerConnectionHandler | Jkop 20181127" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:description" content="sympathy.WSServerConnectionHandler | Jkop 20181127" />
+</head>
+<body><div class="content">
+<a class="back" href="index.html">&laquo; Jkop 20181127</a><div class="intro">
+<h1><span class="modifier">abstract</span> <span class="keyword">class</span> <span class="symbol">sympathy.WSServerConnectionHandler</span></h1>
+<p></p>
+</div>
+<div class="list">
+<div class="title">Instance Variables</div>
+<div class="entry">
+<div class="name"><span class="keyword">var</span> <span class="symbol">connection</span> <span class="keyword">as</span> <a class="datatype" href="sympathy.WSServerConnection.html">sympathy.WSServerConnection</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">var</span> <span class="symbol">logContext</span> <span class="keyword">as</span> <a class="datatype" href="cape.LoggingContext.html">cape.LoggingContext</a></div></div>
+</div>
+<div class="list">
+<div class="title">Instance Methods</div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setConnection</span> ( conn <span class="keyword">as</span> <a class="datatype" href="sympathy.WSServerConnection.html">sympathy.WSServerConnection</a> ) <span class="keyword">as</span> <a class="datatype" href="sympathy.WSServerConnectionHandler.html">sympathy.WSServerConnectionHandler</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getConnection</span> <span class="keyword">as</span> <a class="datatype" href="sympathy.WSServerConnection.html">sympathy.WSServerConnection</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setLogContext</span> ( ctx <span class="keyword">as</span> <a class="datatype" href="cape.LoggingContext.html">cape.LoggingContext</a> ) <span class="keyword">as</span> <a class="datatype" href="sympathy.WSServerConnectionHandler.html">sympathy.WSServerConnectionHandler</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getLogContext</span> <span class="keyword">as</span> <a class="datatype" href="cape.LoggingContext.html">cape.LoggingContext</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">sendResponse</span> ( message <span class="keyword">as</span> <a class="datatype" href="sympathy.WSServerMessage.html">sympathy.WSServerMessage</a> ) <span class="keyword">as</span> <span class="datatype">int</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">onMaintenance</span> <span class="modifier">virtual</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">onOpened</span> <span class="modifier">virtual</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">onClosed</span> <span class="modifier">virtual</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">close</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">onCloseMessage</span> ( message <span class="keyword">as</span> <a class="datatype" href="sympathy.WSServerMessage.html">sympathy.WSServerMessage</a> ) <span class="modifier">virtual</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">onPingMessage</span> ( message <span class="keyword">as</span> <a class="datatype" href="sympathy.WSServerMessage.html">sympathy.WSServerMessage</a> ) <span class="modifier">virtual</span> <span class="keyword">as</span> <span class="datatype">bool</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">onPongMessage</span> ( message <span class="keyword">as</span> <a class="datatype" href="sympathy.WSServerMessage.html">sympathy.WSServerMessage</a> ) <span class="modifier">virtual</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">onDataMessage</span> ( message <span class="keyword">as</span> <a class="datatype" href="sympathy.WSServerMessage.html">sympathy.WSServerMessage</a> ) <span class="modifier">virtual</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+</div>
+</div>
+</body>
+</html>

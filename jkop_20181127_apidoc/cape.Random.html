@@ -1,0 +1,42 @@
+<html>
+<head>
+<title>cape.Random | Jkop 20181127</title>
+<link rel="stylesheet" type="text/css" href="style.css" />
+<meta name="viewport" content="initial-scale=1,maximum-scale=1" />
+<meta property="og:description" content="The Random class provides means to generate random number of different kinds." />
+<meta property="og:title" content="cape.Random | Jkop 20181127" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:description" content="The Random class provides means to generate random number of different kinds." />
+</head>
+<body><div class="content">
+<a class="back" href="index.html">&laquo; Jkop 20181127</a><div class="intro">
+<h1><span class="keyword">class</span> <span class="symbol">cape.Random</span></h1>
+<p>The Random class provides means to generate random number of different kinds.</p>
+</div>
+<div class="list">
+<div class="title">Static Methods</div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getSharedInstance</span> <span class="keyword">as</span> <a class="datatype" href="cape.Random.html">cape.Random</a></div><div class="description">Gets a common, shared instance of a random number generator.</div></div>
+</div>
+<div class="list">
+<div class="title">Instance Methods</div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setSeed</span> ( seed <span class="keyword">as</span> <span class="datatype">int64</span> ) <span class="keyword">as</span> <span class="datatype">void</span></div><div class="description">Initializes the random number generator with the given seed, if applicable. Note that the exact behavior is platform dependent: Not all platforms require nor utilize a seed at all.</div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">nextBoolean</span> <span class="keyword">as</span> <span class="datatype">bool</span></div><div class="description">Used to retrieve a random boolean value (true or false)</div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">nextInt</span> <span class="keyword">as</span> <span class="datatype">int32</span></div><div class="description">Used to retrieve random integer values between -2147483647 (inclusive) and 2147483648 (exclusive).</div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">nextInt</span> ( n <span class="keyword">as</span> <span class="datatype">int32</span> ) <span class="keyword">as</span> <span class="datatype">int32</span></div><div class="description">Used to retrieve integer values from 0 (inclusive) and "n" (exclusive)</div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">nextInt</span> ( s <span class="keyword">as</span> <span class="datatype">int32</span> , e <span class="keyword">as</span> <span class="datatype">int32</span> ) <span class="keyword">as</span> <span class="datatype">int32</span></div><div class="description">Used to retrieve integer values between "s" (inclusive) and "e" (exclusive)</div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">nextBytes</span> ( buf <span class="keyword">as</span> <span class="datatype">array&lt;int8&gt;</span> ) <span class="keyword">as</span> <span class="datatype">void</span></div><div class="description">Used to retrieve an array of random bytes.</div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">nextDouble</span> <span class="keyword">as</span> <span class="datatype">double</span></div><div class="description">Used to retrieve a random double-precision floating point number with value between 0.0 (inclusive) and 1.0 (exclusive).</div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">nextFloat</span> <span class="keyword">as</span> <span class="datatype">float</span></div><div class="description">Used to retrieve a random single-precision floating point number with value between 0.0 (inclusive) and 1.0 (exclusive).</div></div>
+</div>
+</div>
+</body>
+</html>

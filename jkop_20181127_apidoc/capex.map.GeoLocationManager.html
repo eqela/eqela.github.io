@@ -1,0 +1,42 @@
+<html>
+<head>
+<title>capex.map.GeoLocationManager | Jkop 20181127</title>
+<link rel="stylesheet" type="text/css" href="style.css" />
+<meta name="viewport" content="initial-scale=1,maximum-scale=1" />
+<meta property="og:description" content="capex.map.GeoLocationManager | Jkop 20181127" />
+<meta property="og:title" content="capex.map.GeoLocationManager | Jkop 20181127" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:description" content="capex.map.GeoLocationManager | Jkop 20181127" />
+</head>
+<body><div class="content">
+<a class="back" href="index.html">&laquo; Jkop 20181127</a><div class="intro">
+<h1><span class="modifier">abstract</span> <span class="keyword">class</span> <span class="symbol">capex.map.GeoLocationManager</span></h1>
+<p></p>
+</div>
+<div class="list">
+<div class="title">Static Methods</div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">forApplicationContext</span> ( context <span class="keyword">as</span> <a class="datatype" href="cape.ApplicationContext.html">cape.ApplicationContext</a> ) <span class="keyword">as</span> <a class="datatype" href="capex.map.GeoLocationManager.html">capex.map.GeoLocationManager</a></div></div>
+</div>
+<div class="list">
+<div class="title">Instance Methods</div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">addListener</span> ( l <span class="keyword">as</span> <span class="datatype">function&lt;void, capex.map.GeoLocation&gt;</span> ) <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">removeListener</span> ( l <span class="keyword">as</span> <span class="datatype">function&lt;void, capex.map.GeoLocation&gt;</span> ) <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">removeAllListeners</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">notifyListeners</span> ( location <span class="keyword">as</span> <a class="datatype" href="capex.map.GeoLocation.html">capex.map.GeoLocation</a> ) <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">isLocationServiceEnabled</span> <span class="modifier">abstract</span> <span class="keyword">as</span> <span class="datatype">bool</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">startLocationUpdates</span> ( callback <span class="keyword">as</span> <span class="datatype">function&lt;void, bool&gt;</span> ) <span class="modifier">abstract</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">stopLocationUpdates</span> <span class="modifier">abstract</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getLastLocation</span> ( callback <span class="keyword">as</span> <span class="datatype">function&lt;void, capex.map.GeoLocation, cape.Error&gt;</span> ) <span class="modifier">abstract</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+</div>
+</div>
+</body>
+</html>

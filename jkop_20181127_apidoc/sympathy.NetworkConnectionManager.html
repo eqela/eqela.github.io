@@ -1,0 +1,80 @@
+<html>
+<head>
+<title>sympathy.NetworkConnectionManager | Jkop 20181127</title>
+<link rel="stylesheet" type="text/css" href="style.css" />
+<meta name="viewport" content="initial-scale=1,maximum-scale=1" />
+<meta property="og:description" content="sympathy.NetworkConnectionManager | Jkop 20181127" />
+<meta property="og:title" content="sympathy.NetworkConnectionManager | Jkop 20181127" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:description" content="sympathy.NetworkConnectionManager | Jkop 20181127" />
+</head>
+<body><div class="content">
+<a class="back" href="index.html">&laquo; Jkop 20181127</a><div class="intro">
+<h1><span class="modifier">abstract</span> <span class="keyword">class</span> <span class="symbol">sympathy.NetworkConnectionManager</span></h1>
+<p></p>
+</div>
+<div class="list">
+<div class="title">Instance Variables</div>
+<div class="entry">
+<div class="name"><span class="keyword">var</span> <span class="symbol">logContext</span> <span class="keyword">as</span> <a class="datatype" href="cape.LoggingContext.html">cape.LoggingContext</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">var</span> <span class="symbol">ioManager</span> <span class="keyword">as</span> <a class="datatype" href="capex.net.IOManager.html">capex.net.IOManager</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">var</span> <span class="symbol">connections</span> <span class="keyword">as</span> <a class="datatype" href="sympathy.NetworkConnectionManager.ConnectionPool.html">sympathy.NetworkConnectionManager.ConnectionPool</a></div></div>
+</div>
+<div class="list">
+<div class="title">Instance Methods</div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">createConnectionObject</span> <span class="modifier">abstract</span> <span class="keyword">as</span> <a class="datatype" href="sympathy.NetworkConnection.html">sympathy.NetworkConnection</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setLogContext</span> ( ctx <span class="keyword">as</span> <a class="datatype" href="cape.LoggingContext.html">cape.LoggingContext</a> ) <span class="keyword">as</span> <a class="datatype" href="sympathy.NetworkConnectionManager.html">sympathy.NetworkConnectionManager</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getLogContext</span> <span class="keyword">as</span> <a class="datatype" href="cape.LoggingContext.html">cape.LoggingContext</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setIoManager</span> ( io <span class="keyword">as</span> <a class="datatype" href="capex.net.IOManager.html">capex.net.IOManager</a> ) <span class="keyword">as</span> <a class="datatype" href="sympathy.NetworkConnectionManager.html">sympathy.NetworkConnectionManager</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getIoManager</span> <span class="keyword">as</span> <a class="datatype" href="capex.net.IOManager.html">capex.net.IOManager</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">iterateConnections</span> <span class="keyword">as</span> <a class="datatype" href="cape.Iterator.html">cape.Iterator&lt;sympathy.NetworkConnection&gt;</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">forEachConnection</span> ( function <span class="keyword">as</span> <span class="datatype">function&lt;void, sympathy.NetworkConnection&gt;</span> ) <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">isInitialized</span> <span class="keyword">as</span> <span class="datatype">bool</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">initialize</span> ( ioManager <span class="keyword">as</span> <a class="datatype" href="capex.net.IOManager.html">capex.net.IOManager</a> , logContext <span class="keyword">as</span> <a class="datatype" href="cape.LoggingContext.html">cape.LoggingContext</a> ) <span class="keyword">as</span> <span class="datatype">bool</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">initialize</span> <span class="modifier">virtual</span> <span class="keyword">as</span> <span class="datatype">bool</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">cleanup</span> <span class="modifier">virtual</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">onNewSocket</span> ( socket <span class="keyword">as</span> <a class="datatype" href="capex.net.ConnectedSocket.html">capex.net.ConnectedSocket</a> ) <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">addConnection</span> ( connection <span class="keyword">as</span> <a class="datatype" href="sympathy.NetworkConnection.html">sympathy.NetworkConnection</a> ) <span class="keyword">as</span> <span class="datatype">bool</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">onConnectionClosed</span> ( connection <span class="keyword">as</span> <a class="datatype" href="sympathy.NetworkConnection.html">sympathy.NetworkConnection</a> ) <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getReceiveBuffer</span> <span class="keyword">as</span> <span class="datatype">buffer</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getMaxConnections</span> <span class="keyword">as</span> <span class="datatype">int</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setMaxConnections</span> ( v <span class="keyword">as</span> <span class="datatype">int</span> ) <span class="keyword">as</span> <a class="datatype" href="sympathy.NetworkConnectionManager.html">sympathy.NetworkConnectionManager</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getRecvBufferSize</span> <span class="keyword">as</span> <span class="datatype">int</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setRecvBufferSize</span> ( v <span class="keyword">as</span> <span class="datatype">int</span> ) <span class="keyword">as</span> <a class="datatype" href="sympathy.NetworkConnectionManager.html">sympathy.NetworkConnectionManager</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getKeyFile</span> <span class="keyword">as</span> <a class="datatype" href="cape.File.html">cape.File</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setKeyFile</span> ( v <span class="keyword">as</span> <a class="datatype" href="cape.File.html">cape.File</a> ) <span class="keyword">as</span> <a class="datatype" href="sympathy.NetworkConnectionManager.html">sympathy.NetworkConnectionManager</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getCertFile</span> <span class="keyword">as</span> <a class="datatype" href="cape.File.html">cape.File</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setCertFile</span> ( v <span class="keyword">as</span> <a class="datatype" href="cape.File.html">cape.File</a> ) <span class="keyword">as</span> <a class="datatype" href="sympathy.NetworkConnectionManager.html">sympathy.NetworkConnectionManager</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getAcceptInvalidCertificate</span> <span class="keyword">as</span> <span class="datatype">bool</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setAcceptInvalidCertificate</span> ( v <span class="keyword">as</span> <span class="datatype">bool</span> ) <span class="keyword">as</span> <a class="datatype" href="sympathy.NetworkConnectionManager.html">sympathy.NetworkConnectionManager</a></div></div>
+</div>
+</div>
+</body>
+</html>

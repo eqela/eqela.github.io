@@ -1,0 +1,54 @@
+<html>
+<head>
+<title>capex.text.RichTextWikiMarkupParser | Jkop 20181127</title>
+<link rel="stylesheet" type="text/css" href="style.css" />
+<meta name="viewport" content="initial-scale=1,maximum-scale=1" />
+<meta property="og:description" content="capex.text.RichTextWikiMarkupParser | Jkop 20181127" />
+<meta property="og:title" content="capex.text.RichTextWikiMarkupParser | Jkop 20181127" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:description" content="capex.text.RichTextWikiMarkupParser | Jkop 20181127" />
+</head>
+<body><div class="content">
+<a class="back" href="index.html">&laquo; Jkop 20181127</a><div class="intro">
+<h1><span class="keyword">class</span> <span class="symbol">capex.text.RichTextWikiMarkupParser</span></h1>
+<p></p>
+</div>
+<div class="list">
+<div class="title">Static Methods</div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">parseFile</span> ( file <span class="keyword">as</span> <a class="datatype" href="cape.File.html">cape.File</a> ) <span class="keyword">as</span> <a class="datatype" href="capex.text.RichTextDocument.html">capex.text.RichTextDocument</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">parseString</span> ( data <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="keyword">as</span> <a class="datatype" href="capex.text.RichTextDocument.html">capex.text.RichTextDocument</a></div></div>
+</div>
+<div class="list">
+<div class="title">Instance Methods</div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">skipEmptyLines</span> ( pr <span class="keyword">as</span> <a class="datatype" href="cape.LineReader.html">cape.LineReader</a> ) <span class="keyword">as</span> <span class="datatype">string</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">readPreformattedParagraph</span> ( id <span class="keyword">as</span> <span class="datatype">string</span> , pr <span class="keyword">as</span> <a class="datatype" href="cape.LineReader.html">cape.LineReader</a> ) <span class="keyword">as</span> <a class="datatype" href="capex.text.RichTextPreformattedParagraph.html">capex.text.RichTextPreformattedParagraph</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">readBlockParagraph</span> ( id <span class="keyword">as</span> <span class="datatype">string</span> , pr <span class="keyword">as</span> <a class="datatype" href="cape.LineReader.html">cape.LineReader</a> ) <span class="keyword">as</span> <a class="datatype" href="capex.text.RichTextBlockParagraph.html">capex.text.RichTextBlockParagraph</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">readListParagraph</span> ( type <span class="keyword">as</span> <span class="datatype">string</span> , l <span class="keyword">as</span> <span class="datatype">string</span> , pr <span class="keyword">as</span> <a class="datatype" href="cape.LineReader.html">cape.LineReader</a> ) <span class="keyword">as</span> <a class="datatype" href="capex.text.RichTextListParagraph.html">capex.text.RichTextListParagraph</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">processInput</span> ( pr <span class="keyword">as</span> <a class="datatype" href="cape.LineReader.html">cape.LineReader</a> , cwd <span class="keyword">as</span> <a class="datatype" href="cape.File.html">cape.File</a> , doc <span class="keyword">as</span> <a class="datatype" href="capex.text.RichTextDocument.html">capex.text.RichTextDocument</a> ) <span class="keyword">as</span> <span class="datatype">bool</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">parseToDocument</span> ( pr <span class="keyword">as</span> <a class="datatype" href="cape.LineReader.html">cape.LineReader</a> , cwd <span class="keyword">as</span> <a class="datatype" href="cape.File.html">cape.File</a> , v <span class="keyword">as</span> <a class="datatype" href="capex.text.RichTextDocument.html">capex.text.RichTextDocument</a> ) <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">parse</span> <span class="keyword">as</span> <a class="datatype" href="capex.text.RichTextDocument.html">capex.text.RichTextDocument</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getFile</span> <span class="keyword">as</span> <a class="datatype" href="cape.File.html">cape.File</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setFile</span> ( v <span class="keyword">as</span> <a class="datatype" href="cape.File.html">cape.File</a> ) <span class="keyword">as</span> <a class="datatype" href="capex.text.RichTextWikiMarkupParser.html">capex.text.RichTextWikiMarkupParser</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getData</span> <span class="keyword">as</span> <span class="datatype">string</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setData</span> ( v <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="keyword">as</span> <a class="datatype" href="capex.text.RichTextWikiMarkupParser.html">capex.text.RichTextWikiMarkupParser</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getAllowInclude</span> <span class="keyword">as</span> <span class="datatype">bool</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setAllowInclude</span> ( v <span class="keyword">as</span> <span class="datatype">bool</span> ) <span class="keyword">as</span> <a class="datatype" href="capex.text.RichTextWikiMarkupParser.html">capex.text.RichTextWikiMarkupParser</a></div></div>
+</div>
+</div>
+</body>
+</html>

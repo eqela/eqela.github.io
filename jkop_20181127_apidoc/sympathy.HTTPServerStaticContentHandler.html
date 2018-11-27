@@ -1,0 +1,51 @@
+<html>
+<head>
+<title>sympathy.HTTPServerStaticContentHandler | Jkop 20181127</title>
+<link rel="stylesheet" type="text/css" href="style.css" />
+<meta name="viewport" content="initial-scale=1,maximum-scale=1" />
+<meta property="og:description" content="sympathy.HTTPServerStaticContentHandler | Jkop 20181127" />
+<meta property="og:title" content="sympathy.HTTPServerStaticContentHandler | Jkop 20181127" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:description" content="sympathy.HTTPServerStaticContentHandler | Jkop 20181127" />
+</head>
+<body><div class="content">
+<a class="back" href="index.html">&laquo; Jkop 20181127</a><div class="intro">
+<h1><span class="keyword">class</span> <span class="symbol">sympathy.HTTPServerStaticContentHandler</span></h1>
+<p></p>
+</div>
+<div class="list">
+<div class="title">Base Types</div>
+<div class="entry">
+<div class="name"><span class="keyword">implements</span> <a class="datatype" href="sympathy.HTTPServerRequestHandler.html">sympathy.HTTPServerRequestHandler</a></div></div>
+</div>
+<div class="list">
+<div class="title">Static Methods</div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">forContent</span> ( content <span class="keyword">as</span> <span class="datatype">string</span> , mimeType <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="keyword">as</span> <a class="datatype" href="sympathy.HTTPServerStaticContentHandler.html">sympathy.HTTPServerStaticContentHandler</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">forHTMLContent</span> ( content <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="keyword">as</span> <a class="datatype" href="sympathy.HTTPServerStaticContentHandler.html">sympathy.HTTPServerStaticContentHandler</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">forJSONContent</span> ( content <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="keyword">as</span> <a class="datatype" href="sympathy.HTTPServerStaticContentHandler.html">sympathy.HTTPServerStaticContentHandler</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">forRedirect</span> ( url <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="keyword">as</span> <a class="datatype" href="sympathy.HTTPServerStaticContentHandler.html">sympathy.HTTPServerStaticContentHandler</a></div></div>
+</div>
+<div class="list">
+<div class="title">Instance Methods</div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">handleRequest</span> ( req <span class="keyword">as</span> <a class="datatype" href="sympathy.HTTPServerRequest.html">sympathy.HTTPServerRequest</a> , next <span class="keyword">as</span> <span class="datatype">function&lt;void&gt;</span> ) <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getContent</span> <span class="keyword">as</span> <span class="datatype">string</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setContent</span> ( v <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="keyword">as</span> <a class="datatype" href="sympathy.HTTPServerStaticContentHandler.html">sympathy.HTTPServerStaticContentHandler</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getMimeType</span> <span class="keyword">as</span> <span class="datatype">string</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setMimeType</span> ( v <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="keyword">as</span> <a class="datatype" href="sympathy.HTTPServerStaticContentHandler.html">sympathy.HTTPServerStaticContentHandler</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getRedirectUrl</span> <span class="keyword">as</span> <span class="datatype">string</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setRedirectUrl</span> ( v <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="keyword">as</span> <a class="datatype" href="sympathy.HTTPServerStaticContentHandler.html">sympathy.HTTPServerStaticContentHandler</a></div></div>
+</div>
+</div>
+</body>
+</html>

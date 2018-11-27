@@ -1,0 +1,50 @@
+<html>
+<head>
+<title>motion.AnimatedSpriteEntity | Jkop 20181127</title>
+<link rel="stylesheet" type="text/css" href="style.css" />
+<meta name="viewport" content="initial-scale=1,maximum-scale=1" />
+<meta property="og:description" content="The AnimatedSpriteEntity class provides a sprite entity class that enables different forms of animation, including (1) frame-by-frame animation of the sprite image using sprite sheet images, (2) time-based movement of the sprite using xSpeed and ySpeed, and (3) time-based rotation of the sprite using rotateSpeed." />
+<meta property="og:title" content="motion.AnimatedSpriteEntity | Jkop 20181127" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:description" content="The AnimatedSpriteEntity class provides a sprite entity class that enables different forms of animation, including (1) frame-by-frame animation of the sprite image using sprite sheet images, (2) time-based movement of the sprite using xSpeed and ySpeed, and (3) time-based rotation of the sprite using rotateSpeed." />
+</head>
+<body><div class="content">
+<a class="back" href="index.html">&laquo; Jkop 20181127</a><div class="intro">
+<h1><span class="keyword">class</span> <span class="symbol">motion.AnimatedSpriteEntity</span></h1>
+<p>The AnimatedSpriteEntity class provides a sprite entity class that enables different forms of animation, including (1) frame-by-frame animation of the sprite image using sprite sheet images, (2) time-based movement of the sprite using xSpeed and ySpeed, and (3) time-based rotation of the sprite using rotateSpeed.</p>
+</div>
+<div class="list">
+<div class="title">Base Types</div>
+<div class="entry">
+<div class="name"><span class="keyword">extends</span> <a class="datatype" href="motion.SpriteEntity.html">motion.SpriteEntity</a></div></div>
+</div>
+<div class="list">
+<div class="title">Instance Methods</div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">initialize</span> <span class="modifier">override</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setFrameImages</span> ( imgs <span class="keyword">as</span> <span class="datatype">vector&lt;cave.Image&gt;</span> , fps <span class="keyword">as</span> <span class="datatype">long</span> , width <span class="keyword">as</span> <span class="datatype">double</span> , height <span class="keyword">as</span> <span class="datatype">double</span> ) <span class="keyword">as</span> <span class="datatype">bool</span></div><div class="description">Sets the "sprite sheet" for this frame, composed of a collection of images that will be used to animate the appearance of the sprite. The "fps" parameter determines how many frames (images) will be displayed per second. The width and height parameters are used to determine the displayed size of the sprites on screen. Note: If height &lt;= 0.0, the height will be automatically determined based on the given width, and the aspect ratio of the frame images.</div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setFrameTextures</span> ( imgs <span class="keyword">as</span> <span class="datatype">vector&lt;motion.Texture&gt;</span> , fps <span class="keyword">as</span> <span class="datatype">long</span> , width <span class="keyword">as</span> <span class="datatype">double</span> , height <span class="keyword">as</span> <span class="datatype">double</span> ) <span class="keyword">as</span> <span class="datatype">bool</span></div><div class="description">Sets the "sprite sheet" for this frame, composed of a collection of textures that will be used to animate the appearance of the sprite. The "fps" parameter determines how many frames (images) will be displayed per second. The width and height parameters are used to determine the displayed size of the sprites on screen. Note: If height &lt;= 0.0, the height will be automatically determined based on the given width, and the aspect ratio of the frame images.</div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setRandomSpeed</span> <span class="keyword">as</span> <span class="datatype">void</span></div><div class="description">Sets a new speed (for x and y axis, as well as for rotation) for this entity. Afterwards, the sprite will move to a random direction while rotating with a random speed.</div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setFramesPerSecond</span> ( fps <span class="keyword">as</span> <span class="datatype">int</span> ) <span class="keyword">as</span> <span class="datatype">void</span></div><div class="description">Change the number of frames to be displayed per second. Note that this will only have effect if a sprite sheet animation has been enabled by calling setFrames() first.</div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">tick</span> ( gameTime <span class="keyword">as</span> <a class="datatype" href="cape.TimeValue.html">cape.TimeValue</a> , delta <span class="keyword">as</span> <span class="datatype">double</span> ) <span class="modifier">override</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getXSpeed</span> <span class="keyword">as</span> <span class="datatype">double</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setXSpeed</span> ( v <span class="keyword">as</span> <span class="datatype">double</span> ) <span class="keyword">as</span> <a class="datatype" href="motion.AnimatedSpriteEntity.html">motion.AnimatedSpriteEntity</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getYSpeed</span> <span class="keyword">as</span> <span class="datatype">double</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setYSpeed</span> ( v <span class="keyword">as</span> <span class="datatype">double</span> ) <span class="keyword">as</span> <a class="datatype" href="motion.AnimatedSpriteEntity.html">motion.AnimatedSpriteEntity</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getRotateSpeed</span> <span class="keyword">as</span> <span class="datatype">double</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setRotateSpeed</span> ( v <span class="keyword">as</span> <span class="datatype">double</span> ) <span class="keyword">as</span> <a class="datatype" href="motion.AnimatedSpriteEntity.html">motion.AnimatedSpriteEntity</a></div></div>
+</div>
+</div>
+</body>
+</html>

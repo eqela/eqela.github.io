@@ -1,0 +1,60 @@
+<html>
+<head>
+<title>cave.ui.WidgetAnimation | Jkop 20181127</title>
+<link rel="stylesheet" type="text/css" href="style.css" />
+<meta name="viewport" content="initial-scale=1,maximum-scale=1" />
+<meta property="og:description" content="cave.ui.WidgetAnimation | Jkop 20181127" />
+<meta property="og:title" content="cave.ui.WidgetAnimation | Jkop 20181127" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:description" content="cave.ui.WidgetAnimation | Jkop 20181127" />
+</head>
+<body><div class="content">
+<a class="back" href="index.html">&laquo; Jkop 20181127</a><div class="intro">
+<h1><span class="keyword">class</span> <span class="symbol">cave.ui.WidgetAnimation</span></h1>
+<p></p>
+</div>
+<div class="list">
+<div class="title">Static Methods</div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">forDuration</span> ( context <span class="keyword">as</span> <a class="datatype" href="cave.GuiApplicationContext.html">cave.GuiApplicationContext</a> , duration <span class="keyword">as</span> <span class="datatype">long</span> ) <span class="keyword">as</span> <a class="datatype" href="cave.ui.WidgetAnimation.html">cave.ui.WidgetAnimation</a></div></div>
+</div>
+<div class="list">
+<div class="title">Instance Methods</div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">addCallback</span> ( callback <span class="keyword">as</span> <span class="datatype">function&lt;void, double&gt;</span> ) <span class="keyword">as</span> <a class="datatype" href="cave.ui.WidgetAnimation.html">cave.ui.WidgetAnimation</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">addCrossFade</span> ( from <span class="keyword">as</span> <a class="datatype" href="cave.ui.Widget.html">cave.ui.Widget</a> , to <span class="keyword">as</span> <a class="datatype" href="cave.ui.Widget.html">cave.ui.Widget</a> , removeFrom <span class="keyword">as</span> <span class="datatype">bool</span> ) <span class="keyword">as</span> <a class="datatype" href="cave.ui.WidgetAnimation.html">cave.ui.WidgetAnimation</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">addFadeIn</span> ( from <span class="keyword">as</span> <a class="datatype" href="cave.ui.Widget.html">cave.ui.Widget</a> ) <span class="keyword">as</span> <a class="datatype" href="cave.ui.WidgetAnimation.html">cave.ui.WidgetAnimation</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">addFadeOut</span> ( from <span class="keyword">as</span> <a class="datatype" href="cave.ui.Widget.html">cave.ui.Widget</a> , removeAfter <span class="keyword">as</span> <span class="datatype">bool</span> ) <span class="keyword">as</span> <a class="datatype" href="cave.ui.WidgetAnimation.html">cave.ui.WidgetAnimation</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">addFadeOutIn</span> ( from <span class="keyword">as</span> <a class="datatype" href="cave.ui.Widget.html">cave.ui.Widget</a> ) <span class="keyword">as</span> <a class="datatype" href="cave.ui.WidgetAnimation.html">cave.ui.WidgetAnimation</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">tick</span> ( completion <span class="keyword">as</span> <span class="datatype">double</span> ) <span class="modifier">virtual</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">onProgress</span> ( elapsedTime <span class="keyword">as</span> <span class="datatype">long</span> ) <span class="keyword">as</span> <span class="datatype">bool</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">onAnimationEnded</span> <span class="modifier">virtual</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">start</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getDuration</span> <span class="keyword">as</span> <span class="datatype">long</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setDuration</span> ( v <span class="keyword">as</span> <span class="datatype">long</span> ) <span class="keyword">as</span> <a class="datatype" href="cave.ui.WidgetAnimation.html">cave.ui.WidgetAnimation</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getEndListener</span> <span class="keyword">as</span> <span class="datatype">function&lt;void&gt;</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setEndListener</span> ( v <span class="keyword">as</span> <span class="datatype">function&lt;void&gt;</span> ) <span class="keyword">as</span> <a class="datatype" href="cave.ui.WidgetAnimation.html">cave.ui.WidgetAnimation</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getShouldStop</span> <span class="keyword">as</span> <span class="datatype">bool</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setShouldStop</span> ( v <span class="keyword">as</span> <span class="datatype">bool</span> ) <span class="keyword">as</span> <a class="datatype" href="cave.ui.WidgetAnimation.html">cave.ui.WidgetAnimation</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getShouldLoop</span> <span class="keyword">as</span> <span class="datatype">bool</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setShouldLoop</span> ( v <span class="keyword">as</span> <span class="datatype">bool</span> ) <span class="keyword">as</span> <a class="datatype" href="cave.ui.WidgetAnimation.html">cave.ui.WidgetAnimation</a></div></div>
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<html>
+<head>
+<title>capex.console.ConsoleApplicationMain | Jkop 20181127</title>
+<link rel="stylesheet" type="text/css" href="style.css" />
+<meta name="viewport" content="initial-scale=1,maximum-scale=1" />
+<meta property="og:description" content="capex.console.ConsoleApplicationMain | Jkop 20181127" />
+<meta property="og:title" content="capex.console.ConsoleApplicationMain | Jkop 20181127" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:description" content="capex.console.ConsoleApplicationMain | Jkop 20181127" />
+</head>
+<body><div class="content">
+<a class="back" href="index.html">&laquo; Jkop 20181127</a><div class="intro">
+<h1><span class="modifier">abstract</span> <span class="keyword">class</span> <span class="symbol">capex.console.ConsoleApplicationMain</span></h1>
+<p></p>
+</div>
+<div class="list">
+<div class="title">Instance Variables</div>
+<div class="entry">
+<div class="name"><span class="keyword">var</span> <span class="symbol">stdout</span> <span class="keyword">as</span> <a class="datatype" href="cape.PrintWriter.html">cape.PrintWriter</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">var</span> <span class="symbol">stdin</span> <span class="keyword">as</span> <a class="datatype" href="cape.PrintReader.html">cape.PrintReader</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">var</span> <span class="symbol">ctx</span> <span class="keyword">as</span> <a class="datatype" href="capex.console.ConsoleApplicationContext.html">capex.console.ConsoleApplicationContext</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">var</span> <span class="symbol">args</span> <span class="keyword">as</span> <span class="datatype">vector&lt;capex.console.CommandLineArgument&gt;</span></div></div>
+</div>
+<div class="list">
+<div class="title">Static Methods</div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">executeMain</span> ( app <span class="keyword">as</span> <a class="datatype" href="capex.console.ConsoleApplicationMain.html">capex.console.ConsoleApplicationMain</a> , args <span class="keyword">as</span> <span class="datatype">array&lt;string&gt;</span> ) <span class="keyword">as</span> <span class="datatype">int</span></div></div>
+</div>
+<div class="list">
+<div class="title">Instance Methods</div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setCtx</span> ( v <span class="keyword">as</span> <a class="datatype" href="capex.console.ConsoleApplicationContext.html">capex.console.ConsoleApplicationContext</a> ) <span class="keyword">as</span> <a class="datatype" href="capex.console.ConsoleApplicationMain.html">capex.console.ConsoleApplicationMain</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getTerminal</span> <span class="keyword">as</span> <a class="datatype" href="capex.console.Terminal.html">capex.console.Terminal</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">print</span> ( string <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">println</span> ( string <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">readLine</span> <span class="keyword">as</span> <span class="datatype">string</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">readLineWithoutEcho</span> <span class="keyword">as</span> <span class="datatype">string</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">initialize</span> <span class="modifier">virtual</span> <span class="keyword">as</span> <span class="datatype">bool</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getVerbosityLevel</span> <span class="keyword">as</span> <span class="datatype">int</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setVerbosityLevel</span> ( level <span class="keyword">as</span> <span class="datatype">int</span> ) <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">handleVerbosityParams</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">executeWithArgumentArray</span> ( args <span class="keyword">as</span> <span class="datatype">array&lt;string&gt;</span> ) <span class="modifier">virtual</span> <span class="keyword">as</span> <span class="datatype">int</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">executeWithArgumentVector</span> ( args <span class="keyword">as</span> <span class="datatype">vector&lt;string&gt;</span> ) <span class="modifier">virtual</span> <span class="keyword">as</span> <span class="datatype">int</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">executeWithParsedArguments</span> ( args <span class="keyword">as</span> <span class="datatype">vector&lt;capex.console.CommandLineArgument&gt;</span> ) <span class="keyword">as</span> <span class="datatype">bool</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">execute</span> <span class="modifier">virtual</span> <span class="modifier">abstract</span> <span class="keyword">as</span> <span class="datatype">bool</span></div></div>
+</div>
+</div>
+</body>
+</html>

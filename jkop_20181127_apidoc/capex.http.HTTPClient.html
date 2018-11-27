@@ -1,0 +1,36 @@
+<html>
+<head>
+<title>capex.http.HTTPClient | Jkop 20181127</title>
+<link rel="stylesheet" type="text/css" href="style.css" />
+<meta name="viewport" content="initial-scale=1,maximum-scale=1" />
+<meta property="og:description" content="capex.http.HTTPClient | Jkop 20181127" />
+<meta property="og:title" content="capex.http.HTTPClient | Jkop 20181127" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:description" content="capex.http.HTTPClient | Jkop 20181127" />
+</head>
+<body><div class="content">
+<a class="back" href="index.html">&laquo; Jkop 20181127</a><div class="intro">
+<h1><span class="modifier">abstract</span> <span class="keyword">class</span> <span class="symbol">capex.http.HTTPClient</span></h1>
+<p></p>
+</div>
+<div class="list">
+<div class="title">Static Methods</div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">createDefault</span> <span class="keyword">as</span> <a class="datatype" href="capex.http.HTTPClient.html">capex.http.HTTPClient</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">execute</span> ( client <span class="keyword">as</span> <a class="datatype" href="capex.http.HTTPClient.html">capex.http.HTTPClient</a> , request <span class="keyword">as</span> <a class="datatype" href="capex.http.HTTPClientRequest.html">capex.http.HTTPClientRequest</a> , listener <span class="keyword">as</span> <a class="datatype" href="capex.http.HTTPClientListener.html">capex.http.HTTPClientListener</a> ) <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">execute</span> ( ctx <span class="keyword">as</span> <a class="datatype" href="cape.LoggingContext.html">cape.LoggingContext</a> , client <span class="keyword">as</span> <a class="datatype" href="capex.http.HTTPClient.html">capex.http.HTTPClient</a> , request <span class="keyword">as</span> <a class="datatype" href="capex.http.HTTPClientRequest.html">capex.http.HTTPClientRequest</a> , listener <span class="keyword">as</span> <span class="datatype">function&lt;void, capex.http.HTTPClientResponse&gt;</span> , errorHandler <span class="keyword">as</span> <span class="datatype">function&lt;void, string&gt;</span> ) <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">executeForBuffer</span> ( ctx <span class="keyword">as</span> <a class="datatype" href="cape.LoggingContext.html">cape.LoggingContext</a> , client <span class="keyword">as</span> <a class="datatype" href="capex.http.HTTPClient.html">capex.http.HTTPClient</a> , request <span class="keyword">as</span> <a class="datatype" href="capex.http.HTTPClientRequest.html">capex.http.HTTPClientRequest</a> , listener <span class="keyword">as</span> <span class="datatype">function&lt;void, capex.http.HTTPClientResponse, buffer&gt;</span> , errorHandler <span class="keyword">as</span> <span class="datatype">function&lt;void, string&gt;</span> ) <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">executeForString</span> ( ctx <span class="keyword">as</span> <a class="datatype" href="cape.LoggingContext.html">cape.LoggingContext</a> , client <span class="keyword">as</span> <a class="datatype" href="capex.http.HTTPClient.html">capex.http.HTTPClient</a> , request <span class="keyword">as</span> <a class="datatype" href="capex.http.HTTPClientRequest.html">capex.http.HTTPClientRequest</a> , listener <span class="keyword">as</span> <span class="datatype">function&lt;void, capex.http.HTTPClientResponse, string&gt;</span> , errorHandler <span class="keyword">as</span> <span class="datatype">function&lt;void, string&gt;</span> ) <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+</div>
+<div class="list">
+<div class="title">Instance Methods</div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">executeRequest</span> ( request <span class="keyword">as</span> <a class="datatype" href="capex.http.HTTPClientRequest.html">capex.http.HTTPClientRequest</a> , listener <span class="keyword">as</span> <a class="datatype" href="capex.http.HTTPClientListener.html">capex.http.HTTPClientListener</a> ) <span class="modifier">abstract</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+</div>
+</div>
+</body>
+</html>

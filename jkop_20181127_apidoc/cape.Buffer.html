@@ -1,0 +1,59 @@
+<html>
+<head>
+<title>cape.Buffer | Jkop 20181127</title>
+<link rel="stylesheet" type="text/css" href="style.css" />
+<meta name="viewport" content="initial-scale=1,maximum-scale=1" />
+<meta property="og:description" content="The Buffer class provides convenience methods for dealing with data buffers (arbitrary sequences of bytes)." />
+<meta property="og:title" content="cape.Buffer | Jkop 20181127" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:description" content="The Buffer class provides convenience methods for dealing with data buffers (arbitrary sequences of bytes)." />
+</head>
+<body><div class="content">
+<a class="back" href="index.html">&laquo; Jkop 20181127</a><div class="intro">
+<h1><span class="keyword">class</span> <span class="symbol">cape.Buffer</span></h1>
+<p>The Buffer class provides convenience methods for dealing with data buffers (arbitrary sequences of bytes).</p>
+</div>
+<div class="list">
+<div class="title">Static Methods</div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">asObject</span> ( buffer <span class="keyword">as</span> <span class="datatype">buffer</span> ) <span class="keyword">as</span> <a class="datatype" href="cape.BufferObject.html">cape.BufferObject</a></div><div class="description">Returns the given array as a BufferObject (which is an object type) that can be used wherever an object or a class instance is required.</div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">asBuffer</span> ( obj <span class="keyword">as</span> <span class="datatype">object</span> ) <span class="keyword">as</span> <span class="datatype">buffer</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">forInt8Array</span> ( buf <span class="keyword">as</span> <span class="datatype">array&lt;int8&gt;</span> ) <span class="keyword">as</span> <span class="datatype">buffer</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">toInt8Array</span> ( buf <span class="keyword">as</span> <span class="datatype">buffer</span> ) <span class="keyword">as</span> <span class="datatype">array&lt;int8&gt;</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getSubBuffer</span> ( buffer <span class="keyword">as</span> <span class="datatype">buffer</span> , offset <span class="keyword">as</span> <span class="datatype">long</span> , size <span class="keyword">as</span> <span class="datatype">long</span> , alwaysNewBuffer <span class="keyword">as</span> <span class="datatype">bool</span> ) <span class="keyword">as</span> <span class="datatype">buffer</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getInt8</span> ( buffer <span class="keyword">as</span> <span class="datatype">buffer</span> , offset <span class="keyword">as</span> <span class="datatype">long</span> ) <span class="keyword">as</span> <span class="datatype">uint8</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">copyFrom</span> ( array <span class="keyword">as</span> <span class="datatype">buffer</span> , src <span class="keyword">as</span> <span class="datatype">buffer</span> , soffset <span class="keyword">as</span> <span class="datatype">long</span> , doffset <span class="keyword">as</span> <span class="datatype">long</span> , size <span class="keyword">as</span> <span class="datatype">long</span> ) <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getInt16LE</span> ( buffer <span class="keyword">as</span> <span class="datatype">buffer</span> , offset <span class="keyword">as</span> <span class="datatype">long</span> ) <span class="keyword">as</span> <span class="datatype">uint16</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getInt16BE</span> ( buffer <span class="keyword">as</span> <span class="datatype">buffer</span> , offset <span class="keyword">as</span> <span class="datatype">long</span> ) <span class="keyword">as</span> <span class="datatype">uint16</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getInt32LE</span> ( buffer <span class="keyword">as</span> <span class="datatype">buffer</span> , offset <span class="keyword">as</span> <span class="datatype">long</span> ) <span class="keyword">as</span> <span class="datatype">uint32</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getInt32BE</span> ( buffer <span class="keyword">as</span> <span class="datatype">buffer</span> , offset <span class="keyword">as</span> <span class="datatype">long</span> ) <span class="keyword">as</span> <span class="datatype">uint32</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getSize</span> ( buffer <span class="keyword">as</span> <span class="datatype">buffer</span> ) <span class="keyword">as</span> <span class="datatype">long</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getByte</span> ( buffer <span class="keyword">as</span> <span class="datatype">buffer</span> , offset <span class="keyword">as</span> <span class="datatype">long</span> ) <span class="keyword">as</span> <span class="datatype">uint8</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setByte</span> ( buffer <span class="keyword">as</span> <span class="datatype">buffer</span> , offset <span class="keyword">as</span> <span class="datatype">long</span> , value <span class="keyword">as</span> <span class="datatype">uint8</span> ) <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">allocate</span> ( size <span class="keyword">as</span> <span class="datatype">long</span> ) <span class="keyword">as</span> <span class="datatype">buffer</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">resize</span> ( buffer <span class="keyword">as</span> <span class="datatype">buffer</span> , newSize <span class="keyword">as</span> <span class="datatype">long</span> ) <span class="keyword">as</span> <span class="datatype">buffer</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">append</span> ( original <span class="keyword">as</span> <span class="datatype">buffer</span> , toAppend <span class="keyword">as</span> <span class="datatype">buffer</span> , size <span class="keyword">as</span> <span class="datatype">long</span> ) <span class="keyword">as</span> <span class="datatype">buffer</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">forHexString</span> ( str <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="keyword">as</span> <span class="datatype">buffer</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">readFrom</span> ( reader <span class="keyword">as</span> <a class="datatype" href="cape.Reader.html">cape.Reader</a> ) <span class="keyword">as</span> <span class="datatype">buffer</span></div></div>
+</div>
+</div>
+</body>
+</html>

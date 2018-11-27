@@ -1,0 +1,56 @@
+<html>
+<head>
+<title>capex.http.HTTPClientOperation.MyResponseParser | Jkop 20181127</title>
+<link rel="stylesheet" type="text/css" href="style.css" />
+<meta name="viewport" content="initial-scale=1,maximum-scale=1" />
+<meta property="og:description" content="capex.http.HTTPClientOperation.MyResponseParser | Jkop 20181127" />
+<meta property="og:title" content="capex.http.HTTPClientOperation.MyResponseParser | Jkop 20181127" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:description" content="capex.http.HTTPClientOperation.MyResponseParser | Jkop 20181127" />
+</head>
+<body><div class="content">
+<a class="back" href="index.html">&laquo; Jkop 20181127</a><div class="intro">
+<h1><span class="keyword">class</span> <span class="symbol">capex.http.HTTPClientOperation.MyResponseParser</span></h1>
+<p></p>
+</div>
+<div class="list">
+<div class="title">Instance Variables</div>
+<div class="entry">
+<div class="name"><span class="keyword">var</span> <span class="symbol">headers</span> <span class="keyword">as</span> <a class="datatype" href="capex.http.HTTPClientResponse.html">capex.http.HTTPClientResponse</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">var</span> <span class="symbol">isChunked</span> <span class="keyword">as</span> <span class="datatype">bool</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">var</span> <span class="symbol">isStream</span> <span class="keyword">as</span> <span class="datatype">bool</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">var</span> <span class="symbol">contentLength</span> <span class="keyword">as</span> <span class="datatype">int</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">var</span> <span class="symbol">dataCounter</span> <span class="keyword">as</span> <span class="datatype">int</span></div></div>
+</div>
+<div class="list">
+<div class="title">Instance Methods</div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">reset</span> <span class="modifier">virtual</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">onDataReceived</span> ( buf <span class="keyword">as</span> <span class="datatype">buffer</span> , size <span class="keyword">as</span> <span class="datatype">long</span> ) <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">onHeadersReceived</span> ( headers <span class="keyword">as</span> <a class="datatype" href="capex.http.HTTPClientResponse.html">capex.http.HTTPClientResponse</a> ) <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">onBodyDataReceived</span> ( buffer <span class="keyword">as</span> <span class="datatype">buffer</span> , size <span class="keyword">as</span> <span class="datatype">long</span> ) <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">onEndOfResponse</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getListener</span> <span class="keyword">as</span> <a class="datatype" href="capex.http.HTTPClientListener.html">capex.http.HTTPClientListener</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setListener</span> ( v <span class="keyword">as</span> <a class="datatype" href="capex.http.HTTPClientListener.html">capex.http.HTTPClientListener</a> ) <span class="keyword">as</span> <a class="datatype" href="capex.http.HTTPClientOperation.MyResponseParser.html">capex.http.HTTPClientOperation.MyResponseParser</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getEndOfResponse</span> <span class="keyword">as</span> <span class="datatype">bool</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setEndOfResponse</span> ( v <span class="keyword">as</span> <span class="datatype">bool</span> ) <span class="keyword">as</span> <a class="datatype" href="capex.http.HTTPClientOperation.MyResponseParser.html">capex.http.HTTPClientOperation.MyResponseParser</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getAborted</span> <span class="keyword">as</span> <span class="datatype">bool</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setAborted</span> ( v <span class="keyword">as</span> <span class="datatype">bool</span> ) <span class="keyword">as</span> <a class="datatype" href="capex.http.HTTPClientOperation.MyResponseParser.html">capex.http.HTTPClientOperation.MyResponseParser</a></div></div>
+</div>
+</div>
+</body>
+</html>

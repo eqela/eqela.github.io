@@ -1,0 +1,70 @@
+<html>
+<head>
+<title>sympathy.SMTPSender | Jkop 20181127</title>
+<link rel="stylesheet" type="text/css" href="style.css" />
+<meta name="viewport" content="initial-scale=1,maximum-scale=1" />
+<meta property="og:description" content="sympathy.SMTPSender | Jkop 20181127" />
+<meta property="og:title" content="sympathy.SMTPSender | Jkop 20181127" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:description" content="sympathy.SMTPSender | Jkop 20181127" />
+</head>
+<body><div class="content">
+<a class="back" href="index.html">&laquo; Jkop 20181127</a><div class="intro">
+<h1><span class="keyword">class</span> <span class="symbol">sympathy.SMTPSender</span></h1>
+<p></p>
+</div>
+<div class="list">
+<div class="title">Static Methods</div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">forCommonDetails</span> ( serverAddress <span class="keyword">as</span> <span class="datatype">string</span> , serverUsername <span class="keyword">as</span> <span class="datatype">string</span> , serverPassword <span class="keyword">as</span> <span class="datatype">string</span> , senderName <span class="keyword">as</span> <span class="datatype">string</span> , senderAddress <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="keyword">as</span> <a class="datatype" href="sympathy.SMTPSender.html">sympathy.SMTPSender</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">forRemoteServerUrl</span> ( url <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="keyword">as</span> <a class="datatype" href="sympathy.SMTPSender.html">sympathy.SMTPSender</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">forServerAddress</span> ( name <span class="keyword">as</span> <span class="datatype">string</span> , ctx <span class="keyword">as</span> <a class="datatype" href="cape.LoggingContext.html">cape.LoggingContext</a> ) <span class="keyword">as</span> <a class="datatype" href="sympathy.SMTPSender.html">sympathy.SMTPSender</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">forConfiguration</span> ( config <span class="keyword">as</span> <a class="datatype" href="cape.DynamicMap.html">cape.DynamicMap</a> , ctx <span class="keyword">as</span> <a class="datatype" href="cape.LoggingContext.html">cape.LoggingContext</a> ) <span class="keyword">as</span> <a class="datatype" href="sympathy.SMTPSender.html">sympathy.SMTPSender</a></div></div>
+</div>
+<div class="list">
+<div class="title">Instance Methods</div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getDescription</span> <span class="keyword">as</span> <span class="datatype">string</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">configure</span> ( config <span class="keyword">as</span> <a class="datatype" href="cape.DynamicMap.html">cape.DynamicMap</a> ) <span class="keyword">as</span> <a class="datatype" href="sympathy.SMTPSender.html">sympathy.SMTPSender</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">onSendStart</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">onSendEnd</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">send</span> ( msg <span class="keyword">as</span> <a class="datatype" href="sympathy.SMTPMessage.html">sympathy.SMTPMessage</a> , listener <span class="keyword">as</span> <a class="datatype" href="sympathy.SMTPSenderListener.html">sympathy.SMTPSenderListener</a> ) <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getThisServerAddress</span> <span class="keyword">as</span> <span class="datatype">string</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setThisServerAddress</span> ( v <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="keyword">as</span> <a class="datatype" href="sympathy.SMTPSender.html">sympathy.SMTPSender</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getServer</span> <span class="keyword">as</span> <span class="datatype">string</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setServer</span> ( v <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="keyword">as</span> <a class="datatype" href="sympathy.SMTPSender.html">sympathy.SMTPSender</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getMyName</span> <span class="keyword">as</span> <span class="datatype">string</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setMyName</span> ( v <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="keyword">as</span> <a class="datatype" href="sympathy.SMTPSender.html">sympathy.SMTPSender</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getMyAddress</span> <span class="keyword">as</span> <span class="datatype">string</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setMyAddress</span> ( v <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="keyword">as</span> <a class="datatype" href="sympathy.SMTPSender.html">sympathy.SMTPSender</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getCtx</span> <span class="keyword">as</span> <a class="datatype" href="cape.LoggingContext.html">cape.LoggingContext</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setCtx</span> ( v <span class="keyword">as</span> <a class="datatype" href="cape.LoggingContext.html">cape.LoggingContext</a> ) <span class="keyword">as</span> <a class="datatype" href="sympathy.SMTPSender.html">sympathy.SMTPSender</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getMaxSenderCount</span> <span class="keyword">as</span> <span class="datatype">int</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setMaxSenderCount</span> ( v <span class="keyword">as</span> <span class="datatype">int</span> ) <span class="keyword">as</span> <a class="datatype" href="sympathy.SMTPSender.html">sympathy.SMTPSender</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getAcceptInvalidCertificate</span> <span class="keyword">as</span> <span class="datatype">bool</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setAcceptInvalidCertificate</span> ( v <span class="keyword">as</span> <span class="datatype">bool</span> ) <span class="keyword">as</span> <a class="datatype" href="sympathy.SMTPSender.html">sympathy.SMTPSender</a></div></div>
+</div>
+</div>
+</body>
+</html>

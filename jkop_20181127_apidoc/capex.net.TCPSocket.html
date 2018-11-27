@@ -1,0 +1,65 @@
+<html>
+<head>
+<title>capex.net.TCPSocket | Jkop 20181127</title>
+<link rel="stylesheet" type="text/css" href="style.css" />
+<meta name="viewport" content="initial-scale=1,maximum-scale=1" />
+<meta property="og:description" content="capex.net.TCPSocket | Jkop 20181127" />
+<meta property="og:title" content="capex.net.TCPSocket | Jkop 20181127" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:description" content="capex.net.TCPSocket | Jkop 20181127" />
+</head>
+<body><div class="content">
+<a class="back" href="index.html">&laquo; Jkop 20181127</a><div class="intro">
+<h1><span class="modifier">abstract</span> <span class="keyword">class</span> <span class="symbol">capex.net.TCPSocket</span></h1>
+<p></p>
+</div>
+<div class="list">
+<div class="title">Base Types</div>
+<div class="entry">
+<div class="name"><span class="keyword">implements</span> <a class="datatype" href="capex.net.ConnectedSocket.html">capex.net.ConnectedSocket</a></div></div>
+</div>
+<div class="list">
+<div class="title">Static Methods</div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">create</span> <span class="keyword">as</span> <a class="datatype" href="capex.net.TCPSocket.html">capex.net.TCPSocket</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">createAndConnect</span> ( address <span class="keyword">as</span> <span class="datatype">string</span> , port <span class="keyword">as</span> <span class="datatype">int</span> ) <span class="keyword">as</span> <a class="datatype" href="capex.net.TCPSocket.html">capex.net.TCPSocket</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">createAndListen</span> ( port <span class="keyword">as</span> <span class="datatype">int</span> ) <span class="keyword">as</span> <a class="datatype" href="capex.net.TCPSocket.html">capex.net.TCPSocket</a></div></div>
+</div>
+<div class="list">
+<div class="title">Instance Methods</div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getRemoteAddress</span> <span class="modifier">abstract</span> <span class="keyword">as</span> <span class="datatype">string</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getRemotePort</span> <span class="modifier">abstract</span> <span class="keyword">as</span> <span class="datatype">int</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getLocalAddress</span> <span class="modifier">abstract</span> <span class="keyword">as</span> <span class="datatype">string</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getLocalPort</span> <span class="modifier">abstract</span> <span class="keyword">as</span> <span class="datatype">int</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">connect</span> ( address <span class="keyword">as</span> <span class="datatype">string</span> , port <span class="keyword">as</span> <span class="datatype">int</span> ) <span class="modifier">abstract</span> <span class="keyword">as</span> <span class="datatype">bool</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">listen</span> ( port <span class="keyword">as</span> <span class="datatype">int</span> ) <span class="modifier">abstract</span> <span class="keyword">as</span> <span class="datatype">bool</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">accept</span> <span class="modifier">abstract</span> <span class="keyword">as</span> <a class="datatype" href="capex.net.TCPSocket.html">capex.net.TCPSocket</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setBlocking</span> ( blocking <span class="keyword">as</span> <span class="datatype">bool</span> ) <span class="modifier">abstract</span> <span class="keyword">as</span> <span class="datatype">bool</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getBlocking</span> <span class="modifier">abstract</span> <span class="keyword">as</span> <span class="datatype">bool</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">close</span> <span class="modifier">abstract</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">read</span> ( buffer <span class="keyword">as</span> <span class="datatype">buffer</span> ) <span class="modifier">abstract</span> <span class="keyword">as</span> <span class="datatype">int</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">readWithTimeout</span> ( buffer <span class="keyword">as</span> <span class="datatype">buffer</span> , timeout <span class="keyword">as</span> <span class="datatype">int</span> ) <span class="modifier">virtual</span> <span class="keyword">as</span> <span class="datatype">int</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">write</span> ( buffer <span class="keyword">as</span> <span class="datatype">buffer</span> , size <span class="keyword">as</span> <span class="datatype">int</span> ) <span class="modifier">abstract</span> <span class="keyword">as</span> <span class="datatype">int</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getLastErrorDescription</span> <span class="keyword">as</span> <span class="datatype">string</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setLastErrorDescription</span> ( v <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="keyword">as</span> <a class="datatype" href="capex.net.TCPSocket.html">capex.net.TCPSocket</a></div></div>
+</div>
+</div>
+</body>
+</html>

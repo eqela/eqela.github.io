@@ -1,0 +1,85 @@
+<html>
+<head>
+<title>cape.Vector | Jkop 20181127</title>
+<link rel="stylesheet" type="text/css" href="style.css" />
+<meta name="viewport" content="initial-scale=1,maximum-scale=1" />
+<meta property="og:description" content="cape.Vector | Jkop 20181127" />
+<meta property="og:title" content="cape.Vector | Jkop 20181127" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:description" content="cape.Vector | Jkop 20181127" />
+</head>
+<body><div class="content">
+<a class="back" href="index.html">&laquo; Jkop 20181127</a><div class="intro">
+<h1><span class="keyword">class</span> <span class="symbol">cape.Vector</span></h1>
+<p></p>
+</div>
+<div class="list">
+<div class="title">Static Methods</div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">asVector</span> ( obj <span class="keyword">as</span> <span class="datatype">object</span> ) <span class="keyword">as</span> <span class="datatype">vector&lt;T&gt;</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">forIterator</span> ( iterator <span class="keyword">as</span> <a class="datatype" href="cape.Iterator.html">cape.Iterator&lt;T&gt;</a> ) <span class="keyword">as</span> <span class="datatype">vector&lt;T&gt;</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">forArray</span> ( array <span class="keyword">as</span> <span class="datatype">array&lt;T&gt;</span> ) <span class="keyword">as</span> <span class="datatype">vector&lt;T&gt;</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">toVectorOfObject</span> ( collection <span class="keyword">as</span> <span class="datatype">vector&lt;T&gt;</span> ) <span class="keyword">as</span> <span class="datatype">vector&lt;object&gt;</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">contains</span> ( vector <span class="keyword">as</span> <span class="datatype">vector&lt;T&gt;</span> , object <span class="keyword">as</span> <span class="datatype">T</span> ) <span class="keyword">as</span> <span class="datatype">bool</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">append</span> ( vector <span class="keyword">as</span> <span class="datatype">vector&lt;T&gt;</span> , object <span class="keyword">as</span> <span class="datatype">T</span> ) <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">prepend</span> ( vector <span class="keyword">as</span> <span class="datatype">vector&lt;T&gt;</span> , object <span class="keyword">as</span> <span class="datatype">T</span> ) <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">insert</span> ( vector <span class="keyword">as</span> <span class="datatype">vector&lt;T&gt;</span> , object <span class="keyword">as</span> <span class="datatype">T</span> , index <span class="keyword">as</span> <span class="datatype">int</span> ) <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setCapacity</span> ( vector <span class="keyword">as</span> <span class="datatype">vector&lt;T&gt;</span> , capacity <span class="keyword">as</span> <span class="datatype">int</span> ) <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getSize</span> ( vector <span class="keyword">as</span> <span class="datatype">vector&lt;T&gt;</span> ) <span class="keyword">as</span> <span class="datatype">int</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getAt</span> ( vector <span class="keyword">as</span> <span class="datatype">vector&lt;T&gt;</span> , index <span class="keyword">as</span> <span class="datatype">int</span> ) <span class="keyword">as</span> <span class="datatype">T</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">get</span> ( vector <span class="keyword">as</span> <span class="datatype">vector&lt;T&gt;</span> , index <span class="keyword">as</span> <span class="datatype">int</span> ) <span class="keyword">as</span> <span class="datatype">T</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getFirst</span> ( vector <span class="keyword">as</span> <span class="datatype">vector&lt;T&gt;</span> ) <span class="keyword">as</span> <span class="datatype">T</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getLast</span> ( vector <span class="keyword">as</span> <span class="datatype">vector&lt;T&gt;</span> ) <span class="keyword">as</span> <span class="datatype">T</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">set</span> ( vector <span class="keyword">as</span> <span class="datatype">vector&lt;T&gt;</span> , index <span class="keyword">as</span> <span class="datatype">int</span> , val <span class="keyword">as</span> <span class="datatype">T</span> ) <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">remove</span> ( vector <span class="keyword">as</span> <span class="datatype">vector&lt;T&gt;</span> , index <span class="keyword">as</span> <span class="datatype">int</span> ) <span class="keyword">as</span> <span class="datatype">T</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">popFirst</span> ( vector <span class="keyword">as</span> <span class="datatype">vector&lt;T&gt;</span> ) <span class="keyword">as</span> <span class="datatype">T</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">removeFirst</span> ( vector <span class="keyword">as</span> <span class="datatype">vector&lt;T&gt;</span> ) <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">popLast</span> ( vector <span class="keyword">as</span> <span class="datatype">vector&lt;T&gt;</span> ) <span class="keyword">as</span> <span class="datatype">T</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">removeLast</span> ( vector <span class="keyword">as</span> <span class="datatype">vector&lt;T&gt;</span> ) <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">removeValue</span> ( vector <span class="keyword">as</span> <span class="datatype">vector&lt;T&gt;</span> , value <span class="keyword">as</span> <span class="datatype">T</span> ) <span class="keyword">as</span> <span class="datatype">int</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">clear</span> ( vector <span class="keyword">as</span> <span class="datatype">vector&lt;T&gt;</span> ) <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">isEmpty</span> ( vector <span class="keyword">as</span> <span class="datatype">vector&lt;T&gt;</span> ) <span class="keyword">as</span> <span class="datatype">bool</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">isNotEmpty</span> ( vector <span class="keyword">as</span> <span class="datatype">vector&lt;T&gt;</span> ) <span class="keyword">as</span> <span class="datatype">bool</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">removeRange</span> ( vector <span class="keyword">as</span> <span class="datatype">vector&lt;T&gt;</span> , index <span class="keyword">as</span> <span class="datatype">int</span> , count <span class="keyword">as</span> <span class="datatype">int</span> ) <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">iterate</span> ( vector <span class="keyword">as</span> <span class="datatype">vector&lt;T&gt;</span> ) <span class="keyword">as</span> <a class="datatype" href="cape.Iterator.html">cape.Iterator&lt;T&gt;</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">iterateReverse</span> ( vector <span class="keyword">as</span> <span class="datatype">vector&lt;T&gt;</span> ) <span class="keyword">as</span> <a class="datatype" href="cape.Iterator.html">cape.Iterator&lt;T&gt;</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">sort</span> ( vector <span class="keyword">as</span> <span class="datatype">vector&lt;T&gt;</span> , comparer <span class="keyword">as</span> <span class="datatype">function&lt;int, T, T&gt;</span> ) <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">sortReverse</span> ( vector <span class="keyword">as</span> <span class="datatype">vector&lt;T&gt;</span> , comparer <span class="keyword">as</span> <span class="datatype">function&lt;int, T, T&gt;</span> ) <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">sortAsStrings</span> ( vector <span class="keyword">as</span> <span class="datatype">vector&lt;T&gt;</span> ) <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">sortAsStringsReverse</span> ( vector <span class="keyword">as</span> <span class="datatype">vector&lt;T&gt;</span> ) <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">reverse</span> ( vector <span class="keyword">as</span> <span class="datatype">vector&lt;T&gt;</span> ) <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+</div>
+</div>
+</body>
+</html>

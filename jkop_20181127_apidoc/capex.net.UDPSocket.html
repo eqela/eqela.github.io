@@ -1,0 +1,40 @@
+<html>
+<head>
+<title>capex.net.UDPSocket | Jkop 20181127</title>
+<link rel="stylesheet" type="text/css" href="style.css" />
+<meta name="viewport" content="initial-scale=1,maximum-scale=1" />
+<meta property="og:description" content="capex.net.UDPSocket | Jkop 20181127" />
+<meta property="og:title" content="capex.net.UDPSocket | Jkop 20181127" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:description" content="capex.net.UDPSocket | Jkop 20181127" />
+</head>
+<body><div class="content">
+<a class="back" href="index.html">&laquo; Jkop 20181127</a><div class="intro">
+<h1><span class="modifier">abstract</span> <span class="keyword">class</span> <span class="symbol">capex.net.UDPSocket</span></h1>
+<p></p>
+</div>
+<div class="list">
+<div class="title">Static Methods</div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">create</span> <span class="keyword">as</span> <a class="datatype" href="capex.net.UDPSocket.html">capex.net.UDPSocket</a></div></div>
+</div>
+<div class="list">
+<div class="title">Instance Methods</div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">send</span> ( message <span class="keyword">as</span> <span class="datatype">buffer</span> , address <span class="keyword">as</span> <span class="datatype">string</span> , port <span class="keyword">as</span> <span class="datatype">int</span> ) <span class="modifier">abstract</span> <span class="keyword">as</span> <span class="datatype">int</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">sendBroadcast</span> ( message <span class="keyword">as</span> <span class="datatype">buffer</span> , address <span class="keyword">as</span> <span class="datatype">string</span> , port <span class="keyword">as</span> <span class="datatype">int</span> ) <span class="modifier">abstract</span> <span class="keyword">as</span> <span class="datatype">int</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">receive</span> ( message <span class="keyword">as</span> <span class="datatype">buffer</span> , timeout <span class="keyword">as</span> <span class="datatype">int</span> ) <span class="modifier">abstract</span> <span class="keyword">as</span> <span class="datatype">int</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">bind</span> ( port <span class="keyword">as</span> <span class="datatype">int</span> ) <span class="modifier">abstract</span> <span class="keyword">as</span> <span class="datatype">bool</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">close</span> <span class="modifier">abstract</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getLocalAddress</span> <span class="modifier">abstract</span> <span class="keyword">as</span> <span class="datatype">string</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getLocalPort</span> <span class="modifier">abstract</span> <span class="keyword">as</span> <span class="datatype">int</span></div></div>
+</div>
+</div>
+</body>
+</html>

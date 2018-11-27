@@ -1,0 +1,39 @@
+<html>
+<head>
+<title>sympathy.HTTPServerRequestHandlerStack | Jkop 20181127</title>
+<link rel="stylesheet" type="text/css" href="style.css" />
+<meta name="viewport" content="initial-scale=1,maximum-scale=1" />
+<meta property="og:description" content="sympathy.HTTPServerRequestHandlerStack | Jkop 20181127" />
+<meta property="og:title" content="sympathy.HTTPServerRequestHandlerStack | Jkop 20181127" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:description" content="sympathy.HTTPServerRequestHandlerStack | Jkop 20181127" />
+</head>
+<body><div class="content">
+<a class="back" href="index.html">&laquo; Jkop 20181127</a><div class="intro">
+<h1><span class="keyword">class</span> <span class="symbol">sympathy.HTTPServerRequestHandlerStack</span></h1>
+<p></p>
+</div>
+<div class="list">
+<div class="title">Base Types</div>
+<div class="entry">
+<div class="name"><span class="keyword">extends</span> <a class="datatype" href="sympathy.HTTPServerRequestHandlerContainer.html">sympathy.HTTPServerRequestHandlerContainer</a></div></div>
+</div>
+<div class="list">
+<div class="title">Instance Variables</div>
+<div class="entry">
+<div class="name"><span class="keyword">var</span> <span class="symbol">requestHandlers</span> <span class="keyword">as</span> <span class="datatype">vector&lt;sympathy.HTTPServerRequestHandler&gt;</span></div></div>
+</div>
+<div class="list">
+<div class="title">Instance Methods</div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">iterateRequestHandlers</span> <span class="modifier">override</span> <span class="keyword">as</span> <a class="datatype" href="cape.Iterator.html">cape.Iterator&lt;sympathy.HTTPServerRequestHandler&gt;</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">pushRequestHandler</span> ( handler <span class="keyword">as</span> <span class="datatype">function&lt;void, sympathy.HTTPServerRequest, function&lt;void&gt;&gt;</span> ) <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">pushRequestHandler</span> ( handler <span class="keyword">as</span> <a class="datatype" href="sympathy.HTTPServerRequestHandler.html">sympathy.HTTPServerRequestHandler</a> ) <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">handleRequest</span> ( req <span class="keyword">as</span> <a class="datatype" href="sympathy.HTTPServerRequest.html">sympathy.HTTPServerRequest</a> , next <span class="keyword">as</span> <span class="datatype">function&lt;void&gt;</span> ) <span class="modifier">override</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+</div>
+</div>
+</body>
+</html>

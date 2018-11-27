@@ -1,0 +1,69 @@
+<html>
+<head>
+<title>cave.ui.ScrollerWidget | Jkop 20181127</title>
+<link rel="stylesheet" type="text/css" href="style.css" />
+<meta name="viewport" content="initial-scale=1,maximum-scale=1" />
+<meta property="og:description" content="cave.ui.ScrollerWidget | Jkop 20181127" />
+<meta property="og:title" content="cave.ui.ScrollerWidget | Jkop 20181127" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:description" content="cave.ui.ScrollerWidget | Jkop 20181127" />
+</head>
+<body><div class="content">
+<a class="back" href="index.html">&laquo; Jkop 20181127</a><div class="intro">
+<h1><span class="keyword">class</span> <span class="symbol">cave.ui.ScrollerWidget</span></h1>
+<p></p>
+</div>
+<div class="list">
+<div class="title">Base Types</div>
+<div class="entry">
+<div class="name"><span class="keyword">implements</span> <a class="datatype" href="cave.ui.WidgetWithLayout.html">cave.ui.WidgetWithLayout</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">implements</span> <a class="datatype" href="cave.ui.HeightAwareWidget.html">cave.ui.HeightAwareWidget</a></div></div>
+</div>
+<div class="list">
+<div class="title">Static Methods</div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">forWidget</span> ( context <span class="keyword">as</span> <a class="datatype" href="cave.GuiApplicationContext.html">cave.GuiApplicationContext</a> , widget <span class="keyword">as</span> <a class="datatype" href="cave.ui.Widget.html">cave.ui.Widget</a> ) <span class="keyword">as</span> <a class="datatype" href="cave.ui.ScrollerWidget.html">cave.ui.ScrollerWidget</a></div></div>
+</div>
+<div class="list">
+<div class="title">Instance Methods</div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">isNearEndX</span> <span class="keyword">as</span> <span class="datatype">bool</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">isNearEndY</span> <span class="keyword">as</span> <span class="datatype">bool</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getValueX</span> <span class="keyword">as</span> <span class="datatype">double</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getValueY</span> <span class="keyword">as</span> <span class="datatype">double</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setWidgetScrollBarDisabled</span> ( value <span class="keyword">as</span> <span class="datatype">bool</span> ) <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">onWidgetHeightChanged</span> ( height <span class="keyword">as</span> <span class="datatype">int</span> ) <span class="modifier">virtual</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setWidgetLayoutChanged</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">hasWidgetLayoutChanged</span> <span class="keyword">as</span> <span class="datatype">bool</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">layoutWidget</span> ( widthConstraint <span class="keyword">as</span> <span class="datatype">int</span> , force <span class="keyword">as</span> <span class="datatype">bool</span> ) <span class="modifier">virtual</span> <span class="keyword">as</span> <span class="datatype">bool</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">addWidget</span> ( widget <span class="keyword">as</span> <a class="datatype" href="cave.ui.Widget.html">cave.ui.Widget</a> ) <span class="keyword">as</span> <a class="datatype" href="cave.ui.ScrollerWidget.html">cave.ui.ScrollerWidget</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getWidgetOnScrolledHandlerX</span> <span class="keyword">as</span> <span class="datatype">function&lt;void, int&gt;</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setWidgetOnScrolledHandlerX</span> ( v <span class="keyword">as</span> <span class="datatype">function&lt;void, int&gt;</span> ) <span class="keyword">as</span> <a class="datatype" href="cave.ui.ScrollerWidget.html">cave.ui.ScrollerWidget</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getWidgetOnScrolledHandlerY</span> <span class="keyword">as</span> <span class="datatype">function&lt;void, int&gt;</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setWidgetOnScrolledHandlerY</span> ( v <span class="keyword">as</span> <span class="datatype">function&lt;void, int&gt;</span> ) <span class="keyword">as</span> <a class="datatype" href="cave.ui.ScrollerWidget.html">cave.ui.ScrollerWidget</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getWidgetMaximumValueX</span> <span class="keyword">as</span> <span class="datatype">double</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setWidgetMaximumValueX</span> ( v <span class="keyword">as</span> <span class="datatype">double</span> ) <span class="keyword">as</span> <a class="datatype" href="cave.ui.ScrollerWidget.html">cave.ui.ScrollerWidget</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getWidgetMaximumValueY</span> <span class="keyword">as</span> <span class="datatype">double</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setWidgetMaximumValueY</span> ( v <span class="keyword">as</span> <span class="datatype">double</span> ) <span class="keyword">as</span> <a class="datatype" href="cave.ui.ScrollerWidget.html">cave.ui.ScrollerWidget</a></div></div>
+</div>
+</div>
+</body>
+</html>

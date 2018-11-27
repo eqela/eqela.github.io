@@ -1,0 +1,46 @@
+<html>
+<head>
+<title>capex.http.HTTPClientOperation | Jkop 20181127</title>
+<link rel="stylesheet" type="text/css" href="style.css" />
+<meta name="viewport" content="initial-scale=1,maximum-scale=1" />
+<meta property="og:description" content="capex.http.HTTPClientOperation | Jkop 20181127" />
+<meta property="og:title" content="capex.http.HTTPClientOperation | Jkop 20181127" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:description" content="capex.http.HTTPClientOperation | Jkop 20181127" />
+</head>
+<body><div class="content">
+<a class="back" href="index.html">&laquo; Jkop 20181127</a><div class="intro">
+<h1><span class="keyword">class</span> <span class="symbol">capex.http.HTTPClientOperation</span></h1>
+<p></p>
+</div>
+<div class="list">
+<div class="title">Base Types</div>
+<div class="entry">
+<div class="name"><span class="keyword">extends</span> <a class="datatype" href="capex.http.HTTPClient.html">capex.http.HTTPClient</a></div></div>
+</div>
+<div class="list">
+<div class="title">Instance Methods</div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">openConnection</span> ( protocol <span class="keyword">as</span> <span class="datatype">string</span> , address <span class="keyword">as</span> <span class="datatype">string</span> , aport <span class="keyword">as</span> <span class="datatype">int</span> , listener <span class="keyword">as</span> <a class="datatype" href="capex.http.HTTPClientListener.html">capex.http.HTTPClientListener</a> ) <span class="keyword">as</span> <span class="datatype">bool</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">openConnection</span> ( request <span class="keyword">as</span> <a class="datatype" href="capex.http.HTTPClientRequest.html">capex.http.HTTPClientRequest</a> , listener <span class="keyword">as</span> <a class="datatype" href="capex.http.HTTPClientListener.html">capex.http.HTTPClientListener</a> ) <span class="keyword">as</span> <span class="datatype">bool</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">closeConnection</span> ( listener <span class="keyword">as</span> <a class="datatype" href="capex.http.HTTPClientListener.html">capex.http.HTTPClientListener</a> ) <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">sendRequest</span> ( request <span class="keyword">as</span> <a class="datatype" href="capex.http.HTTPClientRequest.html">capex.http.HTTPClientRequest</a> , listener <span class="keyword">as</span> <a class="datatype" href="capex.http.HTTPClientListener.html">capex.http.HTTPClientListener</a> ) <span class="keyword">as</span> <span class="datatype">bool</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">readResponse</span> ( listener <span class="keyword">as</span> <a class="datatype" href="capex.http.HTTPClientListener.html">capex.http.HTTPClientListener</a> , timeout <span class="keyword">as</span> <span class="datatype">int</span> ) <span class="keyword">as</span> <span class="datatype">bool</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">executeRequest</span> ( request <span class="keyword">as</span> <a class="datatype" href="capex.http.HTTPClientRequest.html">capex.http.HTTPClientRequest</a> , listener <span class="keyword">as</span> <a class="datatype" href="capex.http.HTTPClientListener.html">capex.http.HTTPClientListener</a> ) <span class="modifier">override</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getDefaultUserAgent</span> <span class="keyword">as</span> <span class="datatype">string</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setDefaultUserAgent</span> ( v <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="keyword">as</span> <a class="datatype" href="capex.http.HTTPClientOperation.html">capex.http.HTTPClientOperation</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getAcceptInvalidCertificate</span> <span class="keyword">as</span> <span class="datatype">bool</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setAcceptInvalidCertificate</span> ( v <span class="keyword">as</span> <span class="datatype">bool</span> ) <span class="keyword">as</span> <a class="datatype" href="capex.http.HTTPClientOperation.html">capex.http.HTTPClientOperation</a></div></div>
+</div>
+</div>
+</body>
+</html>

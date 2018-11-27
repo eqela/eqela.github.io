@@ -1,0 +1,113 @@
+<html>
+<head>
+<title>cape.ProcessLauncher | Jkop 20181127</title>
+<link rel="stylesheet" type="text/css" href="style.css" />
+<meta name="viewport" content="initial-scale=1,maximum-scale=1" />
+<meta property="og:description" content="The ProcessLauncher class provides a mechanism for starting and controlling additional processes." />
+<meta property="og:title" content="cape.ProcessLauncher | Jkop 20181127" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:description" content="The ProcessLauncher class provides a mechanism for starting and controlling additional processes." />
+</head>
+<body><div class="content">
+<a class="back" href="index.html">&laquo; Jkop 20181127</a><div class="intro">
+<h1><span class="keyword">class</span> <span class="symbol">cape.ProcessLauncher</span></h1>
+<p>The ProcessLauncher class provides a mechanism for starting and controlling additional processes.</p>
+</div>
+<div class="list">
+<div class="title">Base Types</div>
+<div class="entry">
+<div class="name"><span class="keyword">implements</span> <a class="datatype" href="cape.StringObject.html">cape.StringObject</a></div></div>
+</div>
+<div class="list">
+<div class="title">Static Methods</div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">forSelf</span> <span class="keyword">as</span> <a class="datatype" href="cape.ProcessLauncher.html">cape.ProcessLauncher</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">forFile</span> ( file <span class="keyword">as</span> <a class="datatype" href="cape.File.html">cape.File</a> , params <span class="keyword">as</span> <span class="datatype">array&lt;object&gt;</span> ) <span class="keyword">as</span> <a class="datatype" href="cape.ProcessLauncher.html">cape.ProcessLauncher</a></div><div class="description">Creates a launcher for the given executable file. If the file does not exist, this method returns a null object instead.</div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">forCommand</span> ( command <span class="keyword">as</span> <span class="datatype">string</span> , params <span class="keyword">as</span> <span class="datatype">array&lt;object&gt;</span> ) <span class="keyword">as</span> <a class="datatype" href="cape.ProcessLauncher.html">cape.ProcessLauncher</a></div><div class="description">Creates a process launcher for the given command. The command can either be a full or relative path to an executable file or, if not, a matching executable file will be searched for in the PATH environment variable (or through other applicable standard means on the given platform), and an appropriately configured ProcessLauncher object will be returned. However, if the given command is not found, this method returns null.</div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">forString</span> ( str <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="keyword">as</span> <a class="datatype" href="cape.ProcessLauncher.html">cape.ProcessLauncher</a></div><div class="description">Creates a new process launcher object for the given string, which includes a complete command line for executing the process, including the command itself and all the parameters, delimited with spaces. If parameters will need to contain space as part of their value, those parameters can be enclosed in double quotes. This method will return null if the command does not exist and/or is not found.</div></div>
+</div>
+<div class="list">
+<div class="title">Instance Methods</div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getFullCommandString</span> ( includeEnv <span class="keyword">as</span> <span class="datatype">bool</span> ) <span class="keyword">as</span> <span class="datatype">string</span></div><div class="description">Produces a string representation of this command with the command itself, parameters and environment variables included.</div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">toString</span> <span class="keyword">as</span> <span class="datatype">string</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">addToParams</span> ( arg <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="keyword">as</span> <a class="datatype" href="cape.ProcessLauncher.html">cape.ProcessLauncher</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">addToParams</span> ( file <span class="keyword">as</span> <a class="datatype" href="cape.File.html">cape.File</a> ) <span class="keyword">as</span> <a class="datatype" href="cape.ProcessLauncher.html">cape.ProcessLauncher</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">addToParams</span> ( params <span class="keyword">as</span> <span class="datatype">vector&lt;string&gt;</span> ) <span class="keyword">as</span> <a class="datatype" href="cape.ProcessLauncher.html">cape.ProcessLauncher</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setEnvVariable</span> ( key <span class="keyword">as</span> <span class="datatype">string</span> , val <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">start</span> <span class="keyword">as</span> <a class="datatype" href="cape.Process.html">cape.Process</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">startWithIO</span> <span class="keyword">as</span> <a class="datatype" href="cape.ProcessWithIO.html">cape.ProcessWithIO</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">execute</span> <span class="keyword">as</span> <span class="datatype">int</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">executeSilent</span> <span class="keyword">as</span> <span class="datatype">int</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">executeToStringBuilder</span> ( output <span class="keyword">as</span> <a class="datatype" href="cape.StringBuilder.html">cape.StringBuilder</a> ) <span class="keyword">as</span> <span class="datatype">int</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">executeToString</span> <span class="keyword">as</span> <span class="datatype">string</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">executeToBuffer</span> <span class="keyword">as</span> <span class="datatype">buffer</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">executeToPipe</span> ( pipeHandler <span class="keyword">as</span> <a class="datatype" href="cape.BufferDataReceiver.html">cape.BufferDataReceiver</a> ) <span class="keyword">as</span> <span class="datatype">int</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getFile</span> <span class="keyword">as</span> <a class="datatype" href="cape.File.html">cape.File</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setFile</span> ( v <span class="keyword">as</span> <a class="datatype" href="cape.File.html">cape.File</a> ) <span class="keyword">as</span> <a class="datatype" href="cape.ProcessLauncher.html">cape.ProcessLauncher</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getParams</span> <span class="keyword">as</span> <span class="datatype">vector&lt;string&gt;</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setParams</span> ( v <span class="keyword">as</span> <span class="datatype">vector&lt;string&gt;</span> ) <span class="keyword">as</span> <a class="datatype" href="cape.ProcessLauncher.html">cape.ProcessLauncher</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getEnv</span> <span class="keyword">as</span> <span class="datatype">map&lt;string,string&gt;</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setEnv</span> ( v <span class="keyword">as</span> <span class="datatype">map&lt;string,string&gt;</span> ) <span class="keyword">as</span> <a class="datatype" href="cape.ProcessLauncher.html">cape.ProcessLauncher</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getCwd</span> <span class="keyword">as</span> <a class="datatype" href="cape.File.html">cape.File</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setCwd</span> ( v <span class="keyword">as</span> <a class="datatype" href="cape.File.html">cape.File</a> ) <span class="keyword">as</span> <a class="datatype" href="cape.ProcessLauncher.html">cape.ProcessLauncher</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getUid</span> <span class="keyword">as</span> <span class="datatype">int</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setUid</span> ( v <span class="keyword">as</span> <span class="datatype">int</span> ) <span class="keyword">as</span> <a class="datatype" href="cape.ProcessLauncher.html">cape.ProcessLauncher</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getGid</span> <span class="keyword">as</span> <span class="datatype">int</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setGid</span> ( v <span class="keyword">as</span> <span class="datatype">int</span> ) <span class="keyword">as</span> <a class="datatype" href="cape.ProcessLauncher.html">cape.ProcessLauncher</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getTrapSigint</span> <span class="keyword">as</span> <span class="datatype">bool</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setTrapSigint</span> ( v <span class="keyword">as</span> <span class="datatype">bool</span> ) <span class="keyword">as</span> <a class="datatype" href="cape.ProcessLauncher.html">cape.ProcessLauncher</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getReplaceSelf</span> <span class="keyword">as</span> <span class="datatype">bool</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setReplaceSelf</span> ( v <span class="keyword">as</span> <span class="datatype">bool</span> ) <span class="keyword">as</span> <a class="datatype" href="cape.ProcessLauncher.html">cape.ProcessLauncher</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getPipePty</span> <span class="keyword">as</span> <span class="datatype">bool</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setPipePty</span> ( v <span class="keyword">as</span> <span class="datatype">bool</span> ) <span class="keyword">as</span> <a class="datatype" href="cape.ProcessLauncher.html">cape.ProcessLauncher</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getStartGroup</span> <span class="keyword">as</span> <span class="datatype">bool</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setStartGroup</span> ( v <span class="keyword">as</span> <span class="datatype">bool</span> ) <span class="keyword">as</span> <a class="datatype" href="cape.ProcessLauncher.html">cape.ProcessLauncher</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getNoCmdWindow</span> <span class="keyword">as</span> <span class="datatype">bool</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setNoCmdWindow</span> ( v <span class="keyword">as</span> <span class="datatype">bool</span> ) <span class="keyword">as</span> <a class="datatype" href="cape.ProcessLauncher.html">cape.ProcessLauncher</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getErrorBuffer</span> <span class="keyword">as</span> <a class="datatype" href="cape.StringBuilder.html">cape.StringBuilder</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setErrorBuffer</span> ( v <span class="keyword">as</span> <a class="datatype" href="cape.StringBuilder.html">cape.StringBuilder</a> ) <span class="keyword">as</span> <a class="datatype" href="cape.ProcessLauncher.html">cape.ProcessLauncher</a></div></div>
+</div>
+</div>
+</body>
+</html>
