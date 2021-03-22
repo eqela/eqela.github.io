@@ -1,0 +1,33 @@
+{
+	"moduleDescription" : "Classes for encoding, parsing and manipulating files and contents in the\nJSON format.\n",
+	"type" : "module",
+	"moduleTitle" : "JSON handling",
+	"moduleId" : "jk.json",
+	"entities" : [
+		{
+			"type" : "class",
+			"name" : "JSONParser",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "JSONEncoder",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "JSONObjectAdapter",
+			"description" : ""
+		},
+		{
+			"type" : "interface",
+			"name" : "JSONObject",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "JSONObjectAdapterExplicit",
+			"description" : ""
+		}
+	]
+}

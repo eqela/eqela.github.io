@@ -1,0 +1,60 @@
+<html>
+<head>
+<title>jk.lang.Range | JK Core [0.37.0] - API Reference</title>
+<link rel="stylesheet" type="text/css" href="style.css" />
+<meta name="viewport" content="initial-scale=1,maximum-scale=1" />
+<meta property="og:description" content="jk.lang.Range | JK Core [0.37.0] - API Reference" />
+<meta property="og:title" content="jk.lang.Range | JK Core [0.37.0] - API Reference" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:description" content="jk.lang.Range | JK Core [0.37.0] - API Reference" />
+</head>
+<body><div class="content">
+<a class="back" href="index.html">&laquo; JK Core [0.37.0]</a><div class="intro">
+<h1><span class="keyword">class</span> <span class="symbol">jk.lang.Range</span></h1>
+<p></p>
+</div>
+<div class="list">
+<div class="title">Base Types</div>
+<div class="entry">
+<div class="name"><span class="keyword">implements</span> <a class="datatype" href="jk.lang.Iterateable.html">jk.lang.Iterateable&lt;int&gt;</a></div></div>
+</div>
+<div class="list">
+<div class="title">Constants</div>
+<div class="entry">
+<div class="name"><span class="keyword">const</span> <span class="symbol">TYPE_NONE</span> <span class="keyword">as</span> <span class="datatype">var</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">const</span> <span class="symbol">TYPE_EXCLUDE_UPPER_BOUND</span> <span class="keyword">as</span> <span class="datatype">var</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">const</span> <span class="symbol">TYPE_EXCLUDE_LOWER_BOUND</span> <span class="keyword">as</span> <span class="datatype">var</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">const</span> <span class="symbol">TYPE_EXCLUDE_BOTH_BOUNDS</span> <span class="keyword">as</span> <span class="datatype">var</span></div></div>
+</div>
+<div class="list">
+<div class="title">Static Methods</div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">forIntegerValues</span> ( lowerBound <span class="keyword">as</span> <span class="datatype">int</span> , upperBound <span class="keyword">as</span> <span class="datatype">int</span> , exclusionType <span class="keyword">as</span> <span class="datatype">int</span> ) <span class="modifier">static</span> <span class="keyword">as</span> <a class="datatype" href="jk.lang.Range.html">jk.lang.Range</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">forDoubleValues</span> ( lowerBound <span class="keyword">as</span> <span class="datatype">double</span> , upperBound <span class="keyword">as</span> <span class="datatype">double</span> , exclusionType <span class="keyword">as</span> <span class="datatype">int</span> ) <span class="modifier">static</span> <span class="keyword">as</span> <a class="datatype" href="jk.lang.Range.html">jk.lang.Range</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">forValues</span> ( lowerBound <span class="keyword">as</span> <span class="datatype">dynamic</span> , upperBound <span class="keyword">as</span> <span class="datatype">dynamic</span> , exclusionType <span class="keyword">as</span> <span class="datatype">int</span> ) <span class="modifier">static</span> <span class="keyword">as</span> <a class="datatype" href="jk.lang.Range.html">jk.lang.Range</a></div></div>
+</div>
+<div class="list">
+<div class="title">Instance Methods</div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getLowerBoundAsInteger</span> <span class="keyword">as</span> <span class="datatype">int</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getLowerBoundAsDouble</span> <span class="keyword">as</span> <span class="datatype">double</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getUpperBoundAsInteger</span> <span class="keyword">as</span> <span class="datatype">int</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getUpperBoundAsDouble</span> <span class="keyword">as</span> <span class="datatype">double</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">containsIntegerValue</span> ( value <span class="keyword">as</span> <span class="datatype">int</span> ) <span class="keyword">as</span> <span class="datatype">bool</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">containsDoubleValue</span> ( value <span class="keyword">as</span> <span class="datatype">double</span> ) <span class="keyword">as</span> <span class="datatype">bool</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">iterate</span> <span class="keyword">as</span> <a class="datatype" href="jk.lang.Iterator.html">jk.lang.Iterator&lt;int&gt;</a></div></div>
+</div>
+</div>
+</body>
+</html>

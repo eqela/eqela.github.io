@@ -1,0 +1,46 @@
+class name jk.data.tests.CharacterDecoderTests header extends jk.test.UnitTest public
+{
+	import jk.lang
+	import jk.log
+	import jk.test
+	import jk.json
+	ctor
+	func testCharacterDecoderMethods
+	func execute override as bool
+}
+class name jk.data.tests.Base64Tests header extends jk.test.UnitTest public
+{
+	import jk.lang
+	import jk.log
+	import jk.test
+	import jk.base64
+	ctor
+	func testBase64Encoding
+	func testBase64Decoding
+	func execute override as bool
+}
+class name jk.data.tests.MD5EncoderTests header extends jk.test.UnitTest public
+{
+	import jk.lang
+	import jk.log
+	import jk.md5
+	import jk.test
+	ctor
+	func testMD5Encoder
+	func execute override as bool
+}
+class name jk.data.tests.SHAEncoderTests header extends jk.test.UnitTest public
+{
+	import jk.lang
+	import jk.log
+	import jk.sha
+	import jk.test
+	ctor
+	func testSHAEncoder
+	func execute override as bool
+}
+class name jk.data.tests.TestMain header public
+{
+	import jk.lang
+	ctor
+}

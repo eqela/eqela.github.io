@@ -1,0 +1,18 @@
+{
+	"moduleDescription" : "",
+	"type" : "module",
+	"moduleTitle" : "",
+	"moduleId" : "jk.render",
+	"entities" : [
+		{
+			"type" : "interface",
+			"name" : "Renderer",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "RenderingContext",
+			"description" : ""
+		}
+	]
+}

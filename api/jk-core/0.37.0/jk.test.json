@@ -1,0 +1,23 @@
+{
+	"moduleDescription" : "Base classes and framework for implementing unit tests.\n",
+	"type" : "module",
+	"moduleTitle" : "Unit testing framework",
+	"moduleId" : "jk.test",
+	"entities" : [
+		{
+			"type" : "class",
+			"name" : "UnitTest",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "FailedAssertionException",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "TestSet",
+			"description" : ""
+		}
+	]
+}

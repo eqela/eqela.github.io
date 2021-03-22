@@ -1,0 +1,110 @@
+<html>
+<head>
+<title>jk.console.ConsoleApplicationContext | JK Core [0.37.0] - API Reference</title>
+<link rel="stylesheet" type="text/css" href="style.css" />
+<meta name="viewport" content="initial-scale=1,maximum-scale=1" />
+<meta property="og:description" content="An implementation of ApplicationContext that represents a command line
+application intended to be used on a text mode terminal." />
+<meta property="og:title" content="jk.console.ConsoleApplicationContext | JK Core [0.37.0] - API Reference" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:description" content="An implementation of ApplicationContext that represents a command line
+application intended to be used on a text mode terminal." />
+</head>
+<body><div class="content">
+<a class="back" href="index.html">&laquo; JK Core [0.37.0]</a><div class="intro">
+<h1><span class="keyword">class</span> <span class="symbol">jk.console.ConsoleApplicationContext</span></h1>
+<p>An implementation of ApplicationContext that represents a command line
+application intended to be used on a text mode terminal.</p>
+</div>
+<div class="list">
+<div class="title">Base Types</div>
+<div class="entry">
+<div class="name"><span class="keyword">implements</span> <a class="datatype" href="jk.app.ApplicationContext.html">jk.app.ApplicationContext</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">implements</span> <a class="datatype" href="jk.log.LoggingContext.html">jk.log.LoggingContext</a></div></div>
+</div>
+<div class="list">
+<div class="title">Static Methods</div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">forApplicationName</span> ( name <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="modifier">static</span> <span class="keyword">as</span> <a class="datatype" href="jk.console.ConsoleApplicationContext.html">jk.console.ConsoleApplicationContext</a></div></div>
+</div>
+<div class="list">
+<div class="title">Instance Methods</div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">isInDebugMode</span> <span class="keyword">as</span> <span class="datatype">bool</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setEnableDebugMessages</span> ( v <span class="keyword">as</span> <span class="datatype">bool</span> ) <span class="keyword">as</span> <a class="datatype" href="jk.console.ConsoleApplicationContext.html">jk.console.ConsoleApplicationContext</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">useApplicationNameAsPrefix</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">resetCounters</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getErrorCount</span> <span class="keyword">as</span> <span class="datatype">int</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getWarningCount</span> <span class="keyword">as</span> <span class="datatype">int</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getInfoCount</span> <span class="keyword">as</span> <span class="datatype">int</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getDebugCount</span> <span class="keyword">as</span> <span class="datatype">int</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">logError</span> ( message <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">logWarning</span> ( message <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">logInfo</span> ( message <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">logDebug</span> ( message <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">logStatus</span> ( message <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getApplicationDataDirectory</span> <span class="keyword">as</span> <a class="datatype" href="jk.fs.File.html">jk.fs.File</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getApplicationDataDirectoryForAppId</span> ( appId <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="keyword">as</span> <a class="datatype" href="jk.fs.File.html">jk.fs.File</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getApplicationName</span> <span class="keyword">as</span> <span class="datatype">string</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setApplicationName</span> ( v <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="keyword">as</span> <a class="datatype" href="jk.console.ConsoleApplicationContext.html">jk.console.ConsoleApplicationContext</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getEnableColor</span> <span class="keyword">as</span> <span class="datatype">bool</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setEnableColor</span> ( v <span class="keyword">as</span> <span class="datatype">bool</span> ) <span class="keyword">as</span> <a class="datatype" href="jk.console.ConsoleApplicationContext.html">jk.console.ConsoleApplicationContext</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getDumbMode</span> <span class="keyword">as</span> <span class="datatype">bool</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setDumbMode</span> ( v <span class="keyword">as</span> <span class="datatype">bool</span> ) <span class="keyword">as</span> <a class="datatype" href="jk.console.ConsoleApplicationContext.html">jk.console.ConsoleApplicationContext</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getShowInfo</span> <span class="keyword">as</span> <span class="datatype">bool</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setShowInfo</span> ( v <span class="keyword">as</span> <span class="datatype">bool</span> ) <span class="keyword">as</span> <a class="datatype" href="jk.console.ConsoleApplicationContext.html">jk.console.ConsoleApplicationContext</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getShowWarning</span> <span class="keyword">as</span> <span class="datatype">bool</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setShowWarning</span> ( v <span class="keyword">as</span> <span class="datatype">bool</span> ) <span class="keyword">as</span> <a class="datatype" href="jk.console.ConsoleApplicationContext.html">jk.console.ConsoleApplicationContext</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getShowError</span> <span class="keyword">as</span> <span class="datatype">bool</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setShowError</span> ( v <span class="keyword">as</span> <span class="datatype">bool</span> ) <span class="keyword">as</span> <a class="datatype" href="jk.console.ConsoleApplicationContext.html">jk.console.ConsoleApplicationContext</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getShowDebug</span> <span class="keyword">as</span> <span class="datatype">bool</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setShowDebug</span> ( v <span class="keyword">as</span> <span class="datatype">bool</span> ) <span class="keyword">as</span> <a class="datatype" href="jk.console.ConsoleApplicationContext.html">jk.console.ConsoleApplicationContext</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getEnableStatus</span> <span class="keyword">as</span> <span class="datatype">bool</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setEnableStatus</span> ( v <span class="keyword">as</span> <span class="datatype">bool</span> ) <span class="keyword">as</span> <a class="datatype" href="jk.console.ConsoleApplicationContext.html">jk.console.ConsoleApplicationContext</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getEnableOutput</span> <span class="keyword">as</span> <span class="datatype">bool</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setEnableOutput</span> ( v <span class="keyword">as</span> <span class="datatype">bool</span> ) <span class="keyword">as</span> <a class="datatype" href="jk.console.ConsoleApplicationContext.html">jk.console.ConsoleApplicationContext</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getAutoClearStatus</span> <span class="keyword">as</span> <span class="datatype">bool</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setAutoClearStatus</span> ( v <span class="keyword">as</span> <span class="datatype">bool</span> ) <span class="keyword">as</span> <a class="datatype" href="jk.console.ConsoleApplicationContext.html">jk.console.ConsoleApplicationContext</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getCurrentPrefix</span> <span class="keyword">as</span> <span class="datatype">string</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setCurrentPrefix</span> ( v <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="keyword">as</span> <a class="datatype" href="jk.console.ConsoleApplicationContext.html">jk.console.ConsoleApplicationContext</a></div></div>
+</div>
+</div>
+</body>
+</html>

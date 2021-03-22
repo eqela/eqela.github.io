@@ -1,0 +1,28 @@
+class name jk.widget.calendar.CalendarWidget header extends jk.widget.LayerWidget public #widget
+{
+	import jk.lang
+	import jk.lang
+	import jk.ui
+	import jk.gfx
+	import jk.widget
+	import jk.math
+	import jk.time
+	import jk.widget.common
+	ctor(ctx as jk.ui.GuiApplicationContext)
+	func setWidgetStyle(style as string) as jk.widget.calendar.CalendarWidget
+	func updateWidgetStyle
+	func initializeWidget override
+	func setClickHandlers
+	func updateCalendarView(month as int, year as int, day as int)
+	func updateSelectedDay(index as int)
+	func getWeekNames as array<string>
+	func getMonths as array<string>
+	func getFirstDay(month as int, year as int) as int
+	func getNumberOfDays(month as int, year as int) as int
+	func isLeapYear(year as int) as bool
+	func createWidget override
+	func getWidgetOnClickHandler as function<void,int,int,int> #getterMethod
+	func setWidgetOnClickHandler(v as function<void,int,int,int>) as jk.widget.calendar.CalendarWidget #setterMethod
+	func getWidgetDisablePreviousDays as bool #getterMethod
+	func setWidgetDisablePreviousDays(v as bool) as jk.widget.calendar.CalendarWidget #setterMethod
+}

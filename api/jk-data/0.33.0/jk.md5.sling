@@ -1,0 +1,30 @@
+class name jk.md5.MD5Encoder header public
+{
+	import jk.lang
+	ctor
+	func encodeBuffer(buffer as buffer) static as string
+	func encodeString(string as string) static as string
+	func encodeObject(obj as object) static as string
+}
+class name jk.md5.MD5EncoderGeneric header public
+{
+	import jk.lang
+	ctor
+	func encode(buf as buffer) as string
+	func toMD5(input as buffer) as buffer
+	func stringToHex(input as buffer) as string
+	func md5(input as array<int>, len as int) as array<int>
+	func getMaxLength(dm as jk.lang.DynamicMap) as int
+	func rstr2binl(input as buffer) as array<int>
+	func binl2rstr(input as array<int>) as buffer
+	func addUnsigned(x as int, y as int) as int
+	func rotateLeft(num as int, cnt as int) as int
+	func cmn(q as int, a as int, b as int, x as int, s as int, t as int) as int
+	func ff(a as int, b as int, c as int, d as int, x as int, s as int, t as int) as int
+	func gg(a as int, b as int, c as int, d as int, x as int, s as int, t as int) as int
+	func hh(a as int, b as int, c as int, d as int, x as int, s as int, t as int) as int
+	func ii(a as int, b as int, c as int, d as int, x as int, s as int, t as int) as int
+	func dictionary2array(dic as jk.lang.DynamicMap) as array<int>
+	func unwrap(value as int, fallback as int = 0) as int
+	func zeroFillRightShift(num as int, count as int) as int
+}

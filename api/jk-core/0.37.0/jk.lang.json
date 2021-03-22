@@ -1,0 +1,358 @@
+{
+	"moduleDescription" : "Provides the core fundamental language features such as data structures, data types, string manipulation, etc.\n",
+	"type" : "module",
+	"moduleTitle" : "Common language features",
+	"moduleId" : "jk.lang",
+	"entities" : [
+		{
+			"type" : "class",
+			"name" : "Stack",
+			"description" : ""
+		},
+		{
+			"type" : "interface",
+			"name" : "EventLoop",
+			"description" : ""
+		},
+		{
+			"type" : "interface",
+			"name" : "DynamicMapObject",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "KeyValuePair",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "Buffer",
+			"description" : "The Buffer class provides convenience methods for dealing with data buffers (arbitrary sequences of bytes)."
+		},
+		{
+			"type" : "class",
+			"name" : "BitOp",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "CharacterIteratorForString",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "Character",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "String",
+			"description" : "The String class provides all the common string manipulation functions, including comparisons, concatenation, transformations to upper and lowercase, getting substrings, finding characters or substrings, splitting the strings, converting to byte buffers, etc."
+		},
+		{
+			"type" : "interface",
+			"name" : "StringIterator",
+			"description" : ""
+		},
+		{
+			"type" : "interface",
+			"name" : "MapObject",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "DynamicObject",
+			"description" : ""
+		},
+		{
+			"type" : "interface",
+			"name" : "DoubleObject",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "ObjectWrapper",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "Vector",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "Integer",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "KeyValueListForStrings",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "CharacterDecoder",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "Boolean",
+			"description" : "The Boolean class provides convenience methods for dealing with boolean values (either true or false)."
+		},
+		{
+			"type" : "class",
+			"name" : "Map",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "Error",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "ExceptionWithString",
+			"description" : ""
+		},
+		{
+			"type" : "interface",
+			"name" : "BufferDataReceiver",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "BufferBuilder",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "DateTime",
+			"description" : ""
+		},
+		{
+			"type" : "interface",
+			"name" : "ArrayObject",
+			"description" : "An object that holds (or can be converted to) an array."
+		},
+		{
+			"type" : "interface",
+			"name" : "DynamicIterator",
+			"description" : ""
+		},
+		{
+			"type" : "interface",
+			"name" : "Duplicateable",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "Serializer",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "Set",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "StringBuilder",
+			"description" : ""
+		},
+		{
+			"type" : "interface",
+			"name" : "Iterateable",
+			"description" : ""
+		},
+		{
+			"type" : "interface",
+			"name" : "DoubleIterator",
+			"description" : ""
+		},
+		{
+			"type" : "interface",
+			"name" : "LongIntegerObject",
+			"description" : ""
+		},
+		{
+			"type" : "interface",
+			"name" : "ObjectWithSize",
+			"description" : ""
+		},
+		{
+			"type" : "interface",
+			"name" : "Closable",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "Matrix",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "DynamicMap",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "ExceptionWithError",
+			"description" : ""
+		},
+		{
+			"type" : "interface",
+			"name" : "CharacterObject",
+			"description" : ""
+		},
+		{
+			"type" : "interface",
+			"name" : "StringObject",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "Array",
+			"description" : "The Array class provides convenience methods for dealing with static array objects. For dynamic array support, use vectors instead."
+		},
+		{
+			"type" : "class",
+			"name" : "Exception",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "StackTrace",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "Range",
+			"description" : ""
+		},
+		{
+			"type" : "interface",
+			"name" : "BooleanObject",
+			"description" : "An object that holds (or can be converted to) a boolean value (true or false)."
+		},
+		{
+			"type" : "class",
+			"name" : "VariableReference",
+			"description" : ""
+		},
+		{
+			"type" : "interface",
+			"name" : "BufferObject",
+			"description" : ""
+		},
+		{
+			"type" : "interface",
+			"name" : "LongIntegerIterator",
+			"description" : ""
+		},
+		{
+			"type" : "interface",
+			"name" : "Task",
+			"description" : ""
+		},
+		{
+			"type" : "interface",
+			"name" : "Runnable",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "StringSet",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "CharacterIteratorForBuffer",
+			"description" : ""
+		},
+		{
+			"type" : "interface",
+			"name" : "CharacterIterator",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "RunnableFunction",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "Double",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "KeyValueList",
+			"description" : ""
+		},
+		{
+			"type" : "interface",
+			"name" : "Iterator",
+			"description" : ""
+		},
+		{
+			"type" : "interface",
+			"name" : "StringObjectWithDebug",
+			"description" : ""
+		},
+		{
+			"type" : "interface",
+			"name" : "VectorObject",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "DynamicVector",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "TimeValue",
+			"description" : ""
+		},
+		{
+			"type" : "interface",
+			"name" : "IntegerObject",
+			"description" : ""
+		},
+		{
+			"type" : "interface",
+			"name" : "StringDataReceiver",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "LongInteger",
+			"description" : ""
+		},
+		{
+			"type" : "interface",
+			"name" : "IntegerIterator",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "LogicOp",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "Reflection",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "Queue",
+			"description" : ""
+		},
+		{
+			"type" : "interface",
+			"name" : "BooleanIterator",
+			"description" : "A BooleanIterator object iterates over a sequence of values that are all of the boolean data type (either true or false)."
+		}
+	]
+}

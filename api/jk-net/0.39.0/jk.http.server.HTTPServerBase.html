@@ -1,0 +1,80 @@
+<html>
+<head>
+<title>jk.http.server.HTTPServerBase | JK Net [0.39.0] - API Reference</title>
+<link rel="stylesheet" type="text/css" href="style.css" />
+<meta name="viewport" content="initial-scale=1,maximum-scale=1" />
+<meta property="og:description" content="jk.http.server.HTTPServerBase | JK Net [0.39.0] - API Reference" />
+<meta property="og:title" content="jk.http.server.HTTPServerBase | JK Net [0.39.0] - API Reference" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:description" content="jk.http.server.HTTPServerBase | JK Net [0.39.0] - API Reference" />
+</head>
+<body><div class="content">
+<a class="back" href="index.html">&laquo; JK Net [0.39.0]</a><div class="intro">
+<h1><span class="keyword">class</span> <span class="symbol">jk.http.server.HTTPServerBase</span></h1>
+<p></p>
+</div>
+<div class="list">
+<div class="title">Base Types</div>
+<div class="entry">
+<div class="name"><span class="keyword">extends</span> <a class="datatype" href="jk.server.NetworkServer.html">jk.server.NetworkServer</a></div></div>
+</div>
+<div class="list">
+<div class="title">Instance Methods</div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">createConnectionObject</span> <span class="modifier">override</span> <span class="keyword">as</span> <a class="datatype" href="jk.server.NetworkConnection.html">jk.server.NetworkConnection</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">onRefresh</span> <span class="modifier">virtual</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">onTimeoutTimer</span> <span class="keyword">as</span> <span class="datatype">bool</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">onMaintenanceTimer</span> <span class="keyword">as</span> <span class="datatype">bool</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">onMaintenance</span> <span class="modifier">virtual</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">startTimer</span> ( delay <span class="keyword">as</span> <span class="datatype">long</span> , handler <span class="keyword">as</span> <span class="datatype">function&lt;bool&gt;</span> ) <span class="keyword">as</span> <a class="datatype" href="jk.socket.io.IOManagerTimer.html">jk.socket.io.IOManagerTimer</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">initialize</span> <span class="modifier">override</span> <span class="keyword">as</span> <span class="datatype">bool</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">cleanup</span> <span class="modifier">override</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">createOptionsResponse</span> ( req <span class="keyword">as</span> <a class="datatype" href="jk.http.server.HTTPServerRequest.html">jk.http.server.HTTPServerRequest</a> ) <span class="modifier">virtual</span> <span class="keyword">as</span> <a class="datatype" href="jk.http.server.HTTPServerResponse.html">jk.http.server.HTTPServerResponse</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">onRequest</span> ( req <span class="keyword">as</span> <a class="datatype" href="jk.http.server.HTTPServerRequest.html">jk.http.server.HTTPServerRequest</a> ) <span class="modifier">virtual</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">handleIncomingRequest</span> ( req <span class="keyword">as</span> <a class="datatype" href="jk.http.server.HTTPServerRequest.html">jk.http.server.HTTPServerRequest</a> ) <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">sendResponse</span> ( connection <span class="keyword">as</span> <a class="datatype" href="jk.http.server.HTTPServerConnection.html">jk.http.server.HTTPServerConnection</a> , req <span class="keyword">as</span> <a class="datatype" href="jk.http.server.HTTPServerRequest.html">jk.http.server.HTTPServerRequest</a> , resp <span class="keyword">as</span> <a class="datatype" href="jk.http.server.HTTPServerResponse.html">jk.http.server.HTTPServerResponse</a> ) <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">startResponse</span> ( connection <span class="keyword">as</span> <a class="datatype" href="jk.http.server.HTTPServerConnection.html">jk.http.server.HTTPServerConnection</a> , req <span class="keyword">as</span> <a class="datatype" href="jk.http.server.HTTPServerRequest.html">jk.http.server.HTTPServerRequest</a> , resp <span class="keyword">as</span> <a class="datatype" href="jk.http.server.HTTPServerResponse.html">jk.http.server.HTTPServerResponse</a> ) <span class="keyword">as</span> <a class="datatype" href="jk.http.server.HTTPServerResponseSession.html">jk.http.server.HTTPServerResponseSession</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">startResponseWorker</span> ( worker <span class="keyword">as</span> <a class="datatype" href="jk.http.server.HTTPServerResponseWorker.html">jk.http.server.HTTPServerResponseWorker</a> ) <span class="keyword">as</span> <span class="datatype">bool</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">onRequestComplete</span> ( request <span class="keyword">as</span> <a class="datatype" href="jk.http.server.HTTPServerRequest.html">jk.http.server.HTTPServerRequest</a> , resp <span class="keyword">as</span> <a class="datatype" href="jk.http.server.HTTPServerResponse.html">jk.http.server.HTTPServerResponse</a> , bytesSent <span class="keyword">as</span> <span class="datatype">int</span> , remoteAddress <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="modifier">virtual</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getWriteBufferSize</span> <span class="keyword">as</span> <span class="datatype">int</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setWriteBufferSize</span> ( v <span class="keyword">as</span> <span class="datatype">int</span> ) <span class="keyword">as</span> <a class="datatype" href="jk.http.server.HTTPServerBase.html">jk.http.server.HTTPServerBase</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getSmallBodyLimit</span> <span class="keyword">as</span> <span class="datatype">int</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setSmallBodyLimit</span> ( v <span class="keyword">as</span> <span class="datatype">int</span> ) <span class="keyword">as</span> <a class="datatype" href="jk.http.server.HTTPServerBase.html">jk.http.server.HTTPServerBase</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getTimeoutDelay</span> <span class="keyword">as</span> <span class="datatype">int</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setTimeoutDelay</span> ( v <span class="keyword">as</span> <span class="datatype">int</span> ) <span class="keyword">as</span> <a class="datatype" href="jk.http.server.HTTPServerBase.html">jk.http.server.HTTPServerBase</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getMaintenanceTimerDelay</span> <span class="keyword">as</span> <span class="datatype">int</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setMaintenanceTimerDelay</span> ( v <span class="keyword">as</span> <span class="datatype">int</span> ) <span class="keyword">as</span> <a class="datatype" href="jk.http.server.HTTPServerBase.html">jk.http.server.HTTPServerBase</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getServerName</span> <span class="keyword">as</span> <span class="datatype">string</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setServerName</span> ( v <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="keyword">as</span> <a class="datatype" href="jk.http.server.HTTPServerBase.html">jk.http.server.HTTPServerBase</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getWorkerThreadPool</span> <span class="keyword">as</span> <a class="datatype" href="../../jk-core/0.37.0/jk.thread.ThreadPool.html">jk.thread.ThreadPool</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setWorkerThreadPool</span> ( v <span class="keyword">as</span> <a class="datatype" href="../../jk-core/0.37.0/jk.thread.ThreadPool.html">jk.thread.ThreadPool</a> ) <span class="keyword">as</span> <a class="datatype" href="jk.http.server.HTTPServerBase.html">jk.http.server.HTTPServerBase</a></div></div>
+</div>
+</div>
+</body>
+</html>

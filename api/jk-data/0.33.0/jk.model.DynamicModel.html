@@ -1,0 +1,91 @@
+<html>
+<head>
+<title>jk.model.DynamicModel | JK Data [0.33.0] - API Reference</title>
+<link rel="stylesheet" type="text/css" href="style.css" />
+<meta name="viewport" content="initial-scale=1,maximum-scale=1" />
+<meta property="og:description" content="jk.model.DynamicModel | JK Data [0.33.0] - API Reference" />
+<meta property="og:title" content="jk.model.DynamicModel | JK Data [0.33.0] - API Reference" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:description" content="jk.model.DynamicModel | JK Data [0.33.0] - API Reference" />
+</head>
+<body><div class="content">
+<a class="back" href="index.html">&laquo; JK Data [0.33.0]</a><div class="intro">
+<h1><span class="keyword">class</span> <span class="symbol">jk.model.DynamicModel</span></h1>
+<p></p>
+</div>
+<div class="list">
+<div class="title">Base Types</div>
+<div class="entry">
+<div class="name"><span class="keyword">implements</span> <a class="datatype" href="jk.json.JSONObject.html">jk.json.JSONObject</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">implements</span> <a class="datatype" href="../../jk-core/0.37.0/jk.lang.StringObject.html">jk.lang.StringObject</a></div></div>
+</div>
+<div class="list">
+<div class="title">Static Methods</div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">asDynamicMap</span> ( object <span class="keyword">as</span> <a class="datatype" href="jk.model.DynamicModel.html">jk.model.DynamicModel</a> ) <span class="modifier">static</span> <span class="keyword">as</span> <a class="datatype" href="../../jk-core/0.37.0/jk.lang.DynamicMap.html">jk.lang.DynamicMap</a></div></div>
+</div>
+<div class="list">
+<div class="title">Instance Methods</div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">toString</span> <span class="keyword">as</span> <span class="datatype">string</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">toDynamicMap</span> <span class="keyword">as</span> <a class="datatype" href="../../jk-core/0.37.0/jk.lang.DynamicMap.html">jk.lang.DynamicMap</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">fromDynamicMap</span> ( data <span class="keyword">as</span> <a class="datatype" href="../../jk-core/0.37.0/jk.lang.DynamicMap.html">jk.lang.DynamicMap</a> ) <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">toJsonObject</span> <span class="keyword">as</span> <span class="datatype">object</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setField</span> ( name <span class="keyword">as</span> <span class="datatype">string</span> , value <span class="keyword">as</span> <span class="datatype">object</span> ) <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getField</span> ( name <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="keyword">as</span> <span class="datatype">object</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getOrCreateFieldAsDynamicVector</span> ( name <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="keyword">as</span> <a class="datatype" href="../../jk-core/0.37.0/jk.lang.DynamicVector.html">jk.lang.DynamicVector</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getFieldAsDynamicVector</span> ( name <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="keyword">as</span> <a class="datatype" href="../../jk-core/0.37.0/jk.lang.DynamicVector.html">jk.lang.DynamicVector</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getFieldAsStringVector</span> ( name <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="keyword">as</span> <span class="datatype">vector&lt;string&gt;</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getFieldAsIntegerVector</span> ( name <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="keyword">as</span> <span class="datatype">vector&lt;int&gt;</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getFieldAsLongIntegerVector</span> ( name <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="keyword">as</span> <span class="datatype">vector&lt;long&gt;</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getFieldAsDoubleVector</span> ( name <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="keyword">as</span> <span class="datatype">vector&lt;double&gt;</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getFieldAsBooleanVector</span> ( name <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="keyword">as</span> <span class="datatype">vector&lt;bool&gt;</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">addStringToVectorField</span> ( field <span class="keyword">as</span> <span class="datatype">string</span> , value <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">addIntegerToVectorField</span> ( field <span class="keyword">as</span> <span class="datatype">string</span> , value <span class="keyword">as</span> <span class="datatype">int</span> ) <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">addLongIntegerToVectorField</span> ( field <span class="keyword">as</span> <span class="datatype">string</span> , value <span class="keyword">as</span> <span class="datatype">long</span> ) <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">addDoubleToVectorField</span> ( field <span class="keyword">as</span> <span class="datatype">string</span> , value <span class="keyword">as</span> <span class="datatype">double</span> ) <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">addBooleanToVectorField</span> ( field <span class="keyword">as</span> <span class="datatype">string</span> , value <span class="keyword">as</span> <span class="datatype">bool</span> ) <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">addBufferToVectorField</span> ( field <span class="keyword">as</span> <span class="datatype">string</span> , value <span class="keyword">as</span> <span class="datatype">buffer</span> ) <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">addObjectToVectorField</span> ( field <span class="keyword">as</span> <span class="datatype">string</span> , value <span class="keyword">as</span> <span class="datatype">object</span> ) <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">fromJsonObject</span> ( o <span class="keyword">as</span> <span class="datatype">object</span> ) <span class="keyword">as</span> <span class="datatype">bool</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">containsField</span> ( field <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="keyword">as</span> <span class="datatype">bool</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">hasValue</span> ( key <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="keyword">as</span> <span class="datatype">bool</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">removeNullValues</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">clear</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setAllFields</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getModelMetadata</span> <span class="modifier">virtual</span> <span class="keyword">as</span> <span class="datatype">string</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getFieldInformation</span> <span class="modifier">virtual</span> <span class="keyword">as</span> <span class="datatype">vector&lt;jk.model.DynamicModelField&gt;</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">copyFrom</span> ( other <span class="keyword">as</span> <a class="datatype" href="jk.model.DynamicModel.html">jk.model.DynamicModel</a> , mapping <span class="keyword">as</span> <a class="datatype" href="../../jk-core/0.37.0/jk.lang.DynamicMap.html">jk.lang.DynamicMap</a> ) <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+</div>
+</div>
+</body>
+</html>

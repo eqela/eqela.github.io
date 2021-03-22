@@ -1,0 +1,241 @@
+class name jk.ui.ApplicationData header public
+{
+	import jk.fs
+	import jk.gfx
+	import jk.lang
+	import jk.log
+	ctor
+	func getApplicationData(ctx as jk.ui.GuiApplicationContext) static as jk.fs.File
+	func retrieveFile(ctx as jk.ui.GuiApplicationContext, filename as string) static as jk.fs.File
+}
+interface name jk.ui.RouterListener header public
+{
+	import jk.fs
+	import jk.gfx
+	import jk.lang
+	func onRouteChanged(route as string)
+}
+interface name jk.ui.PointerListener header public
+{
+	import jk.fs
+	import jk.gfx
+	import jk.lang
+	func onPointerEvent(event as jk.ui.PointerEvent) as bool
+}
+class name jk.ui.KeyEvent header public
+{
+	import jk.fs
+	import jk.gfx
+	import jk.lang
+	ctor
+	var ACTION_NONE public static const as int
+	var ACTION_DOWN public static const as int
+	var ACTION_UP public static const as int
+	var KEY_NONE public static const as int
+	var KEY_SPACE public static const as int
+	var KEY_ENTER public static const as int
+	var KEY_TAB public static const as int
+	var KEY_ESCAPE public static const as int
+	var KEY_BACKSPACE public static const as int
+	var KEY_SHIFT public static const as int
+	var KEY_CONTROL public static const as int
+	var KEY_ALT public static const as int
+	var KEY_CAPSLOCK public static const as int
+	var KEY_NUMLOCK public static const as int
+	var KEY_LEFT public static const as int
+	var KEY_UP public static const as int
+	var KEY_RIGHT public static const as int
+	var KEY_DOWN public static const as int
+	var KEY_INSERT public static const as int
+	var KEY_DELETE public static const as int
+	var KEY_HOME public static const as int
+	var KEY_END public static const as int
+	var KEY_PAGEUP public static const as int
+	var KEY_PAGEDOWN public static const as int
+	var KEY_F1 public static const as int
+	var KEY_F2 public static const as int
+	var KEY_F3 public static const as int
+	var KEY_F4 public static const as int
+	var KEY_F5 public static const as int
+	var KEY_F6 public static const as int
+	var KEY_F7 public static const as int
+	var KEY_F8 public static const as int
+	var KEY_F9 public static const as int
+	var KEY_F10 public static const as int
+	var KEY_F11 public static const as int
+	var KEY_F12 public static const as int
+	var KEY_SUPER public static const as int
+	var KEY_BACK public static const as int
+	var isConsumed public as bool
+	func consume
+	func isKeyPress(key as int) as bool
+	func isKey(key as int) as bool
+	func isString(value as string) as bool
+	func isCharacter(value as char) as bool
+	func clear
+	func getAction as int #getterMethod
+	func setAction(v as int) as jk.ui.KeyEvent #setterMethod
+	func getKeyCode as int #getterMethod
+	func setKeyCode(v as int) as jk.ui.KeyEvent #setterMethod
+	func getStringValue as string #getterMethod
+	func setStringValue(v as string) as jk.ui.KeyEvent #setterMethod
+	func getShift as bool #getterMethod
+	func setShift(v as bool) as jk.ui.KeyEvent #setterMethod
+	func getControl as bool #getterMethod
+	func setControl(v as bool) as jk.ui.KeyEvent #setterMethod
+	func getCommand as bool #getterMethod
+	func setCommand(v as bool) as jk.ui.KeyEvent #setterMethod
+	func getAlt as bool #getterMethod
+	func setAlt(v as bool) as jk.ui.KeyEvent #setterMethod
+}
+class name jk.ui.ImageUtil header public
+{
+	import jk.fs
+	import jk.gfx
+	import jk.lang
+	import jk.math
+	ctor
+	func createCircularImageSync(m as jk.gfx.Image) static as jk.gfx.Image
+	func createCircularImage(oimage as jk.gfx.Image, callback as function<void,jk.gfx.Image>) static
+}
+class name jk.ui.Router header public
+{
+	import jk.fs
+	import jk.gfx
+	import jk.lang
+	import jk.url
+	ctor
+	func initialize(l as jk.ui.RouterListener) static
+	func goToDefault static
+	func go(route as string) static
+}
+interface name jk.ui.KeyListener header public
+{
+	import jk.fs
+	import jk.gfx
+	import jk.lang
+	func onKeyEvent(event as jk.ui.KeyEvent)
+}
+class name jk.ui.IOSDeviceInfo header public
+{
+	import jk.fs
+	import jk.gfx
+	import jk.lang
+	ctor
+	func forDetails(id as string, name as string, dpi as int) static as jk.ui.IOSDeviceInfo
+	func toString as string
+	func getId as string #getterMethod
+	func setId(v as string) as jk.ui.IOSDeviceInfo #setterMethod
+	func getName as string #getterMethod
+	func setName(v as string) as jk.ui.IOSDeviceInfo #setterMethod
+	func getDpi as int #getterMethod
+	func setDpi(v as int) as jk.ui.IOSDeviceInfo #setterMethod
+	func getScale as double #getterMethod
+	func setScale(v as double) as jk.ui.IOSDeviceInfo #setterMethod
+	func getScreenWidth as int #getterMethod
+	func setScreenWidth(v as int) as jk.ui.IOSDeviceInfo #setterMethod
+	func getScreenHeight as int #getterMethod
+	func setScreenHeight(v as int) as jk.ui.IOSDeviceInfo #setterMethod
+}
+class name jk.ui.Screen header public
+{
+	import jk.fs
+	import jk.gfx
+	import jk.lang
+	ctor
+}
+interface name jk.ui.ScreenWithContext header public
+{
+	import jk.fs
+	import jk.gfx
+	import jk.lang
+	func setContext(ctx as jk.ui.GuiApplicationContext)
+	func getContext as jk.ui.GuiApplicationContext
+}
+class name jk.ui.PointerEvent header public
+{
+	import jk.fs
+	import jk.gfx
+	import jk.lang
+	ctor
+	var DOWN public static const as int
+	var MOVE public static const as int
+	var CANCEL public static const as int
+	var UP public static const as int
+	var pointerId public as int
+	var action public as int
+	var x public as double
+	var y public as double
+	var isConsumed public as bool
+	func consume
+	func getPointerId as int
+	func setPointerId(value as int) as jk.ui.PointerEvent
+	func getAction as int
+	func setAction(value as int) as jk.ui.PointerEvent
+	func getX as double
+	func setX(value as double) as jk.ui.PointerEvent
+	func getY as double
+	func setY(value as double) as jk.ui.PointerEvent
+	func isInside(xc as double, yc as double, width as double, height as double) as bool
+}
+class name jk.ui.WebBrowserContext header public
+{
+	import jk.fs
+	import jk.gfx
+	import jk.lang
+	import jk.url
+	ctor
+	func getPageURL static as string
+	func getPageHash static as string
+	func getQueryString static as string
+	func getQueryStringValue(key as string) static as string
+}
+class name jk.ui.GuiApplicationContext header implements jk.app.ApplicationContext implements jk.lang.EventLoop abstract public
+{
+	import jk.fs
+	import jk.gfx
+	import jk.lang
+	import jk.app
+	import jk.thread
+	ctor
+	interface name TimerObject header public static
+	{
+		func cancel
+	}
+	func setStyle(id as string, style as map)
+	func getStyle(id as string) as map
+	func getStyleObject(id as string, style as string) as object
+	func getStyleString(id as string, style as string, defval as string = null) as string
+	func getStyleColor(id as string, style as string, defval as string = null) as jk.gfx.Color
+	func getStylePixels(id as string, style as string, defval as string = null) as int
+	func getApplicationDataDirectory abstract as jk.fs.File
+	func getResourceImage(id as string) abstract as jk.gfx.Image
+	func getImageForBufferSync(buffer as buffer, mimeType as string) abstract as jk.gfx.Image
+	func getImageForBuffer(buffer as buffer, mimeType as string, callback as function<void,jk.gfx.Image>) abstract
+	func showMessageDialog(title as string, message as string, callback as function<void> = null) abstract
+	func showConfirmDialog(title as string, message as string, okcallback as function<void>, cancelcallback as function<void>) abstract
+	func showErrorDialog(message as string, callback as function<void> = null) abstract
+	func getScreenTopMargin abstract as int
+	func getScreenWidth abstract as int
+	func getScreenHeight abstract as int
+	func getScreenDensity abstract as int
+	func getHeightValue(spec as string) abstract as int
+	func getWidthValue(spec as string) abstract as int
+	func startTimer(timeout as long, callback as function<void>) abstract as jk.ui.GuiApplicationContext.TimerObject
+	func enableKeepAwakeMode abstract
+	func disableKeepAwakeMode abstract
+	func px(spec as string) as int
+	func logError(message as string)
+	func logWarning(message as string)
+	func logInfo(message as string)
+	func logDebug(message as string)
+	func logStatus(message as string)
+	func isInDebugMode as bool
+	func getErrorCount as int
+	func getWarningCount as int
+	func getInfoCount as int
+	func getDebugCount as int
+	func resetCounters
+	func runScheduled(timeout as long, runnable as jk.lang.Runnable)
+	func runInBackground(runnable as jk.lang.Runnable)
+}

@@ -1,0 +1,61 @@
+<html>
+<head>
+<title>jk.widget.list.ListItemWidget | JK App [0.26.0] - API Reference</title>
+<link rel="stylesheet" type="text/css" href="style.css" />
+<meta name="viewport" content="initial-scale=1,maximum-scale=1" />
+<meta property="og:description" content="jk.widget.list.ListItemWidget | JK App [0.26.0] - API Reference" />
+<meta property="og:title" content="jk.widget.list.ListItemWidget | JK App [0.26.0] - API Reference" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:description" content="jk.widget.list.ListItemWidget | JK App [0.26.0] - API Reference" />
+</head>
+<body><div class="content">
+<a class="back" href="index.html">&laquo; JK App [0.26.0]</a><div class="intro">
+<h1><span class="modifier">abstract</span> <span class="keyword">class</span> <span class="symbol">jk.widget.list.ListItemWidget</span></h1>
+<p></p>
+</div>
+<div class="list">
+<div class="title">Base Types</div>
+<div class="entry">
+<div class="name"><span class="keyword">extends</span> <a class="datatype" href="jk.widget.VerticalBoxWidget.html">jk.widget.VerticalBoxWidget</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">implements</span> <a class="datatype" href="jk.widget.TitledWidget.html">jk.widget.TitledWidget</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">implements</span> <a class="datatype" href="jk.widget.DisplayAwareWidget.html">jk.widget.DisplayAwareWidget</a></div></div>
+</div>
+<div class="list">
+<div class="title">Instance Variables</div>
+<div class="entry">
+<div class="name"><span class="keyword">var</span> <span class="symbol">list</span> <span class="keyword">as</span> <a class="datatype" href="jk.widget.VerticalBoxWidget.html">jk.widget.VerticalBoxWidget</a></div></div>
+</div>
+<div class="list">
+<div class="title">Instance Methods</div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getWidgetTitle</span> <span class="modifier">virtual</span> <span class="keyword">as</span> <span class="datatype">string</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">onWidgetDisplayed</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">initializeWidget</span> <span class="modifier">override</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">onGetData</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">onNoDataReceived</span> <span class="modifier">virtual</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">onDataReceived</span> ( data <span class="keyword">as</span> <span class="datatype">vector&lt;jk.lang.DynamicMap&gt;</span> ) <span class="modifier">virtual</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getSubHeaderWidget</span> <span class="modifier">virtual</span> <span class="keyword">as</span> <a class="datatype" href="jk.widget.Widget.html">jk.widget.Widget</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">createWidgetForRecord</span> ( record <span class="keyword">as</span> <a class="datatype" href="../../jk-core/0.37.0/jk.lang.DynamicMap.html">jk.lang.DynamicMap</a> ) <span class="modifier">virtual</span> <span class="keyword">as</span> <a class="datatype" href="jk.widget.Widget.html">jk.widget.Widget</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">startDataQuery</span> ( callback <span class="keyword">as</span> <span class="datatype">function&lt;void,vector&lt;jk.lang.DynamicMap&gt;&gt;</span> ) <span class="modifier">abstract</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getWidgetListSpacing</span> <span class="keyword">as</span> <span class="datatype">int</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setWidgetListSpacing</span> ( v <span class="keyword">as</span> <span class="datatype">int</span> ) <span class="keyword">as</span> <a class="datatype" href="jk.widget.list.ListItemWidget.html">jk.widget.list.ListItemWidget</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getWidgetListMargin</span> <span class="keyword">as</span> <span class="datatype">int</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setWidgetListMargin</span> ( v <span class="keyword">as</span> <span class="datatype">int</span> ) <span class="keyword">as</span> <a class="datatype" href="jk.widget.list.ListItemWidget.html">jk.widget.list.ListItemWidget</a></div></div>
+</div>
+</div>
+</body>
+</html>

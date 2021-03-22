@@ -1,0 +1,68 @@
+<html>
+<head>
+<title>jk.server.CommonServer | JK Net [0.39.0] - API Reference</title>
+<link rel="stylesheet" type="text/css" href="style.css" />
+<meta name="viewport" content="initial-scale=1,maximum-scale=1" />
+<meta property="og:description" content="jk.server.CommonServer | JK Net [0.39.0] - API Reference" />
+<meta property="og:title" content="jk.server.CommonServer | JK Net [0.39.0] - API Reference" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:description" content="jk.server.CommonServer | JK Net [0.39.0] - API Reference" />
+</head>
+<body><div class="content">
+<a class="back" href="index.html">&laquo; JK Net [0.39.0]</a><div class="intro">
+<h1><span class="modifier">abstract</span> <span class="keyword">class</span> <span class="symbol">jk.server.CommonServer</span></h1>
+<p></p>
+</div>
+<div class="list">
+<div class="title">Instance Variables</div>
+<div class="entry">
+<div class="name"><span class="keyword">var</span> <span class="symbol">ctx</span> <span class="keyword">as</span> <a class="datatype" href="../../jk-core/0.37.0/jk.log.LoggingContext.html">jk.log.LoggingContext</a></div></div>
+</div>
+<div class="list">
+<div class="title">Instance Methods</div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getCtx</span> <span class="keyword">as</span> <a class="datatype" href="../../jk-core/0.37.0/jk.log.LoggingContext.html">jk.log.LoggingContext</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getLoggingDirectory</span> <span class="keyword">as</span> <a class="datatype" href="../../jk-core/0.37.0/jk.fs.File.html">jk.fs.File</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getListenPort</span> <span class="keyword">as</span> <span class="datatype">int</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getConfigfromEnvironment</span> ( name <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="keyword">as</span> <span class="datatype">string</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getConfigFileDirectory</span> <span class="keyword">as</span> <a class="datatype" href="../../jk-core/0.37.0/jk.fs.File.html">jk.fs.File</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">onMaintenance</span> <span class="modifier">virtual</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">initConfigValue</span> ( key <span class="keyword">as</span> <span class="datatype">string</span> , value <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setConfigValue</span> ( key <span class="keyword">as</span> <span class="datatype">string</span> , value <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="keyword">as</span> <a class="datatype" href="jk.server.CommonServer.html">jk.server.CommonServer</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">configure</span> ( key <span class="keyword">as</span> <span class="datatype">string</span> , value <span class="keyword">as</span> <span class="datatype">string</span> , relativeTo <span class="keyword">as</span> <a class="datatype" href="../../jk-core/0.37.0/jk.fs.File.html">jk.fs.File</a> , error <span class="keyword">as</span> <a class="datatype" href="../../jk-core/0.37.0/jk.lang.Error.html">jk.lang.Error</a> ) <span class="modifier">virtual</span> <span class="keyword">as</span> <span class="datatype">bool</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">printUsage</span> ( stdout <span class="keyword">as</span> <a class="datatype" href="../../jk-core/0.37.0/jk.io.PrintWriter.html">jk.io.PrintWriter</a> ) <span class="modifier">virtual</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">printHeader</span> ( stdout <span class="keyword">as</span> <a class="datatype" href="../../jk-core/0.37.0/jk.io.PrintWriter.html">jk.io.PrintWriter</a> ) <span class="modifier">virtual</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">printVersion</span> ( stdout <span class="keyword">as</span> <a class="datatype" href="../../jk-core/0.37.0/jk.io.PrintWriter.html">jk.io.PrintWriter</a> , longFormat <span class="keyword">as</span> <span class="datatype">bool</span> ) <span class="modifier">virtual</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">logServerConfiguration</span> <span class="modifier">virtual</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">acceptCommandLineArgument</span> ( arg <span class="keyword">as</span> <a class="datatype" href="../../jk-core/0.37.0/jk.console.CommandLineArgument.html">jk.console.CommandLineArgument</a> ) <span class="modifier">virtual</span> <span class="keyword">as</span> <span class="datatype">bool</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">execute</span> ( args <span class="keyword">as</span> <span class="datatype">array&lt;string&gt;</span> ) <span class="keyword">as</span> <span class="datatype">bool</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">executeMain</span> ( args <span class="keyword">as</span> <span class="datatype">array&lt;string&gt;</span> ) <span class="keyword">as</span> <span class="datatype">int</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">initializeWithIOManager</span> ( ioManager <span class="keyword">as</span> <a class="datatype" href="jk.socket.io.IOManager.html">jk.socket.io.IOManager</a> , ctx <span class="keyword">as</span> <a class="datatype" href="../../jk-core/0.37.0/jk.log.LoggingContext.html">jk.log.LoggingContext</a> ) <span class="modifier">virtual</span> <span class="keyword">as</span> <span class="datatype">bool</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">initializeNetworkServer</span> ( server <span class="keyword">as</span> <a class="datatype" href="jk.server.NetworkServer.html">jk.server.NetworkServer</a> ) <span class="modifier">virtual</span> <span class="keyword">as</span> <span class="datatype">bool</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">initializeApplication</span> <span class="modifier">virtual</span> <span class="keyword">as</span> <span class="datatype">bool</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">createServer</span> <span class="modifier">abstract</span> <span class="keyword">as</span> <a class="datatype" href="jk.server.NetworkServer.html">jk.server.NetworkServer</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">executeServer</span> <span class="keyword">as</span> <span class="datatype">bool</span></div></div>
+</div>
+</div>
+</body>
+</html>

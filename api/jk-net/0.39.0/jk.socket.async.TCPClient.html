@@ -1,0 +1,36 @@
+<html>
+<head>
+<title>jk.socket.async.TCPClient | JK Net [0.39.0] - API Reference</title>
+<link rel="stylesheet" type="text/css" href="style.css" />
+<meta name="viewport" content="initial-scale=1,maximum-scale=1" />
+<meta property="og:description" content="jk.socket.async.TCPClient | JK Net [0.39.0] - API Reference" />
+<meta property="og:title" content="jk.socket.async.TCPClient | JK Net [0.39.0] - API Reference" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:description" content="jk.socket.async.TCPClient | JK Net [0.39.0] - API Reference" />
+</head>
+<body><div class="content">
+<a class="back" href="index.html">&laquo; JK Net [0.39.0]</a><div class="intro">
+<h1><span class="modifier">abstract</span> <span class="keyword">class</span> <span class="symbol">jk.socket.async.TCPClient</span></h1>
+<p></p>
+</div>
+<div class="list">
+<div class="title">Static Methods</div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">instance</span> <span class="modifier">static</span> <span class="keyword">as</span> <a class="datatype" href="jk.socket.async.TCPClient.html">jk.socket.async.TCPClient</a></div></div>
+</div>
+<div class="list">
+<div class="title">Instance Methods</div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">connectSSL</span> ( address <span class="keyword">as</span> <span class="datatype">string</span> , port <span class="keyword">as</span> <span class="datatype">int</span> , callback <span class="keyword">as</span> <span class="datatype">function&lt;void,jk.lang.Error&gt;</span> ) <span class="modifier">abstract</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">connect</span> ( address <span class="keyword">as</span> <span class="datatype">string</span> , port <span class="keyword">as</span> <span class="datatype">int</span> , callback <span class="keyword">as</span> <span class="datatype">function&lt;void,jk.lang.Error&gt;</span> ) <span class="modifier">abstract</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">receive</span> ( callback <span class="keyword">as</span> <span class="datatype">function&lt;void,buffer,int&gt;</span> ) <span class="modifier">abstract</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">send</span> ( data <span class="keyword">as</span> <span class="datatype">buffer</span> , size <span class="keyword">as</span> <span class="datatype">int</span> , callback <span class="keyword">as</span> <span class="datatype">function&lt;void,jk.lang.Error&gt;</span> ) <span class="modifier">abstract</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">disconnect</span> ( callback <span class="keyword">as</span> <span class="datatype">function&lt;void,jk.lang.Error&gt;</span> ) <span class="modifier">abstract</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,54 @@
+class name jk.jwt.RS256 header abstract public
+{
+	import jk.lang
+	ctor
+	func instance static as jk.jwt.RS256
+	func generate(data as buffer, privateKey as string) abstract as buffer
+	func validate(data as buffer, signature as buffer, publicKey as string) abstract as bool
+	func getLastErrorDescription as string #getterMethod
+	func setLastErrorDescription(v as string) as jk.jwt.RS256 #setterMethod
+}
+class name jk.jwt.JWKToPEMConverter header public
+{
+	import jk.lang
+	import jk.base64
+	import jk.json
+	ctor
+	func convertString(data as string) static as string
+	func convertMap(dm as jk.lang.DynamicMap) static as string
+}
+class name jk.jwt.JWT header public
+{
+	import jk.lang
+	import jk.base64
+	import jk.json
+	import jk.time
+	ctor
+	func decode(token as string, keys as map) static as jk.jwt.JWT
+	func setClaims(v as jk.lang.DynamicMap)
+	func getClaims as jk.lang.DynamicMap
+	func setIssuer(v as string)
+	func getIssuer as string
+	func setSubject(v as string)
+	func getSubject as string
+	func setAudience(v as string)
+	func getAudience as string
+	func setExpirationTime(v as long)
+	func getExpirationTime as long
+	func setNotBefore(v as long)
+	func getNotBefore as long
+	func setIssuedAt(v as long)
+	func getIssuedAt as long
+	func setJwtId(v as string)
+	func getJwtId as string
+	func setClaim(key as string, value as string)
+	func getClaim(key as string) as string
+	func validate(issuer as string, audience as string) as bool
+	func isIssuer(value as string) as bool
+	func isAudience(value as string) as bool
+	func isActive as bool
+	func encodeUrlSafe(buff as buffer) as string
+	func generateHeaderContent(alg as string) as string
+	func generateClaimsContent as string
+	func generateTokenWithRS256(privateKey as string) as string
+}

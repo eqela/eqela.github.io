@@ -1,0 +1,72 @@
+<html>
+<head>
+<title>jk.widget.ScreenForWidget | JK App [0.26.0] - API Reference</title>
+<link rel="stylesheet" type="text/css" href="style.css" />
+<meta name="viewport" content="initial-scale=1,maximum-scale=1" />
+<meta property="og:description" content="jk.widget.ScreenForWidget | JK App [0.26.0] - API Reference" />
+<meta property="og:title" content="jk.widget.ScreenForWidget | JK App [0.26.0] - API Reference" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:description" content="jk.widget.ScreenForWidget | JK App [0.26.0] - API Reference" />
+</head>
+<body><div class="content">
+<a class="back" href="index.html">&laquo; JK App [0.26.0]</a><div class="intro">
+<h1><span class="keyword">class</span> <span class="symbol">jk.widget.ScreenForWidget</span></h1>
+<p></p>
+</div>
+<div class="list">
+<div class="title">Base Types</div>
+<div class="entry">
+<div class="name"><span class="keyword">implements</span> <a class="datatype" href="jk.ui.ScreenWithContext.html">jk.ui.ScreenWithContext</a></div></div>
+</div>
+<div class="list">
+<div class="title">Instance Variables</div>
+<div class="entry">
+<div class="name"><span class="keyword">var</span> <span class="symbol">context</span> <span class="keyword">as</span> <a class="datatype" href="jk.ui.GuiApplicationContext.html">jk.ui.GuiApplicationContext</a></div></div>
+</div>
+<div class="list">
+<div class="title">Static Methods</div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">findScreenForWidget</span> ( widget <span class="keyword">as</span> <a class="datatype" href="jk.widget.Widget.html">jk.widget.Widget</a> ) <span class="modifier">static</span> <span class="keyword">as</span> <a class="datatype" href="jk.widget.ScreenForWidget.html">jk.widget.ScreenForWidget</a></div></div>
+</div>
+<div class="list">
+<div class="title">Instance Methods</div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">onBackKeyPressEvent</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">deliverKeyEventToWidget</span> ( event <span class="keyword">as</span> <a class="datatype" href="jk.ui.KeyEvent.html">jk.ui.KeyEvent</a> , widget <span class="keyword">as</span> <a class="datatype" href="jk.widget.Widget.html">jk.widget.Widget</a> ) <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">unlockOrientation</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">lockToLandscapeOrientation</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">lockToPortraitOrientation</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setContext</span> ( context <span class="keyword">as</span> <a class="datatype" href="jk.ui.GuiApplicationContext.html">jk.ui.GuiApplicationContext</a> ) <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getContext</span> <span class="keyword">as</span> <a class="datatype" href="jk.ui.GuiApplicationContext.html">jk.ui.GuiApplicationContext</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">onPrepareScreen</span> <span class="modifier">virtual</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">onStartScreen</span> <span class="modifier">virtual</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">onStartScreenWithData</span> ( data <span class="keyword">as</span> <a class="datatype" href="../../jk-core/0.37.0/jk.lang.DynamicMap.html">jk.lang.DynamicMap</a> ) <span class="modifier">virtual</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">onStopScreen</span> <span class="modifier">virtual</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">onDestroyScreen</span> <span class="modifier">virtual</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">initialize</span> <span class="modifier">virtual</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">cleanup</span> <span class="modifier">virtual</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getWidget</span> <span class="keyword">as</span> <a class="datatype" href="jk.widget.Widget.html">jk.widget.Widget</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setWidget</span> ( widget <span class="keyword">as</span> <a class="datatype" href="jk.widget.ContainerWidget.html">jk.widget.ContainerWidget</a> ) <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getCaptureBrowserBackButton</span> <span class="keyword">as</span> <span class="datatype">bool</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setCaptureBrowserBackButton</span> ( v <span class="keyword">as</span> <span class="datatype">bool</span> ) <span class="keyword">as</span> <a class="datatype" href="jk.widget.ScreenForWidget.html">jk.widget.ScreenForWidget</a></div></div>
+</div>
+</div>
+</body>
+</html>

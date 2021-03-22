@@ -1,0 +1,68 @@
+<html>
+<head>
+<title>jk.widget.common.DynamicVerticalScrollerWidget | JK App [0.26.0] - API Reference</title>
+<link rel="stylesheet" type="text/css" href="style.css" />
+<meta name="viewport" content="initial-scale=1,maximum-scale=1" />
+<meta property="og:description" content="The DynamicVerticalScrollerWidget implements a vertically scrolling area, composed of a series
+of widgets that are stacked vertically and are scrollable. The widgets themselves are created dynamically
+as needed as the user scrolls the list. This way, it is possible to add "infinite scrollers" or scrollers
+that would have a very large number of elements." />
+<meta property="og:title" content="jk.widget.common.DynamicVerticalScrollerWidget | JK App [0.26.0] - API Reference" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:description" content="The DynamicVerticalScrollerWidget implements a vertically scrolling area, composed of a series
+of widgets that are stacked vertically and are scrollable. The widgets themselves are created dynamically
+as needed as the user scrolls the list. This way, it is possible to add "infinite scrollers" or scrollers
+that would have a very large number of elements." />
+</head>
+<body><div class="content">
+<a class="back" href="index.html">&laquo; JK App [0.26.0]</a><div class="intro">
+<h1><span class="keyword">class</span> <span class="symbol">jk.widget.common.DynamicVerticalScrollerWidget</span></h1>
+<p>The DynamicVerticalScrollerWidget implements a vertically scrolling area, composed of a series
+of widgets that are stacked vertically and are scrollable. The widgets themselves are created dynamically
+as needed as the user scrolls the list. This way, it is possible to add "infinite scrollers" or scrollers
+that would have a very large number of elements.</p>
+</div>
+<div class="list">
+<div class="title">Base Types</div>
+<div class="entry">
+<div class="name"><span class="keyword">extends</span> <a class="datatype" href="jk.widget.LayerWidget.html">jk.widget.LayerWidget</a></div></div>
+</div>
+<div class="list">
+<div class="title">Static Methods</div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">forHandler</span> ( context <span class="keyword">as</span> <a class="datatype" href="jk.ui.GuiApplicationContext.html">jk.ui.GuiApplicationContext</a> , handler <span class="keyword">as</span> <span class="datatype">function&lt;jk.widget.Widget&gt;</span> ) <span class="modifier">static</span> <span class="keyword">as</span> <a class="datatype" href="jk.widget.common.DynamicVerticalScrollerWidget.html">jk.widget.common.DynamicVerticalScrollerWidget</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">forProvider</span> ( context <span class="keyword">as</span> <a class="datatype" href="jk.ui.GuiApplicationContext.html">jk.ui.GuiApplicationContext</a> , provider <span class="keyword">as</span> <a class="datatype" href="jk.widget.WidgetProvider.html">jk.widget.WidgetProvider</a> ) <span class="modifier">static</span> <span class="keyword">as</span> <a class="datatype" href="jk.widget.common.DynamicVerticalScrollerWidget.html">jk.widget.common.DynamicVerticalScrollerWidget</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">forWidgets</span> ( context <span class="keyword">as</span> <a class="datatype" href="jk.ui.GuiApplicationContext.html">jk.ui.GuiApplicationContext</a> , widgets <span class="keyword">as</span> <span class="datatype">vector&lt;jk.widget.Widget&gt;</span> ) <span class="modifier">static</span> <span class="keyword">as</span> <a class="datatype" href="jk.widget.common.DynamicVerticalScrollerWidget.html">jk.widget.common.DynamicVerticalScrollerWidget</a></div></div>
+</div>
+<div class="list">
+<div class="title">Instance Methods</div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setWidgetContainerSpacing</span> ( height <span class="keyword">as</span> <span class="datatype">int</span> ) <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setWidgetContainerMargin</span> ( height <span class="keyword">as</span> <span class="datatype">int</span> ) <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">initializeWidget</span> <span class="modifier">override</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">onAddWidget</span> ( container <span class="keyword">as</span> <a class="datatype" href="jk.widget.ContainerWidget.html">jk.widget.ContainerWidget</a> ) <span class="modifier">virtual</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">clear</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">createWidget</span> <span class="modifier">override</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getWidgetProviderHandler</span> <span class="keyword">as</span> <span class="datatype">function&lt;jk.widget.Widget&gt;</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setWidgetProviderHandler</span> ( v <span class="keyword">as</span> <span class="datatype">function&lt;jk.widget.Widget&gt;</span> ) <span class="keyword">as</span> <a class="datatype" href="jk.widget.common.DynamicVerticalScrollerWidget.html">jk.widget.common.DynamicVerticalScrollerWidget</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getWidgetProvider</span> <span class="keyword">as</span> <a class="datatype" href="jk.widget.WidgetProvider.html">jk.widget.WidgetProvider</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setWidgetProvider</span> ( v <span class="keyword">as</span> <a class="datatype" href="jk.widget.WidgetProvider.html">jk.widget.WidgetProvider</a> ) <span class="keyword">as</span> <a class="datatype" href="jk.widget.common.DynamicVerticalScrollerWidget.html">jk.widget.common.DynamicVerticalScrollerWidget</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getWidgetItemAddCount</span> <span class="keyword">as</span> <span class="datatype">int</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setWidgetItemAddCount</span> ( v <span class="keyword">as</span> <span class="datatype">int</span> ) <span class="keyword">as</span> <a class="datatype" href="jk.widget.common.DynamicVerticalScrollerWidget.html">jk.widget.common.DynamicVerticalScrollerWidget</a></div></div>
+</div>
+</div>
+</body>
+</html>

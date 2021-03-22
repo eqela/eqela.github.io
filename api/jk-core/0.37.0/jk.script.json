@@ -1,0 +1,13 @@
+{
+	"moduleDescription" : "A generic framework for executing programs in a scripting environment.\nThis is particularly used with SlingScript scripts on the Sushi virtual\nmachine, and is essential in the build scripts used to compile Sling\nprograms.\n",
+	"type" : "module",
+	"moduleTitle" : "Entry point for scripts",
+	"moduleId" : "jk.script",
+	"entities" : [
+		{
+			"type" : "class",
+			"name" : "Script",
+			"description" : "A common main class and entry point for scripts. This is commonly used\nin SlingScript files and Sling build scripts."
+		}
+	]
+}

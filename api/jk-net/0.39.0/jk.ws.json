@@ -1,0 +1,18 @@
+{
+	"moduleDescription" : "",
+	"type" : "module",
+	"moduleTitle" : "",
+	"moduleId" : "jk.ws",
+	"entities" : [
+		{
+			"type" : "interface",
+			"name" : "WSProtocolSource",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "WSProtocol",
+			"description" : ""
+		}
+	]
+}

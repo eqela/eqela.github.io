@@ -1,0 +1,46 @@
+<html>
+<head>
+<title>jk.text.StringUtil | JK Core [0.37.0] - API Reference</title>
+<link rel="stylesheet" type="text/css" href="style.css" />
+<meta name="viewport" content="initial-scale=1,maximum-scale=1" />
+<meta property="og:description" content="The StringUtil class provides commonly used generic utility functions for string manipulation." />
+<meta property="og:title" content="jk.text.StringUtil | JK Core [0.37.0] - API Reference" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:description" content="The StringUtil class provides commonly used generic utility functions for string manipulation." />
+</head>
+<body><div class="content">
+<a class="back" href="index.html">&laquo; JK Core [0.37.0]</a><div class="intro">
+<h1><span class="keyword">class</span> <span class="symbol">jk.text.StringUtil</span></h1>
+<p>The StringUtil class provides commonly used generic utility functions for string manipulation.</p>
+</div>
+<div class="list">
+<div class="title">Static Methods</div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">padToLength</span> ( value <span class="keyword">as</span> <span class="datatype">string</span> , length <span class="keyword">as</span> <span class="datatype">int</span> , align <span class="keyword">as</span> <span class="datatype">int</span> , paddingCharacter <span class="keyword">as</span> <span class="datatype">char</span> ) <span class="modifier">static</span> <span class="keyword">as</span> <span class="datatype">string</span></div><div class="description">Creates a new string based on "string" that is at least "length" characters long. If the original string is shorter, it will be padded to the desired length by adding instances of paddingCharacter (default of which is the space character). The "aling" attribute may be either -1, 0 or 1, and determines if the padding characters willb e added to the end, both sides or to the beginning, respectively.</div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">quotedStringToVector</span> ( str <span class="keyword">as</span> <span class="datatype">string</span> , delim <span class="keyword">as</span> <span class="datatype">char</span> , ignoreRepeatedDelimiters <span class="keyword">as</span> <span class="datatype">bool</span> , escapeCharacter <span class="keyword">as</span> <span class="datatype">char</span> ) <span class="modifier">static</span> <span class="keyword">as</span> <span class="datatype">vector&lt;string&gt;</span></div><div class="description">Splits the given string "str" to a vector of multiple strings, cutting the string at each instance of the "delim" character where the delim does not appear enclosed in either double quotes or single quotes.
+Eg. quotedStringToVector("first 'second third'", ' ') produces [ "first", "second third" ]</div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">quotedStringToMap</span> ( str <span class="keyword">as</span> <span class="datatype">string</span> , delim <span class="keyword">as</span> <span class="datatype">char</span> ) <span class="modifier">static</span> <span class="keyword">as</span> <span class="datatype">map&lt;string,string&gt;</span></div><div class="description">Parses the string "str", splitting it to multiple strings using quotedStringToVector(), and then further processing it to key/value pairs, splitting each string at the equal sign '=' and adding the entries to a map.</div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">combine</span> ( strings <span class="keyword">as</span> <span class="datatype">vector&lt;string&gt;</span> , delim <span class="keyword">as</span> <span class="datatype">char</span> , unique <span class="keyword">as</span> <span class="datatype">bool</span> , index <span class="keyword">as</span> <span class="datatype">int</span> ) <span class="modifier">static</span> <span class="keyword">as</span> <span class="datatype">string</span></div><div class="description">Combines a vector of strings to a single string, incorporating the "delim" character between each string in the vector. If the "unique" variable is set to "true", only one instance of each unique string will be appended to the resulting string.</div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">validateCharacters</span> ( str <span class="keyword">as</span> <span class="datatype">string</span> , validator <span class="keyword">as</span> <span class="datatype">function&lt;bool,char&gt;</span> ) <span class="modifier">static</span> <span class="keyword">as</span> <span class="datatype">bool</span></div><div class="description">Vaidates a string character-by-character, calling the supplied function to determine the validity of each character. Returns true if the entire string was validated, false if not.</div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">toStringVector</span> ( vector <span class="keyword">as</span> <span class="datatype">vector</span> , allowConversion <span class="keyword">as</span> <span class="datatype">bool</span> ) <span class="modifier">static</span> <span class="keyword">as</span> <span class="datatype">vector&lt;string&gt;</span></div><div class="description">Converts a vector of objects to a vector of strings. If the allowConversion parameter is true, attempts to also convert any non-string objects in the original vector to string objects, if possible. In either case, any objects that are either not strings or not convertible to strings, will be omitted from the resulting vector.</div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">toObjectVector</span> ( vector <span class="keyword">as</span> <span class="datatype">vector&lt;string&gt;</span> ) <span class="modifier">static</span> <span class="keyword">as</span> <span class="datatype">vector</span></div><div class="description">Converts a vector of strings to a vector of objects. No operations are performed on the elements.</div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">wrapToLines</span> ( text <span class="keyword">as</span> <span class="datatype">string</span> , charactersPerLine <span class="keyword">as</span> <span class="datatype">int</span> ) <span class="modifier">static</span> <span class="keyword">as</span> <span class="datatype">vector&lt;string&gt;</span></div><div class="description">Wraps the given strings to a vector of multiple lines, honoring a maximum of charactersPerLine characters on each line. Attempts to break lines at whitespace where possible.</div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">stripLeadingZeros</span> ( str <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="modifier">static</span> <span class="keyword">as</span> <span class="datatype">string</span></div><div class="description">Removes all "0" characters from the beginning of the string.</div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">formatNumberString</span> ( vv <span class="keyword">as</span> <span class="datatype">string</span> , delimiter <span class="keyword">as</span> <span class="datatype">char</span> ) <span class="modifier">static</span> <span class="keyword">as</span> <span class="datatype">string</span></div><div class="description">Takes a string that represents a number, and presents it in a nicely formatted manner, with delimiter separating each sequence of three digits.</div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">formatInteger</span> ( vv <span class="keyword">as</span> <span class="datatype">int</span> , delimiter <span class="keyword">as</span> <span class="datatype">char</span> ) <span class="modifier">static</span> <span class="keyword">as</span> <span class="datatype">string</span></div><div class="description">Converts an integer value to a string and presents it in a nicely formatted manner, with delimiter separating each sequence of three digits.</div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">formatLongInteger</span> ( vv <span class="keyword">as</span> <span class="datatype">long</span> , delimiter <span class="keyword">as</span> <span class="datatype">char</span> ) <span class="modifier">static</span> <span class="keyword">as</span> <span class="datatype">string</span></div><div class="description">Converts a long integer value to a string and presents it in a nicely formatted manner, with delimiter separating each sequence of three digits.</div></div>
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,33 @@
+{
+	"moduleDescription" : "",
+	"type" : "module",
+	"moduleTitle" : "",
+	"moduleId" : "jk.ws.client",
+	"entities" : [
+		{
+			"type" : "class",
+			"name" : "WSMessage",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "WSClient",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "WSSocketGeneric",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "WSSocket",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "WSCloseEvent",
+			"description" : ""
+		}
+	]
+}

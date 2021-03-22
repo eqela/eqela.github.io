@@ -1,0 +1,57 @@
+class name jk.aes.BlockCipherReader header implements jk.io.Reader implements jk.io.SizedReader implements jk.io.SeekableReader public
+{
+	import jk.lang
+	import jk.io
+	ctor
+	func create(reader as jk.io.SizedReader, cipher as jk.aes.BlockCipher) static as jk.io.SizedReader
+	func getSize as int
+	func setCurrentPosition(n as long) as bool
+	func getCurrentPosition as long
+	func read(buf as buffer) as int
+	func readAndDecrypt(buf as buffer) as int
+	func readBlock(ptr as buffer, offset as int, size as int) as int
+}
+class name jk.aes.BlockCipher header abstract public
+{
+	import jk.lang
+	import jk.io
+	ctor
+	func encryptString(data as string, cipher as jk.aes.BlockCipher) static as buffer
+	func decryptString(data as buffer, cipher as jk.aes.BlockCipher) static as string
+	func encryptBuffer(data as buffer, cipher as jk.aes.BlockCipher) static as buffer
+	func decryptBuffer(data as buffer, cipher as jk.aes.BlockCipher) static as buffer
+	func getBlockSize abstract as int
+	func encryptBlock(src as buffer, dest as buffer) abstract
+	func decryptBlock(src as buffer, dest as buffer) abstract
+}
+class name jk.aes.AES128Cipher header public
+{
+	import jk.lang
+	ctor
+	func create(key as string, iv as string) static as jk.aes.BlockCipher
+}
+class name jk.aes.AES128CipherGeneric header extends jk.aes.BlockCipher public
+{
+	import jk.lang
+	ctor
+	var ENCRYPT_MODE public static const as int
+	var DECRYPT_MODE public static const as int
+	func setKey(str as string)
+	func setInitializationVector(str as string)
+	func getBlockSize override as int
+	func doCipher(src as buffer, dest as buffer, mode as int)
+	func encryptBlock(src as buffer, dest as buffer) override
+	func decryptBlock(src as buffer, dest as buffer) override
+}
+class name jk.aes.BlockCipherWriter header implements jk.io.Writer implements jk.io.SeekableWriter public
+{
+	import jk.lang
+	import jk.io
+	ctor
+	func create(writer as jk.io.Writer, cipher as jk.aes.BlockCipher) static as jk.aes.BlockCipherWriter
+	func close
+	func setCurrentPosition(n as long) as bool
+	func getCurrentPosition as long
+	func writeCompleteBlock(buf as buffer) as bool
+	func write(buf as buffer, asize as int = -1) as int
+}

@@ -1,0 +1,10 @@
+class name jk.widget.photo.PhotoSelector header public
+{
+	import jk.lang
+	import jk.fs
+	import jk.ui
+	import jk.gfx
+	import jk.widget
+	ctor(context as jk.ui.GuiApplicationContext)
+	func openPhotoDialog(widget as jk.widget.Widget, callback as function<void,jk.gfx.Image,string,jk.lang.Error>)
+}

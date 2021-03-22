@@ -1,0 +1,38 @@
+{
+	"moduleDescription" : "",
+	"type" : "module",
+	"moduleTitle" : "",
+	"moduleId" : "jk.server",
+	"entities" : [
+		{
+			"type" : "class",
+			"name" : "NetworkConnectionManager",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "SimpleConfigFile",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "NetworkServer",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "DirectoryLoggingContext",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "CommonServer",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "NetworkConnection",
+			"description" : ""
+		}
+	]
+}

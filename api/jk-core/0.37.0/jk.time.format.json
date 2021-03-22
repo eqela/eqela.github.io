@@ -1,0 +1,13 @@
+{
+	"moduleDescription" : "Functionality for formatting time strings.\n",
+	"type" : "module",
+	"moduleTitle" : "Time formatting",
+	"moduleId" : "jk.time.format",
+	"entities" : [
+		{
+			"type" : "class",
+			"name" : "VerboseDateTimeString",
+			"description" : ""
+		}
+	]
+}

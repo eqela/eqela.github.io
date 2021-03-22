@@ -1,0 +1,140 @@
+<html>
+<head>
+<title>jk.widget.Widget | JK App [0.26.0] - API Reference</title>
+<link rel="stylesheet" type="text/css" href="style.css" />
+<meta name="viewport" content="initial-scale=1,maximum-scale=1" />
+<meta property="og:description" content="jk.widget.Widget | JK App [0.26.0] - API Reference" />
+<meta property="og:title" content="jk.widget.Widget | JK App [0.26.0] - API Reference" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:description" content="jk.widget.Widget | JK App [0.26.0] - API Reference" />
+</head>
+<body><div class="content">
+<a class="back" href="index.html">&laquo; JK App [0.26.0]</a><div class="intro">
+<h1><span class="keyword">class</span> <span class="symbol">jk.widget.Widget</span></h1>
+<p></p>
+</div>
+<div class="list">
+<div class="title">Constants</div>
+<div class="entry">
+<div class="name"><span class="keyword">const</span> <span class="symbol">MOUSE_POINTER_DEFAULT</span> <span class="keyword">as</span> <span class="datatype">var</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">const</span> <span class="symbol">MOUSE_POINTER_ARROW</span> <span class="keyword">as</span> <span class="datatype">var</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">const</span> <span class="symbol">MOUSE_POINTER_CROSSHAIR</span> <span class="keyword">as</span> <span class="datatype">var</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">const</span> <span class="symbol">MOUSE_POINTER_IBEAM</span> <span class="keyword">as</span> <span class="datatype">var</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">const</span> <span class="symbol">MOUSE_POINTER_ICON</span> <span class="keyword">as</span> <span class="datatype">var</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">const</span> <span class="symbol">MOUSE_POINTER_SIZE</span> <span class="keyword">as</span> <span class="datatype">var</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">const</span> <span class="symbol">MOUSE_POINTER_NESW</span> <span class="keyword">as</span> <span class="datatype">var</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">const</span> <span class="symbol">MOUSE_POINTER_NS</span> <span class="keyword">as</span> <span class="datatype">var</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">const</span> <span class="symbol">MOUSE_POINTER_NWSE</span> <span class="keyword">as</span> <span class="datatype">var</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">const</span> <span class="symbol">MOUSE_POINTER_WE</span> <span class="keyword">as</span> <span class="datatype">var</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">const</span> <span class="symbol">MOUSE_POINTER_UPARROW</span> <span class="keyword">as</span> <span class="datatype">var</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">const</span> <span class="symbol">MOUSE_POINTER_HOURGLASS</span> <span class="keyword">as</span> <span class="datatype">var</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">const</span> <span class="symbol">MOUSE_POINTER_NODROP</span> <span class="keyword">as</span> <span class="datatype">var</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">const</span> <span class="symbol">MOUSE_POINTER_ARROW_HOURGLASS</span> <span class="keyword">as</span> <span class="datatype">var</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">const</span> <span class="symbol">MOUSE_POINTER_ARROW_QUESTION</span> <span class="keyword">as</span> <span class="datatype">var</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">const</span> <span class="symbol">MOUSE_POINTER_SIZE_ALL</span> <span class="keyword">as</span> <span class="datatype">var</span></div></div>
+</div>
+<div class="list">
+<div class="title">Static Methods</div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">onWidgetAddedToParent</span> ( widget <span class="keyword">as</span> <a class="datatype" href="jk.widget.Widget.html">jk.widget.Widget</a> ) <span class="modifier">static</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">onWidgetRemovedFromParent</span> ( widget <span class="keyword">as</span> <a class="datatype" href="jk.widget.Widget.html">jk.widget.Widget</a> ) <span class="modifier">static</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">notifyOnStartScreen</span> ( widget <span class="keyword">as</span> <a class="datatype" href="jk.widget.Widget.html">jk.widget.Widget</a> , screen <span class="keyword">as</span> <a class="datatype" href="jk.widget.ScreenForWidget.html">jk.widget.ScreenForWidget</a> ) <span class="modifier">static</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">notifyOnStopScreen</span> ( widget <span class="keyword">as</span> <a class="datatype" href="jk.widget.Widget.html">jk.widget.Widget</a> , screen <span class="keyword">as</span> <a class="datatype" href="jk.widget.ScreenForWidget.html">jk.widget.ScreenForWidget</a> ) <span class="modifier">static</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">notifyOnAddedToScreen</span> ( widget <span class="keyword">as</span> <a class="datatype" href="jk.widget.Widget.html">jk.widget.Widget</a> , screen <span class="keyword">as</span> <a class="datatype" href="jk.widget.ScreenForWidget.html">jk.widget.ScreenForWidget</a> ) <span class="modifier">static</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">notifyOnRemovedFromScreen</span> ( widget <span class="keyword">as</span> <a class="datatype" href="jk.widget.Widget.html">jk.widget.Widget</a> , screen <span class="keyword">as</span> <a class="datatype" href="jk.widget.ScreenForWidget.html">jk.widget.ScreenForWidget</a> ) <span class="modifier">static</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">addChild</span> ( parent <span class="keyword">as</span> <a class="datatype" href="jk.widget.Widget.html">jk.widget.Widget</a> , child <span class="keyword">as</span> <a class="datatype" href="jk.widget.Widget.html">jk.widget.Widget</a> ) <span class="modifier">static</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">removeFromParent</span> ( child <span class="keyword">as</span> <a class="datatype" href="jk.widget.Widget.html">jk.widget.Widget</a> ) <span class="modifier">static</span> <span class="keyword">as</span> <a class="datatype" href="jk.widget.Widget.html">jk.widget.Widget</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">hasParent</span> ( widget <span class="keyword">as</span> <a class="datatype" href="jk.widget.Widget.html">jk.widget.Widget</a> ) <span class="modifier">static</span> <span class="keyword">as</span> <span class="datatype">bool</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getParent</span> ( widget <span class="keyword">as</span> <a class="datatype" href="jk.widget.Widget.html">jk.widget.Widget</a> ) <span class="modifier">static</span> <span class="keyword">as</span> <a class="datatype" href="jk.widget.Widget.html">jk.widget.Widget</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getChildren</span> ( widget <span class="keyword">as</span> <a class="datatype" href="jk.widget.Widget.html">jk.widget.Widget</a> ) <span class="modifier">static</span> <span class="keyword">as</span> <span class="datatype">vector&lt;jk.widget.Widget&gt;</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getX</span> ( widget <span class="keyword">as</span> <a class="datatype" href="jk.widget.Widget.html">jk.widget.Widget</a> ) <span class="modifier">static</span> <span class="keyword">as</span> <span class="datatype">int</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getY</span> ( widget <span class="keyword">as</span> <a class="datatype" href="jk.widget.Widget.html">jk.widget.Widget</a> ) <span class="modifier">static</span> <span class="keyword">as</span> <span class="datatype">int</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getAbsoluteX</span> ( widget <span class="keyword">as</span> <a class="datatype" href="jk.widget.Widget.html">jk.widget.Widget</a> ) <span class="modifier">static</span> <span class="keyword">as</span> <span class="datatype">int</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getAbsoluteY</span> ( widget <span class="keyword">as</span> <a class="datatype" href="jk.widget.Widget.html">jk.widget.Widget</a> ) <span class="modifier">static</span> <span class="keyword">as</span> <span class="datatype">int</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getWidth</span> ( widget <span class="keyword">as</span> <a class="datatype" href="jk.widget.Widget.html">jk.widget.Widget</a> ) <span class="modifier">static</span> <span class="keyword">as</span> <span class="datatype">int</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getHeight</span> ( widget <span class="keyword">as</span> <a class="datatype" href="jk.widget.Widget.html">jk.widget.Widget</a> ) <span class="modifier">static</span> <span class="keyword">as</span> <span class="datatype">int</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getGeometryString</span> ( widget <span class="keyword">as</span> <a class="datatype" href="jk.widget.Widget.html">jk.widget.Widget</a> ) <span class="modifier">static</span> <span class="keyword">as</span> <span class="datatype">string</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">move</span> ( widget <span class="keyword">as</span> <a class="datatype" href="jk.widget.Widget.html">jk.widget.Widget</a> , x <span class="keyword">as</span> <span class="datatype">int</span> , y <span class="keyword">as</span> <span class="datatype">int</span> ) <span class="modifier">static</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">isRootWidget</span> ( widget <span class="keyword">as</span> <a class="datatype" href="jk.widget.Widget.html">jk.widget.Widget</a> ) <span class="modifier">static</span> <span class="keyword">as</span> <span class="datatype">bool</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">findScreen</span> ( widget <span class="keyword">as</span> <a class="datatype" href="jk.widget.Widget.html">jk.widget.Widget</a> ) <span class="modifier">static</span> <span class="keyword">as</span> <a class="datatype" href="jk.ui.Screen.html">jk.ui.Screen</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">findRootWidget</span> ( widget <span class="keyword">as</span> <a class="datatype" href="jk.widget.Widget.html">jk.widget.Widget</a> ) <span class="modifier">static</span> <span class="keyword">as</span> <a class="datatype" href="jk.widget.ContainerWidget.html">jk.widget.ContainerWidget</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setLayoutSize</span> ( widget <span class="keyword">as</span> <a class="datatype" href="jk.widget.Widget.html">jk.widget.Widget</a> , widthValue <span class="keyword">as</span> <span class="datatype">int</span> , heightValue <span class="keyword">as</span> <span class="datatype">int</span> ) <span class="modifier">static</span> <span class="keyword">as</span> <span class="datatype">bool</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">resizeHeight</span> ( widget <span class="keyword">as</span> <a class="datatype" href="jk.widget.Widget.html">jk.widget.Widget</a> , height <span class="keyword">as</span> <span class="datatype">int</span> ) <span class="modifier">static</span> <span class="keyword">as</span> <span class="datatype">bool</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">layout</span> ( widget <span class="keyword">as</span> <a class="datatype" href="jk.widget.Widget.html">jk.widget.Widget</a> , widthConstraint <span class="keyword">as</span> <span class="datatype">int</span> , force <span class="keyword">as</span> <span class="datatype">bool</span> ) <span class="modifier">static</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">togglePointerEventHandling</span> ( widget <span class="keyword">as</span> <a class="datatype" href="jk.widget.Widget.html">jk.widget.Widget</a> , value <span class="keyword">as</span> <span class="datatype">bool</span> ) <span class="modifier">static</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setWidgetClickHandler</span> ( widget <span class="keyword">as</span> <a class="datatype" href="jk.widget.Widget.html">jk.widget.Widget</a> , handler <span class="keyword">as</span> <span class="datatype">function&lt;void&gt;</span> ) <span class="modifier">static</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setWidgetDoubleClickHandler</span> ( widget <span class="keyword">as</span> <a class="datatype" href="jk.widget.Widget.html">jk.widget.Widget</a> , handler <span class="keyword">as</span> <span class="datatype">function&lt;void&gt;</span> ) <span class="modifier">static</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setWidgetLongClickHandler</span> ( widget <span class="keyword">as</span> <a class="datatype" href="jk.widget.Widget.html">jk.widget.Widget</a> , handler <span class="keyword">as</span> <span class="datatype">function&lt;void&gt;</span> ) <span class="modifier">static</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setWidgetPointerHandlers</span> ( widget <span class="keyword">as</span> <a class="datatype" href="jk.widget.Widget.html">jk.widget.Widget</a> , onStartHandler <span class="keyword">as</span> <span class="datatype">function&lt;void,double,double&gt;</span> , onTouchHandler <span class="keyword">as</span> <span class="datatype">function&lt;void,double,double&gt;</span> , onEndHandler <span class="keyword">as</span> <span class="datatype">function&lt;void,double,double&gt;</span> ) <span class="modifier">static</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">removeChildrenOf</span> ( widget <span class="keyword">as</span> <a class="datatype" href="jk.widget.Widget.html">jk.widget.Widget</a> ) <span class="modifier">static</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">onLayoutChanged</span> ( widget <span class="keyword">as</span> <a class="datatype" href="jk.widget.Widget.html">jk.widget.Widget</a> ) <span class="modifier">static</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setAlpha</span> ( widget <span class="keyword">as</span> <a class="datatype" href="jk.widget.Widget.html">jk.widget.Widget</a> , alpha <span class="keyword">as</span> <span class="datatype">double</span> ) <span class="modifier">static</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setRotation</span> ( widget <span class="keyword">as</span> <a class="datatype" href="jk.widget.Widget.html">jk.widget.Widget</a> , degrees <span class="keyword">as</span> <span class="datatype">double</span> ) <span class="modifier">static</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setEnabled</span> ( widget <span class="keyword">as</span> <a class="datatype" href="jk.widget.Widget.html">jk.widget.Widget</a> , enabled <span class="keyword">as</span> <span class="datatype">bool</span> ) <span class="modifier">static</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setTabIndex</span> ( widget <span class="keyword">as</span> <a class="datatype" href="jk.widget.Widget.html">jk.widget.Widget</a> , index <span class="keyword">as</span> <span class="datatype">int</span> ) <span class="modifier">static</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setVisible</span> ( widget <span class="keyword">as</span> <a class="datatype" href="jk.widget.Widget.html">jk.widget.Widget</a> , visible <span class="keyword">as</span> <span class="datatype">bool</span> ) <span class="modifier">static</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getVisible</span> ( widget <span class="keyword">as</span> <a class="datatype" href="jk.widget.Widget.html">jk.widget.Widget</a> ) <span class="modifier">static</span> <span class="keyword">as</span> <span class="datatype">bool</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setWidgetId</span> ( widget <span class="keyword">as</span> <a class="datatype" href="jk.widget.Widget.html">jk.widget.Widget</a> , idValue <span class="keyword">as</span> <span class="datatype">object</span> ) <span class="modifier">static</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">focus</span> ( widget <span class="keyword">as</span> <a class="datatype" href="jk.widget.Widget.html">jk.widget.Widget</a> ) <span class="modifier">static</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setWidgetToolTipText</span> ( widget <span class="keyword">as</span> <a class="datatype" href="jk.widget.Widget.html">jk.widget.Widget</a> , str <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="modifier">static</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setWidgetMousePointer</span> ( widget <span class="keyword">as</span> <a class="datatype" href="jk.widget.Widget.html">jk.widget.Widget</a> , mousePointer <span class="keyword">as</span> <span class="datatype">int</span> ) <span class="modifier">static</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+</div>
+</div>
+</body>
+</html>

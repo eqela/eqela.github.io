@@ -1,0 +1,102 @@
+class name jk.core.tests.StringBuilderTests header extends jk.test.UnitTest public
+{
+	import jk.lang
+	import jk.log
+	import jk.test
+	ctor
+	func testStringBuilderMethods
+	func execute override as bool
+}
+class name jk.core.tests.StringTests header extends jk.test.UnitTest public
+{
+	import jk.lang
+	import jk.log
+	import jk.test
+	ctor
+	func testStringOperations
+	func testCodeString
+	func testSimpleString
+	func testMultibyteString
+	func execute override as bool
+}
+class name jk.core.tests.VectorTests header extends jk.test.UnitTest public
+{
+	import jk.lang
+	import jk.log
+	import jk.test
+	ctor
+	func testVectorMethods
+	func execute override as bool
+}
+class name jk.core.tests.BufferTests header extends jk.test.UnitTest public
+{
+	import jk.lang
+	import jk.log
+	import jk.test
+	ctor
+	func testGettingOfBufferSize
+	func testGettingOfInt8OnBuffer
+	func testSettingOfByteOnBuffer
+	func testResizingOfBuffer
+	func testCopyingOfBuffer
+	func testGettingOfInt16LEOnBuffer
+	func testGettingOfInt16BEOnBuffer
+	func testGettingOfInt32LEOnBuffer
+	func testGettingOfInt32BEOnBuffer
+	func testBufferLiterals
+	func execute override as bool
+}
+class name jk.core.tests.StackTraceTests header extends jk.test.UnitTest public
+{
+	import jk.lang
+	import jk.log
+	import jk.test
+	ctor
+	func testStackTrace
+	func process(str as string) static
+	func execute override as bool
+}
+class name jk.core.tests.SystemClockTests header extends jk.test.UnitTest public
+{
+	import jk.lang
+	import jk.log
+	import jk.test
+	import jk.time
+	ctor
+	func testSystemClockMethods
+	func execute override as bool
+}
+class name jk.core.tests.VariableReferenceTests header extends jk.test.UnitTest public
+{
+	import jk.lang
+	import jk.log
+	import jk.test
+	ctor
+	func testVariableReferences
+	func execute override as bool
+}
+class name jk.core.tests.FileSystemTests header extends jk.test.UnitTest public
+{
+	import jk.lang
+	import jk.log
+	import jk.env
+	import jk.test
+	ctor
+	func testMoveFile
+	func testRenameFile
+	func execute override as bool
+}
+class name jk.core.tests.MapTests header extends jk.test.UnitTest public
+{
+	import jk.lang
+	import jk.log
+	import jk.test
+	ctor
+	func testMapMethods
+	func execute override as bool
+}
+class name jk.core.tests.TestMain header public
+{
+	import jk.lang
+	ctor
+}

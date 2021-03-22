@@ -1,0 +1,18 @@
+{
+	"moduleDescription" : "",
+	"type" : "module",
+	"moduleTitle" : "",
+	"moduleId" : "jk.widget.list",
+	"entities" : [
+		{
+			"type" : "class",
+			"name" : "PaginatedListWidget",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "ListItemWidget",
+			"description" : ""
+		}
+	]
+}

@@ -1,0 +1,93 @@
+<html>
+<head>
+<title>jk.lang.Buffer | JK Core [0.37.0] - API Reference</title>
+<link rel="stylesheet" type="text/css" href="style.css" />
+<meta name="viewport" content="initial-scale=1,maximum-scale=1" />
+<meta property="og:description" content="The Buffer class provides convenience methods for dealing with data buffers (arbitrary sequences of bytes)." />
+<meta property="og:title" content="jk.lang.Buffer | JK Core [0.37.0] - API Reference" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:description" content="The Buffer class provides convenience methods for dealing with data buffers (arbitrary sequences of bytes)." />
+</head>
+<body><div class="content">
+<a class="back" href="index.html">&laquo; JK Core [0.37.0]</a><div class="intro">
+<h1><span class="keyword">class</span> <span class="symbol">jk.lang.Buffer</span></h1>
+<p>The Buffer class provides convenience methods for dealing with data buffers (arbitrary sequences of bytes).</p>
+</div>
+<div class="list">
+<div class="title">Static Methods</div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">asObject</span> ( buffer <span class="keyword">as</span> <span class="datatype">buffer</span> ) <span class="modifier">static</span> <span class="keyword">as</span> <a class="datatype" href="jk.lang.BufferObject.html">jk.lang.BufferObject</a></div><div class="description">Returns the given array as a BufferObject (which is an object type) that can be used wherever an object or a class instance is required.</div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">asBuffer</span> ( obj <span class="keyword">as</span> <span class="datatype">dynamic</span> ) <span class="modifier">static</span> <span class="keyword">as</span> <span class="datatype">buffer</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">forInt8Array</span> ( buf <span class="keyword">as</span> <span class="datatype">array&lt;sbyte&gt;</span> ) <span class="modifier">static</span> <span class="keyword">as</span> <span class="datatype">buffer</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">toInt8Array</span> ( buf <span class="keyword">as</span> <span class="datatype">buffer</span> ) <span class="modifier">static</span> <span class="keyword">as</span> <span class="datatype">array&lt;sbyte&gt;</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getSubBuffer</span> ( buffer <span class="keyword">as</span> <span class="datatype">buffer</span> , offset <span class="keyword">as</span> <span class="datatype">long</span> , size <span class="keyword">as</span> <span class="datatype">long</span> , alwaysNewBuffer <span class="keyword">as</span> <span class="datatype">bool</span> ) <span class="modifier">static</span> <span class="keyword">as</span> <span class="datatype">buffer</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getInt8</span> ( buffer <span class="keyword">as</span> <span class="datatype">buffer</span> , offset <span class="keyword">as</span> <span class="datatype">long</span> ) <span class="modifier">static</span> <span class="keyword">as</span> <span class="datatype">byte</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">copyFrom</span> ( array <span class="keyword">as</span> <span class="datatype">buffer</span> , src <span class="keyword">as</span> <span class="datatype">buffer</span> , soffset <span class="keyword">as</span> <span class="datatype">long</span> , doffset <span class="keyword">as</span> <span class="datatype">long</span> , size <span class="keyword">as</span> <span class="datatype">long</span> ) <span class="modifier">static</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getInt16LE</span> ( buffer <span class="keyword">as</span> <span class="datatype">buffer</span> , offset <span class="keyword">as</span> <span class="datatype">long</span> ) <span class="modifier">static</span> <span class="keyword">as</span> <span class="datatype">ushort</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getInt16BE</span> ( buffer <span class="keyword">as</span> <span class="datatype">buffer</span> , offset <span class="keyword">as</span> <span class="datatype">long</span> ) <span class="modifier">static</span> <span class="keyword">as</span> <span class="datatype">ushort</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getInt32LE</span> ( buffer <span class="keyword">as</span> <span class="datatype">buffer</span> , offset <span class="keyword">as</span> <span class="datatype">long</span> ) <span class="modifier">static</span> <span class="keyword">as</span> <span class="datatype">uint</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getInt32BE</span> ( buffer <span class="keyword">as</span> <span class="datatype">buffer</span> , offset <span class="keyword">as</span> <span class="datatype">long</span> ) <span class="modifier">static</span> <span class="keyword">as</span> <span class="datatype">uint</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getInt64LE</span> ( buffer <span class="keyword">as</span> <span class="datatype">buffer</span> , offset <span class="keyword">as</span> <span class="datatype">long</span> ) <span class="modifier">static</span> <span class="keyword">as</span> <span class="datatype">ulong</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getInt64BE</span> ( buffer <span class="keyword">as</span> <span class="datatype">buffer</span> , offset <span class="keyword">as</span> <span class="datatype">long</span> ) <span class="modifier">static</span> <span class="keyword">as</span> <span class="datatype">ulong</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getFloatLE</span> ( buffer <span class="keyword">as</span> <span class="datatype">buffer</span> , offset <span class="keyword">as</span> <span class="datatype">long</span> ) <span class="modifier">static</span> <span class="keyword">as</span> <span class="datatype">float</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getFloatBE</span> ( buffer <span class="keyword">as</span> <span class="datatype">buffer</span> , offset <span class="keyword">as</span> <span class="datatype">long</span> ) <span class="modifier">static</span> <span class="keyword">as</span> <span class="datatype">float</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getDoubleLE</span> ( buffer <span class="keyword">as</span> <span class="datatype">buffer</span> , offset <span class="keyword">as</span> <span class="datatype">long</span> ) <span class="modifier">static</span> <span class="keyword">as</span> <span class="datatype">double</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getDoubleBE</span> ( buffer <span class="keyword">as</span> <span class="datatype">buffer</span> , offset <span class="keyword">as</span> <span class="datatype">long</span> ) <span class="modifier">static</span> <span class="keyword">as</span> <span class="datatype">double</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">forInt8</span> ( number <span class="keyword">as</span> <span class="datatype">byte</span> ) <span class="modifier">static</span> <span class="keyword">as</span> <span class="datatype">buffer</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">forInt16BE</span> ( number <span class="keyword">as</span> <span class="datatype">ushort</span> ) <span class="modifier">static</span> <span class="keyword">as</span> <span class="datatype">buffer</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">forInt16LE</span> ( number <span class="keyword">as</span> <span class="datatype">ushort</span> ) <span class="modifier">static</span> <span class="keyword">as</span> <span class="datatype">buffer</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">forInt32BE</span> ( number <span class="keyword">as</span> <span class="datatype">uint</span> ) <span class="modifier">static</span> <span class="keyword">as</span> <span class="datatype">buffer</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">forInt32LE</span> ( number <span class="keyword">as</span> <span class="datatype">uint</span> ) <span class="modifier">static</span> <span class="keyword">as</span> <span class="datatype">buffer</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">forInt64BE</span> ( number <span class="keyword">as</span> <span class="datatype">ulong</span> ) <span class="modifier">static</span> <span class="keyword">as</span> <span class="datatype">buffer</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">forInt64LE</span> ( number <span class="keyword">as</span> <span class="datatype">ulong</span> ) <span class="modifier">static</span> <span class="keyword">as</span> <span class="datatype">buffer</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">forFloat32BE</span> ( number <span class="keyword">as</span> <span class="datatype">float</span> ) <span class="modifier">static</span> <span class="keyword">as</span> <span class="datatype">buffer</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">forFloat32LE</span> ( number <span class="keyword">as</span> <span class="datatype">float</span> ) <span class="modifier">static</span> <span class="keyword">as</span> <span class="datatype">buffer</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">forDouble64BE</span> ( number <span class="keyword">as</span> <span class="datatype">double</span> ) <span class="modifier">static</span> <span class="keyword">as</span> <span class="datatype">buffer</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">forDouble64LE</span> ( number <span class="keyword">as</span> <span class="datatype">double</span> ) <span class="modifier">static</span> <span class="keyword">as</span> <span class="datatype">buffer</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getSize</span> ( buffer <span class="keyword">as</span> <span class="datatype">buffer</span> ) <span class="modifier">static</span> <span class="keyword">as</span> <span class="datatype">long</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getByte</span> ( buffer <span class="keyword">as</span> <span class="datatype">buffer</span> , offset <span class="keyword">as</span> <span class="datatype">long</span> ) <span class="modifier">static</span> <span class="keyword">as</span> <span class="datatype">byte</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setByte</span> ( buffer <span class="keyword">as</span> <span class="datatype">buffer</span> , offset <span class="keyword">as</span> <span class="datatype">long</span> , value <span class="keyword">as</span> <span class="datatype">byte</span> ) <span class="modifier">static</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">allocate</span> ( size <span class="keyword">as</span> <span class="datatype">long</span> ) <span class="modifier">static</span> <span class="keyword">as</span> <span class="datatype">buffer</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">fill</span> ( buffer <span class="keyword">as</span> <span class="datatype">buffer</span> , value <span class="keyword">as</span> <span class="datatype">byte</span> ) <span class="modifier">static</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">resize</span> ( buffer <span class="keyword">as</span> <span class="datatype">buffer</span> , newSize <span class="keyword">as</span> <span class="datatype">long</span> ) <span class="modifier">static</span> <span class="keyword">as</span> <span class="datatype">buffer</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">append</span> ( original <span class="keyword">as</span> <span class="datatype">buffer</span> , toAppend <span class="keyword">as</span> <span class="datatype">buffer</span> , size <span class="keyword">as</span> <span class="datatype">long</span> ) <span class="modifier">static</span> <span class="keyword">as</span> <span class="datatype">buffer</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">forHexString</span> ( str <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="modifier">static</span> <span class="keyword">as</span> <span class="datatype">buffer</span></div></div>
+</div>
+</div>
+</body>
+</html>

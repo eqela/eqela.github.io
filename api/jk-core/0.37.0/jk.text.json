@@ -1,0 +1,18 @@
+{
+	"moduleDescription" : "General utility classes for working with and manipulating text content.\n",
+	"type" : "module",
+	"moduleTitle" : "Text utilities",
+	"moduleId" : "jk.text",
+	"entities" : [
+		{
+			"type" : "class",
+			"name" : "StringUtil",
+			"description" : "The StringUtil class provides commonly used generic utility functions for string manipulation."
+		},
+		{
+			"type" : "class",
+			"name" : "StringBufferDecoder",
+			"description" : ""
+		}
+	]
+}

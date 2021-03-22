@@ -1,0 +1,20 @@
+class name jk.widget.pim.ContactPicker header public
+{
+	import jk.lang
+	import jk.ui
+	import jk.widget
+	func isSupported static as bool
+	ctor(context as jk.ui.GuiApplicationContext)
+	func pickOneContact(widget as jk.widget.Widget, callback as function<void,jk.widget.pim.Contact,jk.lang.Error>)
+}
+class name jk.widget.pim.Contact header public
+{
+	import jk.lang
+	ctor
+	func addToPhoneNumbers(value as string) as jk.widget.pim.Contact
+	func getPhoneNumberString as string
+	func getName as string #getterMethod
+	func setName(v as string) as jk.widget.pim.Contact #setterMethod
+	func getPhoneNumbers as vector<string> #getterMethod
+	func setPhoneNumbers(v as vector<string>) as jk.widget.pim.Contact #setterMethod
+}

@@ -1,0 +1,43 @@
+<html>
+<head>
+<title>jk.aes.BlockCipherWriter | JK Data [0.33.0] - API Reference</title>
+<link rel="stylesheet" type="text/css" href="style.css" />
+<meta name="viewport" content="initial-scale=1,maximum-scale=1" />
+<meta property="og:description" content="jk.aes.BlockCipherWriter | JK Data [0.33.0] - API Reference" />
+<meta property="og:title" content="jk.aes.BlockCipherWriter | JK Data [0.33.0] - API Reference" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:description" content="jk.aes.BlockCipherWriter | JK Data [0.33.0] - API Reference" />
+</head>
+<body><div class="content">
+<a class="back" href="index.html">&laquo; JK Data [0.33.0]</a><div class="intro">
+<h1><span class="keyword">class</span> <span class="symbol">jk.aes.BlockCipherWriter</span></h1>
+<p></p>
+</div>
+<div class="list">
+<div class="title">Base Types</div>
+<div class="entry">
+<div class="name"><span class="keyword">implements</span> <a class="datatype" href="../../jk-core/0.37.0/jk.io.Writer.html">jk.io.Writer</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">implements</span> <a class="datatype" href="../../jk-core/0.37.0/jk.io.SeekableWriter.html">jk.io.SeekableWriter</a></div></div>
+</div>
+<div class="list">
+<div class="title">Static Methods</div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">create</span> ( writer <span class="keyword">as</span> <a class="datatype" href="../../jk-core/0.37.0/jk.io.Writer.html">jk.io.Writer</a> , cipher <span class="keyword">as</span> <a class="datatype" href="jk.aes.BlockCipher.html">jk.aes.BlockCipher</a> ) <span class="modifier">static</span> <span class="keyword">as</span> <a class="datatype" href="jk.aes.BlockCipherWriter.html">jk.aes.BlockCipherWriter</a></div></div>
+</div>
+<div class="list">
+<div class="title">Instance Methods</div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">close</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setCurrentPosition</span> ( n <span class="keyword">as</span> <span class="datatype">long</span> ) <span class="keyword">as</span> <span class="datatype">bool</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getCurrentPosition</span> <span class="keyword">as</span> <span class="datatype">long</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">writeCompleteBlock</span> ( buf <span class="keyword">as</span> <span class="datatype">buffer</span> ) <span class="keyword">as</span> <span class="datatype">bool</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">write</span> ( buf <span class="keyword">as</span> <span class="datatype">buffer</span> , asize <span class="keyword">as</span> <span class="datatype">int</span> ) <span class="keyword">as</span> <span class="datatype">int</span></div></div>
+</div>
+</div>
+</body>
+</html>

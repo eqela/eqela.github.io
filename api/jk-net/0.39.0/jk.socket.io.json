@@ -1,0 +1,23 @@
+{
+	"moduleDescription" : "",
+	"type" : "module",
+	"moduleTitle" : "",
+	"moduleId" : "jk.socket.io",
+	"entities" : [
+		{
+			"type" : "interface",
+			"name" : "IOManagerEntry",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "IOManager",
+			"description" : ""
+		},
+		{
+			"type" : "interface",
+			"name" : "IOManagerTimer",
+			"description" : ""
+		}
+	]
+}

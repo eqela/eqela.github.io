@@ -1,0 +1,13 @@
+{
+	"moduleDescription" : "",
+	"type" : "module",
+	"moduleTitle" : "",
+	"moduleId" : "jk.ui.notification",
+	"entities" : [
+		{
+			"type" : "class",
+			"name" : "Notification",
+			"description" : ""
+		}
+	]
+}

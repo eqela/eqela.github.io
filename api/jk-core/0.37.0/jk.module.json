@@ -1,0 +1,13 @@
+{
+	"moduleDescription" : "Functionality for dynamically loading modules or plugins and calling\nthem from the currently running program.\n",
+	"type" : "module",
+	"moduleTitle" : "Dynamically loadable modules",
+	"moduleId" : "jk.module",
+	"entities" : [
+		{
+			"type" : "class",
+			"name" : "DynamicModule",
+			"description" : ""
+		}
+	]
+}

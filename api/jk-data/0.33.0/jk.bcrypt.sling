@@ -1,0 +1,26 @@
+class name jk.bcrypt.BCryptEncoderGeneric header extends jk.bcrypt.BCryptEncoder public
+{
+	import jk.lang
+	import jk.log
+	import jk.random
+	ctor
+	func generateSalt(logRounds as int, bCryptVersion as string) override as string
+	func hashPassword(password as string, salt as string) override as string
+	func checkPassword(password as string, hash as string) override as bool
+}
+class name jk.bcrypt.BCryptEncoder header abstract public
+{
+	import jk.lang
+	import jk.log
+	ctor
+	func create static as jk.bcrypt.BCryptEncoder
+	func forLoggingContext(ctx as jk.log.LoggingContext) static as jk.bcrypt.BCryptEncoder
+	var ctx protected as jk.log.LoggingContext
+	func setCtx(ctx as jk.log.LoggingContext) as jk.bcrypt.BCryptEncoder
+	func getCtx as jk.log.LoggingContext
+	func generateSalt as string
+	func generateSalt(logRounds as int) as string
+	func generateSalt(logRounds as int, bCryptVersion as string) abstract as string
+	func hashPassword(password as string, salt as string) abstract as string
+	func checkPassword(password as string, hash as string) abstract as bool
+}

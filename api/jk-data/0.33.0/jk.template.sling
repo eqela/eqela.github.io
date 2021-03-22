@@ -1,0 +1,284 @@
+interface name jk.template.RichTextDocumentReferenceResolver header public
+{
+	import jk.lang
+	func getReferenceHref(refid as string) as string
+	func getReferenceTitle(refid as string) as string
+	func getContentString(cid as string) as string
+}
+class name jk.template.RichTextContentParagraph header extends jk.template.RichTextParagraph public
+{
+	import jk.lang
+	ctor
+	func toMarkup override as string
+	func toText override as string
+	func toJson override as jk.lang.DynamicMap
+	func toHtml(refs as jk.template.RichTextDocumentReferenceResolver) override as string
+	func getContentId as string #getterMethod
+	func setContentId(v as string) as jk.template.RichTextContentParagraph #setterMethod
+}
+class name jk.template.RichTextDocument header public
+{
+	import jk.lang
+	import jk.fs
+	func forWikiMarkupFile(file as jk.fs.File) static as jk.template.RichTextDocument
+	func forWikiMarkupString(str as string) static as jk.template.RichTextDocument
+	ctor
+	func getTitle as string
+	func setTitle(v as string) as jk.template.RichTextDocument
+	func getAllMetadata as jk.lang.DynamicMap
+	func getMetadata(k as string) as string
+	func setMetadata(k as string, v as string) as jk.template.RichTextDocument
+	func addParagraph(rtp as jk.template.RichTextParagraph) as jk.template.RichTextDocument
+	func getAllReferences as vector<string>
+	func getAllLinks as vector<string>
+	func toJson as jk.lang.DynamicMap
+	func toHtml(refs as jk.template.RichTextDocumentReferenceResolver) as string
+	func getParagraphs as vector<jk.template.RichTextParagraph> #getterMethod
+	func setParagraphs(v as vector<jk.template.RichTextParagraph>) as jk.template.RichTextDocument #setterMethod
+}
+class name jk.template.RichTextWikiMarkupParser header public
+{
+	import jk.lang
+	import jk.fs
+	import jk.io
+	import jk.text
+	ctor
+	func parseFile(file as jk.fs.File) static as jk.template.RichTextDocument
+	func parseString(data as string) static as jk.template.RichTextDocument
+	func skipEmptyLines(pr as jk.io.LineReader) as string
+	func readPreformattedParagraph(id as string, pr as jk.io.LineReader) as jk.template.RichTextPreformattedParagraph
+	func readBlockParagraph(id as string, pr as jk.io.LineReader) as jk.template.RichTextBlockParagraph
+	func readListParagraph(type as string, l as string, pr as jk.io.LineReader) as jk.template.RichTextListParagraph
+	func processInput(pr as jk.io.LineReader, cwd as jk.fs.File, doc as jk.template.RichTextDocument) as bool
+	func parseToDocument(pr as jk.io.LineReader, cwd as jk.fs.File, v as jk.template.RichTextDocument)
+	func parse as jk.template.RichTextDocument
+	func getFile as jk.fs.File #getterMethod
+	func setFile(v as jk.fs.File) as jk.template.RichTextWikiMarkupParser #setterMethod
+	func getData as string #getterMethod
+	func setData(v as string) as jk.template.RichTextWikiMarkupParser #setterMethod
+	func getAllowInclude as bool #getterMethod
+	func setAllowInclude(v as bool) as jk.template.RichTextWikiMarkupParser #setterMethod
+}
+class name jk.template.RichTextSeparatorParagraph header extends jk.template.RichTextParagraph public
+{
+	import jk.lang
+	ctor
+	func toMarkup override as string
+	func toText override as string
+	func toJson override as jk.lang.DynamicMap
+	func toHtml(refs as jk.template.RichTextDocumentReferenceResolver) override as string
+}
+class name jk.template.RichTextBlockParagraph header extends jk.template.RichTextParagraph public
+{
+	import jk.lang
+	import jk.xml
+	ctor
+	func toMarkup override as string
+	func toText override as string
+	func toJson override as jk.lang.DynamicMap
+	func toHtml(refs as jk.template.RichTextDocumentReferenceResolver) override as string
+	func getId as string #getterMethod
+	func setId(v as string) as jk.template.RichTextBlockParagraph #setterMethod
+	func getText as string #getterMethod
+	func setText(v as string) as jk.template.RichTextBlockParagraph #setterMethod
+}
+class name jk.template.RichTextReferenceParagraph header extends jk.template.RichTextParagraph public
+{
+	import jk.lang
+	import jk.xml
+	ctor
+	func toMarkup override as string
+	func toText override as string
+	func toJson override as jk.lang.DynamicMap
+	func toHtml(refs as jk.template.RichTextDocumentReferenceResolver) override as string
+	func getReference as string #getterMethod
+	func setReference(v as string) as jk.template.RichTextReferenceParagraph #setterMethod
+	func getText as string #getterMethod
+	func setText(v as string) as jk.template.RichTextReferenceParagraph #setterMethod
+}
+class name jk.template.RichTextLinkParagraph header extends jk.template.RichTextParagraph public
+{
+	import jk.lang
+	import jk.xml
+	ctor
+	func toMarkup override as string
+	func toText override as string
+	func toJson override as jk.lang.DynamicMap
+	func toHtml(refs as jk.template.RichTextDocumentReferenceResolver) override as string
+	func getLink as string #getterMethod
+	func setLink(v as string) as jk.template.RichTextLinkParagraph #setterMethod
+	func getText as string #getterMethod
+	func setText(v as string) as jk.template.RichTextLinkParagraph #setterMethod
+	func getPopup as bool #getterMethod
+	func setPopup(v as bool) as jk.template.RichTextLinkParagraph #setterMethod
+}
+class name jk.template.TextTemplate header public
+{
+	import jk.lang
+	import jk.fs
+	import jk.xml
+	import jk.log
+	import jk.json
+	import jk.text
+	ctor
+	func processFile(file as jk.fs.File, markerBegin as string, markerEnd as string, vars as jk.lang.DynamicMap) static as string
+	func processString(text as string, markerBegin as string, markerEnd as string, vars as jk.lang.DynamicMap) static as string
+	func forFile(file as jk.fs.File, markerBegin as string, markerEnd as string, type as int = 0, includeDirs as vector<jk.fs.File> = null, includeFileData as map<string,object> = null, logContext as jk.log.LoggingContext = null) static as jk.template.TextTemplate
+	func forHTMLFile(file as jk.fs.File, includeDirs as vector<jk.fs.File> = null, includeFileData as map<string,object> = null, logContext as jk.log.LoggingContext = null) static as jk.template.TextTemplate
+	func forString(text as string, markerBegin as string, markerEnd as string, type as int = 0, includeDirs as vector<jk.fs.File> = null, includeFileData as map<string,object> = null, logContext as jk.log.LoggingContext = null) static as jk.template.TextTemplate
+	func forHTMLString(text as string, includeDirs as vector<jk.fs.File> = null, includeFileData as map<string,object> = null, logContext as jk.log.LoggingContext = null) static as jk.template.TextTemplate
+	func forJSONString(text as string, includeDirs as vector<jk.fs.File> = null, includeFileData as map<string,object> = null, logContext as jk.log.LoggingContext = null) static as jk.template.TextTemplate
+	var TYPE_GENERIC public static const as int
+	var TYPE_HTML public static const as int
+	var TYPE_JSON public static const as int
+	func setLanguagePreference(language as string)
+	func getIncludeFileContent(fileName as string) as string
+	func prepare as bool
+	func execute(vars as jk.lang.DynamicMap, importDirs as vector<jk.fs.File> = null) as string
+	func getVariableValue(vars as jk.lang.DynamicMap, varname as string) as object
+	func getVariableValueString(vars as jk.lang.DynamicMap, varname as string) as string
+	func getVariableValueVector(vars as jk.lang.DynamicMap, varname as string) as vector
+	func handleBlock(vars as jk.lang.DynamicMap, tag as vector<string>, data as vector, result as jk.lang.StringBuilder, importDirs as vector<jk.fs.File>) as bool
+	func encodeJSONString(s as string, sb as jk.lang.StringBuilder)
+	func getTokens as vector #getterMethod
+	func setTokens(v as vector) as jk.template.TextTemplate #setterMethod
+	func getText as string #getterMethod
+	func setText(v as string) as jk.template.TextTemplate #setterMethod
+	func getMarkerBegin as string #getterMethod
+	func setMarkerBegin(v as string) as jk.template.TextTemplate #setterMethod
+	func getMarkerEnd as string #getterMethod
+	func setMarkerEnd(v as string) as jk.template.TextTemplate #setterMethod
+	func getLogContext as jk.log.LoggingContext #getterMethod
+	func setLogContext(v as jk.log.LoggingContext) as jk.template.TextTemplate #setterMethod
+	func getType as int #getterMethod
+	func setType(v as int) as jk.template.TextTemplate #setterMethod
+	func getLanguagePreferences as vector<string> #getterMethod
+	func setLanguagePreferences(v as vector<string>) as jk.template.TextTemplate #setterMethod
+	func getIncludeDirs as vector<jk.fs.File> #getterMethod
+	func setIncludeDirs(v as vector<jk.fs.File>) as jk.template.TextTemplate #setterMethod
+	func getIncludeFileData as map<string,object> #getterMethod
+	func setIncludeFileData(v as map<string,object>) as jk.template.TextTemplate #setterMethod
+}
+class name jk.template.RichTextListParagraph header extends jk.template.RichTextParagraph public
+{
+	import jk.lang
+	ctor
+	func toJson override as jk.lang.DynamicMap
+	func processList(refs as jk.template.RichTextDocumentReferenceResolver, v as vector<string>) as string
+	func toHtml(refs as jk.template.RichTextDocumentReferenceResolver) override as string
+	func getType as string #getterMethod
+	func setType(v as string) as jk.template.RichTextListParagraph #setterMethod
+	func getList as vector<string> #getterMethod
+	func setList(v as vector<string>) as jk.template.RichTextListParagraph #setterMethod
+}
+class name jk.template.TextTemplateManager header public
+{
+	import jk.lang
+	import jk.fs
+	ctor
+	func forDirectory(dir as jk.fs.File, cached as bool = false) static as jk.template.TextTemplateManager
+	func forTemplates(data as map<string,object>) static as jk.template.TextTemplateManager
+	func getTemplateData(name as string) as string
+	func getText(name as string, vars as jk.lang.DynamicMap = null) as string
+	func getTemplates as map<string,object> #getterMethod
+	func setTemplates(v as map<string,object>) as jk.template.TextTemplateManager #setterMethod
+}
+class name jk.template.DynamicText header implements jk.lang.StringObject public
+{
+	import jk.lang
+	import jk.xml
+	import jk.json
+	ctor
+	property data as string { hasset hasget }
+	property dataMap as jk.lang.DynamicMap { hasset hasget }
+	func forString(data as string) static as jk.template.DynamicText
+	func setValue(key as string, value as string)
+	func getValue(key as string) as string
+	func toHtml(language as string, resolver as jk.template.RichTextDocumentReferenceResolver) as string
+	func toString as string
+}
+class name jk.template.RichTextPreformattedParagraph header extends jk.template.RichTextParagraph public
+{
+	import jk.lang
+	import jk.xml
+	ctor
+	func toMarkup override as string
+	func toText override as string
+	func toJson override as jk.lang.DynamicMap
+	func toHtml(refs as jk.template.RichTextDocumentReferenceResolver) override as string
+	func getId as string #getterMethod
+	func setId(v as string) as jk.template.RichTextPreformattedParagraph #setterMethod
+	func getText as string #getterMethod
+	func setText(v as string) as jk.template.RichTextPreformattedParagraph #setterMethod
+}
+class name jk.template.RichTextParagraph header public
+{
+	import jk.lang
+	ctor
+	func toMarkup virtual as string
+	func toText virtual as string
+	func toJson virtual as jk.lang.DynamicMap
+	func toHtml(refs as jk.template.RichTextDocumentReferenceResolver) virtual as string
+}
+class name jk.template.RichTextSegment header public
+{
+	import jk.lang
+	import jk.xml
+	ctor
+	func addMarkupModifiers(sb as jk.lang.StringBuilder)
+	func toMarkup as string
+	func toJson as jk.lang.DynamicMap
+	func toHtml(refs as jk.template.RichTextDocumentReferenceResolver) as string
+	func getText as string #getterMethod
+	func setText(v as string) as jk.template.RichTextSegment #setterMethod
+	func getBold as bool #getterMethod
+	func setBold(v as bool) as jk.template.RichTextSegment #setterMethod
+	func getItalic as bool #getterMethod
+	func setItalic(v as bool) as jk.template.RichTextSegment #setterMethod
+	func getUnderline as bool #getterMethod
+	func setUnderline(v as bool) as jk.template.RichTextSegment #setterMethod
+	func getColor as string #getterMethod
+	func setColor(v as string) as jk.template.RichTextSegment #setterMethod
+	func getLink as string #getterMethod
+	func setLink(v as string) as jk.template.RichTextSegment #setterMethod
+	func getReference as string #getterMethod
+	func setReference(v as string) as jk.template.RichTextSegment #setterMethod
+	func getIsInline as bool #getterMethod
+	func setIsInline(v as bool) as jk.template.RichTextSegment #setterMethod
+	func getLinkPopup as bool #getterMethod
+	func setLinkPopup(v as bool) as jk.template.RichTextSegment #setterMethod
+}
+class name jk.template.RichTextStyledParagraph header extends jk.template.RichTextParagraph public
+{
+	import jk.lang
+	ctor
+	func forString(text as string) static as jk.template.RichTextStyledParagraph
+	func isHeading as bool
+	func getTextContent as string
+	func toJson override as jk.lang.DynamicMap
+	func toText override as string
+	func toHtml(refs as jk.template.RichTextDocumentReferenceResolver) override as string
+	func addSegment(rts as jk.template.RichTextSegment) as jk.template.RichTextParagraph
+	func setSegmentLink(seg as jk.template.RichTextSegment, alink as string)
+	func parseSegments(txt as string)
+	func parse(text as string) as jk.template.RichTextStyledParagraph
+	func toMarkup override as string
+	func getHeading as int #getterMethod
+	func setHeading(v as int) as jk.template.RichTextStyledParagraph #setterMethod
+	func getSegments as vector<jk.template.RichTextSegment> #getterMethod
+	func setSegments(v as vector<jk.template.RichTextSegment>) as jk.template.RichTextStyledParagraph #setterMethod
+}
+class name jk.template.RichTextImageParagraph header extends jk.template.RichTextParagraph public
+{
+	import jk.lang
+	import jk.xml
+	ctor
+	func toMarkup override as string
+	func toText override as string
+	func toJson override as jk.lang.DynamicMap
+	func toHtml(refs as jk.template.RichTextDocumentReferenceResolver) override as string
+	func getFilename as string #getterMethod
+	func setFilename(v as string) as jk.template.RichTextImageParagraph #setterMethod
+	func getWidth as int #getterMethod
+	func setWidth(v as int) as jk.template.RichTextImageParagraph #setterMethod
+}

@@ -1,0 +1,129 @@
+class name jk.widget.form.FormDeclaration header public
+{
+	import jk.lang
+	import jk.json
+	import jk.gfx
+	import jk.log
+	func forDescription(context as jk.log.LoggingContext, desc as string) static as jk.widget.form.FormDeclaration
+	class name Element header public static
+	{
+		ctor
+		func forType(type as string) static as jk.widget.form.FormDeclaration.Element
+		func forProperties(properties as jk.lang.DynamicMap) static as jk.widget.form.FormDeclaration.Element
+		func getId as string
+		func getType as string
+		func getLabel as string
+		func isType(type as string) as bool
+		func setProperty(key as string, value as object)
+		func setProperty(key as string, value as int)
+		func setProperty(key as string, value as double)
+		func setProperty(key as string, value as bool)
+		func getPropertyObject(key as string) as object
+		func getPropertyDynamicVector(key as string) as jk.lang.DynamicVector
+		func getPropertyVector(key as string) as vector
+		func getPropertyString(key as string) as string
+		func getPropertyInteger(key as string) as int
+		func getPropertyDouble(key as string) as double
+		func getPropertyBoolean(key as string) as bool
+		func addToChildren(element as jk.widget.form.FormDeclaration.Element)
+		func getProperties as jk.lang.DynamicMap #getterMethod
+		func setProperties(v as jk.lang.DynamicMap) as jk.widget.form.FormDeclaration.Element #setterMethod
+		func getChildren as vector<jk.widget.form.FormDeclaration.Element> #getterMethod
+		func setChildren(v as vector<jk.widget.form.FormDeclaration.Element>) as jk.widget.form.FormDeclaration.Element #setterMethod
+	}
+	ctor
+	func clear
+	func getRoot as jk.widget.form.FormDeclaration.Element
+	func addElement(element as jk.widget.form.FormDeclaration.Element) as jk.widget.form.FormDeclaration.Element
+	func startVerticalContainer as jk.widget.form.FormDeclaration.Element #deprecated
+	func endVerticalContainer as jk.widget.form.FormDeclaration.Element #deprecated
+	func startHorizontalContainer as jk.widget.form.FormDeclaration.Element #deprecated
+	func endHorizontalContainer as jk.widget.form.FormDeclaration.Element #deprecated
+	func startGroup(id as string, title as string, description as string) as jk.widget.form.FormDeclaration.Element #deprecated
+	func endGroup as jk.widget.form.FormDeclaration.Element #deprecated
+	func startTab(id as string, label as string) as jk.widget.form.FormDeclaration.Element #deprecated
+	func endTab as jk.widget.form.FormDeclaration.Element #deprecated
+	func addTextInput(id as string, label as string, description as string) as jk.widget.form.FormDeclaration.Element #deprecated
+	func addRawTextInput(id as string, label as string, description as string) as jk.widget.form.FormDeclaration.Element #deprecated
+	func addPasswordInput(id as string, label as string, description as string) as jk.widget.form.FormDeclaration.Element #deprecated
+	func addNameInput(id as string, label as string, description as string) as jk.widget.form.FormDeclaration.Element #deprecated
+	func addEmailAddressInput(id as string, label as string, description as string) as jk.widget.form.FormDeclaration.Element #deprecated
+	func addPhoneNumberInput(id as string, label as string, description as string) as jk.widget.form.FormDeclaration.Element #deprecated
+	func addStreetAddressInput(id as string, label as string, description as string) as jk.widget.form.FormDeclaration.Element #deprecated
+	func addMultipleChoiceInput(id as string, label as string, description as string, values as array<string>) as jk.widget.form.FormDeclaration.Element #deprecated
+	func addMultipleChoiceInput(id as string, label as string, description as string, values as jk.lang.KeyValueList<string,string>) as jk.widget.form.FormDeclaration.Element #deprecated
+	func addDateInput(id as string, label as string, description as string, skipYears as int) as jk.widget.form.FormDeclaration.Element #deprecated
+	func addPhotoCaptureInput(id as string, label as string, description as string, defImage as jk.gfx.Image) as jk.widget.form.FormDeclaration.Element #deprecated
+	func addCodeInput(id as string, label as string, description as string, rows as int) as jk.widget.form.FormDeclaration.Element #deprecated
+	func addTextAreaInput(id as string, label as string, description as string, rows as int) as jk.widget.form.FormDeclaration.Element #deprecated
+	func addStaticTextElement(id as string, label as string, description as string) as jk.widget.form.FormDeclaration.Element #deprecated
+	func addRadioGroupInput(id as string, label as string, description as string, groupname as string, items as vector<string>) as jk.widget.form.FormDeclaration.Element #deprecated
+	func addCheckBoxInput(id as string, label as string, description as string, isChecked as bool) as jk.widget.form.FormDeclaration.Element #deprecated
+	func addStringListInput(id as string, label as string, description as string) as jk.widget.form.FormDeclaration.Element #deprecated
+	func addFieldsTo(context as jk.log.LoggingContext, fields as vector, element as jk.widget.form.FormDeclaration.Element) as bool
+	func parseDescription(context as jk.log.LoggingContext, desc as string) as bool
+}
+class name jk.widget.form.FormWidget header extends jk.widget.LayerWidget public #widget
+{
+	import jk.lang
+	import jk.lang
+	import jk.ui
+	import jk.gfx
+	import jk.widget
+	import jk.widget.common
+	func forDeclaration(context as jk.ui.GuiApplicationContext, form as jk.widget.form.FormDeclaration) static as jk.widget.form.FormWidget
+	ctor(context as jk.ui.GuiApplicationContext)
+	func getCustomFooterWidget as jk.widget.LayerWidget
+	func getFormDeclaration virtual as jk.widget.form.FormDeclaration
+	func setFormDeclaration(value as jk.widget.form.FormDeclaration) as jk.widget.form.FormWidget
+	func addActions virtual #deprecated
+	func addAction(label as string, handler as function<void>) #deprecated
+	func setStyleForTextInputWidget(widget as jk.widget.common.TextInputWidget, allowReplace as bool) virtual as jk.widget.Widget
+	func setStyleForTextButtonWidget(widget as jk.widget.common.TextButtonWidget, allowReplace as bool) virtual as jk.widget.Widget
+	func setStyleForSelectWidget(widget as jk.widget.common.SelectWidget, allowReplace as bool) virtual as jk.widget.Widget
+	func setStyleForTextAreaWidget(widget as jk.widget.common.TextAreaWidget, allowReplace as bool) virtual as jk.widget.Widget
+	func setStyleForDateSelectorWidget(widget as jk.widget.common.DateSelectorWidget, allowReplace as bool) virtual as jk.widget.Widget
+	func setStyleForRadioButtonGroupWidget(widget as jk.widget.common.RadioButtonGroupWidget, allowReplace as bool) virtual as jk.widget.Widget
+	func setStyleForCheckBoxWidget(widget as jk.widget.common.CheckBoxWidget, allowReplace as bool) virtual as jk.widget.Widget
+	func setStyleForWidget(widget as jk.widget.Widget, allowReplace as bool) virtual as jk.widget.Widget
+	func asPlaceHolder(str as string) as string
+	func getBackgroundColorForElement(element as jk.widget.form.FormDeclaration.Element) virtual as jk.gfx.Color
+	func getForegroundColorForElement(element as jk.widget.form.FormDeclaration.Element) virtual as jk.gfx.Color
+	func getAdjustedForegroundColor(element as jk.widget.form.FormDeclaration.Element, backgroundColor as jk.gfx.Color) as jk.gfx.Color
+	func setActionHandlers(handlers as map)
+	func setActionHandler(actionName as string, handler as function<void>)
+	func getActionHandler(actionName as string) as function<void>
+	func createWidgetForElement(element as jk.widget.form.FormDeclaration.Element) virtual as jk.widget.Widget
+	func addToContainerWithWeight(container as jk.widget.ContainerWidget, child as jk.widget.Widget, weight as double)
+	func createAndRegisterWidget(element as jk.widget.form.FormDeclaration.Element) as jk.widget.Widget
+	func computeWidgetLayout(widthConstraint as int #notLiteral) override
+	func initializeWidget override
+	func setFormData(data as jk.lang.DynamicMap, preserveUnknownValues as bool = false)
+	func setFieldData(id as string, value as object)
+	func getFormDataTo(data as jk.lang.DynamicMap) virtual
+	func getFormData as jk.lang.DynamicMap
+	func clearFormData
+	func getElementAsWidget(id as string) as jk.widget.Widget
+	func getElementSpacing as int #getterMethod
+	func setElementSpacing(v as int #notLiteral) as jk.widget.form.FormWidget #setterMethod
+	func getFormMargin as int #getterMethod
+	func setFormMargin(v as int #notLiteral) as jk.widget.form.FormWidget #setterMethod
+	func getEnableFieldLabels as bool #getterMethod
+	func setEnableFieldLabels(v as bool) as jk.widget.form.FormWidget #setterMethod
+	func getFieldLabelBelow as bool #getterMethod
+	func setFieldLabelBelow(v as bool) as jk.widget.form.FormWidget #setterMethod
+	func getFormWidth as int #getterMethod
+	func setFormWidth(v as int #notLiteral) as jk.widget.form.FormWidget #setterMethod
+	func getFieldLabelFontSize as int #getterMethod
+	func setFieldLabelFontSize(v as int #notLiteral) as jk.widget.form.FormWidget #setterMethod
+	func getFieldLabelFontFamily as string #getterMethod
+	func setFieldLabelFontFamily(v as string) as jk.widget.form.FormWidget #setterMethod
+	func getFieldLabelFontResource as string #getterMethod
+	func setFieldLabelFontResource(v as string) as jk.widget.form.FormWidget #setterMethod
+	func getWidgetBackgroundColor as jk.gfx.Color #getterMethod
+	func setWidgetBackgroundColor(v as jk.gfx.Color) as jk.widget.form.FormWidget #setterMethod
+	func getEnableScrolling as bool #getterMethod
+	func setEnableScrolling(v as bool) as jk.widget.form.FormWidget #setterMethod
+	func getFillContainerWidget as bool #getterMethod
+	func setFillContainerWidget(v as bool) as jk.widget.form.FormWidget #setterMethod
+}

@@ -1,0 +1,46 @@
+<html>
+<head>
+<title>jk.http.worker.HTTPWorkerHandler | JK Net [0.39.0] - API Reference</title>
+<link rel="stylesheet" type="text/css" href="style.css" />
+<meta name="viewport" content="initial-scale=1,maximum-scale=1" />
+<meta property="og:description" content="jk.http.worker.HTTPWorkerHandler | JK Net [0.39.0] - API Reference" />
+<meta property="og:title" content="jk.http.worker.HTTPWorkerHandler | JK Net [0.39.0] - API Reference" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:description" content="jk.http.worker.HTTPWorkerHandler | JK Net [0.39.0] - API Reference" />
+</head>
+<body><div class="content">
+<a class="back" href="index.html">&laquo; JK Net [0.39.0]</a><div class="intro">
+<h1><span class="modifier">abstract</span> <span class="keyword">class</span> <span class="symbol">jk.http.worker.HTTPWorkerHandler</span></h1>
+<p></p>
+</div>
+<div class="list">
+<div class="title">Base Types</div>
+<div class="entry">
+<div class="name"><span class="keyword">implements</span> <a class="datatype" href="../../jk-core/0.37.0/jk.lang.Runnable.html">jk.lang.Runnable</a></div></div>
+</div>
+<div class="list">
+<div class="title">Instance Methods</div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">handleRequest</span> ( req <span class="keyword">as</span> <a class="datatype" href="jk.http.worker.HTTPWorkerRequest.html">jk.http.worker.HTTPWorkerRequest</a> , resp <span class="keyword">as</span> <a class="datatype" href="jk.http.worker.HTTPWorkerResponse.html">jk.http.worker.HTTPWorkerResponse</a> ) <span class="modifier">abstract</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">onStartRequest</span> <span class="modifier">virtual</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">onEndRequest</span> <span class="modifier">virtual</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">preProcess</span> ( req <span class="keyword">as</span> <a class="datatype" href="jk.http.worker.HTTPWorkerRequest.html">jk.http.worker.HTTPWorkerRequest</a> , resp <span class="keyword">as</span> <a class="datatype" href="jk.http.worker.HTTPWorkerResponse.html">jk.http.worker.HTTPWorkerResponse</a> ) <span class="modifier">virtual</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">postProcess</span> ( req <span class="keyword">as</span> <a class="datatype" href="jk.http.worker.HTTPWorkerRequest.html">jk.http.worker.HTTPWorkerRequest</a> , resp <span class="keyword">as</span> <a class="datatype" href="jk.http.worker.HTTPWorkerResponse.html">jk.http.worker.HTTPWorkerResponse</a> ) <span class="modifier">virtual</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">generateNotFound</span> ( resp <span class="keyword">as</span> <a class="datatype" href="jk.http.worker.HTTPWorkerResponse.html">jk.http.worker.HTTPWorkerResponse</a> ) <span class="modifier">virtual</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">generateInternalServerError</span> ( resp <span class="keyword">as</span> <a class="datatype" href="jk.http.worker.HTTPWorkerResponse.html">jk.http.worker.HTTPWorkerResponse</a> ) <span class="modifier">virtual</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">run</span> <span class="modifier">virtual</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getCtx</span> <span class="keyword">as</span> <a class="datatype" href="../../jk-core/0.37.0/jk.log.LoggingContext.html">jk.log.LoggingContext</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setCtx</span> ( v <span class="keyword">as</span> <a class="datatype" href="../../jk-core/0.37.0/jk.log.LoggingContext.html">jk.log.LoggingContext</a> ) <span class="keyword">as</span> <a class="datatype" href="jk.http.worker.HTTPWorkerHandler.html">jk.http.worker.HTTPWorkerHandler</a></div></div>
+</div>
+</div>
+</body>
+</html>

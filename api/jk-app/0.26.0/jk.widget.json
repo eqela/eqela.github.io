@@ -1,0 +1,178 @@
+{
+	"moduleDescription" : "",
+	"type" : "module",
+	"moduleTitle" : "",
+	"moduleId" : "jk.widget",
+	"entities" : [
+		{
+			"type" : "class",
+			"name" : "ResponsiveWidget",
+			"description" : ""
+		},
+		{
+			"type" : "interface",
+			"name" : "TitleContainerWidget",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "VerticalBoxWidget",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "WidgetAnimation",
+			"description" : ""
+		},
+		{
+			"type" : "interface",
+			"name" : "ResizeAwareWidget",
+			"description" : ""
+		},
+		{
+			"type" : "interface",
+			"name" : "WidgetWithLayout",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "SwitcherWidget",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "ContainerWidget",
+			"description" : "A container widget class that can be used to create aggregate widgets that are composed of other widgets. This class is a generic base class for all kinds of container widgets, and does not implement any mechanism for how the child widgets will be sized or laid out. A subclass would override the computeWidgetLayout method to provide that functionality."
+		},
+		{
+			"type" : "interface",
+			"name" : "ScreenStartStopAwareWidget",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "LabelWidget",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "CanvasWidget",
+			"description" : ""
+		},
+		{
+			"type" : "interface",
+			"name" : "WidgetProvider",
+			"description" : "A WidgetProvider is used to provide widgets to the caller. The caller would\ncall getNextWidget repeatedly as many times as necessary. Once the provider returns\na null value, this indicates that there are no more widgets available."
+		},
+		{
+			"type" : "class",
+			"name" : "RenderableWidget",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "GridWidget",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "AlignWidget",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "LayerWidget",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "LayerWithBackgroundColorWidget",
+			"description" : ""
+		},
+		{
+			"type" : "interface",
+			"name" : "DisplayAwareWidget",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "VerticalScrollerWidget",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "Menu",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "ScrollerWidget",
+			"description" : ""
+		},
+		{
+			"type" : "interface",
+			"name" : "WidgetWithValue",
+			"description" : ""
+		},
+		{
+			"type" : "interface",
+			"name" : "HeightAwareWidget",
+			"description" : ""
+		},
+		{
+			"type" : "interface",
+			"name" : "ScreenAwareWidget",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "HorizontalBoxWidget",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "StaticWidgetProvider",
+			"description" : "A StaticWidgetProvider is used to dispense a vector of widgets one by one through\nthe WidgetProvider interface. This allows the user to pre-allocate wigdet objects for\nlater use eg. in dynamic scrollers."
+		},
+		{
+			"type" : "interface",
+			"name" : "IdAwareWidget",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "ScreenForWidget",
+			"description" : ""
+		},
+		{
+			"type" : "interface",
+			"name" : "ResponsiveAwareWidget",
+			"description" : ""
+		},
+		{
+			"type" : "interface",
+			"name" : "ParentAwareWidget",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "ImageWidget",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "HorizontalScrollerWidget",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "Widget",
+			"description" : ""
+		},
+		{
+			"type" : "interface",
+			"name" : "TitledWidget",
+			"description" : ""
+		}
+	]
+}

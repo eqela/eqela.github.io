@@ -1,0 +1,48 @@
+{
+	"moduleDescription" : "",
+	"type" : "module",
+	"moduleTitle" : "",
+	"moduleId" : "jk.http.client",
+	"entities" : [
+		{
+			"type" : "class",
+			"name" : "HTTPClientResponse",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "CustomWebClient",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "HTTPClientListener",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "HTTPClientRequest",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "HTTPRPCClient",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "HTTPClientOperation",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "WebRequest",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "HTTPClient",
+			"description" : ""
+		}
+	]
+}

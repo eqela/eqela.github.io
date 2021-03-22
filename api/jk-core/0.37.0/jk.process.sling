@@ -1,0 +1,89 @@
+class name jk.process.ProcessKit header public
+{
+	import jk.lang
+	import jk.log
+	ctor(ctx as jk.log.LoggingContext)
+	func execute(command)
+}
+interface name jk.process.ProcessWithIO header implements jk.process.Process public
+{
+	import jk.lang
+	import jk.io
+	func getStandardInput as jk.io.Writer
+	func getStandardOutput as jk.io.Reader
+	func getStandardError as jk.io.Reader
+}
+class name jk.process.ProcessLauncher header implements jk.lang.StringObject public
+{
+	import jk.lang
+	import jk.fs
+	import jk.env
+	import jk.text
+	func asProcessLauncher(o) static as jk.process.ProcessLauncher
+	func forSelf static as jk.process.ProcessLauncher
+	func forFile(file as jk.fs.File, parameters as array = null) static as jk.process.ProcessLauncher
+	func forCommand(command as string, parameters as array = null) static as jk.process.ProcessLauncher
+	func forString(str as string) static as jk.process.ProcessLauncher
+	ctor
+	func getFullCommandString(includeEnv as bool) as string
+	func toString as string
+	func addToParams(arg as string) as jk.process.ProcessLauncher
+	func addFileToParams(file as jk.fs.File) as jk.process.ProcessLauncher
+	func addStringsToParams(parameters as vector<string>) as jk.process.ProcessLauncher
+	func setEnvVariable(key as string, val as string)
+	func start as jk.process.Process
+	func startWithIO as jk.process.ProcessWithIO
+	func execute as int
+	func executeSilent as int
+	func executeToStringBuilder(output as jk.lang.StringBuilder) as int
+	func executeToString as string
+	func executeToBuffer as buffer
+	func executeToPipe(pipeHandler as jk.lang.BufferDataReceiver) as int
+	func getFile as jk.fs.File #getterMethod
+	func setFile(v as jk.fs.File) as jk.process.ProcessLauncher #setterMethod
+	func getParams as vector<string> #getterMethod
+	func setParams(v as vector<string>) as jk.process.ProcessLauncher #setterMethod
+	func getEnv as map<string,string> #getterMethod
+	func setEnv(v as map<string,string>) as jk.process.ProcessLauncher #setterMethod
+	func getCwd as jk.fs.File #getterMethod
+	func setCwd(v as jk.fs.File) as jk.process.ProcessLauncher #setterMethod
+	func getUid as int #getterMethod
+	func setUid(v as int) as jk.process.ProcessLauncher #setterMethod
+	func getGid as int #getterMethod
+	func setGid(v as int) as jk.process.ProcessLauncher #setterMethod
+	func getTrapSigint as bool #getterMethod
+	func setTrapSigint(v as bool) as jk.process.ProcessLauncher #setterMethod
+	func getReplaceSelf as bool #getterMethod
+	func setReplaceSelf(v as bool) as jk.process.ProcessLauncher #setterMethod
+	func getPipePty as bool #getterMethod
+	func setPipePty(v as bool) as jk.process.ProcessLauncher #setterMethod
+	func getStartGroup as bool #getterMethod
+	func setStartGroup(v as bool) as jk.process.ProcessLauncher #setterMethod
+	func getNoCmdWindow as bool #getterMethod
+	func setNoCmdWindow(v as bool) as jk.process.ProcessLauncher #setterMethod
+	func getErrorBuffer as jk.lang.StringBuilder #getterMethod
+	func setErrorBuffer(v as jk.lang.StringBuilder) as jk.process.ProcessLauncher #setterMethod
+	func getDetachFromTerminal as bool #getterMethod
+	func setDetachFromTerminal(v as bool) as jk.process.ProcessLauncher #setterMethod
+}
+interface name jk.process.Process header public
+{
+	import jk.lang
+	func getId as string
+	func isRunning as bool
+	func getExitStatus as int
+	func sendInterrupt
+	func killRequest
+	func killForce
+	func kill(timeout as int)
+	func waitForExit as int
+}
+class name jk.process.CurrentProcess header public
+{
+	import jk.lang
+	import jk.fs
+	ctor
+	func terminate(value as int) static
+	func getExecutableFile static as jk.fs.File
+	func getProcessName static as string
+}

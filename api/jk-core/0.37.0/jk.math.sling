@@ -1,0 +1,127 @@
+class name jk.math.Vector2 header public
+{
+	import jk.lang
+	ctor
+	var x public as double
+	var y public as double
+	func create(x as double, y as double) static as jk.math.Vector2
+	func add(b as jk.math.Vector2) as jk.math.Vector2
+	func subtract(b as jk.math.Vector2) as jk.math.Vector2
+	func multiply(b as jk.math.Vector2) as jk.math.Vector2
+	func multiplyScalar(a as double) as jk.math.Vector2
+	func distance(b as jk.math.Vector2) as double
+	func getLength as double
+}
+class name jk.math.Vector3 header public
+{
+	import jk.lang
+	ctor
+	var x public as double
+	var y public as double
+	var z public as double
+	func create(x as double, y as double, z as double) static as jk.math.Vector3
+	func add(b as jk.math.Vector3) as jk.math.Vector3
+	func subtract(b as jk.math.Vector3) as jk.math.Vector3
+	func multiply(b as jk.math.Vector3) as jk.math.Vector3
+	func multiplyScalar(a as double) as jk.math.Vector3
+	func distance(b as jk.math.Vector3) as double
+	func getLength as double
+}
+class name jk.math.Matrix44 header public
+{
+	import jk.lang
+	ctor
+	func forZero static as jk.math.Matrix44
+	func forIdentity static as jk.math.Matrix44
+	func forTranslate(translateX as double, translateY as double, translateZ as double) static as jk.math.Matrix44
+	func forXRotation(angle as double) static as jk.math.Matrix44
+	func forYRotation(angle as double) static as jk.math.Matrix44
+	func forZRotation(angle as double) static as jk.math.Matrix44
+	func forSkew(vx as double, vy as double, vz as double) static as jk.math.Matrix44
+	func forXRotationWithCenter(angle as double, centerX as double, centerY as double, centerZ as double) static as jk.math.Matrix44
+	func forYRotationWithCenter(angle as double, centerX as double, centerY as double, centerZ as double) static as jk.math.Matrix44
+	func forZRotationWithCenter(angle as double, centerX as double, centerY as double, centerZ as double) static as jk.math.Matrix44
+	func forScale(scaleX as double, scaleY as double, scaleZ as double) static as jk.math.Matrix44
+	func forFlipXY(flipXY as bool) static as jk.math.Matrix44
+	func forFlipXZ(flipXZ as bool) static as jk.math.Matrix44
+	func forFlipYZ(flipYZ as bool) static as jk.math.Matrix44
+	func forValues(mv as array<double>) static as jk.math.Matrix44
+	func multiplyScalar(v as double, mm as jk.math.Matrix44) static as jk.math.Matrix44
+	func multiplyMatrix(a as jk.math.Matrix44, b as jk.math.Matrix44) static as jk.math.Matrix44
+	func multiplyVector(a as jk.math.Matrix44, b as jk.math.Vector3) static as jk.math.Vector3
+	var v public as array<double>
+}
+class name jk.math.Matrix33 header public
+{
+	import jk.lang
+	ctor
+	func forZero static as jk.math.Matrix33
+	func forIdentity static as jk.math.Matrix33
+	func invertMatrix(m as jk.math.Matrix33) static as jk.math.Matrix33
+	func forTranslate(translateX as double, translateY as double) static as jk.math.Matrix33
+	func forRotation(angle as double) static as jk.math.Matrix33
+	func forRotationWithCenter(angle as double, centerX as double, centerY as double) static as jk.math.Matrix33
+	func forSkew(skewX as double, skewY as double) static as jk.math.Matrix33
+	func forScale(scaleX as double, scaleY as double) static as jk.math.Matrix33
+	func forFlip(flipX as bool, flipY as bool) static as jk.math.Matrix33
+	func forValues(mv as array<double>) static as jk.math.Matrix33
+	func multiplyScalar(v as double, mm as jk.math.Matrix33) static as jk.math.Matrix33
+	func multiplyMatrix(a as jk.math.Matrix33, b as jk.math.Matrix33) static as jk.math.Matrix33
+	func multiplyVector(a as jk.math.Matrix33, b as jk.math.Vector2) static as jk.math.Vector2
+	var v public as array<double>
+}
+class name jk.math.Math header public
+{
+	import jk.lang
+	ctor
+	var M_PI public static const as double
+	var M_PI_2 public static const as double
+	var M_PI_4 public static const as double
+	var M_1_PI public static const as double
+	var M_2_PI public static const as double
+	var M_2_SQRTPI public static const as double
+	var M_SQRT2 public static const as double
+	var M_SQRT1_2 public static const as double
+	var HALF_AWAY_FROM_ZERO public static const as int
+	var HALF_TOWARD_ZERO public static const as int
+	var HALF_NEAREST_EVEN public static const as int
+	var HALF_POSITIVE public static const as int
+	var HALF_NEGATIVE public static const as int
+	func toRadians(d as double) static as double
+	func toDegrees(r as double) static as double
+	func abs(d as double #used) static as double
+	func absFloat(f as float #used) static as float
+	func absInt32(i as int #used) static as int
+	func absInt64(l as long) static as long
+	func acos(d as double #used) static as double
+	func asin(d as double #used) static as double
+	func atan(d as double #used) static as double
+	func atan2(y as double #used, x as double #used) static as double
+	func ceil(d as double #used) static as double
+	func cos(d as double #used) static as double
+	func cosh(d as double #used) static as double
+	func exp(d as double #used) static as double
+	func floor(d as double #used) static as double
+	func remainder(x as double, y as double) static as double
+	func log(d as double #used) static as double
+	func log10(d as double #used) static as double
+	func max(d1 as double #used, d2 as double #used) static as double
+	func maxFloat(f1 as float #used, f2 as float #used) static as float
+	func maxInt32(i1 as int #used, i2 as int #used) static as int
+	func maxInt64(l1 as long #used, l2 as long #used) static as long
+	func min(d1 as double #used, d2 as double #used) static as double
+	func minFloat(f1 as float #used, f2 as float #used) static as float
+	func minInt32(i1 as int #used, i2 as int #used) static as int
+	func minInt64(l1 as long #used, l2 as long #used) static as long
+	func pow(x as double #used, y as double #used) static as double
+	func round(n as double) static as double
+	func roundWithMode(d as double #used, mode as int) static as double
+	func sin(d as double #used) static as double
+	func sinh(d as double) static as double
+	func sqrt(d as double #used) static as double
+	func tan(d as double) static as double
+	func tanh(d as double) static as double
+	func computeQuinticInEasing(t as double, b as double, c as double, d as double) static as double
+	func computeQuinticOutEasing(t as double, b as double, c as double, d as double) static as double
+	func computeQuinticInOutEasing(t as double, b as double, c as double, d as double) static as double
+}

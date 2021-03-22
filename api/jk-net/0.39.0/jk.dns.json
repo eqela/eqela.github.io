@@ -1,0 +1,43 @@
+{
+	"moduleDescription" : "",
+	"type" : "module",
+	"moduleTitle" : "",
+	"moduleId" : "jk.dns",
+	"entities" : [
+		{
+			"type" : "class",
+			"name" : "DNSRecordMX",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "DNSRecordA",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "DNSRecord",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "DNSRecordNS",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "DNSResolver",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "DNSRecordCNAME",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "DNSCache",
+			"description" : ""
+		}
+	]
+}

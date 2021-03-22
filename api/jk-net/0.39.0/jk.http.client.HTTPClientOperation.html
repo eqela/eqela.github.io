@@ -1,0 +1,46 @@
+<html>
+<head>
+<title>jk.http.client.HTTPClientOperation | JK Net [0.39.0] - API Reference</title>
+<link rel="stylesheet" type="text/css" href="style.css" />
+<meta name="viewport" content="initial-scale=1,maximum-scale=1" />
+<meta property="og:description" content="jk.http.client.HTTPClientOperation | JK Net [0.39.0] - API Reference" />
+<meta property="og:title" content="jk.http.client.HTTPClientOperation | JK Net [0.39.0] - API Reference" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:description" content="jk.http.client.HTTPClientOperation | JK Net [0.39.0] - API Reference" />
+</head>
+<body><div class="content">
+<a class="back" href="index.html">&laquo; JK Net [0.39.0]</a><div class="intro">
+<h1><span class="keyword">class</span> <span class="symbol">jk.http.client.HTTPClientOperation</span></h1>
+<p></p>
+</div>
+<div class="list">
+<div class="title">Base Types</div>
+<div class="entry">
+<div class="name"><span class="keyword">extends</span> <a class="datatype" href="jk.http.client.HTTPClient.html">jk.http.client.HTTPClient</a></div></div>
+</div>
+<div class="list">
+<div class="title">Instance Methods</div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">openConnection</span> ( protocol <span class="keyword">as</span> <span class="datatype">string</span> , address <span class="keyword">as</span> <span class="datatype">string</span> , aport <span class="keyword">as</span> <span class="datatype">int</span> , listener <span class="keyword">as</span> <a class="datatype" href="jk.http.client.HTTPClientListener.html">jk.http.client.HTTPClientListener</a> ) <span class="keyword">as</span> <span class="datatype">bool</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">openConnection</span> ( request <span class="keyword">as</span> <a class="datatype" href="jk.http.client.HTTPClientRequest.html">jk.http.client.HTTPClientRequest</a> , listener <span class="keyword">as</span> <a class="datatype" href="jk.http.client.HTTPClientListener.html">jk.http.client.HTTPClientListener</a> ) <span class="keyword">as</span> <span class="datatype">bool</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">closeConnection</span> ( listener <span class="keyword">as</span> <a class="datatype" href="jk.http.client.HTTPClientListener.html">jk.http.client.HTTPClientListener</a> ) <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">sendRequest</span> ( request <span class="keyword">as</span> <a class="datatype" href="jk.http.client.HTTPClientRequest.html">jk.http.client.HTTPClientRequest</a> , listener <span class="keyword">as</span> <a class="datatype" href="jk.http.client.HTTPClientListener.html">jk.http.client.HTTPClientListener</a> ) <span class="keyword">as</span> <span class="datatype">bool</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">readResponse</span> ( listener <span class="keyword">as</span> <a class="datatype" href="jk.http.client.HTTPClientListener.html">jk.http.client.HTTPClientListener</a> , timeout <span class="keyword">as</span> <span class="datatype">int</span> ) <span class="keyword">as</span> <span class="datatype">bool</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">executeRequest</span> ( request <span class="keyword">as</span> <a class="datatype" href="jk.http.client.HTTPClientRequest.html">jk.http.client.HTTPClientRequest</a> , listener <span class="keyword">as</span> <a class="datatype" href="jk.http.client.HTTPClientListener.html">jk.http.client.HTTPClientListener</a> ) <span class="modifier">override</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getDefaultUserAgent</span> <span class="keyword">as</span> <span class="datatype">string</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setDefaultUserAgent</span> ( v <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="keyword">as</span> <a class="datatype" href="jk.http.client.HTTPClientOperation.html">jk.http.client.HTTPClientOperation</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getAcceptInvalidCertificate</span> <span class="keyword">as</span> <span class="datatype">bool</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setAcceptInvalidCertificate</span> ( v <span class="keyword">as</span> <span class="datatype">bool</span> ) <span class="keyword">as</span> <a class="datatype" href="jk.http.client.HTTPClientOperation.html">jk.http.client.HTTPClientOperation</a></div></div>
+</div>
+</div>
+</body>
+</html>

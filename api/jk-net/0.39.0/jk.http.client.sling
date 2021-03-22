@@ -1,0 +1,150 @@
+class name jk.http.client.HTTPClientRequest header implements jk.lang.StringObject public
+{
+	import jk.lang
+	import jk.io
+	import jk.fs
+	import jk.mime
+	import jk.url
+	func forGET(url as string) static as jk.http.client.HTTPClientRequest
+	func forPOST(url as string, mimeType as string, data as jk.io.SizedReader) static as jk.http.client.HTTPClientRequest
+	func forPOST(url as string, file as jk.fs.File) static as jk.http.client.HTTPClientRequest
+	func forPOST(url as string, mimeType as string, data as buffer) static as jk.http.client.HTTPClientRequest
+	func forPUT(url as string, mimeType as string, data as jk.io.SizedReader) static as jk.http.client.HTTPClientRequest
+	func forPUT(url as string, file as jk.fs.File) static as jk.http.client.HTTPClientRequest
+	func forPUT(url as string, mimeType as string, data as buffer) static as jk.http.client.HTTPClientRequest
+	func forDELETE(url as string) static as jk.http.client.HTTPClientRequest
+	ctor
+	func setUrl(url as string)
+	func addHeader(key as string, value as string)
+	func addQueryParameter(key as string, value as string)
+	func getHeader(key as string) as string
+	func setUserAgent(agent as string)
+	func getUrl as string
+	func toString(defaultUserAgent as string) as string
+	func toString as string
+	func getMethod as string #getterMethod
+	func setMethod(v as string) as jk.http.client.HTTPClientRequest #setterMethod
+	func getProtocol as string #getterMethod
+	func setProtocol(v as string) as jk.http.client.HTTPClientRequest #setterMethod
+	func getUsername as string #getterMethod
+	func setUsername(v as string) as jk.http.client.HTTPClientRequest #setterMethod
+	func getPassword as string #getterMethod
+	func setPassword(v as string) as jk.http.client.HTTPClientRequest #setterMethod
+	func getServerAddress as string #getterMethod
+	func setServerAddress(v as string) as jk.http.client.HTTPClientRequest #setterMethod
+	func getServerPort as int #getterMethod
+	func setServerPort(v as int) as jk.http.client.HTTPClientRequest #setterMethod
+	func getRequestPath as string #getterMethod
+	func setRequestPath(v as string) as jk.http.client.HTTPClientRequest #setterMethod
+	func getBody as jk.io.SizedReader #getterMethod
+	func setBody(v as jk.io.SizedReader) as jk.http.client.HTTPClientRequest #setterMethod
+	func getRawHeaders as jk.lang.KeyValueListForStrings #getterMethod
+	func setRawHeaders(v as jk.lang.KeyValueListForStrings) as jk.http.client.HTTPClientRequest #setterMethod
+	func getHeaders as map<string,string> #getterMethod
+	func setHeaders(v as map<string,string>) as jk.http.client.HTTPClientRequest #setterMethod
+}
+class name jk.http.client.HTTPClientListener header public
+{
+	import jk.lang
+	ctor
+	func onError(message as string) virtual
+	func onStatus(message as string) virtual
+	func onStartRequest(request as jk.http.client.HTTPClientRequest) virtual as bool
+	func onEndRequest virtual as bool
+	func onResponseReceived(response as jk.http.client.HTTPClientResponse) virtual as bool
+	func onDataReceived(buffer as buffer) virtual as bool
+	func onAborted virtual
+	func onResponseCompleted virtual
+	func getCompleted as bool #getterMethod
+	func setCompleted(v as bool) as jk.http.client.HTTPClientListener #setterMethod
+}
+class name jk.http.client.HTTPClientResponse header implements jk.lang.StringObject public
+{
+	import jk.lang
+	ctor
+	func addHeader(key as string, value as string)
+	func getHeader(key as string) as string
+	func toString as string
+	func getHttpVersion as string #getterMethod
+	func setHttpVersion(v as string) as jk.http.client.HTTPClientResponse #setterMethod
+	func getHttpStatus as string #getterMethod
+	func setHttpStatus(v as string) as jk.http.client.HTTPClientResponse #setterMethod
+	func getHttpStatusDescription as string #getterMethod
+	func setHttpStatusDescription(v as string) as jk.http.client.HTTPClientResponse #setterMethod
+	func getRawHeaders as jk.lang.KeyValueListForStrings #getterMethod
+	func setRawHeaders(v as jk.lang.KeyValueListForStrings) as jk.http.client.HTTPClientResponse #setterMethod
+	func getHeaders as map<string,string> #getterMethod
+	func setHeaders(v as map<string,string>) as jk.http.client.HTTPClientResponse #setterMethod
+}
+class name jk.http.client.HTTPClient header abstract public
+{
+	import jk.lang
+	import jk.log
+	ctor
+	func createDefault static as jk.http.client.HTTPClient
+	func execute(client as jk.http.client.HTTPClient, request as jk.http.client.HTTPClientRequest, listener as jk.http.client.HTTPClientListener) static
+	func execute(ctx as jk.log.LoggingContext, client as jk.http.client.HTTPClient, request as jk.http.client.HTTPClientRequest, listener as function<void,jk.http.client.HTTPClientResponse>, errorHandler as function<void,string> = null) static
+	func executeForBuffer(ctx as jk.log.LoggingContext, client as jk.http.client.HTTPClient, request as jk.http.client.HTTPClientRequest, listener as function<void,jk.http.client.HTTPClientResponse,buffer>, errorHandler as function<void,string> = null) static
+	func executeForString(ctx as jk.log.LoggingContext, client as jk.http.client.HTTPClient, request as jk.http.client.HTTPClientRequest, listener as function<void,jk.http.client.HTTPClientResponse,string>, errorHandler as function<void,string> = null) static
+	func executeRequest(request as jk.http.client.HTTPClientRequest, listener as jk.http.client.HTTPClientListener) abstract
+}
+class name jk.http.client.HTTPRPCClient header public
+{
+	import jk.lang
+	import jk.json
+	ctor
+	func forBaseUrl(url as string) static as jk.http.client.HTTPRPCClient
+	func callRemoteFunction(name as string, data as jk.lang.DynamicMap) as object
+	func getBaseUrl as string #getterMethod
+	func setBaseUrl(v as string) as jk.http.client.HTTPRPCClient #setterMethod
+}
+class name jk.http.client.WebRequest header public
+{
+	import jk.lang
+	import jk.io
+	import jk.log
+	import jk.json
+	ctor
+	class name Response header public static
+	{
+		ctor
+		func getHeaderValue(key as string) as string
+		func getBodyAsBuffer as buffer
+		func getBodyAsString as string
+		func getBodyAsDynamicMap as jk.lang.DynamicMap
+		func getHttpStatus as string #getterMethod
+		func setHttpStatus(v as string) as jk.http.client.WebRequest.Response #setterMethod
+		func getHttpStatusDescription as string #getterMethod
+		func setHttpStatusDescription(v as string) as jk.http.client.WebRequest.Response #setterMethod
+		func getHeaders as jk.lang.KeyValueListForStrings #getterMethod
+		func setHeaders(v as jk.lang.KeyValueListForStrings) as jk.http.client.WebRequest.Response #setterMethod
+		func getBody as buffer #getterMethod
+		func setBody(v as buffer) as jk.http.client.WebRequest.Response #setterMethod
+	}
+	func execute(method as string, url as string, headers as jk.lang.KeyValueList<string,string>, body as buffer) static as jk.http.client.WebRequest.Response
+}
+class name jk.http.client.HTTPClientOperation header extends jk.http.client.HTTPClient public
+{
+	import jk.lang
+	import jk.socket
+	import jk.socket.ssl
+	import jk.io
+	ctor
+	func openConnection(protocol as string, address as string, aport as int, listener as jk.http.client.HTTPClientListener) as bool
+	func openConnection(request as jk.http.client.HTTPClientRequest, listener as jk.http.client.HTTPClientListener) as bool
+	func closeConnection(listener as jk.http.client.HTTPClientListener)
+	func sendRequest(request as jk.http.client.HTTPClientRequest, listener as jk.http.client.HTTPClientListener) as bool
+	func readResponse(listener as jk.http.client.HTTPClientListener, timeout as int) as bool
+	func executeRequest(request as jk.http.client.HTTPClientRequest, listener as jk.http.client.HTTPClientListener) override
+	func getDefaultUserAgent as string #getterMethod
+	func setDefaultUserAgent(v as string) as jk.http.client.HTTPClientOperation #setterMethod
+	func getAcceptInvalidCertificate as bool #getterMethod
+	func setAcceptInvalidCertificate(v as bool) as jk.http.client.HTTPClientOperation #setterMethod
+}
+class name jk.http.client.CustomWebClient header extends jk.web.WebClient public
+{
+	import jk.lang
+	import jk.web
+	ctor
+	func query(method as string, url as string, headers as jk.lang.KeyValueList<string,string>, body as buffer, callback as function<void,string,jk.lang.KeyValueList<string,string>,buffer>) override
+}

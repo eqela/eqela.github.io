@@ -1,0 +1,52 @@
+<html>
+<head>
+<title>jk.math.Matrix33 | JK Core [0.37.0] - API Reference</title>
+<link rel="stylesheet" type="text/css" href="style.css" />
+<meta name="viewport" content="initial-scale=1,maximum-scale=1" />
+<meta property="og:description" content="jk.math.Matrix33 | JK Core [0.37.0] - API Reference" />
+<meta property="og:title" content="jk.math.Matrix33 | JK Core [0.37.0] - API Reference" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:description" content="jk.math.Matrix33 | JK Core [0.37.0] - API Reference" />
+</head>
+<body><div class="content">
+<a class="back" href="index.html">&laquo; JK Core [0.37.0]</a><div class="intro">
+<h1><span class="keyword">class</span> <span class="symbol">jk.math.Matrix33</span></h1>
+<p></p>
+</div>
+<div class="list">
+<div class="title">Instance Variables</div>
+<div class="entry">
+<div class="name"><span class="keyword">var</span> <span class="symbol">v</span> <span class="keyword">as</span> <span class="datatype">var</span></div></div>
+</div>
+<div class="list">
+<div class="title">Static Methods</div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">forZero</span> <span class="modifier">static</span> <span class="keyword">as</span> <a class="datatype" href="jk.math.Matrix33.html">jk.math.Matrix33</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">forIdentity</span> <span class="modifier">static</span> <span class="keyword">as</span> <a class="datatype" href="jk.math.Matrix33.html">jk.math.Matrix33</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">invertMatrix</span> ( m <span class="keyword">as</span> <a class="datatype" href="jk.math.Matrix33.html">jk.math.Matrix33</a> ) <span class="modifier">static</span> <span class="keyword">as</span> <a class="datatype" href="jk.math.Matrix33.html">jk.math.Matrix33</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">forTranslate</span> ( translateX <span class="keyword">as</span> <span class="datatype">double</span> , translateY <span class="keyword">as</span> <span class="datatype">double</span> ) <span class="modifier">static</span> <span class="keyword">as</span> <a class="datatype" href="jk.math.Matrix33.html">jk.math.Matrix33</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">forRotation</span> ( angle <span class="keyword">as</span> <span class="datatype">double</span> ) <span class="modifier">static</span> <span class="keyword">as</span> <a class="datatype" href="jk.math.Matrix33.html">jk.math.Matrix33</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">forRotationWithCenter</span> ( angle <span class="keyword">as</span> <span class="datatype">double</span> , centerX <span class="keyword">as</span> <span class="datatype">double</span> , centerY <span class="keyword">as</span> <span class="datatype">double</span> ) <span class="modifier">static</span> <span class="keyword">as</span> <a class="datatype" href="jk.math.Matrix33.html">jk.math.Matrix33</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">forSkew</span> ( skewX <span class="keyword">as</span> <span class="datatype">double</span> , skewY <span class="keyword">as</span> <span class="datatype">double</span> ) <span class="modifier">static</span> <span class="keyword">as</span> <a class="datatype" href="jk.math.Matrix33.html">jk.math.Matrix33</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">forScale</span> ( scaleX <span class="keyword">as</span> <span class="datatype">double</span> , scaleY <span class="keyword">as</span> <span class="datatype">double</span> ) <span class="modifier">static</span> <span class="keyword">as</span> <a class="datatype" href="jk.math.Matrix33.html">jk.math.Matrix33</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">forFlip</span> ( flipX <span class="keyword">as</span> <span class="datatype">bool</span> , flipY <span class="keyword">as</span> <span class="datatype">bool</span> ) <span class="modifier">static</span> <span class="keyword">as</span> <a class="datatype" href="jk.math.Matrix33.html">jk.math.Matrix33</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">forValues</span> ( mv <span class="keyword">as</span> <span class="datatype">array&lt;double&gt;</span> ) <span class="modifier">static</span> <span class="keyword">as</span> <a class="datatype" href="jk.math.Matrix33.html">jk.math.Matrix33</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">multiplyScalar</span> ( v <span class="keyword">as</span> <span class="datatype">double</span> , mm <span class="keyword">as</span> <a class="datatype" href="jk.math.Matrix33.html">jk.math.Matrix33</a> ) <span class="modifier">static</span> <span class="keyword">as</span> <a class="datatype" href="jk.math.Matrix33.html">jk.math.Matrix33</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">multiplyMatrix</span> ( a <span class="keyword">as</span> <a class="datatype" href="jk.math.Matrix33.html">jk.math.Matrix33</a> , b <span class="keyword">as</span> <a class="datatype" href="jk.math.Matrix33.html">jk.math.Matrix33</a> ) <span class="modifier">static</span> <span class="keyword">as</span> <a class="datatype" href="jk.math.Matrix33.html">jk.math.Matrix33</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">multiplyVector</span> ( a <span class="keyword">as</span> <a class="datatype" href="jk.math.Matrix33.html">jk.math.Matrix33</a> , b <span class="keyword">as</span> <a class="datatype" href="jk.math.Vector2.html">jk.math.Vector2</a> ) <span class="modifier">static</span> <span class="keyword">as</span> <a class="datatype" href="jk.math.Vector2.html">jk.math.Vector2</a></div></div>
+</div>
+</div>
+</body>
+</html>

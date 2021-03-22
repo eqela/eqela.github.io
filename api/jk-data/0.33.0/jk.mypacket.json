@@ -1,0 +1,18 @@
+{
+	"moduleDescription" : "The MyPacket format is based on and implements the wire protocol of MySQL.\nThis implementation can, however, be used for any generic data interchange\nin an efficient binary format also catering for uses cases completely\nunrelated to MySQL.\n",
+	"type" : "module",
+	"moduleTitle" : "MyPacket data interchange format",
+	"moduleId" : "jk.mypacket",
+	"entities" : [
+		{
+			"type" : "class",
+			"name" : "MyPacketParser",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "MyPacketBuilder",
+			"description" : ""
+		}
+	]
+}

@@ -1,0 +1,104 @@
+class name jk.widget.tab.TabWidget header extends jk.widget.LayerWidget public #widget #deprecated
+{
+	import jk.lang
+	import jk.lang
+	import jk.ui
+	import jk.gfx
+	import jk.widget
+	ctor(context as jk.ui.GuiApplicationContext)
+	func initializeWidget override
+	func updateSelectedTab(idx as int)
+	func setWidgetSelectedTab(index as int)
+	func createWidget override
+	func getWidgetTabOutlineColor as jk.gfx.Color #getterMethod
+	func setWidgetTabOutlineColor(v as jk.gfx.Color) as jk.widget.tab.TabWidget #setterMethod
+	func getWidgetTabOutlineWidth as int #getterMethod
+	func setWidgetTabOutlineWidth(v as int #notLiteral) as jk.widget.tab.TabWidget #setterMethod
+	func getWidgetContentOutlineColor as jk.gfx.Color #getterMethod
+	func setWidgetContentOutlineColor(v as jk.gfx.Color) as jk.widget.tab.TabWidget #setterMethod
+	func getWidgetContentOutlineWidth as int #getterMethod
+	func setWidgetContentOutlineWidth(v as int #notLiteral) as jk.widget.tab.TabWidget #setterMethod
+	func getWidgetTabContent as vector<jk.lang.DynamicMap> #getterMethod
+	func setWidgetTabContent(v as vector<jk.lang.DynamicMap>) as jk.widget.tab.TabWidget #setterMethod
+	func getWidgetSelectedTabBackgroundColor as jk.gfx.Color #getterMethod
+	func setWidgetSelectedTabBackgroundColor(v as jk.gfx.Color) as jk.widget.tab.TabWidget #setterMethod
+	func getWidgetSelectedTabTextColor as jk.gfx.Color #getterMethod
+	func setWidgetSelectedTabTextColor(v as jk.gfx.Color) as jk.widget.tab.TabWidget #setterMethod
+	func getWidgetUnselectedTabBackgroundColor as jk.gfx.Color #getterMethod
+	func setWidgetUnselectedTabBackgroundColor(v as jk.gfx.Color) as jk.widget.tab.TabWidget #setterMethod
+	func getWidgetUnselectedTabTextColor as jk.gfx.Color #getterMethod
+	func setWidgetUnselectedTabTextColor(v as jk.gfx.Color) as jk.widget.tab.TabWidget #setterMethod
+	func getWidgetTabHeaderTitleMargin as int #getterMethod
+	func setWidgetTabHeaderTitleMargin(v as int #notLiteral) as jk.widget.tab.TabWidget #setterMethod
+	func getWidgetRoundingRadius as int #getterMethod
+	func setWidgetRoundingRadius(v as int #notLiteral) as jk.widget.tab.TabWidget #setterMethod
+	func getWidgetTextAlign as int #getterMethod
+	func setWidgetTextAlign(v as int #notLiteral) as jk.widget.tab.TabWidget #setterMethod
+	func getWidgetContentSpacing as int #getterMethod
+	func setWidgetContentSpacing(v as int #notLiteral) as jk.widget.tab.TabWidget #setterMethod
+	func getWidgetTabContentRoundingRadius as int #getterMethod
+	func setWidgetTabContentRoundingRadius(v as int #notLiteral) as jk.widget.tab.TabWidget #setterMethod
+	func getWidgetOnTabChangeListener as function<void,int,jk.widget.Widget> #getterMethod
+	func setWidgetOnTabChangeListener(v as function<void,int,jk.widget.Widget>) as jk.widget.tab.TabWidget #setterMethod
+}
+interface name jk.widget.tab.TabItemCreator header public
+{
+	import jk.lang
+	func createTabItemWidgetFor(title as string) as jk.widget.tab.TabItemWidget
+	func addXButton(item as jk.widget.tab.TabItemWidget, tabContainer as jk.widget.tab.TabContainerWidget) as jk.widget.Widget
+	func isXButtonEnabled as bool
+}
+interface name jk.widget.tab.TabContentWidget header extends jk.widget.Widget public
+{
+	import jk.lang
+	func getTabContentTitle as string
+}
+class name jk.widget.tab.TabContainerWidget header extends jk.widget.LayerWidget public #widget
+{
+	import jk.lang
+	import jk.lang
+	import jk.ui
+	import jk.gfx
+	import jk.widget
+	func findTabContainerWidget(widget as jk.widget.Widget) static as jk.widget.tab.TabContainerWidget
+	func pushTab(tab as jk.widget.tab.TabContentWidget, parent as jk.widget.Widget) static as bool
+	class name TabObject header public static
+	{
+		ctor
+		var title public as string
+		var index public as int
+		var item public as jk.widget.Widget
+		var content public as jk.widget.Widget
+		func setOnTabClickHandler(handler as function<void,jk.widget.tab.TabContainerWidget.TabObject>)
+	}
+	ctor(ctx as jk.ui.GuiApplicationContext)
+	func addTab(widget as jk.widget.tab.TabContentWidget)
+	func removeTab(title as string)
+	func updateTabIndexes
+	func getTabObject(title as string) as jk.widget.tab.TabContainerWidget.TabObject
+	func removeTabObject(title as string)
+	func setWidgetContentOutlineColor(color as jk.gfx.Color) as jk.widget.tab.TabContainerWidget
+	func setWidgetContentOutlineWidth(width as int) as jk.widget.tab.TabContainerWidget
+	func getTabItemWidget(title as string) as jk.widget.tab.TabItemWidget
+	func getActiveTabIndex as int
+	func setTabEnabled(index as int, enable as bool)
+	func getTabItemWidget(index as int) as jk.widget.tab.TabItemWidget
+	func setActiveTab(index as int)
+	func getTabContentWidget(index as int) as jk.widget.Widget
+	func getTabCount as int
+	func setTabVisible(index as int, v as bool)
+	func createWidget override
+	func getBeforeTabSwitchEventHandler as function<void,int,dynamic> #getterMethod
+	func setBeforeTabSwitchEventHandler(v as function<void,int,dynamic>) as jk.widget.tab.TabContainerWidget #setterMethod
+	func getTabSwitchEventHandler as function<void,int> #getterMethod
+	func setTabSwitchEventHandler(v as function<void,int>) as jk.widget.tab.TabContainerWidget #setterMethod
+	func getTabItemCreator as jk.widget.tab.TabItemCreator #getterMethod
+	func setTabItemCreator(v as jk.widget.tab.TabItemCreator) as jk.widget.tab.TabContainerWidget #setterMethod
+}
+interface name jk.widget.tab.TabItemWidget header public
+{
+	import jk.lang
+	func setTabTitle(title as string)
+	func onTabSelected
+	func onTabDeselected
+}

@@ -1,0 +1,92 @@
+class name jk.widget.web.WebWidget header public #widget
+{
+	import jk.lang
+	import jk.lang
+	import jk.ui
+	import jk.gfx
+	import jk.widget
+	func forUrl(context as jk.ui.GuiApplicationContext, url as string) static as jk.widget.web.WebWidget
+	func forHtmlString(context as jk.ui.GuiApplicationContext, html as string) static as jk.widget.web.WebWidget
+	ctor(context as jk.ui.GuiApplicationContext)
+	func overrideWidgetUrlLoading(url as string) as bool
+	func setWebCustomUserAgent(customUserAgent as string) as jk.widget.web.WebWidget
+	func setWidgetHtmlString(html as string) as jk.widget.web.WebWidget
+	func getWidgetHtmlString as string
+	func setWidgetUrl(url as string) as jk.widget.web.WebWidget
+	func getWidgetUrl as string
+	func getCustomUrlHandler as function<bool,string> #getterMethod
+	func setCustomUrlHandler(v as function<bool,string>) as jk.widget.web.WebWidget #setterMethod
+}
+class name jk.widget.web.WebImageWidget header extends jk.widget.web.AsynchronousImageWidget public #widget
+{
+	import jk.lang
+	import jk.lang
+	import jk.ui
+	import jk.gfx
+	import jk.widget
+	import jk.web
+	import jk.log
+	func forPlaceholderImage(context as jk.ui.GuiApplicationContext, image as jk.gfx.Image) static as jk.widget.web.WebImageWidget
+	ctor(context as jk.ui.GuiApplicationContext)
+	func setWidgetImageResource(resName as string)
+	func getWidgetImage as jk.gfx.Image
+	func setWidgetImage(image as jk.gfx.Image)
+	func setWidgetImageUrl(url as string, callback as function<void,jk.lang.Error> = null)
+	func setWidgetImageUrl(url as string, headers as jk.lang.KeyValueList<string,string>, body as buffer, callback as function<void,jk.lang.Error>) virtual
+	func doQueryImage(context as jk.ui.GuiApplicationContext, url as string, headers as jk.lang.KeyValueList<string,string>, body as buffer, callback as function<void,jk.gfx.Image>, errorCallback as function<void,jk.lang.Error>) static
+	func getWidgetUseOverlay as bool #getterMethod
+	func setWidgetUseOverlay(v as bool) as jk.widget.web.WebImageWidget #setterMethod
+}
+class name jk.widget.web.JSONAPIClientWithGui header extends jk.web.json.JSONAPIClient public
+{
+	import jk.lang
+	import jk.ui
+	import jk.web.json
+	import jk.widget.common
+	ctor
+	func onStartSendRequest override
+	func onEndSendRequest override
+	func onDefaultErrorHandler(error as jk.lang.Error) override
+	func getContext as jk.ui.GuiApplicationContext #getterMethod
+	func setContext(v as jk.ui.GuiApplicationContext) as jk.widget.web.JSONAPIClientWithGui #setterMethod
+	func getParentWidget as jk.widget.Widget #getterMethod
+	func setParentWidget(v as jk.widget.Widget) as jk.widget.web.JSONAPIClientWithGui #setterMethod
+}
+class name jk.widget.web.CachingWebImageWidget header extends jk.widget.web.WebImageWidget public #widget
+{
+	import jk.lang
+	import jk.lang
+	import jk.ui
+	import jk.gfx
+	import jk.widget
+	import jk.time
+	import jk.web
+	import jk.log
+	import jk.gfx.util
+	ctor(context as jk.ui.GuiApplicationContext)
+	func setTTL(seconds as long) static
+	func removeCachedImage(url as string, rounded as bool) static
+	func setWidgetImageUrl(url as string, headers as jk.lang.KeyValueList<string,string>, body as buffer, callback as function<void,jk.lang.Error>) override
+	func getWidgetImageRounded as bool #getterMethod
+	func setWidgetImageRounded(v as bool) as jk.widget.web.CachingWebImageWidget #setterMethod
+}
+class name jk.widget.web.AsynchronousImageWidget header extends jk.widget.LayerWidget public #widget
+{
+	import jk.lang
+	import jk.lang
+	import jk.ui
+	import jk.gfx
+	import jk.widget
+	ctor(context as jk.ui.GuiApplicationContext)
+	func configureImageWidgetProperties(imageWidget as jk.widget.ImageWidget) virtual
+	func onStartLoading(useOverlay as bool = true) as jk.widget.ImageWidget
+	func onEndLoading
+	func getWidgetImageWidth as int #getterMethod
+	func setWidgetImageWidth(v as int #notLiteral) as jk.widget.web.AsynchronousImageWidget #setterMethod
+	func getWidgetImageHeight as int #getterMethod
+	func setWidgetImageHeight(v as int #notLiteral) as jk.widget.web.AsynchronousImageWidget #setterMethod
+	func getWidgetImageScaleMethod as int #getterMethod
+	func setWidgetImageScaleMethod(v as int) as jk.widget.web.AsynchronousImageWidget #setterMethod
+	func getWidgetPlaceholderImage as jk.gfx.Image #getterMethod
+	func setWidgetPlaceholderImage(v as jk.gfx.Image) as jk.widget.web.AsynchronousImageWidget #setterMethod
+}

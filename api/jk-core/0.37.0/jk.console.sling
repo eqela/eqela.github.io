@@ -1,0 +1,179 @@
+class name jk.console.ConsoleApplicationUtil header public
+{
+	import jk.lang
+	import jk.io
+	import jk.text
+	import jk.process
+	ctor
+	func printHeader(writer as jk.io.PrintWriter, title as string, version as string, copyright as string = null, license as string = null, platform as string = null, component as string = null) static
+	func printVersion(writer as jk.io.PrintWriter, version as string, title as string) static
+	func parseCommandLineArguments(args as array<string>) static as vector<jk.console.CommandLineArgument>
+	func printUsage(stdout as jk.io.PrintWriter, name as string, parameters as array, flags as array, options as array) static
+}
+class name jk.console.ConsoleApplicationContext header implements jk.app.ApplicationContext implements jk.log.LoggingContext public
+{
+	import jk.lang
+	import jk.io
+	import jk.fs
+	import jk.app
+	import jk.log
+	import jk.env
+	import jk.process
+	func forApplicationName(name as string) static as jk.console.ConsoleApplicationContext
+	ctor
+	func isInDebugMode as bool
+	func setEnableDebugMessages(v as bool) as jk.console.ConsoleApplicationContext
+	func useApplicationNameAsPrefix
+	func resetCounters
+	func getErrorCount as int
+	func getWarningCount as int
+	func getInfoCount as int
+	func getDebugCount as int
+	func logError(message as string)
+	func logWarning(message as string)
+	func logInfo(message as string)
+	func logDebug(message as string)
+	func logStatus(message as string)
+	func getApplicationDataDirectory as jk.fs.File
+	func getApplicationDataDirectoryForAppId(appId as string = null) as jk.fs.File
+	func getApplicationName as string #getterMethod
+	func setApplicationName(v as string) as jk.console.ConsoleApplicationContext #setterMethod
+	func getEnableColor as bool #getterMethod
+	func setEnableColor(v as bool) as jk.console.ConsoleApplicationContext #setterMethod
+	func getDumbMode as bool #getterMethod
+	func setDumbMode(v as bool) as jk.console.ConsoleApplicationContext #setterMethod
+	func getShowInfo as bool #getterMethod
+	func setShowInfo(v as bool) as jk.console.ConsoleApplicationContext #setterMethod
+	func getShowWarning as bool #getterMethod
+	func setShowWarning(v as bool) as jk.console.ConsoleApplicationContext #setterMethod
+	func getShowError as bool #getterMethod
+	func setShowError(v as bool) as jk.console.ConsoleApplicationContext #setterMethod
+	func getShowDebug as bool #getterMethod
+	func setShowDebug(v as bool) as jk.console.ConsoleApplicationContext #setterMethod
+	func getEnableStatus as bool #getterMethod
+	func setEnableStatus(v as bool) as jk.console.ConsoleApplicationContext #setterMethod
+	func getEnableOutput as bool #getterMethod
+	func setEnableOutput(v as bool) as jk.console.ConsoleApplicationContext #setterMethod
+	func getAutoClearStatus as bool #getterMethod
+	func setAutoClearStatus(v as bool) as jk.console.ConsoleApplicationContext #setterMethod
+	func getCurrentPrefix as string #getterMethod
+	func setCurrentPrefix(v as string) as jk.console.ConsoleApplicationContext #setterMethod
+}
+class name jk.console.Stdout header public
+{
+	import jk.lang
+	import jk.io
+	ctor
+	func instance static as jk.io.PrintWriter
+}
+class name jk.console.ConsoleApplicationMain header abstract public
+{
+	import jk.lang
+	import jk.io
+	import jk.log
+	func executeMain(app as jk.console.ConsoleApplicationMain, args as array<string>) static as int
+	var stdout public as jk.io.PrintWriter
+	var stdin public as jk.io.PrintReader
+	var ctx public as jk.console.ConsoleApplicationContext
+	var args public as vector<jk.console.CommandLineArgument>
+	ctor
+	func setCtx(v as jk.console.ConsoleApplicationContext) as jk.console.ConsoleApplicationMain
+	func getTerminal as jk.console.Terminal
+	func print(value as string)
+	func println(value as string)
+	func readLine as string
+	func readLineWithoutEcho as string
+	func initialize virtual as bool
+	func getVerbosityLevel as int
+	func setVerbosityLevel(level as int)
+	func handleVerbosityParams
+	func executeWithArgumentArray(args as array<string>) virtual as int
+	func executeWithArgumentVector(args as vector<string>) virtual as int
+	func executeWithParsedArguments(args as vector<jk.console.CommandLineArgument>) as bool
+	func execute virtual abstract as bool
+}
+class name jk.console.Stdin header public
+{
+	import jk.lang
+	import jk.io
+	ctor
+	func instance static as jk.io.PrintReader
+}
+class name jk.console.Terminal header abstract public
+{
+	import jk.lang
+	ctor
+	func forCurrent static as jk.console.Terminal
+	func clear virtual abstract
+	func moveTo(x as int, y as int) virtual abstract
+	func print(text as string) virtual abstract
+	func printTo(x as int, y as int, text as string) virtual abstract
+	func readKey virtual abstract as int
+	func readLine virtual abstract as string
+	func readLineWithoutEcho virtual abstract as string
+}
+class name jk.console.ArgumentVector header public
+{
+	import jk.lang
+	ctor
+	func forStringVector(args as vector<string>) static as jk.console.ArgumentVector
+	func forArray(args as array<string>) static as jk.console.ArgumentVector
+	func getCurrent as string
+	func moveToNext
+	func hasMore as bool
+	func acceptFlag(flag as string) as bool
+	func acceptOption(str as string) as bool
+	func acceptValue(value as string) as bool
+	func acceptAnyValue as string
+	func acceptParameter as string
+	func requireParameter(name as string) as string
+	func acceptAllValues as vector<string>
+	func getArgs as vector<string> #getterMethod
+	func setArgs(v as vector<string>) as jk.console.ArgumentVector #setterMethod
+	func getPosition as int #getterMethod
+	func setPosition(v as int) as jk.console.ArgumentVector #setterMethod
+	func getOptionValue as string #getterMethod
+	func setOptionValue(v as string) as jk.console.ArgumentVector #setterMethod
+}
+class name jk.console.UsageInfo header public
+{
+	import jk.lang
+	import jk.text
+	import jk.process
+	func forCommand(command as string) static as jk.console.UsageInfo
+	ctor
+	func addSection(name as string)
+	func addParameter(name as string, description as string)
+	func addFlag(flag as string, description as string)
+	func addOption(name as string, value as string, description as string)
+	func toString as string
+	func getCommand as string #getterMethod
+	func setCommand(v as string) as jk.console.UsageInfo #setterMethod
+	func getDescription as string #getterMethod
+	func setDescription(v as string) as jk.console.UsageInfo #setterMethod
+	func getParamDesc as string #getterMethod
+	func setParamDesc(v as string) as jk.console.UsageInfo #setterMethod
+}
+class name jk.console.CommandLineArgument header public
+{
+	import jk.lang
+	import jk.log
+	var arg public as string
+	var parameter public as string
+	var flag public as string
+	var key public as string
+	var value public as string
+	ctor(arg as string, parameter as string, flag as string, key as string, value as string)
+	func isParameter as bool
+	func isAnyFlag as bool
+	func isAnyOption as bool
+	func isFlag(text as string) as bool
+	func isOption(text as string) as bool
+	func hasValue as bool
+	func getKey as string
+	func getComplete as string
+	func getStringValue as string
+	func getIntegerValue as int
+	func getBooleanValue as bool
+	func reportAsUnsupported(ctx as jk.log.LoggingContext)
+}

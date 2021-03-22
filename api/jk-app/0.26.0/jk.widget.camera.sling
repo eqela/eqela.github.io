@@ -1,0 +1,50 @@
+class name jk.widget.camera.BarcodeObject header public
+{
+	import jk.lang
+	ctor
+	func getRawValue as string #getterMethod
+	func setRawValue(v as string) as jk.widget.camera.BarcodeObject #setterMethod
+	func getDisplayValue as string #getterMethod
+	func setDisplayValue(v as string) as jk.widget.camera.BarcodeObject #setterMethod
+	func getFormat as int #getterMethod
+	func setFormat(v as int) as jk.widget.camera.BarcodeObject #setterMethod
+	func getValueFormat as int #getterMethod
+	func setValueFormat(v as int) as jk.widget.camera.BarcodeObject #setterMethod
+}
+class name jk.widget.camera.Camera header public
+{
+	import jk.lang
+	import jk.ui
+	import jk.app
+	import jk.gfx
+	import jk.widget
+	func isSupported static as bool
+	ctor(context as jk.ui.GuiApplicationContext)
+	func takePicture(widget as jk.widget.Widget, callback as function<void,jk.gfx.Image,jk.lang.Error>)
+}
+class name jk.widget.camera.BarcodeScannerWidget header implements jk.widget.ScreenAwareWidget extends jk.widget.Widget public #widget
+{
+	import jk.lang
+	import jk.lang
+	import jk.ui
+	import jk.gfx
+	import jk.widget
+	import jk.app
+	var CAMERA_BACK public static const as int
+	var CAMERA_FRONT public static const as int
+	var FORMAT_ALL public static const as int
+	var FORMAT_QRCODE public static const as int
+	var FORMAT_EAN13 public static const as int
+	var FORMAT_UPCA public static const as int
+	ctor(ctx as jk.ui.GuiApplicationContext)
+	func cleanUp
+	func onWidgetAddedToScreen(screen as jk.widget.ScreenForWidget)
+	func onWidgetRemovedFromScreen(screen as jk.widget.ScreenForWidget)
+	func isBarcodeScanningAllowed as bool
+	func getWidgetOnBarcodesDetectedHandler as function<void,jk.widget.camera.BarcodeObject> #getterMethod
+	func setWidgetOnBarcodesDetectedHandler(v as function<void,jk.widget.camera.BarcodeObject>) as jk.widget.camera.BarcodeScannerWidget #setterMethod
+	func getWidgetPrimaryCamera as int #getterMethod
+	func setWidgetPrimaryCamera(v as int) as jk.widget.camera.BarcodeScannerWidget #setterMethod
+	func getWidgetFormat as int #getterMethod
+	func setWidgetFormat(v as int) as jk.widget.camera.BarcodeScannerWidget #setterMethod
+}

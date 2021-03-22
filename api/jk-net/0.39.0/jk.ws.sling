@@ -1,0 +1,22 @@
+interface name jk.ws.WSProtocolSource header public
+{
+	import jk.lang
+	func sendString(data as string)
+	func sendBuffer(data as buffer)
+	func closeConnection
+}
+class name jk.ws.WSProtocol header public
+{
+	import jk.lang
+	ctor
+	func onConnectionOpened virtual
+	func onConnectionClosed virtual
+	func onConnectionError(error as jk.lang.Error) virtual
+	func onStringMessage(message as string) virtual
+	func onBinaryMessage(message as buffer) virtual
+	func sendString(data as string)
+	func sendBuffer(data as buffer)
+	func closeConnection
+	func getSource as jk.ws.WSProtocolSource #getterMethod
+	func setSource(v as jk.ws.WSProtocolSource) as jk.ws.WSProtocol #setterMethod
+}

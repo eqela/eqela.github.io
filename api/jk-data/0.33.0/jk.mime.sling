@@ -1,0 +1,15 @@
+class name jk.mime.MimeTypeRegistry header public
+{
+	import jk.lang
+	import jk.fs
+	import jk.io
+	func getSharedInstance static as jk.mime.MimeTypeRegistry
+	ctor
+	func addBuiltinTypes virtual
+	func getTypeForExtension(ext as string) as string
+	func getTypeForFile(f as jk.fs.File) as string
+	func getMimeType(str as string) as string
+	func getExtension(mimeType as string) as string
+	func add(pattern as string, mimeType as string) as bool
+	func read(file as jk.fs.File) as bool
+}

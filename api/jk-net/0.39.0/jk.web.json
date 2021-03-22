@@ -1,0 +1,18 @@
+{
+	"moduleDescription" : "",
+	"type" : "module",
+	"moduleTitle" : "",
+	"moduleId" : "jk.web",
+	"entities" : [
+		{
+			"type" : "class",
+			"name" : "NativeWebClient",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "WebClient",
+			"description" : ""
+		}
+	]
+}

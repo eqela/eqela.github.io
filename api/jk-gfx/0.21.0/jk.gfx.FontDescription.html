@@ -1,0 +1,63 @@
+<html>
+<head>
+<title>jk.gfx.FontDescription | JK Gfx [0.21.0] - API Reference</title>
+<link rel="stylesheet" type="text/css" href="style.css" />
+<meta name="viewport" content="initial-scale=1,maximum-scale=1" />
+<meta property="og:description" content="jk.gfx.FontDescription | JK Gfx [0.21.0] - API Reference" />
+<meta property="og:title" content="jk.gfx.FontDescription | JK Gfx [0.21.0] - API Reference" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:description" content="jk.gfx.FontDescription | JK Gfx [0.21.0] - API Reference" />
+</head>
+<body><div class="content">
+<a class="back" href="index.html">&laquo; JK Gfx [0.21.0]</a><div class="intro">
+<h1><span class="keyword">class</span> <span class="symbol">jk.gfx.FontDescription</span></h1>
+<p></p>
+</div>
+<div class="list">
+<div class="title">Base Types</div>
+<div class="entry">
+<div class="name"><span class="keyword">implements</span> <a class="datatype" href="../../jk-core/0.37.0/jk.lang.StringObject.html">jk.lang.StringObject</a></div></div>
+</div>
+<div class="list">
+<div class="title">Static Methods</div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">forDefault</span> <span class="modifier">static</span> <span class="keyword">as</span> <a class="datatype" href="jk.gfx.FontDescription.html">jk.gfx.FontDescription</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">forFile</span> ( file <span class="keyword">as</span> <a class="datatype" href="../../jk-core/0.37.0/jk.fs.File.html">jk.fs.File</a> , size <span class="keyword">as</span> <a class="datatype" href="jk.gfx.Length.html">jk.gfx.Length</a> ) <span class="modifier">static</span> <span class="keyword">as</span> <a class="datatype" href="jk.gfx.FontDescription.html">jk.gfx.FontDescription</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">forName</span> ( name <span class="keyword">as</span> <span class="datatype">string</span> , size <span class="keyword">as</span> <a class="datatype" href="jk.gfx.Length.html">jk.gfx.Length</a> ) <span class="modifier">static</span> <span class="keyword">as</span> <a class="datatype" href="jk.gfx.FontDescription.html">jk.gfx.FontDescription</a></div></div>
+</div>
+<div class="list">
+<div class="title">Instance Methods</div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">dup</span> <span class="keyword">as</span> <a class="datatype" href="jk.gfx.FontDescription.html">jk.gfx.FontDescription</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">toString</span> <span class="keyword">as</span> <span class="datatype">string</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getFile</span> <span class="keyword">as</span> <a class="datatype" href="../../jk-core/0.37.0/jk.fs.File.html">jk.fs.File</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setFile</span> ( v <span class="keyword">as</span> <a class="datatype" href="../../jk-core/0.37.0/jk.fs.File.html">jk.fs.File</a> ) <span class="keyword">as</span> <a class="datatype" href="jk.gfx.FontDescription.html">jk.gfx.FontDescription</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getName</span> <span class="keyword">as</span> <span class="datatype">string</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setName</span> ( v <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="keyword">as</span> <a class="datatype" href="jk.gfx.FontDescription.html">jk.gfx.FontDescription</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getBold</span> <span class="keyword">as</span> <span class="datatype">bool</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setBold</span> ( v <span class="keyword">as</span> <span class="datatype">bool</span> ) <span class="keyword">as</span> <a class="datatype" href="jk.gfx.FontDescription.html">jk.gfx.FontDescription</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getItalic</span> <span class="keyword">as</span> <span class="datatype">bool</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setItalic</span> ( v <span class="keyword">as</span> <span class="datatype">bool</span> ) <span class="keyword">as</span> <a class="datatype" href="jk.gfx.FontDescription.html">jk.gfx.FontDescription</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getUnderline</span> <span class="keyword">as</span> <span class="datatype">bool</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setUnderline</span> ( v <span class="keyword">as</span> <span class="datatype">bool</span> ) <span class="keyword">as</span> <a class="datatype" href="jk.gfx.FontDescription.html">jk.gfx.FontDescription</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getSize</span> <span class="keyword">as</span> <a class="datatype" href="jk.gfx.Length.html">jk.gfx.Length</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setSize</span> ( v <span class="keyword">as</span> <a class="datatype" href="jk.gfx.Length.html">jk.gfx.Length</a> ) <span class="keyword">as</span> <a class="datatype" href="jk.gfx.FontDescription.html">jk.gfx.FontDescription</a></div></div>
+</div>
+</div>
+</body>
+</html>

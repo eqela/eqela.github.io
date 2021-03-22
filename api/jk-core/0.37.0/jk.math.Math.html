@@ -1,0 +1,124 @@
+<html>
+<head>
+<title>jk.math.Math | JK Core [0.37.0] - API Reference</title>
+<link rel="stylesheet" type="text/css" href="style.css" />
+<meta name="viewport" content="initial-scale=1,maximum-scale=1" />
+<meta property="og:description" content="The Math class provides various mathematical methods, functions and numerical constants." />
+<meta property="og:title" content="jk.math.Math | JK Core [0.37.0] - API Reference" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:description" content="The Math class provides various mathematical methods, functions and numerical constants." />
+</head>
+<body><div class="content">
+<a class="back" href="index.html">&laquo; JK Core [0.37.0]</a><div class="intro">
+<h1><span class="keyword">class</span> <span class="symbol">jk.math.Math</span></h1>
+<p>The Math class provides various mathematical methods, functions and numerical constants.</p>
+</div>
+<div class="list">
+<div class="title">Constants</div>
+<div class="entry">
+<div class="name"><span class="keyword">const</span> <span class="symbol">M_PI</span> <span class="keyword">as</span> <span class="datatype">var</span></div><div class="description">Constant value for PI</div></div>
+<div class="entry">
+<div class="name"><span class="keyword">const</span> <span class="symbol">M_PI_2</span> <span class="keyword">as</span> <span class="datatype">var</span></div><div class="description">Constant value for PI / 2</div></div>
+<div class="entry">
+<div class="name"><span class="keyword">const</span> <span class="symbol">M_PI_4</span> <span class="keyword">as</span> <span class="datatype">var</span></div><div class="description">Constant value for PI / 4</div></div>
+<div class="entry">
+<div class="name"><span class="keyword">const</span> <span class="symbol">M_1_PI</span> <span class="keyword">as</span> <span class="datatype">var</span></div><div class="description">Constant value for 1 / PI</div></div>
+<div class="entry">
+<div class="name"><span class="keyword">const</span> <span class="symbol">M_2_PI</span> <span class="keyword">as</span> <span class="datatype">var</span></div><div class="description">Constant value for 2 / PI</div></div>
+<div class="entry">
+<div class="name"><span class="keyword">const</span> <span class="symbol">M_2_SQRTPI</span> <span class="keyword">as</span> <span class="datatype">var</span></div><div class="description">Constant value for 2 / sqrt(PI)</div></div>
+<div class="entry">
+<div class="name"><span class="keyword">const</span> <span class="symbol">M_SQRT2</span> <span class="keyword">as</span> <span class="datatype">var</span></div><div class="description">Constant value for sqrt(2)</div></div>
+<div class="entry">
+<div class="name"><span class="keyword">const</span> <span class="symbol">M_SQRT1_2</span> <span class="keyword">as</span> <span class="datatype">var</span></div><div class="description">Constant value for 1 / sqrt(2)</div></div>
+<div class="entry">
+<div class="name"><span class="keyword">const</span> <span class="symbol">HALF_AWAY_FROM_ZERO</span> <span class="keyword">as</span> <span class="datatype">var</span></div><div class="description">Rounding mode for rounding halfway values away from zero</div></div>
+<div class="entry">
+<div class="name"><span class="keyword">const</span> <span class="symbol">HALF_TOWARD_ZERO</span> <span class="keyword">as</span> <span class="datatype">var</span></div><div class="description">Rounding mode for rounding halfway values towards zero</div></div>
+<div class="entry">
+<div class="name"><span class="keyword">const</span> <span class="symbol">HALF_NEAREST_EVEN</span> <span class="keyword">as</span> <span class="datatype">var</span></div><div class="description">Rounding mode for rounding halfway values to the nearest even number</div></div>
+<div class="entry">
+<div class="name"><span class="keyword">const</span> <span class="symbol">HALF_POSITIVE</span> <span class="keyword">as</span> <span class="datatype">var</span></div><div class="description">Rounding mode for rounding halfway values towards positive infinite</div></div>
+<div class="entry">
+<div class="name"><span class="keyword">const</span> <span class="symbol">HALF_NEGATIVE</span> <span class="keyword">as</span> <span class="datatype">var</span></div><div class="description">Rounding mode for rounding halfway values towards negative infinite</div></div>
+</div>
+<div class="list">
+<div class="title">Static Methods</div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">toRadians</span> ( d <span class="keyword">as</span> <span class="datatype">double</span> ) <span class="modifier">static</span> <span class="keyword">as</span> <span class="datatype">double</span></div><div class="description">Convert degrees to radians.</div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">toDegrees</span> ( r <span class="keyword">as</span> <span class="datatype">double</span> ) <span class="modifier">static</span> <span class="keyword">as</span> <span class="datatype">double</span></div><div class="description">Convert radians to degrees.</div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">abs</span> ( d <span class="keyword">as</span> <span class="datatype">double</span> ) <span class="modifier">static</span> <span class="keyword">as</span> <span class="datatype">double</span></div><div class="description">Get the absolute value of a number.</div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">absFloat</span> ( f <span class="keyword">as</span> <span class="datatype">float</span> ) <span class="modifier">static</span> <span class="keyword">as</span> <span class="datatype">float</span></div><div class="description">Get the absolute value of a number.</div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">absInt32</span> ( i <span class="keyword">as</span> <span class="datatype">int</span> ) <span class="modifier">static</span> <span class="keyword">as</span> <span class="datatype">int</span></div><div class="description">Get the absolute value of a number.</div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">absInt64</span> ( l <span class="keyword">as</span> <span class="datatype">long</span> ) <span class="modifier">static</span> <span class="keyword">as</span> <span class="datatype">long</span></div><div class="description">Get the absolute value of a number.</div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">acos</span> ( d <span class="keyword">as</span> <span class="datatype">double</span> ) <span class="modifier">static</span> <span class="keyword">as</span> <span class="datatype">double</span></div><div class="description">Get the inverse cosine of a number.</div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">asin</span> ( d <span class="keyword">as</span> <span class="datatype">double</span> ) <span class="modifier">static</span> <span class="keyword">as</span> <span class="datatype">double</span></div><div class="description">Get the inverse sine of a number.</div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">atan</span> ( d <span class="keyword">as</span> <span class="datatype">double</span> ) <span class="modifier">static</span> <span class="keyword">as</span> <span class="datatype">double</span></div><div class="description">Get the inverse tangent of a number.</div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">atan2</span> ( y <span class="keyword">as</span> <span class="datatype">double</span> , x <span class="keyword">as</span> <span class="datatype">double</span> ) <span class="modifier">static</span> <span class="keyword">as</span> <span class="datatype">double</span></div><div class="description">Returns the four-quadrant inverse tangent of the given numbers.</div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">ceil</span> ( d <span class="keyword">as</span> <span class="datatype">double</span> ) <span class="modifier">static</span> <span class="keyword">as</span> <span class="datatype">double</span></div><div class="description">Returns the smallest integer greater than or equal to the given number.</div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">cos</span> ( d <span class="keyword">as</span> <span class="datatype">double</span> ) <span class="modifier">static</span> <span class="keyword">as</span> <span class="datatype">double</span></div><div class="description">Returns the cosine of a number.</div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">cosh</span> ( d <span class="keyword">as</span> <span class="datatype">double</span> ) <span class="modifier">static</span> <span class="keyword">as</span> <span class="datatype">double</span></div><div class="description">Returns the hyperbolic cosine of a number.</div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">exp</span> ( d <span class="keyword">as</span> <span class="datatype">double</span> ) <span class="modifier">static</span> <span class="keyword">as</span> <span class="datatype">double</span></div><div class="description">Returns e raised to the specified power.</div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">floor</span> ( d <span class="keyword">as</span> <span class="datatype">double</span> ) <span class="modifier">static</span> <span class="keyword">as</span> <span class="datatype">double</span></div><div class="description">Returns the largest integer less than or equal to the given number.</div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">remainder</span> ( x <span class="keyword">as</span> <span class="datatype">double</span> , y <span class="keyword">as</span> <span class="datatype">double</span> ) <span class="modifier">static</span> <span class="keyword">as</span> <span class="datatype">double</span></div><div class="description">Returns the remainder resulting from the division of a specified number by another specified number.</div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">log</span> ( d <span class="keyword">as</span> <span class="datatype">double</span> ) <span class="modifier">static</span> <span class="keyword">as</span> <span class="datatype">double</span></div><div class="description">Returns the logarithm of a specified number.</div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">log10</span> ( d <span class="keyword">as</span> <span class="datatype">double</span> ) <span class="modifier">static</span> <span class="keyword">as</span> <span class="datatype">double</span></div><div class="description">Returns the base 10 logarithm of a specified number.</div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">max</span> ( d1 <span class="keyword">as</span> <span class="datatype">double</span> , d2 <span class="keyword">as</span> <span class="datatype">double</span> ) <span class="modifier">static</span> <span class="keyword">as</span> <span class="datatype">double</span></div><div class="description">Returns the larger of two specified numbers.</div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">maxFloat</span> ( f1 <span class="keyword">as</span> <span class="datatype">float</span> , f2 <span class="keyword">as</span> <span class="datatype">float</span> ) <span class="modifier">static</span> <span class="keyword">as</span> <span class="datatype">float</span></div><div class="description">Returns the larger of two specified numbers.</div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">maxInt32</span> ( i1 <span class="keyword">as</span> <span class="datatype">int</span> , i2 <span class="keyword">as</span> <span class="datatype">int</span> ) <span class="modifier">static</span> <span class="keyword">as</span> <span class="datatype">int</span></div><div class="description">Returns the larger of two specified numbers.</div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">maxInt64</span> ( l1 <span class="keyword">as</span> <span class="datatype">long</span> , l2 <span class="keyword">as</span> <span class="datatype">long</span> ) <span class="modifier">static</span> <span class="keyword">as</span> <span class="datatype">long</span></div><div class="description">Returns the larger of two specified numbers.</div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">min</span> ( d1 <span class="keyword">as</span> <span class="datatype">double</span> , d2 <span class="keyword">as</span> <span class="datatype">double</span> ) <span class="modifier">static</span> <span class="keyword">as</span> <span class="datatype">double</span></div><div class="description">Returns the smaller of two numbers.</div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">minFloat</span> ( f1 <span class="keyword">as</span> <span class="datatype">float</span> , f2 <span class="keyword">as</span> <span class="datatype">float</span> ) <span class="modifier">static</span> <span class="keyword">as</span> <span class="datatype">float</span></div><div class="description">Returns the smaller of two numbers.</div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">minInt32</span> ( i1 <span class="keyword">as</span> <span class="datatype">int</span> , i2 <span class="keyword">as</span> <span class="datatype">int</span> ) <span class="modifier">static</span> <span class="keyword">as</span> <span class="datatype">int</span></div><div class="description">Returns the smaller of two numbers.</div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">minInt64</span> ( l1 <span class="keyword">as</span> <span class="datatype">long</span> , l2 <span class="keyword">as</span> <span class="datatype">long</span> ) <span class="modifier">static</span> <span class="keyword">as</span> <span class="datatype">long</span></div><div class="description">Returns the smaller of two numbers.</div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">pow</span> ( x <span class="keyword">as</span> <span class="datatype">double</span> , y <span class="keyword">as</span> <span class="datatype">double</span> ) <span class="modifier">static</span> <span class="keyword">as</span> <span class="datatype">double</span></div><div class="description">Returns a specified number raised to the specified power.</div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">round</span> ( n <span class="keyword">as</span> <span class="datatype">double</span> ) <span class="modifier">static</span> <span class="keyword">as</span> <span class="datatype">double</span></div><div class="description">Rounds the given number to the nearest integer. For halfway cases where the difference from both possible values is exactly 0.5, this function uses the default mechanism of the underlying platform. This means that the exact behavior of halways cases varies between platforms. To have complete control over this, use the other round() method and specify the desired halfway behavior using the "mode" parameter.</div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">roundWithMode</span> ( d <span class="keyword">as</span> <span class="datatype">double</span> , mode <span class="keyword">as</span> <span class="datatype">int</span> ) <span class="modifier">static</span> <span class="keyword">as</span> <span class="datatype">double</span></div><div class="description">Rounds the given number to the nearest integer. For halway cases where the difference from both possible values is exactly 0.5, this function can behave in different ways, depending on the "mode" parameter that is given (see rounding mode constants).</div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">sin</span> ( d <span class="keyword">as</span> <span class="datatype">double</span> ) <span class="modifier">static</span> <span class="keyword">as</span> <span class="datatype">double</span></div><div class="description">Returns the sine of a number.</div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">sinh</span> ( d <span class="keyword">as</span> <span class="datatype">double</span> ) <span class="modifier">static</span> <span class="keyword">as</span> <span class="datatype">double</span></div><div class="description">Returns the hyperbolic sine of a number.</div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">sqrt</span> ( d <span class="keyword">as</span> <span class="datatype">double</span> ) <span class="modifier">static</span> <span class="keyword">as</span> <span class="datatype">double</span></div><div class="description">Returns the square root of a number.</div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">tan</span> ( d <span class="keyword">as</span> <span class="datatype">double</span> ) <span class="modifier">static</span> <span class="keyword">as</span> <span class="datatype">double</span></div><div class="description">Returns the tangent of a number.</div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">tanh</span> ( d <span class="keyword">as</span> <span class="datatype">double</span> ) <span class="modifier">static</span> <span class="keyword">as</span> <span class="datatype">double</span></div><div class="description">Returns the hyperbolic tangent of a number.</div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">computeQuinticInEasing</span> ( t <span class="keyword">as</span> <span class="datatype">double</span> , b <span class="keyword">as</span> <span class="datatype">double</span> , c <span class="keyword">as</span> <span class="datatype">double</span> , d <span class="keyword">as</span> <span class="datatype">double</span> ) <span class="modifier">static</span> <span class="keyword">as</span> <span class="datatype">double</span></div><div class="description">Computes the quintic-in easing for the given t(current time), b(beginning value), c(change in value) and d(duration).</div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">computeQuinticOutEasing</span> ( t <span class="keyword">as</span> <span class="datatype">double</span> , b <span class="keyword">as</span> <span class="datatype">double</span> , c <span class="keyword">as</span> <span class="datatype">double</span> , d <span class="keyword">as</span> <span class="datatype">double</span> ) <span class="modifier">static</span> <span class="keyword">as</span> <span class="datatype">double</span></div><div class="description">Computes the quintic-out easing for the given t(current time), b(beginning value), c(change in value) and d(duration).</div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">computeQuinticInOutEasing</span> ( t <span class="keyword">as</span> <span class="datatype">double</span> , b <span class="keyword">as</span> <span class="datatype">double</span> , c <span class="keyword">as</span> <span class="datatype">double</span> , d <span class="keyword">as</span> <span class="datatype">double</span> ) <span class="modifier">static</span> <span class="keyword">as</span> <span class="datatype">double</span></div><div class="description">Computes the quintic-in-out easing for the given t(current time), b(beginning value), c(change in value) and d(duration).</div></div>
+</div>
+</div>
+</body>
+</html>

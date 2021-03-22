@@ -1,0 +1,38 @@
+{
+	"moduleDescription" : "",
+	"type" : "module",
+	"moduleTitle" : "",
+	"moduleId" : "jk.pdf",
+	"entities" : [
+		{
+			"type" : "class",
+			"name" : "PdfMakerPage",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "PaperConfiguration",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "PdfMakerDocument",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "PaperSize",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "PdfMaker",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "PaperOrientation",
+			"description" : ""
+		}
+	]
+}

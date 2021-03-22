@@ -1,0 +1,13 @@
+{
+	"moduleDescription" : "",
+	"type" : "module",
+	"moduleTitle" : "",
+	"moduleId" : "jk.widget.fb",
+	"entities" : [
+		{
+			"type" : "class",
+			"name" : "Login",
+			"description" : ""
+		}
+	]
+}

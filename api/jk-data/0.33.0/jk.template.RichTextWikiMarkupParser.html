@@ -1,0 +1,54 @@
+<html>
+<head>
+<title>jk.template.RichTextWikiMarkupParser | JK Data [0.33.0] - API Reference</title>
+<link rel="stylesheet" type="text/css" href="style.css" />
+<meta name="viewport" content="initial-scale=1,maximum-scale=1" />
+<meta property="og:description" content="jk.template.RichTextWikiMarkupParser | JK Data [0.33.0] - API Reference" />
+<meta property="og:title" content="jk.template.RichTextWikiMarkupParser | JK Data [0.33.0] - API Reference" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:description" content="jk.template.RichTextWikiMarkupParser | JK Data [0.33.0] - API Reference" />
+</head>
+<body><div class="content">
+<a class="back" href="index.html">&laquo; JK Data [0.33.0]</a><div class="intro">
+<h1><span class="keyword">class</span> <span class="symbol">jk.template.RichTextWikiMarkupParser</span></h1>
+<p></p>
+</div>
+<div class="list">
+<div class="title">Static Methods</div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">parseFile</span> ( file <span class="keyword">as</span> <a class="datatype" href="../../jk-core/0.37.0/jk.fs.File.html">jk.fs.File</a> ) <span class="modifier">static</span> <span class="keyword">as</span> <a class="datatype" href="jk.template.RichTextDocument.html">jk.template.RichTextDocument</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">parseString</span> ( data <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="modifier">static</span> <span class="keyword">as</span> <a class="datatype" href="jk.template.RichTextDocument.html">jk.template.RichTextDocument</a></div></div>
+</div>
+<div class="list">
+<div class="title">Instance Methods</div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">skipEmptyLines</span> ( pr <span class="keyword">as</span> <a class="datatype" href="../../jk-core/0.37.0/jk.io.LineReader.html">jk.io.LineReader</a> ) <span class="keyword">as</span> <span class="datatype">string</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">readPreformattedParagraph</span> ( id <span class="keyword">as</span> <span class="datatype">string</span> , pr <span class="keyword">as</span> <a class="datatype" href="../../jk-core/0.37.0/jk.io.LineReader.html">jk.io.LineReader</a> ) <span class="keyword">as</span> <a class="datatype" href="jk.template.RichTextPreformattedParagraph.html">jk.template.RichTextPreformattedParagraph</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">readBlockParagraph</span> ( id <span class="keyword">as</span> <span class="datatype">string</span> , pr <span class="keyword">as</span> <a class="datatype" href="../../jk-core/0.37.0/jk.io.LineReader.html">jk.io.LineReader</a> ) <span class="keyword">as</span> <a class="datatype" href="jk.template.RichTextBlockParagraph.html">jk.template.RichTextBlockParagraph</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">readListParagraph</span> ( type <span class="keyword">as</span> <span class="datatype">string</span> , l <span class="keyword">as</span> <span class="datatype">string</span> , pr <span class="keyword">as</span> <a class="datatype" href="../../jk-core/0.37.0/jk.io.LineReader.html">jk.io.LineReader</a> ) <span class="keyword">as</span> <a class="datatype" href="jk.template.RichTextListParagraph.html">jk.template.RichTextListParagraph</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">processInput</span> ( pr <span class="keyword">as</span> <a class="datatype" href="../../jk-core/0.37.0/jk.io.LineReader.html">jk.io.LineReader</a> , cwd <span class="keyword">as</span> <a class="datatype" href="../../jk-core/0.37.0/jk.fs.File.html">jk.fs.File</a> , doc <span class="keyword">as</span> <a class="datatype" href="jk.template.RichTextDocument.html">jk.template.RichTextDocument</a> ) <span class="keyword">as</span> <span class="datatype">bool</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">parseToDocument</span> ( pr <span class="keyword">as</span> <a class="datatype" href="../../jk-core/0.37.0/jk.io.LineReader.html">jk.io.LineReader</a> , cwd <span class="keyword">as</span> <a class="datatype" href="../../jk-core/0.37.0/jk.fs.File.html">jk.fs.File</a> , v <span class="keyword">as</span> <a class="datatype" href="jk.template.RichTextDocument.html">jk.template.RichTextDocument</a> ) <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">parse</span> <span class="keyword">as</span> <a class="datatype" href="jk.template.RichTextDocument.html">jk.template.RichTextDocument</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getFile</span> <span class="keyword">as</span> <a class="datatype" href="../../jk-core/0.37.0/jk.fs.File.html">jk.fs.File</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setFile</span> ( v <span class="keyword">as</span> <a class="datatype" href="../../jk-core/0.37.0/jk.fs.File.html">jk.fs.File</a> ) <span class="keyword">as</span> <a class="datatype" href="jk.template.RichTextWikiMarkupParser.html">jk.template.RichTextWikiMarkupParser</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getData</span> <span class="keyword">as</span> <span class="datatype">string</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setData</span> ( v <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="keyword">as</span> <a class="datatype" href="jk.template.RichTextWikiMarkupParser.html">jk.template.RichTextWikiMarkupParser</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getAllowInclude</span> <span class="keyword">as</span> <span class="datatype">bool</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setAllowInclude</span> ( v <span class="keyword">as</span> <span class="datatype">bool</span> ) <span class="keyword">as</span> <a class="datatype" href="jk.template.RichTextWikiMarkupParser.html">jk.template.RichTextWikiMarkupParser</a></div></div>
+</div>
+</div>
+</body>
+</html>

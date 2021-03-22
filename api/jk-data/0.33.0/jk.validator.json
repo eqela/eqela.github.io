@@ -1,0 +1,13 @@
+{
+	"moduleDescription" : "Generic data validation functionality.\n",
+	"type" : "module",
+	"moduleTitle" : "Data validation",
+	"moduleId" : "jk.validator",
+	"entities" : [
+		{
+			"type" : "class",
+			"name" : "DataValidator",
+			"description" : ""
+		}
+	]
+}

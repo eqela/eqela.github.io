@@ -1,0 +1,25 @@
+class name jk.sushi.SushiKit header public
+{
+	import jk.lang
+	import jk.fs
+	import jk.log
+	import jk.process
+	ctor(ctx as jk.log.LoggingContext)
+	func asStringVector(o) as vector<string>
+	func executeBuffer(code as buffer, args) as int
+	func executeFile(file, args) as int
+	func executeFileProcess(file, args) as int
+}
+class name jk.sushi.SushiCode header public
+{
+	import jk.lang
+	import jk.fs
+	ctor
+	func forBuffer(code as buffer) static as jk.sushi.SushiCode
+	func forFile(file as jk.fs.File) static as jk.sushi.SushiCode
+	func execute(args as vector<string>) as int
+	func getCode as buffer #getterMethod
+	func setCode(v as buffer) as jk.sushi.SushiCode #setterMethod
+	func getName as string #getterMethod
+	func setName(v as string) as jk.sushi.SushiCode #setterMethod
+}

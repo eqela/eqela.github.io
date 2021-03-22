@@ -1,0 +1,23 @@
+class name jk.sha.SHAEncoderGeneric header extends jk.sha.SHAEncoder public
+{
+	import jk.lang
+	ctor
+	func encodeAsBuffer(data as buffer, version as int) override as buffer
+	func encodeAsString(data as buffer, version as int) override as string
+}
+class name jk.sha.SHAEncoder header abstract public
+{
+	import jk.lang
+	ctor
+	var ANY public static const as int
+	var SHA1 public static const as int
+	var SHA224 public static const as int
+	var SHA256 public static const as int
+	var SHA384 public static const as int
+	var SHA512 public static const as int
+	func create static as jk.sha.SHAEncoder
+	func getSha1HashForString(data as string) static as string
+	func getSha1HashForBuffer(data as buffer) static as string
+	func encodeAsBuffer(data as buffer, version as int) abstract as buffer
+	func encodeAsString(data as buffer, version as int) abstract as string
+}

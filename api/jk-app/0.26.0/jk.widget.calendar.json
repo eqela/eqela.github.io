@@ -1,0 +1,13 @@
+{
+	"moduleDescription" : "",
+	"type" : "module",
+	"moduleTitle" : "",
+	"moduleId" : "jk.widget.calendar",
+	"entities" : [
+		{
+			"type" : "class",
+			"name" : "CalendarWidget",
+			"description" : ""
+		}
+	]
+}

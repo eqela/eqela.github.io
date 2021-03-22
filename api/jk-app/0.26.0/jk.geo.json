@@ -1,0 +1,58 @@
+{
+	"moduleDescription" : "",
+	"type" : "module",
+	"moduleTitle" : "",
+	"moduleId" : "jk.geo",
+	"entities" : [
+		{
+			"type" : "class",
+			"name" : "GeoLocationManager",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "GeoCoderForGoogleMapsAPI",
+			"description" : ""
+		},
+		{
+			"type" : "interface",
+			"name" : "GeoCoderAddressListener",
+			"description" : ""
+		},
+		{
+			"type" : "interface",
+			"name" : "GeoCoder",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "PhysicalAddress",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "SnapToRoadForGoogleMapsAPI",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "SnappedPoint",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "RoadForGoogleMapsAPI",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "GeoLocation",
+			"description" : ""
+		},
+		{
+			"type" : "interface",
+			"name" : "GeoCoderLocationListener",
+			"description" : ""
+		}
+	]
+}

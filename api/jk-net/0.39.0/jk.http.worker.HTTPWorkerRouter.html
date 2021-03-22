@@ -1,0 +1,42 @@
+<html>
+<head>
+<title>jk.http.worker.HTTPWorkerRouter | JK Net [0.39.0] - API Reference</title>
+<link rel="stylesheet" type="text/css" href="style.css" />
+<meta name="viewport" content="initial-scale=1,maximum-scale=1" />
+<meta property="og:description" content="jk.http.worker.HTTPWorkerRouter | JK Net [0.39.0] - API Reference" />
+<meta property="og:title" content="jk.http.worker.HTTPWorkerRouter | JK Net [0.39.0] - API Reference" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:description" content="jk.http.worker.HTTPWorkerRouter | JK Net [0.39.0] - API Reference" />
+</head>
+<body><div class="content">
+<a class="back" href="index.html">&laquo; JK Net [0.39.0]</a><div class="intro">
+<h1><span class="keyword">class</span> <span class="symbol">jk.http.worker.HTTPWorkerRouter</span></h1>
+<p></p>
+</div>
+<div class="list">
+<div class="title">Base Types</div>
+<div class="entry">
+<div class="name"><span class="keyword">extends</span> <a class="datatype" href="jk.http.worker.HTTPWorkerHandler.html">jk.http.worker.HTTPWorkerHandler</a></div></div>
+</div>
+<div class="list">
+<div class="title">Instance Methods</div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">initRoutes</span> <span class="modifier">virtual</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">addRoute</span> ( method <span class="keyword">as</span> <span class="datatype">string</span> , pattern <span class="keyword">as</span> <span class="datatype">string</span> , handler <span class="keyword">as</span> <span class="datatype">function&lt;void,jk.http.worker.HTTPWorkerRequest,jk.http.worker.HTTPWorkerResponse,jk.lang.DynamicMap&gt;</span> ) <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">handleRequest</span> ( req <span class="keyword">as</span> <a class="datatype" href="jk.http.worker.HTTPWorkerRequest.html">jk.http.worker.HTTPWorkerRequest</a> , resp <span class="keyword">as</span> <a class="datatype" href="jk.http.worker.HTTPWorkerResponse.html">jk.http.worker.HTTPWorkerResponse</a> ) <span class="modifier">override</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setErrorResponse</span> ( resp <span class="keyword">as</span> <a class="datatype" href="jk.http.worker.HTTPWorkerResponse.html">jk.http.worker.HTTPWorkerResponse</a> , errorCode <span class="keyword">as</span> <span class="datatype">string</span> , statusCode <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setJsonObjectResponse</span> ( resp <span class="keyword">as</span> <a class="datatype" href="jk.http.worker.HTTPWorkerResponse.html">jk.http.worker.HTTPWorkerResponse</a> , o <span class="keyword">as</span> <span class="datatype">object</span> , cookie <span class="keyword">as</span> <a class="datatype" href="jk.http.server.cookie.HTTPServerCookie.html">jk.http.server.cookie.HTTPServerCookie</a> ) <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setOkResponse</span> ( resp <span class="keyword">as</span> <a class="datatype" href="jk.http.worker.HTTPWorkerResponse.html">jk.http.worker.HTTPWorkerResponse</a> , data <span class="keyword">as</span> <span class="datatype">object</span> ) <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setNotAuthenticated</span> ( resp <span class="keyword">as</span> <a class="datatype" href="jk.http.worker.HTTPWorkerResponse.html">jk.http.worker.HTTPWorkerResponse</a> ) <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setInvalidRequest</span> ( resp <span class="keyword">as</span> <a class="datatype" href="jk.http.worker.HTTPWorkerResponse.html">jk.http.worker.HTTPWorkerResponse</a> ) <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+</div>
+</div>
+</body>
+</html>

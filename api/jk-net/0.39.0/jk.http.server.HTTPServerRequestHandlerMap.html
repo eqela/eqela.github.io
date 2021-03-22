@@ -1,0 +1,64 @@
+<html>
+<head>
+<title>jk.http.server.HTTPServerRequestHandlerMap | JK Net [0.39.0] - API Reference</title>
+<link rel="stylesheet" type="text/css" href="style.css" />
+<meta name="viewport" content="initial-scale=1,maximum-scale=1" />
+<meta property="og:description" content="jk.http.server.HTTPServerRequestHandlerMap | JK Net [0.39.0] - API Reference" />
+<meta property="og:title" content="jk.http.server.HTTPServerRequestHandlerMap | JK Net [0.39.0] - API Reference" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:description" content="jk.http.server.HTTPServerRequestHandlerMap | JK Net [0.39.0] - API Reference" />
+</head>
+<body><div class="content">
+<a class="back" href="index.html">&laquo; JK Net [0.39.0]</a><div class="intro">
+<h1><span class="keyword">class</span> <span class="symbol">jk.http.server.HTTPServerRequestHandlerMap</span></h1>
+<p></p>
+</div>
+<div class="list">
+<div class="title">Base Types</div>
+<div class="entry">
+<div class="name"><span class="keyword">extends</span> <a class="datatype" href="jk.http.server.HTTPServerRequestHandlerAdapter.html">jk.http.server.HTTPServerRequestHandlerAdapter</a></div></div>
+</div>
+<div class="list">
+<div class="title">Instance Methods</div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">initialize</span> ( server <span class="keyword">as</span> <a class="datatype" href="jk.http.server.HTTPServerBase.html">jk.http.server.HTTPServerBase</a> ) <span class="modifier">override</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">onMaintenance</span> <span class="modifier">override</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">onRefresh</span> <span class="modifier">override</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">cleanup</span> <span class="modifier">override</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">onHTTPMethod</span> ( req <span class="keyword">as</span> <a class="datatype" href="jk.http.server.HTTPServerRequest.html">jk.http.server.HTTPServerRequest</a> , functions <span class="keyword">as</span> <span class="datatype">map&lt;string,function&lt;void,jk.http.server.HTTPServerRequest&gt;&gt;</span> ) <span class="keyword">as</span> <span class="datatype">bool</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">onGET</span> ( req <span class="keyword">as</span> <a class="datatype" href="jk.http.server.HTTPServerRequest.html">jk.http.server.HTTPServerRequest</a> ) <span class="modifier">override</span> <span class="keyword">as</span> <span class="datatype">bool</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">onPOST</span> ( req <span class="keyword">as</span> <a class="datatype" href="jk.http.server.HTTPServerRequest.html">jk.http.server.HTTPServerRequest</a> ) <span class="modifier">override</span> <span class="keyword">as</span> <span class="datatype">bool</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">onPUT</span> ( req <span class="keyword">as</span> <a class="datatype" href="jk.http.server.HTTPServerRequest.html">jk.http.server.HTTPServerRequest</a> ) <span class="modifier">override</span> <span class="keyword">as</span> <span class="datatype">bool</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">onDELETE</span> ( req <span class="keyword">as</span> <a class="datatype" href="jk.http.server.HTTPServerRequest.html">jk.http.server.HTTPServerRequest</a> ) <span class="modifier">override</span> <span class="keyword">as</span> <span class="datatype">bool</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">onPATCH</span> ( req <span class="keyword">as</span> <a class="datatype" href="jk.http.server.HTTPServerRequest.html">jk.http.server.HTTPServerRequest</a> ) <span class="modifier">override</span> <span class="keyword">as</span> <span class="datatype">bool</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">tryHandleRequest</span> ( req <span class="keyword">as</span> <a class="datatype" href="jk.http.server.HTTPServerRequest.html">jk.http.server.HTTPServerRequest</a> ) <span class="keyword">as</span> <span class="datatype">bool</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">handleRequest</span> ( req <span class="keyword">as</span> <a class="datatype" href="jk.http.server.HTTPServerRequest.html">jk.http.server.HTTPServerRequest</a> , next <span class="keyword">as</span> <span class="datatype">function&lt;void&gt;</span> ) <span class="modifier">override</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">child</span> ( path <span class="keyword">as</span> <span class="datatype">string</span> , handler <span class="keyword">as</span> <a class="datatype" href="jk.http.server.HTTPServerRequestHandler.html">jk.http.server.HTTPServerRequestHandler</a> ) <span class="keyword">as</span> <a class="datatype" href="jk.http.server.HTTPServerRequestHandlerMap.html">jk.http.server.HTTPServerRequestHandlerMap</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">get</span> ( path <span class="keyword">as</span> <span class="datatype">string</span> , handler <span class="keyword">as</span> <span class="datatype">function&lt;void,jk.http.server.HTTPServerRequest&gt;</span> ) <span class="keyword">as</span> <a class="datatype" href="jk.http.server.HTTPServerRequestHandlerMap.html">jk.http.server.HTTPServerRequestHandlerMap</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">post</span> ( path <span class="keyword">as</span> <span class="datatype">string</span> , handler <span class="keyword">as</span> <span class="datatype">function&lt;void,jk.http.server.HTTPServerRequest&gt;</span> ) <span class="keyword">as</span> <a class="datatype" href="jk.http.server.HTTPServerRequestHandlerMap.html">jk.http.server.HTTPServerRequestHandlerMap</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">put</span> ( path <span class="keyword">as</span> <span class="datatype">string</span> , handler <span class="keyword">as</span> <span class="datatype">function&lt;void,jk.http.server.HTTPServerRequest&gt;</span> ) <span class="keyword">as</span> <a class="datatype" href="jk.http.server.HTTPServerRequestHandlerMap.html">jk.http.server.HTTPServerRequestHandlerMap</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">delete</span> ( path <span class="keyword">as</span> <span class="datatype">string</span> , handler <span class="keyword">as</span> <span class="datatype">function&lt;void,jk.http.server.HTTPServerRequest&gt;</span> ) <span class="keyword">as</span> <a class="datatype" href="jk.http.server.HTTPServerRequestHandlerMap.html">jk.http.server.HTTPServerRequestHandlerMap</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">patch</span> ( path <span class="keyword">as</span> <span class="datatype">string</span> , handler <span class="keyword">as</span> <span class="datatype">function&lt;void,jk.http.server.HTTPServerRequest&gt;</span> ) <span class="keyword">as</span> <a class="datatype" href="jk.http.server.HTTPServerRequestHandlerMap.html">jk.http.server.HTTPServerRequestHandlerMap</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getOrPost</span> ( path <span class="keyword">as</span> <span class="datatype">string</span> , handler <span class="keyword">as</span> <span class="datatype">function&lt;void,jk.http.server.HTTPServerRequest&gt;</span> ) <span class="keyword">as</span> <a class="datatype" href="jk.http.server.HTTPServerRequestHandlerMap.html">jk.http.server.HTTPServerRequestHandlerMap</a></div></div>
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,7 @@
+interface name jk.app.ApplicationContext header implements jk.log.LoggingContext public
+{
+	import jk.lang
+	import jk.fs
+	import jk.log
+	func getApplicationDataDirectory as jk.fs.File
+}

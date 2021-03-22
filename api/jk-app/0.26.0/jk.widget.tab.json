@@ -1,0 +1,33 @@
+{
+	"moduleDescription" : "",
+	"type" : "module",
+	"moduleTitle" : "",
+	"moduleId" : "jk.widget.tab",
+	"entities" : [
+		{
+			"type" : "interface",
+			"name" : "TabContentWidget",
+			"description" : ""
+		},
+		{
+			"type" : "interface",
+			"name" : "TabItemCreator",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "TabWidget",
+			"description" : ""
+		},
+		{
+			"type" : "interface",
+			"name" : "TabItemWidget",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "TabContainerWidget",
+			"description" : ""
+		}
+	]
+}

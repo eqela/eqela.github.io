@@ -1,0 +1,13 @@
+{
+	"moduleDescription" : "",
+	"type" : "module",
+	"moduleTitle" : "",
+	"moduleId" : "jk.http.server.cookie",
+	"entities" : [
+		{
+			"type" : "class",
+			"name" : "HTTPServerCookie",
+			"description" : ""
+		}
+	]
+}

@@ -1,0 +1,23 @@
+{
+	"moduleDescription" : "",
+	"type" : "module",
+	"moduleTitle" : "",
+	"moduleId" : "jk.widget.camera",
+	"entities" : [
+		{
+			"type" : "class",
+			"name" : "Camera",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "BarcodeObject",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "BarcodeScannerWidget",
+			"description" : ""
+		}
+	]
+}

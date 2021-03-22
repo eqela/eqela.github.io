@@ -1,0 +1,247 @@
+class name jk.xml.MarkupLanguageParser header public
+{
+	import jk.lang
+	ctor
+	class name Value header public static
+	{
+		ctor
+		func getPosition as int #getterMethod
+		func setPosition(v as int) as jk.xml.MarkupLanguageParser.Value #setterMethod
+	}
+	class name StartElement header extends jk.xml.MarkupLanguageParser.Value public static
+	{
+		ctor
+		func getParam(pname as string) as string
+		func getName as string #getterMethod
+		func setName(v as string) as jk.xml.MarkupLanguageParser.StartElement #setterMethod
+		func getParams as jk.lang.DynamicMap #getterMethod
+		func setParams(v as jk.lang.DynamicMap) as jk.xml.MarkupLanguageParser.StartElement #setterMethod
+	}
+	class name EndElement header extends jk.xml.MarkupLanguageParser.Value public static
+	{
+		ctor
+		func getName as string #getterMethod
+		func setName(v as string) as jk.xml.MarkupLanguageParser.EndElement #setterMethod
+	}
+	class name CharacterData header extends jk.xml.MarkupLanguageParser.Value public static
+	{
+		ctor
+		func getData as string #getterMethod
+		func setData(v as string) as jk.xml.MarkupLanguageParser.CharacterData #setterMethod
+	}
+	class name TextData header extends jk.xml.MarkupLanguageParser.Value public static
+	{
+		ctor
+		func getData as string #getterMethod
+		func setData(v as string) as jk.xml.MarkupLanguageParser.TextData #setterMethod
+	}
+	class name Comment header extends jk.xml.MarkupLanguageParser.Value public static
+	{
+		ctor
+		func getText as string #getterMethod
+		func setText(v as string) as jk.xml.MarkupLanguageParser.Comment #setterMethod
+	}
+	var it protected as jk.lang.CharacterIterator
+	func moveToPreviousChar
+	func peek as jk.xml.MarkupLanguageParser.Value
+	func next as jk.xml.MarkupLanguageParser.Value
+	func isSelfClosing(tag as string) virtual as bool
+	func getIgnoreWhiteSpace as bool #getterMethod
+	func setIgnoreWhiteSpace(v as bool) as jk.xml.MarkupLanguageParser #setterMethod
+}
+class name jk.xml.HTMLString header public
+{
+	import jk.lang
+	ctor
+	func sanitize(str as string) static as string
+	func toQuotedString(str as string) static as string
+}
+class name jk.xml.XMLParser header extends jk.xml.MarkupLanguageParser public
+{
+	import jk.lang
+	import jk.fs
+	import jk.io
+	ctor
+	func forFile(file as jk.fs.File) static as jk.xml.XMLParser
+	func forString(string as string) static as jk.xml.XMLParser
+	func forIterator(it as jk.lang.CharacterIterator) static as jk.xml.XMLParser
+	func parseAsTreeObject(xml as string, ignoreWhiteSpace as bool = true) static as jk.lang.DynamicMap
+}
+class name jk.xml.XMLDOM header public
+{
+	import jk.lang
+	ctor
+	func parseAsTreeObject(xml as string, ignoreWhiteSpace as bool = true) static as jk.xml.XMLDOMNode
+}
+class name jk.xml.XMLParserAdapter header abstract public
+{
+	import jk.lang
+	import jk.fs
+	import jk.log
+	import jk.text
+	ctor
+	class name StringElement header public static
+	{
+		ctor
+		func getName as string #getterMethod
+		func setName(v as string) as jk.xml.XMLParserAdapter.StringElement #setterMethod
+		func getParams as jk.lang.DynamicMap #getterMethod
+		func setParams(v as jk.lang.DynamicMap) as jk.xml.XMLParserAdapter.StringElement #setterMethod
+		func getContent as string #getterMethod
+		func setContent(v as string) as jk.xml.XMLParserAdapter.StringElement #setterMethod
+	}
+	class name Position header public static
+	{
+		ctor
+		func getRow as int #getterMethod
+		func setRow(v as int) as jk.xml.XMLParserAdapter.Position #setterMethod
+		func getColumn as int #getterMethod
+		func setColumn(v as int) as jk.xml.XMLParserAdapter.Position #setterMethod
+	}
+	func initializeForFile(file as jk.fs.File, fileName as string) as bool
+	func initializeForString(text as string, fileName as string) as bool
+	func executeForFile(ctx as jk.log.LoggingContext, file as jk.fs.File, fileName as string = null) as bool
+	func executeForString(ctx as jk.log.LoggingContext, text as string, fileName as string = null) as bool
+	func expect(text as string)
+	func unsupported(element as jk.xml.MarkupLanguageParser.StartElement)
+	func error(message as string)
+	macro IGNORE_STRING_ELEMENT(name) 
+	{
+		if acceptStringElement(name):
+			return true
+	}
+	macro IGNORE_SINGLE_ELEMENT(name) 
+	{
+		if acceptSingleElement(name):
+			return true
+	}
+	macro TRY_ACCEPT(x) 
+	{
+		if x:
+			return true
+	}
+	func parserPeek as jk.xml.MarkupLanguageParser.Value
+	func parserNext as jk.xml.MarkupLanguageParser.Value
+	func parserPrev as jk.xml.MarkupLanguageParser.Value
+	func acceptStartElement(name as string = null) as jk.xml.MarkupLanguageParser.StartElement
+	func parseStartElement(name as string = null) as jk.xml.MarkupLanguageParser.StartElement
+	func acceptAnyEndElement as jk.xml.MarkupLanguageParser.EndElement
+	func acceptEndElementWithName(name as string) as jk.xml.MarkupLanguageParser.EndElement
+	func acceptEndElement(element as jk.xml.MarkupLanguageParser.StartElement) as jk.xml.MarkupLanguageParser.EndElement
+	func parseAnyEndElement as jk.xml.MarkupLanguageParser.EndElement
+	func parseEndElementWithName(name as string) as jk.xml.MarkupLanguageParser.EndElement
+	func parseEndElement(element as jk.xml.MarkupLanguageParser.StartElement) as jk.xml.MarkupLanguageParser.EndElement
+	func acceptSingleElement(name as string = null) as jk.xml.MarkupLanguageParser.StartElement
+	func parseSingleElement(name as string = null) as jk.xml.MarkupLanguageParser.StartElement
+	func acceptStringElement(tagName as string = null) as jk.xml.XMLParserAdapter.StringElement
+	func parseStringElement(tagName as string = null) as jk.xml.XMLParserAdapter.StringElement
+	func acceptStringElementData(tagName as string = null) as string
+	func parseStringElementData(tagName as string = null) as string
+	func acceptElementTree(name as string, startHandler as function<void,jk.xml.MarkupLanguageParser.StartElement>, childHandler as function<bool>) as bool
+	func acceptText(force as bool = false) as string
+	func parseText as string
+	func skipTextAndComments
+	func acceptKeyValuePair as jk.lang.KeyValuePair<string,string>
+	func parseKeyValuePair as jk.lang.KeyValuePair<string,string>
+	func calculatePosition(pos as int, result as jk.xml.XMLParserAdapter.Position)
+	func getContentLine(n as int) as string
+	func execute abstract
+	func getFileName as string #getterMethod
+	func setFileName(v as string) as jk.xml.XMLParserAdapter #setterMethod
+	func getXmlString as string #getterMethod
+	func setXmlString(v as string) as jk.xml.XMLParserAdapter #setterMethod
+	func getCurrentPosition as int #getterMethod
+	func setCurrentPosition(v as int) as jk.xml.XMLParserAdapter #setterMethod
+	func getAutoSkipTextAndComments as bool #getterMethod
+	func setAutoSkipTextAndComments(v as bool) as jk.xml.XMLParserAdapter #setterMethod
+	func getSkipCommentsInText as bool #getterMethod
+	func setSkipCommentsInText(v as bool) as jk.xml.XMLParserAdapter #setterMethod
+}
+class name jk.xml.HTMLParser header extends jk.xml.MarkupLanguageParser public
+{
+	import jk.lang
+	ctor
+	func forString(string as string) static as jk.xml.HTMLParser
+	func parseAsVectorObject(xml as string, ignoreWhiteSpace as bool = true) static as jk.lang.DynamicVector
+	func isSelfClosing(tag as string) override as bool
+}
+class name jk.xml.XMLDOMNode header public
+{
+	import jk.lang
+	ctor
+	var name public as string
+	var data public as string
+	var attributes public as jk.lang.DynamicMap
+	var children public as vector<jk.xml.XMLDOMNode>
+	func getDOMNodesByName(name as string) as vector<jk.xml.XMLDOMNode>
+	func getAttribute(name as string) as string
+	func toString(tabCount as int = 0) as string
+}
+class name jk.xml.XMLMaker header implements jk.lang.StringObject public
+{
+	import jk.lang
+	class name CData header implements jk.lang.StringObject public static
+	{
+		ctor(t as string)
+		func toString as string
+		func getText as string #getterMethod
+		func setText(v as string) as jk.xml.XMLMaker.CData #setterMethod
+		func getSimple as bool #getterMethod
+		func setSimple(v as bool) as jk.xml.XMLMaker.CData #setterMethod
+		func getSingleLine as bool #getterMethod
+		func setSingleLine(v as bool) as jk.xml.XMLMaker.CData #setterMethod
+	}
+	class name Element header extends jk.xml.XMLMaker.StartElement public static
+	{
+		ctor(name as string)
+	}
+	class name EndElement header implements jk.lang.StringObject public static
+	{
+		ctor(n as string)
+		func toString as string
+		func getName as string #getterMethod
+		func setName(v as string) as jk.xml.XMLMaker.EndElement #setterMethod
+	}
+	class name StartElement header implements jk.lang.StringObject public static
+	{
+		ctor(n as string)
+		func attribute(key as string, value as string) as jk.xml.XMLMaker.StartElement
+		func toString as string
+		func getName as string #getterMethod
+		func setName(v as string) as jk.xml.XMLMaker.StartElement #setterMethod
+		func getAttributes as map<string,string> #getterMethod
+		func setAttributes(v as map<string,string>) as jk.xml.XMLMaker.StartElement #setterMethod
+		func getSingle as bool #getterMethod
+		func setSingle(v as bool) as jk.xml.XMLMaker.StartElement #setterMethod
+		func getSingleLine as bool #getterMethod
+		func setSingleLine(v as bool) as jk.xml.XMLMaker.StartElement #setterMethod
+	}
+	class name CustomXML header public static
+	{
+		ctor(s as string)
+		func getString as string #getterMethod
+		func setString(v as string) as jk.xml.XMLMaker.CustomXML #setterMethod
+	}
+	ctor
+	func start(element as string, singleLine as bool = false) as jk.xml.XMLMaker
+	func start(element as string, k1 as string, v1 as string, singleLine as bool = false) as jk.xml.XMLMaker
+	func start(element as string, attrs as map, singleLine as bool = false) as jk.xml.XMLMaker
+	func start(element as string, attrs as jk.lang.DynamicMap, singleLine as bool = false) as jk.xml.XMLMaker
+	func element(element as string, attrs as map) as jk.xml.XMLMaker
+	func end(element as string) as jk.xml.XMLMaker
+	func text(element as string) as jk.xml.XMLMaker
+	func cdata(element as string) as jk.xml.XMLMaker
+	func textElement(element as string, text as string, attrs as map = null) as jk.xml.XMLMaker
+	func add(o as object) as jk.xml.XMLMaker
+	func toString as string
+	func getElements as vector #getterMethod
+	func setElements(v as vector) as jk.xml.XMLMaker #setterMethod
+	func getCustomHeader as string #getterMethod
+	func setCustomHeader(v as string) as jk.xml.XMLMaker #setterMethod
+	func getSingleLine as bool #getterMethod
+	func setSingleLine(v as bool) as jk.xml.XMLMaker #setterMethod
+	func getHeader as string #getterMethod
+	func setHeader(v as string) as jk.xml.XMLMaker #setterMethod
+	func getIndentWithTab as bool #getterMethod
+	func setIndentWithTab(v as bool) as jk.xml.XMLMaker #setterMethod
+}

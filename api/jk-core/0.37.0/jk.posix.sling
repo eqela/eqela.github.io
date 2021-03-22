@@ -1,0 +1,50 @@
+class name jk.posix.PosixSignal header public
+{
+	import jk.lang
+	ctor
+	var SIGHUP public static const as int
+	var SIGINT public static const as int
+	var SIGQUIT public static const as int
+	var SIGILL public static const as int
+	var SIGTRAP public static const as int
+	var SIGABRT public static const as int
+	var SIGFPE public static const as int
+	var SIGKILL public static const as int
+	var SIGSEGV public static const as int
+	var SIGPIPE public static const as int
+	var SIGALRM public static const as int
+	var SIGTERM public static const as int
+	func trapSignal(signum as int, enabled as bool) static as bool
+	func checkSignalState(signum as int) static as bool
+}
+class name jk.posix.PosixEnvironment header public
+{
+	import jk.lang
+	ctor
+	class name PosixUser header public static
+	{
+		ctor
+		func getPwName as string #getterMethod
+		func setPwName(v as string) as jk.posix.PosixEnvironment.PosixUser #setterMethod
+		func getPwUid as int #getterMethod
+		func setPwUid(v as int) as jk.posix.PosixEnvironment.PosixUser #setterMethod
+		func getPwGid as int #getterMethod
+		func setPwGid(v as int) as jk.posix.PosixEnvironment.PosixUser #setterMethod
+		func getPwGecos as string #getterMethod
+		func setPwGecos(v as string) as jk.posix.PosixEnvironment.PosixUser #setterMethod
+		func getPwDir as string #getterMethod
+		func setPwDir(v as string) as jk.posix.PosixEnvironment.PosixUser #setterMethod
+		func getPwShell as string #getterMethod
+		func setPwShell(v as string) as jk.posix.PosixEnvironment.PosixUser #setterMethod
+	}
+	func getpwnam(username as string) static as jk.posix.PosixEnvironment.PosixUser
+	func getpwuid(uid as int) static as jk.posix.PosixEnvironment.PosixUser
+	func setuid(gid as int) static as bool
+	func setgid(gid as int) static as bool
+	func seteuid(uid as int) static as bool
+	func setegid(gid as int) static as bool
+	func getuid static as int
+	func geteuid static as int
+	func getgid static as int
+	func getegid static as int
+}

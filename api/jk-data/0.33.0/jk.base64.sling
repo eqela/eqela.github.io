@@ -1,0 +1,18 @@
+class name jk.base64.Base64Decoder header public
+{
+	import jk.lang
+	ctor
+	func fromUrlSafeFormat(str as string) static as string
+	func appendByte(buffer as buffer, byte as byte) static as buffer
+	func fromLookupChar(ascii as char) static as int
+	func decode(text as string) static as buffer
+}
+class name jk.base64.Base64Encoder header public
+{
+	import jk.lang
+	ctor
+	func toUrlSafeFormat(str as string) static as string
+	func encodeString(str as string) static as string
+	func encode(buffer as buffer) static as string
+	func toASCIIChar(lookup as int) static as char
+}

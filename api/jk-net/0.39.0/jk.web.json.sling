@@ -1,0 +1,40 @@
+class name jk.web.json.JSONAPIClient header public
+{
+	import jk.lang
+	import jk.web
+	import jk.json
+	import jk.url
+	ctor
+	func getFullURL(api as string) virtual as string
+	func toUTF8Buffer(data as jk.lang.DynamicMap) as buffer
+	func customizeRequestHeaders(headers as jk.lang.KeyValueList<string,string>) virtual
+	func onStartSendRequest virtual
+	func onEndSendRequest virtual
+	func onDefaultErrorHandler(error as jk.lang.Error) virtual
+	func handleAsError(response as jk.lang.DynamicMap, callback as function<void,jk.lang.Error> = null) as bool
+	func toError(response as jk.lang.DynamicMap) as jk.lang.Error
+	func onError(error as jk.lang.Error, callback as function<void,jk.lang.Error>) virtual
+	func onError(error as jk.lang.Error) virtual
+	func sendRequest(method as string, url as string, headers as jk.lang.KeyValueList<string,string>, data as buffer, callback as function<void,jk.lang.DynamicMap>, errorCallback as function<void,jk.lang.Error> = null)
+	func doSendRequest(method as string, url as string, headers as jk.lang.KeyValueList<string,string>, data as buffer, callback as function<void,jk.lang.KeyValueList<string,string>,buffer>, errorCallback as function<void,jk.lang.Error>, redirectCount as int) virtual
+	func doGetFile(url as string, callback as function<void,jk.lang.KeyValueList<string,string>,buffer>, errorCallback as function<void,jk.lang.Error> = null)
+	func doGet(url as string, callback as function<void,jk.lang.DynamicMap>, errorCallback as function<void,jk.lang.Error> = null)
+	func doPost(url as string, data as jk.lang.DynamicMap, callback as function<void,jk.lang.DynamicMap>, errorCallback as function<void,jk.lang.Error> = null)
+	func doPut(url as string, data as jk.lang.DynamicMap, callback as function<void,jk.lang.DynamicMap>, errorCallback as function<void,jk.lang.Error> = null)
+	func doDelete(url as string, callback as function<void,jk.lang.DynamicMap>, errorCallback as function<void,jk.lang.Error> = null)
+	func uploadFile(url as string, data as buffer, mimeType as string, callback as function<void,jk.lang.DynamicMap>, errorCallback as function<void,jk.lang.Error> = null)
+	func getWithStatus(url as string, callback as function<void,jk.lang.DynamicMap,jk.lang.Error>)
+	func postWithStatus(url as string, data as jk.lang.DynamicMap, headers as jk.lang.KeyValueList<string,string>, callback as function<void,jk.lang.DynamicMap,jk.lang.Error>)
+	func getCredentialsEnabled as bool #getterMethod
+	func setCredentialsEnabled(v as bool) as jk.web.json.JSONAPIClient #setterMethod
+	func getRedirectionEnabled as bool #getterMethod
+	func setRedirectionEnabled(v as bool) as jk.web.json.JSONAPIClient #setterMethod
+	func getRedirectionLimit as int #getterMethod
+	func setRedirectionLimit(v as int) as jk.web.json.JSONAPIClient #setterMethod
+	func getApiUrl as string #getterMethod
+	func setApiUrl(v as string) as jk.web.json.JSONAPIClient #setterMethod
+	func getWebClient as jk.web.WebClient #getterMethod
+	func setWebClient(v as jk.web.WebClient) as jk.web.json.JSONAPIClient #setterMethod
+	func getDebugCallback as function<void,string> #getterMethod
+	func setDebugCallback(v as function<void,string>) as jk.web.json.JSONAPIClient #setterMethod
+}

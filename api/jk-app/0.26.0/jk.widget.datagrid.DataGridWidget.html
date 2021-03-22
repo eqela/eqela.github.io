@@ -1,0 +1,93 @@
+<html>
+<head>
+<title>jk.widget.datagrid.DataGridWidget | JK App [0.26.0] - API Reference</title>
+<link rel="stylesheet" type="text/css" href="style.css" />
+<meta name="viewport" content="initial-scale=1,maximum-scale=1" />
+<meta property="og:description" content="jk.widget.datagrid.DataGridWidget | JK App [0.26.0] - API Reference" />
+<meta property="og:title" content="jk.widget.datagrid.DataGridWidget | JK App [0.26.0] - API Reference" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:description" content="jk.widget.datagrid.DataGridWidget | JK App [0.26.0] - API Reference" />
+</head>
+<body><div class="content">
+<a class="back" href="index.html">&laquo; JK App [0.26.0]</a><div class="intro">
+<h1><span class="keyword">class</span> <span class="symbol">jk.widget.datagrid.DataGridWidget</span></h1>
+<p></p>
+</div>
+<div class="list">
+<div class="title">Base Types</div>
+<div class="entry">
+<div class="name"><span class="keyword">extends</span> <a class="datatype" href="jk.widget.LayerWidget.html">jk.widget.LayerWidget</a></div></div>
+</div>
+<div class="list">
+<div class="title">Constants</div>
+<div class="entry">
+<div class="name"><span class="keyword">const</span> <span class="symbol">ALIGN_LEFT</span> <span class="keyword">as</span> <span class="datatype">var</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">const</span> <span class="symbol">ALIGN_CENTER</span> <span class="keyword">as</span> <span class="datatype">var</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">const</span> <span class="symbol">ALIGN_RIGHT</span> <span class="keyword">as</span> <span class="datatype">var</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">const</span> <span class="symbol">ALIGN_JUSTIFY</span> <span class="keyword">as</span> <span class="datatype">var</span></div></div>
+</div>
+<div class="list">
+<div class="title">Instance Methods</div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setWidgetBackgroundColor</span> ( color <span class="keyword">as</span> <a class="datatype" href="../../jk-gfx/0.21.0/jk.gfx.Color.html">jk.gfx.Color</a> ) <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getWidgetBackgroundColor</span> <span class="keyword">as</span> <a class="datatype" href="../../jk-gfx/0.21.0/jk.gfx.Color.html">jk.gfx.Color</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setWidgetGridColor</span> ( color <span class="keyword">as</span> <a class="datatype" href="../../jk-gfx/0.21.0/jk.gfx.Color.html">jk.gfx.Color</a> ) <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getWidgetGridColor</span> <span class="keyword">as</span> <a class="datatype" href="../../jk-gfx/0.21.0/jk.gfx.Color.html">jk.gfx.Color</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setWidgetGridWidth</span> ( width <span class="keyword">as</span> <span class="datatype">int</span> ) <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">deleteAllColumns</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">addColumn</span> ( name <span class="keyword">as</span> <span class="datatype">string</span> , key <span class="keyword">as</span> <span class="datatype">string</span> , weight <span class="keyword">as</span> <span class="datatype">double</span> , textAlign <span class="keyword">as</span> <span class="datatype">int</span> ) <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">addWidgetHeaderRow</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">deleteWidgetHeaderRow</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">deleteAllRows</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">addRow</span> ( data <span class="keyword">as</span> <span class="datatype">array</span> , clickHandler <span class="keyword">as</span> <span class="datatype">function&lt;void&gt;</span> , doubleClickHandler <span class="keyword">as</span> <span class="datatype">function&lt;void&gt;</span> ) <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getGridData</span> <span class="keyword">as</span> <a class="datatype" href="../../jk-core/0.37.0/jk.lang.DynamicVector.html">jk.lang.DynamicVector</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getWidgetHeaderBackgroundColor</span> <span class="keyword">as</span> <a class="datatype" href="../../jk-gfx/0.21.0/jk.gfx.Color.html">jk.gfx.Color</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setWidgetHeaderBackgroundColor</span> ( v <span class="keyword">as</span> <a class="datatype" href="../../jk-gfx/0.21.0/jk.gfx.Color.html">jk.gfx.Color</a> ) <span class="keyword">as</span> <a class="datatype" href="jk.widget.datagrid.DataGridWidget.html">jk.widget.datagrid.DataGridWidget</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getWidgetHeaderForegroundColor</span> <span class="keyword">as</span> <a class="datatype" href="../../jk-gfx/0.21.0/jk.gfx.Color.html">jk.gfx.Color</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setWidgetHeaderForegroundColor</span> ( v <span class="keyword">as</span> <a class="datatype" href="../../jk-gfx/0.21.0/jk.gfx.Color.html">jk.gfx.Color</a> ) <span class="keyword">as</span> <a class="datatype" href="jk.widget.datagrid.DataGridWidget.html">jk.widget.datagrid.DataGridWidget</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getWidgetDataBackgroundColor</span> <span class="keyword">as</span> <a class="datatype" href="../../jk-gfx/0.21.0/jk.gfx.Color.html">jk.gfx.Color</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setWidgetDataBackgroundColor</span> ( v <span class="keyword">as</span> <a class="datatype" href="../../jk-gfx/0.21.0/jk.gfx.Color.html">jk.gfx.Color</a> ) <span class="keyword">as</span> <a class="datatype" href="jk.widget.datagrid.DataGridWidget.html">jk.widget.datagrid.DataGridWidget</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getWidgetDataForegroundColor</span> <span class="keyword">as</span> <a class="datatype" href="../../jk-gfx/0.21.0/jk.gfx.Color.html">jk.gfx.Color</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setWidgetDataForegroundColor</span> ( v <span class="keyword">as</span> <a class="datatype" href="../../jk-gfx/0.21.0/jk.gfx.Color.html">jk.gfx.Color</a> ) <span class="keyword">as</span> <a class="datatype" href="jk.widget.datagrid.DataGridWidget.html">jk.widget.datagrid.DataGridWidget</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getWidgetSelectedDataBackgroundColor</span> <span class="keyword">as</span> <a class="datatype" href="../../jk-gfx/0.21.0/jk.gfx.Color.html">jk.gfx.Color</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setWidgetSelectedDataBackgroundColor</span> ( v <span class="keyword">as</span> <a class="datatype" href="../../jk-gfx/0.21.0/jk.gfx.Color.html">jk.gfx.Color</a> ) <span class="keyword">as</span> <a class="datatype" href="jk.widget.datagrid.DataGridWidget.html">jk.widget.datagrid.DataGridWidget</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getWidgetSelectedDataForegroundColor</span> <span class="keyword">as</span> <a class="datatype" href="../../jk-gfx/0.21.0/jk.gfx.Color.html">jk.gfx.Color</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setWidgetSelectedDataForegroundColor</span> ( v <span class="keyword">as</span> <a class="datatype" href="../../jk-gfx/0.21.0/jk.gfx.Color.html">jk.gfx.Color</a> ) <span class="keyword">as</span> <a class="datatype" href="jk.widget.datagrid.DataGridWidget.html">jk.widget.datagrid.DataGridWidget</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getWidgetCellPadding</span> <span class="keyword">as</span> <span class="datatype">int</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setWidgetCellPadding</span> ( v <span class="keyword">as</span> <span class="datatype">int</span> ) <span class="keyword">as</span> <a class="datatype" href="jk.widget.datagrid.DataGridWidget.html">jk.widget.datagrid.DataGridWidget</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getWidgetIsEditable</span> <span class="keyword">as</span> <span class="datatype">bool</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setWidgetIsEditable</span> ( v <span class="keyword">as</span> <span class="datatype">bool</span> ) <span class="keyword">as</span> <a class="datatype" href="jk.widget.datagrid.DataGridWidget.html">jk.widget.datagrid.DataGridWidget</a></div></div>
+</div>
+</div>
+</body>
+</html>

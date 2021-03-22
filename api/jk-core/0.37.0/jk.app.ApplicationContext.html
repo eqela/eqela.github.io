@@ -1,0 +1,28 @@
+<html>
+<head>
+<title>jk.app.ApplicationContext | JK Core [0.37.0] - API Reference</title>
+<link rel="stylesheet" type="text/css" href="style.css" />
+<meta name="viewport" content="initial-scale=1,maximum-scale=1" />
+<meta property="og:description" content="An ApplicationContext represents the environment in which an application executes. The implementation of this is system dependent, and depending on the actual environment, the object that implements ApplicationContext may also implement other interfaces that provide additional features into that particular environment." />
+<meta property="og:title" content="jk.app.ApplicationContext | JK Core [0.37.0] - API Reference" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:description" content="An ApplicationContext represents the environment in which an application executes. The implementation of this is system dependent, and depending on the actual environment, the object that implements ApplicationContext may also implement other interfaces that provide additional features into that particular environment." />
+</head>
+<body><div class="content">
+<a class="back" href="index.html">&laquo; JK Core [0.37.0]</a><div class="intro">
+<h1><span class="keyword">interface</span> <span class="symbol">jk.app.ApplicationContext</span></h1>
+<p>An ApplicationContext represents the environment in which an application executes. The implementation of this is system dependent, and depending on the actual environment, the object that implements ApplicationContext may also implement other interfaces that provide additional features into that particular environment.</p>
+</div>
+<div class="list">
+<div class="title">Base Types</div>
+<div class="entry">
+<div class="name"><span class="keyword">implements</span> <a class="datatype" href="jk.log.LoggingContext.html">jk.log.LoggingContext</a></div></div>
+</div>
+<div class="list">
+<div class="title">Instance Methods</div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getApplicationDataDirectory</span> <span class="keyword">as</span> <a class="datatype" href="jk.fs.File.html">jk.fs.File</a></div><div class="description">Returns a File object that represents a directory where this application can store private data. The data is specific to the current applications and (if applicable) the current user. The exact location and implementation fully depends on the underlying operating system.</div></div>
+</div>
+</div>
+</body>
+</html>

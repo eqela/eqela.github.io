@@ -1,0 +1,13 @@
+{
+	"moduleDescription" : "Utility for converting SLON data to JSON format.\n",
+	"type" : "module",
+	"moduleTitle" : "SLON conversion utilities",
+	"moduleId" : "jk.slon.convert",
+	"entities" : [
+		{
+			"type" : "class",
+			"name" : "ToJson",
+			"description" : ""
+		}
+	]
+}

@@ -1,0 +1,21 @@
+class name jk.script.Script header public
+{
+	import jk.lang
+	import jk.fs
+	import jk.log
+	import jk.env
+	import jk.console
+	var ctx public as jk.log.LoggingContext
+	ctor
+	func print(message)
+	func status(message)
+	func debug(message)
+	func info(message)
+	func warning(message)
+	func error(message)
+	func initialize virtual
+	func requireParameter(args as array<string>, index as int, name as string) as string
+	func executeFunction(script as function<void>) as int
+	func command(name, handler as function<int,vector<string>>)
+	func main(args as array<string>) virtual as int
+}

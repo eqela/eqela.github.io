@@ -1,0 +1,18 @@
+{
+	"moduleDescription" : "",
+	"type" : "module",
+	"moduleTitle" : "",
+	"moduleId" : "jk.socket.async",
+	"entities" : [
+		{
+			"type" : "class",
+			"name" : "TCPClient",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "TCPClientForIOManager",
+			"description" : ""
+		}
+	]
+}

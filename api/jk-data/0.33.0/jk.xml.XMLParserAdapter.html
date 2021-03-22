@@ -1,0 +1,107 @@
+<html>
+<head>
+<title>jk.xml.XMLParserAdapter | JK Data [0.33.0] - API Reference</title>
+<link rel="stylesheet" type="text/css" href="style.css" />
+<meta name="viewport" content="initial-scale=1,maximum-scale=1" />
+<meta property="og:description" content="jk.xml.XMLParserAdapter | JK Data [0.33.0] - API Reference" />
+<meta property="og:title" content="jk.xml.XMLParserAdapter | JK Data [0.33.0] - API Reference" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:description" content="jk.xml.XMLParserAdapter | JK Data [0.33.0] - API Reference" />
+</head>
+<body><div class="content">
+<a class="back" href="index.html">&laquo; JK Data [0.33.0]</a><div class="intro">
+<h1><span class="modifier">abstract</span> <span class="keyword">class</span> <span class="symbol">jk.xml.XMLParserAdapter</span></h1>
+<p></p>
+</div>
+<div class="list">
+<div class="title">Instance Methods</div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">initializeForFile</span> ( file <span class="keyword">as</span> <a class="datatype" href="../../jk-core/0.37.0/jk.fs.File.html">jk.fs.File</a> , fileName <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="keyword">as</span> <span class="datatype">bool</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">initializeForString</span> ( text <span class="keyword">as</span> <span class="datatype">string</span> , fileName <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="keyword">as</span> <span class="datatype">bool</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">executeForFile</span> ( ctx <span class="keyword">as</span> <a class="datatype" href="../../jk-core/0.37.0/jk.log.LoggingContext.html">jk.log.LoggingContext</a> , file <span class="keyword">as</span> <a class="datatype" href="../../jk-core/0.37.0/jk.fs.File.html">jk.fs.File</a> , fileName <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="keyword">as</span> <span class="datatype">bool</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">executeForString</span> ( ctx <span class="keyword">as</span> <a class="datatype" href="../../jk-core/0.37.0/jk.log.LoggingContext.html">jk.log.LoggingContext</a> , text <span class="keyword">as</span> <span class="datatype">string</span> , fileName <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="keyword">as</span> <span class="datatype">bool</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">expect</span> ( text <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">unsupported</span> ( element <span class="keyword">as</span> <span class="datatype">jk.xml.MarkupLanguageParser.StartElement</span> ) <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">error</span> ( message <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">parserPeek</span> <span class="keyword">as</span> <span class="datatype">jk.xml.MarkupLanguageParser.Value</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">parserNext</span> <span class="keyword">as</span> <span class="datatype">jk.xml.MarkupLanguageParser.Value</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">parserPrev</span> <span class="keyword">as</span> <span class="datatype">jk.xml.MarkupLanguageParser.Value</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">acceptStartElement</span> ( name <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="keyword">as</span> <span class="datatype">jk.xml.MarkupLanguageParser.StartElement</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">parseStartElement</span> ( name <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="keyword">as</span> <span class="datatype">jk.xml.MarkupLanguageParser.StartElement</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">acceptAnyEndElement</span> <span class="keyword">as</span> <span class="datatype">jk.xml.MarkupLanguageParser.EndElement</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">acceptEndElementWithName</span> ( name <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="keyword">as</span> <span class="datatype">jk.xml.MarkupLanguageParser.EndElement</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">acceptEndElement</span> ( element <span class="keyword">as</span> <span class="datatype">jk.xml.MarkupLanguageParser.StartElement</span> ) <span class="keyword">as</span> <span class="datatype">jk.xml.MarkupLanguageParser.EndElement</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">parseAnyEndElement</span> <span class="keyword">as</span> <span class="datatype">jk.xml.MarkupLanguageParser.EndElement</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">parseEndElementWithName</span> ( name <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="keyword">as</span> <span class="datatype">jk.xml.MarkupLanguageParser.EndElement</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">parseEndElement</span> ( element <span class="keyword">as</span> <span class="datatype">jk.xml.MarkupLanguageParser.StartElement</span> ) <span class="keyword">as</span> <span class="datatype">jk.xml.MarkupLanguageParser.EndElement</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">acceptSingleElement</span> ( name <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="keyword">as</span> <span class="datatype">jk.xml.MarkupLanguageParser.StartElement</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">parseSingleElement</span> ( name <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="keyword">as</span> <span class="datatype">jk.xml.MarkupLanguageParser.StartElement</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">acceptStringElement</span> ( tagName <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="keyword">as</span> <span class="datatype">jk.xml.XMLParserAdapter.StringElement</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">parseStringElement</span> ( tagName <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="keyword">as</span> <span class="datatype">jk.xml.XMLParserAdapter.StringElement</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">acceptStringElementData</span> ( tagName <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="keyword">as</span> <span class="datatype">string</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">parseStringElementData</span> ( tagName <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="keyword">as</span> <span class="datatype">string</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">acceptElementTree</span> ( name <span class="keyword">as</span> <span class="datatype">string</span> , startHandler <span class="keyword">as</span> <span class="datatype">function&lt;void,jk.xml.MarkupLanguageParser.StartElement&gt;</span> , childHandler <span class="keyword">as</span> <span class="datatype">function&lt;bool&gt;</span> ) <span class="keyword">as</span> <span class="datatype">bool</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">acceptText</span> ( force <span class="keyword">as</span> <span class="datatype">bool</span> ) <span class="keyword">as</span> <span class="datatype">string</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">parseText</span> <span class="keyword">as</span> <span class="datatype">string</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">skipTextAndComments</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">acceptKeyValuePair</span> <span class="keyword">as</span> <a class="datatype" href="../../jk-core/0.37.0/jk.lang.KeyValuePair.html">jk.lang.KeyValuePair&lt;string,string&gt;</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">parseKeyValuePair</span> <span class="keyword">as</span> <a class="datatype" href="../../jk-core/0.37.0/jk.lang.KeyValuePair.html">jk.lang.KeyValuePair&lt;string,string&gt;</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">calculatePosition</span> ( pos <span class="keyword">as</span> <span class="datatype">int</span> , result <span class="keyword">as</span> <span class="datatype">jk.xml.XMLParserAdapter.Position</span> ) <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getContentLine</span> ( n <span class="keyword">as</span> <span class="datatype">int</span> ) <span class="keyword">as</span> <span class="datatype">string</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">execute</span> <span class="modifier">abstract</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getFileName</span> <span class="keyword">as</span> <span class="datatype">string</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setFileName</span> ( v <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="keyword">as</span> <a class="datatype" href="jk.xml.XMLParserAdapter.html">jk.xml.XMLParserAdapter</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getXmlString</span> <span class="keyword">as</span> <span class="datatype">string</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setXmlString</span> ( v <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="keyword">as</span> <a class="datatype" href="jk.xml.XMLParserAdapter.html">jk.xml.XMLParserAdapter</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getCurrentPosition</span> <span class="keyword">as</span> <span class="datatype">int</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setCurrentPosition</span> ( v <span class="keyword">as</span> <span class="datatype">int</span> ) <span class="keyword">as</span> <a class="datatype" href="jk.xml.XMLParserAdapter.html">jk.xml.XMLParserAdapter</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getAutoSkipTextAndComments</span> <span class="keyword">as</span> <span class="datatype">bool</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setAutoSkipTextAndComments</span> ( v <span class="keyword">as</span> <span class="datatype">bool</span> ) <span class="keyword">as</span> <a class="datatype" href="jk.xml.XMLParserAdapter.html">jk.xml.XMLParserAdapter</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getSkipCommentsInText</span> <span class="keyword">as</span> <span class="datatype">bool</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setSkipCommentsInText</span> ( v <span class="keyword">as</span> <span class="datatype">bool</span> ) <span class="keyword">as</span> <a class="datatype" href="jk.xml.XMLParserAdapter.html">jk.xml.XMLParserAdapter</a></div></div>
+</div>
+</div>
+</body>
+</html>

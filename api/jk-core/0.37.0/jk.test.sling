@@ -1,0 +1,70 @@
+class name jk.test.UnitTest header abstract public
+{
+	import jk.lang
+	import jk.console
+	var ctx protected as jk.console.ConsoleApplicationContext
+	ctor
+	macro ASSERT(xpr) 
+	{
+		if not xpr:
+			throw FailedAssertionException.instance("UnitTest.sling" #preprocessorFileValue, "39" #preprocessorLineValue, "79" #preprocessorColumnValue, null)
+	}
+	macro ASSERT(message, xpr) 
+	{
+		if not xpr:
+			throw FailedAssertionException.instance("UnitTest.sling" #preprocessorFileValue, "46" #preprocessorLineValue, "79" #preprocessorColumnValue, message)
+	}
+	macro TEST(name, xpr) 
+	{
+		Log.debug(ctx, "Executing test: " .. "UnitTest" #preprocessorThisValue .. " / " .. name)
+		try {
+			xpr
+		}
+		catch e as FailedAssertionException {
+			Log.error(ctx, (e as! FailedAssertionException).toString())
+			v = false
+		}
+		Log.debug(ctx, "Done executing test: " .. "UnitTest" #preprocessorThisValue .. " / " .. name)
+	}
+	macro START_TESTS :
+		var v = true
+	macro END_TESTS :
+		return v
+	func execute abstract as bool
+}
+class name jk.test.FailedAssertionException header extends jk.lang.Exception implements jk.lang.StringObject public
+{
+	import jk.lang
+	ctor
+	func instance(file as string, line as string, column as string, message as string) static as jk.test.FailedAssertionException
+	func toString as string
+	func getFile as string #getterMethod
+	func setFile(v as string) as jk.test.FailedAssertionException #setterMethod
+	func getLine as string #getterMethod
+	func setLine(v as string) as jk.test.FailedAssertionException #setterMethod
+	func getColumn as string #getterMethod
+	func setColumn(v as string) as jk.test.FailedAssertionException #setterMethod
+	func getAssertionErrorMessage as string #getterMethod
+	func setAssertionErrorMessage(v as string) as jk.test.FailedAssertionException #setterMethod
+}
+class name jk.test.TestSet header public
+{
+	import jk.lang
+	import jk.console
+	ctor
+	var ctx protected as jk.console.ConsoleApplicationContext
+	macro TEST(message, xpr) 
+	{
+		if not xpr {
+			Log.error(ctx, "Test FAILED: `" .. message .. " at " .. "TestSet.sling" #preprocessorFileValue .. ":" .. "34" #preprocessorLineValue .. ":" .. "113" #preprocessorColumnValue)
+			setFailed(getFailed() + 1)
+		}
+		setTotal(getTotal() + 1)
+	}
+	func test virtual
+	func execute as int
+	func getTotal as int #getterMethod
+	func setTotal(v as int) as jk.test.TestSet #setterMethod
+	func getFailed as int #getterMethod
+	func setFailed(v as int) as jk.test.TestSet #setterMethod
+}

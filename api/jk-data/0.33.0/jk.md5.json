@@ -1,0 +1,18 @@
+{
+	"moduleDescription" : "Implementation of the MD5 hashing algorithm.\n",
+	"type" : "module",
+	"moduleTitle" : "MD5 implementation",
+	"moduleId" : "jk.md5",
+	"entities" : [
+		{
+			"type" : "class",
+			"name" : "MD5Encoder",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "MD5EncoderGeneric",
+			"description" : ""
+		}
+	]
+}

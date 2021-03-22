@@ -1,0 +1,19 @@
+class name jk.diff.UnifiedDiff header public
+{
+	import jk.lang
+	import jk.time
+	ctor
+	macro FINISH_BLOCK 
+	{
+		if blocksb {
+			if hdr {
+				msb.appendString(hdr)
+				hdr = null
+			}
+			msb.appendString("@@ -" .. String.forInteger(blockopc) .. "," .. String.forInteger(blockolines) .. " +" .. String.forInteger(blocknpc) .. "," .. String.forInteger(blockolines + blocknlines) .. " @@\n")
+			msb.appendString(blocksb.toString())
+			blocksb = null
+		}
+	}
+	func execute(fileName as string, original as string, modified as string) static as string
+}

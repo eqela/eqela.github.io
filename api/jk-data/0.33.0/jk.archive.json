@@ -1,0 +1,43 @@
+{
+	"moduleDescription" : "Functionality for dealing with and manipulating archive files, such as ZIP\nor TAR/GZ.\n",
+	"type" : "module",
+	"moduleTitle" : "Archive file handling",
+	"moduleId" : "jk.archive",
+	"entities" : [
+		{
+			"type" : "class",
+			"name" : "ArchiveKit",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "ZipWriter",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "ZipReader",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "TarGZipWriter",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "ExternalTarGZipWriter",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "ZipReaderEntry",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "TarReader",
+			"description" : ""
+		}
+	]
+}

@@ -1,0 +1,119 @@
+class name jk.imageutil.PNGEncoder header public
+{
+	import jk.lang
+	ctor
+	func encode(data as buffer, width as int, height as int) static as buffer
+}
+class name jk.imageutil.ImageResizer header public
+{
+	import jk.lang
+	import jk.math
+	ctor
+	func li(src1 as double, src2 as double, a as double) static as int
+	func bilinearInterpolation(q11 as int, q21 as int, q12 as int, q22 as int, tx as double, ty as double) static as double
+	func resizeBilinear(bmpbuf as jk.imageutil.BitmapBuffer, anw as int, anh as int) static as jk.imageutil.BitmapBuffer
+	func untransformCoords(m as jk.math.Matrix33, ix as int, iy as int, tu as array<double>, tv as array<double>, tw as array<double>) static
+	func normalizeCoords(count as int, tu as array<double>, tv as array<double>, tw as array<double>, su as array<double>, sv as array<double>) static
+	var FIXED_SHIFT public static const as int
+	func initFixedUnit static
+	func double2Fixed(val as double) static as int
+	func fixed2Double(val as double) static as double
+	func superSampleDtest(x0 as double, y0 as double, x1 as double, y1 as double, x2 as double, y2 as double, x3 as double, y3 as double) static as bool
+	func supersampleTest(x0 as double, y0 as double, x1 as double, y1 as double, x2 as double, y2 as double, x3 as double, y3 as double) static as bool
+	func lerp(v1 as int, v2 as int, r as int) static as int
+	func sampleBi(pixels as jk.imageutil.RGBAPixelIntegerBuffer, x as int, y as int, color as array<int>) static
+	func getSample(pixels as jk.imageutil.RGBAPixelIntegerBuffer, xc as int, yc as int, x0 as int, y0 as int, x1 as int, y1 as int, x2 as int, y2 as int, x3 as int, y3 as int, cciv as int, level as int, color as array<int>) static
+	func sampleAdapt(src as jk.imageutil.RGBAPixelIntegerBuffer, xc as double, yc as double, x0 as double, y0 as double, x1 as double, y1 as double, x2 as double, y2 as double, x3 as double, y3 as double, dest as jk.imageutil.ImageResizer.IndexMovingBuffer) static
+	func drawableTransformCubic(x as double, jm1 as int, j as int, jp1 as int, jp2 as int) static as double
+	class name IndexMovingBuffer header public static
+	{
+		ctor
+		func move(n as int) as jk.imageutil.ImageResizer.IndexMovingBuffer
+		func getBuf as buffer #getterMethod
+		func setBuf(v as buffer) as jk.imageutil.ImageResizer.IndexMovingBuffer #setterMethod
+		func getIndex as long #getterMethod
+		func setIndex(v as long) as jk.imageutil.ImageResizer.IndexMovingBuffer #setterMethod
+	}
+	func cubicRow(dx as double, row as jk.imageutil.ImageResizer.IndexMovingBuffer) static as int
+	func cubicScaledRow(dx as double, row as jk.imageutil.ImageResizer.IndexMovingBuffer, arow as jk.imageutil.ImageResizer.IndexMovingBuffer) static as int
+	func sampleCubic(src as jk.imageutil.PixelRegionBuffer, su as double, sv as double, dest as jk.imageutil.ImageResizer.IndexMovingBuffer) static
+	func resizeBicubic(bb as jk.imageutil.BitmapBuffer, anw as int, anh as int) static as jk.imageutil.BitmapBuffer
+}
+class name jk.imageutil.RGBAImageBuffer header public
+{
+	import jk.lang
+	ctor
+	func getBuffer as buffer #getterMethod
+	func setBuffer(v as buffer) as jk.imageutil.RGBAImageBuffer #setterMethod
+	func getWidth as int #getterMethod
+	func setWidth(v as int) as jk.imageutil.RGBAImageBuffer #setterMethod
+	func getHeight as int #getterMethod
+	func setHeight(v as int) as jk.imageutil.RGBAImageBuffer #setterMethod
+}
+class name jk.imageutil.ImageFilter header public
+{
+	import jk.lang
+	ctor
+	var RESIZE_TYPE_BILINEAR public static const as int
+	var RESIZE_TYPE_BICUBIC public static const as int
+	func resizeImage(bmpbuf as jk.imageutil.BitmapBuffer, nw as int = -1, nh as int = -1, type as int = 0) static as jk.imageutil.BitmapBuffer
+	func filterGreyscale(bmpbuf as jk.imageutil.BitmapBuffer) static as jk.imageutil.BitmapBuffer
+	func filterRedSepia(bmpbuf as jk.imageutil.BitmapBuffer) static as jk.imageutil.BitmapBuffer
+	func filterBlur(bmpbuf as jk.imageutil.BitmapBuffer) static as jk.imageutil.BitmapBuffer
+	func filterSharpen(bmpbuf as jk.imageutil.BitmapBuffer) static as jk.imageutil.BitmapBuffer
+	func filterEmboss(bmpbuf as jk.imageutil.BitmapBuffer) static as jk.imageutil.BitmapBuffer
+	func filterMotionBlur(bmpbuf as jk.imageutil.BitmapBuffer) static as jk.imageutil.BitmapBuffer
+}
+class name jk.imageutil.PixelRegionBuffer header public
+{
+	import jk.lang
+	ctor
+	func forRgbaPixels(src as jk.imageutil.RGBAPixelIntegerBuffer, w as int, h as int) static as jk.imageutil.PixelRegionBuffer
+	func getStride as int
+	func getBufferRegion(x as int, y as int, newbuffer as bool = false) as buffer
+}
+class name jk.imageutil.ImageFilterUtil header public
+{
+	import jk.lang
+	ctor
+	func clamp(v as double) static as int
+	func getSafeByte(p as buffer, sz as int, idx as int) static as int
+	func createForArrayFilter(bmpbuf as jk.imageutil.BitmapBuffer, filterArray as array<double>, fw as int, fh as int, factor as double = 1.0, bias as double = 1.0) static as jk.imageutil.BitmapBuffer
+}
+class name jk.imageutil.RGBAPixelIntegerBuffer header public
+{
+	import jk.lang
+	ctor
+	func create(b as buffer, w as int, h as int) static as jk.imageutil.RGBAPixelIntegerBuffer
+	func getWidth as int
+	func getHeight as int
+	func getRgbaPixel(x as int, y as int, newbuffer as bool = false) as array<int>
+}
+class name jk.imageutil.GreyscaleImage header public
+{
+	import jk.lang
+	ctor
+	func createGreyscale(bmpbuf as jk.imageutil.BitmapBuffer, rf as double = 1.0, gf as double = 1.0, bf as double = 1.0, af as double = 1.0) static as jk.imageutil.BitmapBuffer
+	func createRedSepia(imgbuf as jk.imageutil.BitmapBuffer) static as jk.imageutil.BitmapBuffer
+}
+class name jk.imageutil.ICOImageReader header public
+{
+	import jk.lang
+	import jk.fs
+	import jk.math
+	ctor
+	func readFile(file as jk.fs.File) static as vector<jk.imageutil.RGBAImageBuffer>
+	func readBuffer(buffer as buffer) static as vector<jk.imageutil.RGBAImageBuffer>
+}
+class name jk.imageutil.BitmapBuffer header public
+{
+	import jk.lang
+	ctor
+	func create(b as buffer, w as int, h as int) static as jk.imageutil.BitmapBuffer
+	func getBuffer as buffer #getterMethod
+	func setBuffer(v as buffer) as jk.imageutil.BitmapBuffer #setterMethod
+	func getWidth as int #getterMethod
+	func setWidth(v as int) as jk.imageutil.BitmapBuffer #setterMethod
+	func getHeight as int #getterMethod
+	func setHeight(v as int) as jk.imageutil.BitmapBuffer #setterMethod
+}

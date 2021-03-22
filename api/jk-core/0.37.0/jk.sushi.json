@@ -1,0 +1,18 @@
+{
+	"moduleDescription" : "Functionality for interacting with the Sushi virtual machine.\n",
+	"type" : "module",
+	"moduleTitle" : "Sushi support",
+	"moduleId" : "jk.sushi",
+	"entities" : [
+		{
+			"type" : "class",
+			"name" : "SushiKit",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "SushiCode",
+			"description" : ""
+		}
+	]
+}

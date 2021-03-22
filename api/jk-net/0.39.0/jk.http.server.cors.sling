@@ -1,0 +1,13 @@
+class name jk.http.server.cors.HTTPServerCORSUtil header public
+{
+	import jk.lang
+	import jk.env
+	import jk.http.server
+	import jk.http.worker
+	ctor
+	func forWhitelist(list as vector<string>) static as jk.http.server.cors.HTTPServerCORSUtil
+	func handlePreflightRequest(req as jk.http.server.HTTPServerRequest) as jk.http.server.HTTPServerResponse
+	func handleWorkerRequest(req as jk.http.worker.HTTPWorkerRequest, resp as jk.http.worker.HTTPWorkerResponse)
+	func getWhitelist as vector<string> #getterMethod
+	func setWhitelist(v as vector<string>) as jk.http.server.cors.HTTPServerCORSUtil #setterMethod
+}

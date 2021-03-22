@@ -1,0 +1,23 @@
+{
+	"moduleDescription" : "",
+	"type" : "module",
+	"moduleTitle" : "",
+	"moduleId" : "jk.socket",
+	"entities" : [
+		{
+			"type" : "class",
+			"name" : "UDPSocket",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "TCPSocket",
+			"description" : ""
+		},
+		{
+			"type" : "interface",
+			"name" : "ConnectedSocket",
+			"description" : ""
+		}
+	]
+}

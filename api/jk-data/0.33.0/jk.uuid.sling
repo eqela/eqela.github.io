@@ -1,0 +1,8 @@
+class name jk.uuid.UUIDGenerator header public
+{
+	import jk.lang
+	import jk.random
+	ctor
+	func generate static as string
+	func forString(value as string) static as string
+}

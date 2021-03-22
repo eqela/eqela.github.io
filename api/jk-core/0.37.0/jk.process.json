@@ -1,0 +1,33 @@
+{
+	"moduleDescription" : "Starting, stopping and monitoring processes; launching external applications.\n",
+	"type" : "module",
+	"moduleTitle" : "Operating system process management",
+	"moduleId" : "jk.process",
+	"entities" : [
+		{
+			"type" : "interface",
+			"name" : "ProcessWithIO",
+			"description" : ""
+		},
+		{
+			"type" : "interface",
+			"name" : "Process",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "ProcessLauncher",
+			"description" : "The ProcessLauncher class provides a mechanism for starting and controlling\nadditional processes."
+		},
+		{
+			"type" : "class",
+			"name" : "ProcessKit",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "CurrentProcess",
+			"description" : ""
+		}
+	]
+}

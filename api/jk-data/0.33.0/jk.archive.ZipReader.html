@@ -1,0 +1,34 @@
+<html>
+<head>
+<title>jk.archive.ZipReader | JK Data [0.33.0] - API Reference</title>
+<link rel="stylesheet" type="text/css" href="style.css" />
+<meta name="viewport" content="initial-scale=1,maximum-scale=1" />
+<meta property="og:description" content="jk.archive.ZipReader | JK Data [0.33.0] - API Reference" />
+<meta property="og:title" content="jk.archive.ZipReader | JK Data [0.33.0] - API Reference" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:description" content="jk.archive.ZipReader | JK Data [0.33.0] - API Reference" />
+</head>
+<body><div class="content">
+<a class="back" href="index.html">&laquo; JK Data [0.33.0]</a><div class="intro">
+<h1><span class="modifier">abstract</span> <span class="keyword">class</span> <span class="symbol">jk.archive.ZipReader</span></h1>
+<p></p>
+</div>
+<div class="list">
+<div class="title">Static Methods</div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">forFile</span> ( file <span class="keyword">as</span> <a class="datatype" href="../../jk-core/0.37.0/jk.fs.File.html">jk.fs.File</a> ) <span class="modifier">static</span> <span class="keyword">as</span> <a class="datatype" href="jk.archive.ZipReader.html">jk.archive.ZipReader</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">extractZipBufferToDirectory</span> ( zipBuffer <span class="keyword">as</span> <span class="datatype">buffer</span> , destDir <span class="keyword">as</span> <a class="datatype" href="../../jk-core/0.37.0/jk.fs.File.html">jk.fs.File</a> , listener <span class="keyword">as</span> <span class="datatype">function&lt;void,jk.fs.File&gt;</span> ) <span class="modifier">static</span> <span class="keyword">as</span> <span class="datatype">bool</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">extractZipFileToDirectory</span> ( zipFile <span class="keyword">as</span> <a class="datatype" href="../../jk-core/0.37.0/jk.fs.File.html">jk.fs.File</a> , destDir <span class="keyword">as</span> <a class="datatype" href="../../jk-core/0.37.0/jk.fs.File.html">jk.fs.File</a> , listener <span class="keyword">as</span> <span class="datatype">function&lt;void,jk.fs.File&gt;</span> ) <span class="modifier">static</span> <span class="keyword">as</span> <span class="datatype">bool</span></div></div>
+</div>
+<div class="list">
+<div class="title">Instance Methods</div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getEntries</span> <span class="modifier">abstract</span> <span class="keyword">as</span> <span class="datatype">vector&lt;jk.archive.ZipReaderEntry&gt;</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">close</span> <span class="modifier">abstract</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+</div>
+</div>
+</body>
+</html>

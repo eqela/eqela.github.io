@@ -1,0 +1,413 @@
+class name jk.json.JSONObjectAdapter header implements jk.json.JSONObject abstract public
+{
+	import jk.lang
+	ctor
+	func asJsonValue(value as object) as object
+	macro SET_VALUE_OBJECT(map, key, value) 
+	{
+		if value:
+			map.setObject(key, asJsonValue(value))
+	}
+	macro SET_VALUE_VECTOR(map, key, value) 
+	{
+		if value {
+			var ss = new DynamicVector()
+			foreach vv in value:
+				ss.appendObject(asJsonValue(vv))
+			map.setObject(key, ss)
+		}
+	}
+	macro GET_VALUE_OBJECT(property, type, key, map) :
+		{
+			var values = map.getDynamicMap(key)
+			if not values:
+				values = JSONParser.parseString(map.getString(key)) as DynamicMap
+			if values {
+				var oo = new __type__()
+				if oo.fromJsonObject(values):
+					property = oo
+			}
+		}
+	macro GET_VALUE_STRING(property, name, map) :
+		property = map.getString(name)
+	macro GET_VALUE_DOUBLE(property, name, map) 
+	{
+		if map.get(name):
+			property = Double.asObject(map.getDouble(name))
+	}
+	macro GET_VALUE_BOOLEAN(property, name, map) 
+	{
+		if map.get(name):
+			property = Boolean.asObject(map.getBoolean(name))
+	}
+	macro GET_VALUE_LONG_INTEGER(property, name, map) 
+	{
+		if map.get(name):
+			property = LongInteger.asObject(map.getLongInteger(name))
+	}
+	macro GET_VALUE_INTEGER(property, name, map) 
+	{
+		if map.get(name):
+			property = Integer.asObject(map.getInteger(name))
+	}
+	macro GET_VALUE_BUFFER(property, name, map) :
+		property = map.getBuffer(name)
+	macro GET_VALUE_OBJECT_VECTOR(pp, type, key, map) :
+		{
+			var ss = map.getVector(key)
+			if not ss {
+				var v1 = JSONParser.parseString(map.getString(key)) as DynamicVector
+				if v1:
+					ss = v1.toVector()
+			}
+			if ss {
+				pp = new vector<__type__>
+				foreach s in ss {
+					var oo = new __type__()
+					if oo.fromJsonObject(s):
+						pp += oo
+				}
+			}
+		}
+	macro GET_VALUE_STRING_VECTOR(pp, key, map) :
+		{
+			var ss = map.getVector(key)
+			if not ss {
+				var v1 = JSONParser.parseString(map.getString(key)) as DynamicVector
+				if v1:
+					ss = v1.toVector()
+			}
+			if ss {
+				pp = new vector<string>
+				foreach s in ss {
+					var so = String.asString(s)
+					if so:
+						pp += so
+				}
+			}
+		}
+	macro GET_VALUE_DOUBLE_VECTOR(pp, key, map) :
+		{
+			var ss = map.getVector(key)
+			if ss {
+				pp = new vector<DoubleObject>
+				foreach s in ss {
+					var so = Double.asDouble(s)
+					if so:
+						pp += so
+				}
+			}
+		}
+	macro GET_VALUE_BOOLEAN_VECTOR(pp, key, map) :
+		{
+			var ss = map.getVector(key)
+			if ss {
+				pp = new vector<BooleanObject>
+				foreach s in ss {
+					var so = Boolean.asBoolean(s)
+					if so:
+						pp += so
+				}
+			}
+		}
+	macro GET_VALUE_LONG_INTEGER_VECTOR(pp, key, map) :
+		{
+			var ss = map.getVector(key)
+			if ss {
+				pp = new vector<LongIntegerObject>
+				foreach s in ss {
+					var so = LongInteger.asLong(s)
+					if so:
+						pp += so
+				}
+			}
+		}
+	macro GET_VALUE_INTEGER_VECTOR(pp, key, map) :
+		{
+			var ss = map.getVector(key)
+			if ss {
+				pp = new vector<IntegerObject>
+				foreach s in ss {
+					var so = Integer.asInteger(s)
+					if so:
+						pp += so
+				}
+			}
+		}
+	macro GET_VALUE_BUFFER_VECTOR(pp, key, map) :
+		{
+			var ss = map.getVector(key)
+			if ss {
+				pp = new vector<buffer>
+				foreach s in ss {
+					var so = Buffer.asBuffer(s)
+					if so:
+						pp += so
+				}
+			}
+		}
+	func toDynamicMap as jk.lang.DynamicMap
+	func toObjectMap as map
+	func toJsonObject abstract as object
+	func fromJsonObject(o as object) abstract as bool
+}
+class name jk.json.JSONParser header public
+{
+	import jk.lang
+	import jk.fs
+	ctor
+	class name NullObject header public static
+	{
+		ctor
+	}
+	func parse(data) static as object
+	func parseBuffer(buffer as buffer) static as object
+	func parseString(str as string) static as object
+	func parseFile(file as jk.fs.File) static as object
+	func forString(str as string) static as jk.json.JSONParser
+	func forBuffer(buffer as buffer) static as jk.json.JSONParser
+	func setDataString(str as string)
+	func setDataBuffer(buffer as buffer)
+	func getNextToken as object
+	func pushData(string as string)
+}
+class name jk.json.JSONObjectAdapterExplicit header implements jk.json.JSONObject abstract public
+{
+	import jk.lang
+	ctor
+	func asJsonValue(value as object) as object
+	macro SET_VALUE_OBJECT(map, key, value) :
+		map.setObject(key, asJsonValue(value))
+	macro SET_VALUE_VECTOR(map, key, value) 
+	{
+		if value {
+			var ss = new DynamicVector()
+			foreach vv in value:
+				ss.appendObject(asJsonValue(vv))
+			map.setObject(key, ss)
+		}
+		else {
+			map.setObject(key, null)
+		}
+	}
+	macro GET_VALUE_OBJECT(property, type, key, map) 
+	{
+		if map.containsKey(key) {
+			var values = map.getDynamicMap(key)
+			if not values:
+				values = JSONParser.parseString(map.getString(key)) as DynamicMap
+			if values {
+				var oo = new __type__()
+				if oo.fromJsonObject(values) {
+					property = oo
+				}
+				else {
+					property = null
+				}
+			}
+			else {
+				property = null
+			}
+		}
+	}
+	macro GET_VALUE_STRING(property, name, map) 
+	{
+		if map.containsKey(name):
+			property = map.getString(name)
+	}
+	macro GET_VALUE_DOUBLE(property, name, map) 
+	{
+		if map.containsKey(name):
+			property = Double.asObject(map.getDouble(name))
+	}
+	macro GET_VALUE_BOOLEAN(property, name, map) 
+	{
+		if map.containsKey(name):
+			property = Boolean.asObject(map.getBoolean(name))
+	}
+	macro GET_VALUE_LONG_INTEGER(property, name, map) 
+	{
+		if map.containsKey(name):
+			property = LongInteger.asObject(map.getLongInteger(name))
+	}
+	macro GET_VALUE_INTEGER(property, name, map) 
+	{
+		if map.containsKey(name):
+			property = Integer.asObject(map.getInteger(name))
+	}
+	macro GET_VALUE_BUFFER(property, name, map) 
+	{
+		if map.containsKey(name):
+			property = map.getBuffer(name)
+	}
+	macro GET_VALUE_OBJECT_VECTOR(pp, type, key, map) 
+	{
+		if map.containsKey(key) {
+			var ss = map.getVector(key)
+			if not ss {
+				var v1 = JSONParser.parseString(map.getString(key)) as DynamicVector
+				if v1:
+					ss = v1.toVector()
+			}
+			if ss {
+				pp = new vector<__type__>
+				foreach s in ss {
+					var oo = new __type__()
+					if oo.fromJsonObject(s):
+						pp += oo
+				}
+			}
+			else {
+				pp = null
+			}
+		}
+	}
+	macro GET_VALUE_STRING_VECTOR(pp, key, map) 
+	{
+		if map.containsKey(key) {
+			var ss = map.getVector(key)
+			if not ss {
+				var v1 = JSONParser.parseString(map.getString(key)) as DynamicVector
+				if v1:
+					ss = v1.toVector()
+			}
+			if ss {
+				pp = new vector<string>
+				foreach s in ss {
+					var so = String.asString(s)
+					if so:
+						pp += so
+				}
+			}
+			else {
+				pp = null
+			}
+		}
+	}
+	macro GET_VALUE_DOUBLE_VECTOR(pp, key, map) 
+	{
+		if map.containsKey(key) {
+			var ss = map.getVector(key)
+			if ss {
+				pp = new vector<DoubleObject>
+				foreach s in ss {
+					var so = Double.asDouble(s)
+					if so:
+						pp += so
+				}
+			}
+			else {
+				pp = null
+			}
+		}
+	}
+	macro GET_VALUE_BOOLEAN_VECTOR(pp, key, map) 
+	{
+		if map.containsKey(key) {
+			var ss = map.getVector(key)
+			if ss {
+				pp = new vector<BooleanObject>
+				foreach s in ss {
+					var so = Boolean.asBoolean(s)
+					if so:
+						pp += so
+				}
+			}
+			else {
+				pp = null
+			}
+		}
+	}
+	macro GET_VALUE_LONG_INTEGER_VECTOR(pp, key, map) 
+	{
+		if map.containsKey(key) {
+			var ss = map.getVector(key)
+			if ss {
+				pp = new vector<LongIntegerObject>
+				foreach s in ss {
+					var so = LongInteger.asLong(s)
+					if so:
+						pp += so
+				}
+			}
+			else {
+				pp = null
+			}
+		}
+	}
+	macro GET_VALUE_INTEGER_VECTOR(pp, key, map) 
+	{
+		if map.containsKey(key) {
+			var ss = map.getVector(key)
+			if ss {
+				pp = new vector<IntegerObject>
+				foreach s in ss {
+					var so = Integer.asInteger(s)
+					if so:
+						pp += so
+				}
+			}
+			else {
+				pp = null
+			}
+		}
+	}
+	macro GET_VALUE_BUFFER_VECTOR(pp, key, map) 
+	{
+		if map.containsKey(key) {
+			var ss = map.getVector(key)
+			if ss {
+				pp = new vector<buffer>
+				foreach s in ss {
+					var so = Buffer.asBuffer(s)
+					if so:
+						pp += so
+				}
+			}
+			else {
+				pp = null
+			}
+		}
+	}
+	func toDynamicMap as jk.lang.DynamicMap
+	func toObjectMap as map
+	func toJsonObject abstract as object
+	func fromJsonObject(o as object) abstract as bool
+}
+interface name jk.json.JSONObject header public
+{
+	import jk.lang
+	func toJsonObject as object
+	func fromJsonObject(o as object) as bool
+}
+class name jk.json.JSONEncoder header public
+{
+	import jk.lang
+	import jk.base64
+	ctor
+	macro PRINT_COLON 
+	{
+		if niceFormatting {
+			sb.appendString(" : ")
+		}
+		else {
+			sb.appendCharacter(':')
+		}
+	}
+	func encodeObject(o as object, indent as int, sb as jk.lang.StringBuilder) virtual
+	func encode(o as object, niceFormatting as bool = true, stringFormattedNumber as bool = false) static as string #deprecated
+	func execute(o as object) as string
+	func encodeToBuilder(o as object, sb as jk.lang.StringBuilder) static
+	func toString(o as object) static as string
+	func toCompactString(o as object) static as string
+	func getNiceFormatting as bool #getterMethod
+	func setNiceFormatting(v as bool) as jk.json.JSONEncoder #setterMethod
+	func getStringFormattedBoolean as bool #getterMethod
+	func setStringFormattedBoolean(v as bool) as jk.json.JSONEncoder #setterMethod
+	func getStringFormattedNumber as bool #getterMethod
+	func setStringFormattedNumber(v as bool) as jk.json.JSONEncoder #setterMethod
+	func getNewJSONFormat as bool #getterMethod
+	func setNewJSONFormat(v as bool) as jk.json.JSONEncoder #setterMethod
+	func getEncodeNullAsNull as bool #getterMethod
+	func setEncodeNullAsNull(v as bool) as jk.json.JSONEncoder #setterMethod
+}

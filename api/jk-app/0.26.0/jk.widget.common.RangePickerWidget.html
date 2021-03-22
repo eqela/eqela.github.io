@@ -1,0 +1,95 @@
+<html>
+<head>
+<title>jk.widget.common.RangePickerWidget | JK App [0.26.0] - API Reference</title>
+<link rel="stylesheet" type="text/css" href="style.css" />
+<meta name="viewport" content="initial-scale=1,maximum-scale=1" />
+<meta property="og:description" content="jk.widget.common.RangePickerWidget | JK App [0.26.0] - API Reference" />
+<meta property="og:title" content="jk.widget.common.RangePickerWidget | JK App [0.26.0] - API Reference" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:description" content="jk.widget.common.RangePickerWidget | JK App [0.26.0] - API Reference" />
+</head>
+<body><div class="content">
+<a class="back" href="index.html">&laquo; JK App [0.26.0]</a><div class="intro">
+<h1><span class="keyword">class</span> <span class="symbol">jk.widget.common.RangePickerWidget</span></h1>
+<p></p>
+</div>
+<div class="list">
+<div class="title">Base Types</div>
+<div class="entry">
+<div class="name"><span class="keyword">implements</span> <a class="datatype" href="jk.widget.ResizeAwareWidget.html">jk.widget.ResizeAwareWidget</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">implements</span> <a class="datatype" href="jk.widget.WidgetWithValue.html">jk.widget.WidgetWithValue</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">extends</span> <a class="datatype" href="jk.widget.LayerWidget.html">jk.widget.LayerWidget</a></div></div>
+</div>
+<div class="list">
+<div class="title">Constants</div>
+<div class="entry">
+<div class="name"><span class="keyword">const</span> <span class="symbol">LEFT_CONTROL</span> <span class="keyword">as</span> <span class="datatype">var</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">const</span> <span class="symbol">RIGHT_CONTROL</span> <span class="keyword">as</span> <span class="datatype">var</span></div></div>
+</div>
+<div class="list">
+<div class="title">Instance Methods</div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">initializeWidget</span> <span class="modifier">override</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">resetSelectedControl</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">moveLeftControlTo</span> ( value <span class="keyword">as</span> <span class="datatype">double</span> ) <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">moveRightControlTo</span> ( value <span class="keyword">as</span> <span class="datatype">double</span> ) <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">moveControl</span> ( value <span class="keyword">as</span> <span class="datatype">double</span> , control <span class="keyword">as</span> <span class="datatype">int</span> ) <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setWidgetStyle</span> ( style <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="keyword">as</span> <a class="datatype" href="jk.widget.common.RangePickerWidget.html">jk.widget.common.RangePickerWidget</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setWidgetBackgroundColor</span> ( color <span class="keyword">as</span> <a class="datatype" href="../../jk-gfx/0.21.0/jk.gfx.Color.html">jk.gfx.Color</a> ) <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setWidgetOutOfRangeColor</span> ( color <span class="keyword">as</span> <a class="datatype" href="../../jk-gfx/0.21.0/jk.gfx.Color.html">jk.gfx.Color</a> ) <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setWidgetInsideOfRangeColor</span> ( color <span class="keyword">as</span> <a class="datatype" href="../../jk-gfx/0.21.0/jk.gfx.Color.html">jk.gfx.Color</a> ) <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setWidgetControlColor</span> ( color <span class="keyword">as</span> <a class="datatype" href="../../jk-gfx/0.21.0/jk.gfx.Color.html">jk.gfx.Color</a> ) <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setWidgetRoundingRadius</span> ( radius <span class="keyword">as</span> <span class="datatype">int</span> ) <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">onWidgetResized</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setWidgetValue</span> ( value <span class="keyword">as</span> <span class="datatype">object</span> ) <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setWidgetValueForDynamicMap</span> ( value <span class="keyword">as</span> <a class="datatype" href="../../jk-core/0.37.0/jk.lang.DynamicMap.html">jk.lang.DynamicMap</a> ) <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setWidgetFromValue</span> ( fvalue <span class="keyword">as</span> <span class="datatype">double</span> ) <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setWidgetToValue</span> ( tvalue <span class="keyword">as</span> <span class="datatype">double</span> ) <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getWidgetValue</span> <span class="keyword">as</span> <span class="datatype">object</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getWidgetValueAsDynamicMap</span> <span class="keyword">as</span> <a class="datatype" href="../../jk-core/0.37.0/jk.lang.DynamicMap.html">jk.lang.DynamicMap</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getWidgetFromValue</span> <span class="keyword">as</span> <span class="datatype">double</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getWidgetToValue</span> <span class="keyword">as</span> <span class="datatype">double</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">createWidget</span> <span class="modifier">override</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getWidgetMaximumValue</span> <span class="keyword">as</span> <span class="datatype">int</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setWidgetMaximumValue</span> ( v <span class="keyword">as</span> <span class="datatype">int</span> ) <span class="keyword">as</span> <a class="datatype" href="jk.widget.common.RangePickerWidget.html">jk.widget.common.RangePickerWidget</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getWidgetLeftControlChangeListener</span> <span class="keyword">as</span> <span class="datatype">function&lt;void,double&gt;</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setWidgetLeftControlChangeListener</span> ( v <span class="keyword">as</span> <span class="datatype">function&lt;void,double&gt;</span> ) <span class="keyword">as</span> <a class="datatype" href="jk.widget.common.RangePickerWidget.html">jk.widget.common.RangePickerWidget</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getWidgetRightControlChangeListener</span> <span class="keyword">as</span> <span class="datatype">function&lt;void,double&gt;</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setWidgetRightControlChangeListener</span> ( v <span class="keyword">as</span> <span class="datatype">function&lt;void,double&gt;</span> ) <span class="keyword">as</span> <a class="datatype" href="jk.widget.common.RangePickerWidget.html">jk.widget.common.RangePickerWidget</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getWidgetDisableLeftControl</span> <span class="keyword">as</span> <span class="datatype">bool</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setWidgetDisableLeftControl</span> ( v <span class="keyword">as</span> <span class="datatype">bool</span> ) <span class="keyword">as</span> <a class="datatype" href="jk.widget.common.RangePickerWidget.html">jk.widget.common.RangePickerWidget</a></div></div>
+</div>
+</div>
+</body>
+</html>

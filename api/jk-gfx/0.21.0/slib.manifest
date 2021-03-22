@@ -1,0 +1,13 @@
+{
+	"license" : "",
+	"version" : "0.21.0",
+	"title" : "JK Gfx",
+	"libraries" : [
+		"jk-core:0.37.0",
+		"jk-data:0.33.0"
+	],
+	"description" : "",
+	"copyright" : "",
+	"name" : "jk-gfx",
+	"namespace" : "eqela"
+}

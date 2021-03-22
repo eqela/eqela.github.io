@@ -1,0 +1,118 @@
+{
+	"moduleDescription" : "Reading and writing of data to input and output streams, managing the\nstreams, converting characters to bytes and vice-versa.\n",
+	"type" : "module",
+	"moduleTitle" : "Input and output features (I/O)",
+	"moduleId" : "jk.io",
+	"entities" : [
+		{
+			"type" : "class",
+			"name" : "PrintWriterWrapper",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "StringLineReader",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "FileDescriptorWriter",
+			"description" : ""
+		},
+		{
+			"type" : "interface",
+			"name" : "SeekableReader",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "BufferWriter",
+			"description" : ""
+		},
+		{
+			"type" : "interface",
+			"name" : "Reader",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "PrintReader",
+			"description" : ""
+		},
+		{
+			"type" : "interface",
+			"name" : "LineReader",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "BufferReader",
+			"description" : ""
+		},
+		{
+			"type" : "interface",
+			"name" : "Writer",
+			"description" : ""
+		},
+		{
+			"type" : "interface",
+			"name" : "FileDescriptor",
+			"description" : ""
+		},
+		{
+			"type" : "interface",
+			"name" : "ByteReader",
+			"description" : ""
+		},
+		{
+			"type" : "interface",
+			"name" : "DataStream",
+			"description" : ""
+		},
+		{
+			"type" : "interface",
+			"name" : "DataStreamSource",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "FileDescriptorReader",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "CharacterIteratorForReader",
+			"description" : ""
+		},
+		{
+			"type" : "interface",
+			"name" : "FlushableWriter",
+			"description" : ""
+		},
+		{
+			"type" : "interface",
+			"name" : "SeekableWriter",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "StaticFileDescriptor",
+			"description" : ""
+		},
+		{
+			"type" : "interface",
+			"name" : "SizedReader",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "BinaryReader",
+			"description" : ""
+		},
+		{
+			"type" : "interface",
+			"name" : "PrintWriter",
+			"description" : ""
+		}
+	]
+}

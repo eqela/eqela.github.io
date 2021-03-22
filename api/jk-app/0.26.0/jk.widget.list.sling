@@ -1,0 +1,76 @@
+class name jk.widget.list.PaginatedListWidget header extends jk.widget.LayerWidget abstract public #widget
+{
+	import jk.lang
+	import jk.lang
+	import jk.ui
+	import jk.gfx
+	import jk.widget
+	import jk.widget.common
+	interface name PageItemWidget header extends jk.widget.Widget public static
+	{
+		func setPageNumber(page as int)
+		func setAsCurrentPage(isCurrent as bool)
+		func setPageTracker(pageTracker as jk.widget.list.PaginatedListWidget.PageTrackerWidget)
+	}
+	class name PageTrackerWidget header extends jk.widget.LayerWithBackgroundColorWidget public static #widget
+	{
+		import jk.lang
+		import jk.ui
+		import jk.gfx
+		import jk.widget
+		ctor(ctx as jk.ui.GuiApplicationContext)
+		func setWidgetPreviousImageResource(resource as string)
+		func setWidgetNextImageResource(resource as string)
+		func setWidgetPageSpacing(spacing as int)
+		func updatePages(pageCount as int, currentPage as int)
+		func setupPages(pageCount as int)
+		func onPrevButtonClicked
+		func onNextButtonClicked
+		func moveTo(page as int)
+		func createWidget override
+		func getWidgetParent as jk.widget.list.PaginatedListWidget #getterMethod
+		func setWidgetParent(v as jk.widget.list.PaginatedListWidget) as jk.widget.list.PaginatedListWidget.PageTrackerWidget #setterMethod
+	}
+	ctor(ctx as jk.ui.GuiApplicationContext)
+	func getListCount as int
+	func setWidgetPreviousImageResource(resource as string) as jk.widget.list.PaginatedListWidget
+	func setWidgetNextImageResource(resource as string) as jk.widget.list.PaginatedListWidget
+	func setWidgetPageTrackerSpacing(spacing as int) as jk.widget.list.PaginatedListWidget
+	func setWidgetListSpacing(spacing as int) as jk.widget.list.PaginatedListWidget
+	func setWidgetListBackgroundColor(color as jk.gfx.Color) as jk.widget.list.PaginatedListWidget
+	func doGetData(page as int, resetTracker as bool = false)
+	func onPreviousPage(page as int)
+	func onNextPage(page as int)
+	func onNoDataReceived virtual
+	func clearList
+	func populateList(records as jk.lang.DynamicVector)
+	func onDonePopulatingList virtual
+	func onQueryFailed(error as jk.lang.Error) virtual
+	func createPageItemWidget abstract as jk.widget.list.PaginatedListWidget.PageItemWidget
+	func createListItemWidget(data as jk.lang.DynamicMap) abstract as jk.widget.Widget
+	func startQuery(page as int, callback as function<void,jk.lang.DynamicMap>, errorCallback as function<void,jk.lang.Error>) abstract
+	func createWidget override
+}
+class name jk.widget.list.ListItemWidget header extends jk.widget.VerticalBoxWidget implements jk.widget.TitledWidget implements jk.widget.DisplayAwareWidget abstract public #widget
+{
+	import jk.lang
+	import jk.lang
+	import jk.ui
+	import jk.gfx
+	import jk.widget
+	var list protected as jk.widget.VerticalBoxWidget
+	ctor(ctx as jk.ui.GuiApplicationContext)
+	func getWidgetTitle virtual as string
+	func onWidgetDisplayed
+	func initializeWidget override
+	func onGetData
+	func onNoDataReceived virtual
+	func onDataReceived(data as vector<jk.lang.DynamicMap>) virtual
+	func getSubHeaderWidget virtual as jk.widget.Widget
+	func createWidgetForRecord(record as jk.lang.DynamicMap) virtual as jk.widget.Widget
+	func startDataQuery(callback as function<void,vector<jk.lang.DynamicMap>>) abstract
+	func getWidgetListSpacing as int #getterMethod
+	func setWidgetListSpacing(v as int #notLiteral) as jk.widget.list.ListItemWidget #setterMethod
+	func getWidgetListMargin as int #getterMethod
+	func setWidgetListMargin(v as int #notLiteral) as jk.widget.list.ListItemWidget #setterMethod
+}

@@ -1,0 +1,55 @@
+<html>
+<head>
+<title>jk.md5.MD5EncoderGeneric | JK Data [0.33.0] - API Reference</title>
+<link rel="stylesheet" type="text/css" href="style.css" />
+<meta name="viewport" content="initial-scale=1,maximum-scale=1" />
+<meta property="og:description" content="jk.md5.MD5EncoderGeneric | JK Data [0.33.0] - API Reference" />
+<meta property="og:title" content="jk.md5.MD5EncoderGeneric | JK Data [0.33.0] - API Reference" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:description" content="jk.md5.MD5EncoderGeneric | JK Data [0.33.0] - API Reference" />
+</head>
+<body><div class="content">
+<a class="back" href="index.html">&laquo; JK Data [0.33.0]</a><div class="intro">
+<h1><span class="keyword">class</span> <span class="symbol">jk.md5.MD5EncoderGeneric</span></h1>
+<p></p>
+</div>
+<div class="list">
+<div class="title">Instance Methods</div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">encode</span> ( buf <span class="keyword">as</span> <span class="datatype">buffer</span> ) <span class="keyword">as</span> <span class="datatype">string</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">toMD5</span> ( input <span class="keyword">as</span> <span class="datatype">buffer</span> ) <span class="keyword">as</span> <span class="datatype">buffer</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">stringToHex</span> ( input <span class="keyword">as</span> <span class="datatype">buffer</span> ) <span class="keyword">as</span> <span class="datatype">string</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">md5</span> ( input <span class="keyword">as</span> <span class="datatype">array&lt;int&gt;</span> , len <span class="keyword">as</span> <span class="datatype">int</span> ) <span class="keyword">as</span> <span class="datatype">array&lt;int&gt;</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getMaxLength</span> ( dm <span class="keyword">as</span> <a class="datatype" href="../../jk-core/0.37.0/jk.lang.DynamicMap.html">jk.lang.DynamicMap</a> ) <span class="keyword">as</span> <span class="datatype">int</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">rstr2binl</span> ( input <span class="keyword">as</span> <span class="datatype">buffer</span> ) <span class="keyword">as</span> <span class="datatype">array&lt;int&gt;</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">binl2rstr</span> ( input <span class="keyword">as</span> <span class="datatype">array&lt;int&gt;</span> ) <span class="keyword">as</span> <span class="datatype">buffer</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">addUnsigned</span> ( x <span class="keyword">as</span> <span class="datatype">int</span> , y <span class="keyword">as</span> <span class="datatype">int</span> ) <span class="keyword">as</span> <span class="datatype">int</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">rotateLeft</span> ( num <span class="keyword">as</span> <span class="datatype">int</span> , cnt <span class="keyword">as</span> <span class="datatype">int</span> ) <span class="keyword">as</span> <span class="datatype">int</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">cmn</span> ( q <span class="keyword">as</span> <span class="datatype">int</span> , a <span class="keyword">as</span> <span class="datatype">int</span> , b <span class="keyword">as</span> <span class="datatype">int</span> , x <span class="keyword">as</span> <span class="datatype">int</span> , s <span class="keyword">as</span> <span class="datatype">int</span> , t <span class="keyword">as</span> <span class="datatype">int</span> ) <span class="keyword">as</span> <span class="datatype">int</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">ff</span> ( a <span class="keyword">as</span> <span class="datatype">int</span> , b <span class="keyword">as</span> <span class="datatype">int</span> , c <span class="keyword">as</span> <span class="datatype">int</span> , d <span class="keyword">as</span> <span class="datatype">int</span> , x <span class="keyword">as</span> <span class="datatype">int</span> , s <span class="keyword">as</span> <span class="datatype">int</span> , t <span class="keyword">as</span> <span class="datatype">int</span> ) <span class="keyword">as</span> <span class="datatype">int</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">gg</span> ( a <span class="keyword">as</span> <span class="datatype">int</span> , b <span class="keyword">as</span> <span class="datatype">int</span> , c <span class="keyword">as</span> <span class="datatype">int</span> , d <span class="keyword">as</span> <span class="datatype">int</span> , x <span class="keyword">as</span> <span class="datatype">int</span> , s <span class="keyword">as</span> <span class="datatype">int</span> , t <span class="keyword">as</span> <span class="datatype">int</span> ) <span class="keyword">as</span> <span class="datatype">int</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">hh</span> ( a <span class="keyword">as</span> <span class="datatype">int</span> , b <span class="keyword">as</span> <span class="datatype">int</span> , c <span class="keyword">as</span> <span class="datatype">int</span> , d <span class="keyword">as</span> <span class="datatype">int</span> , x <span class="keyword">as</span> <span class="datatype">int</span> , s <span class="keyword">as</span> <span class="datatype">int</span> , t <span class="keyword">as</span> <span class="datatype">int</span> ) <span class="keyword">as</span> <span class="datatype">int</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">ii</span> ( a <span class="keyword">as</span> <span class="datatype">int</span> , b <span class="keyword">as</span> <span class="datatype">int</span> , c <span class="keyword">as</span> <span class="datatype">int</span> , d <span class="keyword">as</span> <span class="datatype">int</span> , x <span class="keyword">as</span> <span class="datatype">int</span> , s <span class="keyword">as</span> <span class="datatype">int</span> , t <span class="keyword">as</span> <span class="datatype">int</span> ) <span class="keyword">as</span> <span class="datatype">int</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">dictionary2array</span> ( dic <span class="keyword">as</span> <a class="datatype" href="../../jk-core/0.37.0/jk.lang.DynamicMap.html">jk.lang.DynamicMap</a> ) <span class="keyword">as</span> <span class="datatype">array&lt;int&gt;</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">unwrap</span> ( value <span class="keyword">as</span> <span class="datatype">int</span> , fallback <span class="keyword">as</span> <span class="datatype">int</span> ) <span class="keyword">as</span> <span class="datatype">int</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">zeroFillRightShift</span> ( num <span class="keyword">as</span> <span class="datatype">int</span> , count <span class="keyword">as</span> <span class="datatype">int</span> ) <span class="keyword">as</span> <span class="datatype">int</span></div></div>
+</div>
+</div>
+</body>
+</html>

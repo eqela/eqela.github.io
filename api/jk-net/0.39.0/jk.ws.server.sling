@@ -1,0 +1,128 @@
+class name jk.ws.server.WSServerConnection header extends jk.server.NetworkConnection public
+{
+	import jk.lang
+	import jk.io
+	import jk.server
+	import jk.sha
+	import jk.base64
+	import jk.time
+	ctor
+	func onOpened override
+	func onClosed override
+	func onError(message as string) override
+	func onDataReceived(data as buffer, size as int) override
+	func onMaintenance
+	func sendResponse(message as jk.ws.server.WSServerMessage) as int
+	func getConnectionHandler as jk.ws.server.WSServerConnectionHandler #getterMethod
+	func setConnectionHandler(v as jk.ws.server.WSServerConnectionHandler) as jk.ws.server.WSServerConnection #setterMethod
+	func getPingInterval as long #getterMethod
+	func setPingInterval(v as long) as jk.ws.server.WSServerConnection #setterMethod
+}
+class name jk.ws.server.WSServerMessage header public
+{
+	import jk.lang
+	ctor
+	func forText(text as string) static as jk.ws.server.WSServerMessage
+	func forBinary(binary as buffer) static as jk.ws.server.WSServerMessage
+	func create(fin as int, rsv1 as int, rsv2 as int, rsv3 as int, opcode as int, maskingBuffer as buffer, payloadBuffer as buffer) static as jk.ws.server.WSServerMessage
+	var CLOSE_FRAME public static const as int
+	var PING_FRAME public static const as int
+	var PONG_FRAME public static const as int
+	func setFin(fin as int) as jk.ws.server.WSServerMessage
+	func getFin as int
+	func setRsv1(rsv1 as int) as jk.ws.server.WSServerMessage
+	func getRsv1 as int
+	func setRsv2(rsv2 as int) as jk.ws.server.WSServerMessage
+	func getRsv2 as int
+	func setRsv3(rsv3 as int) as jk.ws.server.WSServerMessage
+	func getRsv3 as int
+	func setOpcode(opcode as int) as jk.ws.server.WSServerMessage
+	func getOpcode as int
+	func setMaskingBuffer(maskingBuffer as buffer) as jk.ws.server.WSServerMessage
+	func getMaskingBuffer as buffer
+	func setPayloadBuffer(payloadBuffer as buffer) as jk.ws.server.WSServerMessage
+	func getPayloadBuffer as buffer
+	func getPayloadBufferString as string
+	func forCloseControlFrame(statusCode as int = -1, reason as string = null) static as jk.ws.server.WSServerMessage
+	func forPingControlFrame static as jk.ws.server.WSServerMessage
+	func forPongControlFrame static as jk.ws.server.WSServerMessage
+	func isDataText as bool
+	func isDataBinary as bool
+	func isCloseControlFrame as bool
+	func isPingControlFrame as bool
+	func isPongControlFrame as bool
+	func toBuffer as buffer
+}
+class name jk.ws.server.WSServer header extends jk.server.NetworkServer public
+{
+	import jk.lang
+	import jk.socket.io
+	import jk.server
+	import jk.log
+	ctor
+	func createConnectionObject override as jk.server.NetworkConnection
+	func logError(message as string)
+	func logWarning(message as string)
+	func logInfo(message as string)
+	func logDebug(message as string)
+	func onMaintenance virtual
+	func initialize override as bool
+	func cleanup override
+	func getCreateConnectionHandlerObject as function<jk.ws.server.WSServerConnectionHandler> #getterMethod
+	func setCreateConnectionHandlerObject(v as function<jk.ws.server.WSServerConnectionHandler>) as jk.ws.server.WSServer #setterMethod
+	func getMaintenanceTimerDelay as long #getterMethod
+	func setMaintenanceTimerDelay(v as long) as jk.ws.server.WSServer #setterMethod
+}
+class name jk.ws.server.WSStatusCode header public
+{
+	import jk.lang
+	ctor
+	var CLOSE_NORMAL public static const as int
+	var CLOSE_GOING_AWAY public static const as int
+	var CLOSE_PROTOCOL_ERROR public static const as int
+	var CLOSE_UNSUPPORTED public static const as int
+	var CLOSE_NO_STATUS public static const as int
+	var CLOSE_ABNORMAL public static const as int
+	var UNSUPPORTED_DATA public static const as int
+	var POLICY_VIOLATION public static const as int
+	var CLOSE_TOO_LARGE public static const as int
+	var MISSING_EXTENSION public static const as int
+	var INTERNAL_ERROR public static const as int
+	var SERVICE_RESTART public static const as int
+	var TRY_AGAIN_LATER public static const as int
+	var TLS_HANDSHAKE public static const as int
+}
+class name jk.ws.server.WSServerConnectionHandler header implements jk.ws.WSProtocolSource public
+{
+	import jk.lang
+	import jk.ws
+	import jk.log
+	ctor
+	var connection protected as jk.ws.server.WSServerConnection
+	var logContext protected as jk.log.LoggingContext
+	func setProtocol(protocol as jk.ws.WSProtocol) as jk.ws.server.WSServerConnectionHandler
+	func getProtocol as jk.ws.WSProtocol
+	func getConnectionIdString as string
+	func logDebug(text as string)
+	func logInfo(text as string)
+	func logWarning(text as string)
+	func logError(text as string)
+	func setConnection(conn as jk.ws.server.WSServerConnection) as jk.ws.server.WSServerConnectionHandler
+	func getConnection as jk.ws.server.WSServerConnection
+	func setLogContext(ctx as jk.log.LoggingContext) as jk.ws.server.WSServerConnectionHandler
+	func getLogContext as jk.log.LoggingContext
+	func sendString(data as string)
+	func sendBuffer(data as buffer)
+	func sendResponse(message as jk.ws.server.WSServerMessage) as int
+	func onMaintenance virtual
+	func onOpened virtual
+	func onClosed virtual
+	func closeConnection
+	func close
+	func onCloseMessage(message as jk.ws.server.WSServerMessage) virtual
+	func onPingMessage(message as jk.ws.server.WSServerMessage) virtual as bool
+	func onPongMessage(message as jk.ws.server.WSServerMessage) virtual
+	func onDataMessage(message as jk.ws.server.WSServerMessage) virtual
+	func getConnectionId as string #getterMethod
+	func setConnectionId(v as string) as jk.ws.server.WSServerConnectionHandler #setterMethod
+}

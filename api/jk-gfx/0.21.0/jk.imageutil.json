@@ -1,0 +1,58 @@
+{
+	"moduleDescription" : "",
+	"type" : "module",
+	"moduleTitle" : "",
+	"moduleId" : "jk.imageutil",
+	"entities" : [
+		{
+			"type" : "class",
+			"name" : "PixelRegionBuffer",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "RGBAPixelIntegerBuffer",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "RGBAImageBuffer",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "GreyscaleImage",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "BitmapBuffer",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "ImageFilter",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "ImageResizer",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "PNGEncoder",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "ICOImageReader",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "ImageFilterUtil",
+			"description" : ""
+		}
+	]
+}

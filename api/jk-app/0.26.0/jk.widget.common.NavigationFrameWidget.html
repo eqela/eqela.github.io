@@ -1,0 +1,99 @@
+<html>
+<head>
+<title>jk.widget.common.NavigationFrameWidget | JK App [0.26.0] - API Reference</title>
+<link rel="stylesheet" type="text/css" href="style.css" />
+<meta name="viewport" content="initial-scale=1,maximum-scale=1" />
+<meta property="og:description" content="jk.widget.common.NavigationFrameWidget | JK App [0.26.0] - API Reference" />
+<meta property="og:title" content="jk.widget.common.NavigationFrameWidget | JK App [0.26.0] - API Reference" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:description" content="jk.widget.common.NavigationFrameWidget | JK App [0.26.0] - API Reference" />
+</head>
+<body><div class="content">
+<a class="back" href="index.html">&laquo; JK App [0.26.0]</a><div class="intro">
+<h1><span class="modifier">abstract</span> <span class="keyword">class</span> <span class="symbol">jk.widget.common.NavigationFrameWidget</span></h1>
+<p></p>
+</div>
+<div class="list">
+<div class="title">Base Types</div>
+<div class="entry">
+<div class="name"><span class="keyword">implements</span> <a class="datatype" href="jk.widget.TitleContainerWidget.html">jk.widget.TitleContainerWidget</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">extends</span> <a class="datatype" href="jk.widget.LayerWidget.html">jk.widget.LayerWidget</a></div></div>
+</div>
+<div class="list">
+<div class="title">Instance Variables</div>
+<div class="entry">
+<div class="name"><span class="keyword">var</span> <span class="symbol">contentArea</span> <span class="keyword">as</span> <a class="datatype" href="jk.widget.common.SwitcherLayerWidget.html">jk.widget.common.SwitcherLayerWidget</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">var</span> <span class="symbol">actionBar</span> <span class="keyword">as</span> <a class="datatype" href="jk.widget.common.ActionBarWidget.html">jk.widget.common.ActionBarWidget</a></div></div>
+</div>
+<div class="list">
+<div class="title">Instance Methods</div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getActionBarMenuItems</span> <span class="modifier">virtual</span> <span class="keyword">as</span> <span class="datatype">vector&lt;jk.widget.Widget&gt;</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getMenuHandler</span> <span class="modifier">virtual</span> <span class="keyword">as</span> <span class="datatype">function&lt;void&gt;</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getAppIconResource</span> <span class="modifier">virtual</span> <span class="keyword">as</span> <span class="datatype">string</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getAppMenuHandler</span> <span class="modifier">virtual</span> <span class="keyword">as</span> <span class="datatype">function&lt;void&gt;</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getAppMenu</span> <span class="modifier">virtual</span> <span class="keyword">as</span> <a class="datatype" href="jk.widget.Menu.html">jk.widget.Menu</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">defaultLeftButtonConfiguration</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">updateMenuButton</span> <span class="modifier">virtual</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">createSidebarWidget</span> <span class="modifier">virtual</span> <span class="keyword">as</span> <a class="datatype" href="jk.widget.Widget.html">jk.widget.Widget</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">computeWidgetLayout</span> ( widthConstraint <span class="keyword">as</span> <span class="datatype">int</span> ) <span class="modifier">override</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">displaySidebarWidget</span> ( animated <span class="keyword">as</span> <span class="datatype">bool</span> ) <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">hideSidebarWidget</span> ( animated <span class="keyword">as</span> <span class="datatype">bool</span> ) <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">createBackground</span> <span class="modifier">virtual</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">initializeWidget</span> <span class="modifier">override</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">updateWidgetTitle</span> ( title <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">onCurrentWidgetChanged</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">createWidget</span> <span class="modifier">override</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getWidgetEnableSidebar</span> <span class="keyword">as</span> <span class="datatype">bool</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setWidgetEnableSidebar</span> ( v <span class="keyword">as</span> <span class="datatype">bool</span> ) <span class="keyword">as</span> <a class="datatype" href="jk.widget.common.NavigationFrameWidget.html">jk.widget.common.NavigationFrameWidget</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getWidgetEnableActionBar</span> <span class="keyword">as</span> <span class="datatype">bool</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setWidgetEnableActionBar</span> ( v <span class="keyword">as</span> <span class="datatype">bool</span> ) <span class="keyword">as</span> <a class="datatype" href="jk.widget.common.NavigationFrameWidget.html">jk.widget.common.NavigationFrameWidget</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getWidgetActionBarIsFloating</span> <span class="keyword">as</span> <span class="datatype">bool</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setWidgetActionBarIsFloating</span> ( v <span class="keyword">as</span> <span class="datatype">bool</span> ) <span class="keyword">as</span> <a class="datatype" href="jk.widget.common.NavigationFrameWidget.html">jk.widget.common.NavigationFrameWidget</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getWidgetActionBarBackgroundColor</span> <span class="keyword">as</span> <a class="datatype" href="../../jk-gfx/0.21.0/jk.gfx.Color.html">jk.gfx.Color</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setWidgetActionBarBackgroundColor</span> ( v <span class="keyword">as</span> <a class="datatype" href="../../jk-gfx/0.21.0/jk.gfx.Color.html">jk.gfx.Color</a> ) <span class="keyword">as</span> <a class="datatype" href="jk.widget.common.NavigationFrameWidget.html">jk.widget.common.NavigationFrameWidget</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getWidgetActionBarTextColor</span> <span class="keyword">as</span> <a class="datatype" href="../../jk-gfx/0.21.0/jk.gfx.Color.html">jk.gfx.Color</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setWidgetActionBarTextColor</span> ( v <span class="keyword">as</span> <a class="datatype" href="../../jk-gfx/0.21.0/jk.gfx.Color.html">jk.gfx.Color</a> ) <span class="keyword">as</span> <a class="datatype" href="jk.widget.common.NavigationFrameWidget.html">jk.widget.common.NavigationFrameWidget</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getWidgetActionBarMenuItemSpacing</span> <span class="keyword">as</span> <span class="datatype">int</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setWidgetActionBarMenuItemSpacing</span> ( v <span class="keyword">as</span> <span class="datatype">int</span> ) <span class="keyword">as</span> <a class="datatype" href="jk.widget.common.NavigationFrameWidget.html">jk.widget.common.NavigationFrameWidget</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getWidgetBackgroundColor</span> <span class="keyword">as</span> <a class="datatype" href="../../jk-gfx/0.21.0/jk.gfx.Color.html">jk.gfx.Color</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setWidgetBackgroundColor</span> ( v <span class="keyword">as</span> <a class="datatype" href="../../jk-gfx/0.21.0/jk.gfx.Color.html">jk.gfx.Color</a> ) <span class="keyword">as</span> <a class="datatype" href="jk.widget.common.NavigationFrameWidget.html">jk.widget.common.NavigationFrameWidget</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getWidgetBurgerMenuImageResourceName</span> <span class="keyword">as</span> <span class="datatype">string</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setWidgetBurgerMenuImageResourceName</span> ( v <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="keyword">as</span> <a class="datatype" href="jk.widget.common.NavigationFrameWidget.html">jk.widget.common.NavigationFrameWidget</a></div></div>
+</div>
+</div>
+</body>
+</html>

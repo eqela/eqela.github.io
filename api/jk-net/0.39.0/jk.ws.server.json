@@ -1,0 +1,33 @@
+{
+	"moduleDescription" : "",
+	"type" : "module",
+	"moduleTitle" : "",
+	"moduleId" : "jk.ws.server",
+	"entities" : [
+		{
+			"type" : "class",
+			"name" : "WSServerMessage",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "WSServerConnection",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "WSServer",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "WSStatusCode",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "WSServerConnectionHandler",
+			"description" : ""
+		}
+	]
+}

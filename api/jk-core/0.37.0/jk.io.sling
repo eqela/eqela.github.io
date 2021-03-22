@@ -1,0 +1,192 @@
+class name jk.io.FileDescriptorReader header implements jk.io.Reader implements jk.lang.Closable implements jk.io.FileDescriptor public
+{
+	import jk.lang
+	ctor
+	func forFileDescriptor(fd as int) static as jk.io.FileDescriptorReader
+	func getFileDescriptor as int
+	func read(buffer as buffer) as int
+	func close
+	func getFd as int #getterMethod
+	func setFd(v as int) as jk.io.FileDescriptorReader #setterMethod
+}
+interface name jk.io.LineReader header public
+{
+	import jk.lang
+	func readLine as string
+}
+interface name jk.io.SeekableReader header implements jk.io.Reader public
+{
+	import jk.lang
+	func setCurrentPosition(n as long) as bool
+	func getCurrentPosition as long
+}
+class name jk.io.CharacterIteratorForReader header extends jk.lang.CharacterDecoder public
+{
+	import jk.lang
+	func forReader(reader as jk.io.Reader) static as jk.io.CharacterIteratorForReader
+	func forReaderWithBufferSize(reader as jk.io.Reader, bufferSize as long) static as jk.io.CharacterIteratorForReader
+	ctor(reader as jk.io.Reader)
+	ctor(reader as jk.io.Reader, bufferSize as long)
+	func moveToPreviousByte override as bool
+	func moveToNextByte override as bool
+	func getCurrentByte override as int
+	func getCurrentPosition override as int
+	func setCurrentPosition(position as int) override
+}
+class name jk.io.PrintWriterWrapper header implements jk.io.Writer implements jk.io.PrintWriter implements jk.lang.Closable implements jk.io.FlushableWriter public
+{
+	import jk.lang
+	ctor
+	func forWriter(writer as jk.io.Writer) static as jk.io.PrintWriter
+	func closeWriter(writer as jk.io.PrintWriter) static as jk.io.PrintWriter
+	func print(str as string) as bool
+	func println(str as string) as bool
+	func writeWholeBuffer(buf as buffer) as int
+	func write(buf as buffer, size as int) as int
+	func close
+	func flush
+	func getWriter as jk.io.Writer #getterMethod
+	func setWriter(v as jk.io.Writer) as jk.io.PrintWriterWrapper #setterMethod
+}
+class name jk.io.PrintReader header implements jk.io.Reader implements jk.io.LineReader implements jk.lang.Closable public
+{
+	import jk.lang
+	ctor
+	func forReader(reader as jk.io.Reader) static as jk.io.PrintReader
+	func forReaderAndEncoding(reader as jk.io.Reader, encoding as string) static as jk.io.PrintReader
+	func setReader(reader as jk.io.Reader, encoding as string)
+	func readLine as string
+	func readAll as string
+	func hasEnded as bool
+	func read(buffer as buffer) as int
+	func close
+}
+interface name jk.io.Writer header public
+{
+	import jk.lang
+	func write(buf as buffer, size as int) as int
+}
+class name jk.io.StaticFileDescriptor header implements jk.io.FileDescriptor public
+{
+	import jk.lang
+	ctor
+	func forFileDescriptor(fd as int) static as jk.io.FileDescriptor
+	func getFileDescriptor as int #getterMethod
+	func setFileDescriptor(v as int) as jk.io.StaticFileDescriptor #setterMethod
+}
+interface name jk.io.FileDescriptor header public
+{
+	import jk.lang
+	func getFileDescriptor as int
+}
+interface name jk.io.PrintWriter header implements jk.io.Writer public
+{
+	import jk.lang
+	func print(str as string) as bool
+	func println(str as string) as bool
+}
+interface name jk.io.Reader header public
+{
+	import jk.lang
+	func read(buffer as buffer) as int
+}
+class name jk.io.BufferReader header implements jk.io.Reader implements jk.io.SizedReader implements jk.io.SeekableReader public
+{
+	import jk.lang
+	ctor
+	func readFrom(reader as jk.io.Reader) static as buffer
+	func forBuffer(buf as buffer) static as jk.io.BufferReader
+	func setCurrentPosition(n as long) as bool
+	func getCurrentPosition as long
+	func getBuffer as buffer
+	func setBuffer(buf as buffer) as jk.io.BufferReader
+	func rewind
+	func getSize as int
+	func read(buf as buffer) as int
+	func getPos as int #getterMethod
+	func setPos(v as int) as jk.io.BufferReader #setterMethod
+}
+interface name jk.io.DataStream header public
+{
+	import jk.lang
+	func onDataStreamStart(length as long) as bool
+	func onDataStreamContent(data as buffer, size as int) as bool
+	func onDataStreamEnd as bool
+	func onDataStreamAbort
+}
+interface name jk.io.SeekableWriter header implements jk.io.Writer public
+{
+	import jk.lang
+	func setCurrentPosition(n as long) as bool
+	func getCurrentPosition as long
+}
+class name jk.io.BinaryReader header implements jk.lang.Closable public
+{
+	import jk.lang
+	ctor
+	func forReader(reader as jk.io.Reader) static as jk.io.BinaryReader
+	func isOK as bool
+	func close
+	func seek(position as long) as bool
+	func read1 as buffer
+	func read2 as buffer
+	func read4 as buffer
+	func readBuffer(size as long) as buffer
+	func readInt8 as byte
+	func readInt16LE as ushort
+	func readInt16BE as ushort
+	func readInt32LE as uint
+	func readInt32BE as uint
+	func getReader as jk.io.Reader #getterMethod
+	func setReader(v as jk.io.Reader) as jk.io.BinaryReader #setterMethod
+}
+interface name jk.io.ByteReader header public
+{
+	import jk.lang
+	func readByte as sbyte
+}
+class name jk.io.FileDescriptorWriter header implements jk.io.Writer implements jk.lang.Closable implements jk.io.FileDescriptor public
+{
+	import jk.lang
+	ctor
+	func forFileDescriptor(fd as int) static as jk.io.FileDescriptorWriter
+	func forUnownedFileDescriptor(fd as int) static as jk.io.FileDescriptorWriter
+	func getFileDescriptor as int
+	func write(buf as buffer, size as int) as int
+	func close
+	func getFd as int #getterMethod
+	func setFd(v as int) as jk.io.FileDescriptorWriter #setterMethod
+	func getOwned as bool #getterMethod
+	func setOwned(v as bool) as jk.io.FileDescriptorWriter #setterMethod
+}
+class name jk.io.StringLineReader header implements jk.io.LineReader public
+{
+	import jk.lang
+	ctor(str as string)
+	func readLine as string
+}
+interface name jk.io.FlushableWriter header implements jk.io.Writer public
+{
+	import jk.lang
+	func flush
+}
+interface name jk.io.DataStreamSource header public
+{
+	import jk.lang
+	func setReceiverDataStream(stream as jk.io.DataStream)
+}
+class name jk.io.BufferWriter header implements jk.io.Writer public
+{
+	import jk.lang
+	ctor
+	func forBuffer(buf as buffer) static as jk.io.BufferWriter
+	func getBufferSize as int
+	func getBufferPos as int
+	func getBuffer as buffer
+	func write(src as buffer, ssize as int) as int
+}
+interface name jk.io.SizedReader header implements jk.io.Reader public
+{
+	import jk.lang
+	func getSize as int
+}

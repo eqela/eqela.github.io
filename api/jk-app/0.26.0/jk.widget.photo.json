@@ -1,0 +1,13 @@
+{
+	"moduleDescription" : "",
+	"type" : "module",
+	"moduleTitle" : "",
+	"moduleId" : "jk.widget.photo",
+	"entities" : [
+		{
+			"type" : "class",
+			"name" : "PhotoSelector",
+			"description" : ""
+		}
+	]
+}

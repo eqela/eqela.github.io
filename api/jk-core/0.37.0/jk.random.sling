@@ -1,0 +1,16 @@
+class name jk.random.Random header public
+{
+	import jk.lang
+	import jk.math
+	func getSharedInstance static as jk.random.Random
+	ctor
+	ctor(seed as long)
+	func setSeed(seed as long)
+	func nextBoolean as bool
+	func nextInt as int
+	func nextInt(n as int) as int
+	func nextInt(s as int, e as int) as int
+	func nextBytes(buf as array<sbyte>)
+	func nextDouble as double
+	func nextFloat as float
+}

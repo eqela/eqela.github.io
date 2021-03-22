@@ -1,0 +1,22 @@
+class name jk.worker.WorkerPool header abstract public
+{
+	import jk.lang
+	import jk.log
+	ctor
+	func forContext(ctx as jk.log.LoggingContext) as jk.worker.WorkerPool
+	func executeWorker(workertype as typeinfo, input as buffer, handler as function<void,buffer,int>) abstract as bool
+	func getCtx as jk.log.LoggingContext #getterMethod
+	func setCtx(v as jk.log.LoggingContext) as jk.worker.WorkerPool #setterMethod
+	func getMaxWorkers as int #getterMethod
+	func setMaxWorkers(v as int) as jk.worker.WorkerPool #setterMethod
+	func getMaxQueue as int #getterMethod
+	func setMaxQueue(v as int) as jk.worker.WorkerPool #setterMethod
+}
+class name jk.worker.Worker header public
+{
+	import jk.lang
+	import jk.io
+	ctor
+	func getOutputWriter static as jk.io.Writer
+	func getInputBuffer static as buffer
+}

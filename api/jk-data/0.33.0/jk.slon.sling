@@ -1,0 +1,30 @@
+class name jk.slon.SLONParser header public
+{
+	import jk.lang
+	import jk.fs
+	ctor
+	class name NullObject header public static
+	{
+		ctor
+	}
+	func parse(data) static as object
+	func parseBuffer(buffer as buffer) static as object
+	func parseString(str as string) static as object
+	func parseFile(file as jk.fs.File) static as object
+	func forString(str as string) static as jk.slon.SLONParser
+	func forBuffer(buffer as buffer) static as jk.slon.SLONParser
+	func forFile(file as jk.fs.File) static as jk.slon.SLONParser
+	func setDataString(str as string)
+	func setDataBuffer(buffer as buffer)
+	class name ParseError header extends jk.lang.Exception implements jk.lang.StringObject public static
+	{
+		ctor
+		property iterator as jk.lang.CharacterIterator { hasset hasget }
+		property expected as string { hasset hasget }
+		func computeData
+		func toString as string
+	}
+	func throwExpectationError(expected as string)
+	func acceptObject as object
+	func tryAcceptObject as object
+}

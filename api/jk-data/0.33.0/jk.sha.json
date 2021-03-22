@@ -1,0 +1,18 @@
+{
+	"moduleDescription" : "Implementation of the SHA hashing algorithms.\n",
+	"type" : "module",
+	"moduleTitle" : "SHA implementation",
+	"moduleId" : "jk.sha",
+	"entities" : [
+		{
+			"type" : "class",
+			"name" : "SHAEncoder",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "SHAEncoderGeneric",
+			"description" : ""
+		}
+	]
+}

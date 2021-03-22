@@ -1,0 +1,475 @@
+interface name jk.http.server.HTTPServerRequestHandler header public
+{
+	import jk.lang
+	func handleRequest(req as jk.http.server.HTTPServerRequest, next as function<void>)
+}
+class name jk.http.server.HTTPServerBinaryReaderResponseWorker header extends jk.http.server.HTTPServerResponseWorker public
+{
+	import jk.lang
+	import jk.io
+	import jk.log
+	func forReader(reader as jk.io.Reader) static as jk.http.server.HTTPServerBinaryReaderResponseWorker
+	ctor
+	func setMimeType(value as string)
+	func getMimeType override as string
+	func getWorkerDescription override as string
+	func onStart override
+	func tick override as bool
+	func getReader as jk.io.Reader #getterMethod
+	func setReader(v as jk.io.Reader) as jk.http.server.HTTPServerBinaryReaderResponseWorker #setterMethod
+	func getPacketSize as int #getterMethod
+	func setPacketSize(v as int) as jk.http.server.HTTPServerBinaryReaderResponseWorker #setterMethod
+}
+class name jk.http.server.HTTPServerExternalCommandResponseWorker header extends jk.http.server.HTTPServerResponseWorker public
+{
+	import jk.lang
+	import jk.process
+	import jk.fs
+	func forProcessLauncher(launcher as jk.process.ProcessLauncher) static as jk.http.server.HTTPServerExternalCommandResponseWorker
+	func forFile(file as jk.fs.File) static as jk.http.server.HTTPServerExternalCommandResponseWorker
+	func forCommand(command as string) static as jk.http.server.HTTPServerExternalCommandResponseWorker
+	ctor
+	func setMimeType(value as string)
+	func getMimeType override as string
+	func getWorkerDescription override as string
+	func execute override
+	func getLauncher as jk.process.ProcessLauncher #getterMethod
+	func setLauncher(v as jk.process.ProcessLauncher) as jk.http.server.HTTPServerExternalCommandResponseWorker #setterMethod
+}
+class name jk.http.server.HTTPServerResponse header public
+{
+	import jk.lang
+	import jk.fs
+	import jk.io
+	import jk.mime
+	import jk.time.format
+	import jk.md5
+	import jk.json
+	import jk.mypacket
+	import jk.http.server.cookie
+	ctor
+	func forMyPacket(packet as buffer) static as jk.http.server.HTTPServerResponse
+	func parseBuffer(data as buffer) static as jk.http.server.HTTPServerResponse
+	func forFile(file as jk.fs.File, maxCachedSize as int = -1) static as jk.http.server.HTTPServerResponse
+	func forBuffer(data as buffer, mimetype as string = null) static as jk.http.server.HTTPServerResponse
+	func forOk(mimetype as string = null) static as jk.http.server.HTTPServerResponse
+	func forString(text as string, mimetype as string) static as jk.http.server.HTTPServerResponse
+	func forTextString(text as string) static as jk.http.server.HTTPServerResponse
+	func forHTMLString(html as string) static as jk.http.server.HTTPServerResponse
+	func forXMLString(xml as string) static as jk.http.server.HTTPServerResponse
+	func forJSONObject(o as object) static as jk.http.server.HTTPServerResponse
+	func forJSONString(json as string) static as jk.http.server.HTTPServerResponse
+	func forHTTPInvalidRequest(message as string = null) static as jk.http.server.HTTPServerResponse
+	func forHTTPInternalError(message as string = null) static as jk.http.server.HTTPServerResponse
+	func forHTTPNotImplemented(message as string = null) static as jk.http.server.HTTPServerResponse
+	func forHTTPNotAllowed(message as string = null) static as jk.http.server.HTTPServerResponse
+	func forHTTPNotFound(message as string = null) static as jk.http.server.HTTPServerResponse
+	func forHTTPForbidden(message as string = null) static as jk.http.server.HTTPServerResponse
+	func forRedirect(url as string) static as jk.http.server.HTTPServerResponse
+	func forHTTPMovedPermanently(url as string) static as jk.http.server.HTTPServerResponse
+	func forHTTPMovedTemporarily(url as string) static as jk.http.server.HTTPServerResponse
+	func forHTTPTemporaryRedirect(url as string) static as jk.http.server.HTTPServerResponse
+	func getFullStatus(status as string) static as string
+	func forException(e as exception) static as jk.http.server.HTTPServerResponse
+	func setETag(eTag as string) as jk.http.server.HTTPServerResponse
+	func getETag as string
+	func setStatus(status as string) as jk.http.server.HTTPServerResponse
+	func getStatus as string
+	func addHeader(key as string, value as string) as jk.http.server.HTTPServerResponse
+	func addCookie(cookie as jk.http.server.cookie.HTTPServerCookie)
+	func setBody(buf as buffer) as jk.http.server.HTTPServerResponse
+	func setBody(str as string) as jk.http.server.HTTPServerResponse
+	func setBody(file as jk.fs.File) as jk.http.server.HTTPServerResponse
+	func setBody(reader as jk.io.SizedReader) as jk.http.server.HTTPServerResponse
+	func getBody as jk.io.Reader
+	func getHeaders as jk.lang.KeyValueList<string,string> #getterMethod
+	func setHeaders(v as jk.lang.KeyValueList<string,string>) as jk.http.server.HTTPServerResponse #setterMethod
+	func getMessage as string #getterMethod
+	func setMessage(v as string) as jk.http.server.HTTPServerResponse #setterMethod
+}
+class name jk.http.server.HTTPServerRequestHandlerContainer header extends jk.http.server.HTTPServerRequestHandlerAdapter abstract public
+{
+	import jk.lang
+	ctor
+	func iterateRequestHandlers abstract as jk.lang.Iterator<jk.http.server.HTTPServerRequestHandler>
+	func initialize(server as jk.http.server.HTTPServerBase) override
+	func onRefresh override
+	func onMaintenance override
+	func cleanup override
+}
+class name jk.http.server.HTTPServerConnection header extends jk.server.NetworkConnection public
+{
+	import jk.lang
+	import jk.server
+	import jk.io
+	import jk.log
+	import jk.time
+	import jk.time.format
+	ctor
+	func getIsWaitingForBodyReceiver as bool
+	func getHTTPServer as jk.http.server.HTTPServerBase
+	func getWriteBufferSize as int
+	func getSmallBodyLimit as int
+	func resetParser
+	func initialize override as bool
+	func updateListeningMode
+	func setBodyReceiver(stream as jk.io.DataStream)
+	func isExpectingBody as bool
+	func onData(buffer as buffer, offset as int = 0, asz as int = -1)
+	func onOpened override
+	func onClosed override
+	func onError(message as string) override
+	func onDataReceived(data as buffer, size as int) override
+	func onWriteReady override
+	func onCompleteRequest(req as jk.http.server.HTTPServerRequest)
+	func sendErrorResponse(response as jk.http.server.HTTPServerResponse)
+	func getStatusCode(status as string) static as string
+	func validateCurrentRequest(req as jk.http.server.HTTPServerRequest) as bool
+	func startResponse(req as jk.http.server.HTTPServerRequest, resp as jk.http.server.HTTPServerResponse) as jk.http.server.HTTPServerResponseSession
+	func sendResponse(req as jk.http.server.HTTPServerRequest, aresp as jk.http.server.HTTPServerResponse)
+	func getRequests as int #getterMethod
+	func setRequests(v as int) as jk.http.server.HTTPServerConnection #setterMethod
+	func getResponses as int #getterMethod
+	func setResponses(v as int) as jk.http.server.HTTPServerConnection #setterMethod
+}
+class name jk.http.server.HTTPServerRequestHandlerStack header extends jk.http.server.HTTPServerRequestHandlerContainer public
+{
+	import jk.lang
+	ctor
+	var requestHandlers protected as vector<jk.http.server.HTTPServerRequestHandler>
+	func iterateRequestHandlers override as jk.lang.Iterator<jk.http.server.HTTPServerRequestHandler>
+	func pushRequestHandler(handler as function<void,jk.http.server.HTTPServerRequest,function<void>>)
+	func pushRequestHandler(handler as jk.http.server.HTTPServerRequestHandler)
+	func handleRequest(req as jk.http.server.HTTPServerRequest, next as function<void>) override
+}
+class name jk.http.server.HTTPServerResponseSession header public
+{
+	import jk.lang
+	import jk.socket
+	import jk.time.format
+	ctor
+	func writeHeader as bool
+	func writeData(data as buffer, size as int = -1) as bool
+	func end
+	func getSocket as jk.socket.ConnectedSocket #getterMethod
+	func setSocket(v as jk.socket.ConnectedSocket) as jk.http.server.HTTPServerResponseSession #setterMethod
+	func getServer as jk.http.server.HTTPServerBase #getterMethod
+	func setServer(v as jk.http.server.HTTPServerBase) as jk.http.server.HTTPServerResponseSession #setterMethod
+	func getRequest as jk.http.server.HTTPServerRequest #getterMethod
+	func setRequest(v as jk.http.server.HTTPServerRequest) as jk.http.server.HTTPServerResponseSession #setterMethod
+	func getResponse as jk.http.server.HTTPServerResponse #getterMethod
+	func setResponse(v as jk.http.server.HTTPServerResponse) as jk.http.server.HTTPServerResponseSession #setterMethod
+	func getTotalBytes as int #getterMethod
+	func setTotalBytes(v as int) as jk.http.server.HTTPServerResponseSession #setterMethod
+}
+class name jk.http.server.HTTPServerRequestLogger header implements jk.http.server.HTTPServerRequestHandlerListener public
+{
+	import jk.lang
+	import jk.fs
+	import jk.log
+	import jk.time
+	import jk.io
+	ctor
+	func onRequestHandled(request as jk.http.server.HTTPServerRequest, resp as jk.http.server.HTTPServerResponse, written as int, aremoteAddress as string)
+	func getLogdir as jk.fs.File #getterMethod
+	func setLogdir(v as jk.fs.File) as jk.http.server.HTTPServerRequestLogger #setterMethod
+	func getLogContext as jk.log.LoggingContext #getterMethod
+	func setLogContext(v as jk.log.LoggingContext) as jk.http.server.HTTPServerRequestLogger #setterMethod
+}
+interface name jk.http.server.HTTPServerComponent header public
+{
+	import jk.lang
+	func initialize(server as jk.http.server.HTTPServerBase)
+	func onMaintenance
+	func onRefresh
+	func cleanup
+}
+class name jk.http.server.HTTPServerBase header extends jk.server.NetworkServer public
+{
+	import jk.lang
+	import jk.server
+	import jk.socket.io
+	import jk.time
+	import jk.log
+	import jk.thread
+	ctor
+	func createConnectionObject override as jk.server.NetworkConnection
+	func onRefresh virtual
+	func onTimeoutTimer as bool
+	func onMaintenanceTimer as bool
+	func onMaintenance virtual
+	func startTimer(delay as long, handler as function<bool>) as jk.socket.io.IOManagerTimer
+	func initialize override as bool
+	func cleanup override
+	func createOptionsResponse(req as jk.http.server.HTTPServerRequest) virtual as jk.http.server.HTTPServerResponse
+	func onRequest(req as jk.http.server.HTTPServerRequest) virtual
+	func handleIncomingRequest(req as jk.http.server.HTTPServerRequest)
+	func sendResponse(connection as jk.http.server.HTTPServerConnection, req as jk.http.server.HTTPServerRequest, resp as jk.http.server.HTTPServerResponse)
+	func startResponse(connection as jk.http.server.HTTPServerConnection, req as jk.http.server.HTTPServerRequest, resp as jk.http.server.HTTPServerResponse) as jk.http.server.HTTPServerResponseSession
+	func startResponseWorker(worker as jk.http.server.HTTPServerResponseWorker) as bool
+	func onRequestComplete(request as jk.http.server.HTTPServerRequest, resp as jk.http.server.HTTPServerResponse, bytesSent as int, remoteAddress as string) virtual
+	func getWriteBufferSize as int #getterMethod
+	func setWriteBufferSize(v as int) as jk.http.server.HTTPServerBase #setterMethod
+	func getSmallBodyLimit as int #getterMethod
+	func setSmallBodyLimit(v as int) as jk.http.server.HTTPServerBase #setterMethod
+	func getTimeoutDelay as int #getterMethod
+	func setTimeoutDelay(v as int) as jk.http.server.HTTPServerBase #setterMethod
+	func getMaintenanceTimerDelay as int #getterMethod
+	func setMaintenanceTimerDelay(v as int) as jk.http.server.HTTPServerBase #setterMethod
+	func getServerName as string #getterMethod
+	func setServerName(v as string) as jk.http.server.HTTPServerBase #setterMethod
+	func getWorkerThreadPool as jk.thread.ThreadPool #getterMethod
+	func setWorkerThreadPool(v as jk.thread.ThreadPool) as jk.http.server.HTTPServerBase #setterMethod
+}
+interface name jk.http.server.HTTPServerRequestHandlerListener header public
+{
+	import jk.lang
+	func onRequestHandled(request as jk.http.server.HTTPServerRequest, resp as jk.http.server.HTTPServerResponse, bytesSent as int, remoteAddress as string)
+}
+class name jk.http.server.HTTPServerRequest header implements jk.io.DataStreamSource public
+{
+	import jk.lang
+	import jk.io
+	import jk.url
+	import jk.fs
+	import jk.json
+	import jk.mypacket
+	import jk.http.server.cookie
+	ctor
+	func forDetails(method as string, url as string, version as string, headers as jk.lang.KeyValueList<string,string>) static as jk.http.server.HTTPServerRequest
+	macro REQUIRE_SESSION 
+	{
+		if thisObject.getSession() == null {
+			thisObject.sendResponse(HTTPServerResponse.forHTTPNotAllowed())
+			return
+		}
+	}
+	func asBuffer as buffer
+	func setReceiverDataStream(stream as jk.io.DataStream)
+	func setBodyReceiver(receiver as jk.io.DataStream)
+	func clearHeaders
+	func addHeader(key as string, value as string)
+	func setHeaders(headers as jk.lang.KeyValueList<string,string>)
+	func getHeader(name as string) as string
+	func iterateHeaders as jk.lang.Iterator<jk.lang.KeyValuePair<string,string>>
+	func getHeaders as map<string,string>
+	func getURL as jk.url.URL
+	func getQueryParameters as map<string,string>
+	func iterateQueryParameters as jk.lang.Iterator<jk.lang.KeyValuePair<string,string>>
+	func getQueryParameter(key as string) as string
+	func getURLPath as string
+	func getRemoteIPAddress as string
+	func getRemoteAddress as string
+	func getConnectionClose as bool
+	func getETag as string
+	func getCookieValues as map<string,string>
+	func getCookieValue(name as string) as string
+	func getBodyString as string
+	func getBodyJSONObject as object
+	func getBodyJSONVector as jk.lang.DynamicVector
+	func getBodyJSONMap as jk.lang.DynamicMap
+	func getBodyJSONMapValue(key as string) as string
+	func getPostParameters as map<string,string>
+	func getPostParameter(key as string) as string
+	func getParameterAsString(key as string) as string
+	func getParameterAsDynamicMap(key as string) as jk.lang.DynamicMap
+	func getParameterAsDynamicVector(key as string) as jk.lang.DynamicVector
+	func getParameterAsVector(key as string) as vector
+	func getRelativeRequestPath(relativeTo as string) as string
+	func initResources
+	func hasMoreResources as bool
+	func getRemainingResourceCount as int
+	func acceptMethodAndResource(methodToAccept as string, resource as string, mustBeLastResource as bool = false) as bool
+	func acceptResource(resource as string, mustBeLastResource as bool = false) as bool
+	func peekResource as string
+	func getCurrentResource as int
+	func setCurrentResource(value as int)
+	func popResource as string
+	func unpopResource
+	func resetResources
+	func getRelativeResources as vector<string>
+	func getResourcePathComponent(index as int, nTrailingComponents as int = -1) as string
+	func getRelativeResourcePath as string
+	func isForResource(res as string) as bool
+	func isForDirectory as bool
+	func isForPrefix(res as string) as bool
+	func isForMethod(mm as string) as bool
+	func isGET as bool
+	func isPOST as bool
+	func isDELETE as bool
+	func isPUT as bool
+	func isPATCH as bool
+	func sendJSONObject(o as object)
+	func sendJSONString(json as string)
+	func sendJSONError(error as jk.lang.Error)
+	func sendJSONOK(data as object = null)
+	func sendInternalError(text as string = null)
+	func sendNotAllowed
+	func sendNotFound
+	func sendInvalidRequest(text as string = null)
+	func sendTextString(text as string)
+	func sendHTMLString(html as string)
+	func sendXMLString(xml as string)
+	func sendFile(file as jk.fs.File)
+	func sendBuffer(buffer as buffer, mimeType as string = null)
+	func sendRedirect(url as string)
+	func sendRedirectAsDirectory
+	func sendFromDirectory(resourceDir as jk.fs.File)
+	func isResponseSent as bool
+	func addResponseCookie(cookie as jk.http.server.cookie.HTTPServerCookie)
+	func sendResponse(resp as jk.http.server.HTTPServerResponse)
+	func startBufferResponseWorker(buffer as buffer, mimeType as string = null) as bool
+	func startResponse(resp as jk.http.server.HTTPServerResponse) as jk.http.server.HTTPServerResponseSession
+	func startResponseWorker(worker as jk.http.server.HTTPServerResponseWorker) as bool
+	func toMyPacket as buffer
+	func getMethod as string #getterMethod
+	func setMethod(v as string) as jk.http.server.HTTPServerRequest #setterMethod
+	func getUrlString as string #getterMethod
+	func setUrlString(v as string) as jk.http.server.HTTPServerRequest #setterMethod
+	func getVersion as string #getterMethod
+	func setVersion(v as string) as jk.http.server.HTTPServerRequest #setterMethod
+	func getConnection as jk.http.server.HTTPServerConnection #getterMethod
+	func setConnection(v as jk.http.server.HTTPServerConnection) as jk.http.server.HTTPServerRequest #setterMethod
+	func getServer as jk.http.server.HTTPServerBase #getterMethod
+	func setServer(v as jk.http.server.HTTPServerBase) as jk.http.server.HTTPServerRequest #setterMethod
+	func getData as object #getterMethod
+	func setData(v as object) as jk.http.server.HTTPServerRequest #setterMethod
+	func getSession as object #getterMethod
+	func setSession(v as object) as jk.http.server.HTTPServerRequest #setterMethod
+	func getBodyBuffer as buffer #getterMethod
+	func setBodyBuffer(v as buffer) as jk.http.server.HTTPServerRequest #setterMethod
+}
+class name jk.http.server.HTTPServerRequestHandlerMap header extends jk.http.server.HTTPServerRequestHandlerAdapter public
+{
+	import jk.lang
+	ctor
+	func initialize(server as jk.http.server.HTTPServerBase) override
+	func onMaintenance override
+	func onRefresh override
+	func cleanup override
+	func onHTTPMethod(req as jk.http.server.HTTPServerRequest, functions as map<string,function<void,jk.http.server.HTTPServerRequest>>) as bool
+	func onGET(req as jk.http.server.HTTPServerRequest) override as bool
+	func onPOST(req as jk.http.server.HTTPServerRequest) override as bool
+	func onPUT(req as jk.http.server.HTTPServerRequest) override as bool
+	func onDELETE(req as jk.http.server.HTTPServerRequest) override as bool
+	func onPATCH(req as jk.http.server.HTTPServerRequest) override as bool
+	func tryHandleRequest(req as jk.http.server.HTTPServerRequest) as bool
+	func handleRequest(req as jk.http.server.HTTPServerRequest, next as function<void>) override
+	func child(path as string, handler as jk.http.server.HTTPServerRequestHandler) as jk.http.server.HTTPServerRequestHandlerMap
+	macro IMPLEMENT_ADD_HANDLER_FUNCTION(map, path, handler) 
+	{
+		if path {
+			if not map:
+				map = new map<string,function<void,HTTPServerRequest>>
+			map[path] = handler
+		}
+		return this
+	}
+	func get(path as string, handler as function<void,jk.http.server.HTTPServerRequest>) as jk.http.server.HTTPServerRequestHandlerMap
+	func post(path as string, handler as function<void,jk.http.server.HTTPServerRequest>) as jk.http.server.HTTPServerRequestHandlerMap
+	func put(path as string, handler as function<void,jk.http.server.HTTPServerRequest>) as jk.http.server.HTTPServerRequestHandlerMap
+	func delete(path as string, handler as function<void,jk.http.server.HTTPServerRequest>) as jk.http.server.HTTPServerRequestHandlerMap
+	func patch(path as string, handler as function<void,jk.http.server.HTTPServerRequest>) as jk.http.server.HTTPServerRequestHandlerMap
+	func getOrPost(path as string, handler as function<void,jk.http.server.HTTPServerRequest>) as jk.http.server.HTTPServerRequestHandlerMap
+}
+class name jk.http.server.HTTPServerStaticContentHandler header implements jk.http.server.HTTPServerRequestHandler public
+{
+	import jk.lang
+	ctor
+	func forContent(content as string, mimeType as string) static as jk.http.server.HTTPServerStaticContentHandler
+	func forHTMLContent(content as string) static as jk.http.server.HTTPServerStaticContentHandler
+	func forJSONContent(content as string) static as jk.http.server.HTTPServerStaticContentHandler
+	func forRedirect(url as string) static as jk.http.server.HTTPServerStaticContentHandler
+	func handleRequest(req as jk.http.server.HTTPServerRequest, next as function<void>)
+	func getContent as string #getterMethod
+	func setContent(v as string) as jk.http.server.HTTPServerStaticContentHandler #setterMethod
+	func getMimeType as string #getterMethod
+	func setMimeType(v as string) as jk.http.server.HTTPServerStaticContentHandler #setterMethod
+	func getRedirectUrl as string #getterMethod
+	func setRedirectUrl(v as string) as jk.http.server.HTTPServerStaticContentHandler #setterMethod
+}
+class name jk.http.server.HTTPServer header extends jk.http.server.HTTPServerBase public
+{
+	import jk.lang
+	import jk.log
+	ctor
+	func initialize override as bool
+	func onRefresh override
+	func onMaintenance override
+	func cleanup override
+	func pushRequestHandler(handler as function<void,jk.http.server.HTTPServerRequest,function<void>>)
+	func pushRequestHandler(handler as jk.http.server.HTTPServerRequestHandler)
+	func addRequestHandlerListener(handler as function<void,jk.http.server.HTTPServerRequest,jk.http.server.HTTPServerResponse,int,string>)
+	func addRequestHandlerListener(handler as jk.http.server.HTTPServerRequestHandlerListener)
+	func createOptionsResponse(req as jk.http.server.HTTPServerRequest) override as jk.http.server.HTTPServerResponse
+	func onRequest(req as jk.http.server.HTTPServerRequest) override
+	func onRequestComplete(request as jk.http.server.HTTPServerRequest, resp as jk.http.server.HTTPServerResponse, bytesSent as int, remoteAddress as string) override
+	func getCreateOptionsResponseHandler as function<jk.http.server.HTTPServerResponse,jk.http.server.HTTPServerRequest> #getterMethod
+	func setCreateOptionsResponseHandler(v as function<jk.http.server.HTTPServerResponse,jk.http.server.HTTPServerRequest>) as jk.http.server.HTTPServer #setterMethod
+}
+class name jk.http.server.HTTPServerResponseWorker header abstract public
+{
+	import jk.lang
+	import jk.log
+	import jk.time
+	import jk.text
+	ctor
+	var context protected as jk.log.LoggingContext
+	var session protected as jk.http.server.HTTPServerResponseSession
+	func setContext(v as jk.log.LoggingContext) as jk.http.server.HTTPServerResponseWorker
+	func getContext as jk.log.LoggingContext
+	func setSession(v as jk.http.server.HTTPServerResponseSession) as jk.http.server.HTTPServerResponseWorker
+	func getSession as jk.http.server.HTTPServerResponseSession
+	func getMimeType abstract as string
+	func getWorkerDescription abstract as string
+	func onStart virtual
+	func tick virtual as bool
+	func execute virtual
+	func onEnd virtual
+	func abort
+}
+class name jk.http.server.HTTPServerJSONResponse header public
+{
+	import jk.lang
+	ctor
+	func forError(eo as object) static as jk.lang.DynamicMap
+	func forErrorCode(code as string) static as jk.lang.DynamicMap
+	func forErrorMessage(message as string = null, code as string = null) static as jk.lang.DynamicMap
+	func forOk(data as object = null) static as jk.lang.DynamicMap
+	func forDetails(status as string, code as string, message as string) static as jk.lang.DynamicMap
+	func forMissingData(type as string = null) static as jk.lang.DynamicMap
+	func forInvalidData(type as string = null) static as jk.lang.DynamicMap
+	func forAlreadyExists static as jk.lang.DynamicMap
+	func forInvalidRequest(type as string = null) static as jk.lang.DynamicMap
+	func forNotAllowed static as jk.lang.DynamicMap
+	func forNotAuthenticated static as jk.lang.DynamicMap
+	func forFailedToCreate static as jk.lang.DynamicMap
+	func forNotFound static as jk.lang.DynamicMap
+	func forAuthenticationFailed static as jk.lang.DynamicMap
+	func forIncorrectUsernamePassword static as jk.lang.DynamicMap
+	func forInternalError(details as string = null) static as jk.lang.DynamicMap
+}
+class name jk.http.server.HTTPServerRequestHandlerAdapter header implements jk.http.server.HTTPServerRequestHandler implements jk.http.server.HTTPServerComponent public
+{
+	import jk.lang
+	import jk.log
+	ctor
+	var logContext protected as jk.log.LoggingContext
+	func getServer as jk.http.server.HTTPServerBase
+	func isInitialized as bool
+	func initialize(server as jk.http.server.HTTPServerBase) virtual
+	func onMaintenance virtual
+	func onRefresh virtual
+	func cleanup virtual
+	func onGET(req as jk.http.server.HTTPServerRequest) virtual as bool
+	func onGET(req as jk.http.server.HTTPServerRequest, next as function<void>) virtual
+	func onPOST(req as jk.http.server.HTTPServerRequest) virtual as bool
+	func onPOST(req as jk.http.server.HTTPServerRequest, next as function<void>) virtual
+	func onPUT(req as jk.http.server.HTTPServerRequest) virtual as bool
+	func onPUT(req as jk.http.server.HTTPServerRequest, next as function<void>) virtual
+	func onDELETE(req as jk.http.server.HTTPServerRequest) virtual as bool
+	func onDELETE(req as jk.http.server.HTTPServerRequest, next as function<void>) virtual
+	func onPATCH(req as jk.http.server.HTTPServerRequest) virtual as bool
+	func onPATCH(req as jk.http.server.HTTPServerRequest, next as function<void>) virtual
+	func handleRequest(req as jk.http.server.HTTPServerRequest, next as function<void>) virtual
+}

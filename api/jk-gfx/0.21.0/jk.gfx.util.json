@@ -1,0 +1,13 @@
+{
+	"moduleDescription" : "",
+	"type" : "module",
+	"moduleTitle" : "",
+	"moduleId" : "jk.gfx.util",
+	"entities" : [
+		{
+			"type" : "class",
+			"name" : "ImageSheet",
+			"description" : ""
+		}
+	]
+}

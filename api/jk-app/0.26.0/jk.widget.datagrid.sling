@@ -1,0 +1,42 @@
+class name jk.widget.datagrid.DataGridWidget header extends jk.widget.LayerWidget public #widget
+{
+	import jk.lang
+	import jk.lang
+	import jk.ui
+	import jk.gfx
+	import jk.widget
+	import jk.widget.common
+	var ALIGN_LEFT public static const as int
+	var ALIGN_CENTER public static const as int
+	var ALIGN_RIGHT public static const as int
+	var ALIGN_JUSTIFY public static const as int
+	ctor(ctx as jk.ui.GuiApplicationContext)
+	func setWidgetBackgroundColor(color as jk.gfx.Color)
+	func getWidgetBackgroundColor as jk.gfx.Color
+	func setWidgetGridColor(color as jk.gfx.Color)
+	func getWidgetGridColor as jk.gfx.Color
+	func setWidgetGridWidth(width as int)
+	func deleteAllColumns
+	func addColumn(name as string, key as string, weight as double = 1.0, textAlign as int = 0)
+	func addWidgetHeaderRow
+	func deleteWidgetHeaderRow
+	func deleteAllRows
+	func addRow(data as array, clickHandler as function<void> = null, doubleClickHandler as function<void> = null)
+	func getGridData as jk.lang.DynamicVector
+	func getWidgetHeaderBackgroundColor as jk.gfx.Color #getterMethod
+	func setWidgetHeaderBackgroundColor(v as jk.gfx.Color) as jk.widget.datagrid.DataGridWidget #setterMethod
+	func getWidgetHeaderForegroundColor as jk.gfx.Color #getterMethod
+	func setWidgetHeaderForegroundColor(v as jk.gfx.Color) as jk.widget.datagrid.DataGridWidget #setterMethod
+	func getWidgetDataBackgroundColor as jk.gfx.Color #getterMethod
+	func setWidgetDataBackgroundColor(v as jk.gfx.Color) as jk.widget.datagrid.DataGridWidget #setterMethod
+	func getWidgetDataForegroundColor as jk.gfx.Color #getterMethod
+	func setWidgetDataForegroundColor(v as jk.gfx.Color) as jk.widget.datagrid.DataGridWidget #setterMethod
+	func getWidgetSelectedDataBackgroundColor as jk.gfx.Color #getterMethod
+	func setWidgetSelectedDataBackgroundColor(v as jk.gfx.Color) as jk.widget.datagrid.DataGridWidget #setterMethod
+	func getWidgetSelectedDataForegroundColor as jk.gfx.Color #getterMethod
+	func setWidgetSelectedDataForegroundColor(v as jk.gfx.Color) as jk.widget.datagrid.DataGridWidget #setterMethod
+	func getWidgetCellPadding as int #getterMethod
+	func setWidgetCellPadding(v as int) as jk.widget.datagrid.DataGridWidget #setterMethod
+	func getWidgetIsEditable as bool #getterMethod
+	func setWidgetIsEditable(v as bool) as jk.widget.datagrid.DataGridWidget #setterMethod
+}

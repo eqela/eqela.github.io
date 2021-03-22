@@ -1,0 +1,13 @@
+{
+	"moduleDescription" : "",
+	"type" : "module",
+	"moduleTitle" : "",
+	"moduleId" : "jk.web.json",
+	"entities" : [
+		{
+			"type" : "class",
+			"name" : "JSONAPIClient",
+			"description" : ""
+		}
+	]
+}

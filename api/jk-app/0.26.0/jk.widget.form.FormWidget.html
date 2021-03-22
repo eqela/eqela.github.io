@@ -1,0 +1,137 @@
+<html>
+<head>
+<title>jk.widget.form.FormWidget | JK App [0.26.0] - API Reference</title>
+<link rel="stylesheet" type="text/css" href="style.css" />
+<meta name="viewport" content="initial-scale=1,maximum-scale=1" />
+<meta property="og:description" content="jk.widget.form.FormWidget | JK App [0.26.0] - API Reference" />
+<meta property="og:title" content="jk.widget.form.FormWidget | JK App [0.26.0] - API Reference" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:description" content="jk.widget.form.FormWidget | JK App [0.26.0] - API Reference" />
+</head>
+<body><div class="content">
+<a class="back" href="index.html">&laquo; JK App [0.26.0]</a><div class="intro">
+<h1><span class="keyword">class</span> <span class="symbol">jk.widget.form.FormWidget</span></h1>
+<p></p>
+</div>
+<div class="list">
+<div class="title">Base Types</div>
+<div class="entry">
+<div class="name"><span class="keyword">extends</span> <a class="datatype" href="jk.widget.LayerWidget.html">jk.widget.LayerWidget</a></div></div>
+</div>
+<div class="list">
+<div class="title">Static Methods</div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">forDeclaration</span> ( context <span class="keyword">as</span> <a class="datatype" href="jk.ui.GuiApplicationContext.html">jk.ui.GuiApplicationContext</a> , form <span class="keyword">as</span> <a class="datatype" href="jk.widget.form.FormDeclaration.html">jk.widget.form.FormDeclaration</a> ) <span class="modifier">static</span> <span class="keyword">as</span> <a class="datatype" href="jk.widget.form.FormWidget.html">jk.widget.form.FormWidget</a></div></div>
+</div>
+<div class="list">
+<div class="title">Instance Methods</div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getCustomFooterWidget</span> <span class="keyword">as</span> <a class="datatype" href="jk.widget.LayerWidget.html">jk.widget.LayerWidget</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getFormDeclaration</span> <span class="modifier">virtual</span> <span class="keyword">as</span> <a class="datatype" href="jk.widget.form.FormDeclaration.html">jk.widget.form.FormDeclaration</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setFormDeclaration</span> ( value <span class="keyword">as</span> <a class="datatype" href="jk.widget.form.FormDeclaration.html">jk.widget.form.FormDeclaration</a> ) <span class="keyword">as</span> <a class="datatype" href="jk.widget.form.FormWidget.html">jk.widget.form.FormWidget</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">addActions</span> <span class="modifier">virtual</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">addAction</span> ( label <span class="keyword">as</span> <span class="datatype">string</span> , handler <span class="keyword">as</span> <span class="datatype">function&lt;void&gt;</span> ) <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setStyleForTextInputWidget</span> ( widget <span class="keyword">as</span> <a class="datatype" href="jk.widget.common.TextInputWidget.html">jk.widget.common.TextInputWidget</a> , allowReplace <span class="keyword">as</span> <span class="datatype">bool</span> ) <span class="modifier">virtual</span> <span class="keyword">as</span> <a class="datatype" href="jk.widget.Widget.html">jk.widget.Widget</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setStyleForTextButtonWidget</span> ( widget <span class="keyword">as</span> <a class="datatype" href="jk.widget.common.TextButtonWidget.html">jk.widget.common.TextButtonWidget</a> , allowReplace <span class="keyword">as</span> <span class="datatype">bool</span> ) <span class="modifier">virtual</span> <span class="keyword">as</span> <a class="datatype" href="jk.widget.Widget.html">jk.widget.Widget</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setStyleForSelectWidget</span> ( widget <span class="keyword">as</span> <a class="datatype" href="jk.widget.common.SelectWidget.html">jk.widget.common.SelectWidget</a> , allowReplace <span class="keyword">as</span> <span class="datatype">bool</span> ) <span class="modifier">virtual</span> <span class="keyword">as</span> <a class="datatype" href="jk.widget.Widget.html">jk.widget.Widget</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setStyleForTextAreaWidget</span> ( widget <span class="keyword">as</span> <a class="datatype" href="jk.widget.common.TextAreaWidget.html">jk.widget.common.TextAreaWidget</a> , allowReplace <span class="keyword">as</span> <span class="datatype">bool</span> ) <span class="modifier">virtual</span> <span class="keyword">as</span> <a class="datatype" href="jk.widget.Widget.html">jk.widget.Widget</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setStyleForDateSelectorWidget</span> ( widget <span class="keyword">as</span> <a class="datatype" href="jk.widget.common.DateSelectorWidget.html">jk.widget.common.DateSelectorWidget</a> , allowReplace <span class="keyword">as</span> <span class="datatype">bool</span> ) <span class="modifier">virtual</span> <span class="keyword">as</span> <a class="datatype" href="jk.widget.Widget.html">jk.widget.Widget</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setStyleForRadioButtonGroupWidget</span> ( widget <span class="keyword">as</span> <a class="datatype" href="jk.widget.common.RadioButtonGroupWidget.html">jk.widget.common.RadioButtonGroupWidget</a> , allowReplace <span class="keyword">as</span> <span class="datatype">bool</span> ) <span class="modifier">virtual</span> <span class="keyword">as</span> <a class="datatype" href="jk.widget.Widget.html">jk.widget.Widget</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setStyleForCheckBoxWidget</span> ( widget <span class="keyword">as</span> <a class="datatype" href="jk.widget.common.CheckBoxWidget.html">jk.widget.common.CheckBoxWidget</a> , allowReplace <span class="keyword">as</span> <span class="datatype">bool</span> ) <span class="modifier">virtual</span> <span class="keyword">as</span> <a class="datatype" href="jk.widget.Widget.html">jk.widget.Widget</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setStyleForWidget</span> ( widget <span class="keyword">as</span> <a class="datatype" href="jk.widget.Widget.html">jk.widget.Widget</a> , allowReplace <span class="keyword">as</span> <span class="datatype">bool</span> ) <span class="modifier">virtual</span> <span class="keyword">as</span> <a class="datatype" href="jk.widget.Widget.html">jk.widget.Widget</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">asPlaceHolder</span> ( str <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="keyword">as</span> <span class="datatype">string</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getBackgroundColorForElement</span> ( element <span class="keyword">as</span> <span class="datatype">jk.widget.form.FormDeclaration.Element</span> ) <span class="modifier">virtual</span> <span class="keyword">as</span> <a class="datatype" href="../../jk-gfx/0.21.0/jk.gfx.Color.html">jk.gfx.Color</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getForegroundColorForElement</span> ( element <span class="keyword">as</span> <span class="datatype">jk.widget.form.FormDeclaration.Element</span> ) <span class="modifier">virtual</span> <span class="keyword">as</span> <a class="datatype" href="../../jk-gfx/0.21.0/jk.gfx.Color.html">jk.gfx.Color</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getAdjustedForegroundColor</span> ( element <span class="keyword">as</span> <span class="datatype">jk.widget.form.FormDeclaration.Element</span> , backgroundColor <span class="keyword">as</span> <a class="datatype" href="../../jk-gfx/0.21.0/jk.gfx.Color.html">jk.gfx.Color</a> ) <span class="keyword">as</span> <a class="datatype" href="../../jk-gfx/0.21.0/jk.gfx.Color.html">jk.gfx.Color</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setActionHandlers</span> ( handlers <span class="keyword">as</span> <span class="datatype">map</span> ) <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setActionHandler</span> ( actionName <span class="keyword">as</span> <span class="datatype">string</span> , handler <span class="keyword">as</span> <span class="datatype">function&lt;void&gt;</span> ) <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getActionHandler</span> ( actionName <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="keyword">as</span> <span class="datatype">function&lt;void&gt;</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">createWidgetForElement</span> ( element <span class="keyword">as</span> <span class="datatype">jk.widget.form.FormDeclaration.Element</span> ) <span class="modifier">virtual</span> <span class="keyword">as</span> <a class="datatype" href="jk.widget.Widget.html">jk.widget.Widget</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">addToContainerWithWeight</span> ( container <span class="keyword">as</span> <a class="datatype" href="jk.widget.ContainerWidget.html">jk.widget.ContainerWidget</a> , child <span class="keyword">as</span> <a class="datatype" href="jk.widget.Widget.html">jk.widget.Widget</a> , weight <span class="keyword">as</span> <span class="datatype">double</span> ) <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">createAndRegisterWidget</span> ( element <span class="keyword">as</span> <span class="datatype">jk.widget.form.FormDeclaration.Element</span> ) <span class="keyword">as</span> <a class="datatype" href="jk.widget.Widget.html">jk.widget.Widget</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">computeWidgetLayout</span> ( widthConstraint <span class="keyword">as</span> <span class="datatype">int</span> ) <span class="modifier">override</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">initializeWidget</span> <span class="modifier">override</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setFormData</span> ( data <span class="keyword">as</span> <a class="datatype" href="../../jk-core/0.37.0/jk.lang.DynamicMap.html">jk.lang.DynamicMap</a> , preserveUnknownValues <span class="keyword">as</span> <span class="datatype">bool</span> ) <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setFieldData</span> ( id <span class="keyword">as</span> <span class="datatype">string</span> , value <span class="keyword">as</span> <span class="datatype">object</span> ) <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getFormDataTo</span> ( data <span class="keyword">as</span> <a class="datatype" href="../../jk-core/0.37.0/jk.lang.DynamicMap.html">jk.lang.DynamicMap</a> ) <span class="modifier">virtual</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getFormData</span> <span class="keyword">as</span> <a class="datatype" href="../../jk-core/0.37.0/jk.lang.DynamicMap.html">jk.lang.DynamicMap</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">clearFormData</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getElementAsWidget</span> ( id <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="keyword">as</span> <a class="datatype" href="jk.widget.Widget.html">jk.widget.Widget</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getElementSpacing</span> <span class="keyword">as</span> <span class="datatype">int</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setElementSpacing</span> ( v <span class="keyword">as</span> <span class="datatype">int</span> ) <span class="keyword">as</span> <a class="datatype" href="jk.widget.form.FormWidget.html">jk.widget.form.FormWidget</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getFormMargin</span> <span class="keyword">as</span> <span class="datatype">int</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setFormMargin</span> ( v <span class="keyword">as</span> <span class="datatype">int</span> ) <span class="keyword">as</span> <a class="datatype" href="jk.widget.form.FormWidget.html">jk.widget.form.FormWidget</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getEnableFieldLabels</span> <span class="keyword">as</span> <span class="datatype">bool</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setEnableFieldLabels</span> ( v <span class="keyword">as</span> <span class="datatype">bool</span> ) <span class="keyword">as</span> <a class="datatype" href="jk.widget.form.FormWidget.html">jk.widget.form.FormWidget</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getFieldLabelBelow</span> <span class="keyword">as</span> <span class="datatype">bool</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setFieldLabelBelow</span> ( v <span class="keyword">as</span> <span class="datatype">bool</span> ) <span class="keyword">as</span> <a class="datatype" href="jk.widget.form.FormWidget.html">jk.widget.form.FormWidget</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getFormWidth</span> <span class="keyword">as</span> <span class="datatype">int</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setFormWidth</span> ( v <span class="keyword">as</span> <span class="datatype">int</span> ) <span class="keyword">as</span> <a class="datatype" href="jk.widget.form.FormWidget.html">jk.widget.form.FormWidget</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getFieldLabelFontSize</span> <span class="keyword">as</span> <span class="datatype">int</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setFieldLabelFontSize</span> ( v <span class="keyword">as</span> <span class="datatype">int</span> ) <span class="keyword">as</span> <a class="datatype" href="jk.widget.form.FormWidget.html">jk.widget.form.FormWidget</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getFieldLabelFontFamily</span> <span class="keyword">as</span> <span class="datatype">string</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setFieldLabelFontFamily</span> ( v <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="keyword">as</span> <a class="datatype" href="jk.widget.form.FormWidget.html">jk.widget.form.FormWidget</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getFieldLabelFontResource</span> <span class="keyword">as</span> <span class="datatype">string</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setFieldLabelFontResource</span> ( v <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="keyword">as</span> <a class="datatype" href="jk.widget.form.FormWidget.html">jk.widget.form.FormWidget</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getWidgetBackgroundColor</span> <span class="keyword">as</span> <a class="datatype" href="../../jk-gfx/0.21.0/jk.gfx.Color.html">jk.gfx.Color</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setWidgetBackgroundColor</span> ( v <span class="keyword">as</span> <a class="datatype" href="../../jk-gfx/0.21.0/jk.gfx.Color.html">jk.gfx.Color</a> ) <span class="keyword">as</span> <a class="datatype" href="jk.widget.form.FormWidget.html">jk.widget.form.FormWidget</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getEnableScrolling</span> <span class="keyword">as</span> <span class="datatype">bool</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setEnableScrolling</span> ( v <span class="keyword">as</span> <span class="datatype">bool</span> ) <span class="keyword">as</span> <a class="datatype" href="jk.widget.form.FormWidget.html">jk.widget.form.FormWidget</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getFillContainerWidget</span> <span class="keyword">as</span> <span class="datatype">bool</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setFillContainerWidget</span> ( v <span class="keyword">as</span> <span class="datatype">bool</span> ) <span class="keyword">as</span> <a class="datatype" href="jk.widget.form.FormWidget.html">jk.widget.form.FormWidget</a></div></div>
+</div>
+</div>
+</body>
+</html>

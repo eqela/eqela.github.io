@@ -1,0 +1,13 @@
+{
+	"moduleDescription" : "Functionality for managing time and system clock.\n",
+	"type" : "module",
+	"moduleTitle" : "Time and clock",
+	"moduleId" : "jk.time",
+	"entities" : [
+		{
+			"type" : "class",
+			"name" : "SystemClock",
+			"description" : ""
+		}
+	]
+}

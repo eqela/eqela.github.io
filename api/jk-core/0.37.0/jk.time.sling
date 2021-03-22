@@ -1,0 +1,12 @@
+class name jk.time.SystemClock header public
+{
+	import jk.lang
+	ctor
+	func asDateTimeUTC static as jk.lang.DateTime
+	func asDateTimeLocal static as jk.lang.DateTime
+	func getTimezoneOffsetAsSeconds static as long
+	func asUTCSeconds static as long
+	func asSeconds static as long
+	func asTimeValue static as jk.lang.TimeValue
+	func update(v as jk.lang.TimeValue) static
+}

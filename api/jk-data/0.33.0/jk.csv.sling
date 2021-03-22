@@ -1,0 +1,26 @@
+class name jk.csv.CSVGenerator header implements jk.lang.StringObject public
+{
+	import jk.lang
+	import jk.model
+	ctor
+	func setFields(data as vector<string>)
+	func addHeaderFields(data as vector<string>)
+	func addHeaderFromModel(record as jk.model.DynamicModel)
+	func addRecordFromModel(record as jk.model.DynamicModel)
+	func addRecordFromDynamicMap(data as jk.lang.DynamicMap)
+	func addRow(data as vector<string>)
+	func toString as string
+}
+class name jk.csv.CSVParser header public
+{
+	import jk.lang
+	import jk.fs
+	ctor
+	func parse(buffer as buffer) static as jk.lang.DynamicVector
+	func parse(str as string) static as jk.lang.DynamicVector
+	func parse(file as jk.fs.File) static as jk.lang.DynamicVector
+	func forString(str as string) static as jk.csv.CSVParser
+	func forBuffer(buffer as buffer) static as jk.csv.CSVParser
+	func setDataString(str as string)
+	func setDataBuffer(buffer as buffer)
+}

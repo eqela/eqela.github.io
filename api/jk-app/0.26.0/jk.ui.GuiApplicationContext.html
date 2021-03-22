@@ -1,0 +1,100 @@
+<html>
+<head>
+<title>jk.ui.GuiApplicationContext | JK App [0.26.0] - API Reference</title>
+<link rel="stylesheet" type="text/css" href="style.css" />
+<meta name="viewport" content="initial-scale=1,maximum-scale=1" />
+<meta property="og:description" content="jk.ui.GuiApplicationContext | JK App [0.26.0] - API Reference" />
+<meta property="og:title" content="jk.ui.GuiApplicationContext | JK App [0.26.0] - API Reference" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:description" content="jk.ui.GuiApplicationContext | JK App [0.26.0] - API Reference" />
+</head>
+<body><div class="content">
+<a class="back" href="index.html">&laquo; JK App [0.26.0]</a><div class="intro">
+<h1><span class="modifier">abstract</span> <span class="keyword">class</span> <span class="symbol">jk.ui.GuiApplicationContext</span></h1>
+<p></p>
+</div>
+<div class="list">
+<div class="title">Base Types</div>
+<div class="entry">
+<div class="name"><span class="keyword">implements</span> <a class="datatype" href="../../jk-core/0.37.0/jk.app.ApplicationContext.html">jk.app.ApplicationContext</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">implements</span> <a class="datatype" href="../../jk-core/0.37.0/jk.lang.EventLoop.html">jk.lang.EventLoop</a></div></div>
+</div>
+<div class="list">
+<div class="title">Instance Methods</div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setStyle</span> ( id <span class="keyword">as</span> <span class="datatype">string</span> , style <span class="keyword">as</span> <span class="datatype">map</span> ) <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getStyle</span> ( id <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="keyword">as</span> <span class="datatype">map</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getStyleObject</span> ( id <span class="keyword">as</span> <span class="datatype">string</span> , style <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="keyword">as</span> <span class="datatype">object</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getStyleString</span> ( id <span class="keyword">as</span> <span class="datatype">string</span> , style <span class="keyword">as</span> <span class="datatype">string</span> , defval <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="keyword">as</span> <span class="datatype">string</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getStyleColor</span> ( id <span class="keyword">as</span> <span class="datatype">string</span> , style <span class="keyword">as</span> <span class="datatype">string</span> , defval <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="keyword">as</span> <a class="datatype" href="../../jk-gfx/0.21.0/jk.gfx.Color.html">jk.gfx.Color</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getStylePixels</span> ( id <span class="keyword">as</span> <span class="datatype">string</span> , style <span class="keyword">as</span> <span class="datatype">string</span> , defval <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="keyword">as</span> <span class="datatype">int</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getApplicationDataDirectory</span> <span class="modifier">abstract</span> <span class="keyword">as</span> <a class="datatype" href="../../jk-core/0.37.0/jk.fs.File.html">jk.fs.File</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getResourceImage</span> ( id <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="modifier">abstract</span> <span class="keyword">as</span> <a class="datatype" href="../../jk-gfx/0.21.0/jk.gfx.Image.html">jk.gfx.Image</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getImageForBufferSync</span> ( buffer <span class="keyword">as</span> <span class="datatype">buffer</span> , mimeType <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="modifier">abstract</span> <span class="keyword">as</span> <a class="datatype" href="../../jk-gfx/0.21.0/jk.gfx.Image.html">jk.gfx.Image</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getImageForBuffer</span> ( buffer <span class="keyword">as</span> <span class="datatype">buffer</span> , mimeType <span class="keyword">as</span> <span class="datatype">string</span> , callback <span class="keyword">as</span> <span class="datatype">function&lt;void,jk.gfx.Image&gt;</span> ) <span class="modifier">abstract</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">showMessageDialog</span> ( title <span class="keyword">as</span> <span class="datatype">string</span> , message <span class="keyword">as</span> <span class="datatype">string</span> , callback <span class="keyword">as</span> <span class="datatype">function&lt;void&gt;</span> ) <span class="modifier">abstract</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">showConfirmDialog</span> ( title <span class="keyword">as</span> <span class="datatype">string</span> , message <span class="keyword">as</span> <span class="datatype">string</span> , okcallback <span class="keyword">as</span> <span class="datatype">function&lt;void&gt;</span> , cancelcallback <span class="keyword">as</span> <span class="datatype">function&lt;void&gt;</span> ) <span class="modifier">abstract</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">showErrorDialog</span> ( message <span class="keyword">as</span> <span class="datatype">string</span> , callback <span class="keyword">as</span> <span class="datatype">function&lt;void&gt;</span> ) <span class="modifier">abstract</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getScreenTopMargin</span> <span class="modifier">abstract</span> <span class="keyword">as</span> <span class="datatype">int</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getScreenWidth</span> <span class="modifier">abstract</span> <span class="keyword">as</span> <span class="datatype">int</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getScreenHeight</span> <span class="modifier">abstract</span> <span class="keyword">as</span> <span class="datatype">int</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getScreenDensity</span> <span class="modifier">abstract</span> <span class="keyword">as</span> <span class="datatype">int</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getHeightValue</span> ( spec <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="modifier">abstract</span> <span class="keyword">as</span> <span class="datatype">int</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getWidthValue</span> ( spec <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="modifier">abstract</span> <span class="keyword">as</span> <span class="datatype">int</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">startTimer</span> ( timeout <span class="keyword">as</span> <span class="datatype">long</span> , callback <span class="keyword">as</span> <span class="datatype">function&lt;void&gt;</span> ) <span class="modifier">abstract</span> <span class="keyword">as</span> <span class="datatype">jk.ui.GuiApplicationContext.TimerObject</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">enableKeepAwakeMode</span> <span class="modifier">abstract</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">disableKeepAwakeMode</span> <span class="modifier">abstract</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">px</span> ( spec <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="keyword">as</span> <span class="datatype">int</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">logError</span> ( message <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">logWarning</span> ( message <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">logInfo</span> ( message <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">logDebug</span> ( message <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">logStatus</span> ( message <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">isInDebugMode</span> <span class="keyword">as</span> <span class="datatype">bool</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getErrorCount</span> <span class="keyword">as</span> <span class="datatype">int</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getWarningCount</span> <span class="keyword">as</span> <span class="datatype">int</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getInfoCount</span> <span class="keyword">as</span> <span class="datatype">int</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getDebugCount</span> <span class="keyword">as</span> <span class="datatype">int</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">resetCounters</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">runScheduled</span> ( timeout <span class="keyword">as</span> <span class="datatype">long</span> , runnable <span class="keyword">as</span> <a class="datatype" href="../../jk-core/0.37.0/jk.lang.Runnable.html">jk.lang.Runnable</a> ) <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">runInBackground</span> ( runnable <span class="keyword">as</span> <a class="datatype" href="../../jk-core/0.37.0/jk.lang.Runnable.html">jk.lang.Runnable</a> ) <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<html>
+<head>
+<title>jk.smtp.SMTPSender | JK Net [0.39.0] - API Reference</title>
+<link rel="stylesheet" type="text/css" href="style.css" />
+<meta name="viewport" content="initial-scale=1,maximum-scale=1" />
+<meta property="og:description" content="jk.smtp.SMTPSender | JK Net [0.39.0] - API Reference" />
+<meta property="og:title" content="jk.smtp.SMTPSender | JK Net [0.39.0] - API Reference" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:description" content="jk.smtp.SMTPSender | JK Net [0.39.0] - API Reference" />
+</head>
+<body><div class="content">
+<a class="back" href="index.html">&laquo; JK Net [0.39.0]</a><div class="intro">
+<h1><span class="keyword">class</span> <span class="symbol">jk.smtp.SMTPSender</span></h1>
+<p></p>
+</div>
+<div class="list">
+<div class="title">Static Methods</div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">forCommonDetails</span> ( serverAddress <span class="keyword">as</span> <span class="datatype">string</span> , serverUsername <span class="keyword">as</span> <span class="datatype">string</span> , serverPassword <span class="keyword">as</span> <span class="datatype">string</span> , senderName <span class="keyword">as</span> <span class="datatype">string</span> , senderAddress <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="modifier">static</span> <span class="keyword">as</span> <a class="datatype" href="jk.smtp.SMTPSender.html">jk.smtp.SMTPSender</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">forRemoteServerUrl</span> ( url <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="modifier">static</span> <span class="keyword">as</span> <a class="datatype" href="jk.smtp.SMTPSender.html">jk.smtp.SMTPSender</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">forServerAddress</span> ( name <span class="keyword">as</span> <span class="datatype">string</span> , ctx <span class="keyword">as</span> <a class="datatype" href="../../jk-core/0.37.0/jk.log.LoggingContext.html">jk.log.LoggingContext</a> ) <span class="modifier">static</span> <span class="keyword">as</span> <a class="datatype" href="jk.smtp.SMTPSender.html">jk.smtp.SMTPSender</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">forConfiguration</span> ( config <span class="keyword">as</span> <a class="datatype" href="../../jk-core/0.37.0/jk.lang.DynamicMap.html">jk.lang.DynamicMap</a> , ctx <span class="keyword">as</span> <a class="datatype" href="../../jk-core/0.37.0/jk.log.LoggingContext.html">jk.log.LoggingContext</a> ) <span class="modifier">static</span> <span class="keyword">as</span> <a class="datatype" href="jk.smtp.SMTPSender.html">jk.smtp.SMTPSender</a></div></div>
+</div>
+<div class="list">
+<div class="title">Instance Methods</div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getDescription</span> <span class="keyword">as</span> <span class="datatype">string</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">configure</span> ( config <span class="keyword">as</span> <a class="datatype" href="../../jk-core/0.37.0/jk.lang.DynamicMap.html">jk.lang.DynamicMap</a> ) <span class="keyword">as</span> <a class="datatype" href="jk.smtp.SMTPSender.html">jk.smtp.SMTPSender</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">onSendStart</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">onSendEnd</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">send</span> ( msg <span class="keyword">as</span> <a class="datatype" href="jk.smtp.SMTPMessage.html">jk.smtp.SMTPMessage</a> , listener <span class="keyword">as</span> <a class="datatype" href="jk.smtp.SMTPSenderListener.html">jk.smtp.SMTPSenderListener</a> ) <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">sendSync</span> ( msg <span class="keyword">as</span> <a class="datatype" href="jk.smtp.SMTPMessage.html">jk.smtp.SMTPMessage</a> ) <span class="keyword">as</span> <a class="datatype" href="jk.smtp.SMTPClientResult.html">jk.smtp.SMTPClientResult</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getThisServerAddress</span> <span class="keyword">as</span> <span class="datatype">string</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setThisServerAddress</span> ( v <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="keyword">as</span> <a class="datatype" href="jk.smtp.SMTPSender.html">jk.smtp.SMTPSender</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getServer</span> <span class="keyword">as</span> <span class="datatype">string</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setServer</span> ( v <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="keyword">as</span> <a class="datatype" href="jk.smtp.SMTPSender.html">jk.smtp.SMTPSender</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getMyName</span> <span class="keyword">as</span> <span class="datatype">string</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setMyName</span> ( v <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="keyword">as</span> <a class="datatype" href="jk.smtp.SMTPSender.html">jk.smtp.SMTPSender</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getMyAddress</span> <span class="keyword">as</span> <span class="datatype">string</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setMyAddress</span> ( v <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="keyword">as</span> <a class="datatype" href="jk.smtp.SMTPSender.html">jk.smtp.SMTPSender</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getCtx</span> <span class="keyword">as</span> <a class="datatype" href="../../jk-core/0.37.0/jk.log.LoggingContext.html">jk.log.LoggingContext</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setCtx</span> ( v <span class="keyword">as</span> <a class="datatype" href="../../jk-core/0.37.0/jk.log.LoggingContext.html">jk.log.LoggingContext</a> ) <span class="keyword">as</span> <a class="datatype" href="jk.smtp.SMTPSender.html">jk.smtp.SMTPSender</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getMaxSenderCount</span> <span class="keyword">as</span> <span class="datatype">int</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setMaxSenderCount</span> ( v <span class="keyword">as</span> <span class="datatype">int</span> ) <span class="keyword">as</span> <a class="datatype" href="jk.smtp.SMTPSender.html">jk.smtp.SMTPSender</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getAcceptInvalidCertificate</span> <span class="keyword">as</span> <span class="datatype">bool</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setAcceptInvalidCertificate</span> ( v <span class="keyword">as</span> <span class="datatype">bool</span> ) <span class="keyword">as</span> <a class="datatype" href="jk.smtp.SMTPSender.html">jk.smtp.SMTPSender</a></div></div>
+</div>
+</div>
+</body>
+</html>

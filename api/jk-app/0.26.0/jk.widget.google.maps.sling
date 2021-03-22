@@ -1,0 +1,115 @@
+interface name jk.widget.google.maps.MapMarker header public
+{
+	import jk.lang
+	import jk.widget
+	func getLat as double
+	func getLon as double
+	func getLabel as string
+	func getTitle as string
+	func getRotation as double
+	func move(lat as double, lon as double)
+	func remove
+	func rotate(deg as double)
+	func setAnchor(x as double, y as double)
+	func setClickHandler(handler as function<void>)
+	func setInfoWindowWidget(window as jk.widget.Widget)
+	func setInfoWindowClickHandler(function as function<void>)
+}
+class name jk.widget.google.maps.StreetViewWidget header implements jk.widget.ScreenAwareWidget public #widget
+{
+	import jk.lang
+	import jk.lang
+	import jk.ui
+	import jk.gfx
+	import jk.widget
+	ctor(context as jk.ui.GuiApplicationContext)
+	func onWidgetAddedToScreen(screen as jk.widget.ScreenForWidget)
+	func onWidgetRemovedFromScreen(screen as jk.widget.ScreenForWidget)
+}
+class name jk.widget.google.maps.MapWidget header implements jk.widget.ParentAwareWidget public #widget
+{
+	import jk.lang
+	import jk.lang
+	import jk.ui
+	import jk.gfx
+	import jk.widget
+	import jk.geo
+	import jk.url
+	class name MapCamera header public static
+	{
+		ctor
+		func getAngle as double #getterMethod
+		func setAngle(v as double) as jk.widget.google.maps.MapWidget.MapCamera #setterMethod
+		func getBearing as double #getterMethod
+		func setBearing(v as double) as jk.widget.google.maps.MapWidget.MapCamera #setterMethod
+		func getZoom as double #getterMethod
+		func setZoom(v as double) as jk.widget.google.maps.MapWidget.MapCamera #setterMethod
+		func getLatitude as double #getterMethod
+		func setLatitude(v as double) as jk.widget.google.maps.MapWidget.MapCamera #setterMethod
+		func getLongitude as double #getterMethod
+		func setLongitude(v as double) as jk.widget.google.maps.MapWidget.MapCamera #setterMethod
+	}
+	class name MyMapSettings header public static
+	{
+		ctor
+		func setCanZoom(enable as bool)
+		func setCanTilt(enable as bool)
+		func setCanRotate(enable as bool)
+		func setMapHasMyLocation(enable as bool)
+		func getCanZoom as bool
+		func getCanTilt as bool
+		func getCanRotate as bool
+		func getMapHasMyLocation as bool
+		func getSettingObject as object #getterMethod
+		func setSettingObject(v as object) as jk.widget.google.maps.MapWidget.MyMapSettings #setterMethod
+		func getMapObject as object #getterMethod
+		func setMapObject(v as object) as jk.widget.google.maps.MapWidget.MyMapSettings #setterMethod
+	}
+	func forApiKeys(context as jk.ui.GuiApplicationContext, webApiKey as string, iosApiKey as string) static as jk.widget.google.maps.MapWidget
+	ctor(context as jk.ui.GuiApplicationContext)
+	func onWidgetAddingToParent
+	func onWidgetAddedToParent
+	func onWidgetRemovedFromParent
+	func onMarkerClicked(marker as object)
+	func addMapClickHandler(handler as function<void,double,double>)
+	func addMapMarker(lat as double, lon as double, label as string, title as string, icon as jk.gfx.Image = null) as jk.widget.google.maps.MapMarker
+	func placeQueuedMarkers
+	func moveToCenter(lat as double, lon as double, animated as bool = false)
+	func moveCamera(camera as jk.widget.google.maps.MapWidget.MapCamera, animated as bool)
+	func zoomToCoordinates(coors as vector<jk.lang.DynamicMap>, animated as bool = true)
+	func doZoomToCoordinates
+	func getMapCenterLatitude as double
+	func getMapCenterLongitude as double
+	func getMapZoom as double
+	func getMapBearing as double
+	func getMapTilt as double
+	func clearMapMarkers
+	func getMapCenterLocationAsDynamicMap as jk.lang.DynamicMap
+	func onCameraStartMoving(dueToGesture as bool)
+	func onCameraMoving
+	func onCameraStopMoving
+	func setMapCanBeZoom(enable as bool)
+	func setMapCanBeTilt(enable as bool)
+	func setMapCanBeRotate(enable as bool)
+	func setMapHasMyLocation(enable as bool)
+	func getWebApiKey as string #getterMethod
+	func setWebApiKey(v as string) as jk.widget.google.maps.MapWidget #setterMethod
+	func getCenterLat as double #getterMethod
+	func setCenterLat(v as double) as jk.widget.google.maps.MapWidget #setterMethod
+	func getCenterLon as double #getterMethod
+	func setCenterLon(v as double) as jk.widget.google.maps.MapWidget #setterMethod
+	func getDefaultZoomLevel as int #getterMethod
+	func setDefaultZoomLevel(v as int) as jk.widget.google.maps.MapWidget #setterMethod
+	func getZoomInCenter as bool #getterMethod
+	func setZoomInCenter(v as bool) as jk.widget.google.maps.MapWidget #setterMethod
+	func getStreetViewEnabled as bool #getterMethod
+	func setStreetViewEnabled(v as bool) as jk.widget.google.maps.MapWidget #setterMethod
+	func getMarkerSize as int #getterMethod
+	func setMarkerSize(v as int) as jk.widget.google.maps.MapWidget #setterMethod
+	func getWidgetMapCameraStartMovingHandler as function<void,bool> #getterMethod
+	func setWidgetMapCameraStartMovingHandler(v as function<void,bool>) as jk.widget.google.maps.MapWidget #setterMethod
+	func getWidgetMapCameraMovingHandler as function<void> #getterMethod
+	func setWidgetMapCameraMovingHandler(v as function<void>) as jk.widget.google.maps.MapWidget #setterMethod
+	func getWidgetMapCameraStopMovingHandler as function<void> #getterMethod
+	func setWidgetMapCameraStopMovingHandler(v as function<void>) as jk.widget.google.maps.MapWidget #setterMethod
+}

@@ -1,0 +1,76 @@
+<html>
+<head>
+<title>jk.fs.FileInvalid | JK Core [0.37.0] - API Reference</title>
+<link rel="stylesheet" type="text/css" href="style.css" />
+<meta name="viewport" content="initial-scale=1,maximum-scale=1" />
+<meta property="og:description" content="jk.fs.FileInvalid | JK Core [0.37.0] - API Reference" />
+<meta property="og:title" content="jk.fs.FileInvalid | JK Core [0.37.0] - API Reference" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:description" content="jk.fs.FileInvalid | JK Core [0.37.0] - API Reference" />
+</head>
+<body><div class="content">
+<a class="back" href="index.html">&laquo; JK Core [0.37.0]</a><div class="intro">
+<h1><span class="keyword">class</span> <span class="symbol">jk.fs.FileInvalid</span></h1>
+<p></p>
+</div>
+<div class="list">
+<div class="title">Base Types</div>
+<div class="entry">
+<div class="name"><span class="keyword">extends</span> <a class="datatype" href="jk.fs.File.html">jk.fs.File</a></div></div>
+</div>
+<div class="list">
+<div class="title">Instance Methods</div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">entry</span> ( name <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="modifier">override</span> <span class="keyword">as</span> <a class="datatype" href="jk.fs.File.html">jk.fs.File</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">makeExecutable</span> <span class="modifier">override</span> <span class="keyword">as</span> <span class="datatype">bool</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">move</span> ( dest <span class="keyword">as</span> <a class="datatype" href="jk.fs.File.html">jk.fs.File</a> , replace <span class="keyword">as</span> <span class="datatype">bool</span> ) <span class="modifier">override</span> <span class="keyword">as</span> <span class="datatype">bool</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">touch</span> <span class="modifier">override</span> <span class="keyword">as</span> <span class="datatype">bool</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">read</span> <span class="modifier">override</span> <span class="keyword">as</span> <a class="datatype" href="jk.fs.FileReader.html">jk.fs.FileReader</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">write</span> <span class="modifier">override</span> <span class="keyword">as</span> <a class="datatype" href="jk.fs.FileWriter.html">jk.fs.FileWriter</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">append</span> <span class="modifier">override</span> <span class="keyword">as</span> <a class="datatype" href="jk.fs.FileWriter.html">jk.fs.FileWriter</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">stat</span> <span class="modifier">override</span> <span class="keyword">as</span> <a class="datatype" href="jk.fs.FileInfo.html">jk.fs.FileInfo</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">exists</span> <span class="modifier">override</span> <span class="keyword">as</span> <span class="datatype">bool</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">isExecutable</span> <span class="modifier">override</span> <span class="keyword">as</span> <span class="datatype">bool</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">createFifo</span> <span class="modifier">override</span> <span class="keyword">as</span> <span class="datatype">bool</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">createDirectory</span> <span class="modifier">override</span> <span class="keyword">as</span> <span class="datatype">bool</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">createDirectoryRecursive</span> <span class="modifier">override</span> <span class="keyword">as</span> <span class="datatype">bool</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">removeDirectory</span> <span class="modifier">override</span> <span class="keyword">as</span> <span class="datatype">bool</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getPath</span> <span class="modifier">override</span> <span class="keyword">as</span> <span class="datatype">string</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">isSame</span> ( file <span class="keyword">as</span> <a class="datatype" href="jk.fs.File.html">jk.fs.File</a> ) <span class="modifier">override</span> <span class="keyword">as</span> <span class="datatype">bool</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">remove</span> <span class="modifier">override</span> <span class="keyword">as</span> <span class="datatype">bool</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">removeRecursive</span> <span class="modifier">override</span> <span class="keyword">as</span> <span class="datatype">bool</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getBasename</span> <span class="modifier">override</span> <span class="keyword">as</span> <span class="datatype">string</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">isIdentical</span> ( file <span class="keyword">as</span> <a class="datatype" href="jk.fs.File.html">jk.fs.File</a> ) <span class="modifier">override</span> <span class="keyword">as</span> <span class="datatype">bool</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getContentsBuffer</span> <span class="modifier">override</span> <span class="keyword">as</span> <span class="datatype">buffer</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getContentsString</span> ( encoding <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="modifier">override</span> <span class="keyword">as</span> <span class="datatype">string</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setContentsBuffer</span> ( buffer <span class="keyword">as</span> <span class="datatype">buffer</span> ) <span class="modifier">override</span> <span class="keyword">as</span> <span class="datatype">bool</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setContentsString</span> ( str <span class="keyword">as</span> <span class="datatype">string</span> , encoding <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="modifier">override</span> <span class="keyword">as</span> <span class="datatype">bool</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">entries</span> <span class="modifier">override</span> <span class="keyword">as</span> <a class="datatype" href="jk.lang.Iterator.html">jk.lang.Iterator&lt;jk.fs.File&gt;</a></div></div>
+</div>
+</div>
+</body>
+</html>

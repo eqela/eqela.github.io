@@ -1,0 +1,10 @@
+class name jk.ui.desktop.DesktopEnvironment header public
+{
+	import jk.lang
+	import jk.fs
+	import jk.process
+	import jk.os
+	ctor
+	func openFile(file as jk.fs.File) static as bool
+	func openURL(url as string) static as bool
+}

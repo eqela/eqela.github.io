@@ -1,0 +1,41 @@
+<html>
+<head>
+<title>jk.time.SystemClock | JK Core [0.37.0] - API Reference</title>
+<link rel="stylesheet" type="text/css" href="style.css" />
+<meta name="viewport" content="initial-scale=1,maximum-scale=1" />
+<meta property="og:description" content="jk.time.SystemClock | JK Core [0.37.0] - API Reference" />
+<meta property="og:title" content="jk.time.SystemClock | JK Core [0.37.0] - API Reference" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:description" content="jk.time.SystemClock | JK Core [0.37.0] - API Reference" />
+</head>
+<body><div class="content">
+<a class="back" href="index.html">&laquo; JK Core [0.37.0]</a><div class="intro">
+<h1><span class="keyword">class</span> <span class="symbol">jk.time.SystemClock</span></h1>
+<p></p>
+</div>
+<div class="list">
+<div class="title">Static Methods</div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">asDateTimeUTC</span> <span class="modifier">static</span> <span class="keyword">as</span> <a class="datatype" href="jk.lang.DateTime.html">jk.lang.DateTime</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">asDateTimeLocal</span> <span class="modifier">static</span> <span class="keyword">as</span> <a class="datatype" href="jk.lang.DateTime.html">jk.lang.DateTime</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getTimezoneOffsetAsSeconds</span> <span class="modifier">static</span> <span class="keyword">as</span> <span class="datatype">long</span></div><div class="description">Returns the number of seconds of timezone difference in the current system. The value is expressed as the
+number of seconds to ADD the the local time in order to get the UTC time equivalent.</div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">asUTCSeconds</span> <span class="modifier">static</span> <span class="keyword">as</span> <span class="datatype">long</span></div><div class="description">Returns the number of seconds since January 1, 1970, in UTC timezone.</div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">asSeconds</span> <span class="modifier">static</span> <span class="keyword">as</span> <span class="datatype">long</span></div><div class="description">Returns the number of seconds since January 1, 1970, in local timezone.</div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">asTimeValue</span> <span class="modifier">static</span> <span class="keyword">as</span> <a class="datatype" href="jk.lang.TimeValue.html">jk.lang.TimeValue</a></div><div class="description">Returns the current system time as a TimeValue structure (up to microsecond precision).
+No guarantee is made as to the timezone (whether local time or UTC). Therefore, TimeValue
+structures created this way are mostly usable for comparing the difference between two
+objects retrieved at different times.</div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">update</span> ( v <span class="keyword">as</span> <a class="datatype" href="jk.lang.TimeValue.html">jk.lang.TimeValue</a> ) <span class="modifier">static</span> <span class="keyword">as</span> <span class="datatype">void</span></div><div class="description">Updates an existing TimeValue object with the current time. This way you can reuse the object
+and do not need to allocate new objects, which is especially beneficial when updating the
+TimeValue frequently.</div></div>
+</div>
+</div>
+</body>
+</html>

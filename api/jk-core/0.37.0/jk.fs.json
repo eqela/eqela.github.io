@@ -1,0 +1,53 @@
+{
+	"moduleDescription" : "All functionality for accessing and manipulating filesystems,\nincluding reading and writing of files and directories, enumerating\ndirectory contents and removing files and directories.\n",
+	"type" : "module",
+	"moduleTitle" : "Filesystem access",
+	"moduleId" : "jk.fs",
+	"entities" : [
+		{
+			"type" : "class",
+			"name" : "FileInfo",
+			"description" : ""
+		},
+		{
+			"type" : "interface",
+			"name" : "FileReader",
+			"description" : ""
+		},
+		{
+			"type" : "interface",
+			"name" : "FileWriter",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "FileKit",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "PathInfo",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "CurrentDirectory",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "FileInvalid",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "FileFinder",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "File",
+			"description" : "The File class is used to access and manipulate the filesystem of the current environment. Despite the name of the class, this class is used to manipulate all kinds of filesystem entries, including files, directories, symbolic links, block devices, etc., depending on the underlying platform."
+		}
+	]
+}

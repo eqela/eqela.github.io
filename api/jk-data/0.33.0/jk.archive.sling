@@ -1,0 +1,83 @@
+class name jk.archive.ZipReader header abstract public
+{
+	import jk.lang
+	import jk.fs
+	import jk.env
+	ctor
+	func forFile(file as jk.fs.File) static as jk.archive.ZipReader
+	func extractZipBufferToDirectory(zipBuffer as buffer, destDir as jk.fs.File, listener as function<void,jk.fs.File> = null) static as bool
+	func extractZipFileToDirectory(zipFile as jk.fs.File, destDir as jk.fs.File, listener as function<void,jk.fs.File> = null) static as bool
+	func getEntries abstract as vector<jk.archive.ZipReaderEntry>
+	func close abstract
+}
+class name jk.archive.ExternalTarGZipWriter header extends jk.archive.TarGZipWriter public
+{
+	import jk.lang
+	import jk.log
+	import jk.process
+	import jk.fs
+	ctor
+	func tarDir(ctx as jk.log.LoggingContext, dir as jk.fs.File, output as jk.fs.File, truncateDir as bool) override as bool
+}
+class name jk.archive.ZipWriter header abstract public
+{
+	import jk.lang
+	import jk.fs
+	import jk.log
+	ctor
+	func forOutputFile(file as jk.fs.File) static as jk.archive.ZipWriter
+	func writeToZipRecursive(ctx as jk.log.LoggingContext, dest as jk.fs.File, source as jk.fs.File, truncateDirectoryName as bool) static as bool
+	func addFile(file as jk.fs.File, filename as string) abstract as bool
+	func close abstract
+}
+class name jk.archive.ArchiveKit header public
+{
+	import jk.lang
+	import jk.fs
+	import jk.log
+	ctor(ctx as jk.log.LoggingContext)
+	func compressZip(src, output) as jk.fs.File
+	func compressTarball(src, output) as jk.fs.File
+}
+class name jk.archive.TarReader header public
+{
+	import jk.lang
+	import jk.fs
+	import jk.process
+	ctor
+	func isTarFile(file as jk.fs.File) static as bool
+	func extractTarFileToDirectory(tarFile as jk.fs.File, destDir as jk.fs.File) static as bool
+}
+class name jk.archive.TarGZipWriter header abstract public
+{
+	import jk.lang
+	import jk.fs
+	import jk.log
+	ctor
+	func instance static as jk.archive.TarGZipWriter
+	func writeToTarballRecursive(ctx as jk.log.LoggingContext, dest as jk.fs.File, source as jk.fs.File, truncateDirectoryName as bool) static as bool
+	func tarDir(ctx as jk.log.LoggingContext, dir as jk.fs.File, output as jk.fs.File, truncateDir as bool) abstract as bool
+}
+class name jk.archive.ZipReaderEntry header public
+{
+	import jk.lang
+	import jk.io
+	import jk.fs
+	import jk.os
+	ctor
+	func getName as string
+	func setName(newName as string) as jk.archive.ZipReaderEntry
+	func getContentReader virtual as jk.io.Reader
+	func getContentsBuffer as buffer
+	func getContentsUTF8 as string
+	func writeToFile(file as jk.fs.File) virtual as bool
+	func writeToDir(dir as jk.fs.File, fullPath as bool = true, overwrite as bool = true) as jk.fs.File
+	func getCompressedSize as long #getterMethod
+	func setCompressedSize(v as long) as jk.archive.ZipReaderEntry #setterMethod
+	func getUncompressedSize as long #getterMethod
+	func setUncompressedSize(v as long) as jk.archive.ZipReaderEntry #setterMethod
+	func getIsDirectory as bool #getterMethod
+	func setIsDirectory(v as bool) as jk.archive.ZipReaderEntry #setterMethod
+	func getMode as int #getterMethod
+	func setMode(v as int) as jk.archive.ZipReaderEntry #setterMethod
+}

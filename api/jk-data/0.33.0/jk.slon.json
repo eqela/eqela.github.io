@@ -1,0 +1,13 @@
+{
+	"moduleDescription" : "Implementation of the Sling Object Notation (SLON) data interchange\nformat. The SLON format resembles the popular JSON format but is much\nfriendlier in terms of editing and maintaining the content. And of\ncourse feels more comfortable to Sling programmers.\n",
+	"type" : "module",
+	"moduleTitle" : "SLON handling",
+	"moduleId" : "jk.slon",
+	"entities" : [
+		{
+			"type" : "class",
+			"name" : "SLONParser",
+			"description" : ""
+		}
+	]
+}

@@ -1,0 +1,33 @@
+{
+	"moduleDescription" : "General-purpose mathematical functionality.\n",
+	"type" : "module",
+	"moduleTitle" : "Math functionality",
+	"moduleId" : "jk.math",
+	"entities" : [
+		{
+			"type" : "class",
+			"name" : "Vector3",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "Vector2",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "Matrix33",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "Matrix44",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "Math",
+			"description" : "The Math class provides various mathematical methods, functions and numerical constants."
+		}
+	]
+}

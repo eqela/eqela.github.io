@@ -1,0 +1,146 @@
+class name jk.gfx.Color header public
+{
+	import jk.lang
+	func black static as jk.gfx.Color
+	func white static as jk.gfx.Color
+	func asColor(o) static as jk.gfx.Color
+	func instance(str as string = null) static as jk.gfx.Color
+	func forString(str as string) static as jk.gfx.Color
+	func forRGBDouble(r as double, g as double, b as double) static as jk.gfx.Color
+	func forRGBADouble(r as double, g as double, b as double, a as double) static as jk.gfx.Color
+	func forRGB(r as int, g as int, b as int) static as jk.gfx.Color
+	func forRGBA(r as int, g as int, b as int, a as int) static as jk.gfx.Color
+	func forRGBAInteger(value as int) static as jk.gfx.Color
+	func forARGBInteger(value as int) static as jk.gfx.Color
+	func forRGBInteger(value as int) static as jk.gfx.Color
+	ctor
+	ctor(str as string)
+	func getRedInt as int
+	func getGreenInt as int
+	func getBlueInt as int
+	func getAlphaInt as int
+	func isWhite as bool
+	func isBlack as bool
+	func isLightColor as bool
+	func isDarkColor as bool
+	func parse(s as string) as bool
+	func dup(arg as string = null) as jk.gfx.Color
+	func toRGBAInt32 as int
+	func toARGBInt32 as int
+	func toString as string
+	func toRgbString as string
+	func toRgbaString as string
+	func toHtmlRgbaString as string
+	func toHtmlCompatibleString as string
+	func toRGBInteger as int
+	func to2Digits(val as string, sb as jk.lang.StringBuilder)
+	func getRed as double #getterMethod
+	func setRed(v as double) as jk.gfx.Color #setterMethod
+	func getGreen as double #getterMethod
+	func setGreen(v as double) as jk.gfx.Color #setterMethod
+	func getBlue as double #getterMethod
+	func setBlue(v as double) as jk.gfx.Color #setterMethod
+	func getAlpha as double #getterMethod
+	func setAlpha(v as double) as jk.gfx.Color #setterMethod
+}
+class name jk.gfx.Size header public
+{
+	import jk.lang
+	ctor
+	func getWidth as double #getterMethod
+	func setWidth(v as double) as jk.gfx.Size #setterMethod
+	func getHeight as double #getterMethod
+	func setHeight(v as double) as jk.gfx.Size #setterMethod
+}
+class name jk.gfx.Image header abstract public
+{
+	import jk.lang
+	ctor
+	func getPixelWidth abstract as int
+	func getPixelHeight abstract as int
+	func scaleToSizeSync(w as int, h as int) abstract as jk.gfx.Image
+	func scaleToSize(w as int, h as int, callback as function<void,jk.gfx.Image>) abstract
+	func scaleToWidthSync(w as int) abstract as jk.gfx.Image
+	func scaleToWidth(w as int, callback as function<void,jk.gfx.Image>) abstract
+	func scaleToHeightSync(h as int) abstract as jk.gfx.Image
+	func scaleToHeight(h as int, callback as function<void,jk.gfx.Image>) abstract
+	func cropSync(x as int, y as int, w as int, h as int) abstract as jk.gfx.Image
+	func crop(x as int, y as int, w as int, h as int, callback as function<void,jk.gfx.Image>) abstract
+	func toJPGData abstract as buffer
+	func toPNGData abstract as buffer
+	func toRGBAData abstract as buffer
+	func releaseImage abstract
+	func getProportionalWidth(h as int) protected as int
+	func getProportionalHeight(w as int) protected as int
+}
+class name jk.gfx.FontDescription header implements jk.lang.StringObject public
+{
+	import jk.lang
+	import jk.fs
+	import jk.json
+	func forDefault static as jk.gfx.FontDescription
+	func forFile(file as jk.fs.File, size as jk.gfx.Length = null) static as jk.gfx.FontDescription
+	func forName(name as string, size as jk.gfx.Length = null) static as jk.gfx.FontDescription
+	ctor
+	func dup as jk.gfx.FontDescription
+	func toString as string
+	func getFile as jk.fs.File #getterMethod
+	func setFile(v as jk.fs.File) as jk.gfx.FontDescription #setterMethod
+	func getName as string #getterMethod
+	func setName(v as string) as jk.gfx.FontDescription #setterMethod
+	func getBold as bool #getterMethod
+	func setBold(v as bool) as jk.gfx.FontDescription #setterMethod
+	func getItalic as bool #getterMethod
+	func setItalic(v as bool) as jk.gfx.FontDescription #setterMethod
+	func getUnderline as bool #getterMethod
+	func setUnderline(v as bool) as jk.gfx.FontDescription #setterMethod
+	func getSize as jk.gfx.Length #getterMethod
+	func setSize(v as jk.gfx.Length) as jk.gfx.FontDescription #setterMethod
+}
+class name jk.gfx.Length header implements jk.lang.StringObject public
+{
+	import jk.lang
+	ctor
+	func asPoints(value as string, ppi as int) static as int
+	func asPointsWithPpi(value as string, ppi as double) static as double
+	func unitToString(unit as int) static as string
+	func asStringWithUnit(length as jk.gfx.Length, unit as int) static as string
+	func asString(length as jk.gfx.Length) static as string
+	func forString(value as string, ppi as double = 0.0) static as jk.gfx.Length
+	func forPoints(value as double, ppi as double = 0.0) static as jk.gfx.Length
+	func forMilliMeters(value as double, ppi as double = 0.0) static as jk.gfx.Length
+	func forMicroMeters(value as double, ppi as double = 0.0) static as jk.gfx.Length
+	func forNanoMeters(value as double, ppi as double = 0.0) static as jk.gfx.Length
+	func forInches(value as double, ppi as double = 0.0) static as jk.gfx.Length
+	func forValue(value as double, unit as int, ppi as double = 0.0) static as jk.gfx.Length
+	func forStringAsPoints(value as string, ppi as int) static as jk.gfx.Length
+	var UNIT_POINT public static const as int
+	var UNIT_MILLIMETER public static const as int
+	var UNIT_MICROMETER public static const as int
+	var UNIT_NANOMETER public static const as int
+	var UNIT_INCH public static const as int
+	func toPoints(customPpi as int) as int
+	func getValueAsPointsWithPpi(customPpi as double) as double
+	func getValueAsPoints as double
+	func getValueAsMilliMeters as double
+	func getValueAsMicroMeters as double
+	func getValueAsNanoMeters as double
+	func getValueAsInches as double
+	func getValueAsUnit(unit as int) as double
+	func toString as string
+	func getValue as double #getterMethod
+	func setValue(v as double) as jk.gfx.Length #setterMethod
+	func getUnit as int #getterMethod
+	func setUnit(v as int) as jk.gfx.Length #setterMethod
+	func getPpi as double #getterMethod
+	func setPpi(v as double) as jk.gfx.Length #setterMethod
+}
+class name jk.gfx.Position header public
+{
+	import jk.lang
+	ctor
+	func getX as double #getterMethod
+	func setX(v as double) as jk.gfx.Position #setterMethod
+	func getY as double #getterMethod
+	func setY(v as double) as jk.gfx.Position #setterMethod
+}

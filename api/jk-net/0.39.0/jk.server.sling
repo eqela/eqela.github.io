@@ -1,0 +1,195 @@
+class name jk.server.NetworkConnection header abstract public
+{
+	import jk.lang
+	import jk.socket
+	import jk.socket.io
+	import jk.log
+	import jk.time
+	var logContext protected as jk.log.LoggingContext
+	var socket protected as jk.socket.ConnectedSocket
+	var lastActivity protected as long
+	ctor
+	func getId as long
+	func exportSocket as jk.socket.ConnectedSocket
+	func getSocket as jk.socket.ConnectedSocket
+	func getManager as jk.server.NetworkConnectionManager
+	func getLastActivity as long
+	func getRemoteAddress as string
+	func logDebug(text as string)
+	func logInfo(text as string)
+	func logWarning(text as string)
+	func logError(text as string)
+	func onActivity
+	func initialize virtual as bool
+	func cleanup virtual
+	func doInitialize(logContext as jk.log.LoggingContext, socket as jk.socket.ConnectedSocket, manager as jk.server.NetworkConnectionManager) as bool
+	func getIoEntry as jk.socket.io.IOManagerEntry
+	func setIoEntry(entry as jk.socket.io.IOManagerEntry) as bool
+	func sendData(data as buffer, size as int) as int
+	func close
+	func closeSocket
+	func onReadReady virtual
+	func onWriteReady virtual
+	func enableIdleMode as bool
+	func enableReadMode as bool
+	func enableWriteMode as bool
+	func enableReadWriteMode as bool
+	func onOpened abstract
+	func onDataReceived(data as buffer, size as int) abstract
+	func onClosed abstract
+	func onError(message as string) abstract
+	func getStorageIndex as int #getterMethod
+	func setStorageIndex(v as int) as jk.server.NetworkConnection #setterMethod
+	func getDefaultListenMode as int #getterMethod
+	func setDefaultListenMode(v as int) as jk.server.NetworkConnection #setterMethod
+}
+class name jk.server.NetworkServer header extends jk.server.NetworkConnectionManager abstract public
+{
+	import jk.lang
+	import jk.io
+	import jk.socket
+	import jk.socket.io
+	import jk.log
+	ctor
+	func initialize override as bool
+	func cleanup override
+	func getPort as int #getterMethod
+	func setPort(v as int) as jk.server.NetworkServer #setterMethod
+}
+class name jk.server.NetworkConnectionManager header abstract public
+{
+	import jk.lang
+	import jk.log
+	import jk.fs
+	import jk.socket
+	import jk.socket.io
+	import jk.socket.ssl
+	ctor
+	class name ConnectionPool header protected static
+	{
+		ctor
+		var connections public as array<jk.server.NetworkConnection>
+		var nConnection public as int
+		func initialize(logContext as jk.log.LoggingContext, maxConnections as int) as bool
+		func add(logContext as jk.log.LoggingContext, conn as jk.server.NetworkConnection) as int
+		func remove(logContext as jk.log.LoggingContext, index as int) as bool
+	}
+	var logContext protected as jk.log.LoggingContext
+	var ioManager protected as jk.socket.io.IOManager
+	var connections protected as jk.server.NetworkConnectionManager.ConnectionPool
+	func createConnectionObject abstract as jk.server.NetworkConnection
+	func setLogContext(ctx as jk.log.LoggingContext) as jk.server.NetworkConnectionManager
+	func getLogContext as jk.log.LoggingContext
+	func setIoManager(io as jk.socket.io.IOManager) as jk.server.NetworkConnectionManager
+	func getIoManager as jk.socket.io.IOManager
+	func iterateConnections as jk.lang.Iterator<jk.server.NetworkConnection>
+	func forEachConnection(function as function<void,jk.server.NetworkConnection>)
+	func isInitialized as bool
+	func initialize(ioManager as jk.socket.io.IOManager, logContext as jk.log.LoggingContext = null) as bool
+	func initialize virtual as bool
+	func cleanup virtual
+	func onNewSocket(socket as jk.socket.ConnectedSocket)
+	func addConnection(connection as jk.server.NetworkConnection) as bool
+	func onConnectionClosed(connection as jk.server.NetworkConnection)
+	func getReceiveBuffer as buffer
+	func getMaxConnections as int #getterMethod
+	func setMaxConnections(v as int) as jk.server.NetworkConnectionManager #setterMethod
+	func getRecvBufferSize as int #getterMethod
+	func setRecvBufferSize(v as int) as jk.server.NetworkConnectionManager #setterMethod
+	func getKeyFile as jk.fs.File #getterMethod
+	func setKeyFile(v as jk.fs.File) as jk.server.NetworkConnectionManager #setterMethod
+	func getCertFile as jk.fs.File #getterMethod
+	func setCertFile(v as jk.fs.File) as jk.server.NetworkConnectionManager #setterMethod
+	func getAcceptInvalidCertificate as bool #getterMethod
+	func setAcceptInvalidCertificate(v as bool) as jk.server.NetworkConnectionManager #setterMethod
+	func getPassphrase as string #getterMethod
+	func setPassphrase(v as string) as jk.server.NetworkConnectionManager #setterMethod
+}
+class name jk.server.SimpleConfigFile header public
+{
+	import jk.lang
+	import jk.fs
+	import jk.io
+	import jk.json
+	func forFile(file as jk.fs.File) static as jk.server.SimpleConfigFile
+	func forMap(map as jk.lang.DynamicMap) static as jk.server.SimpleConfigFile
+	func readFileAsMap(file as jk.fs.File) static as jk.lang.DynamicMap
+	ctor
+	func getFile as jk.fs.File
+	func getRelativeFile(fileName as string) as jk.fs.File
+	func clear
+	func setDataAsMap(map as jk.lang.DynamicMap) as jk.server.SimpleConfigFile
+	func getDataAsMap as jk.lang.DynamicMap
+	func getDynamicMapValue(key as string, defval as jk.lang.DynamicMap) as jk.lang.DynamicMap
+	func getDynamicVectorValue(key as string, defval as jk.lang.DynamicVector) as jk.lang.DynamicVector
+	func getStringValue(key as string, defval as string = null) as string
+	func getIntegerValue(key as string, defval as int = 0) as int
+	func getDoubleValue(key as string, defval as double = 0.0) as double
+	func getBooleanValue(key as string, defval as bool = false) as bool
+	func getFileValue(key as string, defval as jk.fs.File = null) as jk.fs.File
+	func iterate as jk.lang.Iterator<jk.lang.KeyValuePair<string,string>>
+	func read(file as jk.fs.File) virtual as bool
+	func write(outfile as jk.fs.File) virtual as bool
+}
+class name jk.server.CommonServer header abstract public
+{
+	import jk.lang
+	import jk.fs
+	import jk.log
+	import jk.console
+	import jk.io
+	import jk.socket.io
+	import jk.env
+	var ctx protected as jk.log.LoggingContext
+	ctor
+	func getCtx as jk.log.LoggingContext
+	func getLoggingDirectory as jk.fs.File
+	func getListenPort as int
+	func getConfigfromEnvironment(name as string) as string
+	func getConfigFileDirectory as jk.fs.File
+	func onMaintenance virtual
+	func initConfigValue(key as string, value as string)
+	func setConfigValue(key as string, value as string) as jk.server.CommonServer
+	func configure(key as string, value as string, relativeTo as jk.fs.File, error as jk.lang.Error) virtual as bool
+	func printUsage(stdout as jk.io.PrintWriter) virtual
+	func printHeader(stdout as jk.io.PrintWriter) virtual
+	func printVersion(stdout as jk.io.PrintWriter, longFormat as bool) virtual
+	func logServerConfiguration virtual
+	func acceptCommandLineArgument(arg as jk.console.CommandLineArgument) virtual as bool
+	func execute(args as array<string>) as bool
+	func executeMain(args as array<string>) as int
+	func initializeWithIOManager(ioManager as jk.socket.io.IOManager, ctx as jk.log.LoggingContext) virtual as bool
+	func initializeNetworkServer(server as jk.server.NetworkServer) virtual as bool
+	func initializeApplication virtual as bool
+	func createServer abstract as jk.server.NetworkServer
+	func executeServer as bool
+}
+class name jk.server.DirectoryLoggingContext header implements jk.log.LoggingContext public
+{
+	import jk.lang
+	import jk.log
+	import jk.fs
+	import jk.io
+	import jk.console
+	import jk.time
+	import jk.text
+	ctor
+	func create(logDir as jk.fs.File, logIdPrefix as string = null, dbg as bool = true) static as jk.server.DirectoryLoggingContext
+	func setEnableDebugMessages(value as bool)
+	func setAlsoPrintOnConsole(value as bool)
+	func logError(text as string)
+	func logWarning(text as string)
+	func logInfo(text as string)
+	func logDebug(text as string)
+	func logStatus(text as string)
+	func isInDebugMode as bool
+	func getErrorCount as int
+	func getWarningCount as int
+	func getInfoCount as int
+	func getDebugCount as int
+	func resetCounters
+	func getLogDir as jk.fs.File #getterMethod
+	func setLogDir(v as jk.fs.File) as jk.server.DirectoryLoggingContext #setterMethod
+	func getLogIdPrefix as string #getterMethod
+	func setLogIdPrefix(v as string) as jk.server.DirectoryLoggingContext #setterMethod
+}

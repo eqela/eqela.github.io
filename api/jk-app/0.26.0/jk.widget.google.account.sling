@@ -1,0 +1,18 @@
+class name jk.widget.google.account.Login header public
+{
+	import jk.lang
+	import jk.ui
+	import jk.widget
+	ctor
+	func forApplications(context as jk.ui.GuiApplicationContext, webAppId as string, serverClientId as string, iosClientId as string) static as jk.widget.google.account.Login
+	func execute(widget as jk.widget.Widget, callback as function<void,string,string,jk.lang.Error>)
+	func logout
+	func getContext as jk.ui.GuiApplicationContext #getterMethod
+	func setContext(v as jk.ui.GuiApplicationContext) as jk.widget.google.account.Login #setterMethod
+	func getWebAppId as string #getterMethod
+	func setWebAppId(v as string) as jk.widget.google.account.Login #setterMethod
+	func getIOSClientId as string #getterMethod
+	func setIOSClientId(v as string) as jk.widget.google.account.Login #setterMethod
+	func getServerClientId as string #getterMethod
+	func setServerClientId(v as string) as jk.widget.google.account.Login #setterMethod
+}

@@ -1,0 +1,18 @@
+{
+	"moduleDescription" : "",
+	"type" : "module",
+	"moduleTitle" : "",
+	"moduleId" : "jk.widget.form",
+	"entities" : [
+		{
+			"type" : "class",
+			"name" : "FormDeclaration",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "FormWidget",
+			"description" : ""
+		}
+	]
+}

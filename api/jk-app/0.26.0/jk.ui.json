@@ -1,0 +1,73 @@
+{
+	"moduleDescription" : "",
+	"type" : "module",
+	"moduleTitle" : "",
+	"moduleId" : "jk.ui",
+	"entities" : [
+		{
+			"type" : "interface",
+			"name" : "ScreenWithContext",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "IOSDeviceInfo",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "ImageUtil",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "Router",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "PointerEvent",
+			"description" : ""
+		},
+		{
+			"type" : "interface",
+			"name" : "RouterListener",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "GuiApplicationContext",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "KeyEvent",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "ApplicationData",
+			"description" : ""
+		},
+		{
+			"type" : "interface",
+			"name" : "PointerListener",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "WebBrowserContext",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "Screen",
+			"description" : ""
+		},
+		{
+			"type" : "interface",
+			"name" : "KeyListener",
+			"description" : ""
+		}
+	]
+}

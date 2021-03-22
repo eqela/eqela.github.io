@@ -1,0 +1,18 @@
+{
+	"moduleDescription" : "Functionality for accessing POSIX-type functionality on platforms that support\nit. On non-POSIX platforms, stub implementations will be provided.\n",
+	"type" : "module",
+	"moduleTitle" : "POSIX compatibility",
+	"moduleId" : "jk.posix",
+	"entities" : [
+		{
+			"type" : "class",
+			"name" : "PosixEnvironment",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "PosixSignal",
+			"description" : ""
+		}
+	]
+}

@@ -1,0 +1,13 @@
+{
+	"moduleDescription" : "Implementation of the \"diff\" utility that compares files and indicates\nthe differences.\n",
+	"type" : "module",
+	"moduleTitle" : "File change comparison",
+	"moduleId" : "jk.diff",
+	"entities" : [
+		{
+			"type" : "class",
+			"name" : "UnifiedDiff",
+			"description" : ""
+		}
+	]
+}

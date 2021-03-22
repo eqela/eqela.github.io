@@ -1,0 +1,26 @@
+class name jk.log.Log header public
+{
+	import jk.lang
+	ctor
+	func asString(context as jk.log.LoggingContext, value) static as string
+	func error(context as jk.log.LoggingContext, message as string) static
+	func warning(context as jk.log.LoggingContext, message as string) static
+	func info(context as jk.log.LoggingContext, message as string) static
+	func debug(context as jk.log.LoggingContext, message as string) static
+	func status(context as jk.log.LoggingContext, message as string) static
+}
+interface name jk.log.LoggingContext header public
+{
+	import jk.lang
+	func logError(message as string)
+	func logWarning(message as string)
+	func logInfo(message as string)
+	func logDebug(message as string)
+	func logStatus(message as string)
+	func isInDebugMode as bool
+	func getErrorCount as int
+	func getWarningCount as int
+	func getInfoCount as int
+	func getDebugCount as int
+	func resetCounters
+}

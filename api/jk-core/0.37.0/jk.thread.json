@@ -1,0 +1,38 @@
+{
+	"moduleDescription" : "Support for multi-threading in applications; creating, starting,\nstopping and manipulating threads, mutexes and thread pools.\n",
+	"type" : "module",
+	"moduleTitle" : "Threading support",
+	"moduleId" : "jk.thread",
+	"entities" : [
+		{
+			"type" : "class",
+			"name" : "ThreadPool",
+			"description" : ""
+		},
+		{
+			"type" : "interface",
+			"name" : "RunningThread",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "CurrentThread",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "Thread",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "CriticalSection",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "Mutex",
+			"description" : ""
+		}
+	]
+}

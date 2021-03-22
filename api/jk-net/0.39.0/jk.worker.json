@@ -1,0 +1,18 @@
+{
+	"moduleDescription" : "",
+	"type" : "module",
+	"moduleTitle" : "",
+	"moduleId" : "jk.worker",
+	"entities" : [
+		{
+			"type" : "class",
+			"name" : "Worker",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "WorkerPool",
+			"description" : ""
+		}
+	]
+}

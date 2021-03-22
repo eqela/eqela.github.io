@@ -1,0 +1,84 @@
+<html>
+<head>
+<title>jk.server.NetworkConnectionManager | JK Net [0.39.0] - API Reference</title>
+<link rel="stylesheet" type="text/css" href="style.css" />
+<meta name="viewport" content="initial-scale=1,maximum-scale=1" />
+<meta property="og:description" content="jk.server.NetworkConnectionManager | JK Net [0.39.0] - API Reference" />
+<meta property="og:title" content="jk.server.NetworkConnectionManager | JK Net [0.39.0] - API Reference" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:description" content="jk.server.NetworkConnectionManager | JK Net [0.39.0] - API Reference" />
+</head>
+<body><div class="content">
+<a class="back" href="index.html">&laquo; JK Net [0.39.0]</a><div class="intro">
+<h1><span class="modifier">abstract</span> <span class="keyword">class</span> <span class="symbol">jk.server.NetworkConnectionManager</span></h1>
+<p></p>
+</div>
+<div class="list">
+<div class="title">Instance Variables</div>
+<div class="entry">
+<div class="name"><span class="keyword">var</span> <span class="symbol">logContext</span> <span class="keyword">as</span> <a class="datatype" href="../../jk-core/0.37.0/jk.log.LoggingContext.html">jk.log.LoggingContext</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">var</span> <span class="symbol">ioManager</span> <span class="keyword">as</span> <a class="datatype" href="jk.socket.io.IOManager.html">jk.socket.io.IOManager</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">var</span> <span class="symbol">connections</span> <span class="keyword">as</span> <span class="datatype">jk.server.NetworkConnectionManager.ConnectionPool</span></div></div>
+</div>
+<div class="list">
+<div class="title">Instance Methods</div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">createConnectionObject</span> <span class="modifier">abstract</span> <span class="keyword">as</span> <a class="datatype" href="jk.server.NetworkConnection.html">jk.server.NetworkConnection</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setLogContext</span> ( ctx <span class="keyword">as</span> <a class="datatype" href="../../jk-core/0.37.0/jk.log.LoggingContext.html">jk.log.LoggingContext</a> ) <span class="keyword">as</span> <a class="datatype" href="jk.server.NetworkConnectionManager.html">jk.server.NetworkConnectionManager</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getLogContext</span> <span class="keyword">as</span> <a class="datatype" href="../../jk-core/0.37.0/jk.log.LoggingContext.html">jk.log.LoggingContext</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setIoManager</span> ( io <span class="keyword">as</span> <a class="datatype" href="jk.socket.io.IOManager.html">jk.socket.io.IOManager</a> ) <span class="keyword">as</span> <a class="datatype" href="jk.server.NetworkConnectionManager.html">jk.server.NetworkConnectionManager</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getIoManager</span> <span class="keyword">as</span> <a class="datatype" href="jk.socket.io.IOManager.html">jk.socket.io.IOManager</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">iterateConnections</span> <span class="keyword">as</span> <a class="datatype" href="../../jk-core/0.37.0/jk.lang.Iterator.html">jk.lang.Iterator&lt;jk.server.NetworkConnection&gt;</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">forEachConnection</span> ( function <span class="keyword">as</span> <span class="datatype">function&lt;void,jk.server.NetworkConnection&gt;</span> ) <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">isInitialized</span> <span class="keyword">as</span> <span class="datatype">bool</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">initialize</span> ( ioManager <span class="keyword">as</span> <a class="datatype" href="jk.socket.io.IOManager.html">jk.socket.io.IOManager</a> , logContext <span class="keyword">as</span> <a class="datatype" href="../../jk-core/0.37.0/jk.log.LoggingContext.html">jk.log.LoggingContext</a> ) <span class="keyword">as</span> <span class="datatype">bool</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">initialize</span> <span class="modifier">virtual</span> <span class="keyword">as</span> <span class="datatype">bool</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">cleanup</span> <span class="modifier">virtual</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">onNewSocket</span> ( socket <span class="keyword">as</span> <a class="datatype" href="jk.socket.ConnectedSocket.html">jk.socket.ConnectedSocket</a> ) <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">addConnection</span> ( connection <span class="keyword">as</span> <a class="datatype" href="jk.server.NetworkConnection.html">jk.server.NetworkConnection</a> ) <span class="keyword">as</span> <span class="datatype">bool</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">onConnectionClosed</span> ( connection <span class="keyword">as</span> <a class="datatype" href="jk.server.NetworkConnection.html">jk.server.NetworkConnection</a> ) <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getReceiveBuffer</span> <span class="keyword">as</span> <span class="datatype">buffer</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getMaxConnections</span> <span class="keyword">as</span> <span class="datatype">int</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setMaxConnections</span> ( v <span class="keyword">as</span> <span class="datatype">int</span> ) <span class="keyword">as</span> <a class="datatype" href="jk.server.NetworkConnectionManager.html">jk.server.NetworkConnectionManager</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getRecvBufferSize</span> <span class="keyword">as</span> <span class="datatype">int</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setRecvBufferSize</span> ( v <span class="keyword">as</span> <span class="datatype">int</span> ) <span class="keyword">as</span> <a class="datatype" href="jk.server.NetworkConnectionManager.html">jk.server.NetworkConnectionManager</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getKeyFile</span> <span class="keyword">as</span> <a class="datatype" href="../../jk-core/0.37.0/jk.fs.File.html">jk.fs.File</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setKeyFile</span> ( v <span class="keyword">as</span> <a class="datatype" href="../../jk-core/0.37.0/jk.fs.File.html">jk.fs.File</a> ) <span class="keyword">as</span> <a class="datatype" href="jk.server.NetworkConnectionManager.html">jk.server.NetworkConnectionManager</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getCertFile</span> <span class="keyword">as</span> <a class="datatype" href="../../jk-core/0.37.0/jk.fs.File.html">jk.fs.File</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setCertFile</span> ( v <span class="keyword">as</span> <a class="datatype" href="../../jk-core/0.37.0/jk.fs.File.html">jk.fs.File</a> ) <span class="keyword">as</span> <a class="datatype" href="jk.server.NetworkConnectionManager.html">jk.server.NetworkConnectionManager</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getAcceptInvalidCertificate</span> <span class="keyword">as</span> <span class="datatype">bool</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setAcceptInvalidCertificate</span> ( v <span class="keyword">as</span> <span class="datatype">bool</span> ) <span class="keyword">as</span> <a class="datatype" href="jk.server.NetworkConnectionManager.html">jk.server.NetworkConnectionManager</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getPassphrase</span> <span class="keyword">as</span> <span class="datatype">string</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setPassphrase</span> ( v <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="keyword">as</span> <a class="datatype" href="jk.server.NetworkConnectionManager.html">jk.server.NetworkConnectionManager</a></div></div>
+</div>
+</div>
+</body>
+</html>

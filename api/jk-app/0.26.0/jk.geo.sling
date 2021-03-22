@@ -1,0 +1,135 @@
+interface name jk.geo.GeoCoderAddressListener header public
+{
+	import jk.lang
+	func onQueryAddressCompleted(address as jk.geo.PhysicalAddress)
+	func onQueryAddressErrorReceived(error as jk.lang.Error)
+}
+class name jk.geo.GeoLocation header implements jk.json.JSONObject public
+{
+	import jk.lang
+	import jk.json
+	ctor
+	func fromJsonObject(v as object) as bool
+	func toJsonObject as object
+	func getLatitude as double #getterMethod
+	func setLatitude(v as double) as jk.geo.GeoLocation #setterMethod
+	func getLongitude as double #getterMethod
+	func setLongitude(v as double) as jk.geo.GeoLocation #setterMethod
+}
+class name jk.geo.SnappedPoint header extends jk.json.JSONObjectAdapter implements jk.lang.StringObject public
+{
+	import jk.lang
+	import jk.json
+	ctor
+	func setPlaceId(value as string) as jk.geo.SnappedPoint
+	func getPlaceId as string
+	func setOriginalIndexValue(value as int) as jk.geo.SnappedPoint
+	func getOriginalIndexValue as int
+	func setOriginalIndex(value as jk.lang.IntegerObject) as jk.geo.SnappedPoint
+	func getOriginalIndex as jk.lang.IntegerObject
+	func setLocation(value as jk.geo.GeoLocation) as jk.geo.SnappedPoint
+	func getLocation as jk.geo.GeoLocation
+	func toJsonObject override as object
+	func fromJsonObject(o as object) override as bool
+	func fromJsonString(o as string) as bool
+	func toJsonString as string
+	func toString as string
+	func forJsonString(o as string) static as jk.geo.SnappedPoint
+	func forJsonObject(o as object) static as jk.geo.SnappedPoint
+}
+interface name jk.geo.GeoCoderLocationListener header public
+{
+	import jk.lang
+	func onQueryLocationCompleted(location as jk.geo.GeoLocation)
+	func onQueryLocationErrorReceived(error as jk.lang.Error)
+}
+class name jk.geo.PhysicalAddress header implements jk.lang.StringObject public
+{
+	import jk.lang
+	import jk.json
+	ctor
+	func forString(str as string) static as jk.geo.PhysicalAddress
+	func fromString(str as string)
+	func toString as string
+	func getLatitude as double #getterMethod
+	func setLatitude(v as double) as jk.geo.PhysicalAddress #setterMethod
+	func getLongitude as double #getterMethod
+	func setLongitude(v as double) as jk.geo.PhysicalAddress #setterMethod
+	func getCompleteAddress as string #getterMethod
+	func setCompleteAddress(v as string) as jk.geo.PhysicalAddress #setterMethod
+	func getCountry as string #getterMethod
+	func setCountry(v as string) as jk.geo.PhysicalAddress #setterMethod
+	func getCountryCode as string #getterMethod
+	func setCountryCode(v as string) as jk.geo.PhysicalAddress #setterMethod
+	func getAdministrativeArea as string #getterMethod
+	func setAdministrativeArea(v as string) as jk.geo.PhysicalAddress #setterMethod
+	func getSubAdministrativeArea as string #getterMethod
+	func setSubAdministrativeArea(v as string) as jk.geo.PhysicalAddress #setterMethod
+	func getLocality as string #getterMethod
+	func setLocality(v as string) as jk.geo.PhysicalAddress #setterMethod
+	func getSubLocality as string #getterMethod
+	func setSubLocality(v as string) as jk.geo.PhysicalAddress #setterMethod
+	func getStreetAddress as string #getterMethod
+	func setStreetAddress(v as string) as jk.geo.PhysicalAddress #setterMethod
+	func getStreetAddressDetail as string #getterMethod
+	func setStreetAddressDetail(v as string) as jk.geo.PhysicalAddress #setterMethod
+	func getPostalCode as string #getterMethod
+	func setPostalCode(v as string) as jk.geo.PhysicalAddress #setterMethod
+}
+class name jk.geo.RoadForGoogleMapsAPI header public
+{
+	import jk.lang
+	import jk.web
+	import jk.json
+	func forAPIKey(key as string) static as jk.geo.RoadForGoogleMapsAPI
+	ctor
+	func queryNearestRoads(points as vector<jk.lang.DynamicMap>, callback as function<void,vector<jk.geo.SnappedPoint>,jk.lang.Error>) as bool
+	func getApiKey as string #getterMethod
+	func setApiKey(v as string) as jk.geo.RoadForGoogleMapsAPI #setterMethod
+}
+class name jk.geo.SnapToRoadForGoogleMapsAPI header public
+{
+	import jk.lang
+	import jk.web
+	import jk.json
+	func forAPIKey(key as string) static as jk.geo.SnapToRoadForGoogleMapsAPI
+	ctor
+	func querySnapToRoads(point1 as jk.geo.GeoLocation, point2 as jk.geo.GeoLocation, callback as function<void,vector<jk.geo.SnappedPoint>,jk.lang.Error>, interpolate as bool = false)
+	func querySnapToRoads(points as vector<jk.geo.GeoLocation>, callback as function<void,vector<jk.geo.SnappedPoint>,jk.lang.Error>, interpolate as bool = false)
+	func getApiKey as string #getterMethod
+	func setApiKey(v as string) as jk.geo.SnapToRoadForGoogleMapsAPI #setterMethod
+}
+interface name jk.geo.GeoCoder header public
+{
+	import jk.lang
+	func queryAddress(latitude as double, longitude as double, listener as jk.geo.GeoCoderAddressListener) as bool
+	func queryLocation(address as string, listener as jk.geo.GeoCoderLocationListener) as bool
+}
+class name jk.geo.GeoCoderForGoogleMapsAPI header implements jk.geo.GeoCoder public
+{
+	import jk.lang
+	import jk.web
+	import jk.json
+	import jk.url
+	func forAPIKey(apiKey as string) static as jk.geo.GeoCoderForGoogleMapsAPI
+	ctor
+	func queryAddress(latitude as double, longitude as double, listener as jk.geo.GeoCoderAddressListener) as bool
+	func queryLocation(address as string, listener as jk.geo.GeoCoderLocationListener) as bool
+	func getApiKey as string #getterMethod
+	func setApiKey(v as string) as jk.geo.GeoCoderForGoogleMapsAPI #setterMethod
+}
+class name jk.geo.GeoLocationManager header abstract public
+{
+	import jk.lang
+	import jk.app
+	func forApplicationContext(context as jk.app.ApplicationContext) static as jk.geo.GeoLocationManager
+	ctor
+	func addListener(l as function<void,jk.geo.GeoLocation>)
+	func removeListener(l as function<void,jk.geo.GeoLocation>)
+	func removeAllListeners
+	func notifyListeners(location as jk.geo.GeoLocation)
+	func isLocationServiceEnabled abstract as bool
+	func startLocationUpdates(callback as function<void,bool>) abstract
+	func stopLocationUpdates abstract
+	func getLastLocation(callback as function<void,jk.geo.GeoLocation,jk.lang.Error>) abstract
+}

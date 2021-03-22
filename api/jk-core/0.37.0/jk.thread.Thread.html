@@ -1,0 +1,32 @@
+<html>
+<head>
+<title>jk.thread.Thread | JK Core [0.37.0] - API Reference</title>
+<link rel="stylesheet" type="text/css" href="style.css" />
+<meta name="viewport" content="initial-scale=1,maximum-scale=1" />
+<meta property="og:description" content="jk.thread.Thread | JK Core [0.37.0] - API Reference" />
+<meta property="og:title" content="jk.thread.Thread | JK Core [0.37.0] - API Reference" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:description" content="jk.thread.Thread | JK Core [0.37.0] - API Reference" />
+</head>
+<body><div class="content">
+<a class="back" href="index.html">&laquo; JK Core [0.37.0]</a><div class="intro">
+<h1><span class="keyword">class</span> <span class="symbol">jk.thread.Thread</span></h1>
+<p></p>
+</div>
+<div class="list">
+<div class="title">Static Methods</div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setLocalValue</span> ( id <span class="keyword">as</span> <span class="datatype">string</span> , value <span class="keyword">as</span> <span class="datatype">object</span> ) <span class="modifier">static</span> <span class="keyword">as</span> <span class="datatype">void</span></div><div class="description">Sets a value in the thread local storage (TLS) of the current thread. The value is identified with the
+given id, and can only be accessed from the current thread.</div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getLocalValue</span> ( id <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="modifier">static</span> <span class="keyword">as</span> <span class="datatype">object</span></div><div class="description">Gets a value from the thread local storage (TLS) of the current thread. The value is identified with the
+given id, and must have been set by a prior call to setLocalValue in the same thread where this method is called.</div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">removeLocalValue</span> ( id <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="modifier">static</span> <span class="keyword">as</span> <span class="datatype">void</span></div><div class="description">Removes a value from the thread local storage (TLS) of the current thread. The value is identified with the
+given id, and would have been set by a previous call to setLocalValue in the same thread where this method is called.</div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">start</span> ( runnable <span class="keyword">as</span> <a class="datatype" href="jk.lang.Runnable.html">jk.lang.Runnable</a> ) <span class="modifier">static</span> <span class="keyword">as</span> <a class="datatype" href="jk.thread.RunningThread.html">jk.thread.RunningThread</a></div></div>
+</div>
+</div>
+</body>
+</html>

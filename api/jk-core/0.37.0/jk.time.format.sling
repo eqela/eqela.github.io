@@ -1,0 +1,15 @@
+class name jk.time.format.VerboseDateTimeString header public
+{
+	import jk.lang
+	import jk.time
+	ctor
+	func forUTCNow static as string
+	func forNow static as string
+	func forDateTime(dd as jk.lang.DateTime) static as string
+	func getTimeStringForDateTime(dd as jk.lang.DateTime, includeTimeZone as bool = false) static as string
+	func getDateStringForDateTime(dd as jk.lang.DateTime) static as string
+	func getShortDayName(n as int) static as string
+	func getLongDayName(n as int) static as string
+	func getShortMonthName(n as int) static as string
+	func getLongMonthName(n as int) static as string
+}

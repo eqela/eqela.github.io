@@ -1,0 +1,13 @@
+{
+	"moduleDescription" : "",
+	"type" : "module",
+	"moduleTitle" : "",
+	"moduleId" : "jk.socket.ssl",
+	"entities" : [
+		{
+			"type" : "class",
+			"name" : "SSLSocket",
+			"description" : ""
+		}
+	]
+}

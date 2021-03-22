@@ -1,0 +1,33 @@
+{
+	"moduleDescription" : "Common unit tests for testing the overall functionality of the JK Data\nlibrary. Not intended to be used by client applications or derived\nlibraries.\n",
+	"type" : "module",
+	"moduleTitle" : "Unit tests for JK Data",
+	"moduleId" : "jk.data.tests",
+	"entities" : [
+		{
+			"type" : "class",
+			"name" : "MD5EncoderTests",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "Base64Tests",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "SHAEncoderTests",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "TestMain",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "CharacterDecoderTests",
+			"description" : ""
+		}
+	]
+}

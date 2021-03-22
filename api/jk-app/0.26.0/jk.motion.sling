@@ -1,0 +1,397 @@
+class name jk.motion.SpriteSceneWithEntities header extends jk.motion.SpriteScene implements jk.motion.EntityScene public
+{
+	import jk.ui
+	import jk.gfx
+	import jk.lang
+	ctor
+	func cleanup override
+	func tick(gameTime as jk.lang.TimeValue, delta as double) override
+	func onKeyEvent(event as jk.ui.KeyEvent) override
+	func onPointerEvent(event as jk.ui.PointerEvent) override
+	func grow
+	func addEntity(entity as jk.motion.Entity)
+	func removeEntity(entity as jk.motion.Entity)
+	func removeAllEntities
+}
+class name jk.motion.SceneManager header public
+{
+	import jk.ui
+	import jk.gfx
+	import jk.lang
+	func forScene(scene as jk.motion.Scene, backend as jk.motion.Backend) static as jk.motion.SceneManager
+	ctor
+	func initialize virtual
+	func start virtual
+	func stop virtual
+	func cleanup virtual
+	func getCurrentScene as jk.motion.Scene
+	func replaceScene(next as jk.motion.Scene)
+	func pushScene(scene as jk.motion.Scene)
+	func popScene
+	func getBackend as jk.motion.Backend #getterMethod
+	func setBackend(v as jk.motion.Backend) as jk.motion.SceneManager #setterMethod
+	func getContext as jk.ui.GuiApplicationContext #getterMethod
+	func setContext(v as jk.ui.GuiApplicationContext) as jk.motion.SceneManager #setterMethod
+}
+class name jk.motion.Backend header abstract public
+{
+	import jk.ui
+	import jk.gfx
+	import jk.lang
+	import jk.gfx.util
+	ctor
+	func createSpriteLayer abstract as jk.motion.SpriteLayer
+	func createImageFromResource(name as string) abstract as jk.gfx.Image
+	func createTextureForImage(image as jk.gfx.Image) abstract as jk.motion.Texture
+	func createTextureForColor(color as jk.gfx.Color) abstract as jk.motion.Texture
+	func deleteSpriteLayer(layer as jk.motion.SpriteLayer) abstract
+	func deleteTexture(texture as jk.motion.Texture) abstract
+	func deleteTextureSheet(textures as vector<jk.motion.Texture>) virtual
+	func createTextureForImageResource(name as string) virtual as jk.motion.Texture
+	func createTextureSheet(resourceId as string, props as jk.motion.TextureSheetProperties) virtual as vector<jk.motion.Texture>
+}
+interface name jk.motion.ContainerSprite header implements jk.motion.SpriteLayer implements jk.motion.Sprite public
+{
+	import jk.ui
+	import jk.gfx
+	import jk.lang
+}
+class name jk.motion.AudioManager header abstract public
+{
+	import jk.ui
+	import jk.gfx
+	import jk.lang
+	import jk.app
+	ctor
+	func forApplication(context as jk.app.ApplicationContext) static as jk.motion.AudioManager
+	func getClipForResource(id as string) abstract as jk.motion.AudioClip
+	func getStreamForResource(id as string) abstract as jk.motion.AudioStream
+}
+interface name jk.motion.AudioStream header public
+{
+	import jk.ui
+	import jk.gfx
+	import jk.lang
+	func play as bool
+	func pause as bool
+	func stop as bool
+	func seek(sec as int) as bool
+	func getCurrentTime as int
+	func getDuration as int
+	func setLooping(v as bool) as bool
+	func setVolume(v as double) as bool
+}
+class name jk.motion.AnimatedSpriteEntity header extends jk.motion.SpriteEntity public
+{
+	import jk.ui
+	import jk.gfx
+	import jk.lang
+	import jk.math
+	import jk.random
+	ctor
+	func initialize override
+	func setFrameImages(imgs as vector<jk.gfx.Image>, fps as long, width as double, height as double = 0.0) as bool
+	func setFrameTextures(imgs as vector<jk.motion.Texture>, fps as long, width as double, height as double = 0.0) as bool
+	func setRandomSpeed
+	func setFramesPerSecond(fps as int)
+	func tick(gameTime as jk.lang.TimeValue, delta as double) override
+	func getXSpeed as double #getterMethod
+	func setXSpeed(v as double) as jk.motion.AnimatedSpriteEntity #setterMethod
+	func getYSpeed as double #getterMethod
+	func setYSpeed(v as double) as jk.motion.AnimatedSpriteEntity #setterMethod
+	func getRotateSpeed as double #getterMethod
+	func setRotateSpeed(v as double) as jk.motion.AnimatedSpriteEntity #setterMethod
+}
+class name jk.motion.TextButtonEntity header extends jk.motion.MultiSpriteEntity implements jk.ui.PointerListener public
+{
+	import jk.ui
+	import jk.gfx
+	import jk.lang
+	func forText(text as string) static as jk.motion.TextButtonEntity
+	func forTextProperties(text as jk.motion.TextProperties) static as jk.motion.TextButtonEntity
+	ctor
+	func initialize override
+	func resize(width as double, height as double)
+	func onPressedChanged
+	func cleanup override
+	func getWidth as double
+	func getHeight as double
+	func layoutSprites(x as double, y as double) override
+	func onClicked virtual
+	func onPointerEvent(event as jk.ui.PointerEvent) as bool
+	func getBackgroundColor as jk.gfx.Color #getterMethod
+	func setBackgroundColor(v as jk.gfx.Color) as jk.motion.TextButtonEntity #setterMethod
+	func getPressedColor as jk.gfx.Color #getterMethod
+	func setPressedColor(v as jk.gfx.Color) as jk.motion.TextButtonEntity #setterMethod
+	func getText as jk.motion.TextProperties #getterMethod
+	func setText(v as jk.motion.TextProperties) as jk.motion.TextButtonEntity #setterMethod
+	func getClickHandler as function<void> #getterMethod
+	func setClickHandler(v as function<void>) as jk.motion.TextButtonEntity #setterMethod
+}
+class name jk.motion.Entity header public
+{
+	import jk.ui
+	import jk.gfx
+	import jk.lang
+	ctor
+	var index public as int
+	var scene protected as jk.motion.EntityScene
+	func setScene(scene as jk.motion.EntityScene) virtual
+	func getScene as jk.motion.EntityScene
+	func initialize virtual
+	func cleanup virtual
+	func tick(gameTime as jk.lang.TimeValue, delta as double) virtual
+	func remove
+}
+class name jk.motion.MultiSpriteEntity header extends jk.motion.Entity public
+{
+	import jk.ui
+	import jk.gfx
+	import jk.lang
+	ctor
+	var layer protected as jk.motion.SpriteLayer
+	func layoutSprites(x as double, y as double) virtual
+	func initialize override
+	func cleanup override
+	func move(x as double, y as double)
+	func onLayout
+	func getX as double
+	func getY as double
+}
+interface name jk.motion.AudioClip header public
+{
+	import jk.ui
+	import jk.gfx
+	import jk.lang
+	func play as bool
+}
+class name jk.motion.SpriteUtil header public
+{
+	import jk.ui
+	import jk.gfx
+	import jk.lang
+	ctor
+	func addColorSprite(scene as jk.motion.Scene, layer as jk.motion.SpriteLayer, color as jk.gfx.Color, width as double) static as jk.motion.TextureSprite
+	func addColorSprite(scene as jk.motion.Scene, layer as jk.motion.SpriteLayer, color as jk.gfx.Color, width as double, height as double) static as jk.motion.TextureSprite
+	func addTextureSpriteForWidth(scene as jk.motion.Scene, layer as jk.motion.SpriteLayer, texture as jk.motion.Texture, width as double) static as jk.motion.TextureSprite
+	func addTextureSpriteForHeight(scene as jk.motion.Scene, layer as jk.motion.SpriteLayer, texture as jk.motion.Texture, height as double) static as jk.motion.TextureSprite
+	func addTextureSpriteForSize(scene as jk.motion.Scene, layer as jk.motion.SpriteLayer, texture as jk.motion.Texture, width as double, height as double) static as jk.motion.TextureSprite
+	func addTextSprite(scene as jk.motion.Scene, layer as jk.motion.SpriteLayer, text as string) static as jk.motion.TextSprite
+	func addTextSpriteWithAbsoluteSize(scene as jk.motion.Scene, layer as jk.motion.SpriteLayer, text as string, size as double) static as jk.motion.TextSprite
+	func addTextSpriteWithRelativeSize(scene as jk.motion.Scene, layer as jk.motion.SpriteLayer, text as string, size as double) static as jk.motion.TextSprite
+	func getAspectWidth(owidth as double, oheight as double, nwidth as double, nheight as double) static as double
+	func getAspectHeight(owidth as double, oheight as double, nwidth as double, nheight as double) static as double
+}
+class name jk.motion.Scene header public
+{
+	import jk.ui
+	import jk.gfx
+	import jk.lang
+	import jk.log
+	ctor
+	var manager protected as jk.motion.SceneManager
+	var backend protected as jk.motion.Backend
+	var context protected as jk.ui.GuiApplicationContext
+	func setContext(value as jk.ui.GuiApplicationContext)
+	func setManager(value as jk.motion.SceneManager) as jk.motion.Scene
+	func getManager as jk.motion.SceneManager
+	func setBackend(value as jk.motion.Backend) as jk.motion.Scene
+	func getBackend as jk.motion.Backend
+	func onPreInitialize(context as jk.ui.GuiApplicationContext) virtual
+	func initialize virtual
+	func start virtual
+	func onKeyEvent(event as jk.ui.KeyEvent) virtual
+	func onPointerEvent(event as jk.ui.PointerEvent) virtual
+	func tick(gameTime as jk.lang.TimeValue, delta as double) virtual
+	func stop virtual
+	func cleanup virtual
+	func createImageFromResource(name as string) as jk.gfx.Image
+	func createTextureForImageResource(name as string) as jk.motion.Texture
+	func createTextureForImage(image as jk.gfx.Image) as jk.motion.Texture
+	func createTextureForColor(color as jk.gfx.Color) as jk.motion.Texture
+	func deleteTexture(texture as jk.motion.Texture)
+	func replaceScene(scene as jk.motion.Scene)
+	func pushScene(scene as jk.motion.Scene)
+	func popScene
+}
+interface name jk.motion.TextureSprite header implements jk.motion.Sprite public
+{
+	import jk.ui
+	import jk.gfx
+	import jk.lang
+	func resize(width as double, height as double)
+	func setTexture(texture as jk.motion.Texture)
+	func setTextureWithSize(texture as jk.motion.Texture, width as double, height as double)
+}
+class name jk.motion.SpriteEntity header implements jk.motion.Sprite extends jk.motion.Entity public
+{
+	import jk.ui
+	import jk.gfx
+	import jk.lang
+	ctor
+	var sprite protected as jk.motion.Sprite
+	var layer protected as jk.motion.SpriteLayer
+	func createSprite virtual as jk.motion.Sprite
+	func initialize override
+	func initializeSprite virtual
+	func cleanup override
+	func cleanupSprite virtual
+	func onMoved(x as double, y as double) virtual
+	func move(x as double, y as double)
+	func resize(w as double, h as double)
+	func scale(scalex as double, scaley as double)
+	func setRotation(angle as double)
+	func setAlpha(alpha as double)
+	func getX as double
+	func getY as double
+	func getWidth as double
+	func getHeight as double
+	func getRotation as double
+	func getAlpha as double
+	func getScaleX as double
+	func getScaleY as double
+	func removeFromContainer
+}
+class name jk.motion.TextureSheetProperties header public
+{
+	import jk.ui
+	import jk.gfx
+	import jk.lang
+	ctor
+	func forColsRows(cols as int, rows as int, maxImages as int = -1) static as jk.motion.TextureSheetProperties
+	func forWidthHeight(width as int, height as int, maxImages as int = -1) static as jk.motion.TextureSheetProperties
+	func getCols as int #getterMethod
+	func setCols(v as int) as jk.motion.TextureSheetProperties #setterMethod
+	func getRows as int #getterMethod
+	func setRows(v as int) as jk.motion.TextureSheetProperties #setterMethod
+	func getSourceSkipX as int #getterMethod
+	func setSourceSkipX(v as int) as jk.motion.TextureSheetProperties #setterMethod
+	func getSourceSkipY as int #getterMethod
+	func setSourceSkipY(v as int) as jk.motion.TextureSheetProperties #setterMethod
+	func getSourceImageWidth as int #getterMethod
+	func setSourceImageWidth(v as int) as jk.motion.TextureSheetProperties #setterMethod
+	func getSourceImageHeight as int #getterMethod
+	func setSourceImageHeight(v as int) as jk.motion.TextureSheetProperties #setterMethod
+	func getMaxImages as int #getterMethod
+	func setMaxImages(v as int) as jk.motion.TextureSheetProperties #setterMethod
+	func getResizeToWidth as int #getterMethod
+	func setResizeToWidth(v as int) as jk.motion.TextureSheetProperties #setterMethod
+	func getResizeToHeight as int #getterMethod
+	func setResizeToHeight(v as int) as jk.motion.TextureSheetProperties #setterMethod
+}
+interface name jk.motion.Sprite header public
+{
+	import jk.ui
+	import jk.gfx
+	import jk.lang
+	func move(x as double, y as double)
+	func scale(scalex as double, scaley as double)
+	func setRotation(angle as double)
+	func setAlpha(alpha as double)
+	func getX as double
+	func getY as double
+	func getWidth as double
+	func getHeight as double
+	func getRotation as double
+	func getAlpha as double
+	func getScaleX as double
+	func getScaleY as double
+	func removeFromContainer
+}
+class name jk.motion.TextProperties header public
+{
+	import jk.ui
+	import jk.gfx
+	import jk.lang
+	import jk.fs
+	func forText(tt as string) static as jk.motion.TextProperties
+	ctor
+	func getText as string #getterMethod
+	func setText(v as string) as jk.motion.TextProperties #setterMethod
+	func getTextColor as jk.gfx.Color #getterMethod
+	func setTextColor(v as jk.gfx.Color) as jk.motion.TextProperties #setterMethod
+	func getBackgroundColor as jk.gfx.Color #getterMethod
+	func setBackgroundColor(v as jk.gfx.Color) as jk.motion.TextProperties #setterMethod
+	func getFontFamily as string #getterMethod
+	func setFontFamily(v as string) as jk.motion.TextProperties #setterMethod
+	func getFontResource as string #getterMethod
+	func setFontResource(v as string) as jk.motion.TextProperties #setterMethod
+	func getFontFile as jk.fs.File #getterMethod
+	func setFontFile(v as jk.fs.File) as jk.motion.TextProperties #setterMethod
+	func getFontIsItalic as bool #getterMethod
+	func setFontIsItalic(v as bool) as jk.motion.TextProperties #setterMethod
+	func getFontIsBold as bool #getterMethod
+	func setFontIsBold(v as bool) as jk.motion.TextProperties #setterMethod
+	func getFontSizeRelative as double #getterMethod
+	func setFontSizeRelative(v as double) as jk.motion.TextProperties #setterMethod
+	func getFontSizeAbsolute as double #getterMethod
+	func setFontSizeAbsolute(v as double) as jk.motion.TextProperties #setterMethod
+	func getFontSizeDescription as string #getterMethod
+	func setFontSizeDescription(v as string) as jk.motion.TextProperties #setterMethod
+}
+interface name jk.motion.TextSprite header implements jk.motion.Sprite public
+{
+	import jk.ui
+	import jk.gfx
+	import jk.lang
+	func setText(text as jk.motion.TextProperties)
+}
+interface name jk.motion.EntityScene header extends jk.motion.Scene public
+{
+	import jk.ui
+	import jk.gfx
+	import jk.lang
+	func addEntity(entity as jk.motion.Entity)
+	func removeEntity(entity as jk.motion.Entity)
+	func removeAllEntities
+}
+interface name jk.motion.SpriteLayer header public
+{
+	import jk.ui
+	import jk.gfx
+	import jk.lang
+	func addTextureSpriteForSize(texture as jk.motion.Texture, width as double, height as double) as jk.motion.TextureSprite
+	func addTextSprite(text as jk.motion.TextProperties) as jk.motion.TextSprite
+	func addContainerSprite(width as double, height as double) as jk.motion.ContainerSprite
+	func removeSprite(sprite as jk.motion.Sprite)
+	func removeAllSprites
+	func setReferenceWidth(referenceWidth as double)
+	func setReferenceHeight(referenceHeight as double)
+	func getReferenceWidth as double
+	func getReferenceHeight as double
+	func getHeightValue(spec as string) as double
+	func getWidthValue(spec as string) as double
+}
+interface name jk.motion.Texture header public
+{
+	import jk.ui
+	import jk.gfx
+	import jk.lang
+	func getPixelWidth as int
+	func getPixelHeight as int
+}
+class name jk.motion.SpriteScene header extends jk.motion.Scene implements jk.motion.SpriteLayer public
+{
+	import jk.ui
+	import jk.gfx
+	import jk.lang
+	ctor
+	var layer protected as jk.motion.SpriteLayer
+	func getLayer as jk.motion.SpriteLayer
+	func setBackgroundColor(color as jk.gfx.Color)
+	func getBackgroundTexture as jk.motion.Texture
+	func initialize override
+	func cleanup override
+	func onPointerEvent(event as jk.ui.PointerEvent) override
+	func addTextureSpriteForSize(texture as jk.motion.Texture, width as double, height as double) as jk.motion.TextureSprite
+	func addTextSprite(text as jk.motion.TextProperties) as jk.motion.TextSprite
+	func addContainerSprite(width as double, height as double) as jk.motion.ContainerSprite
+	func removeSprite(sprite as jk.motion.Sprite)
+	func removeAllSprites
+	func setReferenceWidth(referenceWidth as double)
+	func setReferenceHeight(referenceHeight as double)
+	func getReferenceWidth as double
+	func getReferenceHeight as double
+	func getHeightValue(spec as string) as double
+	func getWidthValue(spec as string) as double
+}

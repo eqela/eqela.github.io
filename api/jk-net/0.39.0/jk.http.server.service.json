@@ -1,0 +1,13 @@
+{
+	"moduleDescription" : "",
+	"type" : "module",
+	"moduleTitle" : "",
+	"moduleId" : "jk.http.server.service",
+	"entities" : [
+		{
+			"type" : "class",
+			"name" : "HTTPServerService",
+			"description" : ""
+		}
+	]
+}

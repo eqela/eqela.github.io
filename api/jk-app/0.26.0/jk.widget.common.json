@@ -1,0 +1,198 @@
+{
+	"moduleDescription" : "",
+	"type" : "module",
+	"moduleTitle" : "",
+	"moduleId" : "jk.widget.common",
+	"entities" : [
+		{
+			"type" : "class",
+			"name" : "ToolbarWidget",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "CheckBoxWidget",
+			"description" : ""
+		},
+		{
+			"type" : "interface",
+			"name" : "ActionBarControlWidget",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "ActionBarWidget",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "PopupDialogManager",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "PopupWidget",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "CustomScrollBarWidget",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "TextInputWidget",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "SplashScreenWidget",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "SelectSearchWidget",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "VerticalScrollerWithToolbarWidget",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "AutoSuggestInputWidget",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "ProgressBarWidget",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "RoundedTextBoxWidget",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "RadioButtonGroupWidget",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "RouteNavigationWidget",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "PopupMenu",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "SwitcherLayerWidget",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "TableWidget",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "ButtonWithImageWidget",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "SpinnerWidget",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "NavigationFrameWidget",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "RadioButtonWidget",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "DateSelectorWidget",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "LoadingWidget",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "TextAreaWidget",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "TopMarginLayerWidget",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "RangePickerWidget",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "NavigationWidget",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "SelectWidget",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "HyperLinkWidget",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "TextButtonWidget",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "DynamicVerticalScrollerWidget",
+			"description" : "The DynamicVerticalScrollerWidget implements a vertically scrolling area, composed of a series\nof widgets that are stacked vertically and are scrollable. The widgets themselves are created dynamically\nas needed as the user scrolls the list. This way, it is possible to add \"infinite scrollers\" or scrollers\nthat would have a very large number of elements."
+		},
+		{
+			"type" : "class",
+			"name" : "ButtonWidget",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "RoundedImageWidget",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "ImageButtonWidget",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "SidebarWidget",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "MenuBarWidget",
+			"description" : ""
+		}
+	]
+}

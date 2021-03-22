@@ -1,0 +1,27 @@
+class name jk.http.server.cookie.HTTPServerCookie header implements jk.lang.StringObject public
+{
+	import jk.lang
+	func forKeyValue(key as string, value as string) static as jk.http.server.cookie.HTTPServerCookie
+	func forDeleteKey(key as string) static as jk.http.server.cookie.HTTPServerCookie
+	ctor
+	ctor(key as string, value as string)
+	func toString as string
+	func getKey as string #getterMethod
+	func setKey(v as string) as jk.http.server.cookie.HTTPServerCookie #setterMethod
+	func getValue as string #getterMethod
+	func setValue(v as string) as jk.http.server.cookie.HTTPServerCookie #setterMethod
+	func getMaxAge as int #getterMethod
+	func setMaxAge(v as int) as jk.http.server.cookie.HTTPServerCookie #setterMethod
+	func getExpires as string #getterMethod
+	func setExpires(v as string) as jk.http.server.cookie.HTTPServerCookie #setterMethod
+	func getPath as string #getterMethod
+	func setPath(v as string) as jk.http.server.cookie.HTTPServerCookie #setterMethod
+	func getDomain as string #getterMethod
+	func setDomain(v as string) as jk.http.server.cookie.HTTPServerCookie #setterMethod
+	func getSecure as bool #getterMethod
+	func setSecure(v as bool) as jk.http.server.cookie.HTTPServerCookie #setterMethod
+	func getHttpOnly as bool #getterMethod
+	func setHttpOnly(v as bool) as jk.http.server.cookie.HTTPServerCookie #setterMethod
+	func getSameSite as string #getterMethod
+	func setSameSite(v as string) as jk.http.server.cookie.HTTPServerCookie #setterMethod
+}

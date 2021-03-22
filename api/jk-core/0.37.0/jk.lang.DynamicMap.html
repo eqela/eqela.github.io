@@ -1,0 +1,111 @@
+<html>
+<head>
+<title>jk.lang.DynamicMap | JK Core [0.37.0] - API Reference</title>
+<link rel="stylesheet" type="text/css" href="style.css" />
+<meta name="viewport" content="initial-scale=1,maximum-scale=1" />
+<meta property="og:description" content="jk.lang.DynamicMap | JK Core [0.37.0] - API Reference" />
+<meta property="og:title" content="jk.lang.DynamicMap | JK Core [0.37.0] - API Reference" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:description" content="jk.lang.DynamicMap | JK Core [0.37.0] - API Reference" />
+</head>
+<body><div class="content">
+<a class="back" href="index.html">&laquo; JK Core [0.37.0]</a><div class="intro">
+<h1><span class="keyword">class</span> <span class="symbol">jk.lang.DynamicMap</span></h1>
+<p></p>
+</div>
+<div class="list">
+<div class="title">Base Types</div>
+<div class="entry">
+<div class="name"><span class="keyword">implements</span> <a class="datatype" href="jk.lang.Duplicateable.html">jk.lang.Duplicateable</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">implements</span> <a class="datatype" href="jk.lang.Iterateable.html">jk.lang.Iterateable&lt;string&gt;</a></div></div>
+</div>
+<div class="list">
+<div class="title">Static Methods</div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">asDynamicMap</span> ( value <span class="keyword">as</span> <span class="datatype">dynamic</span> ) <span class="modifier">static</span> <span class="keyword">as</span> <a class="datatype" href="jk.lang.DynamicMap.html">jk.lang.DynamicMap</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">forObjectMap</span> ( map <span class="keyword">as</span> <span class="datatype">map</span> ) <span class="modifier">static</span> <span class="keyword">as</span> <a class="datatype" href="jk.lang.DynamicMap.html">jk.lang.DynamicMap</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">forStringMap</span> ( map <span class="keyword">as</span> <span class="datatype">map&lt;string,string&gt;</span> ) <span class="modifier">static</span> <span class="keyword">as</span> <a class="datatype" href="jk.lang.DynamicMap.html">jk.lang.DynamicMap</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">forDynamicMaps</span> ( map1 <span class="keyword">as</span> <a class="datatype" href="jk.lang.DynamicMap.html">jk.lang.DynamicMap</a> , map2 <span class="keyword">as</span> <a class="datatype" href="jk.lang.DynamicMap.html">jk.lang.DynamicMap</a> ) <span class="modifier">static</span> <span class="keyword">as</span> <a class="datatype" href="jk.lang.DynamicMap.html">jk.lang.DynamicMap</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">forDynamicMap</span> ( map <span class="keyword">as</span> <a class="datatype" href="jk.lang.DynamicMap.html">jk.lang.DynamicMap</a> ) <span class="modifier">static</span> <span class="keyword">as</span> <a class="datatype" href="jk.lang.DynamicMap.html">jk.lang.DynamicMap</a></div></div>
+</div>
+<div class="list">
+<div class="title">Instance Methods</div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">asMap</span> <span class="keyword">as</span> <span class="datatype">map&lt;string,object&gt;</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">asStringMap</span> <span class="keyword">as</span> <span class="datatype">map&lt;string,string&gt;</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">toStringMap</span> <span class="keyword">as</span> <span class="datatype">map&lt;string,string&gt;</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">toObjectMap</span> <span class="keyword">as</span> <span class="datatype">map</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">duplicate</span> <span class="keyword">as</span> <span class="datatype">object</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">duplicateMap</span> <span class="keyword">as</span> <a class="datatype" href="jk.lang.DynamicMap.html">jk.lang.DynamicMap</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">mergeFrom</span> ( other <span class="keyword">as</span> <a class="datatype" href="jk.lang.DynamicMap.html">jk.lang.DynamicMap</a> ) <span class="keyword">as</span> <a class="datatype" href="jk.lang.DynamicMap.html">jk.lang.DynamicMap</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setObject</span> ( key <span class="keyword">as</span> <span class="datatype">string</span> , value <span class="keyword">as</span> <span class="datatype">object</span> ) <span class="keyword">as</span> <a class="datatype" href="jk.lang.DynamicMap.html">jk.lang.DynamicMap</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setString</span> ( key <span class="keyword">as</span> <span class="datatype">string</span> , value <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="keyword">as</span> <a class="datatype" href="jk.lang.DynamicMap.html">jk.lang.DynamicMap</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setBuffer</span> ( key <span class="keyword">as</span> <span class="datatype">string</span> , value <span class="keyword">as</span> <span class="datatype">buffer</span> ) <span class="keyword">as</span> <a class="datatype" href="jk.lang.DynamicMap.html">jk.lang.DynamicMap</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setInteger</span> ( key <span class="keyword">as</span> <span class="datatype">string</span> , value <span class="keyword">as</span> <span class="datatype">int</span> ) <span class="keyword">as</span> <a class="datatype" href="jk.lang.DynamicMap.html">jk.lang.DynamicMap</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setLong</span> ( key <span class="keyword">as</span> <span class="datatype">string</span> , value <span class="keyword">as</span> <span class="datatype">long</span> ) <span class="keyword">as</span> <a class="datatype" href="jk.lang.DynamicMap.html">jk.lang.DynamicMap</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setLongInteger</span> ( key <span class="keyword">as</span> <span class="datatype">string</span> , value <span class="keyword">as</span> <span class="datatype">long</span> ) <span class="keyword">as</span> <a class="datatype" href="jk.lang.DynamicMap.html">jk.lang.DynamicMap</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setBoolean</span> ( key <span class="keyword">as</span> <span class="datatype">string</span> , value <span class="keyword">as</span> <span class="datatype">bool</span> ) <span class="keyword">as</span> <a class="datatype" href="jk.lang.DynamicMap.html">jk.lang.DynamicMap</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setDouble</span> ( key <span class="keyword">as</span> <span class="datatype">string</span> , value <span class="keyword">as</span> <span class="datatype">double</span> ) <span class="keyword">as</span> <a class="datatype" href="jk.lang.DynamicMap.html">jk.lang.DynamicMap</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">get</span> ( key <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="keyword">as</span> <span class="datatype">object</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getString</span> ( key <span class="keyword">as</span> <span class="datatype">string</span> , defval <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="keyword">as</span> <span class="datatype">string</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getInteger</span> ( key <span class="keyword">as</span> <span class="datatype">string</span> , defval <span class="keyword">as</span> <span class="datatype">int</span> ) <span class="keyword">as</span> <span class="datatype">int</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getLongInteger</span> ( key <span class="keyword">as</span> <span class="datatype">string</span> , defval <span class="keyword">as</span> <span class="datatype">long</span> ) <span class="keyword">as</span> <span class="datatype">long</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getBoolean</span> ( key <span class="keyword">as</span> <span class="datatype">string</span> , defval <span class="keyword">as</span> <span class="datatype">bool</span> ) <span class="keyword">as</span> <span class="datatype">bool</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getDouble</span> ( key <span class="keyword">as</span> <span class="datatype">string</span> , defval <span class="keyword">as</span> <span class="datatype">double</span> ) <span class="keyword">as</span> <span class="datatype">double</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getBuffer</span> ( key <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="keyword">as</span> <span class="datatype">buffer</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getDynamicVector</span> ( key <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="keyword">as</span> <a class="datatype" href="jk.lang.DynamicVector.html">jk.lang.DynamicVector</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getVector</span> ( key <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="keyword">as</span> <span class="datatype">vector</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getDynamicMap</span> ( key <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="keyword">as</span> <a class="datatype" href="jk.lang.DynamicMap.html">jk.lang.DynamicMap</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getKeys</span> <span class="keyword">as</span> <span class="datatype">vector&lt;string&gt;</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getValues</span> <span class="keyword">as</span> <span class="datatype">vector</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">iterate</span> <span class="keyword">as</span> <a class="datatype" href="jk.lang.Iterator.html">jk.lang.Iterator&lt;string&gt;</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">iterateKeys</span> <span class="keyword">as</span> <a class="datatype" href="jk.lang.Iterator.html">jk.lang.Iterator&lt;string&gt;</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">iterateValues</span> <span class="keyword">as</span> <a class="datatype" href="jk.lang.Iterator.html">jk.lang.Iterator&lt;object&gt;</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">remove</span> ( key <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">clear</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getCount</span> <span class="keyword">as</span> <span class="datatype">int</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">containsKey</span> ( key <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="keyword">as</span> <span class="datatype">bool</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">removeNullValues</span> <span class="keyword">as</span> <a class="datatype" href="jk.lang.DynamicMap.html">jk.lang.DynamicMap</a></div></div>
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,53 @@
+{
+	"moduleDescription" : "Functionality that can be used in the implementation of text-mode applications\nused on the console or command line.\n",
+	"type" : "module",
+	"moduleTitle" : "Text-mode console support",
+	"moduleId" : "jk.console",
+	"entities" : [
+		{
+			"type" : "class",
+			"name" : "ConsoleApplicationUtil",
+			"description" : "Common utility functions for command line applications."
+		},
+		{
+			"type" : "class",
+			"name" : "Stdin",
+			"description" : "Implementation of the standard input stream."
+		},
+		{
+			"type" : "class",
+			"name" : "ArgumentVector",
+			"description" : "Provides a convenient utility for interpreting and parsing command line\nargument arrays and vectors."
+		},
+		{
+			"type" : "class",
+			"name" : "ConsoleApplicationMain",
+			"description" : "A common base class for command line applications."
+		},
+		{
+			"type" : "class",
+			"name" : "Stdout",
+			"description" : "Implementation of the standard output stream."
+		},
+		{
+			"type" : "class",
+			"name" : "Terminal",
+			"description" : "Represents the text mode terminal and provides functionality for raw input\nand customized drawing features."
+		},
+		{
+			"type" : "class",
+			"name" : "UsageInfo",
+			"description" : "A utility class for constructing usage instructions for end-users of\ncommand-line applications."
+		},
+		{
+			"type" : "class",
+			"name" : "ConsoleApplicationContext",
+			"description" : "An implementation of ApplicationContext that represents a command line\napplication intended to be used on a text mode terminal."
+		},
+		{
+			"type" : "class",
+			"name" : "CommandLineArgument",
+			"description" : "Represents a single comment line argument and provides convenience methods\nfor accessing its value."
+		}
+	]
+}

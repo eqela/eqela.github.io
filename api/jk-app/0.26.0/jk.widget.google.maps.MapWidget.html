@@ -1,0 +1,121 @@
+<html>
+<head>
+<title>jk.widget.google.maps.MapWidget | JK App [0.26.0] - API Reference</title>
+<link rel="stylesheet" type="text/css" href="style.css" />
+<meta name="viewport" content="initial-scale=1,maximum-scale=1" />
+<meta property="og:description" content="jk.widget.google.maps.MapWidget | JK App [0.26.0] - API Reference" />
+<meta property="og:title" content="jk.widget.google.maps.MapWidget | JK App [0.26.0] - API Reference" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:description" content="jk.widget.google.maps.MapWidget | JK App [0.26.0] - API Reference" />
+</head>
+<body><div class="content">
+<a class="back" href="index.html">&laquo; JK App [0.26.0]</a><div class="intro">
+<h1><span class="keyword">class</span> <span class="symbol">jk.widget.google.maps.MapWidget</span></h1>
+<p></p>
+</div>
+<div class="list">
+<div class="title">Base Types</div>
+<div class="entry">
+<div class="name"><span class="keyword">implements</span> <a class="datatype" href="jk.widget.ParentAwareWidget.html">jk.widget.ParentAwareWidget</a></div></div>
+</div>
+<div class="list">
+<div class="title">Static Methods</div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">forApiKeys</span> ( context <span class="keyword">as</span> <a class="datatype" href="jk.ui.GuiApplicationContext.html">jk.ui.GuiApplicationContext</a> , webApiKey <span class="keyword">as</span> <span class="datatype">string</span> , iosApiKey <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="modifier">static</span> <span class="keyword">as</span> <a class="datatype" href="jk.widget.google.maps.MapWidget.html">jk.widget.google.maps.MapWidget</a></div></div>
+</div>
+<div class="list">
+<div class="title">Instance Methods</div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">onWidgetAddingToParent</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">onWidgetAddedToParent</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">onWidgetRemovedFromParent</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">onMarkerClicked</span> ( marker <span class="keyword">as</span> <span class="datatype">object</span> ) <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">addMapClickHandler</span> ( handler <span class="keyword">as</span> <span class="datatype">function&lt;void,double,double&gt;</span> ) <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">addMapMarker</span> ( lat <span class="keyword">as</span> <span class="datatype">double</span> , lon <span class="keyword">as</span> <span class="datatype">double</span> , label <span class="keyword">as</span> <span class="datatype">string</span> , title <span class="keyword">as</span> <span class="datatype">string</span> , icon <span class="keyword">as</span> <a class="datatype" href="../../jk-gfx/0.21.0/jk.gfx.Image.html">jk.gfx.Image</a> ) <span class="keyword">as</span> <a class="datatype" href="jk.widget.google.maps.MapMarker.html">jk.widget.google.maps.MapMarker</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">placeQueuedMarkers</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">moveToCenter</span> ( lat <span class="keyword">as</span> <span class="datatype">double</span> , lon <span class="keyword">as</span> <span class="datatype">double</span> , animated <span class="keyword">as</span> <span class="datatype">bool</span> ) <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">moveCamera</span> ( camera <span class="keyword">as</span> <span class="datatype">jk.widget.google.maps.MapWidget.MapCamera</span> , animated <span class="keyword">as</span> <span class="datatype">bool</span> ) <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">zoomToCoordinates</span> ( coors <span class="keyword">as</span> <span class="datatype">vector&lt;jk.lang.DynamicMap&gt;</span> , animated <span class="keyword">as</span> <span class="datatype">bool</span> ) <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">doZoomToCoordinates</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getMapCenterLatitude</span> <span class="keyword">as</span> <span class="datatype">double</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getMapCenterLongitude</span> <span class="keyword">as</span> <span class="datatype">double</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getMapZoom</span> <span class="keyword">as</span> <span class="datatype">double</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getMapBearing</span> <span class="keyword">as</span> <span class="datatype">double</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getMapTilt</span> <span class="keyword">as</span> <span class="datatype">double</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">clearMapMarkers</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getMapCenterLocationAsDynamicMap</span> <span class="keyword">as</span> <a class="datatype" href="../../jk-core/0.37.0/jk.lang.DynamicMap.html">jk.lang.DynamicMap</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">onCameraStartMoving</span> ( dueToGesture <span class="keyword">as</span> <span class="datatype">bool</span> ) <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">onCameraMoving</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">onCameraStopMoving</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setMapCanBeZoom</span> ( enable <span class="keyword">as</span> <span class="datatype">bool</span> ) <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setMapCanBeTilt</span> ( enable <span class="keyword">as</span> <span class="datatype">bool</span> ) <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setMapCanBeRotate</span> ( enable <span class="keyword">as</span> <span class="datatype">bool</span> ) <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setMapHasMyLocation</span> ( enable <span class="keyword">as</span> <span class="datatype">bool</span> ) <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getWebApiKey</span> <span class="keyword">as</span> <span class="datatype">string</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setWebApiKey</span> ( v <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="keyword">as</span> <a class="datatype" href="jk.widget.google.maps.MapWidget.html">jk.widget.google.maps.MapWidget</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getCenterLat</span> <span class="keyword">as</span> <span class="datatype">double</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setCenterLat</span> ( v <span class="keyword">as</span> <span class="datatype">double</span> ) <span class="keyword">as</span> <a class="datatype" href="jk.widget.google.maps.MapWidget.html">jk.widget.google.maps.MapWidget</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getCenterLon</span> <span class="keyword">as</span> <span class="datatype">double</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setCenterLon</span> ( v <span class="keyword">as</span> <span class="datatype">double</span> ) <span class="keyword">as</span> <a class="datatype" href="jk.widget.google.maps.MapWidget.html">jk.widget.google.maps.MapWidget</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getDefaultZoomLevel</span> <span class="keyword">as</span> <span class="datatype">int</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setDefaultZoomLevel</span> ( v <span class="keyword">as</span> <span class="datatype">int</span> ) <span class="keyword">as</span> <a class="datatype" href="jk.widget.google.maps.MapWidget.html">jk.widget.google.maps.MapWidget</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getZoomInCenter</span> <span class="keyword">as</span> <span class="datatype">bool</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setZoomInCenter</span> ( v <span class="keyword">as</span> <span class="datatype">bool</span> ) <span class="keyword">as</span> <a class="datatype" href="jk.widget.google.maps.MapWidget.html">jk.widget.google.maps.MapWidget</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getStreetViewEnabled</span> <span class="keyword">as</span> <span class="datatype">bool</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setStreetViewEnabled</span> ( v <span class="keyword">as</span> <span class="datatype">bool</span> ) <span class="keyword">as</span> <a class="datatype" href="jk.widget.google.maps.MapWidget.html">jk.widget.google.maps.MapWidget</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getMarkerSize</span> <span class="keyword">as</span> <span class="datatype">int</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setMarkerSize</span> ( v <span class="keyword">as</span> <span class="datatype">int</span> ) <span class="keyword">as</span> <a class="datatype" href="jk.widget.google.maps.MapWidget.html">jk.widget.google.maps.MapWidget</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getWidgetMapCameraStartMovingHandler</span> <span class="keyword">as</span> <span class="datatype">function&lt;void,bool&gt;</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setWidgetMapCameraStartMovingHandler</span> ( v <span class="keyword">as</span> <span class="datatype">function&lt;void,bool&gt;</span> ) <span class="keyword">as</span> <a class="datatype" href="jk.widget.google.maps.MapWidget.html">jk.widget.google.maps.MapWidget</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getWidgetMapCameraMovingHandler</span> <span class="keyword">as</span> <span class="datatype">function&lt;void&gt;</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setWidgetMapCameraMovingHandler</span> ( v <span class="keyword">as</span> <span class="datatype">function&lt;void&gt;</span> ) <span class="keyword">as</span> <a class="datatype" href="jk.widget.google.maps.MapWidget.html">jk.widget.google.maps.MapWidget</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getWidgetMapCameraStopMovingHandler</span> <span class="keyword">as</span> <span class="datatype">function&lt;void&gt;</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setWidgetMapCameraStopMovingHandler</span> ( v <span class="keyword">as</span> <span class="datatype">function&lt;void&gt;</span> ) <span class="keyword">as</span> <a class="datatype" href="jk.widget.google.maps.MapWidget.html">jk.widget.google.maps.MapWidget</a></div></div>
+</div>
+</div>
+</body>
+</html>

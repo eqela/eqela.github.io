@@ -1,0 +1,478 @@
+<html>
+<head>
+<title>JK Core [0.37.0] - API Reference</title>
+<link rel="stylesheet" type="text/css" href="style.css" />
+<meta name="viewport" content="initial-scale=1,maximum-scale=1" />
+<meta property="og:description" content="Core fundamental framework for software application development,
+including features for data structures, string manipulation, filesystem access,
+I/O, threading and other commonly used operating system features.
+" />
+<meta property="og:title" content="JK Core [0.37.0] - API Reference" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:description" content="Core fundamental framework for software application development,
+including features for data structures, string manipulation, filesystem access,
+I/O, threading and other commonly used operating system features.
+" />
+</head>
+<body><div class="content">
+<div class="intro">
+<h1>JK Core [0.37.0] <span class="version">- API Reference</span></h1>
+<p><span class="code">eqela:jk-core:0.37.0</span></p><p>Core fundamental framework for software application development,
+including features for data structures, string manipulation, filesystem access,
+I/O, threading and other commonly used operating system features.
+</p>
+</div>
+<div class="list">
+<div class="titlebox"><h1>jk.app<span class="additional"> - Application context</span></h1><p>Application abstraction that can be used in the implementation of
+different kinds of application types.
+</p>
+</div>
+<div class="entry">
+<div class="name"><span class="keyword">interface</span> <a class="datatype" href="jk.app.ApplicationContext.html">ApplicationContext</a></div><div class="description">An ApplicationContext represents the environment in which an application executes. The implementation of this is system dependent, and depending on the actual environment, the object that implements ApplicationContext may also implement other interfaces that provide additional features into that particular environment.</div></div>
+</div>
+<div class="list">
+<div class="titlebox"><h1>jk.console<span class="additional"> - Text-mode console support</span></h1><p>Functionality that can be used in the implementation of text-mode applications
+used on the console or command line.
+</p>
+</div>
+<div class="entry">
+<div class="name"><span class="keyword">class</span> <a class="datatype" href="jk.console.ArgumentVector.html">ArgumentVector</a></div><div class="description">Provides a convenient utility for interpreting and parsing command line
+argument arrays and vectors.</div></div>
+<div class="entry">
+<div class="name"><span class="keyword">class</span> <a class="datatype" href="jk.console.CommandLineArgument.html">CommandLineArgument</a></div><div class="description">Represents a single comment line argument and provides convenience methods
+for accessing its value.</div></div>
+<div class="entry">
+<div class="name"><span class="keyword">class</span> <a class="datatype" href="jk.console.ConsoleApplicationContext.html">ConsoleApplicationContext</a></div><div class="description">An implementation of ApplicationContext that represents a command line
+application intended to be used on a text mode terminal.</div></div>
+<div class="entry">
+<div class="name"><span class="keyword">class</span> <a class="datatype" href="jk.console.ConsoleApplicationMain.html">ConsoleApplicationMain</a></div><div class="description">A common base class for command line applications.</div></div>
+<div class="entry">
+<div class="name"><span class="keyword">class</span> <a class="datatype" href="jk.console.ConsoleApplicationUtil.html">ConsoleApplicationUtil</a></div><div class="description">Common utility functions for command line applications.</div></div>
+<div class="entry">
+<div class="name"><span class="keyword">class</span> <a class="datatype" href="jk.console.Stdin.html">Stdin</a></div><div class="description">Implementation of the standard input stream.</div></div>
+<div class="entry">
+<div class="name"><span class="keyword">class</span> <a class="datatype" href="jk.console.Stdout.html">Stdout</a></div><div class="description">Implementation of the standard output stream.</div></div>
+<div class="entry">
+<div class="name"><span class="keyword">class</span> <a class="datatype" href="jk.console.Terminal.html">Terminal</a></div><div class="description">Represents the text mode terminal and provides functionality for raw input
+and customized drawing features.</div></div>
+<div class="entry">
+<div class="name"><span class="keyword">class</span> <a class="datatype" href="jk.console.UsageInfo.html">UsageInfo</a></div><div class="description">A utility class for constructing usage instructions for end-users of
+command-line applications.</div></div>
+</div>
+<div class="list">
+<div class="titlebox"><h1>jk.core.tests<span class="additional"> - Unit tests for JK Core</span></h1><p>Common unit tests for testing the overall functionality of the JK Core
+library. Not intended to be used by client applications or derived
+libraries.
+</p>
+</div>
+<div class="entry">
+<div class="name"><span class="keyword">class</span> <a class="datatype" href="jk.core.tests.BufferTests.html">BufferTests</a></div><div class="description"></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">class</span> <a class="datatype" href="jk.core.tests.FileSystemTests.html">FileSystemTests</a></div><div class="description"></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">class</span> <a class="datatype" href="jk.core.tests.MapTests.html">MapTests</a></div><div class="description"></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">class</span> <a class="datatype" href="jk.core.tests.StackTraceTests.html">StackTraceTests</a></div><div class="description"></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">class</span> <a class="datatype" href="jk.core.tests.StringBuilderTests.html">StringBuilderTests</a></div><div class="description"></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">class</span> <a class="datatype" href="jk.core.tests.StringTests.html">StringTests</a></div><div class="description"></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">class</span> <a class="datatype" href="jk.core.tests.SystemClockTests.html">SystemClockTests</a></div><div class="description"></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">class</span> <a class="datatype" href="jk.core.tests.TestMain.html">TestMain</a></div><div class="description"></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">class</span> <a class="datatype" href="jk.core.tests.VariableReferenceTests.html">VariableReferenceTests</a></div><div class="description"></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">class</span> <a class="datatype" href="jk.core.tests.VectorTests.html">VectorTests</a></div><div class="description"></div></div>
+</div>
+<div class="list">
+<div class="titlebox"><h1>jk.env<span class="additional"> - Environment access</span></h1><p>Functionality for accessing and manipulating the execution
+environment of an application.
+</p>
+</div>
+<div class="entry">
+<div class="name"><span class="keyword">class</span> <a class="datatype" href="jk.env.CommonPath.html">CommonPath</a></div><div class="description"></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">class</span> <a class="datatype" href="jk.env.EnvironmentVariable.html">EnvironmentVariable</a></div><div class="description"></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">class</span> <a class="datatype" href="jk.env.ExternalCommand.html">ExternalCommand</a></div><div class="description"></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">class</span> <a class="datatype" href="jk.env.TemporaryDirectory.html">TemporaryDirectory</a></div><div class="description"></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">class</span> <a class="datatype" href="jk.env.TemporaryFile.html">TemporaryFile</a></div><div class="description"></div></div>
+</div>
+<div class="list">
+<div class="titlebox"><h1>jk.fs<span class="additional"> - Filesystem access</span></h1><p>All functionality for accessing and manipulating filesystems,
+including reading and writing of files and directories, enumerating
+directory contents and removing files and directories.
+</p>
+</div>
+<div class="entry">
+<div class="name"><span class="keyword">class</span> <a class="datatype" href="jk.fs.CurrentDirectory.html">CurrentDirectory</a></div><div class="description"></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">class</span> <a class="datatype" href="jk.fs.File.html">File</a></div><div class="description">The File class is used to access and manipulate the filesystem of the current environment. Despite the name of the class, this class is used to manipulate all kinds of filesystem entries, including files, directories, symbolic links, block devices, etc., depending on the underlying platform.</div></div>
+<div class="entry">
+<div class="name"><span class="keyword">class</span> <a class="datatype" href="jk.fs.FileFinder.html">FileFinder</a></div><div class="description"></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">class</span> <a class="datatype" href="jk.fs.FileInfo.html">FileInfo</a></div><div class="description"></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">class</span> <a class="datatype" href="jk.fs.FileInvalid.html">FileInvalid</a></div><div class="description"></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">class</span> <a class="datatype" href="jk.fs.FileKit.html">FileKit</a></div><div class="description"></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">interface</span> <a class="datatype" href="jk.fs.FileReader.html">FileReader</a></div><div class="description"></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">interface</span> <a class="datatype" href="jk.fs.FileWriter.html">FileWriter</a></div><div class="description"></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">class</span> <a class="datatype" href="jk.fs.PathInfo.html">PathInfo</a></div><div class="description"></div></div>
+</div>
+<div class="list">
+<div class="titlebox"><h1>jk.io<span class="additional"> - Input and output features (I/O)</span></h1><p>Reading and writing of data to input and output streams, managing the
+streams, converting characters to bytes and vice-versa.
+</p>
+</div>
+<div class="entry">
+<div class="name"><span class="keyword">class</span> <a class="datatype" href="jk.io.BinaryReader.html">BinaryReader</a></div><div class="description"></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">class</span> <a class="datatype" href="jk.io.BufferReader.html">BufferReader</a></div><div class="description"></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">class</span> <a class="datatype" href="jk.io.BufferWriter.html">BufferWriter</a></div><div class="description"></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">interface</span> <a class="datatype" href="jk.io.ByteReader.html">ByteReader</a></div><div class="description"></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">class</span> <a class="datatype" href="jk.io.CharacterIteratorForReader.html">CharacterIteratorForReader</a></div><div class="description"></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">interface</span> <a class="datatype" href="jk.io.DataStream.html">DataStream</a></div><div class="description"></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">interface</span> <a class="datatype" href="jk.io.DataStreamSource.html">DataStreamSource</a></div><div class="description"></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">interface</span> <a class="datatype" href="jk.io.FileDescriptor.html">FileDescriptor</a></div><div class="description"></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">class</span> <a class="datatype" href="jk.io.FileDescriptorReader.html">FileDescriptorReader</a></div><div class="description"></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">class</span> <a class="datatype" href="jk.io.FileDescriptorWriter.html">FileDescriptorWriter</a></div><div class="description"></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">interface</span> <a class="datatype" href="jk.io.FlushableWriter.html">FlushableWriter</a></div><div class="description"></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">interface</span> <a class="datatype" href="jk.io.LineReader.html">LineReader</a></div><div class="description"></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">class</span> <a class="datatype" href="jk.io.PrintReader.html">PrintReader</a></div><div class="description"></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">interface</span> <a class="datatype" href="jk.io.PrintWriter.html">PrintWriter</a></div><div class="description"></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">class</span> <a class="datatype" href="jk.io.PrintWriterWrapper.html">PrintWriterWrapper</a></div><div class="description"></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">interface</span> <a class="datatype" href="jk.io.Reader.html">Reader</a></div><div class="description"></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">interface</span> <a class="datatype" href="jk.io.SeekableReader.html">SeekableReader</a></div><div class="description"></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">interface</span> <a class="datatype" href="jk.io.SeekableWriter.html">SeekableWriter</a></div><div class="description"></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">interface</span> <a class="datatype" href="jk.io.SizedReader.html">SizedReader</a></div><div class="description"></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">class</span> <a class="datatype" href="jk.io.StaticFileDescriptor.html">StaticFileDescriptor</a></div><div class="description"></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">class</span> <a class="datatype" href="jk.io.StringLineReader.html">StringLineReader</a></div><div class="description"></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">interface</span> <a class="datatype" href="jk.io.Writer.html">Writer</a></div><div class="description"></div></div>
+</div>
+<div class="list">
+<div class="titlebox"><h1>jk.jkop<span class="additional"> - Jkop framework information</span></h1><p>Information and overall status of the Jkop framework.
+</p>
+</div>
+<div class="entry">
+<div class="name"><span class="keyword">class</span> <a class="datatype" href="jk.jkop.Jkop.html">Jkop</a></div><div class="description">Jkop framework information.</div></div>
+</div>
+<div class="list">
+<div class="titlebox"><h1>jk.lang<span class="additional"> - Common language features</span></h1><p>Provides the core fundamental language features such as data structures, data types, string manipulation, etc.
+</p>
+</div>
+<div class="entry">
+<div class="name"><span class="keyword">class</span> <a class="datatype" href="jk.lang.Array.html">Array</a></div><div class="description">The Array class provides convenience methods for dealing with static array objects. For dynamic array support, use vectors instead.</div></div>
+<div class="entry">
+<div class="name"><span class="keyword">interface</span> <a class="datatype" href="jk.lang.ArrayObject.html">ArrayObject</a></div><div class="description">An object that holds (or can be converted to) an array.</div></div>
+<div class="entry">
+<div class="name"><span class="keyword">class</span> <a class="datatype" href="jk.lang.BitOp.html">BitOp</a></div><div class="description"></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">class</span> <a class="datatype" href="jk.lang.Boolean.html">Boolean</a></div><div class="description">The Boolean class provides convenience methods for dealing with boolean values (either true or false).</div></div>
+<div class="entry">
+<div class="name"><span class="keyword">interface</span> <a class="datatype" href="jk.lang.BooleanIterator.html">BooleanIterator</a></div><div class="description">A BooleanIterator object iterates over a sequence of values that are all of the boolean data type (either true or false).</div></div>
+<div class="entry">
+<div class="name"><span class="keyword">interface</span> <a class="datatype" href="jk.lang.BooleanObject.html">BooleanObject</a></div><div class="description">An object that holds (or can be converted to) a boolean value (true or false).</div></div>
+<div class="entry">
+<div class="name"><span class="keyword">class</span> <a class="datatype" href="jk.lang.Buffer.html">Buffer</a></div><div class="description">The Buffer class provides convenience methods for dealing with data buffers (arbitrary sequences of bytes).</div></div>
+<div class="entry">
+<div class="name"><span class="keyword">class</span> <a class="datatype" href="jk.lang.BufferBuilder.html">BufferBuilder</a></div><div class="description"></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">interface</span> <a class="datatype" href="jk.lang.BufferDataReceiver.html">BufferDataReceiver</a></div><div class="description"></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">interface</span> <a class="datatype" href="jk.lang.BufferObject.html">BufferObject</a></div><div class="description"></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">class</span> <a class="datatype" href="jk.lang.Character.html">Character</a></div><div class="description"></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">class</span> <a class="datatype" href="jk.lang.CharacterDecoder.html">CharacterDecoder</a></div><div class="description"></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">interface</span> <a class="datatype" href="jk.lang.CharacterIterator.html">CharacterIterator</a></div><div class="description"></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">class</span> <a class="datatype" href="jk.lang.CharacterIteratorForBuffer.html">CharacterIteratorForBuffer</a></div><div class="description"></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">class</span> <a class="datatype" href="jk.lang.CharacterIteratorForString.html">CharacterIteratorForString</a></div><div class="description"></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">interface</span> <a class="datatype" href="jk.lang.CharacterObject.html">CharacterObject</a></div><div class="description"></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">interface</span> <a class="datatype" href="jk.lang.Closable.html">Closable</a></div><div class="description"></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">class</span> <a class="datatype" href="jk.lang.DateTime.html">DateTime</a></div><div class="description"></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">class</span> <a class="datatype" href="jk.lang.Double.html">Double</a></div><div class="description"></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">interface</span> <a class="datatype" href="jk.lang.DoubleIterator.html">DoubleIterator</a></div><div class="description"></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">interface</span> <a class="datatype" href="jk.lang.DoubleObject.html">DoubleObject</a></div><div class="description"></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">interface</span> <a class="datatype" href="jk.lang.Duplicateable.html">Duplicateable</a></div><div class="description"></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">interface</span> <a class="datatype" href="jk.lang.DynamicIterator.html">DynamicIterator</a></div><div class="description"></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">class</span> <a class="datatype" href="jk.lang.DynamicMap.html">DynamicMap</a></div><div class="description"></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">interface</span> <a class="datatype" href="jk.lang.DynamicMapObject.html">DynamicMapObject</a></div><div class="description"></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">class</span> <a class="datatype" href="jk.lang.DynamicObject.html">DynamicObject</a></div><div class="description"></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">class</span> <a class="datatype" href="jk.lang.DynamicVector.html">DynamicVector</a></div><div class="description"></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">class</span> <a class="datatype" href="jk.lang.Error.html">Error</a></div><div class="description"></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">interface</span> <a class="datatype" href="jk.lang.EventLoop.html">EventLoop</a></div><div class="description"></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">class</span> <a class="datatype" href="jk.lang.Exception.html">Exception</a></div><div class="description"></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">class</span> <a class="datatype" href="jk.lang.ExceptionWithError.html">ExceptionWithError</a></div><div class="description"></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">class</span> <a class="datatype" href="jk.lang.ExceptionWithString.html">ExceptionWithString</a></div><div class="description"></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">class</span> <a class="datatype" href="jk.lang.Integer.html">Integer</a></div><div class="description"></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">interface</span> <a class="datatype" href="jk.lang.IntegerIterator.html">IntegerIterator</a></div><div class="description"></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">interface</span> <a class="datatype" href="jk.lang.IntegerObject.html">IntegerObject</a></div><div class="description"></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">interface</span> <a class="datatype" href="jk.lang.Iterateable.html">Iterateable</a></div><div class="description"></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">interface</span> <a class="datatype" href="jk.lang.Iterator.html">Iterator</a></div><div class="description"></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">class</span> <a class="datatype" href="jk.lang.KeyValueList.html">KeyValueList</a></div><div class="description"></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">class</span> <a class="datatype" href="jk.lang.KeyValueListForStrings.html">KeyValueListForStrings</a></div><div class="description"></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">class</span> <a class="datatype" href="jk.lang.KeyValuePair.html">KeyValuePair</a></div><div class="description"></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">class</span> <a class="datatype" href="jk.lang.LogicOp.html">LogicOp</a></div><div class="description"></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">class</span> <a class="datatype" href="jk.lang.LongInteger.html">LongInteger</a></div><div class="description"></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">interface</span> <a class="datatype" href="jk.lang.LongIntegerIterator.html">LongIntegerIterator</a></div><div class="description"></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">interface</span> <a class="datatype" href="jk.lang.LongIntegerObject.html">LongIntegerObject</a></div><div class="description"></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">class</span> <a class="datatype" href="jk.lang.Map.html">Map</a></div><div class="description"></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">interface</span> <a class="datatype" href="jk.lang.MapObject.html">MapObject</a></div><div class="description"></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">class</span> <a class="datatype" href="jk.lang.Matrix.html">Matrix</a></div><div class="description"></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">interface</span> <a class="datatype" href="jk.lang.ObjectWithSize.html">ObjectWithSize</a></div><div class="description"></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">class</span> <a class="datatype" href="jk.lang.ObjectWrapper.html">ObjectWrapper</a></div><div class="description"></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">class</span> <a class="datatype" href="jk.lang.Queue.html">Queue</a></div><div class="description"></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">class</span> <a class="datatype" href="jk.lang.Range.html">Range</a></div><div class="description"></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">class</span> <a class="datatype" href="jk.lang.Reflection.html">Reflection</a></div><div class="description"></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">interface</span> <a class="datatype" href="jk.lang.Runnable.html">Runnable</a></div><div class="description"></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">class</span> <a class="datatype" href="jk.lang.RunnableFunction.html">RunnableFunction</a></div><div class="description"></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">class</span> <a class="datatype" href="jk.lang.Serializer.html">Serializer</a></div><div class="description"></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">class</span> <a class="datatype" href="jk.lang.Set.html">Set</a></div><div class="description"></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">class</span> <a class="datatype" href="jk.lang.Stack.html">Stack</a></div><div class="description"></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">class</span> <a class="datatype" href="jk.lang.StackTrace.html">StackTrace</a></div><div class="description"></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">class</span> <a class="datatype" href="jk.lang.String.html">String</a></div><div class="description">The String class provides all the common string manipulation functions, including comparisons, concatenation, transformations to upper and lowercase, getting substrings, finding characters or substrings, splitting the strings, converting to byte buffers, etc.</div></div>
+<div class="entry">
+<div class="name"><span class="keyword">class</span> <a class="datatype" href="jk.lang.StringBuilder.html">StringBuilder</a></div><div class="description"></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">interface</span> <a class="datatype" href="jk.lang.StringDataReceiver.html">StringDataReceiver</a></div><div class="description"></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">interface</span> <a class="datatype" href="jk.lang.StringIterator.html">StringIterator</a></div><div class="description"></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">interface</span> <a class="datatype" href="jk.lang.StringObject.html">StringObject</a></div><div class="description"></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">interface</span> <a class="datatype" href="jk.lang.StringObjectWithDebug.html">StringObjectWithDebug</a></div><div class="description"></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">class</span> <a class="datatype" href="jk.lang.StringSet.html">StringSet</a></div><div class="description"></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">interface</span> <a class="datatype" href="jk.lang.Task.html">Task</a></div><div class="description"></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">class</span> <a class="datatype" href="jk.lang.TimeValue.html">TimeValue</a></div><div class="description"></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">class</span> <a class="datatype" href="jk.lang.VariableReference.html">VariableReference</a></div><div class="description"></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">class</span> <a class="datatype" href="jk.lang.Vector.html">Vector</a></div><div class="description"></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">interface</span> <a class="datatype" href="jk.lang.VectorObject.html">VectorObject</a></div><div class="description"></div></div>
+</div>
+<div class="list">
+<div class="titlebox"><h1>jk.log<span class="additional"> - Logging features</span></h1><p>A simple and generic logging framework.
+</p>
+</div>
+<div class="entry">
+<div class="name"><span class="keyword">class</span> <a class="datatype" href="jk.log.Log.html">Log</a></div><div class="description"></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">interface</span> <a class="datatype" href="jk.log.LoggingContext.html">LoggingContext</a></div><div class="description"></div></div>
+</div>
+<div class="list">
+<div class="titlebox"><h1>jk.math<span class="additional"> - Math functionality</span></h1><p>General-purpose mathematical functionality.
+</p>
+</div>
+<div class="entry">
+<div class="name"><span class="keyword">class</span> <a class="datatype" href="jk.math.Math.html">Math</a></div><div class="description">The Math class provides various mathematical methods, functions and numerical constants.</div></div>
+<div class="entry">
+<div class="name"><span class="keyword">class</span> <a class="datatype" href="jk.math.Matrix33.html">Matrix33</a></div><div class="description"></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">class</span> <a class="datatype" href="jk.math.Matrix44.html">Matrix44</a></div><div class="description"></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">class</span> <a class="datatype" href="jk.math.Vector2.html">Vector2</a></div><div class="description"></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">class</span> <a class="datatype" href="jk.math.Vector3.html">Vector3</a></div><div class="description"></div></div>
+</div>
+<div class="list">
+<div class="titlebox"><h1>jk.module<span class="additional"> - Dynamically loadable modules</span></h1><p>Functionality for dynamically loading modules or plugins and calling
+them from the currently running program.
+</p>
+</div>
+<div class="entry">
+<div class="name"><span class="keyword">class</span> <a class="datatype" href="jk.module.DynamicModule.html">DynamicModule</a></div><div class="description"></div></div>
+</div>
+<div class="list">
+<div class="titlebox"><h1>jk.os<span class="additional"> - Operating system support</span></h1><p>Features for miscellaneous operating system integration.
+</p>
+</div>
+<div class="entry">
+<div class="name"><span class="keyword">class</span> <a class="datatype" href="jk.os.OS.html">OS</a></div><div class="description">Operating system and architecture detection functionality.</div></div>
+</div>
+<div class="list">
+<div class="titlebox"><h1>jk.posix<span class="additional"> - POSIX compatibility</span></h1><p>Functionality for accessing POSIX-type functionality on platforms that support
+it. On non-POSIX platforms, stub implementations will be provided.
+</p>
+</div>
+<div class="entry">
+<div class="name"><span class="keyword">class</span> <a class="datatype" href="jk.posix.PosixEnvironment.html">PosixEnvironment</a></div><div class="description"></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">class</span> <a class="datatype" href="jk.posix.PosixSignal.html">PosixSignal</a></div><div class="description"></div></div>
+</div>
+<div class="list">
+<div class="titlebox"><h1>jk.process<span class="additional"> - Operating system process management</span></h1><p>Starting, stopping and monitoring processes; launching external applications.
+</p>
+</div>
+<div class="entry">
+<div class="name"><span class="keyword">class</span> <a class="datatype" href="jk.process.CurrentProcess.html">CurrentProcess</a></div><div class="description"></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">interface</span> <a class="datatype" href="jk.process.Process.html">Process</a></div><div class="description"></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">class</span> <a class="datatype" href="jk.process.ProcessKit.html">ProcessKit</a></div><div class="description"></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">class</span> <a class="datatype" href="jk.process.ProcessLauncher.html">ProcessLauncher</a></div><div class="description">The ProcessLauncher class provides a mechanism for starting and controlling
+additional processes.</div></div>
+<div class="entry">
+<div class="name"><span class="keyword">interface</span> <a class="datatype" href="jk.process.ProcessWithIO.html">ProcessWithIO</a></div><div class="description"></div></div>
+</div>
+<div class="list">
+<div class="titlebox"><h1>jk.random<span class="additional"> - Randomness</span></h1><p>Functionality for generating random data and content.
+</p>
+</div>
+<div class="entry">
+<div class="name"><span class="keyword">class</span> <a class="datatype" href="jk.random.Random.html">Random</a></div><div class="description">Random number generator functionality.</div></div>
+</div>
+<div class="list">
+<div class="titlebox"><h1>jk.script<span class="additional"> - Entry point for scripts</span></h1><p>A generic framework for executing programs in a scripting environment.
+This is particularly used with SlingScript scripts on the Sushi virtual
+machine, and is essential in the build scripts used to compile Sling
+programs.
+</p>
+</div>
+<div class="entry">
+<div class="name"><span class="keyword">class</span> <a class="datatype" href="jk.script.Script.html">Script</a></div><div class="description">A common main class and entry point for scripts. This is commonly used
+in SlingScript files and Sling build scripts.</div></div>
+</div>
+<div class="list">
+<div class="titlebox"><h1>jk.sushi<span class="additional"> - Sushi support</span></h1><p>Functionality for interacting with the Sushi virtual machine.
+</p>
+</div>
+<div class="entry">
+<div class="name"><span class="keyword">class</span> <a class="datatype" href="jk.sushi.SushiCode.html">SushiCode</a></div><div class="description"></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">class</span> <a class="datatype" href="jk.sushi.SushiKit.html">SushiKit</a></div><div class="description"></div></div>
+</div>
+<div class="list">
+<div class="titlebox"><h1>jk.test<span class="additional"> - Unit testing framework</span></h1><p>Base classes and framework for implementing unit tests.
+</p>
+</div>
+<div class="entry">
+<div class="name"><span class="keyword">class</span> <a class="datatype" href="jk.test.FailedAssertionException.html">FailedAssertionException</a></div><div class="description"></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">class</span> <a class="datatype" href="jk.test.TestSet.html">TestSet</a></div><div class="description"></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">class</span> <a class="datatype" href="jk.test.UnitTest.html">UnitTest</a></div><div class="description"></div></div>
+</div>
+<div class="list">
+<div class="titlebox"><h1>jk.text<span class="additional"> - Text utilities</span></h1><p>General utility classes for working with and manipulating text content.
+</p>
+</div>
+<div class="entry">
+<div class="name"><span class="keyword">class</span> <a class="datatype" href="jk.text.StringBufferDecoder.html">StringBufferDecoder</a></div><div class="description"></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">class</span> <a class="datatype" href="jk.text.StringUtil.html">StringUtil</a></div><div class="description">The StringUtil class provides commonly used generic utility functions for string manipulation.</div></div>
+</div>
+<div class="list">
+<div class="titlebox"><h1>jk.thread<span class="additional"> - Threading support</span></h1><p>Support for multi-threading in applications; creating, starting,
+stopping and manipulating threads, mutexes and thread pools.
+</p>
+</div>
+<div class="entry">
+<div class="name"><span class="keyword">class</span> <a class="datatype" href="jk.thread.CriticalSection.html">CriticalSection</a></div><div class="description"></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">class</span> <a class="datatype" href="jk.thread.CurrentThread.html">CurrentThread</a></div><div class="description"></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">class</span> <a class="datatype" href="jk.thread.Mutex.html">Mutex</a></div><div class="description"></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">interface</span> <a class="datatype" href="jk.thread.RunningThread.html">RunningThread</a></div><div class="description"></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">class</span> <a class="datatype" href="jk.thread.Thread.html">Thread</a></div><div class="description"></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">class</span> <a class="datatype" href="jk.thread.ThreadPool.html">ThreadPool</a></div><div class="description"></div></div>
+</div>
+<div class="list">
+<div class="titlebox"><h1>jk.time<span class="additional"> - Time and clock</span></h1><p>Functionality for managing time and system clock.
+</p>
+</div>
+<div class="entry">
+<div class="name"><span class="keyword">class</span> <a class="datatype" href="jk.time.SystemClock.html">SystemClock</a></div><div class="description"></div></div>
+</div>
+<div class="list">
+<div class="titlebox"><h1>jk.time.format<span class="additional"> - Time formatting</span></h1><p>Functionality for formatting time strings.
+</p>
+</div>
+<div class="entry">
+<div class="name"><span class="keyword">class</span> <a class="datatype" href="jk.time.format.VerboseDateTimeString.html">VerboseDateTimeString</a></div><div class="description"></div></div>
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,13 @@
+{
+	"moduleDescription" : "Functionality for generating random data and content.\n",
+	"type" : "module",
+	"moduleTitle" : "Randomness",
+	"moduleId" : "jk.random",
+	"entities" : [
+		{
+			"type" : "class",
+			"name" : "Random",
+			"description" : "Random number generator functionality."
+		}
+	]
+}

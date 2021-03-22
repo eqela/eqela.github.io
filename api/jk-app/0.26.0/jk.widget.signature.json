@@ -1,0 +1,13 @@
+{
+	"moduleDescription" : "",
+	"type" : "module",
+	"moduleTitle" : "",
+	"moduleId" : "jk.widget.signature",
+	"entities" : [
+		{
+			"type" : "class",
+			"name" : "SignatureWidget",
+			"description" : ""
+		}
+	]
+}

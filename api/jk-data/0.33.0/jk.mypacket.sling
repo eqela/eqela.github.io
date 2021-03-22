@@ -1,0 +1,46 @@
+class name jk.mypacket.MyPacketParser header public
+{
+	import jk.lang
+	ctor
+	func forBuffer(buffer as buffer) static as jk.mypacket.MyPacketParser
+	func isValid(length as long) as bool
+	func skipBytes(count as long)
+	func getInt8 as int
+	func getFloat as float
+	func getDouble as double
+	func getInt16 as int
+	func getInt24 as int
+	func getInt32 as int
+	func getInt64 as long
+	func getLengthEncodedInteger as long
+	func getNullTerminatedString as string
+	func getEofTerminatedString as string
+	func getStaticLengthString(length as long) as string
+	func getLengthEncodedString as string
+	func getLengthEncodedBuffer as buffer
+	func getBuffer(length as long) as buffer
+	func setBuffer(v as buffer) as jk.mypacket.MyPacketParser #setterMethod
+	func getPosition as long #getterMethod
+	func setPosition(v as long) as jk.mypacket.MyPacketParser #setterMethod
+}
+class name jk.mypacket.MyPacketBuilder header public
+{
+	import jk.lang
+	ctor
+	func ensureAvailablesize(count as int)
+	func appendByte(byte as int)
+	func appendMultipleBytes(byte as int, count as int)
+	func appendBuffer(newdata as buffer)
+	func appendInt16(number as int)
+	func appendInt24(number as int)
+	func appendInt32(number as uint)
+	func appendInt64(number as ulong)
+	func appendDouble(number as double)
+	func appendNullTerminatedString(string as string)
+	func appendFixedLengthString(string as string, length as int)
+	func appendEofTerminatedString(string as string)
+	func appendLengthEncodedInteger(value as long)
+	func appendLengthEncodedString(value as string)
+	func appendLengthEncodedBuffer(value as buffer)
+	func finalize as buffer
+}

@@ -1,0 +1,942 @@
+class name jk.widget.common.SplashScreenWidget header extends jk.widget.LayerWidget public #widget
+{
+	import jk.lang
+	import jk.lang
+	import jk.ui
+	import jk.gfx
+	import jk.widget
+	ctor(ctx as jk.ui.GuiApplicationContext)
+	func addSlide(resource as string, delay as int, bgColor as jk.gfx.Color = null)
+	func initializeWidget override
+	func nextImage
+	func onEnded
+	func getBackgroundColor as jk.gfx.Color #getterMethod
+	func setBackgroundColor(v as jk.gfx.Color) as jk.widget.common.SplashScreenWidget #setterMethod
+	func getDoneHandler as function<void> #getterMethod
+	func setDoneHandler(v as function<void>) as jk.widget.common.SplashScreenWidget #setterMethod
+	func getImageWidgetWidth as string #getterMethod
+	func setImageWidgetWidth(v as string) as jk.widget.common.SplashScreenWidget #setterMethod
+	func getMargin as string #getterMethod
+	func setMargin(v as string) as jk.widget.common.SplashScreenWidget #setterMethod
+}
+class name jk.widget.common.RadioButtonWidget header extends jk.widget.LayerWidget implements jk.widget.WidgetWithValue public #widget
+{
+	import jk.lang
+	import jk.lang
+	import jk.ui
+	import jk.gfx
+	import jk.widget
+	ctor(context as jk.ui.GuiApplicationContext)
+	func forGroup(context as jk.ui.GuiApplicationContext, items as vector<string>) static as jk.widget.common.RadioButtonWidget
+	var HORIZONTAL public static const as int
+	var VERTICAL public static const as int
+	func initializeWidget override
+	func setWidgetEnabled(v as bool) as jk.widget.common.RadioButtonWidget
+	func setWidgetValue(value as object)
+	func getWidgetValue as object
+	func getSelectedWidgetIndex as int
+	func setSelectWidgetValue(selectedWidget as string)
+	func setSelectedWidgetIndex(index as int)
+	func updateSelectedWidget(index as int)
+	func getWidgetItems as vector<string> #getterMethod
+	func setWidgetItems(v as vector<string>) as jk.widget.common.RadioButtonWidget #setterMethod
+	func getWidgetFontSize as int #getterMethod
+	func setWidgetFontSize(v as int) as jk.widget.common.RadioButtonWidget #setterMethod
+	func getWidgetFontResource as string #getterMethod
+	func setWidgetFontResource(v as string) as jk.widget.common.RadioButtonWidget #setterMethod
+	func getWidgetFontFamily as string #getterMethod
+	func setWidgetFontFamily(v as string) as jk.widget.common.RadioButtonWidget #setterMethod
+	func getWidgetTextColor as jk.gfx.Color #getterMethod
+	func setWidgetTextColor(v as jk.gfx.Color) as jk.widget.common.RadioButtonWidget #setterMethod
+	func getWidgetFontBold as bool #getterMethod
+	func setWidgetFontBold(v as bool) as jk.widget.common.RadioButtonWidget #setterMethod
+	func getWidgetOnSelectedColor as jk.gfx.Color #getterMethod
+	func setWidgetOnSelectedColor(v as jk.gfx.Color) as jk.widget.common.RadioButtonWidget #setterMethod
+	func getWidgetOutlineColor as jk.gfx.Color #getterMethod
+	func setWidgetOutlineColor(v as jk.gfx.Color) as jk.widget.common.RadioButtonWidget #setterMethod
+	func getWidgetOrientation as int #getterMethod
+	func setWidgetOrientation(v as int) as jk.widget.common.RadioButtonWidget #setterMethod
+	func getWidgetClickHandler as function<void,int> #getterMethod
+	func setWidgetClickHandler(v as function<void,int>) as jk.widget.common.RadioButtonWidget #setterMethod
+}
+class name jk.widget.common.ImageButtonWidget header extends jk.widget.LayerWidget public #widget
+{
+	import jk.lang
+	import jk.lang
+	import jk.ui
+	import jk.gfx
+	import jk.widget
+	func forImage(context as jk.ui.GuiApplicationContext, image as jk.gfx.Image, handler as function<void>) static as jk.widget.common.ImageButtonWidget
+	func forImageResource(context as jk.ui.GuiApplicationContext, resName as string, handler as function<void>) static as jk.widget.common.ImageButtonWidget
+	ctor(ctx as jk.ui.GuiApplicationContext)
+	func setWidgetImage(image as jk.gfx.Image) as jk.widget.common.ImageButtonWidget
+	func setWidgetImageResource(resName as string) as jk.widget.common.ImageButtonWidget
+	func setWidgetClickHandler(handler as function<void>) as jk.widget.common.ImageButtonWidget
+	func initializeWidget override
+	func getWidgetImageScale as int #getterMethod
+	func setWidgetImageScale(v as int #notLiteral) as jk.widget.common.ImageButtonWidget #setterMethod
+	func getWidgetButtonWidth as int #getterMethod
+	func setWidgetButtonWidth(v as int #notLiteral) as jk.widget.common.ImageButtonWidget #setterMethod
+	func getWidgetButtonHeight as int #getterMethod
+	func setWidgetButtonHeight(v as int #notLiteral) as jk.widget.common.ImageButtonWidget #setterMethod
+}
+class name jk.widget.common.ButtonWithImageWidget header extends jk.widget.VerticalBoxWidget public #widget
+{
+	import jk.lang
+	import jk.lang
+	import jk.ui
+	import jk.gfx
+	import jk.widget
+	ctor(ctx as jk.ui.GuiApplicationContext)
+	func setWidgetButtonImage(source as string) as jk.widget.common.ButtonWithImageWidget
+	func setWidgetButtonTitle(title as string) as jk.widget.common.ButtonWithImageWidget
+	func setWidgetClickHandler(handler as function<void>) as jk.widget.common.ButtonWithImageWidget
+	func setWidgetFontSize(size as int) as jk.widget.common.ButtonWithImageWidget
+	func setWidgetImageSize(size as int) as jk.widget.common.ButtonWithImageWidget
+	func createWidget override
+}
+class name jk.widget.common.HyperLinkWidget header extends jk.widget.Widget public #widget
+{
+	import jk.lang
+	import jk.lang
+	import jk.ui
+	import jk.gfx
+	import jk.widget
+	func forText(context as jk.ui.GuiApplicationContext, text as string, handler as function<void>) static as jk.widget.common.HyperLinkWidget
+	ctor(context as jk.ui.GuiApplicationContext)
+	func setWidgetText(text as string)
+	func getWidgetText as string
+	func setWidgetTextColor(color as jk.gfx.Color) as jk.widget.common.HyperLinkWidget
+	func getWidgetTextColor as jk.gfx.Color
+	func setWidgetFontSize(fontSize as double #notLiteral)
+	func getFontSize as double
+	func setWidgetClickHandler(handler as function<void>)
+	func setWidgetUrl(url as string)
+	func getWidgetUrl as string
+}
+class name jk.widget.common.AutoSuggestInputWidget header extends jk.widget.common.TextInputWidget public #widget
+{
+	import jk.lang
+	import jk.lang
+	import jk.ui
+	import jk.gfx
+	import jk.widget
+	ctor(ctx as jk.ui.GuiApplicationContext)
+	func isWidgetShown as bool
+	func clearItems
+	func setWidgetItems(items as vector<string>)
+	func getWidgetItems as vector<string>
+	func createWidgetItem(title as string, isFirst as bool = false, index as int = 0) virtual as jk.widget.Widget
+	func showPopup
+	func closePopup
+	func onWidgetTextChanged virtual
+	func searchStringFromItems(value as string)
+	func addSuggestedItems
+	func addItemToList(item as string, isFirst as bool = false, index as int = 0)
+	func getDefaultNoRecordMessage as string #getterMethod
+	func setDefaultNoRecordMessage(v as string) as jk.widget.common.AutoSuggestInputWidget #setterMethod
+	func getWidgetValueChangeHandler as function<void> #getterMethod
+	func setWidgetValueChangeHandler(v as function<void>) as jk.widget.common.AutoSuggestInputWidget #setterMethod
+}
+class name jk.widget.common.TableWidget header extends jk.widget.VerticalBoxWidget public #widget
+{
+	import jk.lang
+	import jk.lang
+	import jk.ui
+	import jk.gfx
+	import jk.widget
+	ctor(context as jk.ui.GuiApplicationContext)
+	func initializeWidget override
+	func setWidgetHasHeader(value as bool)
+	func setWidgetColumns(columns as array)
+	func updateWidgetColumns
+	func setWidgetData(data as vector<array>)
+	func createWidget override
+	func getWidgetSortHandler as function<void,string> #getterMethod
+	func setWidgetSortHandler(v as function<void,string>) as jk.widget.common.TableWidget #setterMethod
+}
+class name jk.widget.common.PopupWidget header extends jk.widget.LayerWidget public #widget
+{
+	import jk.lang
+	import jk.lang
+	import jk.ui
+	import jk.gfx
+	import jk.widget
+	func forContentWidget(context as jk.ui.GuiApplicationContext, widget as jk.widget.Widget) static as jk.widget.common.PopupWidget
+	ctor(ctx as jk.ui.GuiApplicationContext)
+	func setWidgetContainerBackgroundColor(color as jk.gfx.Color)
+	func setWidgetContent(widget as jk.widget.Widget)
+	func getWidgetContainerBackgroundColor as jk.widget.CanvasWidget
+	func getWidgetContent as jk.widget.Widget
+	func initializeWidget override
+	func onWidgetHeightChanged(height as int #notLiteral) override
+	func computeWidgetLayout(widthConstraint as int #notLiteral) override
+	func showPopup(widget as jk.widget.Widget) virtual
+	func hidePopup virtual
+	func getPopupShowAnimationEndHandler as function<void> #getterMethod
+	func setPopupShowAnimationEndHandler(v as function<void>) as jk.widget.common.PopupWidget #setterMethod
+	func getPopupHideAnimationEndHandler as function<void> #getterMethod
+	func setPopupHideAnimationEndHandler(v as function<void>) as jk.widget.common.PopupWidget #setterMethod
+	func getWidgetModal as bool #getterMethod
+	func setWidgetModal(v as bool) as jk.widget.common.PopupWidget #setterMethod
+}
+class name jk.widget.common.CustomScrollBarWidget header extends jk.widget.RenderableWidget public #widget #ignoreNamingConvention
+{
+	import jk.lang
+	import jk.lang
+	import jk.ui
+	import jk.gfx
+	import jk.widget
+	import jk.render
+	ctor(context as jk.ui.GuiApplicationContext)
+	func onWidgetResized override
+	func render(ctx as jk.render.RenderingContext) override
+	func getWidgetOnScrollCallback as function<void,double,double> #getterMethod
+	func setWidgetOnScrollCallback(v as function<void,double,double>) as jk.widget.common.CustomScrollBarWidget #setterMethod
+	func getWidgetMaximumValueY as double #getterMethod
+	func setWidgetMaximumValueY(v as double) as jk.widget.common.CustomScrollBarWidget #setterMethod
+	func getWidgetVisibleHeight as double #getterMethod
+	func setWidgetVisibleHeight(v as double) as jk.widget.common.CustomScrollBarWidget #setterMethod
+	func getWidgetScrollableHeight as double #getterMethod
+	func setWidgetScrollableHeight(v as double) as jk.widget.common.CustomScrollBarWidget #setterMethod
+	func getWidgetSpeedY as double #getterMethod
+	func setWidgetSpeedY(v as double) as jk.widget.common.CustomScrollBarWidget #setterMethod
+}
+class name jk.widget.common.NavigationWidget header extends jk.widget.common.NavigationFrameWidget implements jk.ui.KeyListener public #widget
+{
+	import jk.lang
+	import jk.lang
+	import jk.ui
+	import jk.gfx
+	import jk.widget
+	func switchToContainer(widget as jk.widget.Widget, newWidget as jk.widget.Widget) static as bool
+	func pushToContainer(widget as jk.widget.Widget, newWidget as jk.widget.Widget) static as bool
+	func popFromContainer(widget as jk.widget.Widget) static as jk.widget.Widget
+	func findNavigationWidget(widget as jk.widget.Widget) static as jk.widget.common.NavigationWidget
+	ctor(ctx as jk.ui.GuiApplicationContext)
+	func createMainWidget virtual as jk.widget.Widget
+	func initializeWidget override
+	func updateMenuButton override
+	func onKeyEvent(event as jk.ui.KeyEvent) virtual
+	func setWidgetContent(widget as jk.widget.Widget)
+	func pushWidget(widget as jk.widget.Widget) as bool
+	func switchWidget(widget as jk.widget.Widget) as bool
+	func popWidget as jk.widget.Widget
+	func peekWidget as jk.widget.Widget
+	func getWidgetBackImageResourceName as string #getterMethod
+	func setWidgetBackImageResourceName(v as string) as jk.widget.common.NavigationWidget #setterMethod
+}
+class name jk.widget.common.RoundedTextBoxWidget header extends jk.widget.LayerWidget public #widget
+{
+	import jk.lang
+	import jk.lang
+	import jk.ui
+	import jk.gfx
+	import jk.widget
+	ctor(ctx as jk.ui.GuiApplicationContext)
+	func setWidgetEnabled(enable as bool) as jk.widget.common.RoundedTextBoxWidget
+	func setWidgetFontSize(fontsize as double #notLiteral) as jk.widget.common.RoundedTextBoxWidget
+	func setWidgetPlaceholder(str as string) as jk.widget.common.RoundedTextBoxWidget
+	func setWidgetTextChangeHandler(handler as function<void,string>) as jk.widget.common.RoundedTextBoxWidget
+	func setWidgetText(str as string) as jk.widget.common.RoundedTextBoxWidget
+	func getWidgetText as string
+	func createWidget override
+}
+class name jk.widget.common.SelectWidget header implements jk.widget.WidgetWithValue extends jk.widget.Widget public #widget
+{
+	import jk.lang
+	import jk.lang
+	import jk.ui
+	import jk.gfx
+	import jk.widget
+	func forKeyValueList(context as jk.ui.GuiApplicationContext, options as jk.lang.KeyValueList<string,string>) static as jk.widget.common.SelectWidget
+	func forKeyValueStrings(context as jk.ui.GuiApplicationContext, options as array) static as jk.widget.common.SelectWidget
+	func forKeyValueStrings(context as jk.ui.GuiApplicationContext, options as vector<string>) static as jk.widget.common.SelectWidget
+	func forStringList(context as jk.ui.GuiApplicationContext, options as array) static as jk.widget.common.SelectWidget
+	func forStringList(context as jk.ui.GuiApplicationContext, options as vector<string>) static as jk.widget.common.SelectWidget
+	func forStringList(context as jk.ui.GuiApplicationContext, options as jk.lang.DynamicVector) static as jk.widget.common.SelectWidget
+	ctor(context as jk.ui.GuiApplicationContext)
+	func setWidgetStyle(style as string) as jk.widget.common.SelectWidget
+	func setWidgetFontFamily(family as string) as jk.widget.common.SelectWidget
+	func setWidgetFontResource(res as string) as jk.widget.common.SelectWidget
+	func setWidgetFontSize(fontSize as double #notLiteral) as jk.widget.common.SelectWidget
+	func setWidgetFontUnderline(underline as bool) as jk.widget.common.SelectWidget
+	func setWidgetFontItalic(italic as bool) as jk.widget.common.SelectWidget
+	func setWidgetFontBold(bold as bool) as jk.widget.common.SelectWidget
+	func setWidgetPadding(value as int #notLiteral) as jk.widget.common.SelectWidget
+	func getWidgetPadding as int
+	func setWidgetTextColor(color as jk.gfx.Color) as jk.widget.common.SelectWidget
+	func getWidgetTextColor as jk.gfx.Color
+	func setWidgetBackgroundColor(color as jk.gfx.Color) as jk.widget.common.SelectWidget
+	func getWidgetBackgroundColor as jk.gfx.Color
+	func getActualWidgetTextColor as jk.gfx.Color
+	func setWidgetItemsAsKeyValueList(items as jk.lang.KeyValueList<string,string>)
+	func addWidgetItem(value as string)
+	func addWidgetItem(k as string, v as string)
+	func removeWidgetItem(index as int)
+	func setWidgetItemsAsKeyValueStrings(options as vector<string>)
+	func setWidgetItemsAsKeyValueStrings(options as array)
+	func setWidgetItemsAsStringList(options as jk.lang.DynamicVector)
+	func setWidgetItemsAsStringList(options as vector<string>)
+	func setWidgetItemsAsStringList(options as array)
+	func adjustSelectedWidgetItemIndex(index as int) as int
+	func getWidgetItemCount as int
+	func getSelectedWidgetIndex as int
+	func setSelectedWidgetIndex(index as int)
+	func setSelectedWidgetValue(id as string)
+	func getSelectedWidgetValue as string
+	func setWidgetValue(value as object)
+	func getWidgetValue as object
+	func setWidgetValueChangeHandler(handler as function<void>)
+	func onWidgetSelectionChanged
+	func getWidgetItems as jk.lang.KeyValueList<string,string>
+	func setWidgetIsEnabled(v as bool, background as jk.gfx.Color = null)
+	func getWidgetIsEnabled as bool
+	func focus
+	func getWidgetOnFocusHandler as function<void> #getterMethod
+	func setWidgetOnFocusHandler(v as function<void>) as jk.widget.common.SelectWidget #setterMethod
+	func getWidgetOnLoseFocusHandler as function<void> #getterMethod
+	func setWidgetOnLoseFocusHandler(v as function<void>) as jk.widget.common.SelectWidget #setterMethod
+}
+class name jk.widget.common.SpinnerWidget header implements jk.widget.ScreenAwareWidget extends jk.widget.LayerWidget public #widget
+{
+	import jk.lang
+	import jk.lang
+	import jk.ui
+	import jk.gfx
+	import jk.widget
+	import jk.math
+	ctor(context as jk.ui.GuiApplicationContext)
+	func forImage(ctx as jk.ui.GuiApplicationContext, image as jk.gfx.Image) static as jk.widget.common.SpinnerWidget
+	func onWidgetRemovedFromScreen(screen as jk.widget.ScreenForWidget)
+	func onWidgetAddedToScreen(screen as jk.widget.ScreenForWidget)
+	func doSpin
+	func createWidget override
+	func getImage as jk.gfx.Image #getterMethod
+	func setImage(v as jk.gfx.Image) as jk.widget.common.SpinnerWidget #setterMethod
+}
+class name jk.widget.common.SidebarWidget header extends jk.widget.LayerWidget public #widget
+{
+	import jk.lang
+	import jk.lang
+	import jk.ui
+	import jk.gfx
+	import jk.widget
+	ctor(context as jk.ui.GuiApplicationContext)
+	func forItems(ctx as jk.ui.GuiApplicationContext, items as vector<jk.widget.Widget>, color as jk.gfx.Color = null) static as jk.widget.common.SidebarWidget
+	func addToWidgetItems(widget as jk.widget.Widget)
+	func determineBackgroundColor as jk.gfx.Color
+	func addLabelItem(text as string, bold as bool = true, backgroundColor as jk.gfx.Color = null, textColor as jk.gfx.Color = null) as jk.widget.Widget
+	func addActionItem(text as string, handler as function<void>, bold as bool = false, backgroundColor as jk.gfx.Color = null, textColor as jk.gfx.Color = null) as jk.widget.Widget
+	func initializeWidget override
+	func getWidgetBackgroundColor as jk.gfx.Color #getterMethod
+	func setWidgetBackgroundColor(v as jk.gfx.Color) as jk.widget.common.SidebarWidget #setterMethod
+	func getDefaultActionItemWidgetBackgroundColor as jk.gfx.Color #getterMethod
+	func setDefaultActionItemWidgetBackgroundColor(v as jk.gfx.Color) as jk.widget.common.SidebarWidget #setterMethod
+	func getDefaultActionItemWidgetTextColor as jk.gfx.Color #getterMethod
+	func setDefaultActionItemWidgetTextColor(v as jk.gfx.Color) as jk.widget.common.SidebarWidget #setterMethod
+	func getDefaultLabelItemWidgetBackgroundColor as jk.gfx.Color #getterMethod
+	func setDefaultLabelItemWidgetBackgroundColor(v as jk.gfx.Color) as jk.widget.common.SidebarWidget #setterMethod
+	func getDefaultLabelItemWidgetTextColor as jk.gfx.Color #getterMethod
+	func setDefaultLabelItemWidgetTextColor(v as jk.gfx.Color) as jk.widget.common.SidebarWidget #setterMethod
+	func getWidgetItems as vector<jk.widget.Widget> #getterMethod
+	func setWidgetItems(v as vector<jk.widget.Widget>) as jk.widget.common.SidebarWidget #setterMethod
+	func getWidgetScrollEnabled as bool #getterMethod
+	func setWidgetScrollEnabled(v as bool) as jk.widget.common.SidebarWidget #setterMethod
+}
+class name jk.widget.common.TopMarginLayerWidget header extends jk.widget.LayerWidget public #widget
+{
+	import jk.lang
+	import jk.lang
+	import jk.ui
+	import jk.gfx
+	import jk.widget
+	ctor(context as jk.ui.GuiApplicationContext)
+	func computeWidgetLayout(widthConstraint as int #notLiteral) override
+}
+class name jk.widget.common.RangePickerWidget header implements jk.widget.ResizeAwareWidget implements jk.widget.WidgetWithValue extends jk.widget.LayerWidget public #widget
+{
+	import jk.lang
+	import jk.lang
+	import jk.ui
+	import jk.gfx
+	import jk.widget
+	import jk.math
+	var LEFT_CONTROL public static const as int
+	var RIGHT_CONTROL public static const as int
+	ctor(ctx as jk.ui.GuiApplicationContext)
+	func initializeWidget override
+	func resetSelectedControl
+	func moveLeftControlTo(value as double)
+	func moveRightControlTo(value as double)
+	func moveControl(value as double, control as int)
+	func setWidgetStyle(style as string) as jk.widget.common.RangePickerWidget
+	func setWidgetBackgroundColor(color as jk.gfx.Color)
+	func setWidgetOutOfRangeColor(color as jk.gfx.Color)
+	func setWidgetInsideOfRangeColor(color as jk.gfx.Color)
+	func setWidgetControlColor(color as jk.gfx.Color)
+	func setWidgetRoundingRadius(radius as int #notLiteral)
+	func onWidgetResized
+	func setWidgetValue(value as object)
+	func setWidgetValueForDynamicMap(value as jk.lang.DynamicMap)
+	func setWidgetFromValue(fvalue as double)
+	func setWidgetToValue(tvalue as double)
+	func getWidgetValue as object
+	func getWidgetValueAsDynamicMap as jk.lang.DynamicMap
+	func getWidgetFromValue as double
+	func getWidgetToValue as double
+	func createWidget override
+	func getWidgetMaximumValue as int #getterMethod
+	func setWidgetMaximumValue(v as int) as jk.widget.common.RangePickerWidget #setterMethod
+	func getWidgetLeftControlChangeListener as function<void,double> #getterMethod
+	func setWidgetLeftControlChangeListener(v as function<void,double>) as jk.widget.common.RangePickerWidget #setterMethod
+	func getWidgetRightControlChangeListener as function<void,double> #getterMethod
+	func setWidgetRightControlChangeListener(v as function<void,double>) as jk.widget.common.RangePickerWidget #setterMethod
+	func getWidgetDisableLeftControl as bool #getterMethod
+	func setWidgetDisableLeftControl(v as bool) as jk.widget.common.RangePickerWidget #setterMethod
+}
+class name jk.widget.common.VerticalScrollerWithToolbarWidget header extends jk.widget.LayerWidget public #widget
+{
+	import jk.lang
+	import jk.lang
+	import jk.ui
+	import jk.gfx
+	import jk.widget
+	ctor(context as jk.ui.GuiApplicationContext)
+	func initializeWidget override
+	func showToolbar
+	func hideToolbar
+	func getAutohideToolbar as bool #getterMethod
+	func setAutohideToolbar(v as bool) as jk.widget.common.VerticalScrollerWithToolbarWidget #setterMethod
+	func getWidgetContent as jk.widget.Widget #getterMethod
+	func setWidgetContent(v as jk.widget.Widget) as jk.widget.common.VerticalScrollerWithToolbarWidget #setterMethod
+	func getWidgetToolbar as jk.widget.common.ToolbarWidget #getterMethod
+	func setWidgetToolbar(v as jk.widget.common.ToolbarWidget) as jk.widget.common.VerticalScrollerWithToolbarWidget #setterMethod
+}
+class name jk.widget.common.RadioButtonGroupWidget header implements jk.widget.WidgetWithValue extends jk.widget.LayerWidget public #widget
+{
+	import jk.lang
+	import jk.lang
+	import jk.ui
+	import jk.gfx
+	import jk.widget
+	func forGroup(context as jk.ui.GuiApplicationContext, group as string, items as vector<string>, orientation as int = jk.widget.common.RadioButtonGroupWidget.HORIZONTAL) static as jk.widget.common.RadioButtonGroupWidget
+	func updateSelectedWidget(index as int)
+	var HORIZONTAL public static const as int
+	var VERTICAL public static const as int
+	ctor(context as jk.ui.GuiApplicationContext)
+	func addWidgetItem(text as string, index as int)
+	func setWidgetSelectedValue(indx as int)
+	func setWidgetName(name as string)
+	func setWidgetOrientation(orientation as int)
+	func getWidgetSelectedValue as string
+	func onChangeSelectedItem
+	func setWidgetValue(value as object)
+	func getWidgetValue as object
+	func getWidgetChangeHandler as function<void> #getterMethod
+	func setWidgetChangeHandler(v as function<void>) as jk.widget.common.RadioButtonGroupWidget #setterMethod
+}
+class name jk.widget.common.ToolbarWidget header extends jk.widget.LayerWidget public #widget
+{
+	import jk.lang
+	import jk.lang
+	import jk.ui
+	import jk.gfx
+	import jk.widget
+	ctor(context as jk.ui.GuiApplicationContext)
+	func forItems(ctx as jk.ui.GuiApplicationContext, items as vector<jk.widget.Widget>, color as jk.gfx.Color = null) static as jk.widget.common.ToolbarWidget
+	func addToWidgetItems(widget as jk.widget.Widget)
+	func determineBackgroundColor as jk.gfx.Color
+	func addActionItem(text as string, resName as string, handler as function<void>, textColor as jk.gfx.Color = null) as jk.widget.Widget
+	func addOverlay(widget as jk.widget.Widget)
+	func removeOverlay as bool
+	func initializeWidget override
+	func getDefaultActionItemWidgetBackgroundColor as jk.gfx.Color #getterMethod
+	func setDefaultActionItemWidgetBackgroundColor(v as jk.gfx.Color) as jk.widget.common.ToolbarWidget #setterMethod
+	func getDefaultActionItemWidgetTextColor as jk.gfx.Color #getterMethod
+	func setDefaultActionItemWidgetTextColor(v as jk.gfx.Color) as jk.widget.common.ToolbarWidget #setterMethod
+	func getWidgetBackgroundColor as jk.gfx.Color #getterMethod
+	func setWidgetBackgroundColor(v as jk.gfx.Color) as jk.widget.common.ToolbarWidget #setterMethod
+	func getWidgetItems as vector<jk.widget.Widget> #getterMethod
+	func setWidgetItems(v as vector<jk.widget.Widget>) as jk.widget.common.ToolbarWidget #setterMethod
+}
+class name jk.widget.common.ProgressBarWidget header extends jk.widget.LayerWidget public #widget
+{
+	import jk.lang
+	import jk.lang
+	import jk.ui
+	import jk.gfx
+	import jk.widget
+	ctor(context as jk.ui.GuiApplicationContext)
+	func updateProgress(value as int)
+	func createWidget override
+	func getWidgetProgressBarColor as jk.gfx.Color #getterMethod
+	func setWidgetProgressBarColor(v as jk.gfx.Color) as jk.widget.common.ProgressBarWidget #setterMethod
+	func getMinimumPercentage as int #getterMethod
+	func setMinimumPercentage(v as int) as jk.widget.common.ProgressBarWidget #setterMethod
+	func getMaximumPercentage as int #getterMethod
+	func setMaximumPercentage(v as int) as jk.widget.common.ProgressBarWidget #setterMethod
+}
+class name jk.widget.common.ButtonWidget header public #widget
+{
+	import jk.lang
+	import jk.lang
+	import jk.ui
+	import jk.gfx
+	import jk.widget
+	func forText(context as jk.ui.GuiApplicationContext, text as string, handler as function<void>) static as jk.widget.common.ButtonWidget
+	ctor(context as jk.ui.GuiApplicationContext)
+	func setWidgetText(text as string)
+	func getWidgetText as string
+	func setWidgetTextColor(color as jk.gfx.Color)
+	func getWidgetTextColor as jk.gfx.Color
+	func setWidgetBackgroundColor(color as jk.gfx.Color)
+	func getWidgetBackgroundColor as jk.gfx.Color
+	func onWidgetClicked
+	func setWidgetClickHandler(handler as function<void>)
+	func setWidgetIcon(icon as jk.gfx.Image)
+	func getWidgetIcon as jk.gfx.Image
+	func setWidgetFont(font as string)
+	func setWidgetFontSize(fontSize as double #notLiteral)
+}
+interface name jk.widget.common.ActionBarControlWidget header public
+{
+	import jk.lang
+	func createActionBarOverlay(actionbar as jk.widget.common.ActionBarWidget) as jk.widget.Widget
+	func setActionBarBackgroundColor(actionbar as jk.widget.common.ActionBarWidget)
+	func getActionBarItems as vector<jk.widget.Widget>
+}
+class name jk.widget.common.SwitcherLayerWidget header extends jk.widget.ContainerWidget public #widget
+{
+	import jk.lang
+	import jk.lang
+	import jk.ui
+	import jk.gfx
+	import jk.widget
+	ctor(context as jk.ui.GuiApplicationContext)
+	func findTopMostLayerWidget(widget as jk.widget.Widget) static as jk.widget.common.SwitcherLayerWidget
+	func forMargin(context as jk.ui.GuiApplicationContext, margin as int #notLiteral) static as jk.widget.common.SwitcherLayerWidget
+	func forWidget(context as jk.ui.GuiApplicationContext, widget as jk.widget.Widget, margin as int #notLiteral = 0) static as jk.widget.common.SwitcherLayerWidget
+	func forWidgets(context as jk.ui.GuiApplicationContext, widgets as array<jk.widget.Widget>, margin as int #notLiteral = 0) static as jk.widget.common.SwitcherLayerWidget
+	func onWidgetHeightChanged(height as int #notLiteral) override
+	func computeWidgetLayout(widthConstraint as int #notLiteral) override
+	func removeAllChildren
+	func getChildWidget(index as int) as jk.widget.Widget
+}
+class name jk.widget.common.TextInputWidget header implements jk.widget.WidgetWithValue extends jk.widget.Widget public #widget
+{
+	import jk.lang
+	import jk.lang
+	import jk.ui
+	import jk.gfx
+	import jk.widget
+	func forType(context as jk.ui.GuiApplicationContext, type as int, placeholder as string) static as jk.widget.common.TextInputWidget
+	var TYPE_DEFAULT public static const as int
+	var TYPE_NONASSISTED public static const as int
+	var TYPE_NAME public static const as int
+	var TYPE_EMAIL_ADDRESS public static const as int
+	var TYPE_URL public static const as int
+	var TYPE_PHONE_NUMBER public static const as int
+	var TYPE_PASSWORD public static const as int
+	var TYPE_INTEGER public static const as int
+	var TYPE_FLOAT public static const as int
+	var TYPE_STREET_ADDRESS public static const as int
+	var ALIGN_LEFT public static const as int
+	var ALIGN_RIGHT public static const as int
+	var ALIGN_CENTER public static const as int
+	ctor(context as jk.ui.GuiApplicationContext)
+	func setWidgetStyle(style as string) as jk.widget.common.TextInputWidget
+	func setWidgetTextColor(color as jk.gfx.Color) as jk.widget.common.TextInputWidget
+	func getWidgetTextColor as jk.gfx.Color
+	func setWidgetBackgroundColor(color as jk.gfx.Color) as jk.widget.common.TextInputWidget
+	func getWidgetBackgroundColor as jk.gfx.Color
+	func setWidgetType(type as int) as jk.widget.common.TextInputWidget
+	func getWidgetType as int
+	func setWidgetText(text as string) as jk.widget.common.TextInputWidget
+	func getWidgetText as string
+	func setWidgetPlaceholder(placeholder as string) as jk.widget.common.TextInputWidget
+	func getWidgetPlaceholder as string
+	func setWidgetFontBold(bold as bool)
+	func setWidgetFontUnderline(underline as bool)
+	func setWidgetFontItalic(italic as bool)
+	func getWidgetFontUnderline as bool
+	func getWidgetFontItalic as bool
+	func getWidgetFontBold as bool
+	func setWidgetPadding(padding as int #notLiteral)
+	func setWidgetPadding(x as int #notLiteral, y as int #notLiteral)
+	func setWidgetPadding(l as int #notLiteral, t as int #notLiteral, r as int #notLiteral, b as int #notLiteral) as jk.widget.common.TextInputWidget
+	func setWidgetFontFamily(family as string) as jk.widget.common.TextInputWidget
+	func setWidgetFontResource(res as string) as jk.widget.common.TextInputWidget
+	func setWidgetFontSize(fontSize as double #notLiteral) as jk.widget.common.TextInputWidget
+	func setWidgetIsEnabled(v as bool)
+	func getWidgetIsEnabled as bool
+	func setWidgetValue(value as object) virtual
+	func getWidgetValue virtual as object
+	func focus
+	func setWidgetTextAlign(align as int) as jk.widget.common.TextInputWidget
+	func getWidgetTextAlign as int
+	func setWidgetMaxLength(v as int) as jk.widget.common.TextInputWidget
+	func getWidgetTextChangeHandler as function<void> #getterMethod
+	func setWidgetTextChangeHandler(v as function<void>) as jk.widget.common.TextInputWidget #setterMethod
+	func getWidgetOnEnterKeyPressed as function<void> #getterMethod
+	func setWidgetOnEnterKeyPressed(v as function<void>) as jk.widget.common.TextInputWidget #setterMethod
+	func getWidgetOnArrowUpKeyPressed as function<void> #getterMethod
+	func setWidgetOnArrowUpKeyPressed(v as function<void>) as jk.widget.common.TextInputWidget #setterMethod
+	func getWidgetOnArrowDownKeyPressed as function<void> #getterMethod
+	func setWidgetOnArrowDownKeyPressed(v as function<void>) as jk.widget.common.TextInputWidget #setterMethod
+	func getWidgetOnFocusHandler as function<void> #getterMethod
+	func setWidgetOnFocusHandler(v as function<void>) as jk.widget.common.TextInputWidget #setterMethod
+	func getWidgetOnLoseFocusHandler as function<void> #getterMethod
+	func setWidgetOnLoseFocusHandler(v as function<void>) as jk.widget.common.TextInputWidget #setterMethod
+}
+class name jk.widget.common.PopupMenu header public
+{
+	import jk.lang
+	import jk.ui
+	import jk.gfx
+	import jk.widget
+	ctor
+	func showBelow(ctx as jk.ui.GuiApplicationContext, w as jk.widget.Widget, menu as jk.widget.Menu, menuWidth as int #notLiteral = -1, align as int = -1) static
+	func showBeside(ctx as jk.ui.GuiApplicationContext, w as jk.widget.Widget, menu as jk.widget.Menu) static
+}
+class name jk.widget.common.LoadingWidget header extends jk.widget.LayerWidget public #widget
+{
+	import jk.lang
+	import jk.lang
+	import jk.ui
+	import jk.gfx
+	import jk.widget
+	ctor(context as jk.ui.GuiApplicationContext)
+	func initializeWithText(text as string) static
+	func initializeWithImage(image as jk.gfx.Image) static
+	func openPopup(context as jk.ui.GuiApplicationContext, widget as jk.widget.Widget) static as jk.widget.common.LoadingWidget
+	func closePopup(widget as jk.widget.common.LoadingWidget) static as jk.widget.common.LoadingWidget
+	func initializeWidget override
+	func start
+	func stop
+	func showPopup(target as jk.widget.Widget) as bool
+}
+class name jk.widget.common.CheckBoxWidget header implements jk.widget.WidgetWithValue extends jk.widget.Widget public #widget
+{
+	import jk.lang
+	import jk.lang
+	import jk.ui
+	import jk.gfx
+	import jk.widget
+	func forText(context as jk.ui.GuiApplicationContext, text as string) static as jk.widget.common.CheckBoxWidget
+	ctor(context as jk.ui.GuiApplicationContext)
+	func setWidgetText(text as string)
+	func getWidgetText as string
+	func setWidgetTextColor(color as jk.gfx.Color) as jk.widget.common.CheckBoxWidget
+	func getWidgetTextColor as jk.gfx.Color
+	func setWidgetFontFamily(font as string) as jk.widget.common.CheckBoxWidget
+	func setWidgetFontResource(res as string) as jk.widget.common.CheckBoxWidget
+	func getWidgetChecked as bool
+	func setWidgetChecked(x as bool)
+	func setWidgetValue(value as object)
+	func getWidgetValue virtual as object
+	func getWidgetCheckHandler as function<void> #getterMethod
+	func setWidgetCheckHandler(v as function<void>) as jk.widget.common.CheckBoxWidget #setterMethod
+}
+class name jk.widget.common.MenuBarWidget header extends jk.widget.LayerWidget public #widget
+{
+	import jk.lang
+	import jk.lang
+	import jk.ui
+	import jk.gfx
+	import jk.widget
+	ctor(context as jk.ui.GuiApplicationContext)
+	func addMenu(title as string, menu as jk.widget.Menu = null) as jk.widget.Menu
+	func createWidget override
+}
+class name jk.widget.common.ActionBarWidget header extends jk.widget.LayerWidget implements jk.widget.ScreenAwareWidget public #widget
+{
+	import jk.lang
+	import jk.lang
+	import jk.ui
+	import jk.gfx
+	import jk.widget
+	ctor(context as jk.ui.GuiApplicationContext)
+	func setWidgetTitle(value as string) as jk.widget.common.ActionBarWidget
+	func setWidgetTitleAlignment(align as double)
+	func setActionBarMargin(margin as int #notLiteral)
+	func setActionBarMarginLeft(margin as int #notLiteral)
+	func setActionBarMarginRight(margin as int #notLiteral)
+	func setActionBarMarginTop(margin as int #notLiteral)
+	func setActionBarMarginBottom(margin as int #notLiteral)
+	func getWidgetTitleLabel as jk.widget.LabelWidget
+	func getWidgetTitle as string
+	func configureLeftButton(iconResource as string, action as function<void>)
+	func configureRightButton(iconResource as string, action as function<void>)
+	func configureRightButtonMenu(iconResource as string, menu as jk.widget.Menu)
+	func getWidgetTextColor as jk.gfx.Color
+	func onWidgetAddedToScreen(screen as jk.widget.ScreenForWidget)
+	func onWidgetRemovedFromScreen(screen as jk.widget.ScreenForWidget)
+	func configureMenuItems(items as vector<jk.widget.Widget>)
+	func setActionBarBackgroundColor(color as jk.gfx.Color)
+	func addOverlay(widget as jk.widget.Widget)
+	func removeOverlay as bool
+	func clearMenuItems
+	func initializeWidget override
+	func getWidgetBackgroundColor as jk.gfx.Color #getterMethod
+	func setWidgetBackgroundColor(v as jk.gfx.Color) as jk.widget.common.ActionBarWidget #setterMethod
+	func setWidgetTextColor(v as jk.gfx.Color) as jk.widget.common.ActionBarWidget #setterMethod
+	func getWidgetMenuItemSpacing as int #getterMethod
+	func setWidgetMenuItemSpacing(v as int #notLiteral) as jk.widget.common.ActionBarWidget #setterMethod
+}
+class name jk.widget.common.NavigationFrameWidget header implements jk.widget.TitleContainerWidget extends jk.widget.LayerWidget abstract public #widget
+{
+	import jk.lang
+	import jk.lang
+	import jk.ui
+	import jk.gfx
+	import jk.widget
+	var contentArea protected as jk.widget.common.SwitcherLayerWidget
+	var actionBar protected as jk.widget.common.ActionBarWidget
+	ctor(ctx as jk.ui.GuiApplicationContext)
+	func getActionBarMenuItems virtual as vector<jk.widget.Widget>
+	func getMenuHandler virtual as function<void>
+	func getAppIconResource virtual as string
+	func getAppMenuHandler virtual as function<void>
+	func getAppMenu virtual as jk.widget.Menu
+	func defaultLeftButtonConfiguration
+	func updateMenuButton virtual
+	func createSidebarWidget virtual as jk.widget.Widget
+	func computeWidgetLayout(widthConstraint as int #notLiteral) override
+	func displaySidebarWidget(animated as bool = true)
+	func hideSidebarWidget(animated as bool = true)
+	func createBackground virtual
+	func initializeWidget override
+	func updateWidgetTitle(title as string)
+	func onCurrentWidgetChanged
+	func createWidget override
+	func getWidgetEnableSidebar as bool #getterMethod
+	func setWidgetEnableSidebar(v as bool) as jk.widget.common.NavigationFrameWidget #setterMethod
+	func getWidgetEnableActionBar as bool #getterMethod
+	func setWidgetEnableActionBar(v as bool) as jk.widget.common.NavigationFrameWidget #setterMethod
+	func getWidgetActionBarIsFloating as bool #getterMethod
+	func setWidgetActionBarIsFloating(v as bool) as jk.widget.common.NavigationFrameWidget #setterMethod
+	func getWidgetActionBarBackgroundColor as jk.gfx.Color #getterMethod
+	func setWidgetActionBarBackgroundColor(v as jk.gfx.Color) as jk.widget.common.NavigationFrameWidget #setterMethod
+	func getWidgetActionBarTextColor as jk.gfx.Color #getterMethod
+	func setWidgetActionBarTextColor(v as jk.gfx.Color) as jk.widget.common.NavigationFrameWidget #setterMethod
+	func getWidgetActionBarMenuItemSpacing as int #getterMethod
+	func setWidgetActionBarMenuItemSpacing(v as int #notLiteral) as jk.widget.common.NavigationFrameWidget #setterMethod
+	func getWidgetBackgroundColor as jk.gfx.Color #getterMethod
+	func setWidgetBackgroundColor(v as jk.gfx.Color) as jk.widget.common.NavigationFrameWidget #setterMethod
+	func getWidgetBurgerMenuImageResourceName as string #getterMethod
+	func setWidgetBurgerMenuImageResourceName(v as string) as jk.widget.common.NavigationFrameWidget #setterMethod
+}
+class name jk.widget.common.TextButtonWidget header extends jk.widget.LayerWidget public #widget
+{
+	import jk.lang
+	import jk.lang
+	import jk.ui
+	import jk.gfx
+	import jk.widget
+	func forText(context as jk.ui.GuiApplicationContext, text as string, handler as function<void> = null) static as jk.widget.common.TextButtonWidget
+	ctor(ctx as jk.ui.GuiApplicationContext)
+	func setWidgetClickHandler(handler as function<void>) as jk.widget.common.TextButtonWidget
+	func getWidgetClickHandler as function<void>
+	func setWidgetStyle(style as string) as jk.widget.common.TextButtonWidget
+	func initializeWidget override
+	func getWidgetText as string #getterMethod
+	func setWidgetText(v as string) as jk.widget.common.TextButtonWidget #setterMethod
+	func getWidgetRoundingRadius as double #getterMethod
+	func setWidgetRoundingRadius(v as double #notLiteral) as jk.widget.common.TextButtonWidget #setterMethod
+	func getWidgetBackgroundColor as jk.gfx.Color #getterMethod
+	func setWidgetBackgroundColor(v as jk.gfx.Color) as jk.widget.common.TextButtonWidget #setterMethod
+	func getWidgetPressedBackgroundColor as jk.gfx.Color #getterMethod
+	func setWidgetPressedBackgroundColor(v as jk.gfx.Color) as jk.widget.common.TextButtonWidget #setterMethod
+	func getWidgetTextColor as jk.gfx.Color #getterMethod
+	func setWidgetTextColor(v as jk.gfx.Color) as jk.widget.common.TextButtonWidget #setterMethod
+	func getWidgetFontSize as int #getterMethod
+	func setWidgetFontSize(v as int #notLiteral) as jk.widget.common.TextButtonWidget #setterMethod
+	func getWidgetFontFamily as string #getterMethod
+	func setWidgetFontFamily(v as string) as jk.widget.common.TextButtonWidget #setterMethod
+	func getWidgetFontResource as string #getterMethod
+	func setWidgetFontResource(v as string) as jk.widget.common.TextButtonWidget #setterMethod
+	func getWidgetPadding as int #getterMethod
+	func setWidgetPadding(v as int #notLiteral) as jk.widget.common.TextButtonWidget #setterMethod
+	func getWidgetPaddingHorizontal as int #getterMethod
+	func setWidgetPaddingHorizontal(v as int #notLiteral) as jk.widget.common.TextButtonWidget #setterMethod
+}
+class name jk.widget.common.RoundedImageWidget header extends jk.widget.LayerWidget public #widget
+{
+	import jk.lang
+	import jk.lang
+	import jk.ui
+	import jk.gfx
+	import jk.widget
+	import jk.gfx.util
+	ctor(ctx as jk.ui.GuiApplicationContext)
+	func setWidgetSize(sz as int #notLiteral) as jk.widget.common.RoundedImageWidget
+	func setWidgetImageResource(src as string) as jk.widget.common.RoundedImageWidget
+	func setWidgetImage(image as jk.gfx.Image) as jk.widget.common.RoundedImageWidget
+	func createWidget override
+	func getWidgetScaleSize as int #getterMethod
+	func setWidgetScaleSize(v as int) as jk.widget.common.RoundedImageWidget #setterMethod
+}
+class name jk.widget.common.SelectSearchWidget header implements jk.widget.WidgetWithValue extends jk.widget.LayerWidget public #widget
+{
+	import jk.lang
+	import jk.lang
+	import jk.ui
+	import jk.gfx
+	import jk.widget
+	ctor(context as jk.ui.GuiApplicationContext)
+	func initializeWidget override
+	func setWidgetPlaceholder(text as string) as jk.widget.common.SelectSearchWidget
+	func setWidgetImageResource(resource as string) as jk.widget.common.SelectSearchWidget
+	func setWidgetBackgroundColor(color as jk.gfx.Color) as jk.widget.common.SelectSearchWidget
+	func onWidgetTextChanged(value as string)
+	func searchStringFromItems(value as string)
+	func clearItems
+	func setWidgetItems(items as jk.lang.KeyValueList<string,string>)
+	func createWidgetItem(title as string) virtual as jk.widget.Widget
+	func onWidgetSelectionChanged
+	func showPopup
+	func closePopup
+	func addItemToList(item as string)
+	func getSelectedWidgetValue as string
+	func setSelectedWidgetValue(value as string)
+	func setWidgetValue(value as object)
+	func getWidgetValue as object
+	func setWidgetValueChangeHandler(handler as function<void>)
+	func createWidget override
+	func getDefaultNoRecordMessage as string #getterMethod
+	func setDefaultNoRecordMessage(v as string) as jk.widget.common.SelectSearchWidget #setterMethod
+	func getWidgetOutlineColor as jk.gfx.Color #getterMethod
+	func setWidgetOutlineColor(v as jk.gfx.Color) as jk.widget.common.SelectSearchWidget #setterMethod
+}
+class name jk.widget.common.TextAreaWidget header implements jk.widget.WidgetWithValue extends jk.widget.Widget public #widget
+{
+	import jk.lang
+	import jk.lang
+	import jk.ui
+	import jk.gfx
+	import jk.widget
+	func forPlaceholder(context as jk.ui.GuiApplicationContext, placeholder as string, rows as int = 1) static as jk.widget.common.TextAreaWidget
+	ctor(context as jk.ui.GuiApplicationContext)
+	func setWidgetStyle(style as string) as jk.widget.common.TextAreaWidget
+	func configureMonospaceFont
+	func focus
+	func setWidgetFontFamily(family as string) as jk.widget.common.TextAreaWidget
+	func setWidgetFontResource(res as string) as jk.widget.common.TextAreaWidget
+	func setWidgetFontSize(fontSize as double #notLiteral) as jk.widget.common.TextAreaWidget
+	func setWidgetTextColor(color as jk.gfx.Color) as jk.widget.common.TextAreaWidget
+	func getWidgetTextColor as jk.gfx.Color
+	func setWidgetBackgroundColor(color as jk.gfx.Color) as jk.widget.common.TextAreaWidget
+	func getWidgetBackgroundColor as jk.gfx.Color
+	func setWidgetRows(row as int) as jk.widget.common.TextAreaWidget
+	func setWidgetText(text as string) as jk.widget.common.TextAreaWidget
+	func setWidgetPlaceholder(placeholder as string) as jk.widget.common.TextAreaWidget
+	func setWidgetPadding(padding as int #notLiteral) as jk.widget.common.TextAreaWidget
+	func setWidgetPadding(lr as int #notLiteral, tb as int #notLiteral) as jk.widget.common.TextAreaWidget
+	func setWidgetPadding(l as int #notLiteral, t as int #notLiteral, r as int #notLiteral, b as int #notLiteral) as jk.widget.common.TextAreaWidget
+	func getWidgetText as string
+	func getWidgetPlaceholder as string
+	func setWidgetValue(value as object)
+	func getWidgetValue as object
+	func setWidgetMaxLength(v as int) as jk.widget.common.TextAreaWidget
+	func getWidgetTextChangeHandler as function<void> #getterMethod
+	func setWidgetTextChangeHandler(v as function<void>) as jk.widget.common.TextAreaWidget #setterMethod
+	func getWidgetOnFocusHandler as function<void> #getterMethod
+	func setWidgetOnFocusHandler(v as function<void>) as jk.widget.common.TextAreaWidget #setterMethod
+	func getWidgetOnLoseFocusHandler as function<void> #getterMethod
+	func setWidgetOnLoseFocusHandler(v as function<void>) as jk.widget.common.TextAreaWidget #setterMethod
+	func getWidgetOnEnterKeyPressed as function<void> #getterMethod
+	func setWidgetOnEnterKeyPressed(v as function<void>) as jk.widget.common.TextAreaWidget #setterMethod
+}
+class name jk.widget.common.RouteNavigationWidget header extends jk.widget.common.NavigationFrameWidget implements jk.ui.RouterListener public #widget
+{
+	import jk.lang
+	import jk.lang
+	import jk.ui
+	import jk.gfx
+	import jk.widget
+	class name Route header public static
+	{
+		ctor
+		func getName as string #getterMethod
+		func setName(v as string) as jk.widget.common.RouteNavigationWidget.Route #setterMethod
+		func getHandler as function<jk.widget.Widget> #getterMethod
+		func setHandler(v as function<jk.widget.Widget>) as jk.widget.common.RouteNavigationWidget.Route #setterMethod
+	}
+	ctor(ctx as jk.ui.GuiApplicationContext)
+	func initializeWidget override
+	func onRouteChanged(route as string)
+	func initializeRoutes(rs as array) as bool
+	func addRoute(route as string, callback as function<jk.widget.Widget>)
+	func getWidget(route as string) as jk.widget.Widget
+}
+class name jk.widget.common.DynamicVerticalScrollerWidget header extends jk.widget.LayerWidget public #widget
+{
+	import jk.lang
+	import jk.lang
+	import jk.ui
+	import jk.gfx
+	import jk.widget
+	ctor(context as jk.ui.GuiApplicationContext)
+	func forHandler(context as jk.ui.GuiApplicationContext, handler as function<jk.widget.Widget>) static as jk.widget.common.DynamicVerticalScrollerWidget
+	func forProvider(context as jk.ui.GuiApplicationContext, provider as jk.widget.WidgetProvider) static as jk.widget.common.DynamicVerticalScrollerWidget
+	func forWidgets(context as jk.ui.GuiApplicationContext, widgets as vector<jk.widget.Widget>) static as jk.widget.common.DynamicVerticalScrollerWidget
+	func setWidgetContainerSpacing(height as int #notLiteral)
+	func setWidgetContainerMargin(height as int #notLiteral)
+	func initializeWidget override
+	func onAddWidget(container as jk.widget.ContainerWidget) virtual
+	func clear
+	func createWidget override
+	func getWidgetProviderHandler as function<jk.widget.Widget> #getterMethod
+	func setWidgetProviderHandler(v as function<jk.widget.Widget>) as jk.widget.common.DynamicVerticalScrollerWidget #setterMethod
+	func getWidgetProvider as jk.widget.WidgetProvider #getterMethod
+	func setWidgetProvider(v as jk.widget.WidgetProvider) as jk.widget.common.DynamicVerticalScrollerWidget #setterMethod
+	func getWidgetItemAddCount as int #getterMethod
+	func setWidgetItemAddCount(v as int) as jk.widget.common.DynamicVerticalScrollerWidget #setterMethod
+}
+class name jk.widget.common.DateSelectorWidget header extends jk.widget.LayerWidget implements jk.widget.WidgetWithValue public #widget
+{
+	import jk.lang
+	import jk.lang
+	import jk.ui
+	import jk.gfx
+	import jk.widget
+	import jk.time
+	func forContext(context as jk.ui.GuiApplicationContext) static as jk.widget.common.DateSelectorWidget
+	ctor(ctx as jk.ui.GuiApplicationContext)
+	func initializeWidget override
+	func setWidgetValue(value as object)
+	func getWidgetValue as object
+	func getSkipYears as int #getterMethod
+	func setSkipYears(v as int) as jk.widget.common.DateSelectorWidget #setterMethod
+}
+class name jk.widget.common.PopupDialogManager header public
+{
+	import jk.lang
+	import jk.ui
+	import jk.gfx
+	import jk.widget
+	ctor(context as jk.ui.GuiApplicationContext, parent as jk.widget.Widget)
+	func setButtonColor(color as jk.gfx.Color) as jk.widget.common.PopupDialogManager
+	func showTextInputDialog(title as string, prompt as string, callback as function<void,string> = null)
+	func showMessageDialog(title as string, message as string, callback as function<void> = null)
+	func showConfirmDialog(title as string, message as string, okcallback as function<void>, cancelcallback as function<void>)
+	func showErrorDialog(message as string, callback as function<void> = null)
+	func checkForDefaultColors
+	func getContext as jk.ui.GuiApplicationContext #getterMethod
+	func setContext(v as jk.ui.GuiApplicationContext) as jk.widget.common.PopupDialogManager #setterMethod
+	func getParent as jk.widget.Widget #getterMethod
+	func setParent(v as jk.widget.Widget) as jk.widget.common.PopupDialogManager #setterMethod
+	func getBackgroundColor as jk.gfx.Color #getterMethod
+	func setBackgroundColor(v as jk.gfx.Color) as jk.widget.common.PopupDialogManager #setterMethod
+	func getHeaderBackgroundColor as jk.gfx.Color #getterMethod
+	func setHeaderBackgroundColor(v as jk.gfx.Color) as jk.widget.common.PopupDialogManager #setterMethod
+	func getHeaderTextColor as jk.gfx.Color #getterMethod
+	func setHeaderTextColor(v as jk.gfx.Color) as jk.widget.common.PopupDialogManager #setterMethod
+	func getMessageTextColor as jk.gfx.Color #getterMethod
+	func setMessageTextColor(v as jk.gfx.Color) as jk.widget.common.PopupDialogManager #setterMethod
+	func getPositiveButtonColor as jk.gfx.Color #getterMethod
+	func setPositiveButtonColor(v as jk.gfx.Color) as jk.widget.common.PopupDialogManager #setterMethod
+	func getNegativeButtonColor as jk.gfx.Color #getterMethod
+	func setNegativeButtonColor(v as jk.gfx.Color) as jk.widget.common.PopupDialogManager #setterMethod
+}

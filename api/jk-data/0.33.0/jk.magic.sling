@@ -1,0 +1,15 @@
+class name jk.magic.MagicNumberRegistry header public
+{
+	import jk.lang
+	import jk.fs
+	class name MagicNumberInfo header public static
+	{
+		ctor
+		var magic public as string
+		var description public as string
+		var mimeType public as string
+	}
+	func instance static as jk.magic.MagicNumberRegistry
+	func determineTypeForFile(file as jk.fs.File) static as jk.magic.MagicNumberRegistry.MagicNumberInfo
+	func determineMimeTypeForBuffer(buffer as buffer) static as jk.magic.MagicNumberRegistry.MagicNumberInfo
+}

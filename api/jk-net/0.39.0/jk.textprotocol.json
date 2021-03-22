@@ -1,0 +1,18 @@
+{
+	"moduleDescription" : "",
+	"type" : "module",
+	"moduleTitle" : "",
+	"moduleId" : "jk.textprotocol",
+	"entities" : [
+		{
+			"type" : "class",
+			"name" : "TextProtocolConnection",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "TextLineProtocolConnection",
+			"description" : ""
+		}
+	]
+}

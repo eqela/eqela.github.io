@@ -1,0 +1,18 @@
+{
+	"moduleDescription" : "Parsing and generating files in the comma-separated-value (CSV) format.\n",
+	"type" : "module",
+	"moduleTitle" : "CSV handling",
+	"moduleId" : "jk.csv",
+	"entities" : [
+		{
+			"type" : "class",
+			"name" : "CSVParser",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "CSVGenerator",
+			"description" : ""
+		}
+	]
+}

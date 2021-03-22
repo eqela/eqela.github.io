@@ -1,0 +1,46 @@
+<html>
+<head>
+<title>jk.ws.server.WSServerConnection | JK Net [0.39.0] - API Reference</title>
+<link rel="stylesheet" type="text/css" href="style.css" />
+<meta name="viewport" content="initial-scale=1,maximum-scale=1" />
+<meta property="og:description" content="jk.ws.server.WSServerConnection | JK Net [0.39.0] - API Reference" />
+<meta property="og:title" content="jk.ws.server.WSServerConnection | JK Net [0.39.0] - API Reference" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:description" content="jk.ws.server.WSServerConnection | JK Net [0.39.0] - API Reference" />
+</head>
+<body><div class="content">
+<a class="back" href="index.html">&laquo; JK Net [0.39.0]</a><div class="intro">
+<h1><span class="keyword">class</span> <span class="symbol">jk.ws.server.WSServerConnection</span></h1>
+<p></p>
+</div>
+<div class="list">
+<div class="title">Base Types</div>
+<div class="entry">
+<div class="name"><span class="keyword">extends</span> <a class="datatype" href="jk.server.NetworkConnection.html">jk.server.NetworkConnection</a></div></div>
+</div>
+<div class="list">
+<div class="title">Instance Methods</div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">onOpened</span> <span class="modifier">override</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">onClosed</span> <span class="modifier">override</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">onError</span> ( message <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="modifier">override</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">onDataReceived</span> ( data <span class="keyword">as</span> <span class="datatype">buffer</span> , size <span class="keyword">as</span> <span class="datatype">int</span> ) <span class="modifier">override</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">onMaintenance</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">sendResponse</span> ( message <span class="keyword">as</span> <a class="datatype" href="jk.ws.server.WSServerMessage.html">jk.ws.server.WSServerMessage</a> ) <span class="keyword">as</span> <span class="datatype">int</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getConnectionHandler</span> <span class="keyword">as</span> <a class="datatype" href="jk.ws.server.WSServerConnectionHandler.html">jk.ws.server.WSServerConnectionHandler</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setConnectionHandler</span> ( v <span class="keyword">as</span> <a class="datatype" href="jk.ws.server.WSServerConnectionHandler.html">jk.ws.server.WSServerConnectionHandler</a> ) <span class="keyword">as</span> <a class="datatype" href="jk.ws.server.WSServerConnection.html">jk.ws.server.WSServerConnection</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getPingInterval</span> <span class="keyword">as</span> <span class="datatype">long</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setPingInterval</span> ( v <span class="keyword">as</span> <span class="datatype">long</span> ) <span class="keyword">as</span> <a class="datatype" href="jk.ws.server.WSServerConnection.html">jk.ws.server.WSServerConnection</a></div></div>
+</div>
+</div>
+</body>
+</html>

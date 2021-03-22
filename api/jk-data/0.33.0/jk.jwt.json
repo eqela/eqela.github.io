@@ -1,0 +1,23 @@
+{
+	"moduleDescription" : "Functionality for dealing with JSON Web Tokens (JWT).\n",
+	"type" : "module",
+	"moduleTitle" : "JWT handling",
+	"moduleId" : "jk.jwt",
+	"entities" : [
+		{
+			"type" : "class",
+			"name" : "JWT",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "JWKToPEMConverter",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "RS256",
+			"description" : ""
+		}
+	]
+}

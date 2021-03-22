@@ -1,0 +1,18 @@
+{
+	"moduleDescription" : "Utilities for handling objects with dynamic properties.\n",
+	"type" : "module",
+	"moduleTitle" : "Dynamic model utilities",
+	"moduleId" : "jk.model",
+	"entities" : [
+		{
+			"type" : "class",
+			"name" : "DynamicModelField",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "DynamicModel",
+			"description" : ""
+		}
+	]
+}

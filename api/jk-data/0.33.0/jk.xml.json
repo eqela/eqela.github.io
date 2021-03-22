@@ -1,0 +1,48 @@
+{
+	"moduleDescription" : "Functionality for parsing, generating and manipulating XML content. Also\nincludes HTML functionality.\n",
+	"type" : "module",
+	"moduleTitle" : "XML handling",
+	"moduleId" : "jk.xml",
+	"entities" : [
+		{
+			"type" : "class",
+			"name" : "XMLParserAdapter",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "XMLDOM",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "XMLDOMNode",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "HTMLParser",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "HTMLString",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "XMLParser",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "MarkupLanguageParser",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "XMLMaker",
+			"description" : ""
+		}
+	]
+}

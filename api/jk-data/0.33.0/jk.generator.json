@@ -1,0 +1,13 @@
+{
+	"moduleDescription" : "Miscellaneous data generator functionality.\n",
+	"type" : "module",
+	"moduleTitle" : "Data generator",
+	"moduleId" : "jk.generator",
+	"entities" : [
+		{
+			"type" : "class",
+			"name" : "DataGenerator",
+			"description" : ""
+		}
+	]
+}

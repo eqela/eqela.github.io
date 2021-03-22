@@ -1,0 +1,28 @@
+class name jk.widget.carousel.CarouselWidget header extends jk.widget.LayerWidget public #widget
+{
+	import jk.lang
+	import jk.lang
+	import jk.ui
+	import jk.gfx
+	import jk.widget
+	import jk.time
+	ctor(context as jk.ui.GuiApplicationContext)
+	func initializeWidget override
+	func onPeriodicTimer
+	func setWidgetBackgroundColor(color as jk.gfx.Color)
+	func setWidgetAnimationDuration(duration as long)
+	func setWidgetEntry(widget as jk.widget.Widget)
+	func setWidgetSelected(index as int)
+	func setWidgetToNext
+	func setWidgetToPrevious
+	func clearEntries
+	func createWidget override
+	func getWidgetAnimationProgressListener as function<void,double> #getterMethod
+	func setWidgetAnimationProgressListener(v as function<void,double>) as jk.widget.carousel.CarouselWidget #setterMethod
+	func getWidgetCurrentWidgetChangeListener as function<void,int,jk.widget.Widget> #getterMethod
+	func setWidgetCurrentWidgetChangeListener(v as function<void,int,jk.widget.Widget>) as jk.widget.carousel.CarouselWidget #setterMethod
+	func getWidgetAutoSwitch as bool #getterMethod
+	func setWidgetAutoSwitch(v as bool) as jk.widget.carousel.CarouselWidget #setterMethod
+	func getWidgetAutoSwitchInterval as double #getterMethod
+	func setWidgetAutoSwitchInterval(v as double) as jk.widget.carousel.CarouselWidget #setterMethod
+}

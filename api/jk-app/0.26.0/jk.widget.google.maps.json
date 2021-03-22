@@ -1,0 +1,23 @@
+{
+	"moduleDescription" : "",
+	"type" : "module",
+	"moduleTitle" : "",
+	"moduleId" : "jk.widget.google.maps",
+	"entities" : [
+		{
+			"type" : "interface",
+			"name" : "MapMarker",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "StreetViewWidget",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "MapWidget",
+			"description" : ""
+		}
+	]
+}

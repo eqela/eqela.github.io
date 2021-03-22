@@ -1,0 +1,39 @@
+<html>
+<head>
+<title>jk.http.server.HTTPServerRequestHandlerStack | JK Net [0.39.0] - API Reference</title>
+<link rel="stylesheet" type="text/css" href="style.css" />
+<meta name="viewport" content="initial-scale=1,maximum-scale=1" />
+<meta property="og:description" content="jk.http.server.HTTPServerRequestHandlerStack | JK Net [0.39.0] - API Reference" />
+<meta property="og:title" content="jk.http.server.HTTPServerRequestHandlerStack | JK Net [0.39.0] - API Reference" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:description" content="jk.http.server.HTTPServerRequestHandlerStack | JK Net [0.39.0] - API Reference" />
+</head>
+<body><div class="content">
+<a class="back" href="index.html">&laquo; JK Net [0.39.0]</a><div class="intro">
+<h1><span class="keyword">class</span> <span class="symbol">jk.http.server.HTTPServerRequestHandlerStack</span></h1>
+<p></p>
+</div>
+<div class="list">
+<div class="title">Base Types</div>
+<div class="entry">
+<div class="name"><span class="keyword">extends</span> <a class="datatype" href="jk.http.server.HTTPServerRequestHandlerContainer.html">jk.http.server.HTTPServerRequestHandlerContainer</a></div></div>
+</div>
+<div class="list">
+<div class="title">Instance Variables</div>
+<div class="entry">
+<div class="name"><span class="keyword">var</span> <span class="symbol">requestHandlers</span> <span class="keyword">as</span> <span class="datatype">vector&lt;jk.http.server.HTTPServerRequestHandler&gt;</span></div></div>
+</div>
+<div class="list">
+<div class="title">Instance Methods</div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">iterateRequestHandlers</span> <span class="modifier">override</span> <span class="keyword">as</span> <a class="datatype" href="../../jk-core/0.37.0/jk.lang.Iterator.html">jk.lang.Iterator&lt;jk.http.server.HTTPServerRequestHandler&gt;</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">pushRequestHandler</span> ( handler <span class="keyword">as</span> <span class="datatype">function&lt;void,jk.http.server.HTTPServerRequest,function&lt;void&gt;&gt;</span> ) <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">pushRequestHandler</span> ( handler <span class="keyword">as</span> <a class="datatype" href="jk.http.server.HTTPServerRequestHandler.html">jk.http.server.HTTPServerRequestHandler</a> ) <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">handleRequest</span> ( req <span class="keyword">as</span> <a class="datatype" href="jk.http.server.HTTPServerRequest.html">jk.http.server.HTTPServerRequest</a> , next <span class="keyword">as</span> <span class="datatype">function&lt;void&gt;</span> ) <span class="modifier">override</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+</div>
+</div>
+</body>
+</html>

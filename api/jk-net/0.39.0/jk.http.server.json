@@ -1,0 +1,103 @@
+{
+	"moduleDescription" : "",
+	"type" : "module",
+	"moduleTitle" : "",
+	"moduleId" : "jk.http.server",
+	"entities" : [
+		{
+			"type" : "class",
+			"name" : "HTTPServerRequestHandlerAdapter",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "HTTPServerRequestLogger",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "HTTPServerJSONResponse",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "HTTPServerConnection",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "HTTPServerRequestHandlerStack",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "HTTPServerBase",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "HTTPServerResponse",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "HTTPServerRequest",
+			"description" : ""
+		},
+		{
+			"type" : "interface",
+			"name" : "HTTPServerComponent",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "HTTPServerBinaryReaderResponseWorker",
+			"description" : ""
+		},
+		{
+			"type" : "interface",
+			"name" : "HTTPServerRequestHandlerListener",
+			"description" : ""
+		},
+		{
+			"type" : "interface",
+			"name" : "HTTPServerRequestHandler",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "HTTPServerResponseSession",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "HTTPServerExternalCommandResponseWorker",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "HTTPServer",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "HTTPServerResponseWorker",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "HTTPServerStaticContentHandler",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "HTTPServerRequestHandlerMap",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "HTTPServerRequestHandlerContainer",
+			"description" : ""
+		}
+	]
+}

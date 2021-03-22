@@ -1,0 +1,33 @@
+{
+	"moduleDescription" : "Implementation of AES encryption functionality.\n",
+	"type" : "module",
+	"moduleTitle" : "AES encryption",
+	"moduleId" : "jk.aes",
+	"entities" : [
+		{
+			"type" : "class",
+			"name" : "AES128Cipher",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "BlockCipherReader",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "BlockCipherWriter",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "AES128CipherGeneric",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "BlockCipher",
+			"description" : ""
+		}
+	]
+}

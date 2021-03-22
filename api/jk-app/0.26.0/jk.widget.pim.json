@@ -1,0 +1,18 @@
+{
+	"moduleDescription" : "",
+	"type" : "module",
+	"moduleTitle" : "",
+	"moduleId" : "jk.widget.pim",
+	"entities" : [
+		{
+			"type" : "class",
+			"name" : "ContactPicker",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "Contact",
+			"description" : ""
+		}
+	]
+}

@@ -1,0 +1,47 @@
+<html>
+<head>
+<title>jk.widget.web.WebImageWidget | JK App [0.26.0] - API Reference</title>
+<link rel="stylesheet" type="text/css" href="style.css" />
+<meta name="viewport" content="initial-scale=1,maximum-scale=1" />
+<meta property="og:description" content="jk.widget.web.WebImageWidget | JK App [0.26.0] - API Reference" />
+<meta property="og:title" content="jk.widget.web.WebImageWidget | JK App [0.26.0] - API Reference" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:description" content="jk.widget.web.WebImageWidget | JK App [0.26.0] - API Reference" />
+</head>
+<body><div class="content">
+<a class="back" href="index.html">&laquo; JK App [0.26.0]</a><div class="intro">
+<h1><span class="keyword">class</span> <span class="symbol">jk.widget.web.WebImageWidget</span></h1>
+<p></p>
+</div>
+<div class="list">
+<div class="title">Base Types</div>
+<div class="entry">
+<div class="name"><span class="keyword">extends</span> <a class="datatype" href="jk.widget.web.AsynchronousImageWidget.html">jk.widget.web.AsynchronousImageWidget</a></div></div>
+</div>
+<div class="list">
+<div class="title">Static Methods</div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">forPlaceholderImage</span> ( context <span class="keyword">as</span> <a class="datatype" href="jk.ui.GuiApplicationContext.html">jk.ui.GuiApplicationContext</a> , image <span class="keyword">as</span> <a class="datatype" href="../../jk-gfx/0.21.0/jk.gfx.Image.html">jk.gfx.Image</a> ) <span class="modifier">static</span> <span class="keyword">as</span> <a class="datatype" href="jk.widget.web.WebImageWidget.html">jk.widget.web.WebImageWidget</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">doQueryImage</span> ( context <span class="keyword">as</span> <a class="datatype" href="jk.ui.GuiApplicationContext.html">jk.ui.GuiApplicationContext</a> , url <span class="keyword">as</span> <span class="datatype">string</span> , headers <span class="keyword">as</span> <a class="datatype" href="../../jk-core/0.37.0/jk.lang.KeyValueList.html">jk.lang.KeyValueList&lt;string,string&gt;</a> , body <span class="keyword">as</span> <span class="datatype">buffer</span> , callback <span class="keyword">as</span> <span class="datatype">function&lt;void,jk.gfx.Image&gt;</span> , errorCallback <span class="keyword">as</span> <span class="datatype">function&lt;void,jk.lang.Error&gt;</span> ) <span class="modifier">static</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+</div>
+<div class="list">
+<div class="title">Instance Methods</div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setWidgetImageResource</span> ( resName <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getWidgetImage</span> <span class="keyword">as</span> <a class="datatype" href="../../jk-gfx/0.21.0/jk.gfx.Image.html">jk.gfx.Image</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setWidgetImage</span> ( image <span class="keyword">as</span> <a class="datatype" href="../../jk-gfx/0.21.0/jk.gfx.Image.html">jk.gfx.Image</a> ) <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setWidgetImageUrl</span> ( url <span class="keyword">as</span> <span class="datatype">string</span> , callback <span class="keyword">as</span> <span class="datatype">function&lt;void,jk.lang.Error&gt;</span> ) <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setWidgetImageUrl</span> ( url <span class="keyword">as</span> <span class="datatype">string</span> , headers <span class="keyword">as</span> <a class="datatype" href="../../jk-core/0.37.0/jk.lang.KeyValueList.html">jk.lang.KeyValueList&lt;string,string&gt;</a> , body <span class="keyword">as</span> <span class="datatype">buffer</span> , callback <span class="keyword">as</span> <span class="datatype">function&lt;void,jk.lang.Error&gt;</span> ) <span class="modifier">virtual</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getWidgetUseOverlay</span> <span class="keyword">as</span> <span class="datatype">bool</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setWidgetUseOverlay</span> ( v <span class="keyword">as</span> <span class="datatype">bool</span> ) <span class="keyword">as</span> <a class="datatype" href="jk.widget.web.WebImageWidget.html">jk.widget.web.WebImageWidget</a></div></div>
+</div>
+</div>
+</body>
+</html>

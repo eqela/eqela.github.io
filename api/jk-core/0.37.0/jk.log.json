@@ -1,0 +1,18 @@
+{
+	"moduleDescription" : "A simple and generic logging framework.\n",
+	"type" : "module",
+	"moduleTitle" : "Logging features",
+	"moduleId" : "jk.log",
+	"entities" : [
+		{
+			"type" : "class",
+			"name" : "Log",
+			"description" : ""
+		},
+		{
+			"type" : "interface",
+			"name" : "LoggingContext",
+			"description" : ""
+		}
+	]
+}

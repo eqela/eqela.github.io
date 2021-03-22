@@ -1,0 +1,93 @@
+{
+	"moduleDescription" : "Implementation of a custom text template system and Markdown-like rich\ntext formatting markup parser and processor.\n",
+	"type" : "module",
+	"moduleTitle" : "Text template functionality",
+	"moduleId" : "jk.template",
+	"entities" : [
+		{
+			"type" : "class",
+			"name" : "RichTextContentParagraph",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "TextTemplate",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "RichTextDocument",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "RichTextPreformattedParagraph",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "RichTextBlockParagraph",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "DynamicText",
+			"description" : ""
+		},
+		{
+			"type" : "interface",
+			"name" : "RichTextDocumentReferenceResolver",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "RichTextListParagraph",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "RichTextWikiMarkupParser",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "RichTextImageParagraph",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "RichTextSegment",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "RichTextReferenceParagraph",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "RichTextParagraph",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "TextTemplateManager",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "RichTextSeparatorParagraph",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "RichTextStyledParagraph",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "RichTextLinkParagraph",
+			"description" : ""
+		}
+	]
+}

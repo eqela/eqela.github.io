@@ -1,0 +1,13 @@
+{
+	"moduleDescription" : "",
+	"type" : "module",
+	"moduleTitle" : "",
+	"moduleId" : "jk.http.server.cors",
+	"entities" : [
+		{
+			"type" : "class",
+			"name" : "HTTPServerCORSUtil",
+			"description" : ""
+		}
+	]
+}

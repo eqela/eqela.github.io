@@ -1,0 +1,58 @@
+class name jk.url.QueryString header public
+{
+	import jk.lang
+	ctor
+	func parse(queryString as string) static as map<string,string>
+	func encode(queryString as map<string,string>) static as string
+}
+class name jk.url.URL header implements jk.lang.StringObject public
+{
+	import jk.lang
+	ctor
+	func forString(str as string, normalizePath as bool = false) static as jk.url.URL
+	func dup as jk.url.URL
+	func toString as string
+	func toStringNohost as string
+	func clearQueryParameters
+	func parse(astr as string, doNormalizePath as bool)
+	func getPortInt as int
+	func getQueryParameter(key as string) as string
+	func addQueryParameter(key as string, value as string)
+	func getScheme as string #getterMethod
+	func setScheme(v as string) as jk.url.URL #setterMethod
+	func getUsername as string #getterMethod
+	func setUsername(v as string) as jk.url.URL #setterMethod
+	func getPassword as string #getterMethod
+	func setPassword(v as string) as jk.url.URL #setterMethod
+	func getHost as string #getterMethod
+	func setHost(v as string) as jk.url.URL #setterMethod
+	func getPort as string #getterMethod
+	func setPort(v as string) as jk.url.URL #setterMethod
+	func getPath as string #getterMethod
+	func setPath(v as string) as jk.url.URL #setterMethod
+	func getFragment as string #getterMethod
+	func setFragment(v as string) as jk.url.URL #setterMethod
+	func getRawQueryParameters as jk.lang.KeyValueList<string,string> #getterMethod
+	func setRawQueryParameters(v as jk.lang.KeyValueList<string,string>) as jk.url.URL #setterMethod
+	func getQueryParameters as map<string,string> #getterMethod
+	func setQueryParameters(v as map<string,string>) as jk.url.URL #setterMethod
+	func getOriginal as string #getterMethod
+	func setOriginal(v as string) as jk.url.URL #setterMethod
+	func getPercentOnly as bool #getterMethod
+	func setPercentOnly(v as bool) as jk.url.URL #setterMethod
+	func getEncodeUnreservedChars as bool #getterMethod
+	func setEncodeUnreservedChars(v as bool) as jk.url.URL #setterMethod
+}
+class name jk.url.URLEncoder header public
+{
+	import jk.lang
+	ctor
+	func encode(str as string, percentOnly as bool = false, encodeUnreservedChars as bool = true) static as string
+}
+class name jk.url.URLDecoder header public
+{
+	import jk.lang
+	ctor
+	func xcharToInteger(c as char) static as int
+	func decode(astr as string) static as string
+}

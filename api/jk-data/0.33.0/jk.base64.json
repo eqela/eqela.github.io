@@ -1,0 +1,18 @@
+{
+	"moduleDescription" : "Implementation of base64 encoding and decoding.\n",
+	"type" : "module",
+	"moduleTitle" : "Base64 encoding",
+	"moduleId" : "jk.base64",
+	"entities" : [
+		{
+			"type" : "class",
+			"name" : "Base64Decoder",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "Base64Encoder",
+			"description" : ""
+		}
+	]
+}

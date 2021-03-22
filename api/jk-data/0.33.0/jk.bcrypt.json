@@ -1,0 +1,18 @@
+{
+	"moduleDescription" : "Implementation of the bcrypt algorithms.\n",
+	"type" : "module",
+	"moduleTitle" : "Bcrypt implementation",
+	"moduleId" : "jk.bcrypt",
+	"entities" : [
+		{
+			"type" : "class",
+			"name" : "BCryptEncoder",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "BCryptEncoderGeneric",
+			"description" : ""
+		}
+	]
+}

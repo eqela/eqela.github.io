@@ -1,0 +1,100 @@
+class name jk.http.worker.HTTPWorkerRequest header implements jk.lang.StringObject public
+{
+	import jk.lang
+	import jk.worker
+	import jk.mypacket
+	import jk.url
+	import jk.json
+	ctor
+	func instance static as jk.http.worker.HTTPWorkerRequest
+	func parseWorkerInput
+	func getBodyString as string
+	func getBodyJSONObject as object
+	func getBodyJSONMap as jk.lang.DynamicMap
+	func addToHeaders(key as string, value as string)
+	func getRawHeaders as jk.lang.KeyValueList<string,string>
+	func getHeaders as map<string,string>
+	func removeFromHeaders(key as string)
+	func getHeaderValue(name as string) as string
+	func getURL as jk.url.URL
+	func getQueryParameters as map<string,string>
+	func getQueryParameter(key as string) as string
+	func getURLPath as string
+	func getCookieValues as map<string,string>
+	func getCookieValue(name as string) as string
+	func toString as string
+	func getMethod as string #getterMethod
+	func setMethod(v as string) as jk.http.worker.HTTPWorkerRequest #setterMethod
+	func getPath as string #getterMethod
+	func setPath(v as string) as jk.http.worker.HTTPWorkerRequest #setterMethod
+	func getBody as buffer #getterMethod
+	func setBody(v as buffer) as jk.http.worker.HTTPWorkerRequest #setterMethod
+	func getSession as object #getterMethod
+	func setSession(v as object) as jk.http.worker.HTTPWorkerRequest #setterMethod
+}
+class name jk.http.worker.HTTPWorkerRouter header extends jk.http.worker.HTTPWorkerHandler public
+{
+	import jk.lang
+	import jk.http.server.cookie
+	import jk.json
+	ctor
+	func initRoutes virtual
+	func addRoute(method as string, pattern as string, handler as function<void,jk.http.worker.HTTPWorkerRequest,jk.http.worker.HTTPWorkerResponse,jk.lang.DynamicMap>)
+	func handleRequest(req as jk.http.worker.HTTPWorkerRequest, resp as jk.http.worker.HTTPWorkerResponse) override
+	func setErrorResponse(resp as jk.http.worker.HTTPWorkerResponse, errorCode as string, statusCode as string = "500")
+	func setJsonObjectResponse(resp as jk.http.worker.HTTPWorkerResponse, o as object, cookie as jk.http.server.cookie.HTTPServerCookie = null)
+	func setOkResponse(resp as jk.http.worker.HTTPWorkerResponse, data as object = null)
+	func setNotAuthenticated(resp as jk.http.worker.HTTPWorkerResponse)
+	func setInvalidRequest(resp as jk.http.worker.HTTPWorkerResponse)
+}
+class name jk.http.worker.HTTPWorkerResponse header public
+{
+	import jk.lang
+	import jk.worker
+	import jk.mypacket
+	import jk.http.server.cookie
+	ctor
+	func setContentType(type as string)
+	func setResponseBuffer(type as string, buffer as buffer)
+	func setResponseString(type as string, resp as string)
+	func setResponseHtml(html as string)
+	func setResponseText(text as string)
+	func setResponseJson(text as string)
+	func setResponseBinary(data as buffer)
+	func addHeader(key as string, value as string)
+	func getHeaderValue(name as string) as string
+	func addCookie(cookie as jk.http.server.cookie.HTTPServerCookie)
+	func send
+	func getStatus as string #getterMethod
+	func setStatus(v as string) as jk.http.worker.HTTPWorkerResponse #setterMethod
+	func getHeaders as jk.lang.KeyValueList<string,string> #getterMethod
+	func setHeaders(v as jk.lang.KeyValueList<string,string>) as jk.http.worker.HTTPWorkerResponse #setterMethod
+	func getBody as buffer #getterMethod
+	func setBody(v as buffer) as jk.http.worker.HTTPWorkerResponse #setterMethod
+}
+class name jk.http.worker.HTTPRPCRouter header extends jk.http.worker.HTTPWorkerRouter public
+{
+	import jk.lang
+	import jk.log
+	import jk.json
+	ctor
+	func addFunction(name as string, handler as function<object,jk.lang.DynamicMap>)
+}
+class name jk.http.worker.HTTPWorkerHandler header implements jk.lang.Runnable abstract public
+{
+	import jk.lang
+	import jk.log
+	import jk.console
+	import jk.worker
+	ctor
+	func handleRequest(req as jk.http.worker.HTTPWorkerRequest, resp as jk.http.worker.HTTPWorkerResponse) abstract
+	func onStartRequest virtual
+	func onEndRequest virtual
+	func preProcess(req as jk.http.worker.HTTPWorkerRequest, resp as jk.http.worker.HTTPWorkerResponse) virtual
+	func postProcess(req as jk.http.worker.HTTPWorkerRequest, resp as jk.http.worker.HTTPWorkerResponse) virtual
+	func generateNotFound(resp as jk.http.worker.HTTPWorkerResponse) virtual
+	func generateInternalServerError(resp as jk.http.worker.HTTPWorkerResponse) virtual
+	func run virtual
+	func getCtx as jk.log.LoggingContext #getterMethod
+	func setCtx(v as jk.log.LoggingContext) as jk.http.worker.HTTPWorkerHandler #setterMethod
+}

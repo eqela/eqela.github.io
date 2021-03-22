@@ -1,0 +1,9 @@
+{
+	"license" : "",
+	"title" : "JK Core",
+	"version" : "0.37.0",
+	"description" : "Core fundamental framework for software application development,\nincluding features for data structures, string manipulation, filesystem access,\nI/O, threading and other commonly used operating system features.\n",
+	"copyright" : "",
+	"name" : "jk-core",
+	"namespace" : "eqela"
+}

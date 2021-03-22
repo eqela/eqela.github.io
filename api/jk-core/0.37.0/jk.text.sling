@@ -1,0 +1,28 @@
+class name jk.text.StringUtil header public
+{
+	import jk.lang
+	ctor
+	func padToLength(value as string, length as int, align as int = -1, paddingCharacter as char = ' ') static as string
+	func quotedStringToVector(str as string, delim as char, ignoreRepeatedDelimiters as bool = true, escapeCharacter as char = '\\') static as vector<string>
+	func quotedStringToMap(str as string, delim as char) static as map<string,string>
+	func combine(strings as vector<string>, delim as char, unique as bool = false, index as int = 0) static as string
+	func validateCharacters(str as string, validator as function<bool,char>) static as bool
+	func toStringVector(vector as vector, allowConversion as bool = true) static as vector<string>
+	func toObjectVector(vector as vector<string>) static as vector
+	func wrapToLines(text as string, charactersPerLine as int) static as vector<string>
+	func stripLeadingZeros(str as string) static as string
+	func formatNumberString(vv as string, delimiter as char) static as string
+	func formatInteger(vv as int, delimiter as char) static as string
+	func formatLongInteger(vv as long, delimiter as char) static as string
+}
+class name jk.text.StringBufferDecoder header public
+{
+	import jk.lang
+	ctor
+	func decodeUTF8Buffer(buf as buffer) static as string
+	func decodeUTF16LEBuffer(buf as buffer) static as string
+	func decodeUTF16BEBuffer(buf as buffer) static as string
+	func decodeUTF32LEBuffer(buf as buffer) static as string
+	func decodeUTF32BEBuffer(buf as buffer) static as string
+	func decodeBufferWithBOM(buf as buffer, keepBomCharacter as bool) static as string
+}

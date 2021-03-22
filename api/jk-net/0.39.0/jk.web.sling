@@ -1,0 +1,16 @@
+class name jk.web.WebClient header abstract public
+{
+	import jk.lang
+	ctor
+	func query(method as string, url as string, headers as jk.lang.KeyValueList<string,string>, body as buffer, callback as function<void,string,jk.lang.KeyValueList<string,string>,buffer>) abstract
+	func getFollowRedirects as bool #getterMethod
+	func setFollowRedirects(v as bool) as jk.web.WebClient #setterMethod
+	func getCredentialsEnabled as bool #getterMethod
+	func setCredentialsEnabled(v as bool) as jk.web.WebClient #setterMethod
+}
+class name jk.web.NativeWebClient header public
+{
+	import jk.lang
+	ctor
+	func instance static as jk.web.WebClient
+}

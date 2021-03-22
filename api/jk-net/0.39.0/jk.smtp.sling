@@ -1,0 +1,163 @@
+class name jk.smtp.SMTPClientTask header implements jk.lang.Runnable public
+{
+	import jk.lang
+	import jk.log
+	import jk.url
+	ctor
+	func run
+	func getCtx as jk.log.LoggingContext #getterMethod
+	func setCtx(v as jk.log.LoggingContext) as jk.smtp.SMTPClientTask #setterMethod
+	func getServer as jk.url.URL #getterMethod
+	func setServer(v as jk.url.URL) as jk.smtp.SMTPClientTask #setterMethod
+	func getMsg as jk.smtp.SMTPMessage #getterMethod
+	func setMsg(v as jk.smtp.SMTPMessage) as jk.smtp.SMTPClientTask #setterMethod
+	func getServerAddress as string #getterMethod
+	func setServerAddress(v as string) as jk.smtp.SMTPClientTask #setterMethod
+	func getListener as jk.smtp.SMTPSenderListener #getterMethod
+	func setListener(v as jk.smtp.SMTPSenderListener) as jk.smtp.SMTPClientTask #setterMethod
+	func getSender as jk.smtp.SMTPSender #getterMethod
+	func setSender(v as jk.smtp.SMTPSender) as jk.smtp.SMTPClientTask #setterMethod
+	func getAcceptInvalidCertificate as bool #getterMethod
+	func setAcceptInvalidCertificate(v as bool) as jk.smtp.SMTPClientTask #setterMethod
+}
+class name jk.smtp.SMTPMessage header public
+{
+	import jk.lang
+	import jk.random
+	import jk.time.format
+	import jk.time
+	ctor
+	func generateMessageID(host as string) as jk.smtp.SMTPMessage
+	func getDate as string
+	func getReplyTo as string
+	func setDate(date as string) as jk.smtp.SMTPMessage
+	func setMessageID(id as string) as jk.smtp.SMTPMessage
+	func setReplyTo(v as string) as jk.smtp.SMTPMessage
+	func getMessageID as string
+	func getAllRcpts as jk.lang.DynamicVector
+	func getRcptsTo as jk.lang.DynamicVector
+	func getRcptsCC as jk.lang.DynamicVector
+	func getRcptsBCC as jk.lang.DynamicVector
+	func getSubject as string
+	func getContentType as string
+	func getText as string
+	func getMyName as string
+	func getMyAddress as string
+	func setSubject(s as string) as jk.smtp.SMTPMessage
+	func setContentType(c as string) as jk.smtp.SMTPMessage
+	func setText(t as string) as jk.smtp.SMTPMessage
+	func setMyName(n as string) as jk.smtp.SMTPMessage
+	func setMyAddress(a as string) as jk.smtp.SMTPMessage
+	func setTo(address as string) as jk.smtp.SMTPMessage
+	func addTo(address as string) as jk.smtp.SMTPMessage
+	func addCC(address as string) as jk.smtp.SMTPMessage
+	func addBCC(address as string) as jk.smtp.SMTPMessage
+	func setRecipients(to as jk.lang.DynamicVector, cc as jk.lang.DynamicVector, bcc as jk.lang.DynamicVector) as jk.smtp.SMTPMessage
+	func getSizeBytes as int
+	func getMessageBody virtual as string
+	func getExcludeAddresses as jk.lang.DynamicVector #getterMethod
+	func setExcludeAddresses(v as jk.lang.DynamicVector) as jk.smtp.SMTPMessage #setterMethod
+}
+class name jk.smtp.SMTPSender header public
+{
+	import jk.lang
+	import jk.log
+	import jk.url
+	import jk.thread
+	func forCommonDetails(serverAddress as string, serverUsername as string, serverPassword as string, senderName as string, senderAddress as string) static as jk.smtp.SMTPSender
+	func forRemoteServerUrl(url as string) static as jk.smtp.SMTPSender
+	func forServerAddress(name as string, ctx as jk.log.LoggingContext) static as jk.smtp.SMTPSender
+	func forConfiguration(config as jk.lang.DynamicMap, ctx as jk.log.LoggingContext = null) static as jk.smtp.SMTPSender
+	ctor
+	func getDescription as string
+	func configure(config as jk.lang.DynamicMap) as jk.smtp.SMTPSender
+	func onSendStart
+	func onSendEnd
+	func send(msg as jk.smtp.SMTPMessage, listener as jk.smtp.SMTPSenderListener = null)
+	func sendSync(msg as jk.smtp.SMTPMessage) as jk.smtp.SMTPClientResult
+	func getThisServerAddress as string #getterMethod
+	func setThisServerAddress(v as string) as jk.smtp.SMTPSender #setterMethod
+	func getServer as string #getterMethod
+	func setServer(v as string) as jk.smtp.SMTPSender #setterMethod
+	func getMyName as string #getterMethod
+	func setMyName(v as string) as jk.smtp.SMTPSender #setterMethod
+	func getMyAddress as string #getterMethod
+	func setMyAddress(v as string) as jk.smtp.SMTPSender #setterMethod
+	func getCtx as jk.log.LoggingContext #getterMethod
+	func setCtx(v as jk.log.LoggingContext) as jk.smtp.SMTPSender #setterMethod
+	func getMaxSenderCount as int #getterMethod
+	func setMaxSenderCount(v as int) as jk.smtp.SMTPSender #setterMethod
+	func getAcceptInvalidCertificate as bool #getterMethod
+	func setAcceptInvalidCertificate(v as bool) as jk.smtp.SMTPSender #setterMethod
+}
+class name jk.smtp.SMTPClientTransactionResult header public
+{
+	import jk.lang
+	ctor
+	func forError(error as string) static as jk.smtp.SMTPClientTransactionResult
+	func forNetworkError static as jk.smtp.SMTPClientTransactionResult
+	func forSuccess static as jk.smtp.SMTPClientTransactionResult
+	func getStatus as bool #getterMethod
+	func setStatus(v as bool) as jk.smtp.SMTPClientTransactionResult #setterMethod
+	func getErrorMessage as string #getterMethod
+	func setErrorMessage(v as string) as jk.smtp.SMTPClientTransactionResult #setterMethod
+	func getDomain as string #getterMethod
+	func setDomain(v as string) as jk.smtp.SMTPClientTransactionResult #setterMethod
+	func getServer as string #getterMethod
+	func setServer(v as string) as jk.smtp.SMTPClientTransactionResult #setterMethod
+	func getRecipients as jk.lang.DynamicVector #getterMethod
+	func setRecipients(v as jk.lang.DynamicVector) as jk.smtp.SMTPClientTransactionResult #setterMethod
+}
+class name jk.smtp.SMTPClientTaskResult header public
+{
+	import jk.lang
+	ctor
+	func getMessage as jk.smtp.SMTPMessage #getterMethod
+	func setMessage(v as jk.smtp.SMTPMessage) as jk.smtp.SMTPClientTaskResult #setterMethod
+	func getStatus as bool #getterMethod
+	func setStatus(v as bool) as jk.smtp.SMTPClientTaskResult #setterMethod
+}
+interface name jk.smtp.SMTPSenderListener header public
+{
+	import jk.lang
+	func onSMTPSendComplete(message as jk.smtp.SMTPMessage, result as jk.smtp.SMTPClientResult)
+}
+class name jk.smtp.SMTPClientResult header public
+{
+	import jk.lang
+	ctor
+	func forSuccess static as jk.smtp.SMTPClientResult
+	func forMessage(msg as jk.smtp.SMTPMessage) static as jk.smtp.SMTPClientResult
+	func forError(error as string, msg as jk.smtp.SMTPMessage = null) static as jk.smtp.SMTPClientResult
+	func getStatus as bool
+	func addTransaction(r as jk.smtp.SMTPClientTransactionResult) as jk.smtp.SMTPClientResult
+	func getMessage as jk.smtp.SMTPMessage #getterMethod
+	func setMessage(v as jk.smtp.SMTPMessage) as jk.smtp.SMTPClientResult #setterMethod
+	func getTransactions as jk.lang.DynamicVector #getterMethod
+	func setTransactions(v as jk.lang.DynamicVector) as jk.smtp.SMTPClientResult #setterMethod
+}
+class name jk.smtp.SMTPClient header public
+{
+	import jk.lang
+	import jk.log
+	import jk.socket
+	import jk.socket.ssl
+	import jk.io
+	import jk.dns
+	import jk.url
+	import jk.base64
+	import jk.thread
+	ctor
+	func sendMessage(msg as jk.smtp.SMTPMessage, server as jk.url.URL, serverName as string, ctx as jk.log.LoggingContext = null, acceptInvalidCertificate as bool = false) static as jk.smtp.SMTPClientResult
+}
+class name jk.smtp.SMTPMultipartMessage header extends jk.smtp.SMTPMessage public
+{
+	import jk.lang
+	import jk.fs
+	import jk.mime
+	import jk.base64
+	ctor
+	func getMessageBody override as string
+	func getAttachments as jk.lang.DynamicVector #getterMethod
+	func setAttachments(v as jk.lang.DynamicVector) as jk.smtp.SMTPMultipartMessage #setterMethod
+}

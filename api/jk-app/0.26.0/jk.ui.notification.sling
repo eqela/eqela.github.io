@@ -1,0 +1,8 @@
+class name jk.ui.notification.Notification header public
+{
+	import jk.lang
+	import jk.ui
+	import jk.time
+	ctor(context as jk.ui.GuiApplicationContext)
+	func show(title as string, message as string) as bool
+}

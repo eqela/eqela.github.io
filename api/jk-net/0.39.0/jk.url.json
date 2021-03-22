@@ -1,0 +1,28 @@
+{
+	"moduleDescription" : "",
+	"type" : "module",
+	"moduleTitle" : "",
+	"moduleId" : "jk.url",
+	"entities" : [
+		{
+			"type" : "class",
+			"name" : "QueryString",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "URLEncoder",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "URL",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "URLDecoder",
+			"description" : ""
+		}
+	]
+}

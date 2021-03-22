@@ -1,0 +1,83 @@
+<html>
+<head>
+<title>jk.ws.server.WSServerConnectionHandler | JK Net [0.39.0] - API Reference</title>
+<link rel="stylesheet" type="text/css" href="style.css" />
+<meta name="viewport" content="initial-scale=1,maximum-scale=1" />
+<meta property="og:description" content="jk.ws.server.WSServerConnectionHandler | JK Net [0.39.0] - API Reference" />
+<meta property="og:title" content="jk.ws.server.WSServerConnectionHandler | JK Net [0.39.0] - API Reference" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:description" content="jk.ws.server.WSServerConnectionHandler | JK Net [0.39.0] - API Reference" />
+</head>
+<body><div class="content">
+<a class="back" href="index.html">&laquo; JK Net [0.39.0]</a><div class="intro">
+<h1><span class="keyword">class</span> <span class="symbol">jk.ws.server.WSServerConnectionHandler</span></h1>
+<p></p>
+</div>
+<div class="list">
+<div class="title">Base Types</div>
+<div class="entry">
+<div class="name"><span class="keyword">implements</span> <a class="datatype" href="jk.ws.WSProtocolSource.html">jk.ws.WSProtocolSource</a></div></div>
+</div>
+<div class="list">
+<div class="title">Instance Variables</div>
+<div class="entry">
+<div class="name"><span class="keyword">var</span> <span class="symbol">connection</span> <span class="keyword">as</span> <a class="datatype" href="jk.ws.server.WSServerConnection.html">jk.ws.server.WSServerConnection</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">var</span> <span class="symbol">logContext</span> <span class="keyword">as</span> <a class="datatype" href="../../jk-core/0.37.0/jk.log.LoggingContext.html">jk.log.LoggingContext</a></div></div>
+</div>
+<div class="list">
+<div class="title">Instance Methods</div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setProtocol</span> ( protocol <span class="keyword">as</span> <a class="datatype" href="jk.ws.WSProtocol.html">jk.ws.WSProtocol</a> ) <span class="keyword">as</span> <a class="datatype" href="jk.ws.server.WSServerConnectionHandler.html">jk.ws.server.WSServerConnectionHandler</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getProtocol</span> <span class="keyword">as</span> <a class="datatype" href="jk.ws.WSProtocol.html">jk.ws.WSProtocol</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getConnectionIdString</span> <span class="keyword">as</span> <span class="datatype">string</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">logDebug</span> ( text <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">logInfo</span> ( text <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">logWarning</span> ( text <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">logError</span> ( text <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setConnection</span> ( conn <span class="keyword">as</span> <a class="datatype" href="jk.ws.server.WSServerConnection.html">jk.ws.server.WSServerConnection</a> ) <span class="keyword">as</span> <a class="datatype" href="jk.ws.server.WSServerConnectionHandler.html">jk.ws.server.WSServerConnectionHandler</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getConnection</span> <span class="keyword">as</span> <a class="datatype" href="jk.ws.server.WSServerConnection.html">jk.ws.server.WSServerConnection</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setLogContext</span> ( ctx <span class="keyword">as</span> <a class="datatype" href="../../jk-core/0.37.0/jk.log.LoggingContext.html">jk.log.LoggingContext</a> ) <span class="keyword">as</span> <a class="datatype" href="jk.ws.server.WSServerConnectionHandler.html">jk.ws.server.WSServerConnectionHandler</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getLogContext</span> <span class="keyword">as</span> <a class="datatype" href="../../jk-core/0.37.0/jk.log.LoggingContext.html">jk.log.LoggingContext</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">sendString</span> ( data <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">sendBuffer</span> ( data <span class="keyword">as</span> <span class="datatype">buffer</span> ) <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">sendResponse</span> ( message <span class="keyword">as</span> <a class="datatype" href="jk.ws.server.WSServerMessage.html">jk.ws.server.WSServerMessage</a> ) <span class="keyword">as</span> <span class="datatype">int</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">onMaintenance</span> <span class="modifier">virtual</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">onOpened</span> <span class="modifier">virtual</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">onClosed</span> <span class="modifier">virtual</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">closeConnection</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">close</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">onCloseMessage</span> ( message <span class="keyword">as</span> <a class="datatype" href="jk.ws.server.WSServerMessage.html">jk.ws.server.WSServerMessage</a> ) <span class="modifier">virtual</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">onPingMessage</span> ( message <span class="keyword">as</span> <a class="datatype" href="jk.ws.server.WSServerMessage.html">jk.ws.server.WSServerMessage</a> ) <span class="modifier">virtual</span> <span class="keyword">as</span> <span class="datatype">bool</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">onPongMessage</span> ( message <span class="keyword">as</span> <a class="datatype" href="jk.ws.server.WSServerMessage.html">jk.ws.server.WSServerMessage</a> ) <span class="modifier">virtual</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">onDataMessage</span> ( message <span class="keyword">as</span> <a class="datatype" href="jk.ws.server.WSServerMessage.html">jk.ws.server.WSServerMessage</a> ) <span class="modifier">virtual</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getConnectionId</span> <span class="keyword">as</span> <span class="datatype">string</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setConnectionId</span> ( v <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="keyword">as</span> <a class="datatype" href="jk.ws.server.WSServerConnectionHandler.html">jk.ws.server.WSServerConnectionHandler</a></div></div>
+</div>
+</div>
+</body>
+</html>

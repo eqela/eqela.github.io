@@ -1,0 +1,111 @@
+class name jk.ws.client.WSCloseEvent header abstract public
+{
+	import jk.lang
+	ctor
+	var CLOSE_NORMAL public static const as int
+	var CLOSE_GOING_AWAY public static const as int
+	var CLOSE_PROTOCOL_ERROR public static const as int
+	var CLOSE_UNSUPPORTED public static const as int
+	var CLOSE_NO_STATUS public static const as int
+	var CLOSE_ABNORMAL public static const as int
+	var UNSUPPORTED_DATA public static const as int
+	var POLICY_VIOLATION public static const as int
+	var CLOSE_TOO_LARGE public static const as int
+	var MISSING_EXTENSION public static const as int
+	var INTERNAL_ERROR public static const as int
+	var SERVICE_RESTART public static const as int
+	var TRY_AGAIN_LATER public static const as int
+	var TLS_HANDSHAKE public static const as int
+	func getStatusCode abstract as int
+	func getReason abstract as string
+}
+class name jk.ws.client.WSMessage header public
+{
+	import jk.lang
+	ctor
+	func forStringData(data as string) static as jk.ws.client.WSMessage
+	func forData(data as buffer) static as jk.ws.client.WSMessage
+	func forPingMessage static as jk.ws.client.WSMessage
+	func isText as bool
+	func setData(v as string) as jk.ws.client.WSMessage
+	func setData(v as buffer) as jk.ws.client.WSMessage
+	func getDataAsString as string
+	func getData as buffer
+	func getIsPing as bool #getterMethod
+	func setIsPing(v as bool) as jk.ws.client.WSMessage #setterMethod
+}
+class name jk.ws.client.WSSocket header abstract public
+{
+	import jk.lang
+	ctor
+	func create static as jk.ws.client.WSSocket
+	func connect(url as string) abstract
+	func send(message as jk.ws.client.WSMessage) abstract
+	func close abstract
+	func closeWithReason(statusCode as int, reason as string, callback as function<void>) abstract
+	func getOnOpenCallback as function<void> #getterMethod
+	func setOnOpenCallback(v as function<void>) as jk.ws.client.WSSocket #setterMethod
+	func getOnCloseCallback as function<void,jk.ws.client.WSCloseEvent> #getterMethod
+	func setOnCloseCallback(v as function<void,jk.ws.client.WSCloseEvent>) as jk.ws.client.WSSocket #setterMethod
+	func getOnMessageCallback as function<void,jk.ws.client.WSMessage> #getterMethod
+	func setOnMessageCallback(v as function<void,jk.ws.client.WSMessage>) as jk.ws.client.WSSocket #setterMethod
+	func getOnErrorCallback as function<void,jk.lang.Error> #getterMethod
+	func setOnErrorCallback(v as function<void,jk.lang.Error>) as jk.ws.client.WSSocket #setterMethod
+}
+class name jk.ws.client.WSSocketGeneric header extends jk.ws.client.WSSocket public
+{
+	import jk.lang
+	import jk.socket.async
+	import jk.url
+	import jk.sha
+	import jk.base64
+	var WEBSOCKET_GUID public static const as string
+	ctor
+	func getAcceptValueForKey(key as string) static as string
+	func generateKey static as string
+	func createOpenHandshakeHTTPRequest(url as jk.url.URL, key as string) static as buffer
+	func createOpenHandshakeHTTPResponse(key as string) static as buffer
+	func generateMaskingKey static as buffer
+	func connect(url as string) override
+	func receiveData(buffer as buffer, size as int)
+	func send(message as jk.ws.client.WSMessage) override
+	func closeWithReason(statusCode as int, reason as string, callback as function<void>) override
+	func close override
+}
+class name jk.ws.client.WSClient header implements jk.ws.WSProtocolSource public
+{
+	import jk.lang
+	import jk.ws
+	import jk.time
+	ctor
+	var STATE_STOPPED public static const as int
+	var STATE_DISCONNECTED public static const as int
+	var STATE_CONNECTING public static const as int
+	var STATE_CONNECTED public static const as int
+	func getTickInterval as long
+	func start(url as string, eventLoop as jk.lang.EventLoop, protocol as jk.ws.WSProtocol)
+	func stop
+	func closeConnection
+	func failConnection(error as jk.lang.Error)
+	func tick(tickId as long)
+	func onActivity
+	func sendPing
+	func sendString(data as string)
+	func sendBuffer(data as buffer)
+	func sendMessage(message as jk.ws.client.WSMessage)
+	func onConnectionOpened virtual
+	func onConnectionClosed virtual
+	func onConnectionMessage(message as jk.ws.client.WSMessage) virtual
+	func onConnectionError(error as jk.lang.Error) virtual
+	func onStateChanged(newState as int) virtual
+	func getReconnectInterval as long #getterMethod
+	func setReconnectInterval(v as long) as jk.ws.client.WSClient #setterMethod
+	func getConnectionTimeoutInterval as long #getterMethod
+	func setConnectionTimeoutInterval(v as long) as jk.ws.client.WSClient #setterMethod
+	func getPingInterval as long #getterMethod
+	func setPingInterval(v as long) as jk.ws.client.WSClient #setterMethod
+	func getProtocol as jk.ws.WSProtocol #getterMethod
+	func setProtocol(v as jk.ws.WSProtocol) as jk.ws.client.WSClient #setterMethod
+	func getStateChangeHandler as function<void,int> #getterMethod
+	func setStateChangeHandler(v as function<void,int>) as jk.ws.client.WSClient #setterMethod
+}

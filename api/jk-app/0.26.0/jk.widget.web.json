@@ -1,0 +1,33 @@
+{
+	"moduleDescription" : "",
+	"type" : "module",
+	"moduleTitle" : "",
+	"moduleId" : "jk.widget.web",
+	"entities" : [
+		{
+			"type" : "class",
+			"name" : "JSONAPIClientWithGui",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "WebImageWidget",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "WebWidget",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "AsynchronousImageWidget",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "CachingWebImageWidget",
+			"description" : ""
+		}
+	]
+}

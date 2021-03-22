@@ -1,0 +1,64 @@
+class name jk.graph.CommonGraphRenderer header implements jk.render.Renderer abstract public
+{
+	import jk.lang
+	import jk.gfx
+	import jk.render
+	import jk.math
+	ctor
+	func render(ctx as jk.render.RenderingContext, width as double, height as double)
+	func renderGraph(ctx as jk.render.RenderingContext, ox as double, oy as double, width as double, height as double) abstract
+	func getTitle as string #getterMethod
+	func setTitle(v as string) as jk.graph.CommonGraphRenderer #setterMethod
+	func getYTitle as string #getterMethod
+	func setYTitle(v as string) as jk.graph.CommonGraphRenderer #setterMethod
+	func getXTitle as string #getterMethod
+	func setXTitle(v as string) as jk.graph.CommonGraphRenderer #setterMethod
+	func getLegends as vector<string> #getterMethod
+	func setLegends(v as vector<string>) as jk.graph.CommonGraphRenderer #setterMethod
+	func getLabels as vector<string> #getterMethod
+	func setLabels(v as vector<string>) as jk.graph.CommonGraphRenderer #setterMethod
+	func getValues as array<double> #getterMethod
+	func setValues(v as array<double>) as jk.graph.CommonGraphRenderer #setterMethod
+}
+class name jk.graph.PieGraphRenderer header extends jk.graph.CommonGraphRenderer public
+{
+	import jk.lang
+	import jk.gfx
+	import jk.render
+	import jk.math
+	ctor
+	func getNextColor as jk.gfx.Color
+	func renderGraph(ctx as jk.render.RenderingContext, ox as double, oy as double, width as double, height as double) override
+	func getShowPercentages as bool #getterMethod
+	func setShowPercentages(v as bool) as jk.graph.PieGraphRenderer #setterMethod
+}
+class name jk.graph.GraphColors header public
+{
+	import jk.lang
+	import jk.gfx
+	import jk.render
+	ctor
+	func getColors static as vector<jk.gfx.Color>
+}
+class name jk.graph.BarGraphRenderer header extends jk.graph.CommonGraphRenderer public
+{
+	import jk.lang
+	import jk.gfx
+	import jk.render
+	ctor
+	func renderGraph(ctx as jk.render.RenderingContext, ox as double, ooy as double, width as double, oheight as double) override
+	func getBarFillColor as jk.gfx.Color #getterMethod
+	func setBarFillColor(v as jk.gfx.Color) as jk.graph.BarGraphRenderer #setterMethod
+	func getBarOutlineColor as jk.gfx.Color #getterMethod
+	func setBarOutlineColor(v as jk.gfx.Color) as jk.graph.BarGraphRenderer #setterMethod
+}
+class name jk.graph.LineGraphRenderer header extends jk.graph.CommonGraphRenderer public
+{
+	import jk.lang
+	import jk.gfx
+	import jk.render
+	ctor
+	func renderGraph(ctx as jk.render.RenderingContext, ox as double, oy as double, width as double, height as double) override
+	func getLineWidth as double #getterMethod
+	func setLineWidth(v as double) as jk.graph.LineGraphRenderer #setterMethod
+}

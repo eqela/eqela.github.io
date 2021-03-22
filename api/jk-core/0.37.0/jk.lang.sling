@@ -1,0 +1,805 @@
+class name jk.lang.Character header implements jk.lang.CharacterObject public
+{
+	ctor
+	func asObject(character as char) static as jk.lang.Character
+	func toUppercase(c as char) static as char
+	func toLowercase(c as char) static as char
+	func isDigit(c as char) static as bool
+	func isLowercaseAlpha(c as char) static as bool
+	func isUppercaseAlpha(c as char) static as bool
+	func isHexDigit(c as char) static as bool
+	func isAlnum(c as char) static as bool #deprecated
+	func isAlpha(c as char) static as bool
+	func isAlphaNumeric(c as char) static as bool
+	func isLowercaseAlphaNumeric(c as char) static as bool
+	func isUppercaseAlphaNumeric(c as char) static as bool
+	func toCharacter as char
+	func isEOF(c as char) static as bool
+	func getHexDigit(c as char) static as int
+	func getCharacter as char #getterMethod
+	func setCharacter(v as char) as jk.lang.Character #setterMethod
+}
+class name jk.lang.StringBuilder header implements jk.lang.StringObject public
+{
+	func forString(initial as string) static as jk.lang.StringBuilder
+	func dup(initial as jk.lang.StringBuilder) static as jk.lang.StringBuilder
+	func resizeTo(size as long)
+	ctor
+	func initialize
+	func clear
+	func count as int
+	func appendLong(c as long) as jk.lang.StringBuilder
+	func appendInteger(c as int) as jk.lang.StringBuilder
+	func appendDouble(c as double) as jk.lang.StringBuilder
+	func appendFloat(c as float) as jk.lang.StringBuilder
+	func appendCharacter(c as char) as jk.lang.StringBuilder
+	func appendString(str as string #used) as jk.lang.StringBuilder
+	func insertInteger(index as int, c as int) as jk.lang.StringBuilder
+	func insertCharacter(index as int, c as char) as jk.lang.StringBuilder
+	func insertDouble(index as int, c as double) as jk.lang.StringBuilder
+	func insertFloat(index as int, c as float) as jk.lang.StringBuilder
+	func insertString(index as int, str as string) as jk.lang.StringBuilder
+	func remove(index as int, length as int) as jk.lang.StringBuilder
+	func removeLastCharacter as jk.lang.StringBuilder
+	func toString as string
+}
+class name jk.lang.VariableReference<T> header public
+{
+	ctor(setter as function<void,T>, getter as function<T>)
+	func set(value as T) as jk.lang.VariableReference<T>
+	func get as T
+}
+interface name jk.lang.Closable header public
+{
+	func close
+}
+interface name jk.lang.LongIntegerIterator header public
+{
+	func nextLong as long
+}
+interface name jk.lang.Iterator<T> header public
+{
+	func next as T
+	func hasNext as bool
+}
+interface name jk.lang.DynamicIterator header implements jk.lang.StringIterator implements jk.lang.IntegerIterator implements jk.lang.LongIntegerIterator implements jk.lang.DoubleIterator implements jk.lang.Iterator<object> public
+{
+}
+class name jk.lang.Matrix<T> header public
+{
+	ctor(rowSize as int, columnSize as int)
+	func set(row as int, column as int, val as T)
+	func get(row as int, column as int) as T
+	func setSize(rowSize as int, colSize as int) as jk.lang.Matrix<T>
+	func getRowCount as int
+	func getColumnCount as int
+}
+interface name jk.lang.Task header public
+{
+	func abort as bool
+}
+class name jk.lang.Stack<T> header public
+{
+	ctor
+	func push(o as T)
+	func pop as T
+	func peek as T
+	func isEmpty as bool
+	func getSize as int
+	func dupData as vector<T>
+	func dup as jk.lang.Stack<T>
+	func getData as vector<T> #getterMethod
+	func setData(v as vector<T>) as jk.lang.Stack<T> #setterMethod
+}
+interface name jk.lang.IntegerObject header public
+{
+	func toInteger as int
+}
+class name jk.lang.Set header public
+{
+	ctor
+	func add <T> (set as set<T>, value as T) static
+	func remove <T> (set as set<T>, value as T) static
+	func clear <T> (set as set<T>) static
+	func getSize <T> (set as set<T>) static as int
+	func contains <T> (set as set<T>, value as T) static as bool
+	func getValues <T> (set as set<T>) static as vector<T>
+}
+class name jk.lang.LongInteger header implements jk.lang.LongIntegerObject public
+{
+	ctor
+	func forValue(value as long) static as jk.lang.LongInteger
+	func asObject(value as long) static as jk.lang.LongInteger
+	func asLong(obj) static as long
+	func add(amount as long)
+	func toLong as long
+	func getValue as long #getterMethod
+	func setValue(v as long) as jk.lang.LongInteger #setterMethod
+}
+interface name jk.lang.Runnable header public
+{
+	func run
+}
+class name jk.lang.Error header implements jk.lang.StringObject implements jk.lang.StringObjectWithDebug public
+{
+	ctor
+	func throw(code as string, detail) static
+	func forCode(code as string, detail as dynamic = null) static as jk.lang.Error
+	func asString(error as jk.lang.Error) static as string
+	func set(error as jk.lang.Error, code as string, detail) static as jk.lang.Error
+	func setErrorCode(error as jk.lang.Error, code as string) static as jk.lang.Error
+	func setErrorDetail(error as jk.lang.Error, detail) static as jk.lang.Error
+	func isError(o as object) static as bool
+	func clear as jk.lang.Error
+	func toStringWithDefault(debug as bool, defaultError as string) as string
+	func toStringWithDebug(debug as bool) as string
+	func toString as string
+	func getCode as string #getterMethod
+	func setCode(v as string) as jk.lang.Error #setterMethod
+	func getDetail as dynamic #getterMethod
+	func setDetail(v) as jk.lang.Error #setterMethod
+}
+interface name jk.lang.DynamicMapObject header public
+{
+	func toDynamicMap as jk.lang.DynamicMap
+}
+interface name jk.lang.StringObjectWithDebug header public
+{
+	func toStringWithDebug(debug as bool) as string
+}
+class name jk.lang.Integer header implements jk.lang.IntegerObject public
+{
+	ctor
+	func forValue(value as int) static as jk.lang.Integer
+	func asObject(integer as int) static as jk.lang.Integer
+	func asInteger(obj) static as int
+	func add(amount as int)
+	func toInteger as int
+	func getValue as int #getterMethod
+	func setValue(v as int) as jk.lang.Integer #setterMethod
+}
+class name jk.lang.KeyValueListForStrings header extends jk.lang.KeyValueList<string,string> public
+{
+	ctor
+}
+interface name jk.lang.VectorObject<T> header implements jk.lang.ObjectWithSize public
+{
+	func toVector as vector<T>
+}
+class name jk.lang.KeyValuePair<K,V> header public
+{
+	ctor
+	ctor(key as K, value as V)
+	var key public as K
+	var value public as V
+}
+class name jk.lang.ObjectWrapper header public
+{
+	ctor
+	func getValue as object #getterMethod
+	func setValue(v as object) as jk.lang.ObjectWrapper #setterMethod
+}
+class name jk.lang.Array header public
+{
+	ctor
+	func asObject <T> (array as array<T>) static as jk.lang.ArrayObject<T>
+	func isEmpty <T> (array as array<T>) static as bool
+	func isNotEmpty <T> (array as array<T>) static as bool
+	func contains <T> (array as array<T> #used, element as T #used) static as bool
+	func toVector <T> (array as array<T>) static as vector<T>
+	func copyFrom <T> (array as array<T>, src as array<T>, soffset as int, doffset as int, size as int) static
+}
+interface name jk.lang.Iterateable<T> header public
+{
+	func iterate as jk.lang.Iterator<T>
+}
+interface name jk.lang.MapObject<K,V> header public
+{
+	func toMap as map<K,V>
+}
+interface name jk.lang.ArrayObject<T> header implements jk.lang.ObjectWithSize public
+{
+	func toArray as array<T>
+}
+class name jk.lang.BitOp header public
+{
+	ctor
+	func or(v1 as long, v2 as long) as long
+	func and(v1 as long, v2 as long) as long
+	func xor(v1 as long, v2 as long) as long
+	func not(v as long) as long
+}
+interface name jk.lang.StringIterator header public
+{
+	func nextString as string
+}
+interface name jk.lang.CharacterIterator header public
+{
+	func getCurrentChar as char
+	func getNextChar as char
+	func moveToNextChar as bool
+	func moveToPreviousChar as bool
+	func hasEnded as bool
+	func getCurrentPosition as int
+	func setCurrentPosition(position as int)
+}
+interface name jk.lang.LongIntegerObject header public
+{
+	func toLong as long
+}
+interface name jk.lang.DoubleObject header public
+{
+	func toDouble as double
+}
+class name jk.lang.DynamicMap header implements jk.lang.Duplicateable implements jk.lang.Iterateable<string> public
+{
+	func asDynamicMap(value) static as jk.lang.DynamicMap
+	func forObjectMap(map as map) static as jk.lang.DynamicMap
+	func forStringMap(map as map<string,string>) static as jk.lang.DynamicMap
+	func forDynamicMaps(map1 as jk.lang.DynamicMap, map2 as jk.lang.DynamicMap) static as jk.lang.DynamicMap
+	func forDynamicMap(map as jk.lang.DynamicMap) static as jk.lang.DynamicMap
+	ctor
+	func asMap as map<string,object>
+	func asStringMap as map<string,string>
+	func toStringMap as map<string,string>
+	func toObjectMap as map
+	func duplicate as object
+	func duplicateMap as jk.lang.DynamicMap
+	func mergeFrom(other as jk.lang.DynamicMap) as jk.lang.DynamicMap
+	func setObject(key as string, value as object) as jk.lang.DynamicMap
+	func setString(key as string, value as string) as jk.lang.DynamicMap
+	func setBuffer(key as string, value as buffer) as jk.lang.DynamicMap
+	func setInteger(key as string, value as int) as jk.lang.DynamicMap
+	func setLong(key as string, value as long) as jk.lang.DynamicMap #deprecated
+	func setLongInteger(key as string, value as long) as jk.lang.DynamicMap
+	func setBoolean(key as string, value as bool) as jk.lang.DynamicMap
+	func setDouble(key as string, value as double) as jk.lang.DynamicMap
+	func get(key as string) as object
+	func getString(key as string, defval as string = null) as string
+	func getInteger(key as string, defval as int = 0) as int
+	func getLongInteger(key as string, defval as long = 0) as long
+	func getBoolean(key as string, defval as bool = false) as bool
+	func getDouble(key as string, defval as double = 0.0) as double
+	func getBuffer(key as string) as buffer
+	func getDynamicVector(key as string) as jk.lang.DynamicVector
+	func getVector(key as string) as vector
+	func getDynamicMap(key as string) as jk.lang.DynamicMap
+	func getKeys as vector<string>
+	func getValues as vector
+	func iterate as jk.lang.Iterator<string>
+	func iterateKeys as jk.lang.Iterator<string>
+	func iterateValues as jk.lang.Iterator<object>
+	func remove(key as string)
+	func clear
+	func getCount as int
+	func containsKey(key as string) as bool
+	func removeNullValues as jk.lang.DynamicMap
+}
+interface name jk.lang.DoubleIterator header public
+{
+	func nextDouble as double
+}
+interface name jk.lang.BufferObject header public
+{
+	func toBuffer as buffer
+}
+class name jk.lang.Range header implements jk.lang.Iterateable<int> public
+{
+	func forIntegerValues(lowerBound as int, upperBound as int, exclusionType as int = jk.lang.Range.TYPE_NONE) static as jk.lang.Range
+	func forDoubleValues(lowerBound as double, upperBound as double, exclusionType as int = jk.lang.Range.TYPE_NONE) static as jk.lang.Range
+	func forValues(lowerBound, upperBound, exclusionType as int = jk.lang.Range.TYPE_NONE) static as jk.lang.Range
+	var TYPE_NONE public static const as int
+	var TYPE_EXCLUDE_UPPER_BOUND public static const as int
+	var TYPE_EXCLUDE_LOWER_BOUND public static const as int
+	var TYPE_EXCLUDE_BOTH_BOUNDS public static const as int
+	func getLowerBoundAsInteger as int
+	func getLowerBoundAsDouble as double
+	func getUpperBoundAsInteger as int
+	func getUpperBoundAsDouble as double
+	func containsIntegerValue(value as int) as bool
+	func containsDoubleValue(value as double) as bool
+	func iterate as jk.lang.Iterator<int>
+}
+interface name jk.lang.StringDataReceiver header public
+{
+	func onStringData(data as string)
+}
+interface name jk.lang.ObjectWithSize header public
+{
+	func getSize as int
+}
+class name jk.lang.DynamicVector header implements jk.lang.Duplicateable implements jk.lang.Iterateable<object> implements jk.lang.VectorObject<object> implements jk.lang.ObjectWithSize public
+{
+	func asDynamicVector(value) static as jk.lang.DynamicVector
+	func forStringVector(vector as vector<string>) static as jk.lang.DynamicVector
+	func forObjectVector(vector as vector) static as jk.lang.DynamicVector
+	func forArray(array as array) static as jk.lang.DynamicVector
+	ctor
+	func toVector as vector
+	func toVectorOfStrings as vector<string>
+	func toVectorOfDynamicMaps as vector<jk.lang.DynamicMap>
+	func duplicate as object
+	func mergeDynamicVector(dynamicVector as jk.lang.DynamicVector) as jk.lang.DynamicVector
+	func mergeVector(vector as vector) as jk.lang.DynamicVector
+	func appendObject(value as object) as jk.lang.DynamicVector
+	func appendString(value as string) as jk.lang.DynamicVector
+	func appendInteger(value as int) as jk.lang.DynamicVector
+	func appendLong(value as long) as jk.lang.DynamicVector
+	func appendBoolean(value as bool) as jk.lang.DynamicVector
+	func appendDouble(value as double) as jk.lang.DynamicVector
+	func setObject(index as int, value as object) as jk.lang.DynamicVector
+	func setInteger(index as int, value as int) as jk.lang.DynamicVector
+	func setLong(index as int, value as long) as jk.lang.DynamicVector
+	func setBoolean(index as int, value as bool) as jk.lang.DynamicVector
+	func setDouble(index as int, value as double) as jk.lang.DynamicVector
+	func get(index as int) as object
+	func getString(index as int, defval as string = null) as string
+	func getInteger(index as int, defval as int = 0) as int
+	func getLongInteger(index as int, defval as long = 0) as long
+	func getBoolean(index as int, defval as bool = false) as bool
+	func getDouble(index as int, defval as double = 0.0) as double
+	func getMap(index as int) as jk.lang.DynamicMap
+	func getVector(index as int) as jk.lang.DynamicVector
+	func iterate as jk.lang.Iterator<object>
+	func iterateReverse as jk.lang.Iterator<object>
+	func remove(index as int)
+	func removeValue(value as object)
+	func clear
+	func contains(value as object) as bool
+	func getSize as int
+	func setCapacity(capacity as int)
+	func sort
+	func sortWithComparer(comparer as function<int,object,object>)
+	func sortReverse
+	func sortReverseWithComparer(comparer as function<int,object,object>)
+}
+class name jk.lang.Queue<T> header public
+{
+	ctor
+	func clear
+	func push(o as T)
+	func pop as T
+	func peek as T
+	func isEmpty as bool
+	func getSize as int
+	func getData as vector<T> #getterMethod
+	func setData(v as vector<T>) as jk.lang.Queue<T> #setterMethod
+}
+class name jk.lang.Vector header public
+{
+	ctor
+	func asVector <T> (obj) static as vector<T>
+	func asObjectVector(o) static as vector
+	func forIterator <T> (iterator as jk.lang.Iterator<T>) static as vector<T>
+	func forArray <T> (array as array<T>) static as vector<T>
+	func toVectorOfObject <T> (collection as vector<T>) static as vector
+	func dupObjectVector(vector as vector) static as vector
+	func contains <T> (vector as vector<T> #used, item as T #used) static as bool
+	func append <T> (vector as vector<T> #used, item as T #used) static
+	func prepend <T> (vector as vector<T>, item as T) static
+	func insert <T> (vector as vector<T> #used, item as T #used, index as int #used) static
+	func setCapacity <T> (vector as vector<T> #used, capacity as int) static
+	func setSize <T> (vector as vector<T> #used, newSize as int) static as vector<T>
+	func getSize <T> (vector as vector<T> #used) static as int
+	func getAt <T> (vector as vector<T>, index as int) static as T
+	func get <T> (vector as vector<T> #used, index as int #used) static as T
+	func getFirst <T> (vector as vector<T>) static as T
+	func getLast <T> (vector as vector<T>) static as T
+	func set <T> (vector as vector<T> #used, index as int #used, val as T #used) static
+	func remove <T> (vector as vector<T>, index as int) static as T
+	func popFirst <T> (vector as vector<T>) static as T
+	func removeFirst <T> (vector as vector<T>) static
+	func popLast <T> (vector as vector<T>) static as T
+	func removeLast <T> (vector as vector<T>) static
+	func removeValue <T> (vector as vector<T> #used, value as T #used) static as int
+	func clear <T> (vector as vector<T> #used) static
+	func isEmpty <T> (vector as vector<T> #used) static as bool
+	func isNotEmpty <T> (vector as vector<T>) static as bool
+	func removeRange <T> (vector as vector<T> #used, index as int #used, count as int #used) static
+	func iterate <T> (vector as vector<T>) static as jk.lang.Iterator<T>
+	func iterateReverse <T> (vector as vector<T>) static as jk.lang.Iterator<T>
+	func sort <T> (vector as vector<T>, comparer as function<int,T,T>) static
+	func sortReverse <T> (vector as vector<T>, comparer as function<int,T,T>) static
+	func sortAsStrings <T> (vector as vector<T>) static
+	func sortAsStringsReverse <T> (vector as vector<T>) static
+	func reverse <T> (vector as vector<T>) static
+}
+interface name jk.lang.BooleanObject header public
+{
+	func toBoolean as bool
+}
+class name jk.lang.Boolean header implements jk.lang.BooleanObject public
+{
+	ctor
+	func asObject(value as bool) static as jk.lang.Boolean
+	func asBoolean(obj, defaultValue as bool = false) static as bool
+	func toBoolean as bool
+	func getValue as bool #getterMethod
+	func setValue(v as bool) as jk.lang.Boolean #setterMethod
+}
+class name jk.lang.TimeValue header public
+{
+	ctor
+	func forSeconds(seconds as long) static as jk.lang.TimeValue
+	func toString as string
+	func dup as jk.lang.TimeValue
+	func reset
+	func copyFrom(tv as jk.lang.TimeValue)
+	func set(tv as jk.lang.TimeValue)
+	func setSeconds(value as long)
+	func setMilliSeconds(value as long)
+	func setMicroSeconds(value as long)
+	func add(s as long, us as long) as jk.lang.TimeValue
+	func addTimeValue(tv as jk.lang.TimeValue) as jk.lang.TimeValue
+	func subtract(tv as jk.lang.TimeValue) as jk.lang.TimeValue
+	func asMicroSeconds as long
+	func diff(a as jk.lang.TimeValue, b as jk.lang.TimeValue) static as long
+	func diffDouble(a as jk.lang.TimeValue, b as jk.lang.TimeValue) static as double
+	func getSeconds as long #getterMethod
+	func getMicroSeconds as long #getterMethod
+}
+interface name jk.lang.IntegerIterator header public
+{
+	func nextInteger as int
+}
+class name jk.lang.String header public
+{
+	ctor
+	func asString(obj) static as string
+	func forObject(obj as object) static as string
+	func safeString(str as string) static as string
+	func isEmpty(str as string) static as bool
+	func isNotEmpty(str as string) static as bool
+	func forBuffer(data as buffer, encoding as string) static as string
+	func forASCIIBuffer(data as buffer #used) static as string
+	func forUTF8Buffer(data as buffer #used) static as string
+	func forUCS2Buffer(data as buffer #used) static as string
+	func forCharArray(chars as array<char> #used, offset as int #used, count as int #used) static as string
+	func forBoolean(vv as bool) static as string
+	func forInteger(vv as int #used) static as string
+	func forLongInteger(vv as long #used) static as string
+	func forIntegerWithPadding(vv as int, length as int, paddingString as string = null) static as string
+	func forIntegerHex(vv as int #used, minlength as int = 0) static as string
+	func forLongIntegerHex(vv as long #used, minlength as int = 0) static as string
+	func forIntegerOctal(vv as int #used) static as string
+	func forIntegerBinary(vv as int #used) static as string
+	func forBufferHex(buffer as buffer) static as string
+	func forCharacter(vv as char #used) static as string
+	func forFloat(vv as float #used) static as string
+	func forDouble(vv as double #used) static as string
+	func toUTF8Buffer(str as string) static as buffer
+	func toBuffer(str as string, charset as string) static as buffer
+	func getBytesSignedUTF8(str as string) static as array<sbyte>
+	func getBytesSigned(str as string #used, charset as string) static as array<sbyte>
+	func getLength(str as string #used) static as int
+	func appendString(str1 as string #used, str2 as string #used) static as string
+	func appendInteger(str as string, intvalue as int) static as string
+	func appendCharacter(str as string, charvalue as char) static as string
+	func appendFloat(str as string, floatvalue as float) static as string
+	func appendDouble(str as string, doublevalue as double) static as string
+	func appendBoolean(str as string, boolvalue as bool) static as string
+	func toLowerCase(str as string #used) static as string
+	func toUpperCase(str as string #used) static as string
+	func capitalize(str as string) static as string
+	func getChar(str as string #used, index as int #used) static as char
+	func equals(str1 as string #used, str2 as string #used) static as bool
+	func isNotEqual(str1 as string, str2 as string) static as bool
+	func equalsIgnoreCase(str1 as string #used, str2 as string #used) static as bool
+	func compare(str1 as string #used, str2 as string #used) static as int
+	func compareToIgnoreCase(str1 as string #used, str2 as string #used) static as int
+	func getHashCode(str as string #used) static as int
+	func getIndexOfCharacter(str as string #used, c as char #used, start as int #used = 0) static as int
+	func getIndexOfString(str as string #used, s as string #used, start as int #used = 0) static as int
+	func getLastIndexOfCharacter(str as string #used, c as char #used, start as int #used = -1) static as int
+	func getLastIndexOfString(str as string #used, s as string #used, start as int #used = -1) static as int
+	func getEndOfString(str as string #used, start as int #used) static as string
+	func getSubString(str as string #used, start as int #used, length as int #used) static as string
+	func contains(str1 as string, str2 as string) static as bool
+	func startsWith(str1 as string, str2 as string #used, offset as int = 0) static as bool
+	func startsWithAny(str as string, strings as array) static as string
+	func startsWithIgnoreCase(str1 as string, str2 as string, offset as int = 0) static as bool
+	func startsWithAnyIgnoreCase(str as string, strings as array) static as string
+	func endsWith(str1 as string #used, str2 as string #used) static as bool
+	func endsWithAny(str as string, strings as array) static as string
+	func endsWithIgnoreCase(str1 as string, str2 as string) static as bool
+	func endsWithAnyIgnoreCase(str as string, strings as array) static as string
+	func strip(str as string #used) static as string
+	func stripFromEnd(str as string #used) static as string
+	func stripFromStart(str as string #used) static as string
+	func replaceCharacter(str as string #used, oldChar as char #used, newChar as char #used) static as string
+	func replaceString(str as string #used, target as string #used, replacement as string #used) static as string
+	func toCharArray(str as string #used) static as array<char>
+	func split(str as string, delim as char, max as int = 0) static as vector<string>
+	func isInteger(str as string) static as bool
+	func toInteger(str as string) static as int
+	func toLong(str as string) static as long
+	func toIntegerFromHex(str as string) static as int
+	func toLongIntegerFromHex(str as string) static as long
+	func toIntegerFromOctal(str as string) static as int
+	func toIntegerFromBinary(str as string) static as int
+	func toDouble(str as string #used) static as double
+	func iterate(value as string) static as jk.lang.CharacterIterator
+	func reverse(value as string) static as string
+	func iterateReverse(value as string) static as jk.lang.CharacterIterator
+}
+class name jk.lang.StringSet header public
+{
+	ctor
+	func add(value as string)
+	func remove(value as string)
+	func count as int
+	func contains(value as string) as bool
+	func getAll as vector<string>
+	func clear
+}
+class name jk.lang.Exception header public
+{
+	ctor
+}
+class name jk.lang.CharacterDecoder header implements jk.lang.CharacterIterator abstract public
+{
+	ctor
+	var UTF8 public static const as int
+	var ASCII public static const as int
+	var UCS2 public static const as int
+	var current protected as char
+	func resetDecoder
+	func copyTo(o as jk.lang.CharacterDecoder)
+	func moveToPreviousByte virtual as bool
+	func moveToNextByte virtual as bool
+	func getCurrentByte virtual as int
+	func setEncoding(ee as string) as jk.lang.CharacterDecoder
+	func getEncoding as int
+	func moveToPreviousChar as bool
+	func getSurrogatePair as char
+	func doMoveToPreviousChar as bool
+	func moveToNextChar as bool
+	func doMoveToNextChar as bool
+	func getCurrentChar as char
+	func getNextChar as char
+	func hasEnded as bool
+	func getCurrentPosition abstract as int
+	func setCurrentPosition(position as int) abstract
+}
+class name jk.lang.LogicOp header public
+{
+	ctor
+	func or(v1 as bool, v2 as bool) as bool
+	func and(v1 as bool, v2 as bool) as bool
+	func not(v as bool) as bool
+}
+class name jk.lang.StackTrace header public
+{
+	ctor
+	func generate static as string
+}
+class name jk.lang.CharacterIteratorForBuffer header extends jk.lang.CharacterDecoder implements jk.lang.Duplicateable public
+{
+	ctor
+	func forBuffer(buffer as buffer) static as jk.lang.CharacterIteratorForBuffer
+	func setBuffer(buffer as buffer)
+	func moveToPreviousByte override as bool
+	func moveToNextByte override as bool
+	func getCurrentByte override as int
+	func getCurrentPosition override as int
+	func setCurrentPosition(position as int) override
+	func duplicate as object
+}
+class name jk.lang.ExceptionWithString header extends jk.lang.Exception implements jk.lang.StringObject public
+{
+	ctor
+	func forString(value as string, allowStackTrace as bool = false) static as jk.lang.ExceptionWithString
+	func updateStackTrace
+	func toString as string
+	func getExceptionMessage as string #getterMethod
+	func setExceptionMessage(v as string) as jk.lang.ExceptionWithString #setterMethod
+	func getStackTraceString as string #getterMethod
+	func setStackTraceString(v as string) as jk.lang.ExceptionWithString #setterMethod
+}
+class name jk.lang.ExceptionWithError header extends jk.lang.Exception implements jk.lang.StringObject public
+{
+	ctor
+	func forError(error as jk.lang.Error) static as jk.lang.ExceptionWithError
+	func forCode(code as string, detail as dynamic = null) static as jk.lang.ExceptionWithError
+	func getErrorCode as string
+	func getErrorDetail as dynamic
+	func toString as string
+	func getError as jk.lang.Error #getterMethod
+	func setError(v as jk.lang.Error) as jk.lang.ExceptionWithError #setterMethod
+}
+class name jk.lang.Serializer header public
+{
+	ctor
+	func toBuffer(value as object) static as buffer
+	func fromBuffer(buffer as buffer) static as object
+}
+class name jk.lang.Reflection header public
+{
+	ctor
+	func createClassInstanceByName(qualifiedName as string) static as dynamic
+	func createClassInstanceByTypeinfo(type as typeinfo) static as dynamic
+	func callMethod(objectInstance as object, methodName as string, arguments as array<dynamic>) static as dynamic
+	func getDataTypeInfo(variable) static as typeinfo
+	func isSameType(primary as object, other as object) static as bool
+	func isInstanceOf(objectInstance as object, type as typeinfo) static as bool
+}
+interface name jk.lang.BufferDataReceiver header public
+{
+	func onBufferData(data as buffer, size as long) as bool
+}
+interface name jk.lang.StringObject header public
+{
+	func toString as string
+}
+class name jk.lang.CharacterIteratorForString header implements jk.lang.CharacterIterator implements jk.lang.Duplicateable public
+{
+	ctor
+	func forString(value as string) static as jk.lang.CharacterIteratorForString
+	func duplicate as object
+	func getCurrentChar as char
+	func getNextChar as char
+	func moveToNextChar as bool
+	func moveToPreviousChar as bool
+	func hasEnded as bool
+	func getCurrentPosition as int
+	func setCurrentPosition(position as int)
+	func setString(value as string)
+}
+class name jk.lang.Buffer header public
+{
+	ctor
+	func asObject(buffer as buffer) static as jk.lang.BufferObject
+	func asBuffer(obj) static as buffer
+	func forInt8Array(buf as array<sbyte>) static as buffer
+	func toInt8Array(buf as buffer) static as array<sbyte>
+	func getSubBuffer(buffer as buffer, offset as long, size as long = -1, alwaysNewBuffer as bool = false) static as buffer
+	func getInt8(buffer as buffer #used, offset as long #used) static as byte
+	func copyFrom(array as buffer, src as buffer, soffset as long, doffset as long, size as long) static
+	func getInt16LE(buffer as buffer, offset as long) static as ushort
+	func getInt16BE(buffer as buffer, offset as long) static as ushort
+	func getInt32LE(buffer as buffer, offset as long) static as uint
+	func getInt32BE(buffer as buffer, offset as long) static as uint
+	func getInt64LE(buffer as buffer, offset as long) static as ulong
+	func getInt64BE(buffer as buffer, offset as long) static as ulong
+	func getFloatLE(buffer as buffer, offset as long) static as float
+	func getFloatBE(buffer as buffer, offset as long) static as float
+	func getDoubleLE(buffer as buffer, offset as long) static as double
+	func getDoubleBE(buffer as buffer, offset as long) static as double
+	func forInt8(number as byte) static as buffer
+	func forInt16BE(number as ushort) static as buffer
+	func forInt16LE(number as ushort) static as buffer
+	func forInt32BE(number as uint) static as buffer
+	func forInt32LE(number as uint) static as buffer
+	func forInt64BE(number as ulong) static as buffer
+	func forInt64LE(number as ulong) static as buffer
+	func forFloat32BE(number as float) static as buffer
+	func forFloat32LE(number as float) static as buffer
+	func forDouble64BE(number as double) static as buffer
+	func forDouble64LE(number as double) static as buffer
+	func getSize(buffer as buffer #used) static as long
+	func getByte(buffer as buffer, offset as long) static as byte
+	func setByte(buffer as buffer #used, offset as long #used, value as byte #used) static
+	func allocate(size as long) static as buffer
+	func fill(buffer as buffer, value as byte) static
+	func resize(buffer as buffer, newSize as long) static as buffer
+	func append(original as buffer, toAppend as buffer, size as long = -1) static as buffer
+	func forHexString(str as string) static as buffer
+}
+interface name jk.lang.BooleanIterator header public
+{
+	func nextBoolean as bool
+}
+class name jk.lang.Double header implements jk.lang.DoubleObject public
+{
+	ctor
+	func forValue(value as double) static as jk.lang.Double
+	func asObject(value as double) static as jk.lang.Double
+	func asDouble(obj) static as double
+	func longBitsToDouble(vv as long) static as double
+	func doubleToLongBits(vv as double) static as long
+	func add(amount as double)
+	func toDouble as double
+	func getValue as double #getterMethod
+	func setValue(v as double) as jk.lang.Double #setterMethod
+}
+interface name jk.lang.CharacterObject header public
+{
+	func toCharacter as char
+}
+class name jk.lang.Map header public
+{
+	ctor
+	func asObject <K,V> (map as map<K,V>) static as jk.lang.MapObject<K,V>
+	func asMap(o) static as map
+	func getWithDefault <K,V> (map as map<K,V>, key as K, ddf as V) static as V
+	func get <K,V> (map as map<K,V>, key as K) static as V
+	func getValue <K,V> (map as map<K,V> #used, key as K #used) static as V
+	func set <K,V> (data as map<K,V> #used, key as K #used, val as V #used) static as bool
+	func setValue <K,V> (data as map<K,V>, key as K, val as V) static as bool
+	func remove <K,V> (data as map<K,V> #used, key as K #used) static
+	func count <K,V> (data as map<K,V> #used) static as int
+	func containsKey <K,V> (data as map<K,V> #used, key as K #used) static as bool
+	func containsValue <K,V> (data as map<K,V>, val as V #used) static as bool
+	func clear <K,V> (data as map<K,V> #used) static
+	func dup <K,V> (data as map<K,V> #used) static as map<K,V>
+	func getKeys <K,V> (data as map<K,V> #used) static as vector<K>
+	func getValues <K,V> (data as map<K,V> #used) static as vector<V>
+	func iterateKeys <K,V> (data as map<K,V>) static as jk.lang.Iterator<K>
+	func iterateValues <K,V> (data as map<K,V>) static as jk.lang.Iterator<V>
+}
+class name jk.lang.DynamicObject header public
+{
+	ctor
+	func iterate(value) static as jk.lang.Iterator<object>
+}
+interface name jk.lang.Duplicateable header public
+{
+	func duplicate as object
+}
+class name jk.lang.KeyValueList<K,V> header public
+{
+	ctor
+	func add(key as K, val as V)
+	func addPair(pair as jk.lang.KeyValuePair<K,V>)
+	func prepend(key as K, val as V)
+	func prependPair(pair as jk.lang.KeyValuePair<K,V>)
+	func iterate as jk.lang.Iterator<jk.lang.KeyValuePair<K,V>>
+	func asVector as vector<jk.lang.KeyValuePair<K,V>>
+	func dup as jk.lang.KeyValueList<K,V>
+	func getKey(index as int) as K
+	func getValue(index as int) as V
+	func count as int
+	func remove(index as int)
+	func clear
+}
+class name jk.lang.RunnableFunction header implements jk.lang.Runnable public
+{
+	ctor
+	func forFunction(function as function<void>) static as jk.lang.RunnableFunction
+	func run
+	func getFunction as function<void> #getterMethod
+	func setFunction(v as function<void>) as jk.lang.RunnableFunction #setterMethod
+}
+class name jk.lang.DateTime header implements jk.lang.StringObject public
+{
+	ctor
+	func forSeconds(seconds as long) static as jk.lang.DateTime
+	func forTimeValue(tv as jk.lang.TimeValue) static as jk.lang.DateTime
+	func forString(value as string) static as jk.lang.DateTime
+	func updateFromTimestamp(seconds as long)
+	func toStringDate(delim as char = '-') as string
+	func toStringTime(delim as char = ':') as string
+	func toStringDateTime as string
+	func toString as string
+	func getTimezoneOffset as long #getterMethod
+	func setTimezoneOffset(v as long) as jk.lang.DateTime #setterMethod
+	func getWeekDay as int #getterMethod
+	func setWeekDay(v as int) as jk.lang.DateTime #setterMethod
+	func getDayOfMonth as int #getterMethod
+	func setDayOfMonth(v as int) as jk.lang.DateTime #setterMethod
+	func getMonth as int #getterMethod
+	func setMonth(v as int) as jk.lang.DateTime #setterMethod
+	func getYear as int #getterMethod
+	func setYear(v as int) as jk.lang.DateTime #setterMethod
+	func getHours as int #getterMethod
+	func setHours(v as int) as jk.lang.DateTime #setterMethod
+	func getMinutes as int #getterMethod
+	func setMinutes(v as int) as jk.lang.DateTime #setterMethod
+	func getSeconds as int #getterMethod
+	func setSeconds(v as int) as jk.lang.DateTime #setterMethod
+}
+interface name jk.lang.EventLoop header public
+{
+	func runScheduled(timeout as long, runnable as jk.lang.Runnable)
+	func runInBackground(runnable as jk.lang.Runnable)
+}
+class name jk.lang.BufferBuilder header public
+{
+	ctor
+	func allocate(sz as long)
+	func getSize as int
+	func appendInteger(value as int)
+	func appendBuffer(sbuffer as buffer)
+	func appendSubBuffer(sbuffer as buffer, offset as int, size as long)
+	func toBuffer as buffer
+}

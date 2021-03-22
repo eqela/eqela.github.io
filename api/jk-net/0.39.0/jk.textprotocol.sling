@@ -1,0 +1,21 @@
+class name jk.textprotocol.TextLineProtocolConnection header extends jk.textprotocol.TextProtocolConnection abstract public
+{
+	import jk.lang
+	ctor
+	func sendLine(text as string)
+	func onTextReceived(data as string) override
+	func onLineReceived(data as string) abstract
+	func getUseCRLF as bool #getterMethod
+	func setUseCRLF(v as bool) as jk.textprotocol.TextLineProtocolConnection #setterMethod
+}
+class name jk.textprotocol.TextProtocolConnection header extends jk.server.NetworkConnection abstract public
+{
+	import jk.lang
+	import jk.server
+	ctor
+	func onDataReceived(data as buffer, size as int) override
+	func sendText(text as string)
+	func onTextReceived(data as string) abstract
+	func getEncoding as string #getterMethod
+	func setEncoding(v as string) as jk.textprotocol.TextProtocolConnection #setterMethod
+}

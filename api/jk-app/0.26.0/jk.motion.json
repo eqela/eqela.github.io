@@ -1,0 +1,123 @@
+{
+	"moduleDescription" : "",
+	"type" : "module",
+	"moduleTitle" : "",
+	"moduleId" : "jk.motion",
+	"entities" : [
+		{
+			"type" : "class",
+			"name" : "TextureSheetProperties",
+			"description" : ""
+		},
+		{
+			"type" : "interface",
+			"name" : "AudioClip",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "SpriteEntity",
+			"description" : ""
+		},
+		{
+			"type" : "interface",
+			"name" : "ContainerSprite",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "AudioManager",
+			"description" : ""
+		},
+		{
+			"type" : "interface",
+			"name" : "Sprite",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "SpriteScene",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "Backend",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "Scene",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "TextProperties",
+			"description" : ""
+		},
+		{
+			"type" : "interface",
+			"name" : "Texture",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "TextButtonEntity",
+			"description" : ""
+		},
+		{
+			"type" : "interface",
+			"name" : "TextSprite",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "SpriteUtil",
+			"description" : ""
+		},
+		{
+			"type" : "interface",
+			"name" : "EntityScene",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "AnimatedSpriteEntity",
+			"description" : "The AnimatedSpriteEntity class provides a sprite entity class that enables different forms of animation, including (1) frame-by-frame animation of the sprite image using sprite sheet images, (2) time-based movement of the sprite using xSpeed and ySpeed, and (3) time-based rotation of the sprite using rotateSpeed."
+		},
+		{
+			"type" : "class",
+			"name" : "SceneManager",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "SpriteSceneWithEntities",
+			"description" : ""
+		},
+		{
+			"type" : "interface",
+			"name" : "SpriteLayer",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "Entity",
+			"description" : ""
+		},
+		{
+			"type" : "interface",
+			"name" : "AudioStream",
+			"description" : ""
+		},
+		{
+			"type" : "interface",
+			"name" : "TextureSprite",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "MultiSpriteEntity",
+			"description" : ""
+		}
+	]
+}

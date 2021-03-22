@@ -1,0 +1,58 @@
+{
+	"moduleDescription" : "Common unit tests for testing the overall functionality of the JK Core\nlibrary. Not intended to be used by client applications or derived\nlibraries.\n",
+	"type" : "module",
+	"moduleTitle" : "Unit tests for JK Core",
+	"moduleId" : "jk.core.tests",
+	"entities" : [
+		{
+			"type" : "class",
+			"name" : "VariableReferenceTests",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "MapTests",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "BufferTests",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "FileSystemTests",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "SystemClockTests",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "StringBuilderTests",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "StringTests",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "VectorTests",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "TestMain",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "StackTraceTests",
+			"description" : ""
+		}
+	]
+}

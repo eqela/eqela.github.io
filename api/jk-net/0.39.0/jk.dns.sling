@@ -1,0 +1,57 @@
+class name jk.dns.DNSRecordCNAME header extends jk.dns.DNSRecord public
+{
+	import jk.lang
+	ctor
+	func getType override as string
+}
+class name jk.dns.DNSRecordA header extends jk.dns.DNSRecord public
+{
+	import jk.lang
+	ctor
+	func getType override as string
+}
+class name jk.dns.DNSCache header public
+{
+	import jk.lang
+	import jk.thread
+	import jk.time
+	ctor
+	func resolve(hostname as string) static as string
+}
+class name jk.dns.DNSRecord header implements jk.lang.StringObject public
+{
+	import jk.lang
+	ctor
+	func getType virtual as string
+	func toString virtual as string
+	func getTtl as int #getterMethod
+	func setTtl(v as int) as jk.dns.DNSRecord #setterMethod
+	func getAddress as string #getterMethod
+	func setAddress(v as string) as jk.dns.DNSRecord #setterMethod
+}
+class name jk.dns.DNSRecordNS header extends jk.dns.DNSRecord public
+{
+	import jk.lang
+	ctor
+	func getType override as string
+}
+class name jk.dns.DNSRecordMX header extends jk.dns.DNSRecord public
+{
+	import jk.lang
+	ctor
+	func getType override as string
+	func toString override as string
+	func getPriority as int #getterMethod
+	func setPriority(v as int) as jk.dns.DNSRecordMX #setterMethod
+}
+class name jk.dns.DNSResolver header abstract public
+{
+	import jk.lang
+	import jk.log
+	ctor
+	func create static as jk.dns.DNSResolver
+	func instance static as jk.dns.DNSResolver
+	func getNSRecords(host as string, type as string, ctx as jk.log.LoggingContext) abstract as jk.lang.DynamicVector
+	func getIPAddress(hostname as string, ctx as jk.log.LoggingContext) abstract as string
+	func getIPAddresses(hostname as string, ctx as jk.log.LoggingContext) abstract as jk.lang.DynamicVector
+}

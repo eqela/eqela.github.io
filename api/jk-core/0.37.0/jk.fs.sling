@@ -1,0 +1,197 @@
+interface name jk.fs.FileWriter header implements jk.io.Writer implements jk.lang.Closable implements jk.io.SeekableWriter public
+{
+	import jk.lang
+	import jk.io
+}
+class name jk.fs.FileFinder header implements jk.lang.Iterator<jk.fs.File> public
+{
+	import jk.lang
+	func forRoot(root as jk.fs.File) static as jk.fs.FileFinder
+	ctor
+	func setRoot(root as jk.fs.File) as jk.fs.FileFinder
+	func addPattern(pattern as string) as jk.fs.FileFinder
+	func addExcludePattern(pattern as string) as jk.fs.FileFinder
+	func matchPattern(file as jk.fs.File) as bool
+	func matchExcludePattern(file as jk.fs.File) as bool
+	func next as jk.fs.File
+	func hasNext as bool
+	func getIncludeMatchingDirectories as bool #getterMethod
+	func setIncludeMatchingDirectories(v as bool) as jk.fs.FileFinder #setterMethod
+	func getIncludeDirectories as bool #getterMethod
+	func setIncludeDirectories(v as bool) as jk.fs.FileFinder #setterMethod
+}
+class name jk.fs.FileKit header public
+{
+	import jk.lang
+	import jk.log
+	ctor(ctx as jk.log.LoggingContext)
+	func asFile(file) as jk.fs.File
+	func copy(src, dst) as jk.fs.File
+	func remove(file)
+	func readAsBuffer(file) as buffer
+	func readAsString(file) as string
+	func writeBuffer(file, data as buffer)
+	func writeString(file, data)
+}
+class name jk.fs.PathInfo header public
+{
+	import jk.lang
+	import jk.os
+	ctor
+	func getPathSeparator static as char
+	func isAbsolutePath(path as string) static as bool
+}
+class name jk.fs.FileInvalid header extends jk.fs.File public
+{
+	import jk.lang
+	ctor
+	func entry(name as string) override as jk.fs.File
+	func makeExecutable override as bool
+	func move(dest as jk.fs.File, replace as bool) override as bool
+	func touch override as bool
+	func read override as jk.fs.FileReader
+	func write override as jk.fs.FileWriter
+	func append override as jk.fs.FileWriter
+	func stat override as jk.fs.FileInfo
+	func exists override as bool
+	func isExecutable override as bool
+	func createFifo override as bool
+	func createDirectory override as bool
+	func createDirectoryRecursive override as bool
+	func removeDirectory override as bool
+	func getPath override as string
+	func isSame(file as jk.fs.File) override as bool
+	func remove override as bool
+	func removeRecursive override as bool
+	func getBasename override as string
+	func isIdentical(file as jk.fs.File) override as bool
+	func getContentsBuffer override as buffer
+	func getContentsString(encoding as string) override as string
+	func setContentsBuffer(buffer as buffer) override as bool
+	func setContentsString(str as string, encoding as string) override as bool
+	func entries override as jk.lang.Iterator<jk.fs.File>
+}
+class name jk.fs.File header implements jk.lang.StringObject abstract public
+{
+	import jk.lang
+	import jk.os
+	import jk.io
+	ctor
+	func asFile(o) static as jk.fs.File
+	func asFileVector(o) static as vector<jk.fs.File>
+	func forPath(path as string) static as jk.fs.File
+	func forRawPath(path as string) static as jk.fs.File
+	func forRelativePath(path as string, relativeTo as jk.fs.File, alwaysSupportWindowsPathnames as bool = false) static as jk.fs.File
+	func entry(name as string) virtual abstract as jk.fs.File
+	func rawEntry(name as string) virtual as jk.fs.File
+	func entries virtual abstract as jk.lang.Iterator<jk.fs.File>
+	func move(dest as jk.fs.File, replace as bool) virtual abstract as bool
+	func touch virtual abstract as bool
+	func read virtual abstract as jk.fs.FileReader
+	func write virtual abstract as jk.fs.FileWriter
+	func append virtual abstract as jk.fs.FileWriter
+	func stat virtual abstract as jk.fs.FileInfo
+	func createDirectory virtual abstract as bool
+	func createDirectoryRecursive virtual abstract as bool
+	func removeDirectory virtual abstract as bool
+	func getPath virtual abstract as string
+	func remove virtual abstract as bool
+	func makeExecutable virtual abstract as bool
+	func getRelativePath(baseFile as jk.fs.File, prefix as string) virtual as string
+	func getRelativePathOrBasename(baseFile as jk.fs.File, prefix as string) virtual as string
+	func rename(newname as string, replace as bool) virtual as bool
+	func writeFromReader(reader as jk.io.Reader, doAppend as bool) virtual as bool
+	func createFifo virtual as bool
+	func isExecutable virtual as bool
+	func exists virtual as bool
+	func isIdentical(file as jk.fs.File) virtual as bool
+	func getLastErrorDescription as string
+	func onError(v as string) protected
+	func readLines as jk.lang.Iterator<string>
+	func readLinesVector as vector<string>
+	func hasChangedSince(originalTimeStamp as long) as bool
+	func getLastModifiedTimeStamp as long
+	func compareModificationTime(bf as jk.fs.File) virtual as int
+	func isNewerThan(bf as jk.fs.File) virtual as bool
+	func isOlderThan(bf as jk.fs.File) virtual as bool
+	func isSame(file as jk.fs.File) virtual as bool
+	func removeRecursive virtual as bool
+	func isFile virtual as bool
+	func isDirectory virtual as bool
+	func isLink virtual as bool
+	func getSize virtual as int
+	func setMode(mode as int) virtual as bool
+	func setOwnerUser(uid as int) virtual as bool
+	func setOwnerGroup(gid as int) virtual as bool
+	func withExtension(ext as string) virtual as jk.fs.File
+	func asExecutable virtual as jk.fs.File
+	func getParent virtual as jk.fs.File
+	func getSibling(name as string) virtual as jk.fs.File
+	func hasExtension(ext as string) virtual as bool
+	func extension virtual as string
+	func directoryName virtual as string
+	func getBasename virtual as string
+	func getBasenameWithoutExtension virtual as string
+	func baseName as string #deprecated
+	func baseNameWithoutExtension as string #deprecated
+	func copyFileTo(dest as jk.fs.File) as bool
+	func copyFileOrDirectoryTo(dest as jk.fs.File) as bool
+	func setContentsString(str as string, encoding as string) virtual as bool
+	func setContentsUTF8(str as string) virtual as bool
+	func setContentsBuffer(buffer as buffer) virtual as bool
+	func getContentsString(encoding as string) virtual as string
+	func getContentsUTF8 virtual as string
+	func getContentsBuffer virtual as buffer
+	func toString as string
+}
+class name jk.fs.FileInfo header public
+{
+	import jk.lang
+	import jk.time
+	ctor
+	var FILE_TYPE_UNKNOWN public static const as int
+	var FILE_TYPE_FILE public static const as int
+	var FILE_TYPE_DIR public static const as int
+	func forFile(file as jk.fs.File) static as jk.fs.FileInfo
+	func setFile(v as jk.fs.File) virtual
+	func setSize(v as int) virtual
+	func setCreateTime(v as long) virtual
+	func setAccessTime(v as long) virtual
+	func setModifyTime(v as long) virtual
+	func setOwnerUser(v as int) virtual
+	func setOwnerGroup(v as int) virtual
+	func setMode(v as int) virtual
+	func setExecutable(v as bool) virtual
+	func setType(v as int) virtual
+	func setLink(v as bool) virtual
+	func getFile virtual as jk.fs.File
+	func getSize virtual as int
+	func getCreateTime virtual as long
+	func getCreateTimeUTC as long
+	func getAccessTime virtual as long
+	func getAccessTimeUTC as long
+	func getModifyTime virtual as long
+	func getModifyTimeUTC as long
+	func getOwnerUser virtual as int
+	func getOwnerGroup virtual as int
+	func getMode virtual as int
+	func getExecutable virtual as bool
+	func getType virtual as int
+	func getLink virtual as bool
+	func isFile virtual as bool
+	func isLink virtual as bool
+	func isDirectory virtual as bool
+	func exists virtual as bool
+}
+interface name jk.fs.FileReader header implements jk.io.Reader implements jk.io.SizedReader implements jk.lang.Closable implements jk.io.SeekableReader public
+{
+	import jk.lang
+	import jk.io
+}
+class name jk.fs.CurrentDirectory header public
+{
+	import jk.lang
+	ctor
+	func set(dir as jk.fs.File) static
+	func get static as jk.fs.File
+}

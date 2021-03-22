@@ -1,0 +1,13 @@
+{
+	"moduleDescription" : "Information and overall status of the Jkop framework.\n",
+	"type" : "module",
+	"moduleTitle" : "Jkop framework information",
+	"moduleId" : "jk.jkop",
+	"entities" : [
+		{
+			"type" : "class",
+			"name" : "Jkop",
+			"description" : "Jkop framework information."
+		}
+	]
+}

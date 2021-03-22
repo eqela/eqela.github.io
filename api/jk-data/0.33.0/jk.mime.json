@@ -1,0 +1,13 @@
+{
+	"moduleDescription" : "Mime type database and functionality for determining the mime type and\nfile extensions.\n",
+	"type" : "module",
+	"moduleTitle" : "Mime type handling",
+	"moduleId" : "jk.mime",
+	"entities" : [
+		{
+			"type" : "class",
+			"name" : "MimeTypeRegistry",
+			"description" : ""
+		}
+	]
+}

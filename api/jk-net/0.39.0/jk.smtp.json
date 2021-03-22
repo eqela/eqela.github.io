@@ -1,0 +1,53 @@
+{
+	"moduleDescription" : "",
+	"type" : "module",
+	"moduleTitle" : "",
+	"moduleId" : "jk.smtp",
+	"entities" : [
+		{
+			"type" : "class",
+			"name" : "SMTPClientTask",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "SMTPClientTransactionResult",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "SMTPMultipartMessage",
+			"description" : ""
+		},
+		{
+			"type" : "interface",
+			"name" : "SMTPSenderListener",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "SMTPClient",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "SMTPSender",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "SMTPMessage",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "SMTPClientTaskResult",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "SMTPClientResult",
+			"description" : ""
+		}
+	]
+}

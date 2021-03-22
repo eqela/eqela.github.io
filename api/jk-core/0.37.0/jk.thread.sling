@@ -1,0 +1,57 @@
+interface name jk.thread.RunningThread header public
+{
+	import jk.lang
+	func isAlive as bool
+}
+class name jk.thread.CriticalSection header public
+{
+	import jk.lang
+	ctor
+	func execute(value as object, block as function<void>) static
+}
+class name jk.thread.Mutex header abstract public
+{
+	import jk.lang
+	ctor
+	func create static as jk.thread.Mutex
+	func forObject(value as object) static as jk.thread.Mutex
+	func lockMutex abstract
+	func unlockMutex abstract
+}
+class name jk.thread.CurrentThread header public
+{
+	import jk.lang
+	ctor
+	func sleepSeconds(seconds as int) static
+	func sleepMicroSeconds(uSeconds as int) static
+	func sleepMilliSeconds(mSeconds as int) static
+}
+class name jk.thread.Thread header public
+{
+	import jk.lang
+	ctor
+	func setLocalValue(id as string, value as object) static
+	func getLocalValue(id as string) static as object
+	func removeLocalValue(id as string) static
+	func start(runnable as jk.lang.Runnable) static as jk.thread.RunningThread
+}
+class name jk.thread.ThreadPool header public
+{
+	import jk.lang
+	func forMaxPoolSize(maximumPoolSize as int) static as jk.thread.ThreadPool
+	ctor
+	func getRunningThreadsCount as int
+	func submitTask(task as jk.lang.Runnable)
+	func submitTasks(tasks as vector<jk.lang.Runnable>)
+	func execute(task as jk.lang.Runnable)
+	func getTaskFromQueue as jk.lang.Runnable
+	class name TaskRunner header implements jk.lang.Runnable public static
+	{
+		ctor
+		func run
+		func getRunnable as jk.lang.Runnable #getterMethod
+		func setRunnable(v as jk.lang.Runnable) as jk.thread.ThreadPool.TaskRunner #setterMethod
+		func getMyParent as jk.thread.ThreadPool #getterMethod
+		func setMyParent(v as jk.thread.ThreadPool) as jk.thread.ThreadPool.TaskRunner #setterMethod
+	}
+}

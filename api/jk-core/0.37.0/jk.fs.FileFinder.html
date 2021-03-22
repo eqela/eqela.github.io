@@ -1,0 +1,53 @@
+<html>
+<head>
+<title>jk.fs.FileFinder | JK Core [0.37.0] - API Reference</title>
+<link rel="stylesheet" type="text/css" href="style.css" />
+<meta name="viewport" content="initial-scale=1,maximum-scale=1" />
+<meta property="og:description" content="jk.fs.FileFinder | JK Core [0.37.0] - API Reference" />
+<meta property="og:title" content="jk.fs.FileFinder | JK Core [0.37.0] - API Reference" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:description" content="jk.fs.FileFinder | JK Core [0.37.0] - API Reference" />
+</head>
+<body><div class="content">
+<a class="back" href="index.html">&laquo; JK Core [0.37.0]</a><div class="intro">
+<h1><span class="keyword">class</span> <span class="symbol">jk.fs.FileFinder</span></h1>
+<p></p>
+</div>
+<div class="list">
+<div class="title">Base Types</div>
+<div class="entry">
+<div class="name"><span class="keyword">implements</span> <a class="datatype" href="jk.lang.Iterator.html">jk.lang.Iterator&lt;jk.fs.File&gt;</a></div></div>
+</div>
+<div class="list">
+<div class="title">Static Methods</div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">forRoot</span> ( root <span class="keyword">as</span> <a class="datatype" href="jk.fs.File.html">jk.fs.File</a> ) <span class="modifier">static</span> <span class="keyword">as</span> <a class="datatype" href="jk.fs.FileFinder.html">jk.fs.FileFinder</a></div></div>
+</div>
+<div class="list">
+<div class="title">Instance Methods</div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setRoot</span> ( root <span class="keyword">as</span> <a class="datatype" href="jk.fs.File.html">jk.fs.File</a> ) <span class="keyword">as</span> <a class="datatype" href="jk.fs.FileFinder.html">jk.fs.FileFinder</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">addPattern</span> ( pattern <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="keyword">as</span> <a class="datatype" href="jk.fs.FileFinder.html">jk.fs.FileFinder</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">addExcludePattern</span> ( pattern <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="keyword">as</span> <a class="datatype" href="jk.fs.FileFinder.html">jk.fs.FileFinder</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">matchPattern</span> ( file <span class="keyword">as</span> <a class="datatype" href="jk.fs.File.html">jk.fs.File</a> ) <span class="keyword">as</span> <span class="datatype">bool</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">matchExcludePattern</span> ( file <span class="keyword">as</span> <a class="datatype" href="jk.fs.File.html">jk.fs.File</a> ) <span class="keyword">as</span> <span class="datatype">bool</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">next</span> <span class="keyword">as</span> <a class="datatype" href="jk.fs.File.html">jk.fs.File</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">hasNext</span> <span class="keyword">as</span> <span class="datatype">bool</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getIncludeMatchingDirectories</span> <span class="keyword">as</span> <span class="datatype">bool</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setIncludeMatchingDirectories</span> ( v <span class="keyword">as</span> <span class="datatype">bool</span> ) <span class="keyword">as</span> <a class="datatype" href="jk.fs.FileFinder.html">jk.fs.FileFinder</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getIncludeDirectories</span> <span class="keyword">as</span> <span class="datatype">bool</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setIncludeDirectories</span> ( v <span class="keyword">as</span> <span class="datatype">bool</span> ) <span class="keyword">as</span> <a class="datatype" href="jk.fs.FileFinder.html">jk.fs.FileFinder</a></div></div>
+</div>
+</div>
+</body>
+</html>

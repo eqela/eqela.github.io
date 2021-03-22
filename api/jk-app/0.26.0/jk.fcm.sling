@@ -1,0 +1,6 @@
+class name jk.fcm.FCMTokenManager header public
+{
+	import jk.lang
+	ctor
+	func checkForToken static as string
+}

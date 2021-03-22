@@ -1,0 +1,99 @@
+class name jk.pdf.PdfMakerPage header extends jk.render.RenderingContext abstract public
+{
+	import jk.lang
+	import jk.gfx
+	import jk.render
+	ctor
+	func getSize(size as string) virtual as double
+	func lengthToPoints(length as jk.gfx.Length) virtual as double
+	func pointsToLength(points as double) virtual as jk.gfx.Length
+	func getPpi abstract as double
+	func getWidth abstract as double
+	func getHeight abstract as double
+}
+class name jk.pdf.PaperSize header implements jk.lang.StringObject public
+{
+	import jk.lang
+	ctor
+	func getAll static as vector<jk.pdf.PaperSize>
+	func matches(sz as jk.pdf.PaperSize, value as int) static as bool
+	func forValue(value as int) static as jk.pdf.PaperSize
+	func forLetter static as jk.pdf.PaperSize
+	func forLegal static as jk.pdf.PaperSize
+	func forA3 static as jk.pdf.PaperSize
+	func forA4 static as jk.pdf.PaperSize
+	func forA5 static as jk.pdf.PaperSize
+	func forB4 static as jk.pdf.PaperSize
+	func forB5 static as jk.pdf.PaperSize
+	var LETTER public static const as int
+	var LEGAL public static const as int
+	var A3 public static const as int
+	var A4 public static const as int
+	var A5 public static const as int
+	var B4 public static const as int
+	var B5 public static const as int
+	var COUNT public static const as int
+	func toString as string
+	func getValue as int #getterMethod
+	func setValue(v as int) as jk.pdf.PaperSize #setterMethod
+}
+class name jk.pdf.PdfMaker header abstract public
+{
+	import jk.lang
+	import jk.log
+	import jk.fs
+	import jk.gfx
+	ctor
+	func instance(ctx as jk.log.LoggingContext = null) static as jk.pdf.PdfMaker
+	var ctx protected as jk.log.LoggingContext
+	func createDocument abstract as jk.pdf.PdfMakerDocument
+	func prepareImageForFile(file as jk.fs.File) abstract as jk.gfx.Image
+}
+class name jk.pdf.PdfMakerDocument header abstract public
+{
+	import jk.lang
+	import jk.fs
+	ctor
+	func addPage virtual as jk.pdf.PdfMakerPage
+	func setTitle(title as string) abstract
+	func addPageWithSize(size as jk.pdf.PaperSize) abstract as jk.pdf.PdfMakerPage
+	func saveToFile(file as jk.fs.File) abstract as bool
+}
+class name jk.pdf.PaperOrientation header implements jk.lang.StringObject public
+{
+	import jk.lang
+	ctor
+	func getAll static as vector<jk.pdf.PaperOrientation>
+	func matches(oo as jk.pdf.PaperOrientation, value as int) static as bool
+	func forValue(value as int) static as jk.pdf.PaperOrientation
+	var LANDSCAPE public static const as int
+	var PORTRAIT public static const as int
+	var COUNT public static const as int
+	func toString as string
+	func getValue as int #getterMethod
+	func setValue(v as int) as jk.pdf.PaperOrientation #setterMethod
+}
+class name jk.pdf.PaperConfiguration header public
+{
+	import jk.lang
+	ctor
+	class name Size header public static
+	{
+		var width public as double
+		var height public as double
+		ctor
+		ctor(w as double, h as double)
+		func getHeight as double
+		func getWidth as double
+	}
+	func forDefault static as jk.pdf.PaperConfiguration
+	func forA4Portrait static as jk.pdf.PaperConfiguration
+	func forA4Landscape static as jk.pdf.PaperConfiguration
+	func getSizeInches as jk.pdf.PaperConfiguration.Size
+	func getRawSizeInches as jk.pdf.PaperConfiguration.Size
+	func getSizeDots(dpi as int) as jk.pdf.PaperConfiguration.Size
+	func getSize as jk.pdf.PaperSize #getterMethod
+	func setSize(v as jk.pdf.PaperSize) as jk.pdf.PaperConfiguration #setterMethod
+	func getOrientation as jk.pdf.PaperOrientation #getterMethod
+	func setOrientation(v as jk.pdf.PaperOrientation) as jk.pdf.PaperConfiguration #setterMethod
+}

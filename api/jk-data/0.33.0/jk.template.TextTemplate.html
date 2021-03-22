@@ -1,0 +1,101 @@
+<html>
+<head>
+<title>jk.template.TextTemplate | JK Data [0.33.0] - API Reference</title>
+<link rel="stylesheet" type="text/css" href="style.css" />
+<meta name="viewport" content="initial-scale=1,maximum-scale=1" />
+<meta property="og:description" content="jk.template.TextTemplate | JK Data [0.33.0] - API Reference" />
+<meta property="og:title" content="jk.template.TextTemplate | JK Data [0.33.0] - API Reference" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:description" content="jk.template.TextTemplate | JK Data [0.33.0] - API Reference" />
+</head>
+<body><div class="content">
+<a class="back" href="index.html">&laquo; JK Data [0.33.0]</a><div class="intro">
+<h1><span class="keyword">class</span> <span class="symbol">jk.template.TextTemplate</span></h1>
+<p></p>
+</div>
+<div class="list">
+<div class="title">Constants</div>
+<div class="entry">
+<div class="name"><span class="keyword">const</span> <span class="symbol">TYPE_GENERIC</span> <span class="keyword">as</span> <span class="datatype">var</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">const</span> <span class="symbol">TYPE_HTML</span> <span class="keyword">as</span> <span class="datatype">var</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">const</span> <span class="symbol">TYPE_JSON</span> <span class="keyword">as</span> <span class="datatype">var</span></div></div>
+</div>
+<div class="list">
+<div class="title">Static Methods</div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">processFile</span> ( file <span class="keyword">as</span> <a class="datatype" href="../../jk-core/0.37.0/jk.fs.File.html">jk.fs.File</a> , markerBegin <span class="keyword">as</span> <span class="datatype">string</span> , markerEnd <span class="keyword">as</span> <span class="datatype">string</span> , vars <span class="keyword">as</span> <a class="datatype" href="../../jk-core/0.37.0/jk.lang.DynamicMap.html">jk.lang.DynamicMap</a> ) <span class="modifier">static</span> <span class="keyword">as</span> <span class="datatype">string</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">processString</span> ( text <span class="keyword">as</span> <span class="datatype">string</span> , markerBegin <span class="keyword">as</span> <span class="datatype">string</span> , markerEnd <span class="keyword">as</span> <span class="datatype">string</span> , vars <span class="keyword">as</span> <a class="datatype" href="../../jk-core/0.37.0/jk.lang.DynamicMap.html">jk.lang.DynamicMap</a> ) <span class="modifier">static</span> <span class="keyword">as</span> <span class="datatype">string</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">forFile</span> ( file <span class="keyword">as</span> <a class="datatype" href="../../jk-core/0.37.0/jk.fs.File.html">jk.fs.File</a> , markerBegin <span class="keyword">as</span> <span class="datatype">string</span> , markerEnd <span class="keyword">as</span> <span class="datatype">string</span> , type <span class="keyword">as</span> <span class="datatype">int</span> , includeDirs <span class="keyword">as</span> <span class="datatype">vector&lt;jk.fs.File&gt;</span> , includeFileData <span class="keyword">as</span> <span class="datatype">map&lt;string,object&gt;</span> , logContext <span class="keyword">as</span> <a class="datatype" href="../../jk-core/0.37.0/jk.log.LoggingContext.html">jk.log.LoggingContext</a> ) <span class="modifier">static</span> <span class="keyword">as</span> <a class="datatype" href="jk.template.TextTemplate.html">jk.template.TextTemplate</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">forHTMLFile</span> ( file <span class="keyword">as</span> <a class="datatype" href="../../jk-core/0.37.0/jk.fs.File.html">jk.fs.File</a> , includeDirs <span class="keyword">as</span> <span class="datatype">vector&lt;jk.fs.File&gt;</span> , includeFileData <span class="keyword">as</span> <span class="datatype">map&lt;string,object&gt;</span> , logContext <span class="keyword">as</span> <a class="datatype" href="../../jk-core/0.37.0/jk.log.LoggingContext.html">jk.log.LoggingContext</a> ) <span class="modifier">static</span> <span class="keyword">as</span> <a class="datatype" href="jk.template.TextTemplate.html">jk.template.TextTemplate</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">forString</span> ( text <span class="keyword">as</span> <span class="datatype">string</span> , markerBegin <span class="keyword">as</span> <span class="datatype">string</span> , markerEnd <span class="keyword">as</span> <span class="datatype">string</span> , type <span class="keyword">as</span> <span class="datatype">int</span> , includeDirs <span class="keyword">as</span> <span class="datatype">vector&lt;jk.fs.File&gt;</span> , includeFileData <span class="keyword">as</span> <span class="datatype">map&lt;string,object&gt;</span> , logContext <span class="keyword">as</span> <a class="datatype" href="../../jk-core/0.37.0/jk.log.LoggingContext.html">jk.log.LoggingContext</a> ) <span class="modifier">static</span> <span class="keyword">as</span> <a class="datatype" href="jk.template.TextTemplate.html">jk.template.TextTemplate</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">forHTMLString</span> ( text <span class="keyword">as</span> <span class="datatype">string</span> , includeDirs <span class="keyword">as</span> <span class="datatype">vector&lt;jk.fs.File&gt;</span> , includeFileData <span class="keyword">as</span> <span class="datatype">map&lt;string,object&gt;</span> , logContext <span class="keyword">as</span> <a class="datatype" href="../../jk-core/0.37.0/jk.log.LoggingContext.html">jk.log.LoggingContext</a> ) <span class="modifier">static</span> <span class="keyword">as</span> <a class="datatype" href="jk.template.TextTemplate.html">jk.template.TextTemplate</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">forJSONString</span> ( text <span class="keyword">as</span> <span class="datatype">string</span> , includeDirs <span class="keyword">as</span> <span class="datatype">vector&lt;jk.fs.File&gt;</span> , includeFileData <span class="keyword">as</span> <span class="datatype">map&lt;string,object&gt;</span> , logContext <span class="keyword">as</span> <a class="datatype" href="../../jk-core/0.37.0/jk.log.LoggingContext.html">jk.log.LoggingContext</a> ) <span class="modifier">static</span> <span class="keyword">as</span> <a class="datatype" href="jk.template.TextTemplate.html">jk.template.TextTemplate</a></div></div>
+</div>
+<div class="list">
+<div class="title">Instance Methods</div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setLanguagePreference</span> ( language <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getIncludeFileContent</span> ( fileName <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="keyword">as</span> <span class="datatype">string</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">prepare</span> <span class="keyword">as</span> <span class="datatype">bool</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">execute</span> ( vars <span class="keyword">as</span> <a class="datatype" href="../../jk-core/0.37.0/jk.lang.DynamicMap.html">jk.lang.DynamicMap</a> , importDirs <span class="keyword">as</span> <span class="datatype">vector&lt;jk.fs.File&gt;</span> ) <span class="keyword">as</span> <span class="datatype">string</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getVariableValue</span> ( vars <span class="keyword">as</span> <a class="datatype" href="../../jk-core/0.37.0/jk.lang.DynamicMap.html">jk.lang.DynamicMap</a> , varname <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="keyword">as</span> <span class="datatype">object</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getVariableValueString</span> ( vars <span class="keyword">as</span> <a class="datatype" href="../../jk-core/0.37.0/jk.lang.DynamicMap.html">jk.lang.DynamicMap</a> , varname <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="keyword">as</span> <span class="datatype">string</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getVariableValueVector</span> ( vars <span class="keyword">as</span> <a class="datatype" href="../../jk-core/0.37.0/jk.lang.DynamicMap.html">jk.lang.DynamicMap</a> , varname <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="keyword">as</span> <span class="datatype">vector</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">handleBlock</span> ( vars <span class="keyword">as</span> <a class="datatype" href="../../jk-core/0.37.0/jk.lang.DynamicMap.html">jk.lang.DynamicMap</a> , tag <span class="keyword">as</span> <span class="datatype">vector&lt;string&gt;</span> , data <span class="keyword">as</span> <span class="datatype">vector</span> , result <span class="keyword">as</span> <a class="datatype" href="../../jk-core/0.37.0/jk.lang.StringBuilder.html">jk.lang.StringBuilder</a> , importDirs <span class="keyword">as</span> <span class="datatype">vector&lt;jk.fs.File&gt;</span> ) <span class="keyword">as</span> <span class="datatype">bool</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">encodeJSONString</span> ( s <span class="keyword">as</span> <span class="datatype">string</span> , sb <span class="keyword">as</span> <a class="datatype" href="../../jk-core/0.37.0/jk.lang.StringBuilder.html">jk.lang.StringBuilder</a> ) <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getTokens</span> <span class="keyword">as</span> <span class="datatype">vector</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setTokens</span> ( v <span class="keyword">as</span> <span class="datatype">vector</span> ) <span class="keyword">as</span> <a class="datatype" href="jk.template.TextTemplate.html">jk.template.TextTemplate</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getText</span> <span class="keyword">as</span> <span class="datatype">string</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setText</span> ( v <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="keyword">as</span> <a class="datatype" href="jk.template.TextTemplate.html">jk.template.TextTemplate</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getMarkerBegin</span> <span class="keyword">as</span> <span class="datatype">string</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setMarkerBegin</span> ( v <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="keyword">as</span> <a class="datatype" href="jk.template.TextTemplate.html">jk.template.TextTemplate</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getMarkerEnd</span> <span class="keyword">as</span> <span class="datatype">string</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setMarkerEnd</span> ( v <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="keyword">as</span> <a class="datatype" href="jk.template.TextTemplate.html">jk.template.TextTemplate</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getLogContext</span> <span class="keyword">as</span> <a class="datatype" href="../../jk-core/0.37.0/jk.log.LoggingContext.html">jk.log.LoggingContext</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setLogContext</span> ( v <span class="keyword">as</span> <a class="datatype" href="../../jk-core/0.37.0/jk.log.LoggingContext.html">jk.log.LoggingContext</a> ) <span class="keyword">as</span> <a class="datatype" href="jk.template.TextTemplate.html">jk.template.TextTemplate</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getType</span> <span class="keyword">as</span> <span class="datatype">int</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setType</span> ( v <span class="keyword">as</span> <span class="datatype">int</span> ) <span class="keyword">as</span> <a class="datatype" href="jk.template.TextTemplate.html">jk.template.TextTemplate</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getLanguagePreferences</span> <span class="keyword">as</span> <span class="datatype">vector&lt;string&gt;</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setLanguagePreferences</span> ( v <span class="keyword">as</span> <span class="datatype">vector&lt;string&gt;</span> ) <span class="keyword">as</span> <a class="datatype" href="jk.template.TextTemplate.html">jk.template.TextTemplate</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getIncludeDirs</span> <span class="keyword">as</span> <span class="datatype">vector&lt;jk.fs.File&gt;</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setIncludeDirs</span> ( v <span class="keyword">as</span> <span class="datatype">vector&lt;jk.fs.File&gt;</span> ) <span class="keyword">as</span> <a class="datatype" href="jk.template.TextTemplate.html">jk.template.TextTemplate</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getIncludeFileData</span> <span class="keyword">as</span> <span class="datatype">map&lt;string,object&gt;</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setIncludeFileData</span> ( v <span class="keyword">as</span> <span class="datatype">map&lt;string,object&gt;</span> ) <span class="keyword">as</span> <a class="datatype" href="jk.template.TextTemplate.html">jk.template.TextTemplate</a></div></div>
+</div>
+</div>
+</body>
+</html>

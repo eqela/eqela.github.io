@@ -1,0 +1,59 @@
+<html>
+<head>
+<title>jk.template.RichTextStyledParagraph | JK Data [0.33.0] - API Reference</title>
+<link rel="stylesheet" type="text/css" href="style.css" />
+<meta name="viewport" content="initial-scale=1,maximum-scale=1" />
+<meta property="og:description" content="jk.template.RichTextStyledParagraph | JK Data [0.33.0] - API Reference" />
+<meta property="og:title" content="jk.template.RichTextStyledParagraph | JK Data [0.33.0] - API Reference" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:description" content="jk.template.RichTextStyledParagraph | JK Data [0.33.0] - API Reference" />
+</head>
+<body><div class="content">
+<a class="back" href="index.html">&laquo; JK Data [0.33.0]</a><div class="intro">
+<h1><span class="keyword">class</span> <span class="symbol">jk.template.RichTextStyledParagraph</span></h1>
+<p></p>
+</div>
+<div class="list">
+<div class="title">Base Types</div>
+<div class="entry">
+<div class="name"><span class="keyword">extends</span> <a class="datatype" href="jk.template.RichTextParagraph.html">jk.template.RichTextParagraph</a></div></div>
+</div>
+<div class="list">
+<div class="title">Static Methods</div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">forString</span> ( text <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="modifier">static</span> <span class="keyword">as</span> <a class="datatype" href="jk.template.RichTextStyledParagraph.html">jk.template.RichTextStyledParagraph</a></div></div>
+</div>
+<div class="list">
+<div class="title">Instance Methods</div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">isHeading</span> <span class="keyword">as</span> <span class="datatype">bool</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getTextContent</span> <span class="keyword">as</span> <span class="datatype">string</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">toJson</span> <span class="modifier">override</span> <span class="keyword">as</span> <a class="datatype" href="../../jk-core/0.37.0/jk.lang.DynamicMap.html">jk.lang.DynamicMap</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">toText</span> <span class="modifier">override</span> <span class="keyword">as</span> <span class="datatype">string</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">toHtml</span> ( refs <span class="keyword">as</span> <a class="datatype" href="jk.template.RichTextDocumentReferenceResolver.html">jk.template.RichTextDocumentReferenceResolver</a> ) <span class="modifier">override</span> <span class="keyword">as</span> <span class="datatype">string</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">addSegment</span> ( rts <span class="keyword">as</span> <a class="datatype" href="jk.template.RichTextSegment.html">jk.template.RichTextSegment</a> ) <span class="keyword">as</span> <a class="datatype" href="jk.template.RichTextParagraph.html">jk.template.RichTextParagraph</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setSegmentLink</span> ( seg <span class="keyword">as</span> <a class="datatype" href="jk.template.RichTextSegment.html">jk.template.RichTextSegment</a> , alink <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">parseSegments</span> ( txt <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">parse</span> ( text <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="keyword">as</span> <a class="datatype" href="jk.template.RichTextStyledParagraph.html">jk.template.RichTextStyledParagraph</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">toMarkup</span> <span class="modifier">override</span> <span class="keyword">as</span> <span class="datatype">string</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getHeading</span> <span class="keyword">as</span> <span class="datatype">int</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setHeading</span> ( v <span class="keyword">as</span> <span class="datatype">int</span> ) <span class="keyword">as</span> <a class="datatype" href="jk.template.RichTextStyledParagraph.html">jk.template.RichTextStyledParagraph</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getSegments</span> <span class="keyword">as</span> <span class="datatype">vector&lt;jk.template.RichTextSegment&gt;</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setSegments</span> ( v <span class="keyword">as</span> <span class="datatype">vector&lt;jk.template.RichTextSegment&gt;</span> ) <span class="keyword">as</span> <a class="datatype" href="jk.template.RichTextStyledParagraph.html">jk.template.RichTextStyledParagraph</a></div></div>
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,14 @@
+class name jk.module.DynamicModule header public
+{
+	import jk.lang
+	import jk.log
+	import jk.fs
+	ctor
+	func forFile(ctx as jk.log.LoggingContext, file as jk.fs.File) static as jk.module.DynamicModule
+	func forObject(ctx as jk.log.LoggingContext, oo as object #preserve) static as jk.module.DynamicModule
+	func isModuleFile(ctx as jk.log.LoggingContext, file as jk.fs.File) static as bool
+	func getModuleDescription as string
+	func loadFile(ctx as jk.log.LoggingContext, file as jk.fs.File #preserve) as bool
+	func executeStaticMethod(ctx as jk.log.LoggingContext, entityName as string #preserve, methodName as string #preserve, parameters as array #preserve) as bool
+	func createObject(ctx as jk.log.LoggingContext, className as string #preserve) as object
+}

@@ -1,0 +1,8 @@
+class name jk.validator.DataValidator header public
+{
+	import jk.lang
+	ctor
+	func isEmailAddressValid(emailAddress as string) static as bool
+	func checkPassword(password as string, minimum as int = 8, maximun as int = 64) static as jk.lang.Error
+	func isNameValid(name as string) static as bool
+}

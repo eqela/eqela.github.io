@@ -1,0 +1,38 @@
+{
+	"moduleDescription" : "",
+	"type" : "module",
+	"moduleTitle" : "",
+	"moduleId" : "jk.gfx",
+	"entities" : [
+		{
+			"type" : "class",
+			"name" : "Position",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "Size",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "Color",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "Image",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "Length",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "FontDescription",
+			"description" : ""
+		}
+	]
+}

@@ -1,0 +1,13 @@
+{
+	"moduleDescription" : "",
+	"type" : "module",
+	"moduleTitle" : "",
+	"moduleId" : "jk.ui.desktop",
+	"entities" : [
+		{
+			"type" : "class",
+			"name" : "DesktopEnvironment",
+			"description" : ""
+		}
+	]
+}

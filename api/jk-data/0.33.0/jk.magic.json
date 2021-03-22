@@ -1,0 +1,13 @@
+{
+	"moduleDescription" : "Interpretation of file type based on its contents.\n",
+	"type" : "module",
+	"moduleTitle" : "Magic byte handling",
+	"moduleId" : "jk.magic",
+	"entities" : [
+		{
+			"type" : "class",
+			"name" : "MagicNumberRegistry",
+			"description" : ""
+		}
+	]
+}

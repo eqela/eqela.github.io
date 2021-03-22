@@ -1,0 +1,13 @@
+{
+	"moduleDescription" : "",
+	"type" : "module",
+	"moduleTitle" : "",
+	"moduleId" : "jk.widget.carousel",
+	"entities" : [
+		{
+			"type" : "class",
+			"name" : "CarouselWidget",
+			"description" : ""
+		}
+	]
+}

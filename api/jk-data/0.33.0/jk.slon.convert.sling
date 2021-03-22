@@ -1,0 +1,8 @@
+class name jk.slon.convert.ToJson header public
+{
+	import jk.lang
+	import jk.fs
+	import jk.slon
+	import jk.json
+	ctor
+}

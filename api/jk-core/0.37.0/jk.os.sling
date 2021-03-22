@@ -1,0 +1,16 @@
+class name jk.os.OS header public
+{
+	import jk.lang
+	ctor
+	func getCurrentPlatformName static as string
+	func is32Bit static as bool
+	func is64Bit static as bool
+	func getProcessorType static as string
+	func isWindows static as bool
+	func isLinux static as bool
+	func isMacOS static as bool
+	func isOSX static as bool
+	func isAndroid static as bool
+	func isIOS static as bool
+	func isSystemType(ida as string) static as bool
+}

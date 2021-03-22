@@ -1,0 +1,13 @@
+{
+	"moduleDescription" : "Functionality for dealing with UUIDs (universally unique identifiers).\n",
+	"type" : "module",
+	"moduleTitle" : "UUID functionality",
+	"moduleId" : "jk.uuid",
+	"entities" : [
+		{
+			"type" : "class",
+			"name" : "UUIDGenerator",
+			"description" : ""
+		}
+	]
+}

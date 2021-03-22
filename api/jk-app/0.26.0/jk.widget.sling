@@ -1,0 +1,723 @@
+class name jk.widget.ScrollerWidget header implements jk.widget.WidgetWithLayout implements jk.widget.HeightAwareWidget public #widget
+{
+	import jk.ui
+	import jk.lang
+	import jk.lang
+	import jk.ui
+	import jk.gfx
+	import jk.widget
+	func forWidget(context as jk.ui.GuiApplicationContext, widget as jk.widget.Widget) static as jk.widget.ScrollerWidget
+	func isNearEndX as bool
+	func isNearEndY as bool
+	func getValueX as double
+	func getValueY as double
+	ctor(context as jk.ui.GuiApplicationContext)
+	func setWidgetScrollBarDisabled(value as bool)
+	func onWidgetHeightChanged(height as int #notLiteral) virtual
+	func setWidgetLayoutChanged
+	func hasWidgetLayoutChanged as bool
+	func layoutWidget(widthConstraint as int #notLiteral, force as bool) virtual as bool
+	func addWidget(widget as jk.widget.Widget) as jk.widget.ScrollerWidget
+	func getWidgetOnScrolledHandlerX as function<void,int> #getterMethod
+	func setWidgetOnScrolledHandlerX(v as function<void,int>) as jk.widget.ScrollerWidget #setterMethod
+	func getWidgetOnScrolledHandlerY as function<void,int> #getterMethod
+	func setWidgetOnScrolledHandlerY(v as function<void,int>) as jk.widget.ScrollerWidget #setterMethod
+	func getWidgetMaximumValueX as double #getterMethod
+	func setWidgetMaximumValueX(v as double) as jk.widget.ScrollerWidget #setterMethod
+	func getWidgetMaximumValueY as double #getterMethod
+	func setWidgetMaximumValueY(v as double) as jk.widget.ScrollerWidget #setterMethod
+}
+class name jk.widget.LayerWithBackgroundColorWidget header extends jk.widget.LayerWidget public #widget
+{
+	import jk.ui
+	import jk.lang
+	import jk.lang
+	import jk.ui
+	import jk.gfx
+	import jk.widget
+	ctor(ctx as jk.ui.GuiApplicationContext)
+	var TOP_SIDE public static const as int
+	var LEFT_SIDE public static const as int
+	var BOTTOM_SIDE public static const as int
+	var RIGHT_SIDE public static const as int
+	func setWidgetColor(color as jk.gfx.Color) as jk.widget.LayerWithBackgroundColorWidget
+	func getWidgetColor as jk.gfx.Color
+	func setWidgetOutlineColor(color as jk.gfx.Color)
+	func getWidgetOutlineColor as jk.gfx.Color
+	func setWidgetOutlineWidth(width as int #notLiteral)
+	func getWidgetOutlineWidth as int
+	func setWidgetBorderLeftWidth(sz as int #notLiteral)
+	func setWidgetBorderRightWidth(sz as int #notLiteral)
+	func setWidgetBorderTopWidth(sz as int #notLiteral)
+	func setWidgetBorderBottomWidth(sz as int #notLiteral)
+	func setWidgetBorderBottomColor(color as jk.gfx.Color)
+	func setWidgetBorderTopColor(color as jk.gfx.Color)
+	func setWidgetBorderRightColor(color as jk.gfx.Color)
+	func setWidgetBorderLeftColor(color as jk.gfx.Color)
+	func setWidgetBorderStyle(style as int)
+	func setWidgetBorderLeftStyle(style as int)
+	func setWidgetBorderRightStyle(style as int)
+	func setWidgetBorderTopStyle(style as int)
+	func setWidgetBorderBottomStyle(style as int)
+	func setWidgetRoundingRadiusTopLeft(radius as double #notLiteral)
+	func setWidgetRoundingRadiusTopRight(radius as double #notLiteral)
+	func setWidgetRoundingRadiusBottomLeft(radius as double #notLiteral)
+	func setWidgetRoundingRadiusBottomRight(radius as double #notLiteral)
+	func setWidgetRoundingRadius(radius as double #notLiteral)
+	func setWidgetRoundingRadius(lradius as double #notLiteral, rradius as double #notLiteral)
+	func setWidgetRoundingRadius(tlradius as double #notLiteral, trradius as double #notLiteral, brradius as double #notLiteral, blradius as double #notLiteral)
+}
+interface name jk.widget.WidgetProvider header public
+{
+	import jk.ui
+	import jk.lang
+	func getNextWidget as jk.widget.Widget
+	func getTotalCount as long
+	func reset
+}
+class name jk.widget.ResponsiveWidget header extends jk.widget.LayerWithBackgroundColorWidget implements jk.widget.ResizeAwareWidget public #widget
+{
+	import jk.ui
+	import jk.lang
+	import jk.lang
+	import jk.ui
+	import jk.gfx
+	import jk.widget
+	ctor(ctx as jk.ui.GuiApplicationContext)
+	func onWidgetResized
+	func getWidgetNarrowWidth as int #getterMethod
+	func setWidgetNarrowWidth(v as int) as jk.widget.ResponsiveWidget #setterMethod
+	func getIsNarrowInitialized as bool #getterMethod
+	func setIsNarrowInitialized(v as bool) as jk.widget.ResponsiveWidget #setterMethod
+	func getIsWideInitialized as bool #getterMethod
+	func setIsWideInitialized(v as bool) as jk.widget.ResponsiveWidget #setterMethod
+}
+interface name jk.widget.ResizeAwareWidget header public
+{
+	import jk.ui
+	import jk.lang
+	func onWidgetResized
+}
+interface name jk.widget.TitleContainerWidget header public
+{
+	import jk.ui
+	import jk.lang
+	func updateWidgetTitle(title as string)
+}
+class name jk.widget.VerticalScrollerWidget header implements jk.widget.WidgetWithLayout implements jk.widget.HeightAwareWidget public #widget
+{
+	import jk.ui
+	import jk.lang
+	import jk.lang
+	import jk.ui
+	import jk.gfx
+	import jk.widget
+	func forWidget(context as jk.ui.GuiApplicationContext, widget as jk.widget.Widget) static as jk.widget.VerticalScrollerWidget
+	func isNearEnd as bool
+	ctor(context as jk.ui.GuiApplicationContext)
+	func setWidgetScrollBarDisabled(value as bool)
+	func onWidgetHeightChanged(height as int #notLiteral)
+	func setWidgetLayoutChanged
+	func hasWidgetLayoutChanged as bool
+	func layoutWidget(widthConstraint as int #notLiteral, force as bool) as bool
+	func addWidget(widget as jk.widget.Widget) as jk.widget.VerticalScrollerWidget
+	func scrollToBottom(animate as bool = true)
+	func getOnScrolledHandler as function<void,int> #getterMethod
+	func setOnScrolledHandler(v as function<void,int>) as jk.widget.VerticalScrollerWidget #setterMethod
+	func getOnEndScrollHandler as function<void> #getterMethod
+	func setOnEndScrollHandler(v as function<void>) as jk.widget.VerticalScrollerWidget #setterMethod
+}
+class name jk.widget.GridWidget header extends jk.widget.ContainerWidget public #widget
+{
+	import jk.ui
+	import jk.lang
+	import jk.lang
+	import jk.ui
+	import jk.gfx
+	import jk.widget
+	import jk.math
+	ctor(context as jk.ui.GuiApplicationContext)
+	func forContext(context as jk.ui.GuiApplicationContext) static as jk.widget.GridWidget
+	func computeWidgetLayout(widthConstraint as int #notLiteral) override
+	func getWidgetCellSize as int #getterMethod
+	func setWidgetCellSize(v as int #notLiteral) as jk.widget.GridWidget #setterMethod
+	func getMinimumCols as int #getterMethod
+	func setMinimumCols(v as int) as jk.widget.GridWidget #setterMethod
+	func getMaximumCols as int #getterMethod
+	func setMaximumCols(v as int) as jk.widget.GridWidget #setterMethod
+	func getWidgetSpacing as int #getterMethod
+	func setWidgetSpacing(v as int #notLiteral) as jk.widget.GridWidget #setterMethod
+	func getWidgetMargin as int #getterMethod
+	func setWidgetMargin(v as int #notLiteral) as jk.widget.GridWidget #setterMethod
+}
+interface name jk.widget.IdAwareWidget header public
+{
+	import jk.ui
+	import jk.lang
+	func setWidgetId(id as object)
+}
+class name jk.widget.Widget header public
+{
+	import jk.ui
+	import jk.lang
+	import jk.math
+	ctor
+	var MOUSE_POINTER_DEFAULT public static const as int
+	var MOUSE_POINTER_ARROW public static const as int
+	var MOUSE_POINTER_CROSSHAIR public static const as int
+	var MOUSE_POINTER_IBEAM public static const as int
+	var MOUSE_POINTER_ICON public static const as int
+	var MOUSE_POINTER_SIZE public static const as int
+	var MOUSE_POINTER_NESW public static const as int
+	var MOUSE_POINTER_NS public static const as int
+	var MOUSE_POINTER_NWSE public static const as int
+	var MOUSE_POINTER_WE public static const as int
+	var MOUSE_POINTER_UPARROW public static const as int
+	var MOUSE_POINTER_HOURGLASS public static const as int
+	var MOUSE_POINTER_NODROP public static const as int
+	var MOUSE_POINTER_ARROW_HOURGLASS public static const as int
+	var MOUSE_POINTER_ARROW_QUESTION public static const as int
+	var MOUSE_POINTER_SIZE_ALL public static const as int
+	func onWidgetAddedToParent(widget as jk.widget.Widget) static
+	func onWidgetRemovedFromParent(widget as jk.widget.Widget) static
+	func notifyOnStartScreen(widget as jk.widget.Widget, screen as jk.widget.ScreenForWidget) static
+	func notifyOnStopScreen(widget as jk.widget.Widget, screen as jk.widget.ScreenForWidget) static
+	func notifyOnAddedToScreen(widget as jk.widget.Widget, screen as jk.widget.ScreenForWidget) static
+	func notifyOnRemovedFromScreen(widget as jk.widget.Widget, screen as jk.widget.ScreenForWidget) static
+	func addChild(parent as jk.widget.Widget, child as jk.widget.Widget) static
+	func removeFromParent(child as jk.widget.Widget) static as jk.widget.Widget
+	func hasParent(widget as jk.widget.Widget) static as bool
+	func getParent(widget as jk.widget.Widget) static as jk.widget.Widget
+	func getChildren(widget as jk.widget.Widget) static as vector<jk.widget.Widget>
+	func getX(widget as jk.widget.Widget) static as int
+	func getY(widget as jk.widget.Widget) static as int
+	func getAbsoluteX(widget as jk.widget.Widget) static as int
+	func getAbsoluteY(widget as jk.widget.Widget) static as int
+	func getWidth(widget as jk.widget.Widget) static as int
+	func getHeight(widget as jk.widget.Widget) static as int
+	func getGeometryString(widget as jk.widget.Widget) static as string
+	func move(widget as jk.widget.Widget, x as int #notLiteral, y as int #notLiteral) static
+	func isRootWidget(widget as jk.widget.Widget) static as bool
+	func findScreen(widget as jk.widget.Widget) static as jk.ui.Screen
+	func findRootWidget(widget as jk.widget.Widget) static as jk.widget.ContainerWidget
+	func setLayoutSize(widget as jk.widget.Widget, widthValue as int #notLiteral, heightValue as int #notLiteral) static as bool
+	func resizeHeight(widget as jk.widget.Widget, height as int #notLiteral) static as bool
+	func layout(widget as jk.widget.Widget, widthConstraint as int #notLiteral, force as bool = false) static
+	func togglePointerEventHandling(widget as jk.widget.Widget, value as bool) static
+	func setWidgetClickHandler(widget as jk.widget.Widget, handler as function<void>) static
+	func setWidgetDoubleClickHandler(widget as jk.widget.Widget, handler as function<void>) static
+	func setWidgetLongClickHandler(widget as jk.widget.Widget, handler as function<void>) static
+	func setWidgetPointerHandlers(widget as jk.widget.Widget, onStartHandler as function<void,double,double> = null, onTouchHandler as function<void,double,double> = null, onEndHandler as function<void,double,double> = null) static
+	func removeChildrenOf(widget as jk.widget.Widget) static
+	func onLayoutChanged(widget as jk.widget.Widget) static
+	func setAlpha(widget as jk.widget.Widget, alpha as double) static
+	func setRotation(widget as jk.widget.Widget, degrees as double) static
+	func setEnabled(widget as jk.widget.Widget, enabled as bool) static
+	func setTabIndex(widget as jk.widget.Widget, index as int) static
+	func setVisible(widget as jk.widget.Widget, visible as bool) static
+	func getVisible(widget as jk.widget.Widget) static as bool
+	func setWidgetId(widget as jk.widget.Widget, idValue as object) static
+	func focus(widget as jk.widget.Widget) static
+	func setWidgetToolTipText(widget as jk.widget.Widget, str as string) static
+	func setWidgetMousePointer(widget as jk.widget.Widget, mousePointer as int) static
+}
+class name jk.widget.LayerWidget header extends jk.widget.ContainerWidget public #widget
+{
+	import jk.ui
+	import jk.lang
+	import jk.lang
+	import jk.ui
+	import jk.gfx
+	import jk.widget
+	ctor(context as jk.ui.GuiApplicationContext)
+	func findTopMostLayerWidget(widget as jk.widget.Widget) static as jk.widget.LayerWidget
+	func forContext(context as jk.ui.GuiApplicationContext) static as jk.widget.LayerWidget
+	func forMargin(context as jk.ui.GuiApplicationContext, margin as int #notLiteral) static as jk.widget.LayerWidget
+	func forWidget(context as jk.ui.GuiApplicationContext, widget as jk.widget.Widget, margin as int #notLiteral = 0) static as jk.widget.LayerWidget
+	func forWidgetAndWidth(context as jk.ui.GuiApplicationContext, widget as jk.widget.Widget, width as int #notLiteral) static as jk.widget.LayerWidget
+	func forWidgets(context as jk.ui.GuiApplicationContext, widgets as array<jk.widget.Widget>, margin as int #notLiteral = 0) static as jk.widget.LayerWidget
+	var widgetMarginLeft protected as int
+	var widgetMarginRight protected as int
+	var widgetMarginTop protected as int
+	var widgetMarginBottom protected as int
+	func setWidgetMaximumWidthRequest(width as int #notLiteral) as jk.widget.LayerWidget
+	func getWidgetMaximumWidthRequest as int
+	func setWidgetWidthRequest(request as int #notLiteral) as jk.widget.LayerWidget
+	func getWidgetWidthRequest as int
+	func setWidgetHeightRequest(request as int #notLiteral) as jk.widget.LayerWidget
+	func getWidgetHeightRequest as int
+	func setWidgetMinimumHeightRequest(request as int #notLiteral) as jk.widget.LayerWidget
+	func getWidgetMinimumHeightRequest as int
+	func setWidgetMargin(margin as int #notLiteral) as jk.widget.LayerWidget
+	func getWidgetMarginLeft as int
+	func setWidgetMarginLeft(value as int #notLiteral) as jk.widget.LayerWidget
+	func getWidgetMarginRight as int
+	func setWidgetMarginRight(value as int #notLiteral) as jk.widget.LayerWidget
+	func getWidgetMarginTop as int
+	func setWidgetMarginTop(value as int #notLiteral) as jk.widget.LayerWidget
+	func getWidgetMarginBottom as int
+	func setWidgetMarginBottom(value as int #notLiteral) as jk.widget.LayerWidget
+	func onWidgetHeightChanged(height as int #notLiteral) override
+	func computeWidgetLayout(widthConstraint as int #notLiteral) override
+	func removeAllChildren
+	func getChildWidget(index as int) as jk.widget.Widget
+	func getWidgetMouseOver as function<void> #getterMethod
+	func setWidgetMouseOver(v as function<void>) as jk.widget.LayerWidget #setterMethod
+	func getWidgetMouseOut as function<void> #getterMethod
+	func setWidgetMouseOut(v as function<void>) as jk.widget.LayerWidget #setterMethod
+}
+interface name jk.widget.DisplayAwareWidget header public
+{
+	import jk.ui
+	import jk.lang
+	func onWidgetDisplayed
+}
+interface name jk.widget.WidgetWithValue header public
+{
+	import jk.ui
+	import jk.lang
+	func setWidgetValue(value as object)
+	func getWidgetValue as object
+}
+class name jk.widget.ContainerWidget header implements jk.widget.ParentAwareWidget implements jk.widget.WidgetWithLayout implements jk.widget.HeightAwareWidget extends jk.widget.Widget public #widget
+{
+	import jk.ui
+	import jk.lang
+	import jk.lang
+	import jk.ui
+	import jk.gfx
+	import jk.widget
+	var context protected as jk.ui.GuiApplicationContext
+	ctor(ctx as jk.ui.GuiApplicationContext)
+	func togglePointerEventHandling(active as bool)
+	macro REMOVE_WIDGETS_FROM_VECTOR(widgets, vector) 
+	{
+		var ws = Vector.getSize(widgets)
+		if ws > 0 {
+			var vs = Vector.getSize(vector)
+			if ws == vs {
+				Vector.clear(vector)
+			}
+			else {
+				var widget = Vector.get(widgets, 0)
+				foreach child in vector {
+					if child.widget == widget {
+						Vector.removeValue(vector, child)
+						break
+					}
+				}
+			}
+		}
+	}
+	func onNativelyResized
+	func hasSize as bool
+	func createWidget virtual
+	func forceCreateWidget
+	func onWidgetAddingToParent virtual
+	func initializeWidget virtual
+	func addWidget(widget as jk.widget.Widget) virtual as jk.widget.ContainerWidget
+	func onChildWidgetAdded(widget as jk.widget.Widget) virtual
+	func onChildWidgetsRemoved(widgets as vector<jk.widget.Widget>) virtual
+	func onWidgetAddedToParent virtual
+	func onWidgetRemovedFromParent virtual
+	func onWidgetHeightChanged(height as int) virtual
+	func computeWidgetLayout(widthConstraint as int) virtual
+	func setWidgetLayoutChanged
+	func hasWidgetLayoutChanged as bool
+	func layoutWidget(widthConstraint as int #notLiteral, force as bool) as bool
+	func scheduleLayout
+	func executeLayout
+	func processLayoutQueue
+	func addToLayoutQueue(widget as jk.widget.ContainerWidget)
+	func getAllowResize as bool #getterMethod
+	func setAllowResize(v as bool) as jk.widget.ContainerWidget #setterMethod
+	func getInitialized as bool #getterMethod
+	func setInitialized(v as bool) as jk.widget.ContainerWidget #setterMethod
+	func getCreated as bool #getterMethod
+	func setCreated(v as bool) as jk.widget.ContainerWidget #setterMethod
+}
+class name jk.widget.CanvasWidget header implements jk.widget.WidgetWithLayout public #widget
+{
+	import jk.ui
+	import jk.lang
+	import jk.lang
+	import jk.ui
+	import jk.gfx
+	import jk.widget
+	import jk.log
+	func forColor(context as jk.ui.GuiApplicationContext, color as jk.gfx.Color) static as jk.widget.CanvasWidget
+	ctor(context as jk.ui.GuiApplicationContext)
+	func setWidgetLayoutChanged
+	func hasWidgetLayoutChanged as bool
+	func layoutWidget(widthConstraint as int #notLiteral, force as bool) as bool
+	func setWidgetColor(color as jk.gfx.Color)
+	func getWidgetColor as jk.gfx.Color
+	func setWidgetOutlineColor(color as jk.gfx.Color)
+	func getWidgetOutlineColor as jk.gfx.Color
+	func setWidgetOutlineWidth(width as int #notLiteral)
+	func getWidgetOutlineWidth as int
+	func getWidgetTopLeftRadius as double
+	func getWidgetTopRightRadius as double
+	func getWidgetBottomRightRadius as double
+	func getWidgetBottomLeftRadius as double
+	func setWidgetRoundingRadiusTopLeft(radius as double #notLiteral)
+	func setWidgetRoundingRadiusTopRight(radius as double #notLiteral)
+	func setWidgetRoundingRadiusBottomLeft(radius as double #notLiteral)
+	func setWidgetRoundingRadiusBottomRight(radius as double #notLiteral)
+	func setWidgetRoundingRadius(radius as double #notLiteral)
+	func setWidgetRoundingRadius(lradius as double #notLiteral, rradius as double #notLiteral)
+	func setWidgetRoundingRadius(tlradius as double #notLiteral, trradius as double #notLiteral, brradius as double #notLiteral, blradius as double #notLiteral)
+	var BORDER_STYLE_SOLID public static const as int
+	var BORDER_STYLE_DASHED public static const as int
+	var BORDER_STYLE_DOTTED public static const as int
+	var BORDER_STYLE_NONE public static const as int
+	var BORDER_STYLE_3D public static const as int
+	func setWidgetBorderStyle(style as int) as jk.widget.CanvasWidget
+}
+interface name jk.widget.TitledWidget header public
+{
+	import jk.ui
+	import jk.lang
+	func getWidgetTitle as string
+}
+class name jk.widget.LabelWidget header extends jk.widget.Widget public #widget
+{
+	import jk.ui
+	import jk.lang
+	import jk.lang
+	import jk.ui
+	import jk.gfx
+	import jk.widget
+	var ALIGN_LEFT public static const as int
+	var ALIGN_CENTER public static const as int
+	var ALIGN_RIGHT public static const as int
+	var ALIGN_JUSTIFY public static const as int
+	var WORD_WRAP public static const as int
+	var NO_WRAP public static const as int
+	func forText(context as jk.ui.GuiApplicationContext, text as string) static as jk.widget.LabelWidget
+	ctor(context as jk.ui.GuiApplicationContext)
+	func setWidgetText(text as string) as jk.widget.LabelWidget
+	func getWidgetText as string
+	func setWidgetTextAlign(align as int) as jk.widget.LabelWidget
+	func getWidgetTextAlign as int
+	func setWidgetWordWrapping(wrap as int) as jk.widget.LabelWidget
+	func setWidgetTextColor(color as jk.gfx.Color) as jk.widget.LabelWidget
+	func getWidgetTextColor as jk.gfx.Color
+	func setWidgetFontSize(fontSize as double #notLiteral) as jk.widget.LabelWidget
+	func getFontSize as double
+	func setWidgetFontBold(bold as bool) as jk.widget.LabelWidget
+	func setWidgetFontUnderline(underline as bool) as jk.widget.LabelWidget
+	func setWidgetFontItalic(italic as bool) as jk.widget.LabelWidget
+	func setWidgetFontFamily(font as string) as jk.widget.LabelWidget
+	func setWidgetFontResource(res as string) as jk.widget.LabelWidget
+	func setWidgetStyle(style as string) as jk.widget.LabelWidget
+	func setWidgetPadding(padding as int #notLiteral) as jk.widget.LabelWidget
+	func setWidgetPaddingLeft(value as int #notLiteral) as jk.widget.LabelWidget
+	func setWidgetPaddingTop(value as int #notLiteral) as jk.widget.LabelWidget
+	func setWidgetPaddingRight(value as int #notLiteral) as jk.widget.LabelWidget
+	func setWidgetPaddingBottom(value as int #notLiteral) as jk.widget.LabelWidget
+	func setWidgetPadding(l as int #notLiteral, t as int #notLiteral, r as int #notLiteral, b as int #notLiteral) as jk.widget.LabelWidget
+	func getWidgetMaximumNumberOfLines as int #getterMethod
+	func setWidgetMaximumNumberOfLines(v as int) as jk.widget.LabelWidget #setterMethod
+}
+class name jk.widget.HorizontalScrollerWidget header implements jk.widget.WidgetWithLayout public #widget
+{
+	import jk.ui
+	import jk.lang
+	import jk.lang
+	import jk.ui
+	import jk.gfx
+	import jk.widget
+	func forWidget(context as jk.ui.GuiApplicationContext, widget as jk.widget.Widget) static as jk.widget.HorizontalScrollerWidget
+	ctor(context as jk.ui.GuiApplicationContext)
+	func setWidgetLayoutChanged
+	func hasWidgetLayoutChanged as bool
+	func layoutWidget(widthConstraint as int #notLiteral, force as bool) as bool
+	func addWidget(widget as jk.widget.Widget) as jk.widget.HorizontalScrollerWidget
+	func setWidgetScrollBarDisabled(value as bool)
+	func getOnScrolledHandler as function<void,int> #getterMethod
+	func setOnScrolledHandler(v as function<void,int>) as jk.widget.HorizontalScrollerWidget #setterMethod
+}
+class name jk.widget.RenderableWidget header implements jk.widget.ParentAwareWidget implements jk.widget.ResizeAwareWidget extends jk.widget.Widget public #widget
+{
+	import jk.ui
+	import jk.lang
+	import jk.lang
+	import jk.ui
+	import jk.gfx
+	import jk.widget
+	import jk.render
+	func forRenderer(ctx as jk.ui.GuiApplicationContext, renderer as jk.render.Renderer) static as jk.widget.RenderableWidget
+	var context protected as jk.ui.GuiApplicationContext
+	ctor(ctx as jk.ui.GuiApplicationContext)
+	func render(ctx as jk.render.RenderingContext) virtual
+	func redraw
+	func onWidgetResized virtual
+	func onWidgetAddedToParent virtual
+	func onWidgetRemovedFromParent virtual
+	func onWidgetAddingToParent
+	func getRenderer as jk.render.Renderer #getterMethod
+	func setRenderer(v as jk.render.Renderer) as jk.widget.RenderableWidget #setterMethod
+}
+class name jk.widget.SwitcherWidget header extends jk.widget.LayerWidget public #widget
+{
+	import jk.ui
+	import jk.lang
+	import jk.lang
+	import jk.ui
+	import jk.gfx
+	import jk.widget
+	ctor(context as jk.ui.GuiApplicationContext)
+	func replaceWith(widget as jk.widget.Widget)
+	func addWidget(widget as jk.widget.Widget) override as jk.widget.ContainerWidget
+	func showWidget(widget as jk.widget.Widget)
+	func showWidgetWithIndex(index as int)
+}
+class name jk.widget.Menu header public
+{
+	import jk.ui
+	import jk.lang
+	ctor
+	class name Entry header public static
+	{
+		ctor
+		var title public as string
+		var handler public as function<void>
+	}
+	func addEntry(entry as jk.widget.Menu.Entry)
+	func addEntry(title as string, handler as function<void>)
+	func getEntries as vector<jk.widget.Menu.Entry> #getterMethod
+	func setEntries(v as vector<jk.widget.Menu.Entry>) as jk.widget.Menu #setterMethod
+}
+class name jk.widget.StaticWidgetProvider header implements jk.widget.WidgetProvider public
+{
+	import jk.ui
+	import jk.lang
+	ctor
+	func forWidgets(widgets as vector<jk.widget.Widget>) static as jk.widget.StaticWidgetProvider
+	func getNextWidget as jk.widget.Widget
+	func getTotalCount as long
+	func reset
+	func getWidgets as vector<jk.widget.Widget> #getterMethod
+	func setWidgets(v as vector<jk.widget.Widget>) as jk.widget.StaticWidgetProvider #setterMethod
+}
+class name jk.widget.ImageWidget header implements jk.widget.WidgetWithLayout public #widget
+{
+	import jk.ui
+	import jk.lang
+	import jk.lang
+	import jk.ui
+	import jk.gfx
+	import jk.widget
+	import jk.log
+	import jk.gfx.util
+	func forImage(context as jk.ui.GuiApplicationContext, image as jk.gfx.Image) static as jk.widget.ImageWidget
+	func forImageResource(context as jk.ui.GuiApplicationContext, resName as string) static as jk.widget.ImageWidget
+	var STRETCH public static const as int
+	var FIT public static const as int
+	var FILL public static const as int
+	ctor(context as jk.ui.GuiApplicationContext)
+	func setWidgetImageScaleMethod(method as int)
+	func setWidgetImage(image as jk.gfx.Image)
+	func setWidgetImageResource(resName as string)
+	func setWidgetLayoutChanged
+	func hasWidgetLayoutChanged as bool
+	func layoutWidget(widthConstraint as int #notLiteral, force as bool) as bool
+	func getWidgetImageWidth as int #getterMethod
+	func setWidgetImageWidth(v as int #notLiteral) as jk.widget.ImageWidget #setterMethod
+	func getWidgetImageHeight as int #getterMethod
+	func setWidgetImageHeight(v as int #notLiteral) as jk.widget.ImageWidget #setterMethod
+	func getWidgetImageRounded as bool #getterMethod
+	func setWidgetImageRounded(v as bool) as jk.widget.ImageWidget #setterMethod
+}
+class name jk.widget.AlignWidget header extends jk.widget.ContainerWidget public #widget
+{
+	import jk.ui
+	import jk.lang
+	import jk.lang
+	import jk.ui
+	import jk.gfx
+	import jk.widget
+	func forWidget(context as jk.ui.GuiApplicationContext, widget as jk.widget.Widget, alignX as double = 0.5, alignY as double = 0.5, margin as int #notLiteral = 0) static as jk.widget.AlignWidget
+	ctor(ctx as jk.ui.GuiApplicationContext)
+	func setWidgetMargin(margin as int #notLiteral) as jk.widget.AlignWidget
+	func getWidgetMarginLeft as int
+	func setWidgetMarginLeft(value as int #notLiteral) as jk.widget.AlignWidget
+	func getWidgetMarginRight as int
+	func setWidgetMarginRight(value as int #notLiteral) as jk.widget.AlignWidget
+	func getWidgetMarginTop as int
+	func setWidgetMarginTop(value as int #notLiteral) as jk.widget.AlignWidget
+	func getWidgetMarginBottom as int
+	func setWidgetMarginBottom(value as int #notLiteral) as jk.widget.AlignWidget
+	func onWidgetHeightChanged(height as int #notLiteral) override
+	func computeWidgetLayout(widthConstraint as int #notLiteral) override
+	func onChildWidgetsRemoved(widgets as vector<jk.widget.Widget>) override
+	func addWidget(widget as jk.widget.Widget) override as jk.widget.ContainerWidget
+	func addWidget(widget as jk.widget.Widget, alignX as double, alignY as double, maximizeWidth as bool = false) as jk.widget.AlignWidget
+	func setAlignForIndex(index as int, alignX as double, alignY as double)
+}
+interface name jk.widget.ScreenAwareWidget header public
+{
+	import jk.ui
+	import jk.lang
+	func onWidgetAddedToScreen(screen as jk.widget.ScreenForWidget)
+	func onWidgetRemovedFromScreen(screen as jk.widget.ScreenForWidget)
+}
+interface name jk.widget.WidgetWithLayout header extends jk.widget.Widget public
+{
+	import jk.ui
+	import jk.lang
+	func layoutWidget(widthConstraint as int #notLiteral, force as bool) as bool
+	func setWidgetLayoutChanged
+	func hasWidgetLayoutChanged as bool
+}
+class name jk.widget.VerticalBoxWidget header extends jk.widget.ContainerWidget public #widget
+{
+	import jk.ui
+	import jk.lang
+	import jk.lang
+	import jk.ui
+	import jk.gfx
+	import jk.widget
+	func forContext(context as jk.ui.GuiApplicationContext, widgetMargin as int #notLiteral = 0, widgetSpacing as int #notLiteral = 0) static as jk.widget.VerticalBoxWidget
+	var widgetMarginLeft protected as int
+	var widgetMarginRight protected as int
+	var widgetMarginTop protected as int
+	var widgetMarginBottom protected as int
+	ctor(ctx as jk.ui.GuiApplicationContext)
+	func setWidgetMargin(margin as int #notLiteral) as jk.widget.VerticalBoxWidget
+	func getWidgetMarginLeft as int
+	func setWidgetMarginLeft(value as int #notLiteral) as jk.widget.VerticalBoxWidget
+	func getWidgetMarginRight as int
+	func setWidgetMarginRight(value as int #notLiteral) as jk.widget.VerticalBoxWidget
+	func getWidgetMarginTop as int
+	func setWidgetMarginTop(value as int #notLiteral) as jk.widget.VerticalBoxWidget
+	func getWidgetMarginBottom as int
+	func setWidgetMarginBottom(value as int #notLiteral) as jk.widget.VerticalBoxWidget
+	func setWidgetWidthRequest(request as int #notLiteral) as jk.widget.VerticalBoxWidget
+	func getWidgetWidthRequest as int
+	func setWidgetMaximumWidthRequest(width as int #notLiteral) as jk.widget.VerticalBoxWidget
+	func getWidgetMaximumWidthRequest as int
+	func computeWidgetLayout(widthConstraint as int #notLiteral) override
+	func onWidgetHeightChanged(height as int) override
+	func onChildWidgetsRemoved(widgets as vector<jk.widget.Widget>) override
+	func addWidget(widget as jk.widget.Widget) override as jk.widget.ContainerWidget
+	func removeAllChildren
+	func addWidget(widget as jk.widget.Widget, weight as double) as jk.widget.VerticalBoxWidget
+	func getWidgetSpacing as int #getterMethod
+	func setWidgetSpacing(v as int #notLiteral) as jk.widget.VerticalBoxWidget #setterMethod
+}
+class name jk.widget.WidgetAnimation header public
+{
+	import jk.ui
+	import jk.lang
+	import jk.math
+	func forDuration(context as jk.ui.GuiApplicationContext, duration as long) static as jk.widget.WidgetAnimation
+	ctor(context as jk.ui.GuiApplicationContext)
+	func addCallback(callback as function<void,double>) as jk.widget.WidgetAnimation
+	func addCrossFade(from as jk.widget.Widget, to as jk.widget.Widget, removeFrom as bool = false) as jk.widget.WidgetAnimation
+	func addFadeIn(from as jk.widget.Widget) as jk.widget.WidgetAnimation
+	func addFadeOut(from as jk.widget.Widget, removeAfter as bool = false) as jk.widget.WidgetAnimation
+	func addFadeOutIn(from as jk.widget.Widget) as jk.widget.WidgetAnimation
+	func tick(completion as double) virtual
+	func onProgress(elapsedTime as long) as bool
+	func onAnimationEnded virtual
+	func start
+	func getDuration as long #getterMethod
+	func setDuration(v as long) as jk.widget.WidgetAnimation #setterMethod
+	func getEndListener as function<void> #getterMethod
+	func setEndListener(v as function<void>) as jk.widget.WidgetAnimation #setterMethod
+	func getShouldStop as bool #getterMethod
+	func setShouldStop(v as bool) as jk.widget.WidgetAnimation #setterMethod
+	func getShouldLoop as bool #getterMethod
+	func setShouldLoop(v as bool) as jk.widget.WidgetAnimation #setterMethod
+}
+class name jk.widget.ScreenForWidget header implements jk.ui.ScreenWithContext public
+{
+	import jk.ui
+	import jk.lang
+	ctor
+	func findScreenForWidget(widget as jk.widget.Widget) static as jk.widget.ScreenForWidget
+	var context protected as jk.ui.GuiApplicationContext
+	func onBackKeyPressEvent
+	func deliverKeyEventToWidget(event as jk.ui.KeyEvent, widget as jk.widget.Widget)
+	func unlockOrientation
+	func lockToLandscapeOrientation
+	func lockToPortraitOrientation
+	func setContext(context as jk.ui.GuiApplicationContext)
+	func getContext as jk.ui.GuiApplicationContext
+	func onPrepareScreen virtual
+	func onStartScreen virtual
+	func onStartScreenWithData(data as jk.lang.DynamicMap) virtual
+	func onStopScreen virtual
+	func onDestroyScreen virtual
+	func initialize virtual
+	func cleanup virtual
+	func getWidget as jk.widget.Widget
+	func setWidget(widget as jk.widget.ContainerWidget)
+	func getCaptureBrowserBackButton as bool #getterMethod
+	func setCaptureBrowserBackButton(v as bool) as jk.widget.ScreenForWidget #setterMethod
+}
+interface name jk.widget.ResponsiveAwareWidget header public
+{
+	import jk.ui
+	import jk.lang
+	func doNarrowLayout
+	func doWideLayout
+}
+interface name jk.widget.HeightAwareWidget header public
+{
+	import jk.ui
+	import jk.lang
+	func onWidgetHeightChanged(height as int)
+}
+class name jk.widget.HorizontalBoxWidget header extends jk.widget.ContainerWidget public #widget
+{
+	import jk.ui
+	import jk.lang
+	import jk.lang
+	import jk.ui
+	import jk.gfx
+	import jk.widget
+	func forContext(context as jk.ui.GuiApplicationContext, widgetMargin as int #notLiteral = 0, widgetSpacing as int #notLiteral = 0) static as jk.widget.HorizontalBoxWidget
+	var widgetMarginLeft protected as int
+	var widgetMarginRight protected as int
+	var widgetMarginTop protected as int
+	var widgetMarginBottom protected as int
+	ctor(ctx as jk.ui.GuiApplicationContext)
+	func setWidgetMargin(margin as int #notLiteral) as jk.widget.HorizontalBoxWidget
+	func getWidgetMarginLeft as int
+	func setWidgetMarginLeft(value as int #notLiteral) as jk.widget.HorizontalBoxWidget
+	func getWidgetMarginRight as int
+	func setWidgetMarginRight(value as int #notLiteral) as jk.widget.HorizontalBoxWidget
+	func getWidgetMarginTop as int
+	func setWidgetMarginTop(value as int #notLiteral) as jk.widget.HorizontalBoxWidget
+	func getWidgetMarginBottom as int
+	func setWidgetMarginBottom(value as int #notLiteral) as jk.widget.HorizontalBoxWidget
+	func computeWidgetLayout(widthConstraint as int #notLiteral) override
+	func onWidgetHeightChanged(height as int #notLiteral) override
+	func onChildWidgetsRemoved(widgets as vector<jk.widget.Widget>) override
+	func addWidget(widget as jk.widget.Widget) override as jk.widget.ContainerWidget
+	func removeAllChildren
+	func addWidget(widget as jk.widget.Widget, weight as double) as jk.widget.HorizontalBoxWidget
+	func setWidgetWeight(widget as jk.widget.Widget, weight as double)
+	func getWidgetSpacing as int #getterMethod
+	func setWidgetSpacing(v as int #notLiteral) as jk.widget.HorizontalBoxWidget #setterMethod
+	func getWidgetFixedHeight as int #getterMethod
+	func setWidgetFixedHeight(v as int #notLiteral) as jk.widget.HorizontalBoxWidget #setterMethod
+}
+interface name jk.widget.ScreenStartStopAwareWidget header public
+{
+	import jk.ui
+	import jk.lang
+	func onStartScreen(screen as jk.widget.ScreenForWidget)
+	func onStopScreen(screen as jk.widget.ScreenForWidget)
+}
+interface name jk.widget.ParentAwareWidget header public
+{
+	import jk.ui
+	import jk.lang
+	func onWidgetAddingToParent
+	func onWidgetAddedToParent
+	func onWidgetRemovedFromParent
+}

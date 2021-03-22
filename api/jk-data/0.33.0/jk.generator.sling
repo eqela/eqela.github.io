@@ -1,0 +1,7 @@
+class name jk.generator.DataGenerator header public
+{
+	import jk.lang
+	import jk.random
+	ctor
+	func generateCodeOrId(length as int, allDigits as bool, allCaps as bool, prefix as string = null) static as string
+}

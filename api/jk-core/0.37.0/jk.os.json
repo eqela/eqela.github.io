@@ -1,0 +1,13 @@
+{
+	"moduleDescription" : "Features for miscellaneous operating system integration.\n",
+	"type" : "module",
+	"moduleTitle" : "Operating system support",
+	"moduleId" : "jk.os",
+	"entities" : [
+		{
+			"type" : "class",
+			"name" : "OS",
+			"description" : "Operating system and architecture detection functionality."
+		}
+	]
+}

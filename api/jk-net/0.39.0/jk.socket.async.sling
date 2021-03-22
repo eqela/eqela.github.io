@@ -1,0 +1,29 @@
+class name jk.socket.async.TCPClient header abstract public
+{
+	import jk.lang
+	ctor
+	func instance static as jk.socket.async.TCPClient
+	func connectSSL(address as string, port as int, callback as function<void,jk.lang.Error>) abstract
+	func connect(address as string, port as int, callback as function<void,jk.lang.Error>) abstract
+	func receive(callback as function<void,buffer,int>) abstract
+	func send(data as buffer, size as int, callback as function<void,jk.lang.Error>) abstract
+	func disconnect(callback as function<void,jk.lang.Error>) abstract
+}
+class name jk.socket.async.TCPClientForIOManager header extends jk.socket.async.TCPClient public
+{
+	import jk.lang
+	import jk.socket
+	import jk.socket.ssl
+	import jk.socket.io
+	func forCurrentIOManager static as jk.socket.async.TCPClientForIOManager
+	func forIOManager(mgr as jk.socket.io.IOManager) static as jk.socket.async.TCPClientForIOManager
+	ctor
+	func getSocket as jk.socket.ConnectedSocket
+	func connectSSL(address as string, port as int, callback as function<void,jk.lang.Error>) override
+	func connect(address as string, port as int, callback as function<void,jk.lang.Error>) override
+	func receive(callback as function<void,buffer,int>) override
+	func send(data as buffer, size as int, callback as function<void,jk.lang.Error>) override
+	func disconnect(callback as function<void,jk.lang.Error>) override
+	func getIomanager as jk.socket.io.IOManager #getterMethod
+	func setIomanager(v as jk.socket.io.IOManager) as jk.socket.async.TCPClientForIOManager #setterMethod
+}

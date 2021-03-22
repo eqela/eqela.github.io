@@ -1,0 +1,33 @@
+{
+	"moduleDescription" : "",
+	"type" : "module",
+	"moduleTitle" : "",
+	"moduleId" : "jk.graph",
+	"entities" : [
+		{
+			"type" : "class",
+			"name" : "GraphColors",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "LineGraphRenderer",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "CommonGraphRenderer",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "BarGraphRenderer",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "PieGraphRenderer",
+			"description" : ""
+		}
+	]
+}

@@ -1,0 +1,13 @@
+{
+	"moduleDescription" : "",
+	"type" : "module",
+	"moduleTitle" : "",
+	"moduleId" : "jk.widget.datagrid",
+	"entities" : [
+		{
+			"type" : "class",
+			"name" : "DataGridWidget",
+			"description" : ""
+		}
+	]
+}

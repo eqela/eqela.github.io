@@ -1,0 +1,10 @@
+class name jk.http.server.service.HTTPServerService header public
+{
+	import jk.lang
+	import jk.log
+	import jk.http.server
+	import jk.socket.io
+	import jk.env
+	ctor
+	func execute(ctx as jk.log.LoggingContext, rootHandler as jk.http.server.HTTPServerRequestHandler) static as bool
+}

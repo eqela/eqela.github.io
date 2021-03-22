@@ -1,0 +1,18 @@
+{
+	"moduleDescription" : "",
+	"type" : "module",
+	"moduleTitle" : "",
+	"moduleId" : "jk.widget.file",
+	"entities" : [
+		{
+			"type" : "class",
+			"name" : "FileInputWidget",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "FileSelector",
+			"description" : ""
+		}
+	]
+}

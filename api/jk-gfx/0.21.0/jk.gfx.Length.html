@@ -1,0 +1,98 @@
+<html>
+<head>
+<title>jk.gfx.Length | JK Gfx [0.21.0] - API Reference</title>
+<link rel="stylesheet" type="text/css" href="style.css" />
+<meta name="viewport" content="initial-scale=1,maximum-scale=1" />
+<meta property="og:description" content="jk.gfx.Length | JK Gfx [0.21.0] - API Reference" />
+<meta property="og:title" content="jk.gfx.Length | JK Gfx [0.21.0] - API Reference" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:description" content="jk.gfx.Length | JK Gfx [0.21.0] - API Reference" />
+</head>
+<body><div class="content">
+<a class="back" href="index.html">&laquo; JK Gfx [0.21.0]</a><div class="intro">
+<h1><span class="keyword">class</span> <span class="symbol">jk.gfx.Length</span></h1>
+<p></p>
+</div>
+<div class="list">
+<div class="title">Base Types</div>
+<div class="entry">
+<div class="name"><span class="keyword">implements</span> <a class="datatype" href="../../jk-core/0.37.0/jk.lang.StringObject.html">jk.lang.StringObject</a></div></div>
+</div>
+<div class="list">
+<div class="title">Constants</div>
+<div class="entry">
+<div class="name"><span class="keyword">const</span> <span class="symbol">UNIT_POINT</span> <span class="keyword">as</span> <span class="datatype">var</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">const</span> <span class="symbol">UNIT_MILLIMETER</span> <span class="keyword">as</span> <span class="datatype">var</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">const</span> <span class="symbol">UNIT_MICROMETER</span> <span class="keyword">as</span> <span class="datatype">var</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">const</span> <span class="symbol">UNIT_NANOMETER</span> <span class="keyword">as</span> <span class="datatype">var</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">const</span> <span class="symbol">UNIT_INCH</span> <span class="keyword">as</span> <span class="datatype">var</span></div></div>
+</div>
+<div class="list">
+<div class="title">Static Methods</div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">asPoints</span> ( value <span class="keyword">as</span> <span class="datatype">string</span> , ppi <span class="keyword">as</span> <span class="datatype">int</span> ) <span class="modifier">static</span> <span class="keyword">as</span> <span class="datatype">int</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">asPointsWithPpi</span> ( value <span class="keyword">as</span> <span class="datatype">string</span> , ppi <span class="keyword">as</span> <span class="datatype">double</span> ) <span class="modifier">static</span> <span class="keyword">as</span> <span class="datatype">double</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">unitToString</span> ( unit <span class="keyword">as</span> <span class="datatype">int</span> ) <span class="modifier">static</span> <span class="keyword">as</span> <span class="datatype">string</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">asStringWithUnit</span> ( length <span class="keyword">as</span> <a class="datatype" href="jk.gfx.Length.html">jk.gfx.Length</a> , unit <span class="keyword">as</span> <span class="datatype">int</span> ) <span class="modifier">static</span> <span class="keyword">as</span> <span class="datatype">string</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">asString</span> ( length <span class="keyword">as</span> <a class="datatype" href="jk.gfx.Length.html">jk.gfx.Length</a> ) <span class="modifier">static</span> <span class="keyword">as</span> <span class="datatype">string</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">forString</span> ( value <span class="keyword">as</span> <span class="datatype">string</span> , ppi <span class="keyword">as</span> <span class="datatype">double</span> ) <span class="modifier">static</span> <span class="keyword">as</span> <a class="datatype" href="jk.gfx.Length.html">jk.gfx.Length</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">forPoints</span> ( value <span class="keyword">as</span> <span class="datatype">double</span> , ppi <span class="keyword">as</span> <span class="datatype">double</span> ) <span class="modifier">static</span> <span class="keyword">as</span> <a class="datatype" href="jk.gfx.Length.html">jk.gfx.Length</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">forMilliMeters</span> ( value <span class="keyword">as</span> <span class="datatype">double</span> , ppi <span class="keyword">as</span> <span class="datatype">double</span> ) <span class="modifier">static</span> <span class="keyword">as</span> <a class="datatype" href="jk.gfx.Length.html">jk.gfx.Length</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">forMicroMeters</span> ( value <span class="keyword">as</span> <span class="datatype">double</span> , ppi <span class="keyword">as</span> <span class="datatype">double</span> ) <span class="modifier">static</span> <span class="keyword">as</span> <a class="datatype" href="jk.gfx.Length.html">jk.gfx.Length</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">forNanoMeters</span> ( value <span class="keyword">as</span> <span class="datatype">double</span> , ppi <span class="keyword">as</span> <span class="datatype">double</span> ) <span class="modifier">static</span> <span class="keyword">as</span> <a class="datatype" href="jk.gfx.Length.html">jk.gfx.Length</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">forInches</span> ( value <span class="keyword">as</span> <span class="datatype">double</span> , ppi <span class="keyword">as</span> <span class="datatype">double</span> ) <span class="modifier">static</span> <span class="keyword">as</span> <a class="datatype" href="jk.gfx.Length.html">jk.gfx.Length</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">forValue</span> ( value <span class="keyword">as</span> <span class="datatype">double</span> , unit <span class="keyword">as</span> <span class="datatype">int</span> , ppi <span class="keyword">as</span> <span class="datatype">double</span> ) <span class="modifier">static</span> <span class="keyword">as</span> <a class="datatype" href="jk.gfx.Length.html">jk.gfx.Length</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">forStringAsPoints</span> ( value <span class="keyword">as</span> <span class="datatype">string</span> , ppi <span class="keyword">as</span> <span class="datatype">int</span> ) <span class="modifier">static</span> <span class="keyword">as</span> <a class="datatype" href="jk.gfx.Length.html">jk.gfx.Length</a></div></div>
+</div>
+<div class="list">
+<div class="title">Instance Methods</div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">toPoints</span> ( customPpi <span class="keyword">as</span> <span class="datatype">int</span> ) <span class="keyword">as</span> <span class="datatype">int</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getValueAsPointsWithPpi</span> ( customPpi <span class="keyword">as</span> <span class="datatype">double</span> ) <span class="keyword">as</span> <span class="datatype">double</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getValueAsPoints</span> <span class="keyword">as</span> <span class="datatype">double</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getValueAsMilliMeters</span> <span class="keyword">as</span> <span class="datatype">double</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getValueAsMicroMeters</span> <span class="keyword">as</span> <span class="datatype">double</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getValueAsNanoMeters</span> <span class="keyword">as</span> <span class="datatype">double</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getValueAsInches</span> <span class="keyword">as</span> <span class="datatype">double</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getValueAsUnit</span> ( unit <span class="keyword">as</span> <span class="datatype">int</span> ) <span class="keyword">as</span> <span class="datatype">double</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">toString</span> <span class="keyword">as</span> <span class="datatype">string</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getValue</span> <span class="keyword">as</span> <span class="datatype">double</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setValue</span> ( v <span class="keyword">as</span> <span class="datatype">double</span> ) <span class="keyword">as</span> <a class="datatype" href="jk.gfx.Length.html">jk.gfx.Length</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getUnit</span> <span class="keyword">as</span> <span class="datatype">int</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setUnit</span> ( v <span class="keyword">as</span> <span class="datatype">int</span> ) <span class="keyword">as</span> <a class="datatype" href="jk.gfx.Length.html">jk.gfx.Length</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getPpi</span> <span class="keyword">as</span> <span class="datatype">double</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setPpi</span> ( v <span class="keyword">as</span> <span class="datatype">double</span> ) <span class="keyword">as</span> <a class="datatype" href="jk.gfx.Length.html">jk.gfx.Length</a></div></div>
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,23 @@
+class name jk.gfx.util.ImageSheet header public
+{
+	import jk.lang
+	import jk.gfx
+	ctor
+	func toImages(resizeToWidth as int = -1, resizeToHeight as int = -1) as vector<jk.gfx.Image>
+	func getSheet as jk.gfx.Image #getterMethod
+	func setSheet(v as jk.gfx.Image) as jk.gfx.util.ImageSheet #setterMethod
+	func getCols as int #getterMethod
+	func setCols(v as int) as jk.gfx.util.ImageSheet #setterMethod
+	func getRows as int #getterMethod
+	func setRows(v as int) as jk.gfx.util.ImageSheet #setterMethod
+	func getSourceSkipX as int #getterMethod
+	func setSourceSkipX(v as int) as jk.gfx.util.ImageSheet #setterMethod
+	func getSourceSkipY as int #getterMethod
+	func setSourceSkipY(v as int) as jk.gfx.util.ImageSheet #setterMethod
+	func getSourceImageWidth as int #getterMethod
+	func setSourceImageWidth(v as int) as jk.gfx.util.ImageSheet #setterMethod
+	func getSourceImageHeight as int #getterMethod
+	func setSourceImageHeight(v as int) as jk.gfx.util.ImageSheet #setterMethod
+	func getMaxImages as int #getterMethod
+	func setMaxImages(v as int) as jk.gfx.util.ImageSheet #setterMethod
+}

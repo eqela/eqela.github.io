@@ -1,0 +1,13 @@
+{
+	"moduleDescription" : "",
+	"type" : "module",
+	"moduleTitle" : "",
+	"moduleId" : "jk.fcm",
+	"entities" : [
+		{
+			"type" : "class",
+			"name" : "FCMTokenManager",
+			"description" : ""
+		}
+	]
+}

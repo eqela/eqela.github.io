@@ -1,0 +1,33 @@
+{
+	"moduleDescription" : "",
+	"type" : "module",
+	"moduleTitle" : "",
+	"moduleId" : "jk.http.worker",
+	"entities" : [
+		{
+			"type" : "class",
+			"name" : "HTTPWorkerResponse",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "HTTPWorkerHandler",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "HTTPRPCRouter",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "HTTPWorkerRequest",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "HTTPWorkerRouter",
+			"description" : ""
+		}
+	]
+}

@@ -1,0 +1,162 @@
+<html>
+<head>
+<title>jk.render.RenderingContext | JK Gfx [0.21.0] - API Reference</title>
+<link rel="stylesheet" type="text/css" href="style.css" />
+<meta name="viewport" content="initial-scale=1,maximum-scale=1" />
+<meta property="og:description" content="jk.render.RenderingContext | JK Gfx [0.21.0] - API Reference" />
+<meta property="og:title" content="jk.render.RenderingContext | JK Gfx [0.21.0] - API Reference" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:description" content="jk.render.RenderingContext | JK Gfx [0.21.0] - API Reference" />
+</head>
+<body><div class="content">
+<a class="back" href="index.html">&laquo; JK Gfx [0.21.0]</a><div class="intro">
+<h1><span class="modifier">abstract</span> <span class="keyword">class</span> <span class="symbol">jk.render.RenderingContext</span></h1>
+<p></p>
+</div>
+<div class="list">
+<div class="title">Constants</div>
+<div class="entry">
+<div class="name"><span class="keyword">const</span> <span class="symbol">REPEAT_BOTH</span> <span class="keyword">as</span> <span class="datatype">var</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">const</span> <span class="symbol">REPEAT_X</span> <span class="keyword">as</span> <span class="datatype">var</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">const</span> <span class="symbol">REPEAT_Y</span> <span class="keyword">as</span> <span class="datatype">var</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">const</span> <span class="symbol">REPEAT_NONE</span> <span class="keyword">as</span> <span class="datatype">var</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">const</span> <span class="symbol">LINE_CAP_BUTT</span> <span class="keyword">as</span> <span class="datatype">var</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">const</span> <span class="symbol">LINE_CAP_ROUND</span> <span class="keyword">as</span> <span class="datatype">var</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">const</span> <span class="symbol">LINE_CAP_SQUARE</span> <span class="keyword">as</span> <span class="datatype">var</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">const</span> <span class="symbol">LINE_JOIN_MITER</span> <span class="keyword">as</span> <span class="datatype">var</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">const</span> <span class="symbol">LINE_JOIN_BEVEL</span> <span class="keyword">as</span> <span class="datatype">var</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">const</span> <span class="symbol">LINE_JOIN_ROUND</span> <span class="keyword">as</span> <span class="datatype">var</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">const</span> <span class="symbol">ALIGN_START</span> <span class="keyword">as</span> <span class="datatype">var</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">const</span> <span class="symbol">ALIGN_END</span> <span class="keyword">as</span> <span class="datatype">var</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">const</span> <span class="symbol">ALIGN_CENTER</span> <span class="keyword">as</span> <span class="datatype">var</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">const</span> <span class="symbol">ALIGN_LEFT</span> <span class="keyword">as</span> <span class="datatype">var</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">const</span> <span class="symbol">ALIGN_RIGHT</span> <span class="keyword">as</span> <span class="datatype">var</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">const</span> <span class="symbol">BASELINE_ALPHABETIC</span> <span class="keyword">as</span> <span class="datatype">var</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">const</span> <span class="symbol">BASELINE_TOP</span> <span class="keyword">as</span> <span class="datatype">var</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">const</span> <span class="symbol">BASELINE_HANGING</span> <span class="keyword">as</span> <span class="datatype">var</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">const</span> <span class="symbol">BASELINE_MIDDLE</span> <span class="keyword">as</span> <span class="datatype">var</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">const</span> <span class="symbol">BASELINE_IDEOGRAPHIC</span> <span class="keyword">as</span> <span class="datatype">var</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">const</span> <span class="symbol">BASELINE_BOTTOM</span> <span class="keyword">as</span> <span class="datatype">var</span></div></div>
+</div>
+<div class="list">
+<div class="title">Instance Methods</div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setFillStyle</span> ( style <span class="keyword">as</span> <span class="datatype">object</span> ) <span class="modifier">abstract</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setStrokeStyle</span> ( style <span class="keyword">as</span> <span class="datatype">object</span> ) <span class="modifier">abstract</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setShadowColor</span> ( color <span class="keyword">as</span> <a class="datatype" href="jk.gfx.Color.html">jk.gfx.Color</a> ) <span class="modifier">abstract</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setShadowBlur</span> ( blur <span class="keyword">as</span> <span class="datatype">double</span> ) <span class="modifier">abstract</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setShadowOffsetX</span> ( offset <span class="keyword">as</span> <span class="datatype">double</span> ) <span class="modifier">abstract</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setShadowOffsetY</span> ( offset <span class="keyword">as</span> <span class="datatype">double</span> ) <span class="modifier">abstract</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">createLinearGradient</span> ( x0 <span class="keyword">as</span> <span class="datatype">double</span> , y0 <span class="keyword">as</span> <span class="datatype">double</span> , x1 <span class="keyword">as</span> <span class="datatype">double</span> , y1 <span class="keyword">as</span> <span class="datatype">double</span> ) <span class="modifier">abstract</span> <span class="keyword">as</span> <span class="datatype">object</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">createPattern</span> ( image <span class="keyword">as</span> <a class="datatype" href="jk.gfx.Image.html">jk.gfx.Image</a> , repeat <span class="keyword">as</span> <span class="datatype">int</span> ) <span class="modifier">abstract</span> <span class="keyword">as</span> <span class="datatype">object</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">createRadialGradient</span> ( x0 <span class="keyword">as</span> <span class="datatype">double</span> , y0 <span class="keyword">as</span> <span class="datatype">double</span> , r0 <span class="keyword">as</span> <span class="datatype">double</span> , x1 <span class="keyword">as</span> <span class="datatype">double</span> , y1 <span class="keyword">as</span> <span class="datatype">double</span> , r1 <span class="keyword">as</span> <span class="datatype">double</span> ) <span class="modifier">abstract</span> <span class="keyword">as</span> <span class="datatype">object</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">addColorStop</span> ( gradient <span class="keyword">as</span> <span class="datatype">object</span> , index <span class="keyword">as</span> <span class="datatype">double</span> , color <span class="keyword">as</span> <a class="datatype" href="jk.gfx.Color.html">jk.gfx.Color</a> ) <span class="modifier">abstract</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setLineCap</span> ( cap <span class="keyword">as</span> <span class="datatype">int</span> ) <span class="modifier">abstract</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setLineJoin</span> ( join <span class="keyword">as</span> <span class="datatype">int</span> ) <span class="modifier">abstract</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setLineWidth</span> ( width <span class="keyword">as</span> <span class="datatype">double</span> ) <span class="modifier">abstract</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setMiterLimit</span> ( limit <span class="keyword">as</span> <span class="datatype">double</span> ) <span class="modifier">abstract</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">rect</span> ( x <span class="keyword">as</span> <span class="datatype">double</span> , y <span class="keyword">as</span> <span class="datatype">double</span> , width <span class="keyword">as</span> <span class="datatype">double</span> , height <span class="keyword">as</span> <span class="datatype">double</span> ) <span class="modifier">abstract</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">fillRect</span> ( x <span class="keyword">as</span> <span class="datatype">double</span> , y <span class="keyword">as</span> <span class="datatype">double</span> , width <span class="keyword">as</span> <span class="datatype">double</span> , height <span class="keyword">as</span> <span class="datatype">double</span> ) <span class="modifier">abstract</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">strokeRect</span> ( x <span class="keyword">as</span> <span class="datatype">double</span> , y <span class="keyword">as</span> <span class="datatype">double</span> , width <span class="keyword">as</span> <span class="datatype">double</span> , height <span class="keyword">as</span> <span class="datatype">double</span> ) <span class="modifier">abstract</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">clearRect</span> ( x <span class="keyword">as</span> <span class="datatype">double</span> , y <span class="keyword">as</span> <span class="datatype">double</span> , width <span class="keyword">as</span> <span class="datatype">double</span> , height <span class="keyword">as</span> <span class="datatype">double</span> ) <span class="modifier">abstract</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">fill</span> <span class="modifier">abstract</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">stroke</span> <span class="modifier">abstract</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">beginPath</span> <span class="modifier">abstract</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">moveTo</span> ( x <span class="keyword">as</span> <span class="datatype">double</span> , y <span class="keyword">as</span> <span class="datatype">double</span> ) <span class="modifier">abstract</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">closePath</span> <span class="modifier">abstract</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">lineTo</span> ( x <span class="keyword">as</span> <span class="datatype">double</span> , y <span class="keyword">as</span> <span class="datatype">double</span> ) <span class="modifier">abstract</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">clip</span> <span class="modifier">abstract</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">quadraticCurveTo</span> ( cpx <span class="keyword">as</span> <span class="datatype">double</span> , cpy <span class="keyword">as</span> <span class="datatype">double</span> , x <span class="keyword">as</span> <span class="datatype">double</span> , y <span class="keyword">as</span> <span class="datatype">double</span> ) <span class="modifier">abstract</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">bezierCurveTo</span> ( cp1x <span class="keyword">as</span> <span class="datatype">double</span> , cp1y <span class="keyword">as</span> <span class="datatype">double</span> , cp2x <span class="keyword">as</span> <span class="datatype">double</span> , cp2y <span class="keyword">as</span> <span class="datatype">double</span> , x <span class="keyword">as</span> <span class="datatype">double</span> , y <span class="keyword">as</span> <span class="datatype">double</span> ) <span class="modifier">abstract</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">arc</span> ( x <span class="keyword">as</span> <span class="datatype">double</span> , y <span class="keyword">as</span> <span class="datatype">double</span> , r <span class="keyword">as</span> <span class="datatype">double</span> , sAngle <span class="keyword">as</span> <span class="datatype">double</span> , eAngle <span class="keyword">as</span> <span class="datatype">double</span> , counterclockwise <span class="keyword">as</span> <span class="datatype">bool</span> ) <span class="modifier">abstract</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">arcTo</span> ( x1 <span class="keyword">as</span> <span class="datatype">double</span> , y1 <span class="keyword">as</span> <span class="datatype">double</span> , x2 <span class="keyword">as</span> <span class="datatype">double</span> , y2 <span class="keyword">as</span> <span class="datatype">double</span> , r <span class="keyword">as</span> <span class="datatype">double</span> ) <span class="modifier">abstract</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">isPointInPath</span> ( x <span class="keyword">as</span> <span class="datatype">double</span> , y <span class="keyword">as</span> <span class="datatype">double</span> ) <span class="modifier">abstract</span> <span class="keyword">as</span> <span class="datatype">bool</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">scale</span> ( scalewidth <span class="keyword">as</span> <span class="datatype">double</span> , scaleheight <span class="keyword">as</span> <span class="datatype">double</span> ) <span class="modifier">abstract</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">rotate</span> ( angle <span class="keyword">as</span> <span class="datatype">double</span> ) <span class="modifier">abstract</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">translate</span> ( x <span class="keyword">as</span> <span class="datatype">double</span> , y <span class="keyword">as</span> <span class="datatype">double</span> ) <span class="modifier">abstract</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">transform</span> ( a <span class="keyword">as</span> <span class="datatype">double</span> , b <span class="keyword">as</span> <span class="datatype">double</span> , c <span class="keyword">as</span> <span class="datatype">double</span> , d <span class="keyword">as</span> <span class="datatype">double</span> , e <span class="keyword">as</span> <span class="datatype">double</span> , f <span class="keyword">as</span> <span class="datatype">double</span> ) <span class="modifier">abstract</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setTransform</span> ( a <span class="keyword">as</span> <span class="datatype">double</span> , b <span class="keyword">as</span> <span class="datatype">double</span> , c <span class="keyword">as</span> <span class="datatype">double</span> , d <span class="keyword">as</span> <span class="datatype">double</span> , e <span class="keyword">as</span> <span class="datatype">double</span> , f <span class="keyword">as</span> <span class="datatype">double</span> ) <span class="modifier">abstract</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setFont</span> ( font <span class="keyword">as</span> <a class="datatype" href="jk.gfx.FontDescription.html">jk.gfx.FontDescription</a> ) <span class="modifier">abstract</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setTextAlign</span> ( align <span class="keyword">as</span> <span class="datatype">int</span> ) <span class="modifier">abstract</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setTextBaseline</span> ( baseline <span class="keyword">as</span> <span class="datatype">int</span> ) <span class="modifier">abstract</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">fillText</span> ( text <span class="keyword">as</span> <span class="datatype">string</span> , x <span class="keyword">as</span> <span class="datatype">double</span> , y <span class="keyword">as</span> <span class="datatype">double</span> , maxWidth <span class="keyword">as</span> <span class="datatype">double</span> ) <span class="modifier">abstract</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">strokeText</span> ( text <span class="keyword">as</span> <span class="datatype">string</span> , x <span class="keyword">as</span> <span class="datatype">double</span> , y <span class="keyword">as</span> <span class="datatype">double</span> , maxWidth <span class="keyword">as</span> <span class="datatype">double</span> ) <span class="modifier">abstract</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">measureTextHeight</span> ( text <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="modifier">abstract</span> <span class="keyword">as</span> <span class="datatype">double</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">measureTextWidth</span> ( text <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="modifier">abstract</span> <span class="keyword">as</span> <span class="datatype">double</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">drawImage</span> ( img <span class="keyword">as</span> <a class="datatype" href="jk.gfx.Image.html">jk.gfx.Image</a> , x <span class="keyword">as</span> <span class="datatype">double</span> , y <span class="keyword">as</span> <span class="datatype">double</span> ) <span class="modifier">abstract</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">drawAndScaleImage</span> ( img <span class="keyword">as</span> <a class="datatype" href="jk.gfx.Image.html">jk.gfx.Image</a> , x <span class="keyword">as</span> <span class="datatype">double</span> , y <span class="keyword">as</span> <span class="datatype">double</span> , width <span class="keyword">as</span> <span class="datatype">double</span> , height <span class="keyword">as</span> <span class="datatype">double</span> ) <span class="modifier">abstract</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">drawAndProcessImage</span> ( img <span class="keyword">as</span> <a class="datatype" href="jk.gfx.Image.html">jk.gfx.Image</a> , sx <span class="keyword">as</span> <span class="datatype">double</span> , sy <span class="keyword">as</span> <span class="datatype">double</span> , swidth <span class="keyword">as</span> <span class="datatype">double</span> , sheight <span class="keyword">as</span> <span class="datatype">double</span> , x <span class="keyword">as</span> <span class="datatype">double</span> , y <span class="keyword">as</span> <span class="datatype">double</span> , width <span class="keyword">as</span> <span class="datatype">double</span> , height <span class="keyword">as</span> <span class="datatype">double</span> ) <span class="modifier">abstract</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setGlobalAlpha</span> ( alpha <span class="keyword">as</span> <span class="datatype">double</span> ) <span class="modifier">abstract</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">save</span> <span class="modifier">abstract</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">restore</span> <span class="modifier">abstract</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,13 @@
+{
+	"moduleDescription" : "",
+	"type" : "module",
+	"moduleTitle" : "",
+	"moduleId" : "jk.widget.google.account",
+	"entities" : [
+		{
+			"type" : "class",
+			"name" : "Login",
+			"description" : ""
+		}
+	]
+}
