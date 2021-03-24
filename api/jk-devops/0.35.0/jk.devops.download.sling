@@ -1,0 +1,15 @@
+class name jk.devops.download.DownloadKit header public
+{
+	import jk.lang
+	import jk.fs
+	import jk.log
+	import jk.sha
+	import jk.env
+	import jk.http.client
+	import jk.archive
+	ctor(ctx as jk.log.LoggingContext)
+	func getBasename(name as string) as string
+	func downloadToDirectory(url, destdir) as jk.fs.File
+	func downloadToFile(url, destfile) as jk.fs.File
+	func downloadAndExtract(url, destdir) as jk.fs.File
+}

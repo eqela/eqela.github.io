@@ -1,0 +1,103 @@
+<html>
+<head>
+<title>jk.cloud.template.azure.ArmTemplateGenerator | JK Cloud [0.16.0] - API Reference</title>
+<link rel="stylesheet" type="text/css" href="style.css" />
+<meta name="viewport" content="initial-scale=1,maximum-scale=1" />
+<meta property="og:description" content="jk.cloud.template.azure.ArmTemplateGenerator | JK Cloud [0.16.0] - API Reference" />
+<meta property="og:title" content="jk.cloud.template.azure.ArmTemplateGenerator | JK Cloud [0.16.0] - API Reference" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:description" content="jk.cloud.template.azure.ArmTemplateGenerator | JK Cloud [0.16.0] - API Reference" />
+</head>
+<body><div class="content">
+<a class="back" href="index.html">&laquo; JK Cloud [0.16.0]</a><div class="intro">
+<h1><span class="keyword">class</span> <span class="symbol">jk.cloud.template.azure.ArmTemplateGenerator</span></h1>
+<p></p>
+</div>
+<div class="list">
+<div class="title">Instance Methods</div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">addToCustomTemplates</span> ( template <span class="keyword">as</span> <a class="datatype" href="jk.cloud.template.CustomTemplate.html">jk.cloud.template.CustomTemplate</a> ) <span class="keyword">as</span> <a class="datatype" href="jk.cloud.template.CustomTemplate.html">jk.cloud.template.CustomTemplate</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getCurrentGroup</span> <span class="keyword">as</span> <span class="datatype">string</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setTagForResource</span> ( resource <span class="keyword">as</span> <a class="datatype" href="../../jk-core/0.37.0/jk.lang.DynamicMap.html">jk.lang.DynamicMap</a> , key <span class="keyword">as</span> <span class="datatype">string</span> , value <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">addResource</span> ( resource <span class="keyword">as</span> <a class="datatype" href="../../jk-core/0.37.0/jk.lang.DynamicMap.html">jk.lang.DynamicMap</a> ) <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getResourceTypeString</span> ( resource <span class="keyword">as</span> <a class="datatype" href="jk.cloud.template.Resource.html">jk.cloud.template.Resource</a> ) <span class="keyword">as</span> <span class="datatype">string</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getResourceIdString</span> ( obj <span class="keyword">as</span> <a class="datatype" href="jk.cloud.template.Resource.html">jk.cloud.template.Resource</a> ) <span class="keyword">as</span> <span class="datatype">string</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getSubnetResourceId</span> ( vnet <span class="keyword">as</span> <a class="datatype" href="jk.cloud.template.Network.html">jk.cloud.template.Network</a> , subnet <span class="keyword">as</span> <a class="datatype" href="jk.cloud.template.Subnet.html">jk.cloud.template.Subnet</a> ) <span class="keyword">as</span> <span class="datatype">string</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getCurrentSubnetResourceId</span> <span class="keyword">as</span> <span class="datatype">string</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getPublicIpAddressResourceId</span> ( ipname <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="keyword">as</span> <span class="datatype">string</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">validString</span> ( str <span class="keyword">as</span> <span class="datatype">string</span> , desc <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="keyword">as</span> <span class="datatype">string</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">cidrBlockToString</span> ( block <span class="keyword">as</span> <a class="datatype" href="jk.cloud.template.CidrBlock.html">jk.cloud.template.CidrBlock</a> , require <span class="keyword">as</span> <span class="datatype">bool</span> , desc <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="keyword">as</span> <span class="datatype">string</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">securityGroupRuleTypeToString</span> ( value <span class="keyword">as</span> <span class="datatype">int</span> ) <span class="keyword">as</span> <span class="datatype">string</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">securityGroupDirectionToString</span> ( value <span class="keyword">as</span> <span class="datatype">int</span> ) <span class="keyword">as</span> <span class="datatype">string</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">securityGroupProtocolToString</span> ( value <span class="keyword">as</span> <span class="datatype">int</span> ) <span class="keyword">as</span> <span class="datatype">string</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">portRangeToString</span> ( range <span class="keyword">as</span> <a class="datatype" href="jk.cloud.template.PortRange.html">jk.cloud.template.PortRange</a> ) <span class="keyword">as</span> <span class="datatype">string</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getOsImageReference</span> ( osid <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="keyword">as</span> <span class="datatype">jk.cloud.template.azure.ArmTemplateGenerator.OsImageReference</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">translateVmSize</span> ( size <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="keyword">as</span> <span class="datatype">string</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setMapValue</span> ( map <span class="keyword">as</span> <a class="datatype" href="../../jk-core/0.37.0/jk.lang.DynamicMap.html">jk.lang.DynamicMap</a> , key <span class="keyword">as</span> <span class="datatype">string</span> , value <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getMapVector</span> ( map <span class="keyword">as</span> <a class="datatype" href="../../jk-core/0.37.0/jk.lang.DynamicMap.html">jk.lang.DynamicMap</a> , key <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="keyword">as</span> <a class="datatype" href="../../jk-core/0.37.0/jk.lang.DynamicVector.html">jk.lang.DynamicVector</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">addToMapVector</span> ( map <span class="keyword">as</span> <a class="datatype" href="../../jk-core/0.37.0/jk.lang.DynamicMap.html">jk.lang.DynamicMap</a> , key <span class="keyword">as</span> <span class="datatype">string</span> , data <span class="keyword">as</span> <span class="datatype">object</span> ) <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getMapMap</span> ( map <span class="keyword">as</span> <a class="datatype" href="../../jk-core/0.37.0/jk.lang.DynamicMap.html">jk.lang.DynamicMap</a> , key <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="keyword">as</span> <a class="datatype" href="../../jk-core/0.37.0/jk.lang.DynamicMap.html">jk.lang.DynamicMap</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">addResourceDependency</span> ( data <span class="keyword">as</span> <a class="datatype" href="../../jk-core/0.37.0/jk.lang.DynamicMap.html">jk.lang.DynamicMap</a> , resource <span class="keyword">as</span> <a class="datatype" href="jk.cloud.template.Resource.html">jk.cloud.template.Resource</a> ) <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">addExplicitDependency</span> ( data <span class="keyword">as</span> <a class="datatype" href="../../jk-core/0.37.0/jk.lang.DynamicMap.html">jk.lang.DynamicMap</a> , dependency <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">createResource</span> ( type <span class="keyword">as</span> <span class="datatype">string</span> , apiVersion <span class="keyword">as</span> <span class="datatype">string</span> , name <span class="keyword">as</span> <span class="datatype">string</span> , location <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="keyword">as</span> <a class="datatype" href="../../jk-core/0.37.0/jk.lang.DynamicMap.html">jk.lang.DynamicMap</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">dumpSecurityGroup</span> ( group <span class="keyword">as</span> <a class="datatype" href="jk.cloud.template.SecurityGroup.html">jk.cloud.template.SecurityGroup</a> ) <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">createPublicIpAddress</span> ( name <span class="keyword">as</span> <span class="datatype">string</span> , publicName <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="keyword">as</span> <span class="datatype">string</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">createNetworkInterface</span> ( name <span class="keyword">as</span> <span class="datatype">string</span> , securityGroup <span class="keyword">as</span> <a class="datatype" href="jk.cloud.template.SecurityGroup.html">jk.cloud.template.SecurityGroup</a> , hasPublicIp <span class="keyword">as</span> <span class="datatype">bool</span> , publicName <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="keyword">as</span> <span class="datatype">string</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">dumpVirtualMachine</span> ( vm <span class="keyword">as</span> <a class="datatype" href="jk.cloud.template.VirtualMachine.html">jk.cloud.template.VirtualMachine</a> ) <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">generateNetworkProfileForContainer</span> ( name <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="keyword">as</span> <span class="datatype">string</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">dumpContainerInstance</span> ( instance <span class="keyword">as</span> <a class="datatype" href="jk.cloud.template.ContainerInstance.html">jk.cloud.template.ContainerInstance</a> ) <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">createPrivateDnsZone</span> ( zonename <span class="keyword">as</span> <span class="datatype">string</span> , registrationEnabled <span class="keyword">as</span> <span class="datatype">bool</span> ) <span class="keyword">as</span> <span class="datatype">string</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">dumpNetwork</span> ( network <span class="keyword">as</span> <a class="datatype" href="jk.cloud.template.Network.html">jk.cloud.template.Network</a> ) <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">dumpMsSqlServer</span> ( server <span class="keyword">as</span> <a class="datatype" href="jk.cloud.template.MsSqlServer.html">jk.cloud.template.MsSqlServer</a> ) <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">dumpContainerRegistry</span> ( registry <span class="keyword">as</span> <a class="datatype" href="jk.cloud.template.ContainerRegistry.html">jk.cloud.template.ContainerRegistry</a> ) <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">dumpApiGateway</span> ( apigw <span class="keyword">as</span> <a class="datatype" href="jk.cloud.template.ApiGateway.html">jk.cloud.template.ApiGateway</a> ) <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">dumpResource</span> ( resource <span class="keyword">as</span> <a class="datatype" href="jk.cloud.template.Resource.html">jk.cloud.template.Resource</a> ) <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">processResource</span> ( resource <span class="keyword">as</span> <a class="datatype" href="jk.cloud.template.Resource.html">jk.cloud.template.Resource</a> , location <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">generateTemplate</span> ( group <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="keyword">as</span> <a class="datatype" href="../../jk-core/0.37.0/jk.lang.DynamicMap.html">jk.lang.DynamicMap</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">generateTemplateString</span> ( group <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="keyword">as</span> <span class="datatype">string</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getTemplates</span> <span class="keyword">as</span> <a class="datatype" href="../../jk-core/0.37.0/jk.lang.DynamicMap.html">jk.lang.DynamicMap</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">writeTemplates</span> ( dir <span class="keyword">as</span> <span class="datatype">dynamic</span> , prefix <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="keyword">as</span> <span class="datatype">vector&lt;jk.fs.File&gt;</span></div></div>
+</div>
+</div>
+</body>
+</html>

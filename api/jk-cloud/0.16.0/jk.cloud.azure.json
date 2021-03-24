@@ -1,0 +1,23 @@
+{
+	"moduleDescription" : "Support for the Microsoft Azure APIs\n",
+	"type" : "module",
+	"moduleTitle" : "Azure API support",
+	"moduleId" : "jk.cloud.azure",
+	"entities" : [
+		{
+			"type" : "class",
+			"name" : "AzureApi",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "AzureSession",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "AzureResourceManagerApi",
+			"description" : ""
+		}
+	]
+}

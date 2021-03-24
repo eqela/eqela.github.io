@@ -1,0 +1,13 @@
+{
+	"moduleDescription" : "",
+	"type" : "module",
+	"moduleTitle" : "",
+	"moduleId" : "jk.uikit.notification",
+	"entities" : [
+		{
+			"type" : "class",
+			"name" : "NotificationWidget",
+			"description" : ""
+		}
+	]
+}

@@ -1,0 +1,13 @@
+{
+	"moduleDescription" : "Support for the Bitbucket API\n",
+	"type" : "module",
+	"moduleTitle" : "Bitbucket API support",
+	"moduleId" : "jk.cloud.bitbucket",
+	"entities" : [
+		{
+			"type" : "class",
+			"name" : "BitbucketAPI",
+			"description" : ""
+		}
+	]
+}

@@ -1,0 +1,18 @@
+{
+	"moduleDescription" : "Support for Android development\n",
+	"type" : "module",
+	"moduleTitle" : "Android development",
+	"moduleId" : "jk.devops.android",
+	"entities" : [
+		{
+			"type" : "class",
+			"name" : "AndroidSDK",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "AndroidGradleBuilder",
+			"description" : ""
+		}
+	]
+}

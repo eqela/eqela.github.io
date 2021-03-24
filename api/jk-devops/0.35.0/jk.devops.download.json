@@ -1,0 +1,13 @@
+{
+	"moduleDescription" : "Support for downloading files.\n",
+	"type" : "module",
+	"moduleTitle" : "Downloading files",
+	"moduleId" : "jk.devops.download",
+	"entities" : [
+		{
+			"type" : "class",
+			"name" : "DownloadKit",
+			"description" : ""
+		}
+	]
+}

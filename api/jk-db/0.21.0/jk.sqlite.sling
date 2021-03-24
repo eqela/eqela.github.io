@@ -1,0 +1,25 @@
+class name jk.sqlite.SQLiteDatabase header extends jk.sql.SQLDatabase abstract public
+{
+	import jk.lang
+	import jk.sql
+	import jk.log
+	import jk.fs
+	ctor
+	func forFile(file as jk.fs.File, allowCreate as bool = true, logger as jk.log.LoggingContext = null) static as jk.sqlite.SQLiteDatabase
+	func getDatabaseTypeId override as string
+	func initialize(file as jk.fs.File, create as bool) virtual as bool
+	func querySingleRowSync(stmt as jk.sql.SQLStatement) override as jk.lang.DynamicMap
+	func tableExistsSync(table as string) override as bool
+	func queryAllTableNames(callback as function<void,vector>) override
+	func queryAllTableNamesSync override as vector
+	func columnToCreateString(cc as jk.sql.SQLTableColumnInfo) virtual as string
+	func prepareCreateTableStatementSync(table as string, columns as vector<jk.sql.SQLTableColumnInfo>) override as jk.sql.SQLStatement
+	func prepareDeleteTableStatementSync(table as string) override as jk.sql.SQLStatement
+	func getLastInsertIdSync(table as string) override as long
+	func getIdentityColumnNameSync(table as string) override as string
+	func getPrimaryKeyColumnNameSync(table as string) override as string
+	func columnExistsSync(table as string, name as string) override as bool
+	func isColumnTypeSameSync(table as string, column as jk.sql.SQLTableColumnInfo) override as bool
+	func prepareCreateColumnStatementSync(table as string, column as jk.sql.SQLTableColumnInfo) override as jk.sql.SQLStatement
+	func prepareUpdateColumnTypeStatementSync(table as string, column as jk.sql.SQLTableColumnInfo) override as jk.sql.SQLStatement
+}

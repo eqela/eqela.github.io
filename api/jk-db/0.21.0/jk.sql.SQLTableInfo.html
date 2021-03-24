@@ -1,0 +1,112 @@
+<html>
+<head>
+<title>jk.sql.SQLTableInfo | JK DB [0.21.0] - API Reference</title>
+<link rel="stylesheet" type="text/css" href="style.css" />
+<meta name="viewport" content="initial-scale=1,maximum-scale=1" />
+<meta property="og:description" content="Information about an SQL table." />
+<meta property="og:title" content="jk.sql.SQLTableInfo | JK DB [0.21.0] - API Reference" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:description" content="Information about an SQL table." />
+</head>
+<body><div class="content">
+<a class="back" href="index.html">&laquo; JK DB [0.21.0]</a><div class="intro">
+<h1><span class="keyword">class</span> <span class="symbol">jk.sql.SQLTableInfo</span></h1>
+<p>Information about an SQL table.</p>
+</div>
+<div class="list">
+<div class="title">Static Methods</div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">forName</span> ( name <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="modifier">static</span> <span class="keyword">as</span> <a class="datatype" href="jk.sql.SQLTableInfo.html">jk.sql.SQLTableInfo</a></div><div class="description">Creates an instance of this class with the
+specified table name.</div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">forDetails</span> ( name <span class="keyword">as</span> <span class="datatype">string</span> , columns <span class="keyword">as</span> <span class="datatype">array&lt;jk.sql.SQLTableColumnInfo&gt;</span> , indexes <span class="keyword">as</span> <span class="datatype">array&lt;string&gt;</span> , uniqueIndexes <span class="keyword">as</span> <span class="datatype">array&lt;string&gt;</span> ) <span class="modifier">static</span> <span class="keyword">as</span> <a class="datatype" href="jk.sql.SQLTableInfo.html">jk.sql.SQLTableInfo</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">forDynamicModel</span> ( tableName <span class="keyword">as</span> <span class="datatype">string</span> , model <span class="keyword">as</span> <a class="datatype" href="../../jk-data/0.33.0/jk.model.DynamicModel.html">jk.model.DynamicModel</a> ) <span class="modifier">static</span> <span class="keyword">as</span> <a class="datatype" href="jk.sql.SQLTableInfo.html">jk.sql.SQLTableInfo</a></div></div>
+</div>
+<div class="list">
+<div class="title">Instance Methods</div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">addColumn</span> ( info <span class="keyword">as</span> <a class="datatype" href="jk.sql.SQLTableColumnInfo.html">jk.sql.SQLTableColumnInfo</a> ) <span class="keyword">as</span> <a class="datatype" href="jk.sql.SQLTableInfo.html">jk.sql.SQLTableInfo</a></div><div class="description">Adds the supplied instance of SQLTableColumnInfo class
+which defines the column info to the list of columns of
+this class instance and returns itself.</div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">addIntegerColumn</span> ( name <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="keyword">as</span> <a class="datatype" href="jk.sql.SQLTableInfo.html">jk.sql.SQLTableInfo</a></div><div class="description">Creates an instance of SQLTableColumnInfo class for
+column of type integer with the supplied column name
+and adds it to the list of columns of this class
+instance and returns itself.</div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">addLongColumn</span> ( name <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="keyword">as</span> <a class="datatype" href="jk.sql.SQLTableInfo.html">jk.sql.SQLTableInfo</a></div><div class="description">Creates an instance of SQLTableColumnInfo class for
+column of type long integer with the supplied column
+name and adds it to the list of columns of this class
+instance and returns itself.</div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">addStringColumn</span> ( name <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="keyword">as</span> <a class="datatype" href="jk.sql.SQLTableInfo.html">jk.sql.SQLTableInfo</a></div><div class="description">Creates an instance of SQLTableColumnInfo class for
+column of type string with the supplied column name
+and adds it to the list of columns of this class
+instance and returns itself.</div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">addStringKeyColumn</span> ( name <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="keyword">as</span> <a class="datatype" href="jk.sql.SQLTableInfo.html">jk.sql.SQLTableInfo</a></div><div class="description">Creates an instance of SQLTableColumnInfo class for
+key column of type string with the supplied column
+name and adds it to the list of columns of this class
+instance and returns itself.</div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">addTextColumn</span> ( name <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="keyword">as</span> <a class="datatype" href="jk.sql.SQLTableInfo.html">jk.sql.SQLTableInfo</a></div><div class="description">Creates an instance of SQLTableColumnInfo class for
+column of type text with the supplied column name
+and adds it to the list of columns of this class
+instance and returns itself.</div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">addIntegerKeyColumn</span> ( name <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="keyword">as</span> <a class="datatype" href="jk.sql.SQLTableInfo.html">jk.sql.SQLTableInfo</a></div><div class="description">Creates an instance of SQLTableColumnInfo class for
+key column of type integer with the supplied column
+name and adds it to the list of columns of this class
+instance and returns itself.</div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">addLongKeyColumn</span> ( name <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="keyword">as</span> <a class="datatype" href="jk.sql.SQLTableInfo.html">jk.sql.SQLTableInfo</a></div><div class="description">Creates an instance of SQLTableColumnInfo class for
+key column of type long integer with the supplied
+column name and adds it to the list of columns of
+this class instance and returns itself.</div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">addDoubleColumn</span> ( name <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="keyword">as</span> <a class="datatype" href="jk.sql.SQLTableInfo.html">jk.sql.SQLTableInfo</a></div><div class="description">Creates an instance of SQLTableColumnInfo class for
+column of type double with the supplied column name
+and adds it to the list of columns of this class
+instance and returns itself.</div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">addBlobColumn</span> ( name <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="keyword">as</span> <a class="datatype" href="jk.sql.SQLTableInfo.html">jk.sql.SQLTableInfo</a></div><div class="description">Creates an instance of SQLTableColumnInfo class for
+column of type blob with the supplied column name
+and adds it to the list of columns of this class
+instance and returns itself.</div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">addIndex</span> ( column <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="keyword">as</span> <a class="datatype" href="jk.sql.SQLTableInfo.html">jk.sql.SQLTableInfo</a></div><div class="description">Creates an instance of SQLTableColumnIndexInfo class
+from the supplied column name and adds it to the list
+of indexes of this class instance and returns itself.
+The index constraint is not a unique index constraint.</div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">addMultiColumnIndex</span> ( columns <span class="keyword">as</span> <span class="datatype">array</span> ) <span class="keyword">as</span> <a class="datatype" href="jk.sql.SQLTableInfo.html">jk.sql.SQLTableInfo</a></div><div class="description">Creates an instance of SQLTableColumnIndexInfo class
+from the supplied column names and adds them to the list
+of indexes of this class instance and returns itself.
+The index constraint is not a unique index constraint.</div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">addUniqueIndex</span> ( column <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="keyword">as</span> <a class="datatype" href="jk.sql.SQLTableInfo.html">jk.sql.SQLTableInfo</a></div><div class="description">Creates an instance of SQLTableColumnIndexInfo class
+from the supplied column name and adds it to the list
+of indexes of this class instance and returns itself.
+The index constraint is a unique index constraint.</div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">addUniqueMultiColumnIndex</span> ( columns <span class="keyword">as</span> <span class="datatype">array</span> ) <span class="keyword">as</span> <a class="datatype" href="jk.sql.SQLTableInfo.html">jk.sql.SQLTableInfo</a></div><div class="description">Creates an instance of SQLTableColumnIndexInfo class
+from the supplied column names and adds them to the list
+of indexes of this class instance and returns itself.
+The index constraint is a unique index constraint.</div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getName</span> <span class="keyword">as</span> <span class="datatype">string</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setName</span> ( v <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="keyword">as</span> <a class="datatype" href="jk.sql.SQLTableInfo.html">jk.sql.SQLTableInfo</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getColumns</span> <span class="keyword">as</span> <span class="datatype">vector&lt;jk.sql.SQLTableColumnInfo&gt;</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setColumns</span> ( v <span class="keyword">as</span> <span class="datatype">vector&lt;jk.sql.SQLTableColumnInfo&gt;</span> ) <span class="keyword">as</span> <a class="datatype" href="jk.sql.SQLTableInfo.html">jk.sql.SQLTableInfo</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getIndexes</span> <span class="keyword">as</span> <span class="datatype">vector&lt;jk.sql.SQLTableColumnIndexInfo&gt;</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setIndexes</span> ( v <span class="keyword">as</span> <span class="datatype">vector&lt;jk.sql.SQLTableColumnIndexInfo&gt;</span> ) <span class="keyword">as</span> <a class="datatype" href="jk.sql.SQLTableInfo.html">jk.sql.SQLTableInfo</a></div></div>
+</div>
+</div>
+</body>
+</html>

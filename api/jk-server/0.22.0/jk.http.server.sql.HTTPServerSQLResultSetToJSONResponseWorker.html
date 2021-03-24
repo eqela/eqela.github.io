@@ -1,0 +1,49 @@
+<html>
+<head>
+<title>jk.http.server.sql.HTTPServerSQLResultSetToJSONResponseWorker | JK Server [0.22.0] - API Reference</title>
+<link rel="stylesheet" type="text/css" href="style.css" />
+<meta name="viewport" content="initial-scale=1,maximum-scale=1" />
+<meta property="og:description" content="jk.http.server.sql.HTTPServerSQLResultSetToJSONResponseWorker | JK Server [0.22.0] - API Reference" />
+<meta property="og:title" content="jk.http.server.sql.HTTPServerSQLResultSetToJSONResponseWorker | JK Server [0.22.0] - API Reference" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:description" content="jk.http.server.sql.HTTPServerSQLResultSetToJSONResponseWorker | JK Server [0.22.0] - API Reference" />
+</head>
+<body><div class="content">
+<a class="back" href="index.html">&laquo; JK Server [0.22.0]</a><div class="intro">
+<h1><span class="keyword">class</span> <span class="symbol">jk.http.server.sql.HTTPServerSQLResultSetToJSONResponseWorker</span></h1>
+<p></p>
+</div>
+<div class="list">
+<div class="title">Base Types</div>
+<div class="entry">
+<div class="name"><span class="keyword">extends</span> <a class="datatype" href="../../jk-net/0.39.0/jk.http.server.HTTPServerResponseWorker.html">jk.http.server.HTTPServerResponseWorker</a></div></div>
+</div>
+<div class="list">
+<div class="title">Static Methods</div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">forResultSet</span> ( results <span class="keyword">as</span> <a class="datatype" href="../../jk-db/0.21.0/jk.sql.SQLResultSetIterator.html">jk.sql.SQLResultSetIterator</a> ) <span class="modifier">static</span> <span class="keyword">as</span> <a class="datatype" href="jk.http.server.sql.HTTPServerSQLResultSetToJSONResponseWorker.html">jk.http.server.sql.HTTPServerSQLResultSetToJSONResponseWorker</a></div></div>
+</div>
+<div class="list">
+<div class="title">Instance Methods</div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getMimeType</span> <span class="modifier">override</span> <span class="keyword">as</span> <span class="datatype">string</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getWorkerDescription</span> <span class="modifier">override</span> <span class="keyword">as</span> <span class="datatype">string</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">onStart</span> <span class="modifier">override</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">tick</span> <span class="modifier">override</span> <span class="keyword">as</span> <span class="datatype">bool</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">onEnd</span> <span class="modifier">override</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getResultSet</span> <span class="keyword">as</span> <a class="datatype" href="../../jk-db/0.21.0/jk.sql.SQLResultSetIterator.html">jk.sql.SQLResultSetIterator</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setResultSet</span> ( v <span class="keyword">as</span> <a class="datatype" href="../../jk-db/0.21.0/jk.sql.SQLResultSetIterator.html">jk.sql.SQLResultSetIterator</a> ) <span class="keyword">as</span> <a class="datatype" href="jk.http.server.sql.HTTPServerSQLResultSetToJSONResponseWorker.html">jk.http.server.sql.HTTPServerSQLResultSetToJSONResponseWorker</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getRecordsPerPacket</span> <span class="keyword">as</span> <span class="datatype">int</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setRecordsPerPacket</span> ( v <span class="keyword">as</span> <span class="datatype">int</span> ) <span class="keyword">as</span> <a class="datatype" href="jk.http.server.sql.HTTPServerSQLResultSetToJSONResponseWorker.html">jk.http.server.sql.HTTPServerSQLResultSetToJSONResponseWorker</a></div></div>
+</div>
+</div>
+</body>
+</html>

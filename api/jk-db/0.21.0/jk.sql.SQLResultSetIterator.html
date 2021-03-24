@@ -1,0 +1,68 @@
+<html>
+<head>
+<title>jk.sql.SQLResultSetIterator | JK DB [0.21.0] - API Reference</title>
+<link rel="stylesheet" type="text/css" href="style.css" />
+<meta name="viewport" content="initial-scale=1,maximum-scale=1" />
+<meta property="og:description" content="A generic iterator for SQL result sets." />
+<meta property="og:title" content="jk.sql.SQLResultSetIterator | JK DB [0.21.0] - API Reference" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:description" content="A generic iterator for SQL result sets." />
+</head>
+<body><div class="content">
+<a class="back" href="index.html">&laquo; JK DB [0.21.0]</a><div class="intro">
+<h1><span class="modifier">abstract</span> <span class="keyword">class</span> <span class="symbol">jk.sql.SQLResultSetIterator</span></h1>
+<p>A generic iterator for SQL result sets.</p>
+</div>
+<div class="list">
+<div class="title">Base Types</div>
+<div class="entry">
+<div class="name"><span class="keyword">implements</span> <a class="datatype" href="../../jk-core/0.37.0/jk.lang.Iterator.html">jk.lang.Iterator&lt;jk.lang.DynamicMap&gt;</a></div></div>
+</div>
+<div class="list">
+<div class="title">Instance Methods</div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">next</span> <span class="modifier">abstract</span> <span class="keyword">as</span> <a class="datatype" href="../../jk-core/0.37.0/jk.lang.DynamicMap.html">jk.lang.DynamicMap</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">hasNext</span> <span class="modifier">abstract</span> <span class="keyword">as</span> <span class="datatype">bool</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">nextValues</span> ( values <span class="keyword">as</span> <span class="datatype">vector</span> ) <span class="modifier">abstract</span> <span class="keyword">as</span> <span class="datatype">bool</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">step</span> <span class="modifier">abstract</span> <span class="keyword">as</span> <span class="datatype">bool</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getColumnCount</span> <span class="modifier">abstract</span> <span class="keyword">as</span> <span class="datatype">int</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getColumnName</span> ( n <span class="keyword">as</span> <span class="datatype">int</span> ) <span class="modifier">abstract</span> <span class="keyword">as</span> <span class="datatype">string</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getColumnNames</span> <span class="modifier">abstract</span> <span class="keyword">as</span> <span class="datatype">vector&lt;string&gt;</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getColumnObject</span> ( n <span class="keyword">as</span> <span class="datatype">int</span> ) <span class="modifier">abstract</span> <span class="keyword">as</span> <span class="datatype">object</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getColumnInt</span> ( n <span class="keyword">as</span> <span class="datatype">int</span> ) <span class="modifier">abstract</span> <span class="keyword">as</span> <span class="datatype">int</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getColumnLong</span> ( n <span class="keyword">as</span> <span class="datatype">int</span> ) <span class="modifier">abstract</span> <span class="keyword">as</span> <span class="datatype">long</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getColumnDouble</span> ( n <span class="keyword">as</span> <span class="datatype">int</span> ) <span class="modifier">abstract</span> <span class="keyword">as</span> <span class="datatype">double</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getColumnBuffer</span> ( n <span class="keyword">as</span> <span class="datatype">int</span> ) <span class="modifier">abstract</span> <span class="keyword">as</span> <span class="datatype">buffer</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">close</span> <span class="modifier">abstract</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">toVectorOfMaps</span> <span class="keyword">as</span> <a class="datatype" href="../../jk-core/0.37.0/jk.lang.DynamicVector.html">jk.lang.DynamicVector</a></div><div class="description">Converts the data into an instance of DynamicVector
+of records. Each record is an instance of DynamicMap.</div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">toVectorList</span> <span class="keyword">as</span> <span class="datatype">vector</span></div><div class="description">Converts the data into a vector of records.
+Each record is a vector of column objects.
+The first record is a vector of column names.</div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">headerJSON</span> ( sb <span class="keyword">as</span> <a class="datatype" href="../../jk-core/0.37.0/jk.lang.StringBuilder.html">jk.lang.StringBuilder</a> ) <span class="keyword">as</span> <span class="datatype">void</span></div><div class="description">Encodes the column name(s) into a vector as a string and
+appends it to the supplied instance of StringBuilder.</div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">nextJSON</span> ( sb <span class="keyword">as</span> <a class="datatype" href="../../jk-core/0.37.0/jk.lang.StringBuilder.html">jk.lang.StringBuilder</a> ) <span class="keyword">as</span> <span class="datatype">bool</span></div><div class="description">Encodes the next record into a vector of objects as a string and
+appends it to the supplied instance of StringBuilder.
+Returns false if there is no record left to encode.</div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">toVectorListJSON</span> <span class="keyword">as</span> <span class="datatype">string</span></div><div class="description">Encodes the data into a string with a vector list JSON format.</div></div>
+</div>
+</div>
+</body>
+</html>

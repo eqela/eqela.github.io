@@ -1,0 +1,21 @@
+class name jk.devops.awscli.CloudFormationHelper header public
+{
+	import jk.lang
+	import jk.fs
+	import jk.env
+	import jk.log
+	import jk.slon
+	import jk.json
+	import jk.console
+	import jk.process
+	ctor
+	property ctx as jk.console.ConsoleApplicationContext { hasset hasget }
+	property cmd as jk.fs.File { hasset hasget }
+	property waitForCompletion as bool { hasset hasget }
+	func execute(pl as jk.process.ProcessLauncher) as int
+	func executeStackFile(command as string, file as jk.fs.File)
+	func createStack(file as jk.fs.File)
+	func updateStack(file as jk.fs.File)
+	func deleteStack(name as string)
+	func reCreateStack(file as jk.fs.File)
+}

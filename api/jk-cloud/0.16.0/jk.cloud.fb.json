@@ -1,0 +1,13 @@
+{
+	"moduleDescription" : "Support for the Facebook API\n",
+	"type" : "module",
+	"moduleTitle" : "Facebook API support",
+	"moduleId" : "jk.cloud.fb",
+	"entities" : [
+		{
+			"type" : "class",
+			"name" : "FacebookGraph",
+			"description" : ""
+		}
+	]
+}

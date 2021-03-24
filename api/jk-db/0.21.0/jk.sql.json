@@ -1,0 +1,48 @@
+{
+	"moduleDescription" : "Base classes and APIs for all SQL support for JK applications.\n",
+	"type" : "module",
+	"moduleTitle" : "SQL database access framework",
+	"moduleId" : "jk.sql",
+	"entities" : [
+		{
+			"type" : "class",
+			"name" : "SQLResultSetSingleColumnIterator",
+			"description" : "A generic iterator that iterater a single column in a result set."
+		},
+		{
+			"type" : "class",
+			"name" : "SQLTableColumnIndexInfo",
+			"description" : "Information about column indexes of an SQL table."
+		},
+		{
+			"type" : "class",
+			"name" : "SQLResultSetIterator",
+			"description" : "A generic iterator for SQL result sets."
+		},
+		{
+			"type" : "class",
+			"name" : "SQLTableInfo",
+			"description" : "Information about an SQL table."
+		},
+		{
+			"type" : "class",
+			"name" : "SQLOrderingRule",
+			"description" : "Representation of an ordering rule in SQL."
+		},
+		{
+			"type" : "class",
+			"name" : "SQLTableColumnInfo",
+			"description" : "Information about columns of an SQL table."
+		},
+		{
+			"type" : "class",
+			"name" : "SQLDatabase",
+			"description" : "SQL database connection. This is the base class and abstraction for all\ndatabase-specific driver classes."
+		},
+		{
+			"type" : "interface",
+			"name" : "SQLStatement",
+			"description" : "Represents an SQL statement or query"
+		}
+	]
+}

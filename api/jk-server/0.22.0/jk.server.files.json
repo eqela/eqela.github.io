@@ -1,0 +1,13 @@
+{
+	"moduleDescription" : "A fully functional and executable file server.\n",
+	"type" : "module",
+	"moduleTitle" : "File server",
+	"moduleId" : "jk.server.files",
+	"entities" : [
+		{
+			"type" : "class",
+			"name" : "FileServerMain",
+			"description" : ""
+		}
+	]
+}

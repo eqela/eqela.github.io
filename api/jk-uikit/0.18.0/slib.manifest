@@ -1,0 +1,12 @@
+{
+	"license" : "",
+	"version" : "0.18.0",
+	"title" : "JK UiKit",
+	"libraries" : [
+		"jk-app:0.26.0"
+	],
+	"description" : "A library of commonly used used general-purpose user interface elements.\n",
+	"copyright" : "",
+	"name" : "jk-uikit",
+	"namespace" : "eqela"
+}

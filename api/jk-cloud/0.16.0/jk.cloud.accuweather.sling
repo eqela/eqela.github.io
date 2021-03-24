@@ -1,0 +1,25 @@
+class name jk.cloud.accuweather.AccuWeather header public
+{
+	import jk.lang
+	import jk.json
+	import jk.http.client
+	ctor
+	func forApiKey(key as string) static as jk.cloud.accuweather.AccuWeather
+	func queryLocation(latitude as double, longitude as double, alistener as function<void,jk.lang.DynamicMap,jk.lang.Error>)
+	func queryCurrentCondition(key as string, alistener as function<void,jk.lang.DynamicMap,jk.lang.Error>)
+	func queryForecast(key as string, forecastDays as int, alistener as function<void,jk.lang.DynamicMap,jk.lang.Error>)
+	func getApiKey as string #getterMethod
+	func setApiKey(v as string) as jk.cloud.accuweather.AccuWeather #setterMethod
+	func getLocationHost as string #getterMethod
+	func setLocationHost(v as string) as jk.cloud.accuweather.AccuWeather #setterMethod
+	func getCurrentConditionHost as string #getterMethod
+	func setCurrentConditionHost(v as string) as jk.cloud.accuweather.AccuWeather #setterMethod
+	func getForecastHost as string #getterMethod
+	func setForecastHost(v as string) as jk.cloud.accuweather.AccuWeather #setterMethod
+	func getVersion as string #getterMethod
+	func setVersion(v as string) as jk.cloud.accuweather.AccuWeather #setterMethod
+	func getDetails as bool #getterMethod
+	func setDetails(v as bool) as jk.cloud.accuweather.AccuWeather #setterMethod
+	func getMetric as bool #getterMethod
+	func setMetric(v as bool) as jk.cloud.accuweather.AccuWeather #setterMethod
+}

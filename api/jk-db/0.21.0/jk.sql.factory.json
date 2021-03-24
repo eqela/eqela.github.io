@@ -1,0 +1,13 @@
+{
+	"moduleDescription" : "Create database connections and assign drivers dynamically.\n",
+	"type" : "module",
+	"moduleTitle" : "SQL database factory",
+	"moduleId" : "jk.sql.factory",
+	"entities" : [
+		{
+			"type" : "class",
+			"name" : "SQLDatabaseFactory",
+			"description" : "A generic utility class for establishing connections to any supported database\nbased on a connection string."
+		}
+	]
+}

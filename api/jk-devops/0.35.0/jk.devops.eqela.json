@@ -1,0 +1,13 @@
+{
+	"moduleDescription" : "Support for Eqela applications\n",
+	"type" : "module",
+	"moduleTitle" : "Eqela applications",
+	"moduleId" : "jk.devops.eqela",
+	"entities" : [
+		{
+			"type" : "class",
+			"name" : "EqelaRuntime",
+			"description" : ""
+		}
+	]
+}

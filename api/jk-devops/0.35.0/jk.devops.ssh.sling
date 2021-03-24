@@ -1,0 +1,24 @@
+class name jk.devops.ssh.SshKey header public
+{
+	import jk.lang
+	import jk.os
+	import jk.fs
+	import jk.env
+	import jk.process
+	ctor
+	func generate(passPhrase as string) static as jk.devops.ssh.SshKey
+	func generatePem(passPhrase as string) static as jk.devops.ssh.SshKey
+	func generatePkcs8(passPhrase as string) static as jk.devops.ssh.SshKey
+	func generateAndSave(keyName as string, passPhrase as string) static as jk.devops.ssh.SshKey
+	func generateDefault(passPhrase as string) static as jk.devops.ssh.SshKey
+	func get(name as string) static as jk.devops.ssh.SshKey
+	func getPublic(name as string) static as buffer
+	func getDefaultPublic static as buffer
+	func save(keyName as string) as jk.devops.ssh.SshKey
+	func loadPublicKey(keyName as string) as buffer
+	func load(keyName as string) as jk.devops.ssh.SshKey
+	func getPrivateKey as buffer #getterMethod
+	func setPrivateKey(v as buffer) as jk.devops.ssh.SshKey #setterMethod
+	func getPublicKey as buffer #getterMethod
+	func setPublicKey(v as buffer) as jk.devops.ssh.SshKey #setterMethod
+}

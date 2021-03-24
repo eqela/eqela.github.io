@@ -1,0 +1,26 @@
+class name jk.mssql.MSSQLDatabase header extends jk.sql.SQLDatabase abstract public
+{
+	import jk.lang
+	import jk.sql
+	import jk.log
+	ctor
+	func forConnectionStringSync(connectionString as string, logContext as jk.log.LoggingContext) static as jk.mssql.MSSQLDatabase
+	func connectSync(serverAddress as string, username as string, password as string, database as string, logger as jk.log.LoggingContext = null) static as jk.mssql.MSSQLDatabase
+	func getDatabaseTypeId override as string
+	func initializeSync(serverAddress as string, username as string, password as string, database as string) virtual as bool
+	func querySingleRowSync(stmt as jk.sql.SQLStatement) override as jk.lang.DynamicMap
+	func tableExistsSync(table as string) override as bool
+	func queryAllTableNames(callback as function<void,vector>) override
+	func queryAllTableNamesSync override as vector
+	func prepareCreateTableStatementSync(table as string, columns as vector<jk.sql.SQLTableColumnInfo>) override as jk.sql.SQLStatement
+	func prepareDeleteTableStatementSync(table as string) override as jk.sql.SQLStatement
+	func getLastInsertIdSync(table as string) override as long
+	func getPrimaryKeyColumnNameSync(table as string) override as string
+	func getIdentityColumnNameSync(table as string) override as string
+	func prepareCreateColumnStatementSync(table as string, column as jk.sql.SQLTableColumnInfo) override as jk.sql.SQLStatement
+	func prepareUpdateColumnTypeStatementSync(table as string, column as jk.sql.SQLTableColumnInfo) override as jk.sql.SQLStatement
+	func columnExistsSync(table as string, name as string) override as bool
+	func isColumnTypeSameSync(table as string, column as jk.sql.SQLTableColumnInfo) override as bool
+	func getDatabaseName as string #getterMethod
+	func setDatabaseName(v as string) as jk.mssql.MSSQLDatabase #setterMethod
+}

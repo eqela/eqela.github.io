@@ -1,0 +1,217 @@
+class name jk.cloud.template.ContainerRegistry header extends jk.cloud.template.Resource public
+{
+	import jk.lang
+	ctor
+}
+class name jk.cloud.template.CustomTemplate header public
+{
+	import jk.lang
+	import jk.fs
+	ctor
+	func forFile(file as jk.fs.File) static as jk.cloud.template.CustomTemplate
+	func getName as string #getterMethod
+	func setName(v) as jk.cloud.template.CustomTemplate #setterMethod
+	func getContent as string #getterMethod
+	func setContent(v) as jk.cloud.template.CustomTemplate #setterMethod
+}
+class name jk.cloud.template.SecurityGroup header extends jk.cloud.template.Resource public
+{
+	import jk.lang
+	ctor
+	func asThis(obj) static as jk.cloud.template.SecurityGroup
+	func addToRules(rule as jk.cloud.template.SecurityGroupRule)
+	func getRules as vector<jk.cloud.template.SecurityGroupRule> #getterMethod
+	func setRules(v as vector<jk.cloud.template.SecurityGroupRule>) as jk.cloud.template.SecurityGroup #setterMethod
+}
+class name jk.cloud.template.PrivateDnsZone header extends jk.cloud.template.Resource public
+{
+	import jk.lang
+	ctor
+	func forName(name as string) static as jk.cloud.template.PrivateDnsZone
+}
+class name jk.cloud.template.MsSqlDatabase header extends jk.cloud.template.Resource public
+{
+	import jk.lang
+	ctor
+	func getTransparentDataEncryption as bool #getterMethod
+	func setTransparentDataEncryption(v) as jk.cloud.template.MsSqlDatabase #setterMethod
+}
+class name jk.cloud.template.CidrBlock header implements jk.lang.StringObject public
+{
+	import jk.lang
+	ctor
+	func asThis(value) static as jk.cloud.template.CidrBlock
+	func forStringValue(value as string) static as jk.cloud.template.CidrBlock
+	func setStringValue(value as string) as bool
+	func toString as string
+	func getIpAddress as jk.cloud.template.IpAddress #getterMethod
+	func setIpAddress(v) as jk.cloud.template.CidrBlock #setterMethod
+	func getBitmask as int #getterMethod
+	func setBitmask(v) as jk.cloud.template.CidrBlock #setterMethod
+}
+class name jk.cloud.template.Subnet header extends jk.cloud.template.Resource public
+{
+	import jk.lang
+	ctor
+	func forName(name as string, cidrBlock) static as jk.cloud.template.Subnet
+	func addToResources(resource as jk.cloud.template.Resource) as jk.cloud.template.Resource
+	func addToAzureDelegations(delegation) as string
+	func getCidrBlock as jk.cloud.template.CidrBlock #getterMethod
+	func setCidrBlock(v) as jk.cloud.template.Subnet #setterMethod
+	func getSecurityGroup as jk.cloud.template.SecurityGroup #getterMethod
+	func setSecurityGroup(v) as jk.cloud.template.Subnet #setterMethod
+	func getResources as vector<jk.cloud.template.Resource> #getterMethod
+	func setResources(v as vector<jk.cloud.template.Resource>) as jk.cloud.template.Subnet #setterMethod
+	func getAzureDelegations as vector<string> #getterMethod
+	func setAzureDelegations(v as vector<string>) as jk.cloud.template.Subnet #setterMethod
+}
+class name jk.cloud.template.ContainerInstance header extends jk.cloud.template.Resource public
+{
+	import jk.lang
+	ctor
+	func addToEnvironment(key as string, value as string)
+	func addToPorts(port as int)
+	func getImage as string #getterMethod
+	func setImage(v) as jk.cloud.template.ContainerInstance #setterMethod
+	func getCpuCores as int #getterMethod
+	func setCpuCores(v) as jk.cloud.template.ContainerInstance #setterMethod
+	func getMemoryGb as int #getterMethod
+	func setMemoryGb(v) as jk.cloud.template.ContainerInstance #setterMethod
+	func getEnvironment as jk.lang.DynamicMap #getterMethod
+	func setEnvironment(v as jk.lang.DynamicMap) as jk.cloud.template.ContainerInstance #setterMethod
+	func getPorts as vector<int> #getterMethod
+	func setPorts(v as vector<int>) as jk.cloud.template.ContainerInstance #setterMethod
+}
+class name jk.cloud.template.VirtualMachine header extends jk.cloud.template.Resource public
+{
+	import jk.lang
+	import jk.fs
+	ctor
+	var SIZE_SMALL public static const as string
+	var SIZE_MEDIUM public static const as string
+	var SIZE_LARGE public static const as string
+	func addToSshKeys(file) as jk.fs.File
+	func getPublicName as string #getterMethod
+	func setPublicName(v) as jk.cloud.template.VirtualMachine #setterMethod
+	func getSecurityGroup as jk.cloud.template.SecurityGroup #getterMethod
+	func setSecurityGroup(v) as jk.cloud.template.VirtualMachine #setterMethod
+	func getHasPublicIpAddress as bool #getterMethod
+	func setHasPublicIpAddress(v) as jk.cloud.template.VirtualMachine #setterMethod
+	func getSize as string #getterMethod
+	func setSize(v) as jk.cloud.template.VirtualMachine #setterMethod
+	func getImage as string #getterMethod
+	func setImage(v) as jk.cloud.template.VirtualMachine #setterMethod
+	func getUsername as string #getterMethod
+	func setUsername(v) as jk.cloud.template.VirtualMachine #setterMethod
+	func getPassword as string #getterMethod
+	func setPassword(v) as jk.cloud.template.VirtualMachine #setterMethod
+	func getSshKeys as vector<jk.fs.File> #getterMethod
+	func setSshKeys(v as vector<jk.fs.File>) as jk.cloud.template.VirtualMachine #setterMethod
+}
+class name jk.cloud.template.Network header extends jk.cloud.template.Resource public
+{
+	import jk.lang
+	ctor
+	func addToSubnets(subnet as jk.cloud.template.Subnet) as jk.cloud.template.Subnet
+	func addToPrivateDnsZones(zone as jk.cloud.template.PrivateDnsZone) as jk.cloud.template.PrivateDnsZone
+	func getCidrBlock as jk.cloud.template.CidrBlock #getterMethod
+	func setCidrBlock(v) as jk.cloud.template.Network #setterMethod
+	func getSecurityGroup as jk.cloud.template.SecurityGroup #getterMethod
+	func setSecurityGroup(v) as jk.cloud.template.Network #setterMethod
+	func getSubnets as vector<jk.cloud.template.Subnet> #getterMethod
+	func setSubnets(v as vector<jk.cloud.template.Subnet>) as jk.cloud.template.Network #setterMethod
+	func getPrivateDnsZones as vector<jk.cloud.template.PrivateDnsZone> #getterMethod
+	func setPrivateDnsZones(v as vector<jk.cloud.template.PrivateDnsZone>) as jk.cloud.template.Network #setterMethod
+}
+class name jk.cloud.template.PortRange header public
+{
+	import jk.lang
+	ctor
+	func asThis(value) static as jk.cloud.template.PortRange
+	func forStringValue(value as string) static as jk.cloud.template.PortRange
+	func setStringValue(value as string) as bool
+	func getStart as int #getterMethod
+	func setStart(v) as jk.cloud.template.PortRange #setterMethod
+	func getEnd as int #getterMethod
+	func setEnd(v) as jk.cloud.template.PortRange #setterMethod
+}
+class name jk.cloud.template.ApiGateway header extends jk.cloud.template.Resource public
+{
+	import jk.lang
+	ctor
+	func getPublicName as string #getterMethod
+	func setPublicName(v) as jk.cloud.template.ApiGateway #setterMethod
+	func getDefaultTarget as string #getterMethod
+	func setDefaultTarget(v) as jk.cloud.template.ApiGateway #setterMethod
+	func getDefaultTargetPort as int #getterMethod
+	func setDefaultTargetPort(v) as jk.cloud.template.ApiGateway #setterMethod
+	func getDefaultTargetProtocol as string #getterMethod
+	func setDefaultTargetProtocol(v) as jk.cloud.template.ApiGateway #setterMethod
+}
+class name jk.cloud.template.IpAddress header implements jk.lang.StringObject public
+{
+	import jk.lang
+	ctor
+	func asThis(value) static as jk.cloud.template.IpAddress
+	func forStringValue(value as string) static as jk.cloud.template.IpAddress
+	func setStringValue(value as string) as bool
+	func toString as string
+}
+class name jk.cloud.template.Resource header public
+{
+	import jk.lang
+	ctor
+	func getName as string #getterMethod
+	func setName(v) as jk.cloud.template.Resource #setterMethod
+	func getGroup as string #getterMethod
+	func setGroup(v) as jk.cloud.template.Resource #setterMethod
+}
+class name jk.cloud.template.SecurityGroupRule header extends jk.cloud.template.Resource public
+{
+	import jk.lang
+	ctor
+	var TYPE_DEFAULT public static const as int
+	var TYPE_ALLOW public static const as int
+	var TYPE_DISALLOW public static const as int
+	var DIRCTION_DEFAULT public static const as int
+	var DIRECTION_INBOUND public static const as int
+	var DIRECTION_OUTBOUND public static const as int
+	var PROTOCOL_ANY public static const as int
+	var PROTOCOL_TCP public static const as int
+	var PROTOCOL_UDP public static const as int
+	var PROTOCOL_ICMP public static const as int
+	var PROTOCOL_ESP public static const as int
+	var PROTOCOL_AH public static const as int
+	func getPriority as int #getterMethod
+	func setPriority(v) as jk.cloud.template.SecurityGroupRule #setterMethod
+	func getType as int #getterMethod
+	func setType(v) as jk.cloud.template.SecurityGroupRule #setterMethod
+	func getDirection as int #getterMethod
+	func setDirection(v) as jk.cloud.template.SecurityGroupRule #setterMethod
+	func getProtocol as int #getterMethod
+	func setProtocol(v) as jk.cloud.template.SecurityGroupRule #setterMethod
+	func getSourceAddressBlock as jk.cloud.template.CidrBlock #getterMethod
+	func setSourceAddressBlock(v) as jk.cloud.template.SecurityGroupRule #setterMethod
+	func getDestinationAddressBlock as jk.cloud.template.CidrBlock #getterMethod
+	func setDestinationAddressBlock(v) as jk.cloud.template.SecurityGroupRule #setterMethod
+	func getSourcePortRange as jk.cloud.template.PortRange #getterMethod
+	func setSourcePortRange(v) as jk.cloud.template.SecurityGroupRule #setterMethod
+	func getDestinationPortRange as jk.cloud.template.PortRange #getterMethod
+	func setDestinationPortRange(v) as jk.cloud.template.SecurityGroupRule #setterMethod
+}
+class name jk.cloud.template.MsSqlServer header extends jk.cloud.template.Resource public
+{
+	import jk.lang
+	ctor
+	func addToDatabases(database as jk.cloud.template.MsSqlDatabase)
+	func getAdminUsername as string #getterMethod
+	func setAdminUsername(v) as jk.cloud.template.MsSqlServer #setterMethod
+	func getAdminPassword as string #getterMethod
+	func setAdminPassword(v) as jk.cloud.template.MsSqlServer #setterMethod
+	func getMsSqlVersion as string #getterMethod
+	func setMsSqlVersion(v) as jk.cloud.template.MsSqlServer #setterMethod
+	func getPublicNetworkAccess as bool #getterMethod
+	func setPublicNetworkAccess(v) as jk.cloud.template.MsSqlServer #setterMethod
+	func getDatabases as vector<jk.cloud.template.MsSqlDatabase> #getterMethod
+	func setDatabases(v as vector<jk.cloud.template.MsSqlDatabase>) as jk.cloud.template.MsSqlServer #setterMethod
+}

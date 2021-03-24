@@ -1,0 +1,15 @@
+class name jk.server.files.FileServerMain header extends jk.server.web.WebServer public
+{
+	import jk.lang
+	import jk.io
+	import jk.fs
+	import jk.log
+	import jk.console
+	import jk.server.web
+	import jk.http.server
+	import jk.http.server.fs
+	ctor
+	func configure(key as string, value as string, relativeTo as jk.fs.File, error as jk.lang.Error) override as bool
+	func acceptCommandLineArgument(arg as jk.console.CommandLineArgument) override as bool
+	func initializeServer(server as jk.http.server.HTTPServer) override as bool
+}

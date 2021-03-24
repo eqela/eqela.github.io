@@ -1,0 +1,28 @@
+{
+	"moduleDescription" : "",
+	"type" : "module",
+	"moduleTitle" : "",
+	"moduleId" : "jk.uikit.dialog",
+	"entities" : [
+		{
+			"type" : "class",
+			"name" : "MessageDialogWidget",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "YesNoDialogWidget",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "Dialog",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "DialogFrameWidget",
+			"description" : ""
+		}
+	]
+}

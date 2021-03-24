@@ -1,0 +1,92 @@
+class name jk.cloud.bitbucket.BitbucketAPI header extends jk.cloud.common.CloudClient public
+{
+	import jk.lang
+	import jk.cloud.common
+	import jk.log
+	import jk.json
+	class name BitbucketUserDetails header extends jk.json.JSONObjectAdapter implements jk.lang.StringObject public static
+	{
+		import jk.json
+		ctor
+		func setAccount_id(value as string) as jk.cloud.bitbucket.BitbucketAPI.BitbucketUserDetails
+		func getAccount_id as string
+		func setUsername(value as string) as jk.cloud.bitbucket.BitbucketAPI.BitbucketUserDetails
+		func getUsername as string
+		func setDisplay_name(value as string) as jk.cloud.bitbucket.BitbucketAPI.BitbucketUserDetails
+		func getDisplay_name as string
+		func setAvatarUrl(value as string) as jk.cloud.bitbucket.BitbucketAPI.BitbucketUserDetails
+		func getAvatarUrl as string
+		func toJsonObject override as object
+		func fromJsonObject(o as object) override as bool
+		func fromJsonString(o as string) as bool
+		func toJsonString as string
+		func toString as string
+		func forJsonString(o as string) static as jk.cloud.bitbucket.BitbucketAPI.BitbucketUserDetails
+		func forJsonObject(o as object) static as jk.cloud.bitbucket.BitbucketAPI.BitbucketUserDetails
+	}
+	class name BitbucketWorkspace header extends jk.json.JSONObjectAdapter implements jk.lang.StringObject public static
+	{
+		import jk.json
+		ctor
+		func setSlug(value as string) as jk.cloud.bitbucket.BitbucketAPI.BitbucketWorkspace
+		func getSlug as string
+		func setName(value as string) as jk.cloud.bitbucket.BitbucketAPI.BitbucketWorkspace
+		func getName as string
+		func toJsonObject override as object
+		func fromJsonObject(o as object) override as bool
+		func fromJsonString(o as string) as bool
+		func toJsonString as string
+		func toString as string
+		func forJsonString(o as string) static as jk.cloud.bitbucket.BitbucketAPI.BitbucketWorkspace
+		func forJsonObject(o as object) static as jk.cloud.bitbucket.BitbucketAPI.BitbucketWorkspace
+	}
+	class name BitbucketRepositoryDetails header extends jk.json.JSONObjectAdapter implements jk.lang.StringObject public static
+	{
+		import jk.json
+		ctor
+		func setUuid(value as string) as jk.cloud.bitbucket.BitbucketAPI.BitbucketRepositoryDetails
+		func getUuid as string
+		func setName(value as string) as jk.cloud.bitbucket.BitbucketAPI.BitbucketRepositoryDetails
+		func getName as string
+		func setHttpUrl(value as string) as jk.cloud.bitbucket.BitbucketAPI.BitbucketRepositoryDetails
+		func getHttpUrl as string
+		func setSshUrl(value as string) as jk.cloud.bitbucket.BitbucketAPI.BitbucketRepositoryDetails
+		func getSshUrl as string
+		func toJsonObject override as object
+		func fromJsonObject(o as object) override as bool
+		func fromJsonString(o as string) as bool
+		func toJsonString as string
+		func toString as string
+		func forJsonString(o as string) static as jk.cloud.bitbucket.BitbucketAPI.BitbucketRepositoryDetails
+		func forJsonObject(o as object) static as jk.cloud.bitbucket.BitbucketAPI.BitbucketRepositoryDetails
+	}
+	class name OAuthToken header extends jk.json.JSONObjectAdapter implements jk.lang.StringObject public static
+	{
+		import jk.json
+		ctor
+		func setToken(value as string) as jk.cloud.bitbucket.BitbucketAPI.OAuthToken
+		func getToken as string
+		func toJsonObject override as object
+		func fromJsonObject(o as object) override as bool
+		func fromJsonString(o as string) as bool
+		func toJsonString as string
+		func toString as string
+		func forJsonString(o as string) static as jk.cloud.bitbucket.BitbucketAPI.OAuthToken
+		func forJsonObject(o as object) static as jk.cloud.bitbucket.BitbucketAPI.OAuthToken
+	}
+	ctor(ctx as jk.log.LoggingContext, accessToken as string)
+	macro AUTHORIZATION_HEADER 
+	{
+		assert token:
+			CloudError.throw("noOAuthToken", "No OAuth token configured")
+		var accessToken = assert token.getToken():
+			CloudError.throw("noOAuthTokenValue", "No OAuth token value specified")
+		var hdrs = new KeyValueList<string,string>()
+		hdrs.add("Authorization", "Bearer " .. accessToken)
+		hdrs.add("Content-Type", "application/json")
+	}
+	func getUserDetails as jk.cloud.bitbucket.BitbucketAPI.BitbucketUserDetails
+	func getUserPrimaryEmailAddress as string
+	func getUserWorkSpaces as vector<jk.cloud.bitbucket.BitbucketAPI.BitbucketWorkspace>
+	func getUserRepositories(slug as string, page as int = 1) as vector<jk.cloud.bitbucket.BitbucketAPI.BitbucketRepositoryDetails>
+}

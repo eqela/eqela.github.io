@@ -1,0 +1,45 @@
+class name jk.devops.docker.DockerKit header public
+{
+	import jk.lang
+	import jk.fs
+	import jk.log
+	import jk.json
+	ctor(ctx as jk.log.LoggingContext)
+	func getDocker as jk.devops.docker.Docker
+	func buildImage(params as map<string,object>) as string
+	func toRunner(params as map<string,object>) as jk.devops.docker.DockerImageRunner
+	func executeImage(params as map<string,object>) as int
+}
+class name jk.devops.docker.DockerImageRunner header public
+{
+	import jk.lang
+	ctor
+	func forImage(image as string) static as jk.devops.docker.DockerImageRunner
+	func addPort(port as string)
+	func addEnv(key as string, value as string)
+	func getImageId as string #getterMethod
+	func setImageId(v as string) as jk.devops.docker.DockerImageRunner #setterMethod
+	func getPorts as vector<string> #getterMethod
+	func setPorts(v as vector<string>) as jk.devops.docker.DockerImageRunner #setterMethod
+	func getEnvironment as map<string,string> #getterMethod
+	func setEnvironment(v as map<string,string>) as jk.devops.docker.DockerImageRunner #setterMethod
+}
+class name jk.devops.docker.Docker header public
+{
+	import jk.lang
+	import jk.fs
+	import jk.io
+	import jk.env
+	import jk.log
+	import jk.process
+	property docker as jk.fs.File { hasset hasget }
+	var ctx public as jk.log.LoggingContext
+	ctor(ctx as jk.log.LoggingContext)
+	func buildImageFromFiles(files as vector<jk.fs.File>, entrypoint as string) as string
+	func buildImageFromDirectory(directory as jk.fs.File, entrypoint as string, baseImage as string = null) as string
+	func getProcessLauncher as jk.process.ProcessLauncher
+	func buildImageFromDockerfile(dockerfile as jk.fs.File, context as jk.fs.File, buildArgs as jk.lang.DynamicMap = null) as string
+	func executeRunner(runner as jk.devops.docker.DockerImageRunner) as int
+	func tag(image as string, tag as string)
+	func push(tag as string)
+}

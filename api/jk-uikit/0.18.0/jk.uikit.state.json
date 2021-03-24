@@ -1,0 +1,13 @@
+{
+	"moduleDescription" : "",
+	"type" : "module",
+	"moduleTitle" : "",
+	"moduleId" : "jk.uikit.state",
+	"entities" : [
+		{
+			"type" : "class",
+			"name" : "EmptyStateWidget",
+			"description" : ""
+		}
+	]
+}

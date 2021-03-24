@@ -1,0 +1,389 @@
+class name jk.cloud.k8s.KubeAPI header public
+{
+	import jk.lang
+	import jk.log
+	import jk.json
+	import jk.cloud.common
+	class name ObjectMeta header extends jk.json.JSONObjectAdapter implements jk.lang.StringObject public static
+	{
+		import jk.json
+		ctor
+		func setClusterName(value as string) as jk.cloud.k8s.KubeAPI.ObjectMeta
+		func getClusterName as string
+		func setDeletionGracePeriodSecondsValue(value as int) as jk.cloud.k8s.KubeAPI.ObjectMeta
+		func getDeletionGracePeriodSecondsValue as int
+		func setDeletionGracePeriodSeconds(value as jk.lang.IntegerObject) as jk.cloud.k8s.KubeAPI.ObjectMeta
+		func getDeletionGracePeriodSeconds as jk.lang.IntegerObject
+		func setFinalizers(value as vector<string>) as jk.cloud.k8s.KubeAPI.ObjectMeta
+		func getFinalizers as vector<string>
+		func setGenerateName(value as string) as jk.cloud.k8s.KubeAPI.ObjectMeta
+		func getGenerateName as string
+		func setGenerationValue(value as int) as jk.cloud.k8s.KubeAPI.ObjectMeta
+		func getGenerationValue as int
+		func setGeneration(value as jk.lang.IntegerObject) as jk.cloud.k8s.KubeAPI.ObjectMeta
+		func getGeneration as jk.lang.IntegerObject
+		func setName(value as string) as jk.cloud.k8s.KubeAPI.ObjectMeta
+		func getName as string
+		func setNamespace(value as string) as jk.cloud.k8s.KubeAPI.ObjectMeta
+		func getNamespace as string
+		func setResourceVersion(value as string) as jk.cloud.k8s.KubeAPI.ObjectMeta
+		func getResourceVersion as string
+		func setSelfLink(value as string) as jk.cloud.k8s.KubeAPI.ObjectMeta
+		func getSelfLink as string
+		func setUid(value as string) as jk.cloud.k8s.KubeAPI.ObjectMeta
+		func getUid as string
+		func toJsonObject override as object
+		func fromJsonObject(o as object) override as bool
+		func fromJsonString(o as string) as bool
+		func toJsonString as string
+		func toString as string
+		func forJsonString(o as string) static as jk.cloud.k8s.KubeAPI.ObjectMeta
+		func forJsonObject(o as object) static as jk.cloud.k8s.KubeAPI.ObjectMeta
+	}
+	class name LabelSelectorRequirement header extends jk.json.JSONObjectAdapter implements jk.lang.StringObject public static
+	{
+		import jk.json
+		ctor
+		func setKey(value as string) as jk.cloud.k8s.KubeAPI.LabelSelectorRequirement
+		func getKey as string
+		func setOperator(value as string) as jk.cloud.k8s.KubeAPI.LabelSelectorRequirement
+		func getOperator as string
+		func setValues(value as vector<string>) as jk.cloud.k8s.KubeAPI.LabelSelectorRequirement
+		func getValues as vector<string>
+		func toJsonObject override as object
+		func fromJsonObject(o as object) override as bool
+		func fromJsonString(o as string) as bool
+		func toJsonString as string
+		func toString as string
+		func forJsonString(o as string) static as jk.cloud.k8s.KubeAPI.LabelSelectorRequirement
+		func forJsonObject(o as object) static as jk.cloud.k8s.KubeAPI.LabelSelectorRequirement
+	}
+	class name LabelSelector header extends jk.json.JSONObjectAdapter implements jk.lang.StringObject public static
+	{
+		import jk.json
+		ctor
+		func setMatchExpressions(value as vector<jk.cloud.k8s.KubeAPI.LabelSelectorRequirement>) as jk.cloud.k8s.KubeAPI.LabelSelector
+		func getMatchExpressions as vector<jk.cloud.k8s.KubeAPI.LabelSelectorRequirement>
+		func toJsonObject override as object
+		func fromJsonObject(o as object) override as bool
+		func fromJsonString(o as string) as bool
+		func toJsonString as string
+		func toString as string
+		func forJsonString(o as string) static as jk.cloud.k8s.KubeAPI.LabelSelector
+		func forJsonObject(o as object) static as jk.cloud.k8s.KubeAPI.LabelSelector
+	}
+	class name EnvVarSource header extends jk.json.JSONObjectAdapter implements jk.lang.StringObject public static
+	{
+		import jk.json
+		ctor
+		func toJsonObject override as object
+		func fromJsonObject(o as object) override as bool
+		func fromJsonString(o as string) as bool
+		func toJsonString as string
+		func toString as string
+		func forJsonString(o as string) static as jk.cloud.k8s.KubeAPI.EnvVarSource
+		func forJsonObject(o as object) static as jk.cloud.k8s.KubeAPI.EnvVarSource
+	}
+	class name EnvVar header extends jk.json.JSONObjectAdapter implements jk.lang.StringObject public static
+	{
+		import jk.json
+		ctor
+		func setName(value as string) as jk.cloud.k8s.KubeAPI.EnvVar
+		func getName as string
+		func setValue(value as string) as jk.cloud.k8s.KubeAPI.EnvVar
+		func getValue as string
+		func setValueFrom(value as jk.cloud.k8s.KubeAPI.EnvVarSource) as jk.cloud.k8s.KubeAPI.EnvVar
+		func getValueFrom as jk.cloud.k8s.KubeAPI.EnvVarSource
+		func toJsonObject override as object
+		func fromJsonObject(o as object) override as bool
+		func fromJsonString(o as string) as bool
+		func toJsonString as string
+		func toString as string
+		func forJsonString(o as string) static as jk.cloud.k8s.KubeAPI.EnvVar
+		func forJsonObject(o as object) static as jk.cloud.k8s.KubeAPI.EnvVar
+	}
+	class name EnvFromSource header extends jk.json.JSONObjectAdapter implements jk.lang.StringObject public static
+	{
+		import jk.json
+		ctor
+		func setPrefix(value as string) as jk.cloud.k8s.KubeAPI.EnvFromSource
+		func getPrefix as string
+		func toJsonObject override as object
+		func fromJsonObject(o as object) override as bool
+		func fromJsonString(o as string) as bool
+		func toJsonString as string
+		func toString as string
+		func forJsonString(o as string) static as jk.cloud.k8s.KubeAPI.EnvFromSource
+		func forJsonObject(o as object) static as jk.cloud.k8s.KubeAPI.EnvFromSource
+	}
+	class name ContainerPort header extends jk.json.JSONObjectAdapter implements jk.lang.StringObject public static
+	{
+		import jk.json
+		ctor
+		func setContainerPortValue(value as int) as jk.cloud.k8s.KubeAPI.ContainerPort
+		func getContainerPortValue as int
+		func setContainerPort(value as jk.lang.IntegerObject) as jk.cloud.k8s.KubeAPI.ContainerPort
+		func getContainerPort as jk.lang.IntegerObject
+		func setHostIP(value as string) as jk.cloud.k8s.KubeAPI.ContainerPort
+		func getHostIP as string
+		func setHostPortValue(value as int) as jk.cloud.k8s.KubeAPI.ContainerPort
+		func getHostPortValue as int
+		func setHostPort(value as jk.lang.IntegerObject) as jk.cloud.k8s.KubeAPI.ContainerPort
+		func getHostPort as jk.lang.IntegerObject
+		func setName(value as string) as jk.cloud.k8s.KubeAPI.ContainerPort
+		func getName as string
+		func setProtocol(value as string) as jk.cloud.k8s.KubeAPI.ContainerPort
+		func getProtocol as string
+		func toJsonObject override as object
+		func fromJsonObject(o as object) override as bool
+		func fromJsonString(o as string) as bool
+		func toJsonString as string
+		func toString as string
+		func forJsonString(o as string) static as jk.cloud.k8s.KubeAPI.ContainerPort
+		func forJsonObject(o as object) static as jk.cloud.k8s.KubeAPI.ContainerPort
+	}
+	class name Container header extends jk.json.JSONObjectAdapter implements jk.lang.StringObject public static
+	{
+		import jk.json
+		ctor
+		func setArgs(value as vector<string>) as jk.cloud.k8s.KubeAPI.Container
+		func getArgs as vector<string>
+		func setCommand(value as vector<string>) as jk.cloud.k8s.KubeAPI.Container
+		func getCommand as vector<string>
+		func setEnv(value as vector<jk.cloud.k8s.KubeAPI.EnvVar>) as jk.cloud.k8s.KubeAPI.Container
+		func getEnv as vector<jk.cloud.k8s.KubeAPI.EnvVar>
+		func setEnvFrom(value as vector<jk.cloud.k8s.KubeAPI.EnvFromSource>) as jk.cloud.k8s.KubeAPI.Container
+		func getEnvFrom as vector<jk.cloud.k8s.KubeAPI.EnvFromSource>
+		func setImage(value as string) as jk.cloud.k8s.KubeAPI.Container
+		func getImage as string
+		func setImagePullPolicy(value as string) as jk.cloud.k8s.KubeAPI.Container
+		func getImagePullPolicy as string
+		func setName(value as string) as jk.cloud.k8s.KubeAPI.Container
+		func getName as string
+		func setPorts(value as vector<jk.cloud.k8s.KubeAPI.ContainerPort>) as jk.cloud.k8s.KubeAPI.Container
+		func getPorts as vector<jk.cloud.k8s.KubeAPI.ContainerPort>
+		func setStdinValue(value as bool) as jk.cloud.k8s.KubeAPI.Container
+		func getStdinValue as bool
+		func setStdin(value as jk.lang.BooleanObject) as jk.cloud.k8s.KubeAPI.Container
+		func getStdin as jk.lang.BooleanObject
+		func setStdinOnceValue(value as bool) as jk.cloud.k8s.KubeAPI.Container
+		func getStdinOnceValue as bool
+		func setStdinOnce(value as jk.lang.BooleanObject) as jk.cloud.k8s.KubeAPI.Container
+		func getStdinOnce as jk.lang.BooleanObject
+		func setTerminationMessagePath(value as string) as jk.cloud.k8s.KubeAPI.Container
+		func getTerminationMessagePath as string
+		func setTerminationMessagePolicy(value as string) as jk.cloud.k8s.KubeAPI.Container
+		func getTerminationMessagePolicy as string
+		func setTtyValue(value as bool) as jk.cloud.k8s.KubeAPI.Container
+		func getTtyValue as bool
+		func setTty(value as jk.lang.BooleanObject) as jk.cloud.k8s.KubeAPI.Container
+		func getTty as jk.lang.BooleanObject
+		func setWorkingDir(value as string) as jk.cloud.k8s.KubeAPI.Container
+		func getWorkingDir as string
+		func toJsonObject override as object
+		func fromJsonObject(o as object) override as bool
+		func fromJsonString(o as string) as bool
+		func toJsonString as string
+		func toString as string
+		func forJsonString(o as string) static as jk.cloud.k8s.KubeAPI.Container
+		func forJsonObject(o as object) static as jk.cloud.k8s.KubeAPI.Container
+	}
+	class name PodSpec header extends jk.json.JSONObjectAdapter implements jk.lang.StringObject public static
+	{
+		import jk.json
+		ctor
+		func setActiveDeadlineSecondsValue(value as int) as jk.cloud.k8s.KubeAPI.PodSpec
+		func getActiveDeadlineSecondsValue as int
+		func setActiveDeadlineSeconds(value as jk.lang.IntegerObject) as jk.cloud.k8s.KubeAPI.PodSpec
+		func getActiveDeadlineSeconds as jk.lang.IntegerObject
+		func setAutomountServiceAccountTokenValue(value as bool) as jk.cloud.k8s.KubeAPI.PodSpec
+		func getAutomountServiceAccountTokenValue as bool
+		func setAutomountServiceAccountToken(value as jk.lang.BooleanObject) as jk.cloud.k8s.KubeAPI.PodSpec
+		func getAutomountServiceAccountToken as jk.lang.BooleanObject
+		func setContainers(value as vector<jk.cloud.k8s.KubeAPI.Container>) as jk.cloud.k8s.KubeAPI.PodSpec
+		func getContainers as vector<jk.cloud.k8s.KubeAPI.Container>
+		func setDnsPolicy(value as string) as jk.cloud.k8s.KubeAPI.PodSpec
+		func getDnsPolicy as string
+		func setEnableServiceLinksValue(value as bool) as jk.cloud.k8s.KubeAPI.PodSpec
+		func getEnableServiceLinksValue as bool
+		func setEnableServiceLinks(value as jk.lang.BooleanObject) as jk.cloud.k8s.KubeAPI.PodSpec
+		func getEnableServiceLinks as jk.lang.BooleanObject
+		func setHostIPCValue(value as bool) as jk.cloud.k8s.KubeAPI.PodSpec
+		func getHostIPCValue as bool
+		func setHostIPC(value as jk.lang.BooleanObject) as jk.cloud.k8s.KubeAPI.PodSpec
+		func getHostIPC as jk.lang.BooleanObject
+		func setHostNetworkValue(value as bool) as jk.cloud.k8s.KubeAPI.PodSpec
+		func getHostNetworkValue as bool
+		func setHostNetwork(value as jk.lang.BooleanObject) as jk.cloud.k8s.KubeAPI.PodSpec
+		func getHostNetwork as jk.lang.BooleanObject
+		func setHostPIDValue(value as bool) as jk.cloud.k8s.KubeAPI.PodSpec
+		func getHostPIDValue as bool
+		func setHostPID(value as jk.lang.BooleanObject) as jk.cloud.k8s.KubeAPI.PodSpec
+		func getHostPID as jk.lang.BooleanObject
+		func setHostname(value as string) as jk.cloud.k8s.KubeAPI.PodSpec
+		func getHostname as string
+		func setInitContainers(value as vector<jk.cloud.k8s.KubeAPI.Container>) as jk.cloud.k8s.KubeAPI.PodSpec
+		func getInitContainers as vector<jk.cloud.k8s.KubeAPI.Container>
+		func setNodeName(value as string) as jk.cloud.k8s.KubeAPI.PodSpec
+		func getNodeName as string
+		func setPreemptionPolicy(value as string) as jk.cloud.k8s.KubeAPI.PodSpec
+		func getPreemptionPolicy as string
+		func setPriorityValue(value as int) as jk.cloud.k8s.KubeAPI.PodSpec
+		func getPriorityValue as int
+		func setPriority(value as jk.lang.IntegerObject) as jk.cloud.k8s.KubeAPI.PodSpec
+		func getPriority as jk.lang.IntegerObject
+		func setPriorityClassName(value as string) as jk.cloud.k8s.KubeAPI.PodSpec
+		func getPriorityClassName as string
+		func setRestartPolicy(value as string) as jk.cloud.k8s.KubeAPI.PodSpec
+		func getRestartPolicy as string
+		func setRuntimeClassName(value as string) as jk.cloud.k8s.KubeAPI.PodSpec
+		func getRuntimeClassName as string
+		func setSchedulerName(value as string) as jk.cloud.k8s.KubeAPI.PodSpec
+		func getSchedulerName as string
+		func setServiceAccount(value as string) as jk.cloud.k8s.KubeAPI.PodSpec
+		func getServiceAccount as string
+		func setServiceAccountName(value as string) as jk.cloud.k8s.KubeAPI.PodSpec
+		func getServiceAccountName as string
+		func setSetHostnameAsFQDNValue(value as bool) as jk.cloud.k8s.KubeAPI.PodSpec
+		func getSetHostnameAsFQDNValue as bool
+		func setSetHostnameAsFQDN(value as jk.lang.BooleanObject) as jk.cloud.k8s.KubeAPI.PodSpec
+		func getSetHostnameAsFQDN as jk.lang.BooleanObject
+		func setShareProcessNamespaceValue(value as bool) as jk.cloud.k8s.KubeAPI.PodSpec
+		func getShareProcessNamespaceValue as bool
+		func setShareProcessNamespace(value as jk.lang.BooleanObject) as jk.cloud.k8s.KubeAPI.PodSpec
+		func getShareProcessNamespace as jk.lang.BooleanObject
+		func setSubdomain(value as string) as jk.cloud.k8s.KubeAPI.PodSpec
+		func getSubdomain as string
+		func setTerminationGracePeriodSecondsValue(value as int) as jk.cloud.k8s.KubeAPI.PodSpec
+		func getTerminationGracePeriodSecondsValue as int
+		func setTerminationGracePeriodSeconds(value as jk.lang.IntegerObject) as jk.cloud.k8s.KubeAPI.PodSpec
+		func getTerminationGracePeriodSeconds as jk.lang.IntegerObject
+		func toJsonObject override as object
+		func fromJsonObject(o as object) override as bool
+		func fromJsonString(o as string) as bool
+		func toJsonString as string
+		func toString as string
+		func forJsonString(o as string) static as jk.cloud.k8s.KubeAPI.PodSpec
+		func forJsonObject(o as object) static as jk.cloud.k8s.KubeAPI.PodSpec
+	}
+	class name PodTemplateSpec header extends jk.json.JSONObjectAdapter implements jk.lang.StringObject public static
+	{
+		import jk.json
+		ctor
+		func setMetadata(value as jk.cloud.k8s.KubeAPI.ObjectMeta) as jk.cloud.k8s.KubeAPI.PodTemplateSpec
+		func getMetadata as jk.cloud.k8s.KubeAPI.ObjectMeta
+		func setSpec(value as jk.cloud.k8s.KubeAPI.PodSpec) as jk.cloud.k8s.KubeAPI.PodTemplateSpec
+		func getSpec as jk.cloud.k8s.KubeAPI.PodSpec
+		func toJsonObject override as object
+		func fromJsonObject(o as object) override as bool
+		func fromJsonString(o as string) as bool
+		func toJsonString as string
+		func toString as string
+		func forJsonString(o as string) static as jk.cloud.k8s.KubeAPI.PodTemplateSpec
+		func forJsonObject(o as object) static as jk.cloud.k8s.KubeAPI.PodTemplateSpec
+	}
+	class name JobSpec header extends jk.json.JSONObjectAdapter implements jk.lang.StringObject public static
+	{
+		import jk.json
+		ctor
+		func setActiveDeadlineSecondsValue(value as int) as jk.cloud.k8s.KubeAPI.JobSpec
+		func getActiveDeadlineSecondsValue as int
+		func setActiveDeadlineSeconds(value as jk.lang.IntegerObject) as jk.cloud.k8s.KubeAPI.JobSpec
+		func getActiveDeadlineSeconds as jk.lang.IntegerObject
+		func setBackoffLimitValue(value as int) as jk.cloud.k8s.KubeAPI.JobSpec
+		func getBackoffLimitValue as int
+		func setBackoffLimit(value as jk.lang.IntegerObject) as jk.cloud.k8s.KubeAPI.JobSpec
+		func getBackoffLimit as jk.lang.IntegerObject
+		func setCompletionsValue(value as int) as jk.cloud.k8s.KubeAPI.JobSpec
+		func getCompletionsValue as int
+		func setCompletions(value as jk.lang.IntegerObject) as jk.cloud.k8s.KubeAPI.JobSpec
+		func getCompletions as jk.lang.IntegerObject
+		func setManualSelectorValue(value as bool) as jk.cloud.k8s.KubeAPI.JobSpec
+		func getManualSelectorValue as bool
+		func setManualSelector(value as jk.lang.BooleanObject) as jk.cloud.k8s.KubeAPI.JobSpec
+		func getManualSelector as jk.lang.BooleanObject
+		func setParallelismValue(value as int) as jk.cloud.k8s.KubeAPI.JobSpec
+		func getParallelismValue as int
+		func setParallelism(value as jk.lang.IntegerObject) as jk.cloud.k8s.KubeAPI.JobSpec
+		func getParallelism as jk.lang.IntegerObject
+		func setSelector(value as jk.cloud.k8s.KubeAPI.LabelSelector) as jk.cloud.k8s.KubeAPI.JobSpec
+		func getSelector as jk.cloud.k8s.KubeAPI.LabelSelector
+		func setTemplate(value as jk.cloud.k8s.KubeAPI.PodTemplateSpec) as jk.cloud.k8s.KubeAPI.JobSpec
+		func getTemplate as jk.cloud.k8s.KubeAPI.PodTemplateSpec
+		func setTtlSecondsAfterFinishedValue(value as int) as jk.cloud.k8s.KubeAPI.JobSpec
+		func getTtlSecondsAfterFinishedValue as int
+		func setTtlSecondsAfterFinished(value as jk.lang.IntegerObject) as jk.cloud.k8s.KubeAPI.JobSpec
+		func getTtlSecondsAfterFinished as jk.lang.IntegerObject
+		func toJsonObject override as object
+		func fromJsonObject(o as object) override as bool
+		func fromJsonString(o as string) as bool
+		func toJsonString as string
+		func toString as string
+		func forJsonString(o as string) static as jk.cloud.k8s.KubeAPI.JobSpec
+		func forJsonObject(o as object) static as jk.cloud.k8s.KubeAPI.JobSpec
+	}
+	class name JobStatus header extends jk.json.JSONObjectAdapter implements jk.lang.StringObject public static
+	{
+		import jk.json
+		ctor
+		func setActiveValue(value as int) as jk.cloud.k8s.KubeAPI.JobStatus
+		func getActiveValue as int
+		func setActive(value as jk.lang.IntegerObject) as jk.cloud.k8s.KubeAPI.JobStatus
+		func getActive as jk.lang.IntegerObject
+		func setFailedValue(value as int) as jk.cloud.k8s.KubeAPI.JobStatus
+		func getFailedValue as int
+		func setFailed(value as jk.lang.IntegerObject) as jk.cloud.k8s.KubeAPI.JobStatus
+		func getFailed as jk.lang.IntegerObject
+		func setSucceededValue(value as int) as jk.cloud.k8s.KubeAPI.JobStatus
+		func getSucceededValue as int
+		func setSucceeded(value as jk.lang.IntegerObject) as jk.cloud.k8s.KubeAPI.JobStatus
+		func getSucceeded as jk.lang.IntegerObject
+		func toJsonObject override as object
+		func fromJsonObject(o as object) override as bool
+		func fromJsonString(o as string) as bool
+		func toJsonString as string
+		func toString as string
+		func forJsonString(o as string) static as jk.cloud.k8s.KubeAPI.JobStatus
+		func forJsonObject(o as object) static as jk.cloud.k8s.KubeAPI.JobStatus
+	}
+	class name Job header extends jk.json.JSONObjectAdapter implements jk.lang.StringObject public static
+	{
+		import jk.json
+		ctor
+		func setApiVersion(value as string) as jk.cloud.k8s.KubeAPI.Job
+		func getApiVersion as string
+		func setKind(value as string) as jk.cloud.k8s.KubeAPI.Job
+		func getKind as string
+		func setMetadata(value as jk.cloud.k8s.KubeAPI.ObjectMeta) as jk.cloud.k8s.KubeAPI.Job
+		func getMetadata as jk.cloud.k8s.KubeAPI.ObjectMeta
+		func setSpec(value as jk.cloud.k8s.KubeAPI.JobSpec) as jk.cloud.k8s.KubeAPI.Job
+		func getSpec as jk.cloud.k8s.KubeAPI.JobSpec
+		func setStatus(value as jk.cloud.k8s.KubeAPI.JobStatus) as jk.cloud.k8s.KubeAPI.Job
+		func getStatus as jk.cloud.k8s.KubeAPI.JobStatus
+		func toJsonObject override as object
+		func fromJsonObject(o as object) override as bool
+		func fromJsonString(o as string) as bool
+		func toJsonString as string
+		func toString as string
+		func forJsonString(o as string) static as jk.cloud.k8s.KubeAPI.Job
+		func forJsonObject(o as object) static as jk.cloud.k8s.KubeAPI.Job
+	}
+	func forCurrentCluster(ctx as jk.log.LoggingContext) static as jk.cloud.k8s.KubeAPI
+	ctor
+	ctor(ctx as jk.log.LoggingContext)
+	property url as string { hasset hasget }
+	property token as string { hasset hasget }
+	func request(method as string, path as string, body as buffer) as jk.cloud.common.CloudClient.Response
+	func toFinalNamespace(namespace as string) as string
+	func createJobConfigForContainer(name as string, image as string, command as vector<string>, envs as map<string,string> = null) as jk.cloud.k8s.KubeAPI.Job
+	func createJob(namespace as string, job as jk.cloud.k8s.KubeAPI.Job)
+}
+class name jk.cloud.k8s.CurrentKubeCluster header public
+{
+	import jk.lang
+	import jk.fs
+	ctor
+	func getToken static as string
+	func getNamespace static as string
+	func getCertificate static as string
+}

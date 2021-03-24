@@ -1,0 +1,18 @@
+{
+	"moduleDescription" : "",
+	"type" : "module",
+	"moduleTitle" : "",
+	"moduleId" : "jk.uikit.crop",
+	"entities" : [
+		{
+			"type" : "class",
+			"name" : "CropRangeWidget",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "CropImageWidget",
+			"description" : ""
+		}
+	]
+}

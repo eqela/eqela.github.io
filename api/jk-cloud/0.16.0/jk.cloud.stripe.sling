@@ -1,0 +1,192 @@
+class name jk.cloud.stripe.StripeAPI header public
+{
+	import jk.lang
+	import jk.cloud.common
+	import jk.log
+	import jk.json
+	class name Metadata header extends jk.json.JSONObjectAdapter implements jk.lang.StringObject public static
+	{
+		import jk.json
+		ctor
+		func setKey(value as string) as jk.cloud.stripe.StripeAPI.Metadata
+		func getKey as string
+		func setValue(value as string) as jk.cloud.stripe.StripeAPI.Metadata
+		func getValue as string
+		func toJsonObject override as object
+		func fromJsonObject(o as object) override as bool
+		func fromJsonString(o as string) as bool
+		func toJsonString as string
+		func toString as string
+		func forJsonString(o as string) static as jk.cloud.stripe.StripeAPI.Metadata
+		func forJsonObject(o as object) static as jk.cloud.stripe.StripeAPI.Metadata
+	}
+	class name Customer header extends jk.json.JSONObjectAdapter implements jk.lang.StringObject public static
+	{
+		import jk.json
+		ctor
+		func setId(value as string) as jk.cloud.stripe.StripeAPI.Customer
+		func getId as string
+		func setAddress(value as string) as jk.cloud.stripe.StripeAPI.Customer
+		func getAddress as string
+		func setDescription(value as string) as jk.cloud.stripe.StripeAPI.Customer
+		func getDescription as string
+		func setEmail(value as string) as jk.cloud.stripe.StripeAPI.Customer
+		func getEmail as string
+		func setMetadata(value as vector<jk.cloud.stripe.StripeAPI.Metadata>) as jk.cloud.stripe.StripeAPI.Customer
+		func getMetadata as vector<jk.cloud.stripe.StripeAPI.Metadata>
+		func setName(value as string) as jk.cloud.stripe.StripeAPI.Customer
+		func getName as string
+		func setTimeStampValue(value as long) as jk.cloud.stripe.StripeAPI.Customer
+		func getTimeStampValue as long
+		func setTimeStamp(value as jk.lang.LongIntegerObject) as jk.cloud.stripe.StripeAPI.Customer
+		func getTimeStamp as jk.lang.LongIntegerObject
+		func toJsonObject override as object
+		func fromJsonObject(o as object) override as bool
+		func fromJsonString(o as string) as bool
+		func toJsonString as string
+		func toString as string
+		func forJsonString(o as string) static as jk.cloud.stripe.StripeAPI.Customer
+		func forJsonObject(o as object) static as jk.cloud.stripe.StripeAPI.Customer
+	}
+	class name PaymentIntent header extends jk.json.JSONObjectAdapter implements jk.lang.StringObject public static
+	{
+		import jk.json
+		ctor
+		func setId(value as string) as jk.cloud.stripe.StripeAPI.PaymentIntent
+		func getId as string
+		func setAmount(value as string) as jk.cloud.stripe.StripeAPI.PaymentIntent
+		func getAmount as string
+		func setClientSecret(value as string) as jk.cloud.stripe.StripeAPI.PaymentIntent
+		func getClientSecret as string
+		func setCurrency(value as string) as jk.cloud.stripe.StripeAPI.PaymentIntent
+		func getCurrency as string
+		func setCustomer(value as string) as jk.cloud.stripe.StripeAPI.PaymentIntent
+		func getCustomer as string
+		func setStatusValue(value as int) as jk.cloud.stripe.StripeAPI.PaymentIntent
+		func getStatusValue as int
+		func setStatus(value as jk.lang.IntegerObject) as jk.cloud.stripe.StripeAPI.PaymentIntent
+		func getStatus as jk.lang.IntegerObject
+		func setSetupFutureUsage(value as string) as jk.cloud.stripe.StripeAPI.PaymentIntent
+		func getSetupFutureUsage as string
+		func setTimeStampValue(value as long) as jk.cloud.stripe.StripeAPI.PaymentIntent
+		func getTimeStampValue as long
+		func setTimeStamp(value as jk.lang.LongIntegerObject) as jk.cloud.stripe.StripeAPI.PaymentIntent
+		func getTimeStamp as jk.lang.LongIntegerObject
+		func toJsonObject override as object
+		func fromJsonObject(o as object) override as bool
+		func fromJsonString(o as string) as bool
+		func toJsonString as string
+		func toString as string
+		func forJsonString(o as string) static as jk.cloud.stripe.StripeAPI.PaymentIntent
+		func forJsonObject(o as object) static as jk.cloud.stripe.StripeAPI.PaymentIntent
+	}
+	class name SetupIntent header extends jk.json.JSONObjectAdapter implements jk.lang.StringObject public static
+	{
+		import jk.json
+		ctor
+		func setId(value as string) as jk.cloud.stripe.StripeAPI.SetupIntent
+		func getId as string
+		func setCustomer(value as string) as jk.cloud.stripe.StripeAPI.SetupIntent
+		func getCustomer as string
+		func setClientSecret(value as string) as jk.cloud.stripe.StripeAPI.SetupIntent
+		func getClientSecret as string
+		func setStatusValue(value as int) as jk.cloud.stripe.StripeAPI.SetupIntent
+		func getStatusValue as int
+		func setStatus(value as jk.lang.IntegerObject) as jk.cloud.stripe.StripeAPI.SetupIntent
+		func getStatus as jk.lang.IntegerObject
+		func setUsage(value as string) as jk.cloud.stripe.StripeAPI.SetupIntent
+		func getUsage as string
+		func setTimeStampValue(value as long) as jk.cloud.stripe.StripeAPI.SetupIntent
+		func getTimeStampValue as long
+		func setTimeStamp(value as jk.lang.LongIntegerObject) as jk.cloud.stripe.StripeAPI.SetupIntent
+		func getTimeStamp as jk.lang.LongIntegerObject
+		func toJsonObject override as object
+		func fromJsonObject(o as object) override as bool
+		func fromJsonString(o as string) as bool
+		func toJsonString as string
+		func toString as string
+		func forJsonString(o as string) static as jk.cloud.stripe.StripeAPI.SetupIntent
+		func forJsonObject(o as object) static as jk.cloud.stripe.StripeAPI.SetupIntent
+	}
+	class name Card header extends jk.json.JSONObjectAdapter implements jk.lang.StringObject public static
+	{
+		import jk.json
+		ctor
+		func setBrand(value as string) as jk.cloud.stripe.StripeAPI.Card
+		func getBrand as string
+		func setCountry(value as string) as jk.cloud.stripe.StripeAPI.Card
+		func getCountry as string
+		func setExpirationMonth(value as string) as jk.cloud.stripe.StripeAPI.Card
+		func getExpirationMonth as string
+		func setExpirationYear(value as string) as jk.cloud.stripe.StripeAPI.Card
+		func getExpirationYear as string
+		func setFingerprint(value as string) as jk.cloud.stripe.StripeAPI.Card
+		func getFingerprint as string
+		func setFunding(value as string) as jk.cloud.stripe.StripeAPI.Card
+		func getFunding as string
+		func setLast4(value as string) as jk.cloud.stripe.StripeAPI.Card
+		func getLast4 as string
+		func setSecureUsageValue(value as bool) as jk.cloud.stripe.StripeAPI.Card
+		func getSecureUsageValue as bool
+		func setSecureUsage(value as jk.lang.BooleanObject) as jk.cloud.stripe.StripeAPI.Card
+		func getSecureUsage as jk.lang.BooleanObject
+		func toJsonObject override as object
+		func fromJsonObject(o as object) override as bool
+		func fromJsonString(o as string) as bool
+		func toJsonString as string
+		func toString as string
+		func forJsonString(o as string) static as jk.cloud.stripe.StripeAPI.Card
+		func forJsonObject(o as object) static as jk.cloud.stripe.StripeAPI.Card
+	}
+	class name PaymentMethod header extends jk.json.JSONObjectAdapter implements jk.lang.StringObject public static
+	{
+		import jk.json
+		ctor
+		func setId(value as string) as jk.cloud.stripe.StripeAPI.PaymentMethod
+		func getId as string
+		func setCustomer(value as string) as jk.cloud.stripe.StripeAPI.PaymentMethod
+		func getCustomer as string
+		func setCard(value as jk.cloud.stripe.StripeAPI.Card) as jk.cloud.stripe.StripeAPI.PaymentMethod
+		func getCard as jk.cloud.stripe.StripeAPI.Card
+		func setType(value as string) as jk.cloud.stripe.StripeAPI.PaymentMethod
+		func getType as string
+		func setDefaultValue(value as bool) as jk.cloud.stripe.StripeAPI.PaymentMethod
+		func getDefaultValue as bool
+		func setDefault(value as jk.lang.BooleanObject) as jk.cloud.stripe.StripeAPI.PaymentMethod
+		func getDefault as jk.lang.BooleanObject
+		func setTimeStampValue(value as long) as jk.cloud.stripe.StripeAPI.PaymentMethod
+		func getTimeStampValue as long
+		func setTimeStamp(value as jk.lang.LongIntegerObject) as jk.cloud.stripe.StripeAPI.PaymentMethod
+		func getTimeStamp as jk.lang.LongIntegerObject
+		func toJsonObject override as object
+		func fromJsonObject(o as object) override as bool
+		func fromJsonString(o as string) as bool
+		func toJsonString as string
+		func toString as string
+		func forJsonString(o as string) static as jk.cloud.stripe.StripeAPI.PaymentMethod
+		func forJsonObject(o as object) static as jk.cloud.stripe.StripeAPI.PaymentMethod
+	}
+	ctor(ctx as jk.log.LoggingContext, secretKey as string)
+	var PAYMENT_STATUS_REQUIRES_PAYMENT public static const as int
+	var PAYMENT_STATUS_REQUIRES_CONFIRMATION public static const as int
+	var PAYMENT_STATUS_REQUIRES_ACTION public static const as int
+	var PAYMENT_STATUS_PROCESSING public static const as int
+	var PAYMENT_STATUS_SUCCEEDED public static const as int
+	var PAYMENT_STATUS_CANCELED public static const as int
+	macro INITIALIZE_AUTHORIZATION 
+	{
+		if String.isEmpty(key):
+			CloudError.throw("noSecretKey", "No Stripe secret key configured")
+		var headers = new KeyValueList<string,string>()
+		headers.add("Authorization", "Bearer " .. key)
+	}
+	func createCustomer(customer as jk.cloud.stripe.StripeAPI.Customer) as jk.cloud.stripe.StripeAPI.Customer
+	func listCustomers as vector<jk.cloud.stripe.StripeAPI.Customer>
+	func createPaymentIntent(intent as jk.cloud.stripe.StripeAPI.PaymentIntent, setupFutureUsage as string = null) as jk.cloud.stripe.StripeAPI.PaymentIntent
+	func createSetupIntent(customer as string) as jk.cloud.stripe.StripeAPI.SetupIntent
+	func listPaymentMethods(customerId as string, type as string = "card") as vector<jk.cloud.stripe.StripeAPI.PaymentMethod>
+	func retrievePaymentMethod(id as string) as jk.cloud.stripe.StripeAPI.PaymentMethod
+	func attachPaymentMethod(id as string, customer as string) as jk.cloud.stripe.StripeAPI.PaymentMethod
+	func detachPaymentMethod(id as string) as jk.cloud.stripe.StripeAPI.PaymentMethod
+	func paymentStatusToInt(status as string) as int
+}

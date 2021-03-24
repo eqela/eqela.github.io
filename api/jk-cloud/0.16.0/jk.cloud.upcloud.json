@@ -1,0 +1,18 @@
+{
+	"moduleDescription" : "Support for the Upcloud API\n",
+	"type" : "module",
+	"moduleTitle" : "Upcloud API support",
+	"moduleId" : "jk.cloud.upcloud",
+	"entities" : [
+		{
+			"type" : "class",
+			"name" : "UpcloudAPI",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "UpcloudServer",
+			"description" : ""
+		}
+	]
+}

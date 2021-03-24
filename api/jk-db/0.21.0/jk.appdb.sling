@@ -1,0 +1,18 @@
+class name jk.appdb.ApplicationDatabase header public
+{
+	import jk.lang
+	import jk.log
+	import jk.env
+	import jk.sql
+	import jk.sql.factory
+	property db as jk.sql.SQLDatabase { hasset hasget }
+	property ctx as jk.log.LoggingContext { hasset hasget }
+	ctor
+	ctor(ctx as jk.log.LoggingContext)
+	ctor(ctx as jk.log.LoggingContext, connectionString as string)
+	func initialize(ctx as jk.log.LoggingContext, connectionString as string)
+	func close
+	func updateTable(table as jk.sql.SQLTableInfo)
+	func getTableDefinitions(tables as vector<jk.sql.SQLTableInfo>) virtual
+	func updateTables virtual
+}

@@ -1,0 +1,47 @@
+<html>
+<head>
+<title>jk.cloud.twilio.TwilioVideoAPI | JK Cloud [0.16.0] - API Reference</title>
+<link rel="stylesheet" type="text/css" href="style.css" />
+<meta name="viewport" content="initial-scale=1,maximum-scale=1" />
+<meta property="og:description" content="SOURCE : https://www.twilio.com/docs/video/api" />
+<meta property="og:title" content="jk.cloud.twilio.TwilioVideoAPI | JK Cloud [0.16.0] - API Reference" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:description" content="SOURCE : https://www.twilio.com/docs/video/api" />
+</head>
+<body><div class="content">
+<a class="back" href="index.html">&laquo; JK Cloud [0.16.0]</a><div class="intro">
+<h1><span class="keyword">class</span> <span class="symbol">jk.cloud.twilio.TwilioVideoAPI</span></h1>
+<p>SOURCE : https://www.twilio.com/docs/video/api</p>
+</div>
+<div class="list">
+<div class="title">Base Types</div>
+<div class="entry">
+<div class="name"><span class="keyword">extends</span> <a class="datatype" href="jk.cloud.twilio.TwilioAPI.html">jk.cloud.twilio.TwilioAPI</a></div></div>
+</div>
+<div class="list">
+<div class="title">Constants</div>
+<div class="entry">
+<div class="name"><span class="keyword">const</span> <span class="symbol">TYPE_P2P</span> <span class="keyword">as</span> <span class="datatype">var</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">const</span> <span class="symbol">TYPE_GROUP_SMALL</span> <span class="keyword">as</span> <span class="datatype">var</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">const</span> <span class="symbol">TYPE_GROUP</span> <span class="keyword">as</span> <span class="datatype">var</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">const</span> <span class="symbol">CODECS_VP8</span> <span class="keyword">as</span> <span class="datatype">var</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">const</span> <span class="symbol">CODECS_H264</span> <span class="keyword">as</span> <span class="datatype">var</span></div></div>
+</div>
+<div class="list">
+<div class="title">Instance Methods</div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">createRoom</span> ( room <span class="keyword">as</span> <span class="datatype">jk.cloud.twilio.TwilioVideoAPI.Room</span> ) <span class="keyword">as</span> <span class="datatype">jk.cloud.twilio.TwilioVideoAPI.RoomInfo</span></div><div class="description">Note: Rooms created via the REST API exist for five minutes to allow the first Participant to connect. If no Participants join within five minutes, the Room times out and a new Room must be created.</div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getRoomList</span> ( room <span class="keyword">as</span> <span class="datatype">jk.cloud.twilio.TwilioVideoAPI.Room</span> , limit <span class="keyword">as</span> <span class="datatype">int</span> , page <span class="keyword">as</span> <span class="datatype">int</span> ) <span class="keyword">as</span> <span class="datatype">jk.cloud.twilio.TwilioVideoAPI.RoomList</span></div><div class="description">Get room list with criteria. Page start from 0.</div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getRoom</span> ( sid <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="keyword">as</span> <span class="datatype">jk.cloud.twilio.TwilioVideoAPI.RoomInfo</span></div><div class="description">This will return the room instance object for the room with provided SID.</div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">completeRoom</span> ( sid <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="keyword">as</span> <span class="datatype">jk.cloud.twilio.TwilioVideoAPI.RoomInfo</span></div><div class="description">Update a Room's status to completed with the following request to end the Room. All connected Participants will be immediately disconnected from the Room.</div></div>
+</div>
+</div>
+</body>
+</html>

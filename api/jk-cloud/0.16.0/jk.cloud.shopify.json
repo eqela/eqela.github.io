@@ -1,0 +1,13 @@
+{
+	"moduleDescription" : "Support for the Shopify API\n",
+	"type" : "module",
+	"moduleTitle" : "Shopify API support",
+	"moduleId" : "jk.cloud.shopify",
+	"entities" : [
+		{
+			"type" : "class",
+			"name" : "ShopifyAPI",
+			"description" : ""
+		}
+	]
+}

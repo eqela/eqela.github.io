@@ -1,0 +1,18 @@
+{
+	"moduleDescription" : "",
+	"type" : "module",
+	"moduleTitle" : "",
+	"moduleId" : "jk.uikit.camera",
+	"entities" : [
+		{
+			"type" : "class",
+			"name" : "CameraWidget",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "PhotoCaptureWidget",
+			"description" : ""
+		}
+	]
+}

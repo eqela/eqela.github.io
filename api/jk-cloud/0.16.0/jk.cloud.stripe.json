@@ -1,0 +1,13 @@
+{
+	"moduleDescription" : "Support for the Stripe API\n",
+	"type" : "module",
+	"moduleTitle" : "Stripe API support",
+	"moduleId" : "jk.cloud.stripe",
+	"entities" : [
+		{
+			"type" : "class",
+			"name" : "StripeAPI",
+			"description" : ""
+		}
+	]
+}

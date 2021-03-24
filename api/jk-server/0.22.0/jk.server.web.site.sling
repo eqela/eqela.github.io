@@ -1,0 +1,36 @@
+class name jk.server.web.site.DynamicWebsiteMain header public
+{
+	import jk.lang
+	import jk.fs
+	import jk.env
+	import jk.log
+	import jk.server.web
+	import jk.http.server.fs
+	ctor
+	property contentDirectory as jk.fs.File { hasset hasget }
+	property processTemplatesInContentDirectory as bool { hasset hasget }
+	func execute(args as array<string>, worker as typeinfo) as int
+}
+class name jk.server.web.site.DynamicWebsiteRouter header extends jk.http.worker.HTTPWorkerRouter implements jk.http.server.HTTPServerComponent public
+{
+	import jk.lang
+	import jk.fs
+	import jk.log
+	import jk.env
+	import jk.jwt
+	import jk.json
+	import jk.http.worker
+	import jk.http.server
+	ctor
+	property jwtVerificationKey as string { hasset hasget }
+	func initializeWebsite virtual
+	func initialize(server as jk.http.server.HTTPServerBase)
+	func onMaintenance
+	func onRefresh
+	func cleanup
+	func redirect(resp as jk.http.worker.HTTPWorkerResponse, url as string)
+	func sendHtml(resp as jk.http.worker.HTTPWorkerResponse, html as string)
+	func handleAnonymousQuery(req as jk.http.worker.HTTPWorkerRequest, resp as jk.http.worker.HTTPWorkerResponse, handler as function<void>)
+	func validateToken(token as string) virtual as jk.jwt.JWT
+	func handleAuthenticatedQuery(req as jk.http.worker.HTTPWorkerRequest, resp as jk.http.worker.HTTPWorkerResponse, handler as function<void,jk.jwt.JWT>)
+}

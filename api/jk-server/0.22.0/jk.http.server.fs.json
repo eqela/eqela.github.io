@@ -1,0 +1,13 @@
+{
+	"moduleDescription" : "Ability to serve files from a directory over an HTTP server.\n",
+	"type" : "module",
+	"moduleTitle" : "Filesystem handler for HTTP server",
+	"moduleId" : "jk.http.server.fs",
+	"entities" : [
+		{
+			"type" : "class",
+			"name" : "HTTPServerDirectoryHandler",
+			"description" : ""
+		}
+	]
+}

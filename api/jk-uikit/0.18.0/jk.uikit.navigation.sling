@@ -1,0 +1,128 @@
+class name jk.uikit.navigation.NavSideBarWidget header extends jk.widget.LayerWithBackgroundColorWidget public #widget
+{
+	import jk.lang
+	import jk.lang
+	import jk.ui
+	import jk.gfx
+	import jk.widget
+	import jk.widget.common
+	ctor(context as jk.ui.GuiApplicationContext)
+	func initializeWidget override
+	func addToWidgetItems(w as jk.widget.Widget)
+	func createSidebarFooter virtual as jk.widget.Widget
+	func createWidget override
+	func getWidgetItems as vector<jk.widget.Widget> #getterMethod
+	func setWidgetItems(v as vector<jk.widget.Widget>) as jk.uikit.navigation.NavSideBarWidget #setterMethod
+	func getWidgetScrollEnabled as bool #getterMethod
+	func setWidgetScrollEnabled(v as bool) as jk.uikit.navigation.NavSideBarWidget #setterMethod
+}
+class name jk.uikit.navigation.NavWidget header implements jk.ui.RouterListener extends jk.widget.LayerWidget public #widget
+{
+	import jk.lang
+	import jk.lang
+	import jk.ui
+	import jk.gfx
+	import jk.widget
+	import jk.widget.common
+	ctor(ctx as jk.ui.GuiApplicationContext)
+	func initializeWidget override
+	func onRouteChanged(route as string)
+	func initializeRoutes(rs as array) as bool
+	func addRoute(route as string, callback as function<jk.widget.Widget>)
+	func getWidget(route as string) as jk.widget.Widget
+	func updateWidgetTitle(title as string)
+	func hideSidebarWidget(animated as bool = true)
+	func computeWidgetLayout(widthConstraint as int #notLiteral) override
+	func getAppBarMenuItems virtual as vector<jk.widget.Widget>
+	func createSidebarWidget virtual as jk.widget.Widget
+	func createWidget override
+	func getWidgetAppBarLeftImageResource as string #getterMethod
+	func setWidgetAppBarLeftImageResource(v as string) as jk.uikit.navigation.NavWidget #setterMethod
+	func getWidgetEnableAppBar as bool #getterMethod
+	func setWidgetEnableAppBar(v as bool) as jk.uikit.navigation.NavWidget #setterMethod
+}
+class name jk.uikit.navigation.NavSideMenuWidget header extends jk.widget.VerticalBoxWidget public #widget
+{
+	import jk.lang
+	import jk.lang
+	import jk.ui
+	import jk.gfx
+	import jk.widget
+	class name NavSideMenuItem header public static
+	{
+		ctor
+		func getName as string #getterMethod
+		func setName(v as string) as jk.uikit.navigation.NavSideMenuWidget.NavSideMenuItem #setterMethod
+		func getRoute as string #getterMethod
+		func setRoute(v as string) as jk.uikit.navigation.NavSideMenuWidget.NavSideMenuItem #setterMethod
+	}
+	func forItems(context as jk.ui.GuiApplicationContext, name as string, items as array) static as jk.uikit.navigation.NavSideMenuWidget
+	ctor(ctx as jk.ui.GuiApplicationContext)
+	func initializeWidget override
+	func getColor as jk.gfx.Color
+	func setWidgetNavId(id as string) as jk.uikit.navigation.NavSideMenuWidget
+	func setWidgetText(text as string) as jk.uikit.navigation.NavSideMenuWidget
+	func setWidgetIcon(resource as string) as jk.uikit.navigation.NavSideMenuWidget
+	func onToggle
+	func click
+	func onWidgetHeightChanged(height as int #notLiteral) override
+	func createWidget override
+	func getWidgetOnToggledHandler as function<void,bool> #getterMethod
+	func setWidgetOnToggledHandler(v as function<void,bool>) as jk.uikit.navigation.NavSideMenuWidget #setterMethod
+	func getWidgetMenuItems as vector<jk.uikit.navigation.SidebarItemWidget> #getterMethod
+	func setWidgetMenuItems(v as vector<jk.uikit.navigation.SidebarItemWidget>) as jk.uikit.navigation.NavSideMenuWidget #setterMethod
+}
+class name jk.uikit.navigation.SidebarItemWidget header implements jk.uikit.navigation.SidebarItem extends jk.widget.LayerWithBackgroundColorWidget public #widget
+{
+	import jk.lang
+	import jk.lang
+	import jk.ui
+	import jk.gfx
+	import jk.widget
+	import jk.uikit.core
+	import jk.uikit.boxicons
+	ctor(ctx as jk.ui.GuiApplicationContext)
+	func initializeWidget override
+	func setWidgetText(text as string) as jk.uikit.navigation.SidebarItemWidget
+	func getWidgetText as string
+	func setMarginLeft(margin as int #notLiteral) as jk.uikit.navigation.SidebarItemWidget
+	func setWidgetClickHandler(handler as function<void>) as jk.uikit.navigation.SidebarItemWidget
+	func setSelected(includeBgColor as bool = true)
+	func resetColor
+	func setItemIsClicked(v as bool)
+	func itemIsClicked as bool
+	func setWidgetBackgroundColor(color as jk.gfx.Color)
+	func setWidgetIcon(resource as string) as jk.uikit.navigation.SidebarItemWidget
+	func setWidgetRightIcon(source as string) as jk.uikit.navigation.SidebarItemWidget
+	func setWidgetTextColor(textColor as jk.gfx.Color) as jk.uikit.navigation.SidebarItemWidget
+	func setWidgetFontSize(sz as int) as jk.uikit.navigation.SidebarItemWidget
+	func setWidgetTextAlignCentered as jk.uikit.navigation.SidebarItemWidget
+	func createWidget override
+	func getWidgetSubItemMode as bool #getterMethod
+	func setWidgetSubItemMode(v as bool) as jk.uikit.navigation.SidebarItemWidget #setterMethod
+	func getWidgetRoute as string #getterMethod
+	func setWidgetRoute(v as string) as jk.uikit.navigation.SidebarItemWidget #setterMethod
+}
+class name jk.uikit.navigation.AppBarWidget header extends jk.widget.LayerWithBackgroundColorWidget public #widget
+{
+	import jk.lang
+	import jk.lang
+	import jk.ui
+	import jk.gfx
+	import jk.widget
+	ctor(context as jk.ui.GuiApplicationContext)
+	func setWidgetLeftImageResource(resource as string) as jk.uikit.navigation.AppBarWidget
+	func setWidgetTitle(value as string) as jk.uikit.navigation.AppBarWidget
+	func getWidgetTitle as string
+	func setWidgetMenuItems(items as vector<jk.widget.Widget>) as jk.uikit.navigation.AppBarWidget
+	func createWidget override
+}
+interface name jk.uikit.navigation.SidebarItem header public
+{
+	import jk.lang
+	import jk.gfx
+	func getWidgetText as string
+	func setItemIsClicked(v as bool)
+	func itemIsClicked as bool
+	func setWidgetBackgroundColor(color as jk.gfx.Color)
+}

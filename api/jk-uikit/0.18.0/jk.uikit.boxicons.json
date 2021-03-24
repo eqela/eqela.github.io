@@ -1,0 +1,13 @@
+{
+	"moduleDescription" : "",
+	"type" : "module",
+	"moduleTitle" : "",
+	"moduleId" : "jk.uikit.boxicons",
+	"entities" : [
+		{
+			"type" : "class",
+			"name" : "BoxIconWidget",
+			"description" : ""
+		}
+	]
+}

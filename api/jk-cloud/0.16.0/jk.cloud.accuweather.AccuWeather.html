@@ -1,0 +1,60 @@
+<html>
+<head>
+<title>jk.cloud.accuweather.AccuWeather | JK Cloud [0.16.0] - API Reference</title>
+<link rel="stylesheet" type="text/css" href="style.css" />
+<meta name="viewport" content="initial-scale=1,maximum-scale=1" />
+<meta property="og:description" content="jk.cloud.accuweather.AccuWeather | JK Cloud [0.16.0] - API Reference" />
+<meta property="og:title" content="jk.cloud.accuweather.AccuWeather | JK Cloud [0.16.0] - API Reference" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:description" content="jk.cloud.accuweather.AccuWeather | JK Cloud [0.16.0] - API Reference" />
+</head>
+<body><div class="content">
+<a class="back" href="index.html">&laquo; JK Cloud [0.16.0]</a><div class="intro">
+<h1><span class="keyword">class</span> <span class="symbol">jk.cloud.accuweather.AccuWeather</span></h1>
+<p></p>
+</div>
+<div class="list">
+<div class="title">Static Methods</div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">forApiKey</span> ( key <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="modifier">static</span> <span class="keyword">as</span> <a class="datatype" href="jk.cloud.accuweather.AccuWeather.html">jk.cloud.accuweather.AccuWeather</a></div></div>
+</div>
+<div class="list">
+<div class="title">Instance Methods</div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">queryLocation</span> ( latitude <span class="keyword">as</span> <span class="datatype">double</span> , longitude <span class="keyword">as</span> <span class="datatype">double</span> , alistener <span class="keyword">as</span> <span class="datatype">function&lt;void,jk.lang.DynamicMap,jk.lang.Error&gt;</span> ) <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">queryCurrentCondition</span> ( key <span class="keyword">as</span> <span class="datatype">string</span> , alistener <span class="keyword">as</span> <span class="datatype">function&lt;void,jk.lang.DynamicMap,jk.lang.Error&gt;</span> ) <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">queryForecast</span> ( key <span class="keyword">as</span> <span class="datatype">string</span> , forecastDays <span class="keyword">as</span> <span class="datatype">int</span> , alistener <span class="keyword">as</span> <span class="datatype">function&lt;void,jk.lang.DynamicMap,jk.lang.Error&gt;</span> ) <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getApiKey</span> <span class="keyword">as</span> <span class="datatype">string</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setApiKey</span> ( v <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="keyword">as</span> <a class="datatype" href="jk.cloud.accuweather.AccuWeather.html">jk.cloud.accuweather.AccuWeather</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getLocationHost</span> <span class="keyword">as</span> <span class="datatype">string</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setLocationHost</span> ( v <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="keyword">as</span> <a class="datatype" href="jk.cloud.accuweather.AccuWeather.html">jk.cloud.accuweather.AccuWeather</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getCurrentConditionHost</span> <span class="keyword">as</span> <span class="datatype">string</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setCurrentConditionHost</span> ( v <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="keyword">as</span> <a class="datatype" href="jk.cloud.accuweather.AccuWeather.html">jk.cloud.accuweather.AccuWeather</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getForecastHost</span> <span class="keyword">as</span> <span class="datatype">string</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setForecastHost</span> ( v <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="keyword">as</span> <a class="datatype" href="jk.cloud.accuweather.AccuWeather.html">jk.cloud.accuweather.AccuWeather</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getVersion</span> <span class="keyword">as</span> <span class="datatype">string</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setVersion</span> ( v <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="keyword">as</span> <a class="datatype" href="jk.cloud.accuweather.AccuWeather.html">jk.cloud.accuweather.AccuWeather</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getDetails</span> <span class="keyword">as</span> <span class="datatype">bool</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setDetails</span> ( v <span class="keyword">as</span> <span class="datatype">bool</span> ) <span class="keyword">as</span> <a class="datatype" href="jk.cloud.accuweather.AccuWeather.html">jk.cloud.accuweather.AccuWeather</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getMetric</span> <span class="keyword">as</span> <span class="datatype">bool</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setMetric</span> ( v <span class="keyword">as</span> <span class="datatype">bool</span> ) <span class="keyword">as</span> <a class="datatype" href="jk.cloud.accuweather.AccuWeather.html">jk.cloud.accuweather.AccuWeather</a></div></div>
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,18 @@
+class name jk.uikit.list.ScrollableListWidget header extends jk.widget.VerticalBoxWidget abstract public #widget
+{
+	import jk.lang
+	import jk.lang
+	import jk.ui
+	import jk.gfx
+	import jk.widget
+	ctor(context as jk.ui.GuiApplicationContext)
+	func initializeWidget override
+	func doGetData
+	func populateList(records as jk.lang.DynamicVector)
+	func onNoDataReceived virtual
+	func onQueryFailed(error as jk.lang.Error) virtual
+	func createHeaderWidget abstract as jk.widget.Widget
+	func createListItemWidget(item as jk.lang.DynamicMap) abstract as jk.widget.Widget
+	func startQuery(page as int, callback as function<void,jk.lang.DynamicMap>, errorCallback as function<void,jk.lang.Error>) abstract
+	func createWidget override
+}

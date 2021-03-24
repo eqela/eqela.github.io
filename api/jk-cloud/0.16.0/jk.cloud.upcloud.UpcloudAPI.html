@@ -1,0 +1,55 @@
+<html>
+<head>
+<title>jk.cloud.upcloud.UpcloudAPI | JK Cloud [0.16.0] - API Reference</title>
+<link rel="stylesheet" type="text/css" href="style.css" />
+<meta name="viewport" content="initial-scale=1,maximum-scale=1" />
+<meta property="og:description" content="jk.cloud.upcloud.UpcloudAPI | JK Cloud [0.16.0] - API Reference" />
+<meta property="og:title" content="jk.cloud.upcloud.UpcloudAPI | JK Cloud [0.16.0] - API Reference" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:description" content="jk.cloud.upcloud.UpcloudAPI | JK Cloud [0.16.0] - API Reference" />
+</head>
+<body><div class="content">
+<a class="back" href="index.html">&laquo; JK Cloud [0.16.0]</a><div class="intro">
+<h1><span class="keyword">class</span> <span class="symbol">jk.cloud.upcloud.UpcloudAPI</span></h1>
+<p></p>
+</div>
+<div class="list">
+<div class="title">Instance Methods</div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">onInvalidResponse</span> ( response <span class="keyword">as</span> <span class="datatype">dynamic</span> ) <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">toPostBody</span> ( data <span class="keyword">as</span> <span class="datatype">dynamic</span> ) <span class="keyword">as</span> <span class="datatype">buffer</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">call</span> ( method <span class="keyword">as</span> <span class="datatype">string</span> , path <span class="keyword">as</span> <span class="datatype">string</span> , postBody <span class="keyword">as</span> <span class="datatype">dynamic</span> ) <span class="keyword">as</span> <a class="datatype" href="../../jk-core/0.37.0/jk.lang.DynamicMap.html">jk.lang.DynamicMap</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getAllNetworks</span> <span class="keyword">as</span> <span class="datatype">vector&lt;jk.cloud.upcloud.UpcloudAPI.Network&gt;</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getAllZones</span> <span class="keyword">as</span> <span class="datatype">vector&lt;jk.cloud.upcloud.UpcloudAPI.Zone&gt;</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getAllServers</span> <span class="keyword">as</span> <span class="datatype">vector&lt;jk.cloud.upcloud.UpcloudAPI.Server&gt;</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getServerDetails</span> ( id <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="keyword">as</span> <span class="datatype">jk.cloud.upcloud.UpcloudAPI.Server</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">createPrivateNetwork</span> ( name <span class="keyword">as</span> <span class="datatype">string</span> , zone <span class="keyword">as</span> <span class="datatype">string</span> , addressBlock <span class="keyword">as</span> <span class="datatype">string</span> , dhcp <span class="keyword">as</span> <span class="datatype">bool</span> ) <span class="keyword">as</span> <span class="datatype">string</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">addFirewallRule</span> ( server <span class="keyword">as</span> <span class="datatype">string</span> , rule <span class="keyword">as</span> <span class="datatype">jk.cloud.upcloud.UpcloudAPI.FirewallRule</span> ) <span class="keyword">as</span> <span class="datatype">jk.cloud.upcloud.UpcloudAPI.FirewallRule</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">addFirewallRuleDenyAll</span> ( server <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="keyword">as</span> <span class="datatype">jk.cloud.upcloud.UpcloudAPI.FirewallRule</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">addFirewallRuleAllowAll</span> ( server <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="keyword">as</span> <span class="datatype">jk.cloud.upcloud.UpcloudAPI.FirewallRule</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">addFirewallRuleAllowTcpPort</span> ( server <span class="keyword">as</span> <span class="datatype">string</span> , port <span class="keyword">as</span> <span class="datatype">int</span> ) <span class="keyword">as</span> <span class="datatype">jk.cloud.upcloud.UpcloudAPI.FirewallRule</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">addFirewallRuleAllowDns</span> ( server <span class="keyword">as</span> <span class="datatype">string</span> , dnsServerAddress <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">addFirewallRuleAllowCommonDns</span> ( server <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">createServer</span> ( data <span class="keyword">as</span> <a class="datatype" href="jk.cloud.upcloud.UpcloudServer.html">jk.cloud.upcloud.UpcloudServer</a> ) <span class="keyword">as</span> <span class="datatype">string</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">stopServer</span> ( id <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">deleteServer</span> ( id <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+</div>
+</div>
+</body>
+</html>

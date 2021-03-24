@@ -1,0 +1,13 @@
+{
+	"moduleDescription" : "Support for AWS command line (CLI) functionality.\n",
+	"type" : "module",
+	"moduleTitle" : "AWS CLI support",
+	"moduleId" : "jk.devops.awscli",
+	"entities" : [
+		{
+			"type" : "class",
+			"name" : "CloudFormationHelper",
+			"description" : ""
+		}
+	]
+}

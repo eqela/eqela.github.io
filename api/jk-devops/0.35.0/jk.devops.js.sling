@@ -1,0 +1,16 @@
+class name jk.devops.js.NPMBuilder header public
+{
+	import jk.lang
+	import jk.fs
+	import jk.log
+	import jk.env
+	import jk.process
+	ctor
+	property npmCommand as jk.fs.File { hasset hasget }
+	func getNpmCommandFile as jk.fs.File
+	property npxCommand as jk.fs.File { hasset hasget }
+	func getNpxCommandFile as jk.fs.File
+	func getBuilderId as string
+	func canBuild(dir as jk.fs.File) as bool
+	func execute(ctx as jk.log.LoggingContext, sourceDirectory as jk.fs.File, destinationDirectory as jk.fs.File) as bool
+}

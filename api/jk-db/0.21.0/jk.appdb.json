@@ -1,0 +1,13 @@
+{
+	"moduleDescription" : "A convenient utility for declaring and maintaining the database structure\nand connection for an application.\n",
+	"type" : "module",
+	"moduleTitle" : "Application database",
+	"moduleId" : "jk.appdb",
+	"entities" : [
+		{
+			"type" : "class",
+			"name" : "ApplicationDatabase",
+			"description" : "Base class for application-specific database schema declarations."
+		}
+	]
+}

@@ -1,0 +1,18 @@
+class name jk.devops.haproxy.HaproxyConfig header public
+{
+	import jk.lang
+	ctor
+	property uid as int { hasset hasget }
+	property gid as int { hasset hasget }
+	property maximumConnections as int { hasset hasget }
+	property maximumBackendConnections as int { hasset hasget }
+	property connectTimeout as int { hasset hasget }
+	property clientTimeout as int { hasset hasget }
+	property serverTimeout as int { hasset hasget }
+	property frontends as vector<jk.devops.haproxy.HaproxyConfig.Frontend> { hasset hasget }
+	func addToFrontends(frontend as jk.devops.haproxy.HaproxyConfig.Frontend)
+	func addHttpListener(port as int) as jk.devops.haproxy.HaproxyConfig.Frontend
+	func addHttpsListener(port as int, certificatePath as string) as jk.devops.haproxy.HaproxyConfig.Frontend
+	func generateConfigForFrontend(sb as jk.lang.StringBuilder, name as string, frontend as jk.devops.haproxy.HaproxyConfig.Frontend)
+	func generateConfig as string
+}

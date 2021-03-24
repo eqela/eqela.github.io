@@ -1,0 +1,18 @@
+class name jk.devops.xcode.XCodeProjectBuilder header public
+{
+	import jk.lang
+	import jk.fs
+	import jk.log
+	import jk.env
+	import jk.process
+	ctor
+	property podCommand as jk.fs.File { hasset hasget }
+	property xcodebuildCommand as jk.fs.File { hasset hasget }
+	property targetPlatform as string { hasset hasget }
+	property libdirs as vector<jk.fs.File> { hasset hasget }
+	func getPodCommandFile as jk.fs.File
+	func getXcodebuildCommandFile as jk.fs.File
+	func getBuilderId as string
+	func canBuild(dir as jk.fs.File) as bool
+	func execute(ctx as jk.log.LoggingContext, sourceDirectory as jk.fs.File, destinationDirectory as jk.fs.File) as bool
+}

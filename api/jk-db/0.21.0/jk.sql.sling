@@ -1,0 +1,189 @@
+class name jk.sql.SQLResultSetSingleColumnIterator header implements jk.lang.DynamicIterator implements jk.lang.StringIterator implements jk.lang.IntegerIterator implements jk.lang.LongIntegerIterator implements jk.lang.DoubleIterator implements jk.lang.BooleanIterator implements jk.lang.Iterator<object> public
+{
+	import jk.lang
+	ctor
+	func nextMap as jk.lang.DynamicMap
+	func next as object
+	func hasNext as bool
+	func nextString as string
+	func nextInteger as int
+	func nextLong as long
+	func nextDouble as double
+	func nextBoolean as bool
+	func getIterator as jk.sql.SQLResultSetIterator #getterMethod
+	func setIterator(v as jk.sql.SQLResultSetIterator) as jk.sql.SQLResultSetSingleColumnIterator #setterMethod
+	func getColumnName as string #getterMethod
+	func setColumnName(v as string) as jk.sql.SQLResultSetSingleColumnIterator #setterMethod
+}
+class name jk.sql.SQLTableColumnInfo header public
+{
+	import jk.lang
+	ctor
+	func instance(name as string, type as int) static as jk.sql.SQLTableColumnInfo
+	func forInteger(name as string) static as jk.sql.SQLTableColumnInfo
+	func forString(name as string) static as jk.sql.SQLTableColumnInfo
+	func forStringKey(name as string) static as jk.sql.SQLTableColumnInfo
+	func forText(name as string) static as jk.sql.SQLTableColumnInfo
+	func forIntegerKey(name as string) static as jk.sql.SQLTableColumnInfo
+	func forLongIntegerKey(name as string) static as jk.sql.SQLTableColumnInfo
+	func forLongInteger(name as string) static as jk.sql.SQLTableColumnInfo
+	func forDouble(name as string) static as jk.sql.SQLTableColumnInfo
+	func forBlob(name as string) static as jk.sql.SQLTableColumnInfo
+	var TYPE_INTEGER public static const as int
+	var TYPE_STRING public static const as int
+	var TYPE_TEXT public static const as int
+	var TYPE_INTEGER_KEY public static const as int
+	var TYPE_DOUBLE public static const as int
+	var TYPE_BLOB public static const as int
+	var TYPE_STRING_KEY public static const as int
+	var TYPE_LONG public static const as int
+	var TYPE_LONG_KEY public static const as int
+	func getName as string #getterMethod
+	func setName(v as string) as jk.sql.SQLTableColumnInfo #setterMethod
+	func getType as int #getterMethod
+	func setType(v as int) as jk.sql.SQLTableColumnInfo #setterMethod
+}
+class name jk.sql.SQLDatabase header abstract public
+{
+	import jk.lang
+	import jk.log
+	ctor
+	func logDebug(message as string)
+	func logInfo(message as string)
+	func logWarning(message as string)
+	func logError(message as string)
+	func getDatabaseTypeId abstract as string
+	func prepareSync(sql as string) abstract as jk.sql.SQLStatement
+	func prepareCreateTableStatementSync(table as string, columns as vector<jk.sql.SQLTableColumnInfo>) abstract as jk.sql.SQLStatement
+	func prepareDeleteTableStatementSync(table as string) abstract as jk.sql.SQLStatement
+	func prepareCreateIndexStatementSync(table as string, columns as vector<string>, unique as bool) virtual as jk.sql.SQLStatement
+	func prepareCreateColumnStatementSync(table as string, column as jk.sql.SQLTableColumnInfo) abstract as jk.sql.SQLStatement
+	func prepareUpdateColumnTypeStatementSync(table as string, column as jk.sql.SQLTableColumnInfo) abstract as jk.sql.SQLStatement
+	func getLastInsertIdSync(table as string) abstract as long
+	func getIdentityColumnNameSync(table as string) abstract as string
+	func getPrimaryKeyColumnNameSync(table as string) abstract as string
+	func columnExistsSync(table as string, name as string) abstract as bool
+	func isColumnTypeSameSync(table as string, column as jk.sql.SQLTableColumnInfo) abstract as bool
+	func closeSync abstract
+	func executeSync(stmt as jk.sql.SQLStatement) abstract as bool
+	func executeUpdateDeleteSync(stmt as jk.sql.SQLStatement) abstract as int
+	func querySync(stmt as jk.sql.SQLStatement) abstract as jk.sql.SQLResultSetIterator
+	func querySingleRowSync(stmt as jk.sql.SQLStatement) abstract as jk.lang.DynamicMap
+	func tableExistsSync(table as string) abstract as bool
+	func queryAllTableNamesSync abstract as vector
+	func close(callback as function<void>) abstract
+	func execute(stmt as jk.sql.SQLStatement, callback as function<void,bool>) abstract
+	func executeUpdateDelete(stmt as jk.sql.SQLStatement, callback as function<void,int>) abstract
+	func query(stmt as jk.sql.SQLStatement, callback as function<void,jk.sql.SQLResultSetIterator>) abstract
+	func querySingleRow(stmt as jk.sql.SQLStatement, callback as function<void,jk.lang.DynamicMap>) abstract
+	func tableExists(table as string, callback as function<void,bool>) abstract
+	func queryAllTableNames(callback as function<void,vector>) abstract
+	func ensureColumnsExistsSync(tableName as string, columns as vector<jk.sql.SQLTableColumnInfo>) as bool
+	func ensureTableExistsSync(table as jk.sql.SQLTableInfo) virtual as bool
+	func ensureTableExists(table as jk.sql.SQLTableInfo, callback as function<void,bool>) virtual
+	func createOrderByString(order as array) as string
+	func prepareQueryAllStatementSync(table as string, columns as array = null, order as array = null) virtual as jk.sql.SQLStatement
+	func prepareCountRecordsStatementSync(table as string, criteria as jk.lang.DynamicMap, likeOperator as bool = false) virtual as jk.sql.SQLStatement
+	func prepareQueryWithCriteriaStatementSync(table as string, criteria as jk.lang.DynamicMap, limit as int = 0, offset as int = 0, columns as array = null, order as array = null, likeOperator as bool = false) virtual as jk.sql.SQLStatement
+	func prepareQueryDistinctValuesStatementSync(table as string, column as string) virtual as jk.sql.SQLStatement
+	func prepareSelectStatementSync(table as string, criteria as jk.lang.DynamicMap) virtual as jk.sql.SQLStatement
+	func prepareInsertStatementSync(table as string, data as jk.lang.DynamicMap) virtual as jk.sql.SQLStatement
+	func prepareUpdateStatementSync(table as string, criteria as jk.lang.DynamicMap, data as jk.lang.DynamicMap) virtual as jk.sql.SQLStatement
+	func prepareDeleteStatementSync(table as string, criteria as jk.lang.DynamicMap) virtual as jk.sql.SQLStatement
+	func getLogger as jk.log.LoggingContext #getterMethod
+	func setLogger(v as jk.log.LoggingContext) as jk.sql.SQLDatabase #setterMethod
+}
+class name jk.sql.SQLOrderingRule header public
+{
+	import jk.lang
+	ctor
+	func forDescending(column as string) static as jk.sql.SQLOrderingRule
+	func forAscending(column as string) static as jk.sql.SQLOrderingRule
+	func getColumn as string #getterMethod
+	func setColumn(v as string) as jk.sql.SQLOrderingRule #setterMethod
+	func getDescending as bool #getterMethod
+	func setDescending(v as bool) as jk.sql.SQLOrderingRule #setterMethod
+}
+class name jk.sql.SQLTableInfo header public
+{
+	import jk.lang
+	import jk.json
+	import jk.model
+	ctor
+	func forName(name as string) static as jk.sql.SQLTableInfo
+	func forDetails(name as string, columns as array<jk.sql.SQLTableColumnInfo> = null, indexes as array<string> = null, uniqueIndexes as array<string> = null) static as jk.sql.SQLTableInfo
+	func forDynamicModel(tableName as string, model as jk.model.DynamicModel) static as jk.sql.SQLTableInfo
+	func addColumn(info as jk.sql.SQLTableColumnInfo) as jk.sql.SQLTableInfo
+	func addIntegerColumn(name as string) as jk.sql.SQLTableInfo
+	func addLongColumn(name as string) as jk.sql.SQLTableInfo
+	func addStringColumn(name as string) as jk.sql.SQLTableInfo
+	func addStringKeyColumn(name as string) as jk.sql.SQLTableInfo
+	func addTextColumn(name as string) as jk.sql.SQLTableInfo
+	func addIntegerKeyColumn(name as string) as jk.sql.SQLTableInfo
+	func addLongKeyColumn(name as string) as jk.sql.SQLTableInfo
+	func addDoubleColumn(name as string) as jk.sql.SQLTableInfo
+	func addBlobColumn(name as string) as jk.sql.SQLTableInfo
+	func addIndex(column as string) as jk.sql.SQLTableInfo
+	func addMultiColumnIndex(columns as array) as jk.sql.SQLTableInfo
+	func addUniqueIndex(column as string) as jk.sql.SQLTableInfo
+	func addUniqueMultiColumnIndex(columns as array) as jk.sql.SQLTableInfo
+	func getName as string #getterMethod
+	func setName(v as string) as jk.sql.SQLTableInfo #setterMethod
+	func getColumns as vector<jk.sql.SQLTableColumnInfo> #getterMethod
+	func setColumns(v as vector<jk.sql.SQLTableColumnInfo>) as jk.sql.SQLTableInfo #setterMethod
+	func getIndexes as vector<jk.sql.SQLTableColumnIndexInfo> #getterMethod
+	func setIndexes(v as vector<jk.sql.SQLTableColumnIndexInfo>) as jk.sql.SQLTableInfo #setterMethod
+}
+class name jk.sql.SQLResultSetIterator header implements jk.lang.Iterator<jk.lang.DynamicMap> abstract public
+{
+	import jk.lang
+	import jk.json
+	ctor
+	func next abstract as jk.lang.DynamicMap
+	func hasNext abstract as bool
+	func nextValues(values as vector) abstract as bool
+	func step abstract as bool
+	func getColumnCount abstract as int
+	func getColumnName(n as int) abstract as string
+	func getColumnNames abstract as vector<string>
+	func getColumnObject(n as int) abstract as object
+	func getColumnInt(n as int) abstract as int
+	func getColumnLong(n as int) abstract as long
+	func getColumnDouble(n as int) abstract as double
+	func getColumnBuffer(n as int) abstract as buffer
+	func close abstract
+	func toVectorOfMaps as jk.lang.DynamicVector
+	func toVectorList as vector
+	func headerJSON(sb as jk.lang.StringBuilder)
+	func nextJSON(sb as jk.lang.StringBuilder) as bool
+	func toVectorListJSON as string
+}
+class name jk.sql.SQLTableColumnIndexInfo header public
+{
+	import jk.lang
+	ctor
+	func addColumn(column as string) as jk.sql.SQLTableColumnIndexInfo
+	func getColumns as vector<string> #getterMethod
+	func setColumns(v as vector<string>) as jk.sql.SQLTableColumnIndexInfo #setterMethod
+	func getUnique as bool #getterMethod
+	func setUnique(v as bool) as jk.sql.SQLTableColumnIndexInfo #setterMethod
+}
+interface name jk.sql.SQLStatement header public
+{
+	import jk.lang
+	func setIsStoredProcedure(v as bool) as jk.sql.SQLStatement
+	func getIsStoredProcedure as bool
+	func addParamString(val as string) as jk.sql.SQLStatement
+	func addParamInteger(val as int) as jk.sql.SQLStatement
+	func addParamLongInteger(val as long) as jk.sql.SQLStatement
+	func addParamDouble(val as double) as jk.sql.SQLStatement
+	func addParamBlob(val as buffer) as jk.sql.SQLStatement
+	func setParamString(name as string, val as string) as jk.sql.SQLStatement
+	func setParamInteger(name as string, val as int) as jk.sql.SQLStatement
+	func setParamLongInteger(name as string, val as long) as jk.sql.SQLStatement
+	func setParamDouble(name as string, val as double) as jk.sql.SQLStatement
+	func setParamBlob(name as string, val as buffer) as jk.sql.SQLStatement
+	func resetStatement
+	func getError as string
+	func close
+}

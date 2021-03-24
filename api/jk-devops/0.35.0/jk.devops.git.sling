@@ -1,0 +1,34 @@
+class name jk.devops.git.Git header public
+{
+	import jk.lang
+	import jk.fs
+	import jk.env
+	import jk.log
+	import jk.process
+	import jk.url
+	property executable as jk.fs.File { hasset hasget }
+	property sshCommand as string { hasset hasget }
+	property sshIdentity as jk.fs.File { hasset hasget }
+	ctor
+	ctor(ctx as jk.log.LoggingContext)
+	func getProcessLauncher as jk.process.ProcessLauncher
+	func asWorkdir(dir) as jk.fs.File
+	class name CloneParams header public static
+	{
+		ctor
+		property depth as int { hasset hasget }
+		property recursive as bool { hasset hasget }
+		property reference as string { hasset hasget }
+	}
+	func clone(repository, targetDir as dynamic = null, params as jk.devops.git.Git.CloneParams = null) as jk.fs.File
+	func checkout(workdir, reference as string)
+	func pull(workdir)
+	func isRepositoryUrlAccessible(repoUrl) as bool
+	func validateCredentialsForRepository(repository, username as string, password as string) as bool
+}
+class name jk.devops.git.GitRepo header public
+{
+	import jk.lang
+	ctor
+	func getBasename(repositoryUrl as string) static as string
+}

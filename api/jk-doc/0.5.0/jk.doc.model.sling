@@ -1,0 +1,87 @@
+class name jk.doc.model.BoldContainerNode header extends jk.doc.model.ContainerNode public
+{
+	import jk.lang
+	ctor
+}
+class name jk.doc.model.BulletListNode header extends jk.doc.model.BaseNode public
+{
+	import jk.lang
+	ctor
+	property entries as vector<jk.doc.model.ParagraphNode> { hasset hasget }
+	func addToEntries(entry as jk.doc.model.ParagraphNode)
+}
+class name jk.doc.model.BaseNode header public
+{
+	import jk.lang
+	ctor
+}
+class name jk.doc.model.ParagraphNode header extends jk.doc.model.ContainerNode public
+{
+	import jk.lang
+	ctor
+	func forText(text as string, style as string = null) static as jk.doc.model.ParagraphNode
+	property style as string { hasset hasget }
+}
+class name jk.doc.model.ContainerNode header extends jk.doc.model.BaseNode public
+{
+	import jk.lang
+	ctor
+	property nodes as vector<jk.doc.model.BaseNode> { hasset hasget }
+	func addNode(node as jk.doc.model.BaseNode)
+}
+class name jk.doc.model.SectionNode header extends jk.doc.model.ContainerNode public
+{
+	import jk.lang
+	ctor
+}
+class name jk.doc.model.TableNode header extends jk.doc.model.BaseNode public
+{
+	import jk.lang
+	ctor
+	class name ColumnInfo header public static
+	{
+		ctor
+		func getWidth as int #getterMethod
+		func setWidth(v as int) as jk.doc.model.TableNode.ColumnInfo #setterMethod
+		func getIsRelative as bool #getterMethod
+		func setIsRelative(v as bool) as jk.doc.model.TableNode.ColumnInfo #setterMethod
+	}
+	property style as string { hasset hasget }
+	property width as double { hasset hasget }
+	property columns as vector<jk.doc.model.TableNode.ColumnInfo> { hasset hasget }
+	property rows as vector<jk.doc.model.TableRowNode> { hasset hasget }
+	func addToColumns(column as jk.doc.model.TableNode.ColumnInfo)
+	func addToRows(row as jk.doc.model.TableRowNode)
+}
+class name jk.doc.model.TextNode header extends jk.doc.model.BaseNode public
+{
+	import jk.lang
+	ctor
+	func forText(text as string) static as jk.doc.model.TextNode
+	property text as string { hasset hasget }
+}
+class name jk.doc.model.HeadingNode header extends jk.doc.model.ContainerNode public
+{
+	import jk.lang
+	ctor
+	func forText(text as string, level as int = 1) static as jk.doc.model.HeadingNode
+	property level as int { hasset hasget }
+}
+class name jk.doc.model.DocumentNode header extends jk.doc.model.ContainerNode public
+{
+	import jk.lang
+	ctor
+	property title as string { hasset hasget }
+	property author as string { hasset hasget }
+}
+class name jk.doc.model.ItalicContainerNode header extends jk.doc.model.ContainerNode public
+{
+	import jk.lang
+	ctor
+}
+class name jk.doc.model.TableRowNode header extends jk.doc.model.ContainerNode public
+{
+	import jk.lang
+	ctor
+	func forCells(cells as array) static as jk.doc.model.TableRowNode
+}

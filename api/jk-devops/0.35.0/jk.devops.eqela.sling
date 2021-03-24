@@ -1,0 +1,12 @@
+class name jk.devops.eqela.EqelaRuntime header public
+{
+	import jk.lang
+	import jk.fs
+	import jk.env
+	import jk.process
+	ctor
+	property executableFile as jk.fs.File { hasset hasget }
+	func getCurrentRuntime as jk.fs.File
+	func getLauncher as jk.process.ProcessLauncher
+	func getLauncherForFile(file as jk.fs.File) as jk.process.ProcessLauncher
+}

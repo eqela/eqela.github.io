@@ -1,0 +1,18 @@
+{
+	"moduleDescription" : "Common classes for implementing a dynamic website.\n",
+	"type" : "module",
+	"moduleTitle" : "Website server framework",
+	"moduleId" : "jk.server.web.site",
+	"entities" : [
+		{
+			"type" : "class",
+			"name" : "DynamicWebsiteMain",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "DynamicWebsiteRouter",
+			"description" : ""
+		}
+	]
+}

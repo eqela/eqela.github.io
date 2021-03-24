@@ -1,0 +1,6 @@
+interface name jk.devops.common.DeployFileHandler header public
+{
+	import jk.lang
+	import jk.fs
+	func deployFile(file as jk.fs.File) as string
+}

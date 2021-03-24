@@ -1,0 +1,48 @@
+<html>
+<head>
+<title>jk.server.web.site.DynamicWebsiteRouter | JK Server [0.22.0] - API Reference</title>
+<link rel="stylesheet" type="text/css" href="style.css" />
+<meta name="viewport" content="initial-scale=1,maximum-scale=1" />
+<meta property="og:description" content="jk.server.web.site.DynamicWebsiteRouter | JK Server [0.22.0] - API Reference" />
+<meta property="og:title" content="jk.server.web.site.DynamicWebsiteRouter | JK Server [0.22.0] - API Reference" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:description" content="jk.server.web.site.DynamicWebsiteRouter | JK Server [0.22.0] - API Reference" />
+</head>
+<body><div class="content">
+<a class="back" href="index.html">&laquo; JK Server [0.22.0]</a><div class="intro">
+<h1><span class="keyword">class</span> <span class="symbol">jk.server.web.site.DynamicWebsiteRouter</span></h1>
+<p></p>
+</div>
+<div class="list">
+<div class="title">Base Types</div>
+<div class="entry">
+<div class="name"><span class="keyword">extends</span> <a class="datatype" href="../../jk-net/0.39.0/jk.http.worker.HTTPWorkerRouter.html">jk.http.worker.HTTPWorkerRouter</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">implements</span> <a class="datatype" href="../../jk-net/0.39.0/jk.http.server.HTTPServerComponent.html">jk.http.server.HTTPServerComponent</a></div></div>
+</div>
+<div class="list">
+<div class="title">Instance Methods</div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">initializeWebsite</span> <span class="modifier">virtual</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">initialize</span> ( server <span class="keyword">as</span> <a class="datatype" href="../../jk-net/0.39.0/jk.http.server.HTTPServerBase.html">jk.http.server.HTTPServerBase</a> ) <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">onMaintenance</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">onRefresh</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">cleanup</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">redirect</span> ( resp <span class="keyword">as</span> <a class="datatype" href="../../jk-net/0.39.0/jk.http.worker.HTTPWorkerResponse.html">jk.http.worker.HTTPWorkerResponse</a> , url <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">sendHtml</span> ( resp <span class="keyword">as</span> <a class="datatype" href="../../jk-net/0.39.0/jk.http.worker.HTTPWorkerResponse.html">jk.http.worker.HTTPWorkerResponse</a> , html <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">handleAnonymousQuery</span> ( req <span class="keyword">as</span> <a class="datatype" href="../../jk-net/0.39.0/jk.http.worker.HTTPWorkerRequest.html">jk.http.worker.HTTPWorkerRequest</a> , resp <span class="keyword">as</span> <a class="datatype" href="../../jk-net/0.39.0/jk.http.worker.HTTPWorkerResponse.html">jk.http.worker.HTTPWorkerResponse</a> , handler <span class="keyword">as</span> <span class="datatype">function&lt;void&gt;</span> ) <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">validateToken</span> ( token <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="modifier">virtual</span> <span class="keyword">as</span> <a class="datatype" href="../../jk-data/0.33.0/jk.jwt.JWT.html">jk.jwt.JWT</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">handleAuthenticatedQuery</span> ( req <span class="keyword">as</span> <a class="datatype" href="../../jk-net/0.39.0/jk.http.worker.HTTPWorkerRequest.html">jk.http.worker.HTTPWorkerRequest</a> , resp <span class="keyword">as</span> <a class="datatype" href="../../jk-net/0.39.0/jk.http.worker.HTTPWorkerResponse.html">jk.http.worker.HTTPWorkerResponse</a> , handler <span class="keyword">as</span> <span class="datatype">function&lt;void,jk.jwt.JWT&gt;</span> ) <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+</div>
+</div>
+</body>
+</html>

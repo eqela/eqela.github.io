@@ -1,0 +1,13 @@
+{
+	"moduleDescription" : "Support for XCode IDE.\n",
+	"type" : "module",
+	"moduleTitle" : "XCode support",
+	"moduleId" : "jk.devops.xcode",
+	"entities" : [
+		{
+			"type" : "class",
+			"name" : "XCodeProjectBuilder",
+			"description" : ""
+		}
+	]
+}

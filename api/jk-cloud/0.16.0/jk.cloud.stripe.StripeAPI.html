@@ -1,0 +1,54 @@
+<html>
+<head>
+<title>jk.cloud.stripe.StripeAPI | JK Cloud [0.16.0] - API Reference</title>
+<link rel="stylesheet" type="text/css" href="style.css" />
+<meta name="viewport" content="initial-scale=1,maximum-scale=1" />
+<meta property="og:description" content="jk.cloud.stripe.StripeAPI | JK Cloud [0.16.0] - API Reference" />
+<meta property="og:title" content="jk.cloud.stripe.StripeAPI | JK Cloud [0.16.0] - API Reference" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:description" content="jk.cloud.stripe.StripeAPI | JK Cloud [0.16.0] - API Reference" />
+</head>
+<body><div class="content">
+<a class="back" href="index.html">&laquo; JK Cloud [0.16.0]</a><div class="intro">
+<h1><span class="keyword">class</span> <span class="symbol">jk.cloud.stripe.StripeAPI</span></h1>
+<p></p>
+</div>
+<div class="list">
+<div class="title">Constants</div>
+<div class="entry">
+<div class="name"><span class="keyword">const</span> <span class="symbol">PAYMENT_STATUS_REQUIRES_PAYMENT</span> <span class="keyword">as</span> <span class="datatype">var</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">const</span> <span class="symbol">PAYMENT_STATUS_REQUIRES_CONFIRMATION</span> <span class="keyword">as</span> <span class="datatype">var</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">const</span> <span class="symbol">PAYMENT_STATUS_REQUIRES_ACTION</span> <span class="keyword">as</span> <span class="datatype">var</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">const</span> <span class="symbol">PAYMENT_STATUS_PROCESSING</span> <span class="keyword">as</span> <span class="datatype">var</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">const</span> <span class="symbol">PAYMENT_STATUS_SUCCEEDED</span> <span class="keyword">as</span> <span class="datatype">var</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">const</span> <span class="symbol">PAYMENT_STATUS_CANCELED</span> <span class="keyword">as</span> <span class="datatype">var</span></div></div>
+</div>
+<div class="list">
+<div class="title">Instance Methods</div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">createCustomer</span> ( customer <span class="keyword">as</span> <span class="datatype">jk.cloud.stripe.StripeAPI.Customer</span> ) <span class="keyword">as</span> <span class="datatype">jk.cloud.stripe.StripeAPI.Customer</span></div><div class="description">Creates a new customer</div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">listCustomers</span> <span class="keyword">as</span> <span class="datatype">vector&lt;jk.cloud.stripe.StripeAPI.Customer&gt;</span></div><div class="description">Retrieves a list of all customers</div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">createPaymentIntent</span> ( intent <span class="keyword">as</span> <span class="datatype">jk.cloud.stripe.StripeAPI.PaymentIntent</span> , setupFutureUsage <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="keyword">as</span> <span class="datatype">jk.cloud.stripe.StripeAPI.PaymentIntent</span></div><div class="description">Creates a payment intent given an amount and currency</div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">createSetupIntent</span> ( customer <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="keyword">as</span> <span class="datatype">jk.cloud.stripe.StripeAPI.SetupIntent</span></div><div class="description">Creates a setup intent that collects customer's payment credentials for future usage</div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">listPaymentMethods</span> ( customerId <span class="keyword">as</span> <span class="datatype">string</span> , type <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="keyword">as</span> <span class="datatype">vector&lt;jk.cloud.stripe.StripeAPI.PaymentMethod&gt;</span></div><div class="description">Retrieve a list of payment methods for a given customer</div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">retrievePaymentMethod</span> ( id <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="keyword">as</span> <span class="datatype">jk.cloud.stripe.StripeAPI.PaymentMethod</span></div><div class="description">Retrieves the payment method details for the specified payment method</div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">attachPaymentMethod</span> ( id <span class="keyword">as</span> <span class="datatype">string</span> , customer <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="keyword">as</span> <span class="datatype">jk.cloud.stripe.StripeAPI.PaymentMethod</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">detachPaymentMethod</span> ( id <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="keyword">as</span> <span class="datatype">jk.cloud.stripe.StripeAPI.PaymentMethod</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">paymentStatusToInt</span> ( status <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="keyword">as</span> <span class="datatype">int</span></div></div>
+</div>
+</div>
+</body>
+</html>

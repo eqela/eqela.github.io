@@ -1,0 +1,70 @@
+class name jk.server.web.WebSiteServerMain header extends jk.server.web.WebServer public
+{
+	import jk.lang
+	import jk.fs
+	import jk.http.server
+	import jk.env
+	ctor
+	func configure(key as string, value as string, relativeTo as jk.fs.File, error as jk.lang.Error) override as bool
+	func initializeServer(server as jk.http.server.HTTPServer) override as bool
+	func getTemplateDir as jk.fs.File #getterMethod
+	func setTemplateDir(v as jk.fs.File) as jk.server.web.WebSiteServerMain #setterMethod
+	func getResourceDir as jk.fs.File #getterMethod
+	func setResourceDir(v as jk.fs.File) as jk.server.web.WebSiteServerMain #setterMethod
+}
+class name jk.server.web.HTTPServerRateLimitHandler header implements jk.http.server.HTTPServerRequestHandler implements jk.http.server.HTTPServerComponent public
+{
+	import jk.lang
+	import jk.time
+	import jk.http.server
+	import jk.socket
+	ctor
+	func initialize(server as jk.http.server.HTTPServerBase)
+	func onMaintenance
+	func onRefresh
+	func cleanup
+	func handleRequest(req as jk.http.server.HTTPServerRequest, next as function<void>)
+	func getCountLimit as int #getterMethod
+	func setCountLimit(v as int) as jk.server.web.HTTPServerRateLimitHandler #setterMethod
+	func getCountDuration as int #getterMethod
+	func setCountDuration(v as int) as jk.server.web.HTTPServerRateLimitHandler #setterMethod
+	func getIgnoreDuration as int #getterMethod
+	func setIgnoreDuration(v as int) as jk.server.web.HTTPServerRateLimitHandler #setterMethod
+	func getMaintenanceCleanupDelay as int #getterMethod
+	func setMaintenanceCleanupDelay(v as int) as jk.server.web.HTTPServerRateLimitHandler #setterMethod
+}
+class name jk.server.web.WebSiteServerHandler header extends jk.http.server.HTTPServerRequestHandlerMap public
+{
+	import jk.lang
+	import jk.http.server
+	import jk.fs
+	import jk.template
+	ctor
+	func getTemplates as jk.template.TextTemplateManager
+	func processTemplate(name as string, params as jk.lang.DynamicMap) as string
+	func initialize(server as jk.http.server.HTTPServerBase) override
+	func getTemplateDir as jk.fs.File #getterMethod
+	func setTemplateDir(v as jk.fs.File) as jk.server.web.WebSiteServerHandler #setterMethod
+	func getResourceDir as jk.fs.File #getterMethod
+	func setResourceDir(v as jk.fs.File) as jk.server.web.WebSiteServerHandler #setterMethod
+}
+class name jk.server.web.WebServer header extends jk.server.CommonServer public
+{
+	import jk.lang
+	import jk.fs
+	import jk.env
+	import jk.http.server
+	import jk.worker
+	ctor
+	func configure(key as string, value as string, relativeTo as jk.fs.File, error as jk.lang.Error) override as bool
+	func initializeHandlers(server as jk.http.server.HTTPServer) virtual
+	func initializeServer(server as jk.http.server.HTTPServer) virtual as bool
+	func initializeNetworkServer(server as jk.server.NetworkServer) override as bool
+	func createServer override as jk.server.NetworkServer
+	func handleRequestWithWorker(req as jk.http.server.HTTPServerRequest, worker as typeinfo)
+	func executeForHandler(handler as jk.http.server.HTTPServerRequestHandler, args as array<string>) as int
+	func getHandler as jk.http.server.HTTPServerRequestHandler #getterMethod
+	func setHandler(v as jk.http.server.HTTPServerRequestHandler) as jk.server.web.WebServer #setterMethod
+	func getWorker as typeinfo #getterMethod
+	func setWorker(v as typeinfo) as jk.server.web.WebServer #setterMethod
+}

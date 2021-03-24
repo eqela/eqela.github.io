@@ -1,0 +1,36 @@
+class name jk.http.server.fs.HTTPServerDirectoryHandler header extends jk.http.server.HTTPServerRequestHandlerAdapter public
+{
+	import jk.lang
+	import jk.fs
+	import jk.http.server
+	import jk.template
+	import jk.json
+	import jk.log
+	ctor
+	func forDirectory(dir as jk.fs.File) static as jk.http.server.fs.HTTPServerDirectoryHandler
+	func addTemplateIncludeDir(dir as jk.fs.File)
+	func setIndexFiles(files as array) as jk.http.server.fs.HTTPServerDirectoryHandler
+	func setServerName(name as string) as jk.http.server.fs.HTTPServerDirectoryHandler
+	func getServerName as string
+	func getDirectoryEntries(dir as jk.fs.File, allEntries as vector<string>, dirs as vector<string>, files as vector<string>)
+	func dirToJSONObject(dir as jk.fs.File) as jk.lang.DynamicMap
+	func dirToJSON(dir as jk.fs.File) as string
+	func getTemplateVariablesForFile(file as jk.fs.File) virtual as jk.lang.DynamicMap
+	func dirToHTML(dir as jk.fs.File) as string
+	func onGET(req as jk.http.server.HTTPServerRequest) override as bool
+	func getListDirectories as bool #getterMethod
+	func setListDirectories(v as bool) as jk.http.server.fs.HTTPServerDirectoryHandler #setterMethod
+	func getProcessTemplateFiles as bool #getterMethod
+	func setProcessTemplateFiles(v as bool) as jk.http.server.fs.HTTPServerDirectoryHandler #setterMethod
+	func getDirectory as jk.fs.File #getterMethod
+	func setDirectory(v as jk.fs.File) as jk.http.server.fs.HTTPServerDirectoryHandler #setterMethod
+	func getMaxAge as int #getterMethod
+	func setMaxAge(v as int) as jk.http.server.fs.HTTPServerDirectoryHandler #setterMethod
+	func getServerURL as string #getterMethod
+	func setServerURL(v as string) as jk.http.server.fs.HTTPServerDirectoryHandler #setterMethod
+	func getIndexFiles as vector<string> #getterMethod
+	func getTemplateIncludeDirs as vector<jk.fs.File> #getterMethod
+	func setTemplateIncludeDirs(v as vector<jk.fs.File>) as jk.http.server.fs.HTTPServerDirectoryHandler #setterMethod
+	func getTemplateData as jk.lang.DynamicMap #getterMethod
+	func setTemplateData(v as jk.lang.DynamicMap) as jk.http.server.fs.HTTPServerDirectoryHandler #setterMethod
+}

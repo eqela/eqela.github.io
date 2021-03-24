@@ -1,0 +1,13 @@
+{
+	"moduleDescription" : "Support for the Secure Shell (SSH) protocol.\n",
+	"type" : "module",
+	"moduleTitle" : "SSH support",
+	"moduleId" : "jk.devops.ssh",
+	"entities" : [
+		{
+			"type" : "class",
+			"name" : "SshKey",
+			"description" : ""
+		}
+	]
+}

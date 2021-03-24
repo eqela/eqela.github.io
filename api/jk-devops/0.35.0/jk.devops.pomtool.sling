@@ -1,0 +1,494 @@
+class name jk.devops.pomtool.POMMaker header public
+{
+	import jk.lang
+	import jk.xml
+	ctor
+	func toXMLMaker(pom as jk.devops.pomtool.POM) as jk.xml.XMLMaker
+	func toXML(pom as jk.devops.pomtool.POM) as string
+	func getIndentWithTab as bool #getterMethod
+	func setIndentWithTab(v as bool) as jk.devops.pomtool.POMMaker #setterMethod
+}
+class name jk.devops.pomtool.POMFileEditor header extends jk.devops.pomtool.FileEditor public
+{
+	import jk.lang
+	import jk.fs
+	import jk.log
+	import jk.text
+	ctor
+	func createLicenseObject(id as string) as jk.devops.pomtool.POM.License
+	func mustHaveValue(value as string) as string
+	func actionParametersToDependency(action as jk.devops.pomtool.ActionCommand) as jk.devops.pomtool.POM.Dependency
+	func actionParametersToPerson(action as jk.devops.pomtool.ActionCommand) as jk.devops.pomtool.POM.Person
+	func actionParametersToBuildPlugin(action as jk.devops.pomtool.ActionCommand) as jk.devops.pomtool.POM.BuildPlugin
+	macro INIT_BUILD_PROPERTY 
+	{
+		var build = pom.getBuild()
+		if not build {
+			build = new POM.Build()
+			pom.setBuild(build)
+		}
+	}
+	macro INIT_BUILD_PLUGIN_PROPERTY 
+	{
+		var build = pom.getBuild()
+		if not build {
+			build = new POM.Build()
+			pom.setBuild(build)
+		}
+		var plugins = build.getPlugins()
+		if not plugins {
+			plugins = new vector<POM.BuildPlugin>
+			build.setPlugins(plugins)
+		}
+	}
+	macro INIT_SCM_PROPERTY 
+	{
+		var scm = pom.getScm()
+		if not scm {
+			scm = new POM.SCM()
+			pom.setScm(scm)
+		}
+	}
+	func filterPom(pom as jk.devops.pomtool.POM) as bool
+	func getModifiedContentForFile(file as jk.fs.File, fileName as string) override as string
+	func getIndentWithTab as bool #getterMethod
+	func setIndentWithTab(v as bool) as jk.devops.pomtool.POMFileEditor #setterMethod
+}
+class name jk.devops.pomtool.ActionCommand header public
+{
+	import jk.lang
+	import jk.text
+	ctor
+	func forText(text as string) static as jk.devops.pomtool.ActionCommand
+	func isCommand(value as string) as bool
+	func addParameter(value as string) as jk.devops.pomtool.ActionCommand
+	func getParameter(index as int) as string
+	func parse(text as string) as jk.devops.pomtool.ActionCommand
+	func getCommand as string #getterMethod
+	func setCommand(v as string) as jk.devops.pomtool.ActionCommand #setterMethod
+	func getParameters as vector<string> #getterMethod
+	func setParameters(v as vector<string>) as jk.devops.pomtool.ActionCommand #setterMethod
+}
+class name jk.devops.pomtool.POM header public
+{
+	import jk.lang
+	class name Exclusion header public static
+	{
+		ctor
+		func getGroupId as string #getterMethod
+		func setGroupId(v as string) as jk.devops.pomtool.POM.Exclusion #setterMethod
+		func getArtifactId as string #getterMethod
+		func setArtifactId(v as string) as jk.devops.pomtool.POM.Exclusion #setterMethod
+	}
+	class name Dependency header public static
+	{
+		ctor
+		func getGroupId as string #getterMethod
+		func setGroupId(v as string) as jk.devops.pomtool.POM.Dependency #setterMethod
+		func getArtifactId as string #getterMethod
+		func setArtifactId(v as string) as jk.devops.pomtool.POM.Dependency #setterMethod
+		func getVersion as string #getterMethod
+		func setVersion(v as string) as jk.devops.pomtool.POM.Dependency #setterMethod
+		func getType as string #getterMethod
+		func setType(v as string) as jk.devops.pomtool.POM.Dependency #setterMethod
+		func getScope as string #getterMethod
+		func setScope(v as string) as jk.devops.pomtool.POM.Dependency #setterMethod
+		func getOptional as string #getterMethod
+		func setOptional(v as string) as jk.devops.pomtool.POM.Dependency #setterMethod
+		func getExclusions as vector<jk.devops.pomtool.POM.Exclusion> #getterMethod
+		func setExclusions(v as vector<jk.devops.pomtool.POM.Exclusion>) as jk.devops.pomtool.POM.Dependency #setterMethod
+	}
+	class name Person header public static
+	{
+		ctor
+		func getId as string #getterMethod
+		func setId(v as string) as jk.devops.pomtool.POM.Person #setterMethod
+		func getName as string #getterMethod
+		func setName(v as string) as jk.devops.pomtool.POM.Person #setterMethod
+		func getEmail as string #getterMethod
+		func setEmail(v as string) as jk.devops.pomtool.POM.Person #setterMethod
+		func getUrl as string #getterMethod
+		func setUrl(v as string) as jk.devops.pomtool.POM.Person #setterMethod
+		func getOrganization as string #getterMethod
+		func setOrganization(v as string) as jk.devops.pomtool.POM.Person #setterMethod
+		func getOrganizationUrl as string #getterMethod
+		func setOrganizationUrl(v as string) as jk.devops.pomtool.POM.Person #setterMethod
+		func getRoles as vector<string> #getterMethod
+		func setRoles(v as vector<string>) as jk.devops.pomtool.POM.Person #setterMethod
+		func getTimezone as string #getterMethod
+		func setTimezone(v as string) as jk.devops.pomtool.POM.Person #setterMethod
+		func getProperties as jk.lang.KeyValueListForStrings #getterMethod
+		func setProperties(v as jk.lang.KeyValueListForStrings) as jk.devops.pomtool.POM.Person #setterMethod
+	}
+	class name License header public static
+	{
+		ctor
+		func getName as string #getterMethod
+		func setName(v as string) as jk.devops.pomtool.POM.License #setterMethod
+		func getUrl as string #getterMethod
+		func setUrl(v as string) as jk.devops.pomtool.POM.License #setterMethod
+		func getDistribution as string #getterMethod
+		func setDistribution(v as string) as jk.devops.pomtool.POM.License #setterMethod
+		func getComments as string #getterMethod
+		func setComments(v as string) as jk.devops.pomtool.POM.License #setterMethod
+	}
+	class name MailingList header public static
+	{
+		ctor
+		func getName as string #getterMethod
+		func setName(v as string) as jk.devops.pomtool.POM.MailingList #setterMethod
+		func getSubscribe as string #getterMethod
+		func setSubscribe(v as string) as jk.devops.pomtool.POM.MailingList #setterMethod
+		func getUnsubscribe as string #getterMethod
+		func setUnsubscribe(v as string) as jk.devops.pomtool.POM.MailingList #setterMethod
+		func getPost as string #getterMethod
+		func setPost(v as string) as jk.devops.pomtool.POM.MailingList #setterMethod
+		func getArchive as string #getterMethod
+		func setArchive(v as string) as jk.devops.pomtool.POM.MailingList #setterMethod
+		func getOtherArchives as vector<string> #getterMethod
+		func setOtherArchives(v as vector<string>) as jk.devops.pomtool.POM.MailingList #setterMethod
+	}
+	class name SCM header public static
+	{
+		ctor
+		func getConnection as string #getterMethod
+		func setConnection(v as string) as jk.devops.pomtool.POM.SCM #setterMethod
+		func getDeveloperConnection as string #getterMethod
+		func setDeveloperConnection(v as string) as jk.devops.pomtool.POM.SCM #setterMethod
+		func getTag as string #getterMethod
+		func setTag(v as string) as jk.devops.pomtool.POM.SCM #setterMethod
+		func getUrl as string #getterMethod
+		func setUrl(v as string) as jk.devops.pomtool.POM.SCM #setterMethod
+	}
+	class name Parent header public static
+	{
+		ctor
+		func getGroupId as string #getterMethod
+		func setGroupId(v as string) as jk.devops.pomtool.POM.Parent #setterMethod
+		func getArtifactId as string #getterMethod
+		func setArtifactId(v as string) as jk.devops.pomtool.POM.Parent #setterMethod
+		func getVersion as string #getterMethod
+		func setVersion(v as string) as jk.devops.pomtool.POM.Parent #setterMethod
+		func getRelativePath as string #getterMethod
+		func setRelativePath(v as string) as jk.devops.pomtool.POM.Parent #setterMethod
+	}
+	class name Organization header public static
+	{
+		ctor
+		func getName as string #getterMethod
+		func setName(v as string) as jk.devops.pomtool.POM.Organization #setterMethod
+		func getUrl as string #getterMethod
+		func setUrl(v as string) as jk.devops.pomtool.POM.Organization #setterMethod
+	}
+	class name IssueManagement header public static
+	{
+		ctor
+		func getSystem as string #getterMethod
+		func setSystem(v as string) as jk.devops.pomtool.POM.IssueManagement #setterMethod
+		func getUrl as string #getterMethod
+		func setUrl(v as string) as jk.devops.pomtool.POM.IssueManagement #setterMethod
+	}
+	class name RepositoryComponent header public static
+	{
+		ctor
+		func getEnabled as string #getterMethod
+		func setEnabled(v as string) as jk.devops.pomtool.POM.RepositoryComponent #setterMethod
+		func getUpdatePolicy as string #getterMethod
+		func setUpdatePolicy(v as string) as jk.devops.pomtool.POM.RepositoryComponent #setterMethod
+		func getChecksumPolicy as string #getterMethod
+		func setChecksumPolicy(v as string) as jk.devops.pomtool.POM.RepositoryComponent #setterMethod
+	}
+	class name Repository header public static
+	{
+		ctor
+		func getId as string #getterMethod
+		func setId(v as string) as jk.devops.pomtool.POM.Repository #setterMethod
+		func getName as string #getterMethod
+		func setName(v as string) as jk.devops.pomtool.POM.Repository #setterMethod
+		func getUrl as string #getterMethod
+		func setUrl(v as string) as jk.devops.pomtool.POM.Repository #setterMethod
+		func getLayout as string #getterMethod
+		func setLayout(v as string) as jk.devops.pomtool.POM.Repository #setterMethod
+		func getReleases as jk.devops.pomtool.POM.RepositoryComponent #getterMethod
+		func setReleases(v as jk.devops.pomtool.POM.RepositoryComponent) as jk.devops.pomtool.POM.Repository #setterMethod
+		func getSnapshots as jk.devops.pomtool.POM.RepositoryComponent #getterMethod
+		func setSnapshots(v as jk.devops.pomtool.POM.RepositoryComponent) as jk.devops.pomtool.POM.Repository #setterMethod
+	}
+	class name BuildResource header public static
+	{
+		ctor
+		func getTargetPath as string #getterMethod
+		func setTargetPath(v as string) as jk.devops.pomtool.POM.BuildResource #setterMethod
+		func getFiltering as string #getterMethod
+		func setFiltering(v as string) as jk.devops.pomtool.POM.BuildResource #setterMethod
+		func getDirectory as string #getterMethod
+		func setDirectory(v as string) as jk.devops.pomtool.POM.BuildResource #setterMethod
+		func getIncludes as vector<string> #getterMethod
+		func setIncludes(v as vector<string>) as jk.devops.pomtool.POM.BuildResource #setterMethod
+		func getExcludes as vector<string> #getterMethod
+		func setExcludes(v as vector<string>) as jk.devops.pomtool.POM.BuildResource #setterMethod
+	}
+	class name Configuration header public static
+	{
+		ctor
+		func addToValues(key as string, value as string)
+		func addToChildren(x as jk.devops.pomtool.POM.Configuration)
+		func getName as string #getterMethod
+		func setName(v as string) as jk.devops.pomtool.POM.Configuration #setterMethod
+		func getParams as jk.lang.DynamicMap #getterMethod
+		func setParams(v as jk.lang.DynamicMap) as jk.devops.pomtool.POM.Configuration #setterMethod
+		func getValues as jk.lang.KeyValueListForStrings #getterMethod
+		func setValues(v as jk.lang.KeyValueListForStrings) as jk.devops.pomtool.POM.Configuration #setterMethod
+		func getChildren as vector<jk.devops.pomtool.POM.Configuration> #getterMethod
+		func setChildren(v as vector<jk.devops.pomtool.POM.Configuration>) as jk.devops.pomtool.POM.Configuration #setterMethod
+	}
+	class name BuildExecution header public static
+	{
+		ctor
+		func getId as string #getterMethod
+		func setId(v as string) as jk.devops.pomtool.POM.BuildExecution #setterMethod
+		func getGoals as vector<string> #getterMethod
+		func setGoals(v as vector<string>) as jk.devops.pomtool.POM.BuildExecution #setterMethod
+		func getPhase as string #getterMethod
+		func setPhase(v as string) as jk.devops.pomtool.POM.BuildExecution #setterMethod
+		func getInherited as string #getterMethod
+		func setInherited(v as string) as jk.devops.pomtool.POM.BuildExecution #setterMethod
+		func getConfiguration as jk.devops.pomtool.POM.Configuration #getterMethod
+		func setConfiguration(v as jk.devops.pomtool.POM.Configuration) as jk.devops.pomtool.POM.BuildExecution #setterMethod
+	}
+	class name BuildPlugin header public static
+	{
+		ctor
+		func getGroupId as string #getterMethod
+		func setGroupId(v as string) as jk.devops.pomtool.POM.BuildPlugin #setterMethod
+		func getArtifactId as string #getterMethod
+		func setArtifactId(v as string) as jk.devops.pomtool.POM.BuildPlugin #setterMethod
+		func getVersion as string #getterMethod
+		func setVersion(v as string) as jk.devops.pomtool.POM.BuildPlugin #setterMethod
+		func getExtensions as string #getterMethod
+		func setExtensions(v as string) as jk.devops.pomtool.POM.BuildPlugin #setterMethod
+		func getInherited as string #getterMethod
+		func setInherited(v as string) as jk.devops.pomtool.POM.BuildPlugin #setterMethod
+		func getConfiguration as jk.devops.pomtool.POM.Configuration #getterMethod
+		func setConfiguration(v as jk.devops.pomtool.POM.Configuration) as jk.devops.pomtool.POM.BuildPlugin #setterMethod
+		func getDependencies as vector<jk.devops.pomtool.POM.Dependency> #getterMethod
+		func setDependencies(v as vector<jk.devops.pomtool.POM.Dependency>) as jk.devops.pomtool.POM.BuildPlugin #setterMethod
+		func getExecutions as vector<jk.devops.pomtool.POM.BuildExecution> #getterMethod
+		func setExecutions(v as vector<jk.devops.pomtool.POM.BuildExecution>) as jk.devops.pomtool.POM.BuildPlugin #setterMethod
+	}
+	class name BuildExtension header public static
+	{
+		ctor
+		func getGroupId as string #getterMethod
+		func setGroupId(v as string) as jk.devops.pomtool.POM.BuildExtension #setterMethod
+		func getArtifactId as string #getterMethod
+		func setArtifactId(v as string) as jk.devops.pomtool.POM.BuildExtension #setterMethod
+		func getVersion as string #getterMethod
+		func setVersion(v as string) as jk.devops.pomtool.POM.BuildExtension #setterMethod
+	}
+	class name Build header public static
+	{
+		ctor
+		func getDefaultGoal as string #getterMethod
+		func setDefaultGoal(v as string) as jk.devops.pomtool.POM.Build #setterMethod
+		func getDirectory as string #getterMethod
+		func setDirectory(v as string) as jk.devops.pomtool.POM.Build #setterMethod
+		func getFinalName as string #getterMethod
+		func setFinalName(v as string) as jk.devops.pomtool.POM.Build #setterMethod
+		func getFilters as vector<string> #getterMethod
+		func setFilters(v as vector<string>) as jk.devops.pomtool.POM.Build #setterMethod
+		func getResources as vector<jk.devops.pomtool.POM.BuildResource> #getterMethod
+		func setResources(v as vector<jk.devops.pomtool.POM.BuildResource>) as jk.devops.pomtool.POM.Build #setterMethod
+		func getTestResources as vector<jk.devops.pomtool.POM.BuildResource> #getterMethod
+		func setTestResources(v as vector<jk.devops.pomtool.POM.BuildResource>) as jk.devops.pomtool.POM.Build #setterMethod
+		func getPlugins as vector<jk.devops.pomtool.POM.BuildPlugin> #getterMethod
+		func setPlugins(v as vector<jk.devops.pomtool.POM.BuildPlugin>) as jk.devops.pomtool.POM.Build #setterMethod
+		func getPluginManagement as vector<jk.devops.pomtool.POM.BuildPlugin> #getterMethod
+		func setPluginManagement(v as vector<jk.devops.pomtool.POM.BuildPlugin>) as jk.devops.pomtool.POM.Build #setterMethod
+		func getSourceDirectory as string #getterMethod
+		func setSourceDirectory(v as string) as jk.devops.pomtool.POM.Build #setterMethod
+		func getScriptSourceDirectory as string #getterMethod
+		func setScriptSourceDirectory(v as string) as jk.devops.pomtool.POM.Build #setterMethod
+		func getTestSourceDirectory as string #getterMethod
+		func setTestSourceDirectory(v as string) as jk.devops.pomtool.POM.Build #setterMethod
+		func getOutputDirectory as string #getterMethod
+		func setOutputDirectory(v as string) as jk.devops.pomtool.POM.Build #setterMethod
+		func getTestOutputDirectory as string #getterMethod
+		func setTestOutputDirectory(v as string) as jk.devops.pomtool.POM.Build #setterMethod
+		func getExtensions as vector<jk.devops.pomtool.POM.BuildExtension> #getterMethod
+		func setExtensions(v as vector<jk.devops.pomtool.POM.BuildExtension>) as jk.devops.pomtool.POM.Build #setterMethod
+	}
+	class name ReportSet header public static
+	{
+		ctor
+		func getId as string #getterMethod
+		func setId(v as string) as jk.devops.pomtool.POM.ReportSet #setterMethod
+		func getReports as vector<string> #getterMethod
+		func setReports(v as vector<string>) as jk.devops.pomtool.POM.ReportSet #setterMethod
+		func getInherited as string #getterMethod
+		func setInherited(v as string) as jk.devops.pomtool.POM.ReportSet #setterMethod
+		func getConfiguration as jk.devops.pomtool.POM.Configuration #getterMethod
+		func setConfiguration(v as jk.devops.pomtool.POM.Configuration) as jk.devops.pomtool.POM.ReportSet #setterMethod
+	}
+	class name ReportingPlugin header public static
+	{
+		ctor
+		func getGroupId as string #getterMethod
+		func setGroupId(v as string) as jk.devops.pomtool.POM.ReportingPlugin #setterMethod
+		func getArtifactId as string #getterMethod
+		func setArtifactId(v as string) as jk.devops.pomtool.POM.ReportingPlugin #setterMethod
+		func getVersion as string #getterMethod
+		func setVersion(v as string) as jk.devops.pomtool.POM.ReportingPlugin #setterMethod
+		func getReportSets as vector<jk.devops.pomtool.POM.ReportSet> #getterMethod
+		func setReportSets(v as vector<jk.devops.pomtool.POM.ReportSet>) as jk.devops.pomtool.POM.ReportingPlugin #setterMethod
+	}
+	class name Reporting header public static
+	{
+		ctor
+		func getOutputDirectory as string #getterMethod
+		func setOutputDirectory(v as string) as jk.devops.pomtool.POM.Reporting #setterMethod
+		func getPlugins as vector<jk.devops.pomtool.POM.ReportingPlugin> #getterMethod
+		func setPlugins(v as vector<jk.devops.pomtool.POM.ReportingPlugin>) as jk.devops.pomtool.POM.Reporting #setterMethod
+	}
+	class name CIManagementNotifier header public static
+	{
+		ctor
+		func getType as string #getterMethod
+		func setType(v as string) as jk.devops.pomtool.POM.CIManagementNotifier #setterMethod
+		func getSendOnError as string #getterMethod
+		func setSendOnError(v as string) as jk.devops.pomtool.POM.CIManagementNotifier #setterMethod
+		func getSendOnFailure as string #getterMethod
+		func setSendOnFailure(v as string) as jk.devops.pomtool.POM.CIManagementNotifier #setterMethod
+		func getSendOnSuccess as string #getterMethod
+		func setSendOnSuccess(v as string) as jk.devops.pomtool.POM.CIManagementNotifier #setterMethod
+		func getSendOnWarning as string #getterMethod
+		func setSendOnWarning(v as string) as jk.devops.pomtool.POM.CIManagementNotifier #setterMethod
+		func getConfiguration as jk.devops.pomtool.POM.Configuration #getterMethod
+		func setConfiguration(v as jk.devops.pomtool.POM.Configuration) as jk.devops.pomtool.POM.CIManagementNotifier #setterMethod
+	}
+	class name CIManagement header public static
+	{
+		ctor
+		func getSystem as string #getterMethod
+		func setSystem(v as string) as jk.devops.pomtool.POM.CIManagement #setterMethod
+		func getUrl as string #getterMethod
+		func setUrl(v as string) as jk.devops.pomtool.POM.CIManagement #setterMethod
+		func getNotifiers as vector<jk.devops.pomtool.POM.CIManagementNotifier> #getterMethod
+		func setNotifiers(v as vector<jk.devops.pomtool.POM.CIManagementNotifier>) as jk.devops.pomtool.POM.CIManagement #setterMethod
+	}
+	ctor
+	func getModelVersion as string #getterMethod
+	func setModelVersion(v as string) as jk.devops.pomtool.POM #setterMethod
+	func getGroupId as string #getterMethod
+	func setGroupId(v as string) as jk.devops.pomtool.POM #setterMethod
+	func getArtifactId as string #getterMethod
+	func setArtifactId(v as string) as jk.devops.pomtool.POM #setterMethod
+	func getVersion as string #getterMethod
+	func setVersion(v as string) as jk.devops.pomtool.POM #setterMethod
+	func getPackaging as string #getterMethod
+	func setPackaging(v as string) as jk.devops.pomtool.POM #setterMethod
+	func getDependencies as vector<jk.devops.pomtool.POM.Dependency> #getterMethod
+	func setDependencies(v as vector<jk.devops.pomtool.POM.Dependency>) as jk.devops.pomtool.POM #setterMethod
+	func getParent as jk.devops.pomtool.POM.Parent #getterMethod
+	func setParent(v as jk.devops.pomtool.POM.Parent) as jk.devops.pomtool.POM #setterMethod
+	func getDependencyManagement as vector<jk.devops.pomtool.POM.Dependency> #getterMethod
+	func setDependencyManagement(v as vector<jk.devops.pomtool.POM.Dependency>) as jk.devops.pomtool.POM #setterMethod
+	func getModules as vector<string> #getterMethod
+	func setModules(v as vector<string>) as jk.devops.pomtool.POM #setterMethod
+	func getProperties as jk.lang.KeyValueListForStrings #getterMethod
+	func setProperties(v as jk.lang.KeyValueListForStrings) as jk.devops.pomtool.POM #setterMethod
+	func getBuild as jk.devops.pomtool.POM.Build #getterMethod
+	func setBuild(v as jk.devops.pomtool.POM.Build) as jk.devops.pomtool.POM #setterMethod
+	func getReporting as jk.devops.pomtool.POM.Reporting #getterMethod
+	func setReporting(v as jk.devops.pomtool.POM.Reporting) as jk.devops.pomtool.POM #setterMethod
+	func getName as string #getterMethod
+	func setName(v as string) as jk.devops.pomtool.POM #setterMethod
+	func getDescription as string #getterMethod
+	func setDescription(v as string) as jk.devops.pomtool.POM #setterMethod
+	func getUrl as string #getterMethod
+	func setUrl(v as string) as jk.devops.pomtool.POM #setterMethod
+	func getInceptionYear as string #getterMethod
+	func setInceptionYear(v as string) as jk.devops.pomtool.POM #setterMethod
+	func getLicenses as vector<jk.devops.pomtool.POM.License> #getterMethod
+	func setLicenses(v as vector<jk.devops.pomtool.POM.License>) as jk.devops.pomtool.POM #setterMethod
+	func getOrganization as jk.devops.pomtool.POM.Organization #getterMethod
+	func setOrganization(v as jk.devops.pomtool.POM.Organization) as jk.devops.pomtool.POM #setterMethod
+	func getDevelopers as vector<jk.devops.pomtool.POM.Person> #getterMethod
+	func setDevelopers(v as vector<jk.devops.pomtool.POM.Person>) as jk.devops.pomtool.POM #setterMethod
+	func getContributors as vector<jk.devops.pomtool.POM.Person> #getterMethod
+	func setContributors(v as vector<jk.devops.pomtool.POM.Person>) as jk.devops.pomtool.POM #setterMethod
+	func getIssueManagement as jk.devops.pomtool.POM.IssueManagement #getterMethod
+	func setIssueManagement(v as jk.devops.pomtool.POM.IssueManagement) as jk.devops.pomtool.POM #setterMethod
+	func getCiManagement as jk.devops.pomtool.POM.CIManagement #getterMethod
+	func setCiManagement(v as jk.devops.pomtool.POM.CIManagement) as jk.devops.pomtool.POM #setterMethod
+	func getMailingLists as vector<jk.devops.pomtool.POM.MailingList> #getterMethod
+	func setMailingLists(v as vector<jk.devops.pomtool.POM.MailingList>) as jk.devops.pomtool.POM #setterMethod
+	func getScm as jk.devops.pomtool.POM.SCM #getterMethod
+	func setScm(v as jk.devops.pomtool.POM.SCM) as jk.devops.pomtool.POM #setterMethod
+	func getPrerequisites as jk.lang.KeyValueListForStrings #getterMethod
+	func setPrerequisites(v as jk.lang.KeyValueListForStrings) as jk.devops.pomtool.POM #setterMethod
+	func getRepositories as vector<jk.devops.pomtool.POM.Repository> #getterMethod
+	func setRepositories(v as vector<jk.devops.pomtool.POM.Repository>) as jk.devops.pomtool.POM #setterMethod
+	func getPluginRepositories as vector<jk.devops.pomtool.POM.Repository> #getterMethod
+	func setPluginRepositories(v as vector<jk.devops.pomtool.POM.Repository>) as jk.devops.pomtool.POM #setterMethod
+}
+class name jk.devops.pomtool.POMParser header extends jk.xml.XMLParserAdapter public
+{
+	import jk.lang
+	import jk.fs
+	import jk.xml
+	import jk.log
+	ctor
+	func parseFile(ctx as jk.log.LoggingContext, file as jk.fs.File, fileName as string) static as jk.devops.pomtool.POM
+	func parseString(ctx as jk.log.LoggingContext, data as string, fileName as string) static as jk.devops.pomtool.POM
+	func parseLicenses(ee as jk.xml.MarkupLanguageParser.StartElement) as vector<jk.devops.pomtool.POM.License>
+	func parseBuildExecutions(ee as jk.xml.MarkupLanguageParser.StartElement) as vector<jk.devops.pomtool.POM.BuildExecution>
+	func parseDependencies(ee as jk.xml.MarkupLanguageParser.StartElement) as vector<jk.devops.pomtool.POM.Dependency>
+	func parseParentElement(ee as jk.xml.MarkupLanguageParser.StartElement) as jk.devops.pomtool.POM.Parent
+	func acceptStringList(ee as jk.xml.MarkupLanguageParser.StartElement, subTag as string) as vector<string>
+	func acceptPropertyList(ee as jk.xml.MarkupLanguageParser.StartElement) as jk.lang.KeyValueListForStrings
+	func parsePersonList(ee as jk.xml.MarkupLanguageParser.StartElement, subTag as string) as vector<jk.devops.pomtool.POM.Person>
+	func parseMailingLists(ee as jk.xml.MarkupLanguageParser.StartElement) as vector<jk.devops.pomtool.POM.MailingList>
+	func parseRepositoryComponent(ee as jk.xml.MarkupLanguageParser.StartElement) as jk.devops.pomtool.POM.RepositoryComponent
+	func parseRepositoryList(ee as jk.xml.MarkupLanguageParser.StartElement, subTag as string) as vector<jk.devops.pomtool.POM.Repository>
+	func parseConfigurationElement(ee as jk.xml.MarkupLanguageParser.StartElement) as jk.devops.pomtool.POM.Configuration
+	func parseReportingElement(ee as jk.xml.MarkupLanguageParser.StartElement) as jk.devops.pomtool.POM.Reporting
+	func parseBuildElement(ee as jk.xml.MarkupLanguageParser.StartElement) as jk.devops.pomtool.POM.Build
+	func execute override
+	func getPom as jk.devops.pomtool.POM #getterMethod
+	func setPom(v as jk.devops.pomtool.POM) as jk.devops.pomtool.POMParser #setterMethod
+}
+class name jk.devops.pomtool.FileEditor header abstract public
+{
+	import jk.lang
+	import jk.fs
+	import jk.log
+	import jk.diff
+	ctor
+	var ctx protected as jk.log.LoggingContext
+	func setContext(ctx as jk.log.LoggingContext)
+	func addAction(action as jk.devops.pomtool.ActionCommand) as jk.devops.pomtool.FileEditor
+	func getOriginalContent as string
+	func getModifiedContentForFile(file as jk.fs.File, fileName as string) abstract as string
+	func getModifiedContent as string
+	func getDiff as string
+	func getFile as jk.fs.File #getterMethod
+	func setFile(v as jk.fs.File) as jk.devops.pomtool.FileEditor #setterMethod
+	func getFileName as string #getterMethod
+	func setFileName(v as string) as jk.devops.pomtool.FileEditor #setterMethod
+	func getFileEncoding as string #getterMethod
+	func setFileEncoding(v as string) as jk.devops.pomtool.FileEditor #setterMethod
+	func getActions as vector<jk.devops.pomtool.ActionCommand> #getterMethod
+	func setActions(v as vector<jk.devops.pomtool.ActionCommand>) as jk.devops.pomtool.FileEditor #setterMethod
+}
+class name jk.devops.pomtool.PomtoolApp header extends jk.console.ConsoleApplicationMain public
+{
+	import jk.lang
+	import jk.fs
+	import jk.log
+	import jk.text
+	import jk.console
+	ctor
+	func initialize override as bool
+	func execute override as bool
+}

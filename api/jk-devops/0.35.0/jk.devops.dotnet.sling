@@ -1,0 +1,59 @@
+class name jk.devops.dotnet.NetCoreBuilder header public
+{
+	import jk.lang
+	import jk.fs
+	import jk.log
+	import jk.env
+	import jk.process
+	ctor
+	property dotnetCommand as jk.fs.File { hasset hasget }
+	property updateDependencies as bool { hasset hasget }
+	property buildRelease as bool { hasset hasget }
+	property targetPlatform as string { hasset hasget }
+	func getDotnetCommandFile as jk.fs.File
+	func getBuilderId as string
+	func canBuild(dir as jk.fs.File) as bool
+	func execute(ctx as jk.log.LoggingContext, sourceDirectory as jk.fs.File, destinationDirectory as jk.fs.File) as bool
+	func copyFile(ctx as jk.log.LoggingContext, file as jk.fs.File, dest as jk.fs.File)
+}
+class name jk.devops.dotnet.CSProjUtil header public
+{
+	import jk.lang
+	import jk.fs
+	import jk.xml
+	ctor
+	func findNetFrameworkProjectFile(dir as jk.fs.File) static as jk.fs.File
+	func findNetCoreProjectFile(dir as jk.fs.File) static as jk.fs.File
+	func isNetCoreProject(file as jk.fs.File) static as bool
+	func isAppProject(dir as jk.fs.File) static as bool
+}
+class name jk.devops.dotnet.Nupkg header public
+{
+	import jk.lang
+	import jk.fs
+	import jk.env
+	import jk.log
+	import jk.process
+	ctor
+	func splitFileToNameAndVersion(file as jk.fs.File) static as array<string>
+	func splitStringToNameAndVersion(idname as string) static as array<string>
+	func getPackageCacheDir(dotnet as jk.fs.File) static as jk.fs.File
+	func clearPackageFromNugetCache(ctx as jk.log.LoggingContext, dotnet as jk.fs.File, name as string, version as string) static as bool
+	func clearLocalPackagesFromNugetCache(ctx as jk.log.LoggingContext, dotnet as jk.fs.File, dir as jk.fs.File) static as bool
+}
+class name jk.devops.dotnet.MSBuildBuilder header public
+{
+	import jk.lang
+	import jk.fs
+	import jk.log
+	import jk.env
+	import jk.process
+	ctor
+	property msbuildCommand as jk.fs.File { hasset hasget }
+	property updateDependencies as bool { hasset hasget }
+	func getMsbuildCommandFile as jk.fs.File
+	func getBuilderId as string
+	func executeMsbuild(executable as jk.fs.File, projectDirectory as jk.fs.File, target as string, output as jk.lang.StringBuilder) as bool
+	func canBuild(dir as jk.fs.File) as bool
+	func execute(ctx as jk.log.LoggingContext, sourceDirectory as jk.fs.File, destinationDirectory as jk.fs.File) as bool
+}

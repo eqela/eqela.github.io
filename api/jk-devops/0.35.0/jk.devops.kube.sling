@@ -1,0 +1,120 @@
+class name jk.devops.kube.Kubectl header public
+{
+	import jk.lang
+	import jk.fs
+	import jk.log
+	import jk.env
+	import jk.time
+	import jk.random
+	import jk.process
+	property kubectl as jk.fs.File { hasset hasget }
+	property namespace as string { hasset hasget }
+	property kubeconfigFile as jk.fs.File { hasset hasget }
+	property kubeconfigString as string { hasset hasget }
+	ctor(ctx as jk.log.LoggingContext)
+	func useKubectlCommand(command as string)
+	func useDefaultKubectl
+	func executeCommandVector(args as vector<string>, ignoreErrors as bool = false) as string
+	func executeCommand(args as array, ignoreErrors as bool = false) as string
+	func createSecret(name as string, data as jk.lang.DynamicMap) as string
+	func applyFile(file as jk.fs.File) as string
+	func applyString(content as string) as string
+	func executeSlingScript(script as string)
+}
+class name jk.devops.kube.KubeHelper header public
+{
+	import jk.lang
+	import jk.fs
+	import jk.log
+	import jk.env
+	import jk.sha
+	import jk.devops.git
+	import jk.devops.docker
+	import jk.devops.docker.builder
+	class name ServicePort header public static
+	{
+		ctor
+		property name as string { hasset hasget }
+		property protocol as string { hasset hasget }
+		property clusterPort as int { hasset hasget }
+		property containerPort as int { hasset hasget }
+		property externalPort as int { hasset hasget }
+	}
+	class name Service header public static
+	{
+		property name as string { hasset hasget }
+		property ports as vector<jk.devops.kube.KubeHelper.ServicePort> { hasset hasget }
+		property version as string { hasset hasget }
+		property environment as jk.lang.DynamicMap { hasset hasget }
+		property instances as int { hasset hasget }
+		property preDeployScript as string { hasset hasget }
+		property postDeployScript as string { hasset hasget }
+		property command as string { hasset hasget }
+		property arguments as vector<string> { hasset hasget }
+		property usesHttpLoadBalancing as bool { hasset hasget }
+		property schedule as string { hasset hasget }
+		property buildOnly as bool { hasset hasget }
+		ctor
+		func hasExternalPorts as bool
+		func clearPorts
+		func addHttpPort(externalPort as int = 0)
+		func addPort(name as string, protocol as string, clusterPort as int, containerPort as int, externalPort as int) as jk.devops.kube.KubeHelper.Service
+		func getOnlyPort as jk.devops.kube.KubeHelper.ServicePort
+		func addPortObject(port as jk.devops.kube.KubeHelper.ServicePort) as jk.devops.kube.KubeHelper.Service
+		func setClusterPort(port as int) as jk.devops.kube.KubeHelper.Service
+		func setContainerPort(port as int) as jk.devops.kube.KubeHelper.Service
+		func setExternalPort(port as int) as jk.devops.kube.KubeHelper.Service
+		func addVariable(key as string, value as string)
+		func addArgument(arg as string)
+		func addSecret(key as string, secretName as string, secretKey as string)
+	}
+	class name BuildableService header extends jk.devops.kube.KubeHelper.Service public static
+	{
+		ctor
+		property buildConfig as jk.lang.DynamicMap { hasset hasget }
+		func configureBuild(key as string, value as object)
+	}
+	class name GitService header extends jk.devops.kube.KubeHelper.BuildableService public static
+	{
+		ctor
+		property repository as string { hasset hasget }
+		property reference as string { hasset hasget }
+	}
+	class name LocalDirectoryService header extends jk.devops.kube.KubeHelper.BuildableService public static
+	{
+		ctor
+		property directory as jk.fs.File { hasset hasget }
+	}
+	class name PrebuiltService header extends jk.devops.kube.KubeHelper.Service public static
+	{
+		ctor
+		property image as string { hasset hasget }
+	}
+	property workdir as jk.fs.File { hasset hasget }
+	property dockerRegistry as string { hasset hasget }
+	ctor(kube as jk.devops.kube.Kubectl)
+	func addToServices(service as jk.devops.kube.KubeHelper.Service) as jk.devops.kube.KubeHelper.Service
+	func addGitService(name as string, repository as string) as jk.devops.kube.KubeHelper.GitService
+	func addLocalDirectoryService(name as string, dir) as jk.devops.kube.KubeHelper.LocalDirectoryService
+	func addPrebuiltService(name as string, image as string) as jk.devops.kube.KubeHelper.PrebuiltService
+	func buildAndPushContainer(srcdir as jk.fs.File, tag as string, buildConfig as jk.lang.DynamicMap)
+	func getCustomImageTagForName(name as string, version as string) as string
+	func getCustomImageDownloadTagForName(name as string, version as string) as string
+	func buildAndPushGitService(service as jk.devops.kube.KubeHelper.GitService)
+	func getImageForService(service as jk.devops.kube.KubeHelper.Service) as string
+	func generateYamlForService(service as jk.devops.kube.KubeHelper.Service) as string
+	func generateYamlForNamespace(name as string) as string
+	func applyYaml(yaml as string, identifier as string)
+	func prepareService(service as jk.devops.kube.KubeHelper.Service)
+	func createNamespace
+	func initializeCluster
+	func deployService(service as jk.devops.kube.KubeHelper.Service)
+	func deployServiceByName(name as string)
+	func deployServiceByVersion(name as string, version as string)
+	func updateDeploymentForService(service as jk.devops.kube.KubeHelper.Service, version as string)
+}
+class name jk.devops.kube.KubeModel header public
+{
+	import jk.lang
+	ctor
+}

@@ -1,0 +1,13 @@
+class name jk.sql.factory.SQLDatabaseFactory header public
+{
+	import jk.lang
+	import jk.log
+	import jk.fs
+	import jk.sql
+	import jk.mssql
+	import jk.mysql
+	import jk.sqlite
+	ctor
+	func getDatabase(ctx as jk.log.LoggingContext, connectionString as string) static as jk.sql.SQLDatabase
+	func getDatabaseWithConfig(ctx as jk.log.LoggingContext, config as jk.lang.DynamicMap) static as jk.sql.SQLDatabase
+}

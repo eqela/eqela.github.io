@@ -1,0 +1,80 @@
+<html>
+<head>
+<title>JK DB [0.21.0] - API Reference</title>
+<link rel="stylesheet" type="text/css" href="style.css" />
+<meta name="viewport" content="initial-scale=1,maximum-scale=1" />
+<meta property="og:description" content="JK DB [0.21.0] - API Reference" />
+<meta property="og:title" content="JK DB [0.21.0] - API Reference" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:description" content="JK DB [0.21.0] - API Reference" />
+</head>
+<body><div class="content">
+<div class="intro">
+<h1>JK DB [0.21.0] <span class="version">- API Reference</span></h1>
+<p><span class="code">eqela:jk-db:0.21.0</span></p><p></p>
+</div>
+<div class="list">
+<div class="titlebox"><h1>jk.appdb<span class="additional"> - Application database</span></h1><p>A convenient utility for declaring and maintaining the database structure
+and connection for an application.
+</p>
+</div>
+<div class="entry">
+<div class="name"><span class="keyword">class</span> <a class="datatype" href="jk.appdb.ApplicationDatabase.html">ApplicationDatabase</a></div><div class="description">Base class for application-specific database schema declarations.</div></div>
+</div>
+<div class="list">
+<div class="titlebox"><h1>jk.mssql<span class="additional"> - Microsoft SQL Server support</span></h1><p>Client support for Microsoft SQL Server products.
+</p>
+</div>
+<div class="entry">
+<div class="name"><span class="keyword">class</span> <a class="datatype" href="jk.mssql.MSSQLDatabase.html">MSSQLDatabase</a></div><div class="description">Microsoft SQL Server database driver.</div></div>
+</div>
+<div class="list">
+<div class="titlebox"><h1>jk.mysql<span class="additional"> - MySQL support</span></h1><p>Client support for MySQL databases.
+</p>
+</div>
+<div class="entry">
+<div class="name"><span class="keyword">class</span> <a class="datatype" href="jk.mysql.MySQLDatabase.html">MySQLDatabase</a></div><div class="description">MySQL database driver.</div></div>
+<div class="entry">
+<div class="name"><span class="keyword">class</span> <a class="datatype" href="jk.mysql.MySQLDatabaseGeneric.html">MySQLDatabaseGeneric</a></div><div class="description">A generic MySQL client implementation, fully written in Sling. This class is not
+normally meant to be used directly but through MySQLDatabase.</div></div>
+</div>
+<div class="list">
+<div class="titlebox"><h1>jk.sql<span class="additional"> - SQL database access framework</span></h1><p>Base classes and APIs for all SQL support for JK applications.
+</p>
+</div>
+<div class="entry">
+<div class="name"><span class="keyword">class</span> <a class="datatype" href="jk.sql.SQLDatabase.html">SQLDatabase</a></div><div class="description">SQL database connection. This is the base class and abstraction for all
+database-specific driver classes.</div></div>
+<div class="entry">
+<div class="name"><span class="keyword">class</span> <a class="datatype" href="jk.sql.SQLOrderingRule.html">SQLOrderingRule</a></div><div class="description">Representation of an ordering rule in SQL.</div></div>
+<div class="entry">
+<div class="name"><span class="keyword">class</span> <a class="datatype" href="jk.sql.SQLResultSetIterator.html">SQLResultSetIterator</a></div><div class="description">A generic iterator for SQL result sets.</div></div>
+<div class="entry">
+<div class="name"><span class="keyword">class</span> <a class="datatype" href="jk.sql.SQLResultSetSingleColumnIterator.html">SQLResultSetSingleColumnIterator</a></div><div class="description">A generic iterator that iterater a single column in a result set.</div></div>
+<div class="entry">
+<div class="name"><span class="keyword">interface</span> <a class="datatype" href="jk.sql.SQLStatement.html">SQLStatement</a></div><div class="description">Represents an SQL statement or query</div></div>
+<div class="entry">
+<div class="name"><span class="keyword">class</span> <a class="datatype" href="jk.sql.SQLTableColumnIndexInfo.html">SQLTableColumnIndexInfo</a></div><div class="description">Information about column indexes of an SQL table.</div></div>
+<div class="entry">
+<div class="name"><span class="keyword">class</span> <a class="datatype" href="jk.sql.SQLTableColumnInfo.html">SQLTableColumnInfo</a></div><div class="description">Information about columns of an SQL table.</div></div>
+<div class="entry">
+<div class="name"><span class="keyword">class</span> <a class="datatype" href="jk.sql.SQLTableInfo.html">SQLTableInfo</a></div><div class="description">Information about an SQL table.</div></div>
+</div>
+<div class="list">
+<div class="titlebox"><h1>jk.sql.factory<span class="additional"> - SQL database factory</span></h1><p>Create database connections and assign drivers dynamically.
+</p>
+</div>
+<div class="entry">
+<div class="name"><span class="keyword">class</span> <a class="datatype" href="jk.sql.factory.SQLDatabaseFactory.html">SQLDatabaseFactory</a></div><div class="description">A generic utility class for establishing connections to any supported database
+based on a connection string.</div></div>
+</div>
+<div class="list">
+<div class="titlebox"><h1>jk.sqlite<span class="additional"> - SQLite support</span></h1><p>Client support for SQLite databases.
+</p>
+</div>
+<div class="entry">
+<div class="name"><span class="keyword">class</span> <a class="datatype" href="jk.sqlite.SQLiteDatabase.html">SQLiteDatabase</a></div><div class="description">SQLite database driver.</div></div>
+</div>
+</div>
+</body>
+</html>

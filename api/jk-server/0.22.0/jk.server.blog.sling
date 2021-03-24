@@ -1,0 +1,225 @@
+class name jk.server.blog.Category header extends jk.json.JSONObjectAdapter implements jk.lang.StringObject public
+{
+	import jk.lang
+	import jk.json
+	ctor
+	func setId(value as string) as jk.server.blog.Category
+	func getId as string
+	func setTitle(value as string) as jk.server.blog.Category
+	func getTitle as string
+	func setSlogan(value as string) as jk.server.blog.Category
+	func getSlogan as string
+	func setIntro(value as string) as jk.server.blog.Category
+	func getIntro as string
+	func setBanner(value as string) as jk.server.blog.Category
+	func getBanner as string
+	func toJsonObject override as object
+	func fromJsonObject(o as object) override as bool
+	func fromJsonString(o as string) as bool
+	func toJsonString as string
+	func toString as string
+	func forJsonString(o as string) static as jk.server.blog.Category
+	func forJsonObject(o as object) static as jk.server.blog.Category
+}
+class name jk.server.blog.BlogServer header extends jk.server.web.WebServer public
+{
+	import jk.lang
+	import jk.fs
+	import jk.log
+	import jk.template
+	import jk.http.server
+	import jk.http.server.fs
+	import jk.server.web
+	ctor
+	property serverName as string { hasset hasget }
+	property themeDirectory as dynamic { hasset hasget }
+	property articleDirectory as dynamic { hasset hasget }
+	func setVariable(key as string, value as string)
+	func configure(key as string, value as string, relativeTo as jk.fs.File, error as jk.lang.Error) override as bool
+	func initializeServer(server as jk.http.server.HTTPServer) override as bool
+}
+class name jk.server.blog.Article header extends jk.json.JSONObjectAdapter implements jk.lang.StringObject public
+{
+	import jk.lang
+	import jk.json
+	ctor
+	func setId(value as string) as jk.server.blog.Article
+	func getId as string
+	func setTitle(value as string) as jk.server.blog.Article
+	func getTitle as string
+	func setSlogan(value as string) as jk.server.blog.Article
+	func getSlogan as string
+	func setAuthor(value as string) as jk.server.blog.Article
+	func getAuthor as string
+	func setIntroMarkup(value as string) as jk.server.blog.Article
+	func getIntroMarkup as string
+	func setIntroHtml(value as string) as jk.server.blog.Article
+	func getIntroHtml as string
+	func setDate(value as string) as jk.server.blog.Article
+	func getDate as string
+	func setTimeStampValue(value as long) as jk.server.blog.Article
+	func getTimeStampValue as long
+	func setTimeStamp(value as jk.lang.LongIntegerObject) as jk.server.blog.Article
+	func getTimeStamp as jk.lang.LongIntegerObject
+	func setRedirect(value as string) as jk.server.blog.Article
+	func getRedirect as string
+	func setBanner(value as string) as jk.server.blog.Article
+	func getBanner as string
+	func setShareImage(value as string) as jk.server.blog.Article
+	func getShareImage as string
+	func setShareDescription(value as string) as jk.server.blog.Article
+	func getShareDescription as string
+	func setCategories(value as vector<string>) as jk.server.blog.Article
+	func getCategories as vector<string>
+	func setParent(value as string) as jk.server.blog.Article
+	func getParent as string
+	func setContentMarkup(value as string) as jk.server.blog.Article
+	func getContentMarkup as string
+	func setContentHtml(value as string) as jk.server.blog.Article
+	func getContentHtml as string
+	func setPriorityValue(value as int) as jk.server.blog.Article
+	func getPriorityValue as int
+	func setPriority(value as jk.lang.IntegerObject) as jk.server.blog.Article
+	func getPriority as jk.lang.IntegerObject
+	func setDescription(value as string) as jk.server.blog.Article
+	func getDescription as string
+	func setIntroPhoto(value as string) as jk.server.blog.Article
+	func getIntroPhoto as string
+	func setFbImage(value as string) as jk.server.blog.Article
+	func getFbImage as string
+	func setTags(value as vector<string>) as jk.server.blog.Article
+	func getTags as vector<string>
+	func toJsonObject override as object
+	func fromJsonObject(o as object) override as bool
+	func fromJsonString(o as string) as bool
+	func toJsonString as string
+	func toString as string
+	func forJsonString(o as string) static as jk.server.blog.Article
+	func forJsonObject(o as object) static as jk.server.blog.Article
+}
+class name jk.server.blog.ArticleRepository header abstract public
+{
+	import jk.lang
+	import jk.template
+	ctor
+	func getCategories(callback as function<void,vector<jk.server.blog.Category>>) abstract
+	func getArticleCount(category as string, callback as function<void,int>) abstract
+	func getArticles(category as string, offset as int, limit as int, callback as function<void,jk.server.blog.Category,vector<jk.server.blog.Article>>) abstract
+	func getArticleById(id as string, callback as function<void,jk.server.blog.Article>) abstract
+	func getArticleTitleSync(id as string) abstract as string
+	func getCategoryTitleSync(id as string) abstract as string
+	func getArticleAttachment(id as string, name as string, callback as function<void,string,buffer>) abstract
+	func getIntroHtml(article as jk.server.blog.Article, resolver as jk.template.RichTextDocumentReferenceResolver) as string
+	func getContentHtml(article as jk.server.blog.Article, resolver as jk.template.RichTextDocumentReferenceResolver) as string
+}
+class name jk.server.blog.TemplateStorageUsingSQLDatabase header implements jk.server.blog.TemplateStorage public
+{
+	import jk.lang
+	import jk.sql
+	func forDatabase(db as jk.sql.SQLDatabase, table as string = null, idColumn as string = null, contentColumn as string = null) static as jk.server.blog.TemplateStorageUsingSQLDatabase
+	ctor
+	func getTemplate(id as string, callback as function<void,string>)
+	func getDatabase as jk.sql.SQLDatabase #getterMethod
+	func setDatabase(v as jk.sql.SQLDatabase) as jk.server.blog.TemplateStorageUsingSQLDatabase #setterMethod
+	func getTable as string #getterMethod
+	func setTable(v as string) as jk.server.blog.TemplateStorageUsingSQLDatabase #setterMethod
+	func getIdColumn as string #getterMethod
+	func setIdColumn(v as string) as jk.server.blog.TemplateStorageUsingSQLDatabase #setterMethod
+	func getContentColumn as string #getterMethod
+	func setContentColumn(v as string) as jk.server.blog.TemplateStorageUsingSQLDatabase #setterMethod
+}
+class name jk.server.blog.ArticleWebHandler header extends jk.http.server.HTTPServerRequestHandlerAdapter implements jk.template.RichTextDocumentReferenceResolver public
+{
+	import jk.lang
+	import jk.fs
+	import jk.log
+	import jk.http.server
+	import jk.template
+	import jk.time.format
+	ctor
+	func forRepository(repository as jk.server.blog.ArticleRepository) static as jk.server.blog.ArticleWebHandler
+	func getReferenceHref(refid as string) as string
+	func getReferenceTitle(refid as string) as string
+	func getContentString(cid as string) as string
+	func isResponseHTML(req as jk.http.server.HTTPServerRequest) as bool
+	func onGETCategoryList(req as jk.http.server.HTTPServerRequest, next as function<void>)
+	func processTimeStamp(values as jk.lang.DynamicMap)
+	func onGETCategoryArticles(req as jk.http.server.HTTPServerRequest, next as function<void>)
+	func getBreadcrumbs(article as jk.server.blog.Article) as vector
+	func onGETArticle(req as jk.http.server.HTTPServerRequest, next as function<void>)
+	func sendResponse(req as jk.http.server.HTTPServerRequest, type as string, content as object)
+	func sendHTMLResponse(req as jk.http.server.HTTPServerRequest, data as jk.lang.DynamicMap, tt as string)
+	func onGET(req as jk.http.server.HTTPServerRequest, next as function<void>) override
+	func getRepository as jk.server.blog.ArticleRepository #getterMethod
+	func setRepository(v as jk.server.blog.ArticleRepository) as jk.server.blog.ArticleWebHandler #setterMethod
+	func getArticlesPerPage as int #getterMethod
+	func setArticlesPerPage(v as int) as jk.server.blog.ArticleWebHandler #setterMethod
+	func getTemplateStorage as jk.server.blog.TemplateStorage #getterMethod
+	func setTemplateStorage(v as jk.server.blog.TemplateStorage) as jk.server.blog.ArticleWebHandler #setterMethod
+	func getTemplateData as jk.lang.DynamicMap #getterMethod
+	func setTemplateData(v as jk.lang.DynamicMap) as jk.server.blog.ArticleWebHandler #setterMethod
+	func getTemplatePrefix as string #getterMethod
+	func setTemplatePrefix(v as string) as jk.server.blog.ArticleWebHandler #setterMethod
+	func getLanguages as vector<string> #getterMethod
+	func setLanguages(v as vector<string>) as jk.server.blog.ArticleWebHandler #setterMethod
+	func getEnableCategoryList as bool #getterMethod
+	func setEnableCategoryList(v as bool) as jk.server.blog.ArticleWebHandler #setterMethod
+	func getCategoryPathSuffix as string #getterMethod
+	func setCategoryPathSuffix(v as string) as jk.server.blog.ArticleWebHandler #setterMethod
+	func getDefaultCategory as string #getterMethod
+	func setDefaultCategory(v as string) as jk.server.blog.ArticleWebHandler #setterMethod
+}
+class name jk.server.blog.TemplateStorageUsingFiles header implements jk.server.blog.TemplateStorage public
+{
+	import jk.lang
+	import jk.fs
+	func forDirectory(dir as jk.fs.File) static as jk.server.blog.TemplateStorageUsingFiles
+	func forHTMLTemplateDirectory(dir as jk.fs.File) static as jk.server.blog.TemplateStorageUsingFiles
+	ctor
+	func getTemplate(id as string, callback as function<void,string>)
+	func getDirectory as jk.fs.File #getterMethod
+	func setDirectory(v as jk.fs.File) as jk.server.blog.TemplateStorageUsingFiles #setterMethod
+	func getSuffix as string #getterMethod
+	func setSuffix(v as string) as jk.server.blog.TemplateStorageUsingFiles #setterMethod
+}
+interface name jk.server.blog.TemplateStorage header public
+{
+	import jk.lang
+	func getTemplate(id as string, callback as function<void,string>)
+}
+class name jk.server.blog.ArticleRepositoryDirectory header extends jk.server.blog.ArticleRepository public
+{
+	import jk.lang
+	import jk.log
+	import jk.fs
+	import jk.io
+	import jk.json
+	import jk.mime
+	ctor
+	func forDirectory(ctx as jk.log.LoggingContext, dir as jk.fs.File) static as jk.server.blog.ArticleRepositoryDirectory
+	func refreshArticles
+	func sortArticleLists
+	func updateArticleLists
+	func addArticleToCategory(article as string, category as string)
+	func getCategoryMap as map<string,jk.server.blog.Category>
+	func getCategoryById(id as string) as jk.server.blog.Category
+	func getArticleListForCategory(categoryName as string) as vector<string>
+	func getCategories(callback as function<void,vector<jk.server.blog.Category>>) override
+	func getArticleCount(category as string, callback as function<void,int>) override
+	func getArticles(category as string, offset as int, limit as int, callback as function<void,jk.server.blog.Category,vector<jk.server.blog.Article>>) override
+	func doGetArticleById(id as string) as jk.server.blog.Article
+	func getArticleById(id as string, callback as function<void,jk.server.blog.Article>) override
+	func getArticleTitleSync(id as string) override as string
+	func getCategoryTitleSync(id as string) override as string
+	func getArticleAttachment(id as string, name as string, callback as function<void,string,buffer>) override
+	func getContext as jk.log.LoggingContext #getterMethod
+	func setContext(v as jk.log.LoggingContext) as jk.server.blog.ArticleRepositoryDirectory #setterMethod
+	func getDirectory as jk.fs.File #getterMethod
+	func setDirectory(v as jk.fs.File) as jk.server.blog.ArticleRepositoryDirectory #setterMethod
+}
+class name jk.server.blog.ArticleUtil header public
+{
+	import jk.lang
+	ctor
+	func isValidIdentifier(name as string) static as bool
+}

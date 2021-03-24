@@ -1,0 +1,96 @@
+<html>
+<head>
+<title>jk.mysql.MySQLDatabase | JK DB [0.21.0] - API Reference</title>
+<link rel="stylesheet" type="text/css" href="style.css" />
+<meta name="viewport" content="initial-scale=1,maximum-scale=1" />
+<meta property="og:description" content="MySQL database driver." />
+<meta property="og:title" content="jk.mysql.MySQLDatabase | JK DB [0.21.0] - API Reference" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:description" content="MySQL database driver." />
+</head>
+<body><div class="content">
+<a class="back" href="index.html">&laquo; JK DB [0.21.0]</a><div class="intro">
+<h1><span class="modifier">abstract</span> <span class="keyword">class</span> <span class="symbol">jk.mysql.MySQLDatabase</span></h1>
+<p>MySQL database driver.</p>
+</div>
+<div class="list">
+<div class="title">Base Types</div>
+<div class="entry">
+<div class="name"><span class="keyword">extends</span> <a class="datatype" href="jk.sql.SQLDatabase.html">jk.sql.SQLDatabase</a></div></div>
+</div>
+<div class="list">
+<div class="title">Constants</div>
+<div class="entry">
+<div class="name"><span class="keyword">const</span> <span class="symbol">SSL_MODE_PREFERRED</span> <span class="keyword">as</span> <span class="datatype">var</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">const</span> <span class="symbol">SSL_MODE_NONE</span> <span class="keyword">as</span> <span class="datatype">var</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">const</span> <span class="symbol">SSL_MODE_REQUIRED</span> <span class="keyword">as</span> <span class="datatype">var</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">const</span> <span class="symbol">SSL_MODE_VERIFYCA</span> <span class="keyword">as</span> <span class="datatype">var</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">const</span> <span class="symbol">SSL_MODE_VERIFYFULL</span> <span class="keyword">as</span> <span class="datatype">var</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">const</span> <span class="symbol">PROTOCOL_SOCKET</span> <span class="keyword">as</span> <span class="datatype">var</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">const</span> <span class="symbol">PROTOCOL_UNIX</span> <span class="keyword">as</span> <span class="datatype">var</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">const</span> <span class="symbol">PROTOCOL_PIPE</span> <span class="keyword">as</span> <span class="datatype">var</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">const</span> <span class="symbol">PROCOL_MEMORY</span> <span class="keyword">as</span> <span class="datatype">var</span></div></div>
+</div>
+<div class="list">
+<div class="title">Static Methods</div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">forConnectionStringSync</span> ( ctx <span class="keyword">as</span> <a class="datatype" href="../../jk-core/0.37.0/jk.log.LoggingContext.html">jk.log.LoggingContext</a> , connectionString <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="modifier">static</span> <span class="keyword">as</span> <a class="datatype" href="jk.mysql.MySQLDatabase.html">jk.mysql.MySQLDatabase</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">connectSync</span> ( ctx <span class="keyword">as</span> <a class="datatype" href="../../jk-core/0.37.0/jk.log.LoggingContext.html">jk.log.LoggingContext</a> , serverAddress <span class="keyword">as</span> <span class="datatype">string</span> , username <span class="keyword">as</span> <span class="datatype">string</span> , password <span class="keyword">as</span> <span class="datatype">string</span> , database <span class="keyword">as</span> <span class="datatype">string</span> , sslMode <span class="keyword">as</span> <span class="datatype">string</span> , enableUTF8 <span class="keyword">as</span> <span class="datatype">bool</span> ) <span class="modifier">static</span> <span class="keyword">as</span> <a class="datatype" href="jk.mysql.MySQLDatabase.html">jk.mysql.MySQLDatabase</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">forConfig</span> ( logContext <span class="keyword">as</span> <a class="datatype" href="../../jk-core/0.37.0/jk.log.LoggingContext.html">jk.log.LoggingContext</a> , config <span class="keyword">as</span> <a class="datatype" href="../../jk-core/0.37.0/jk.lang.DynamicMap.html">jk.lang.DynamicMap</a> ) <span class="modifier">static</span> <span class="keyword">as</span> <a class="datatype" href="jk.mysql.MySQLDatabase.html">jk.mysql.MySQLDatabase</a></div></div>
+</div>
+<div class="list">
+<div class="title">Instance Methods</div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getDatabaseTypeId</span> <span class="modifier">override</span> <span class="keyword">as</span> <span class="datatype">string</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">initializeSync</span> ( serverAddress <span class="keyword">as</span> <span class="datatype">string</span> , username <span class="keyword">as</span> <span class="datatype">string</span> , password <span class="keyword">as</span> <span class="datatype">string</span> , database <span class="keyword">as</span> <span class="datatype">string</span> , sslMode <span class="keyword">as</span> <span class="datatype">string</span> , protocol <span class="keyword">as</span> <span class="datatype">string</span> , enableUTF8 <span class="keyword">as</span> <span class="datatype">bool</span> ) <span class="modifier">virtual</span> <span class="keyword">as</span> <span class="datatype">bool</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">doInitialize</span> ( serverAddress <span class="keyword">as</span> <span class="datatype">string</span> , username <span class="keyword">as</span> <span class="datatype">string</span> , password <span class="keyword">as</span> <span class="datatype">string</span> , database <span class="keyword">as</span> <span class="datatype">string</span> , sslMode <span class="keyword">as</span> <span class="datatype">string</span> , protocol <span class="keyword">as</span> <span class="datatype">string</span> , enableUTF8 <span class="keyword">as</span> <span class="datatype">bool</span> ) <span class="modifier">virtual</span> <span class="keyword">as</span> <span class="datatype">bool</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">querySingleRowSync</span> ( stmt <span class="keyword">as</span> <a class="datatype" href="jk.sql.SQLStatement.html">jk.sql.SQLStatement</a> ) <span class="modifier">override</span> <span class="keyword">as</span> <a class="datatype" href="../../jk-core/0.37.0/jk.lang.DynamicMap.html">jk.lang.DynamicMap</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">tableExistsSync</span> ( table <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="modifier">override</span> <span class="keyword">as</span> <span class="datatype">bool</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">tableExists</span> ( table <span class="keyword">as</span> <span class="datatype">string</span> , callback <span class="keyword">as</span> <span class="datatype">function&lt;void,bool&gt;</span> ) <span class="modifier">override</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">queryAllTableNames</span> ( callback <span class="keyword">as</span> <span class="datatype">function&lt;void,vector&gt;</span> ) <span class="modifier">override</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">queryAllTableNamesSync</span> <span class="modifier">override</span> <span class="keyword">as</span> <span class="datatype">vector</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">prepareTypeAsString</span> ( tt <span class="keyword">as</span> <span class="datatype">int</span> , columnName <span class="keyword">as</span> <span class="datatype">string</span> , forDataTypeChecking <span class="keyword">as</span> <span class="datatype">bool</span> ) <span class="keyword">as</span> <span class="datatype">string</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">prepareCreateTableStatementSync</span> ( table <span class="keyword">as</span> <span class="datatype">string</span> , columns <span class="keyword">as</span> <span class="datatype">vector&lt;jk.sql.SQLTableColumnInfo&gt;</span> ) <span class="modifier">override</span> <span class="keyword">as</span> <a class="datatype" href="jk.sql.SQLStatement.html">jk.sql.SQLStatement</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">prepareDeleteTableStatementSync</span> ( table <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="modifier">override</span> <span class="keyword">as</span> <a class="datatype" href="jk.sql.SQLStatement.html">jk.sql.SQLStatement</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">prepareCreateColumnStatementSync</span> ( table <span class="keyword">as</span> <span class="datatype">string</span> , column <span class="keyword">as</span> <a class="datatype" href="jk.sql.SQLTableColumnInfo.html">jk.sql.SQLTableColumnInfo</a> ) <span class="modifier">override</span> <span class="keyword">as</span> <a class="datatype" href="jk.sql.SQLStatement.html">jk.sql.SQLStatement</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">prepareUpdateColumnTypeStatementSync</span> ( table <span class="keyword">as</span> <span class="datatype">string</span> , column <span class="keyword">as</span> <a class="datatype" href="jk.sql.SQLTableColumnInfo.html">jk.sql.SQLTableColumnInfo</a> ) <span class="modifier">override</span> <span class="keyword">as</span> <a class="datatype" href="jk.sql.SQLStatement.html">jk.sql.SQLStatement</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getLastInsertIdSync</span> ( table <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="modifier">override</span> <span class="keyword">as</span> <span class="datatype">long</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getPrimaryKeyColumnNameSync</span> ( table <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="modifier">override</span> <span class="keyword">as</span> <span class="datatype">string</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getIdentityColumnNameSync</span> ( table <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="modifier">override</span> <span class="keyword">as</span> <span class="datatype">string</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">columnExistsSync</span> ( table <span class="keyword">as</span> <span class="datatype">string</span> , column <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="modifier">override</span> <span class="keyword">as</span> <span class="datatype">bool</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">isColumnTypeSameSync</span> ( table <span class="keyword">as</span> <span class="datatype">string</span> , column <span class="keyword">as</span> <a class="datatype" href="jk.sql.SQLTableColumnInfo.html">jk.sql.SQLTableColumnInfo</a> ) <span class="modifier">override</span> <span class="keyword">as</span> <span class="datatype">bool</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getDatabaseName</span> <span class="keyword">as</span> <span class="datatype">string</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setDatabaseName</span> ( v <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="keyword">as</span> <a class="datatype" href="jk.mysql.MySQLDatabase.html">jk.mysql.MySQLDatabase</a></div></div>
+</div>
+</div>
+</body>
+</html>

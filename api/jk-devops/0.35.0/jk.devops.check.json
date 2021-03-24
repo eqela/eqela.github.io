@@ -1,0 +1,28 @@
+{
+	"moduleDescription" : "Support for health checking of HTTP-based servers and services.\n",
+	"type" : "module",
+	"moduleTitle" : "Health checker",
+	"moduleId" : "jk.devops.check",
+	"entities" : [
+		{
+			"type" : "class",
+			"name" : "HttpTransactionResult",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "HttpHealthCheck",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "HttpTransaction",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "HttpTransactionResultHeader",
+			"description" : ""
+		}
+	]
+}

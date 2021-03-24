@@ -1,0 +1,31 @@
+class name jk.doc.docx.DocxGenerator header public
+{
+	import jk.lang
+	import jk.fs
+	import jk.log
+	import jk.xml
+	import jk.env
+	import jk.doc.model
+	import jk.archive
+	ctor
+	func addToZip(ctx as jk.log.LoggingContext, zip as jk.archive.ZipWriter, filename as string, content as string) as bool
+	func createContentTypesXml as string
+	func createTopLevelRels as string
+	func createDocumentRels as string
+	func createDocumentXml(document as jk.doc.model.DocumentNode) as string
+	func createNumberingXml as string
+	func addFont(xml as jk.xml.XMLMaker, name as string, panose as string, charset as string, family as string, pitch as string, usb0 as string, usb1 as string, usb2 as string, usb3 as string, csb0 as string, csb1 as string)
+	func createFontTable as string
+	func createStylesXml as string
+	func generate(ctx as jk.log.LoggingContext, document as jk.doc.model.DocumentNode, file as jk.fs.File) as bool
+	func getStyleXml as string #getterMethod
+	func setStyleXml(v as string) as jk.doc.docx.DocxGenerator #setterMethod
+	func getFontXml as string #getterMethod
+	func setFontXml(v as string) as jk.doc.docx.DocxGenerator #setterMethod
+	func getDefaultParagraphStyle as string #getterMethod
+	func setDefaultParagraphStyle(v as string) as jk.doc.docx.DocxGenerator #setterMethod
+	func getDefaultListParagraphStyle as string #getterMethod
+	func setDefaultListParagraphStyle(v as string) as jk.doc.docx.DocxGenerator #setterMethod
+	func getDefaultTableStyle as string #getterMethod
+	func setDefaultTableStyle(v as string) as jk.doc.docx.DocxGenerator #setterMethod
+}

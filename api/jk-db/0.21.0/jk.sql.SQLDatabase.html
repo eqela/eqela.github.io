@@ -1,0 +1,131 @@
+<html>
+<head>
+<title>jk.sql.SQLDatabase | JK DB [0.21.0] - API Reference</title>
+<link rel="stylesheet" type="text/css" href="style.css" />
+<meta name="viewport" content="initial-scale=1,maximum-scale=1" />
+<meta property="og:description" content="SQL database connection. This is the base class and abstraction for all
+database-specific driver classes." />
+<meta property="og:title" content="jk.sql.SQLDatabase | JK DB [0.21.0] - API Reference" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:description" content="SQL database connection. This is the base class and abstraction for all
+database-specific driver classes." />
+</head>
+<body><div class="content">
+<a class="back" href="index.html">&laquo; JK DB [0.21.0]</a><div class="intro">
+<h1><span class="modifier">abstract</span> <span class="keyword">class</span> <span class="symbol">jk.sql.SQLDatabase</span></h1>
+<p>SQL database connection. This is the base class and abstraction for all
+database-specific driver classes.</p>
+</div>
+<div class="list">
+<div class="title">Instance Methods</div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">logDebug</span> ( message <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">logInfo</span> ( message <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">logWarning</span> ( message <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">logError</span> ( message <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getDatabaseTypeId</span> <span class="modifier">abstract</span> <span class="keyword">as</span> <span class="datatype">string</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">prepareSync</span> ( sql <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="modifier">abstract</span> <span class="keyword">as</span> <a class="datatype" href="jk.sql.SQLStatement.html">jk.sql.SQLStatement</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">prepareCreateTableStatementSync</span> ( table <span class="keyword">as</span> <span class="datatype">string</span> , columns <span class="keyword">as</span> <span class="datatype">vector&lt;jk.sql.SQLTableColumnInfo&gt;</span> ) <span class="modifier">abstract</span> <span class="keyword">as</span> <a class="datatype" href="jk.sql.SQLStatement.html">jk.sql.SQLStatement</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">prepareDeleteTableStatementSync</span> ( table <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="modifier">abstract</span> <span class="keyword">as</span> <a class="datatype" href="jk.sql.SQLStatement.html">jk.sql.SQLStatement</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">prepareCreateIndexStatementSync</span> ( table <span class="keyword">as</span> <span class="datatype">string</span> , columns <span class="keyword">as</span> <span class="datatype">vector&lt;string&gt;</span> , unique <span class="keyword">as</span> <span class="datatype">bool</span> ) <span class="modifier">virtual</span> <span class="keyword">as</span> <a class="datatype" href="jk.sql.SQLStatement.html">jk.sql.SQLStatement</a></div><div class="description">Prepares a CREATE INDEX statement as a string for the supplied table name, column name and a boolean flag which
+indicates if the index will be unique.</div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">prepareCreateColumnStatementSync</span> ( table <span class="keyword">as</span> <span class="datatype">string</span> , column <span class="keyword">as</span> <a class="datatype" href="jk.sql.SQLTableColumnInfo.html">jk.sql.SQLTableColumnInfo</a> ) <span class="modifier">abstract</span> <span class="keyword">as</span> <a class="datatype" href="jk.sql.SQLStatement.html">jk.sql.SQLStatement</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">prepareUpdateColumnTypeStatementSync</span> ( table <span class="keyword">as</span> <span class="datatype">string</span> , column <span class="keyword">as</span> <a class="datatype" href="jk.sql.SQLTableColumnInfo.html">jk.sql.SQLTableColumnInfo</a> ) <span class="modifier">abstract</span> <span class="keyword">as</span> <a class="datatype" href="jk.sql.SQLStatement.html">jk.sql.SQLStatement</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getLastInsertIdSync</span> ( table <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="modifier">abstract</span> <span class="keyword">as</span> <span class="datatype">long</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getIdentityColumnNameSync</span> ( table <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="modifier">abstract</span> <span class="keyword">as</span> <span class="datatype">string</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getPrimaryKeyColumnNameSync</span> ( table <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="modifier">abstract</span> <span class="keyword">as</span> <span class="datatype">string</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">columnExistsSync</span> ( table <span class="keyword">as</span> <span class="datatype">string</span> , name <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="modifier">abstract</span> <span class="keyword">as</span> <span class="datatype">bool</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">isColumnTypeSameSync</span> ( table <span class="keyword">as</span> <span class="datatype">string</span> , column <span class="keyword">as</span> <a class="datatype" href="jk.sql.SQLTableColumnInfo.html">jk.sql.SQLTableColumnInfo</a> ) <span class="modifier">abstract</span> <span class="keyword">as</span> <span class="datatype">bool</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">closeSync</span> <span class="modifier">abstract</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">executeSync</span> ( stmt <span class="keyword">as</span> <a class="datatype" href="jk.sql.SQLStatement.html">jk.sql.SQLStatement</a> ) <span class="modifier">abstract</span> <span class="keyword">as</span> <span class="datatype">bool</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">executeUpdateDeleteSync</span> ( stmt <span class="keyword">as</span> <a class="datatype" href="jk.sql.SQLStatement.html">jk.sql.SQLStatement</a> ) <span class="modifier">abstract</span> <span class="keyword">as</span> <span class="datatype">int</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">querySync</span> ( stmt <span class="keyword">as</span> <a class="datatype" href="jk.sql.SQLStatement.html">jk.sql.SQLStatement</a> ) <span class="modifier">abstract</span> <span class="keyword">as</span> <a class="datatype" href="jk.sql.SQLResultSetIterator.html">jk.sql.SQLResultSetIterator</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">querySingleRowSync</span> ( stmt <span class="keyword">as</span> <a class="datatype" href="jk.sql.SQLStatement.html">jk.sql.SQLStatement</a> ) <span class="modifier">abstract</span> <span class="keyword">as</span> <a class="datatype" href="../../jk-core/0.37.0/jk.lang.DynamicMap.html">jk.lang.DynamicMap</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">tableExistsSync</span> ( table <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="modifier">abstract</span> <span class="keyword">as</span> <span class="datatype">bool</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">queryAllTableNamesSync</span> <span class="modifier">abstract</span> <span class="keyword">as</span> <span class="datatype">vector</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">close</span> ( callback <span class="keyword">as</span> <span class="datatype">function&lt;void&gt;</span> ) <span class="modifier">abstract</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">execute</span> ( stmt <span class="keyword">as</span> <a class="datatype" href="jk.sql.SQLStatement.html">jk.sql.SQLStatement</a> , callback <span class="keyword">as</span> <span class="datatype">function&lt;void,bool&gt;</span> ) <span class="modifier">abstract</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">executeUpdateDelete</span> ( stmt <span class="keyword">as</span> <a class="datatype" href="jk.sql.SQLStatement.html">jk.sql.SQLStatement</a> , callback <span class="keyword">as</span> <span class="datatype">function&lt;void,int&gt;</span> ) <span class="modifier">abstract</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">query</span> ( stmt <span class="keyword">as</span> <a class="datatype" href="jk.sql.SQLStatement.html">jk.sql.SQLStatement</a> , callback <span class="keyword">as</span> <span class="datatype">function&lt;void,jk.sql.SQLResultSetIterator&gt;</span> ) <span class="modifier">abstract</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">querySingleRow</span> ( stmt <span class="keyword">as</span> <a class="datatype" href="jk.sql.SQLStatement.html">jk.sql.SQLStatement</a> , callback <span class="keyword">as</span> <span class="datatype">function&lt;void,jk.lang.DynamicMap&gt;</span> ) <span class="modifier">abstract</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">tableExists</span> ( table <span class="keyword">as</span> <span class="datatype">string</span> , callback <span class="keyword">as</span> <span class="datatype">function&lt;void,bool&gt;</span> ) <span class="modifier">abstract</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">queryAllTableNames</span> ( callback <span class="keyword">as</span> <span class="datatype">function&lt;void,vector&gt;</span> ) <span class="modifier">abstract</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">ensureColumnsExistsSync</span> ( tableName <span class="keyword">as</span> <span class="datatype">string</span> , columns <span class="keyword">as</span> <span class="datatype">vector&lt;jk.sql.SQLTableColumnInfo&gt;</span> ) <span class="keyword">as</span> <span class="datatype">bool</span></div><div class="description">Checks if the database table exists and creates it if it does not exist.
+Returns false if something went wrong.</div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">ensureTableExistsSync</span> ( table <span class="keyword">as</span> <a class="datatype" href="jk.sql.SQLTableInfo.html">jk.sql.SQLTableInfo</a> ) <span class="modifier">virtual</span> <span class="keyword">as</span> <span class="datatype">bool</span></div><div class="description">Checks if the database table exists and creates it if it does not exist.</div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">ensureTableExists</span> ( table <span class="keyword">as</span> <a class="datatype" href="jk.sql.SQLTableInfo.html">jk.sql.SQLTableInfo</a> , callback <span class="keyword">as</span> <span class="datatype">function&lt;void,bool&gt;</span> ) <span class="modifier">virtual</span> <span class="keyword">as</span> <span class="datatype">void</span></div><div class="description">Checks if the database table exists and creates it if it does not exist.
+Calls the callback function parameter if supplied and passes the result of the operation.</div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">createOrderByString</span> ( order <span class="keyword">as</span> <span class="datatype">array</span> ) <span class="keyword">as</span> <span class="datatype">string</span></div><div class="description">Creates the order by part of an SQL select statement
+in string from the supplied array of column name(s)
+or instance(s) of SQLOrderingRule class.</div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">prepareQueryAllStatementSync</span> ( table <span class="keyword">as</span> <span class="datatype">string</span> , columns <span class="keyword">as</span> <span class="datatype">array</span> , order <span class="keyword">as</span> <span class="datatype">array</span> ) <span class="modifier">virtual</span> <span class="keyword">as</span> <a class="datatype" href="jk.sql.SQLStatement.html">jk.sql.SQLStatement</a></div><div class="description">Creates an instance of SQLStatement for select statement with the specified
+database table name, an array of column name(s) and an array of column
+name(s) or instance(s) of SQLOrderingRule for order by clause.</div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">prepareCountRecordsStatementSync</span> ( table <span class="keyword">as</span> <span class="datatype">string</span> , criteria <span class="keyword">as</span> <a class="datatype" href="../../jk-core/0.37.0/jk.lang.DynamicMap.html">jk.lang.DynamicMap</a> , likeOperator <span class="keyword">as</span> <span class="datatype">bool</span> ) <span class="modifier">virtual</span> <span class="keyword">as</span> <a class="datatype" href="jk.sql.SQLStatement.html">jk.sql.SQLStatement</a></div><div class="description">Creates an instance of SQLStatement for select count statement
+with the specified database table name and a map of criteria.</div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">prepareQueryWithCriteriaStatementSync</span> ( table <span class="keyword">as</span> <span class="datatype">string</span> , criteria <span class="keyword">as</span> <a class="datatype" href="../../jk-core/0.37.0/jk.lang.DynamicMap.html">jk.lang.DynamicMap</a> , limit <span class="keyword">as</span> <span class="datatype">int</span> , offset <span class="keyword">as</span> <span class="datatype">int</span> , columns <span class="keyword">as</span> <span class="datatype">array</span> , order <span class="keyword">as</span> <span class="datatype">array</span> , likeOperator <span class="keyword">as</span> <span class="datatype">bool</span> ) <span class="modifier">virtual</span> <span class="keyword">as</span> <a class="datatype" href="jk.sql.SQLStatement.html">jk.sql.SQLStatement</a></div><div class="description">Creates an instance of SQLStatement for select statement
+with the specified database table name, a map of criteria,
+limit, offset, an array of column name(s), an array of column
+name(s) or instance(s) of SQLOrderingRule for order by clause
+and a flag to use LIKE operator.</div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">prepareQueryDistinctValuesStatementSync</span> ( table <span class="keyword">as</span> <span class="datatype">string</span> , column <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="modifier">virtual</span> <span class="keyword">as</span> <a class="datatype" href="jk.sql.SQLStatement.html">jk.sql.SQLStatement</a></div><div class="description">Creates an instance of SQLStatement for query distinct values
+with the specified database table name and column name.</div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">prepareSelectStatementSync</span> ( table <span class="keyword">as</span> <span class="datatype">string</span> , criteria <span class="keyword">as</span> <a class="datatype" href="../../jk-core/0.37.0/jk.lang.DynamicMap.html">jk.lang.DynamicMap</a> ) <span class="modifier">virtual</span> <span class="keyword">as</span> <a class="datatype" href="jk.sql.SQLStatement.html">jk.sql.SQLStatement</a></div><div class="description">Creates an instance of SQLStatement for select all statement with the
+specified database table name and an instance of DynamicMap for criteria.</div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">prepareInsertStatementSync</span> ( table <span class="keyword">as</span> <span class="datatype">string</span> , data <span class="keyword">as</span> <a class="datatype" href="../../jk-core/0.37.0/jk.lang.DynamicMap.html">jk.lang.DynamicMap</a> ) <span class="modifier">virtual</span> <span class="keyword">as</span> <a class="datatype" href="jk.sql.SQLStatement.html">jk.sql.SQLStatement</a></div><div class="description">Creates an instance of SQLStatement for insert statement with the
+specified database table name and an instance of DynamicMap for values.</div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">prepareUpdateStatementSync</span> ( table <span class="keyword">as</span> <span class="datatype">string</span> , criteria <span class="keyword">as</span> <a class="datatype" href="../../jk-core/0.37.0/jk.lang.DynamicMap.html">jk.lang.DynamicMap</a> , data <span class="keyword">as</span> <a class="datatype" href="../../jk-core/0.37.0/jk.lang.DynamicMap.html">jk.lang.DynamicMap</a> ) <span class="modifier">virtual</span> <span class="keyword">as</span> <a class="datatype" href="jk.sql.SQLStatement.html">jk.sql.SQLStatement</a></div><div class="description">Creates an instance of SQLStatement for update statement with the
+specified database table name, an instance of DynamicMap for
+criteria and an instance of DynamicMap for values.</div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">prepareDeleteStatementSync</span> ( table <span class="keyword">as</span> <span class="datatype">string</span> , criteria <span class="keyword">as</span> <a class="datatype" href="../../jk-core/0.37.0/jk.lang.DynamicMap.html">jk.lang.DynamicMap</a> ) <span class="modifier">virtual</span> <span class="keyword">as</span> <a class="datatype" href="jk.sql.SQLStatement.html">jk.sql.SQLStatement</a></div><div class="description">Creates an instance of SQLStatement for delete statement with the
+specified database table name, an instance of DynamicMap for
+criteria and an instance of DynamicMap for values.</div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getLogger</span> <span class="keyword">as</span> <a class="datatype" href="../../jk-core/0.37.0/jk.log.LoggingContext.html">jk.log.LoggingContext</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setLogger</span> ( v <span class="keyword">as</span> <a class="datatype" href="../../jk-core/0.37.0/jk.log.LoggingContext.html">jk.log.LoggingContext</a> ) <span class="keyword">as</span> <a class="datatype" href="jk.sql.SQLDatabase.html">jk.sql.SQLDatabase</a></div></div>
+</div>
+</div>
+</body>
+</html>

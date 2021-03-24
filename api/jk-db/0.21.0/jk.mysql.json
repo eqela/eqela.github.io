@@ -1,0 +1,18 @@
+{
+	"moduleDescription" : "Client support for MySQL databases.\n",
+	"type" : "module",
+	"moduleTitle" : "MySQL support",
+	"moduleId" : "jk.mysql",
+	"entities" : [
+		{
+			"type" : "class",
+			"name" : "MySQLDatabase",
+			"description" : "MySQL database driver."
+		},
+		{
+			"type" : "class",
+			"name" : "MySQLDatabaseGeneric",
+			"description" : "A generic MySQL client implementation, fully written in Sling. This class is not\nnormally meant to be used directly but through MySQLDatabase."
+		}
+	]
+}

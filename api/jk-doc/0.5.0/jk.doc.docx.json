@@ -1,0 +1,13 @@
+{
+	"moduleDescription" : "Support for Microsoft Word DOCX files.\n",
+	"type" : "module",
+	"moduleTitle" : "DOCX support",
+	"moduleId" : "jk.doc.docx",
+	"entities" : [
+		{
+			"type" : "class",
+			"name" : "DocxGenerator",
+			"description" : ""
+		}
+	]
+}

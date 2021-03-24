@@ -1,0 +1,13 @@
+{
+	"moduleDescription" : "Support for HTML files.\n",
+	"type" : "module",
+	"moduleTitle" : "HTML support",
+	"moduleId" : "jk.doc.html",
+	"entities" : [
+		{
+			"type" : "class",
+			"name" : "HtmlGenerator",
+			"description" : ""
+		}
+	]
+}

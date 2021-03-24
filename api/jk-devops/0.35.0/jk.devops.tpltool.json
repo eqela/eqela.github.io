@@ -1,0 +1,13 @@
+{
+	"moduleDescription" : "Command line utility for text template processing.\n",
+	"type" : "module",
+	"moduleTitle" : "Text template processing",
+	"moduleId" : "jk.devops.tpltool",
+	"entities" : [
+		{
+			"type" : "class",
+			"name" : "TpltoolApp",
+			"description" : ""
+		}
+	]
+}

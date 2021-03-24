@@ -1,0 +1,13 @@
+{
+	"moduleDescription" : "Support for building Docker images\n",
+	"type" : "module",
+	"moduleTitle" : "Docker image building",
+	"moduleId" : "jk.devops.docker.builder",
+	"entities" : [
+		{
+			"type" : "class",
+			"name" : "DockerBuilder",
+			"description" : ""
+		}
+	]
+}

@@ -1,0 +1,23 @@
+{
+	"moduleDescription" : "Common functions for supporting cloud API functionality.\n",
+	"type" : "module",
+	"moduleTitle" : "Common cloud support functions",
+	"moduleId" : "jk.cloud.common",
+	"entities" : [
+		{
+			"type" : "class",
+			"name" : "DataValidator",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "CloudError",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "CloudClient",
+			"description" : ""
+		}
+	]
+}

@@ -1,0 +1,61 @@
+<html>
+<head>
+<title>jk.doc.docx.DocxGenerator | JK Doc [0.5.0] - API Reference</title>
+<link rel="stylesheet" type="text/css" href="style.css" />
+<meta name="viewport" content="initial-scale=1,maximum-scale=1" />
+<meta property="og:description" content="jk.doc.docx.DocxGenerator | JK Doc [0.5.0] - API Reference" />
+<meta property="og:title" content="jk.doc.docx.DocxGenerator | JK Doc [0.5.0] - API Reference" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:description" content="jk.doc.docx.DocxGenerator | JK Doc [0.5.0] - API Reference" />
+</head>
+<body><div class="content">
+<a class="back" href="index.html">&laquo; JK Doc [0.5.0]</a><div class="intro">
+<h1><span class="keyword">class</span> <span class="symbol">jk.doc.docx.DocxGenerator</span></h1>
+<p></p>
+</div>
+<div class="list">
+<div class="title">Instance Methods</div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">addToZip</span> ( ctx <span class="keyword">as</span> <a class="datatype" href="../../jk-core/0.37.0/jk.log.LoggingContext.html">jk.log.LoggingContext</a> , zip <span class="keyword">as</span> <a class="datatype" href="../../jk-data/0.33.0/jk.archive.ZipWriter.html">jk.archive.ZipWriter</a> , filename <span class="keyword">as</span> <span class="datatype">string</span> , content <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="keyword">as</span> <span class="datatype">bool</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">createContentTypesXml</span> <span class="keyword">as</span> <span class="datatype">string</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">createTopLevelRels</span> <span class="keyword">as</span> <span class="datatype">string</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">createDocumentRels</span> <span class="keyword">as</span> <span class="datatype">string</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">createDocumentXml</span> ( document <span class="keyword">as</span> <a class="datatype" href="jk.doc.model.DocumentNode.html">jk.doc.model.DocumentNode</a> ) <span class="keyword">as</span> <span class="datatype">string</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">createNumberingXml</span> <span class="keyword">as</span> <span class="datatype">string</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">addFont</span> ( xml <span class="keyword">as</span> <a class="datatype" href="../../jk-data/0.33.0/jk.xml.XMLMaker.html">jk.xml.XMLMaker</a> , name <span class="keyword">as</span> <span class="datatype">string</span> , panose <span class="keyword">as</span> <span class="datatype">string</span> , charset <span class="keyword">as</span> <span class="datatype">string</span> , family <span class="keyword">as</span> <span class="datatype">string</span> , pitch <span class="keyword">as</span> <span class="datatype">string</span> , usb0 <span class="keyword">as</span> <span class="datatype">string</span> , usb1 <span class="keyword">as</span> <span class="datatype">string</span> , usb2 <span class="keyword">as</span> <span class="datatype">string</span> , usb3 <span class="keyword">as</span> <span class="datatype">string</span> , csb0 <span class="keyword">as</span> <span class="datatype">string</span> , csb1 <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">createFontTable</span> <span class="keyword">as</span> <span class="datatype">string</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">createStylesXml</span> <span class="keyword">as</span> <span class="datatype">string</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">generate</span> ( ctx <span class="keyword">as</span> <a class="datatype" href="../../jk-core/0.37.0/jk.log.LoggingContext.html">jk.log.LoggingContext</a> , document <span class="keyword">as</span> <a class="datatype" href="jk.doc.model.DocumentNode.html">jk.doc.model.DocumentNode</a> , file <span class="keyword">as</span> <a class="datatype" href="../../jk-core/0.37.0/jk.fs.File.html">jk.fs.File</a> ) <span class="keyword">as</span> <span class="datatype">bool</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getStyleXml</span> <span class="keyword">as</span> <span class="datatype">string</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setStyleXml</span> ( v <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="keyword">as</span> <a class="datatype" href="jk.doc.docx.DocxGenerator.html">jk.doc.docx.DocxGenerator</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getFontXml</span> <span class="keyword">as</span> <span class="datatype">string</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setFontXml</span> ( v <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="keyword">as</span> <a class="datatype" href="jk.doc.docx.DocxGenerator.html">jk.doc.docx.DocxGenerator</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getDefaultParagraphStyle</span> <span class="keyword">as</span> <span class="datatype">string</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setDefaultParagraphStyle</span> ( v <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="keyword">as</span> <a class="datatype" href="jk.doc.docx.DocxGenerator.html">jk.doc.docx.DocxGenerator</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getDefaultListParagraphStyle</span> <span class="keyword">as</span> <span class="datatype">string</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setDefaultListParagraphStyle</span> ( v <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="keyword">as</span> <a class="datatype" href="jk.doc.docx.DocxGenerator.html">jk.doc.docx.DocxGenerator</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getDefaultTableStyle</span> <span class="keyword">as</span> <span class="datatype">string</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setDefaultTableStyle</span> ( v <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="keyword">as</span> <a class="datatype" href="jk.doc.docx.DocxGenerator.html">jk.doc.docx.DocxGenerator</a></div></div>
+</div>
+</div>
+</body>
+</html>

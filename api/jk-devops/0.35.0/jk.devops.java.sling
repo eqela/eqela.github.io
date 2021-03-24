@@ -1,0 +1,14 @@
+class name jk.devops.java.JavaMavenBuilder header public
+{
+	import jk.lang
+	import jk.fs
+	import jk.log
+	import jk.env
+	import jk.process
+	ctor
+	property mvnCommand as jk.fs.File { hasset hasget }
+	func getMvnCommandFile as jk.fs.File
+	func getBuilderId as string
+	func canBuild(dir as jk.fs.File) as bool
+	func execute(ctx as jk.log.LoggingContext, sourceDirectory as jk.fs.File, destinationDirectory as jk.fs.File) as bool
+}

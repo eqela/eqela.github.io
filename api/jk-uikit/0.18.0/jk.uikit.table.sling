@@ -1,0 +1,22 @@
+class name jk.uikit.table.DataTableWidget header extends jk.widget.VerticalBoxWidget public #widget
+{
+	import jk.lang
+	import jk.lang
+	import jk.ui
+	import jk.gfx
+	import jk.widget
+	import jk.widget.common
+	ctor(context as jk.ui.GuiApplicationContext)
+	func initializeWidget override
+	func setWidgetColumns(columns as array)
+	func setWidgetData(data as vector<array>, render as bool = true)
+	func getWidgetData as vector<array>
+	func updateWidgetColumns
+	func updateTableRowColor(index as int, color as jk.gfx.Color)
+	func updateTableRowTextColor(rowIndex as int, textColor as jk.gfx.Color)
+	func getRowCellWidgets(index as int) as vector<jk.widget.Widget>
+	func getRowCount as int
+	func createWidget override
+	func getWidgetHeaderTopBorderEnabled as bool #getterMethod
+	func setWidgetHeaderTopBorderEnabled(v as bool) as jk.uikit.table.DataTableWidget #setterMethod
+}

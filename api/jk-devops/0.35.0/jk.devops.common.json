@@ -1,0 +1,13 @@
+{
+	"moduleDescription" : "Shared utility classes.\n",
+	"type" : "module",
+	"moduleTitle" : "Common utilities",
+	"moduleId" : "jk.devops.common",
+	"entities" : [
+		{
+			"type" : "interface",
+			"name" : "DeployFileHandler",
+			"description" : ""
+		}
+	]
+}

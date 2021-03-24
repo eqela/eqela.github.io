@@ -1,0 +1,371 @@
+class name jk.cloud.twilio.TwilioVideoAPI header extends jk.cloud.twilio.TwilioAPI public
+{
+	import jk.lang
+	import jk.cloud.common
+	import jk.log
+	import jk.base64
+	import jk.json
+	import jk.url
+	ctor(ctx as jk.log.LoggingContext, ssid as string, token as string)
+	var TYPE_P2P public static const as string
+	var TYPE_GROUP_SMALL public static const as string
+	var TYPE_GROUP public static const as string
+	var CODECS_VP8 public static const as string
+	var CODECS_H264 public static const as string
+	class name Room header extends jk.json.JSONObjectAdapter implements jk.lang.StringObject public static
+	{
+		import jk.json
+		ctor
+		func setType(value as string) as jk.cloud.twilio.TwilioVideoAPI.Room
+		func getType as string
+		func setUniqueName(value as string) as jk.cloud.twilio.TwilioVideoAPI.Room
+		func getUniqueName as string
+		func setStatusCallback(value as string) as jk.cloud.twilio.TwilioVideoAPI.Room
+		func getStatusCallback as string
+		func setStatusCallbackMethod(value as string) as jk.cloud.twilio.TwilioVideoAPI.Room
+		func getStatusCallbackMethod as string
+		func setMaxParticipants(value as string) as jk.cloud.twilio.TwilioVideoAPI.Room
+		func getMaxParticipants as string
+		func setRecordParticipantsOnConnect(value as string) as jk.cloud.twilio.TwilioVideoAPI.Room
+		func getRecordParticipantsOnConnect as string
+		func setVideoCodecs(value as string) as jk.cloud.twilio.TwilioVideoAPI.Room
+		func getVideoCodecs as string
+		func setMediaRegion(value as string) as jk.cloud.twilio.TwilioVideoAPI.Room
+		func getMediaRegion as string
+		func toJsonObject override as object
+		func fromJsonObject(o as object) override as bool
+		func fromJsonString(o as string) as bool
+		func toJsonString as string
+		func toString as string
+		func forJsonString(o as string) static as jk.cloud.twilio.TwilioVideoAPI.Room
+		func forJsonObject(o as object) static as jk.cloud.twilio.TwilioVideoAPI.Room
+	}
+	class name RoomInfo header extends jk.json.JSONObjectAdapter implements jk.lang.StringObject public static
+	{
+		import jk.json
+		ctor
+		func setStatus(value as string) as jk.cloud.twilio.TwilioVideoAPI.RoomInfo
+		func getStatus as string
+		func setUnique_name(value as string) as jk.cloud.twilio.TwilioVideoAPI.RoomInfo
+		func getUnique_name as string
+		func setDate_updated(value as string) as jk.cloud.twilio.TwilioVideoAPI.RoomInfo
+		func getDate_updated as string
+		func setVideo_codecs(value as vector<string>) as jk.cloud.twilio.TwilioVideoAPI.RoomInfo
+		func getVideo_codecs as vector<string>
+		func setMax_participants(value as string) as jk.cloud.twilio.TwilioVideoAPI.RoomInfo
+		func getMax_participants as string
+		func setRecord_participants_on_connectValue(value as bool) as jk.cloud.twilio.TwilioVideoAPI.RoomInfo
+		func getRecord_participants_on_connectValue as bool
+		func setRecord_participants_on_connect(value as jk.lang.BooleanObject) as jk.cloud.twilio.TwilioVideoAPI.RoomInfo
+		func getRecord_participants_on_connect as jk.lang.BooleanObject
+		func setEnable_turnValue(value as bool) as jk.cloud.twilio.TwilioVideoAPI.RoomInfo
+		func getEnable_turnValue as bool
+		func setEnable_turn(value as jk.lang.BooleanObject) as jk.cloud.twilio.TwilioVideoAPI.RoomInfo
+		func getEnable_turn as jk.lang.BooleanObject
+		func setAccount_sid(value as string) as jk.cloud.twilio.TwilioVideoAPI.RoomInfo
+		func getAccount_sid as string
+		func setUrl(value as string) as jk.cloud.twilio.TwilioVideoAPI.RoomInfo
+		func getUrl as string
+		func setEnd_time(value as string) as jk.cloud.twilio.TwilioVideoAPI.RoomInfo
+		func getEnd_time as string
+		func setSid(value as string) as jk.cloud.twilio.TwilioVideoAPI.RoomInfo
+		func getSid as string
+		func setDuration(value as string) as jk.cloud.twilio.TwilioVideoAPI.RoomInfo
+		func getDuration as string
+		func setDate_created(value as string) as jk.cloud.twilio.TwilioVideoAPI.RoomInfo
+		func getDate_created as string
+		func setMedia_region(value as string) as jk.cloud.twilio.TwilioVideoAPI.RoomInfo
+		func getMedia_region as string
+		func setType(value as string) as jk.cloud.twilio.TwilioVideoAPI.RoomInfo
+		func getType as string
+		func setStatus_callback_method(value as string) as jk.cloud.twilio.TwilioVideoAPI.RoomInfo
+		func getStatus_callback_method as string
+		func setStatus_callback(value as string) as jk.cloud.twilio.TwilioVideoAPI.RoomInfo
+		func getStatus_callback as string
+		func setLinks(value as jk.cloud.twilio.TwilioVideoAPI.RoomLink) as jk.cloud.twilio.TwilioVideoAPI.RoomInfo
+		func getLinks as jk.cloud.twilio.TwilioVideoAPI.RoomLink
+		func toJsonObject override as object
+		func fromJsonObject(o as object) override as bool
+		func fromJsonString(o as string) as bool
+		func toJsonString as string
+		func toString as string
+		func forJsonString(o as string) static as jk.cloud.twilio.TwilioVideoAPI.RoomInfo
+		func forJsonObject(o as object) static as jk.cloud.twilio.TwilioVideoAPI.RoomInfo
+	}
+	class name RoomLink header extends jk.json.JSONObjectAdapter implements jk.lang.StringObject public static
+	{
+		import jk.json
+		ctor
+		func setRecordings(value as string) as jk.cloud.twilio.TwilioVideoAPI.RoomLink
+		func getRecordings as string
+		func setParticipants(value as string) as jk.cloud.twilio.TwilioVideoAPI.RoomLink
+		func getParticipants as string
+		func toJsonObject override as object
+		func fromJsonObject(o as object) override as bool
+		func fromJsonString(o as string) as bool
+		func toJsonString as string
+		func toString as string
+		func forJsonString(o as string) static as jk.cloud.twilio.TwilioVideoAPI.RoomLink
+		func forJsonObject(o as object) static as jk.cloud.twilio.TwilioVideoAPI.RoomLink
+	}
+	class name RoomList header extends jk.json.JSONObjectAdapter implements jk.lang.StringObject public static
+	{
+		import jk.json
+		ctor
+		func setRooms(value as vector<jk.cloud.twilio.TwilioVideoAPI.RoomInfo>) as jk.cloud.twilio.TwilioVideoAPI.RoomList
+		func getRooms as vector<jk.cloud.twilio.TwilioVideoAPI.RoomInfo>
+		func setMeta(value as jk.cloud.twilio.TwilioVideoAPI.RoomMeta) as jk.cloud.twilio.TwilioVideoAPI.RoomList
+		func getMeta as jk.cloud.twilio.TwilioVideoAPI.RoomMeta
+		func toJsonObject override as object
+		func fromJsonObject(o as object) override as bool
+		func fromJsonString(o as string) as bool
+		func toJsonString as string
+		func toString as string
+		func forJsonString(o as string) static as jk.cloud.twilio.TwilioVideoAPI.RoomList
+		func forJsonObject(o as object) static as jk.cloud.twilio.TwilioVideoAPI.RoomList
+	}
+	class name RoomMeta header extends jk.json.JSONObjectAdapter implements jk.lang.StringObject public static
+	{
+		import jk.json
+		ctor
+		func setPageValue(value as int) as jk.cloud.twilio.TwilioVideoAPI.RoomMeta
+		func getPageValue as int
+		func setPage(value as jk.lang.IntegerObject) as jk.cloud.twilio.TwilioVideoAPI.RoomMeta
+		func getPage as jk.lang.IntegerObject
+		func setPage_sizeValue(value as int) as jk.cloud.twilio.TwilioVideoAPI.RoomMeta
+		func getPage_sizeValue as int
+		func setPage_size(value as jk.lang.IntegerObject) as jk.cloud.twilio.TwilioVideoAPI.RoomMeta
+		func getPage_size as jk.lang.IntegerObject
+		func setFirst_page_url(value as string) as jk.cloud.twilio.TwilioVideoAPI.RoomMeta
+		func getFirst_page_url as string
+		func setPrevious_page_url(value as string) as jk.cloud.twilio.TwilioVideoAPI.RoomMeta
+		func getPrevious_page_url as string
+		func setUrl(value as string) as jk.cloud.twilio.TwilioVideoAPI.RoomMeta
+		func getUrl as string
+		func setNext_page_url(value as string) as jk.cloud.twilio.TwilioVideoAPI.RoomMeta
+		func getNext_page_url as string
+		func setKey(value as string) as jk.cloud.twilio.TwilioVideoAPI.RoomMeta
+		func getKey as string
+		func toJsonObject override as object
+		func fromJsonObject(o as object) override as bool
+		func fromJsonString(o as string) as bool
+		func toJsonString as string
+		func toString as string
+		func forJsonString(o as string) static as jk.cloud.twilio.TwilioVideoAPI.RoomMeta
+		func forJsonObject(o as object) static as jk.cloud.twilio.TwilioVideoAPI.RoomMeta
+	}
+	func createRoom(room as jk.cloud.twilio.TwilioVideoAPI.Room) as jk.cloud.twilio.TwilioVideoAPI.RoomInfo
+	func getRoomList(room as jk.cloud.twilio.TwilioVideoAPI.Room, limit as int, page as int) as jk.cloud.twilio.TwilioVideoAPI.RoomList
+	func getRoom(sid as string) as jk.cloud.twilio.TwilioVideoAPI.RoomInfo
+	func completeRoom(sid as string) as jk.cloud.twilio.TwilioVideoAPI.RoomInfo
+}
+class name jk.cloud.twilio.TwilioAPI header public
+{
+	import jk.lang
+	import jk.cloud.common
+	import jk.log
+	import jk.base64
+	import jk.url
+	class name Credential header extends jk.json.JSONObjectAdapter implements jk.lang.StringObject public static
+	{
+		import jk.json
+		ctor
+		func setSsid(value as string) as jk.cloud.twilio.TwilioAPI.Credential
+		func getSsid as string
+		func setToken(value as string) as jk.cloud.twilio.TwilioAPI.Credential
+		func getToken as string
+		func toJsonObject override as object
+		func fromJsonObject(o as object) override as bool
+		func fromJsonString(o as string) as bool
+		func toJsonString as string
+		func toString as string
+		func forJsonString(o as string) static as jk.cloud.twilio.TwilioAPI.Credential
+		func forJsonObject(o as object) static as jk.cloud.twilio.TwilioAPI.Credential
+	}
+	ctor(ctx as jk.log.LoggingContext, ssid as string, token as string)
+	macro AUTHORIZATION_HEADER 
+	{
+		assert credential:
+			CloudError.throw("noCredential", "No Twillio crendential configured")
+		var ssid = credential.getSsid()
+		var token = credential.getToken()
+		if String.isEmpty(ssid):
+			CloudError.throw("noSSID", "No Twillio SSID configured")
+		if String.isEmpty(token):
+			CloudError.throw("noAuthToken", "No Twillio Auth Token configured")
+		var headers = new KeyValueList<string,string>()
+		headers.add("Content-Type", "application/x-www-form-urlencoded")
+		var base64 = Base64Encoder.encodeString(ssid .. ":" .. token)
+		headers.add("Authorization", "Basic " .. base64)
+	}
+}
+class name jk.cloud.twilio.TwilioLookupAPI header extends jk.cloud.twilio.TwilioAPI public
+{
+	import jk.lang
+	import jk.cloud.common
+	import jk.log
+	import jk.base64
+	import jk.json
+	import jk.url
+	ctor(ctx as jk.log.LoggingContext, ssid as string, token as string)
+	class name PhoneNumberInfo header extends jk.json.JSONObjectAdapter implements jk.lang.StringObject public static
+	{
+		import jk.json
+		ctor
+		func setCaller_name(value as string) as jk.cloud.twilio.TwilioLookupAPI.PhoneNumberInfo
+		func getCaller_name as string
+		func setCountry_code(value as string) as jk.cloud.twilio.TwilioLookupAPI.PhoneNumberInfo
+		func getCountry_code as string
+		func setPhone_number(value as string) as jk.cloud.twilio.TwilioLookupAPI.PhoneNumberInfo
+		func getPhone_number as string
+		func setNational_format(value as string) as jk.cloud.twilio.TwilioLookupAPI.PhoneNumberInfo
+		func getNational_format as string
+		func setCarrier(value as string) as jk.cloud.twilio.TwilioLookupAPI.PhoneNumberInfo
+		func getCarrier as string
+		func toJsonObject override as object
+		func fromJsonObject(o as object) override as bool
+		func fromJsonString(o as string) as bool
+		func toJsonString as string
+		func toString as string
+		func forJsonString(o as string) static as jk.cloud.twilio.TwilioLookupAPI.PhoneNumberInfo
+		func forJsonObject(o as object) static as jk.cloud.twilio.TwilioLookupAPI.PhoneNumberInfo
+	}
+	class name Error header extends jk.json.JSONObjectAdapter implements jk.lang.StringObject public static
+	{
+		import jk.json
+		ctor
+		func setCodeValue(value as int) as jk.cloud.twilio.TwilioLookupAPI.Error
+		func getCodeValue as int
+		func setCode(value as jk.lang.IntegerObject) as jk.cloud.twilio.TwilioLookupAPI.Error
+		func getCode as jk.lang.IntegerObject
+		func setMessage(value as string) as jk.cloud.twilio.TwilioLookupAPI.Error
+		func getMessage as string
+		func toJsonObject override as object
+		func fromJsonObject(o as object) override as bool
+		func fromJsonString(o as string) as bool
+		func toJsonString as string
+		func toString as string
+		func forJsonString(o as string) static as jk.cloud.twilio.TwilioLookupAPI.Error
+		func forJsonObject(o as object) static as jk.cloud.twilio.TwilioLookupAPI.Error
+	}
+	func lookupPhoneNumber(phoneNumber as string, countryCode as string) as jk.cloud.twilio.TwilioLookupAPI.PhoneNumberInfo
+}
+class name jk.cloud.twilio.TwilioSMSAPI header extends jk.cloud.twilio.TwilioAPI public
+{
+	import jk.lang
+	import jk.cloud.common
+	import jk.log
+	import jk.base64
+	import jk.url
+	ctor(ctx as jk.log.LoggingContext, ssid as string, token as string)
+	class name Message header extends jk.json.JSONObjectAdapter implements jk.lang.StringObject public static
+	{
+		import jk.json
+		ctor
+		func setFrom(value as string) as jk.cloud.twilio.TwilioSMSAPI.Message
+		func getFrom as string
+		func setTo(value as string) as jk.cloud.twilio.TwilioSMSAPI.Message
+		func getTo as string
+		func setBody(value as string) as jk.cloud.twilio.TwilioSMSAPI.Message
+		func getBody as string
+		func setAccount_sid(value as string) as jk.cloud.twilio.TwilioSMSAPI.Message
+		func getAccount_sid as string
+		func setApi_version(value as string) as jk.cloud.twilio.TwilioSMSAPI.Message
+		func getApi_version as string
+		func setDate_created(value as string) as jk.cloud.twilio.TwilioSMSAPI.Message
+		func getDate_created as string
+		func setDate_sent(value as string) as jk.cloud.twilio.TwilioSMSAPI.Message
+		func getDate_sent as string
+		func setDate_updated(value as string) as jk.cloud.twilio.TwilioSMSAPI.Message
+		func getDate_updated as string
+		func setDirection(value as string) as jk.cloud.twilio.TwilioSMSAPI.Message
+		func getDirection as string
+		func setError_code(value as string) as jk.cloud.twilio.TwilioSMSAPI.Message
+		func getError_code as string
+		func setError_message(value as string) as jk.cloud.twilio.TwilioSMSAPI.Message
+		func getError_message as string
+		func setMessaging_service_sid(value as string) as jk.cloud.twilio.TwilioSMSAPI.Message
+		func getMessaging_service_sid as string
+		func setNum_media(value as string) as jk.cloud.twilio.TwilioSMSAPI.Message
+		func getNum_media as string
+		func setNum_segments(value as string) as jk.cloud.twilio.TwilioSMSAPI.Message
+		func getNum_segments as string
+		func setPrice(value as string) as jk.cloud.twilio.TwilioSMSAPI.Message
+		func getPrice as string
+		func setPrice_unit(value as string) as jk.cloud.twilio.TwilioSMSAPI.Message
+		func getPrice_unit as string
+		func setSid(value as string) as jk.cloud.twilio.TwilioSMSAPI.Message
+		func getSid as string
+		func setStatus(value as string) as jk.cloud.twilio.TwilioSMSAPI.Message
+		func getStatus as string
+		func setSubresource_uris(value as string) as jk.cloud.twilio.TwilioSMSAPI.Message
+		func getSubresource_uris as string
+		func setUri(value as string) as jk.cloud.twilio.TwilioSMSAPI.Message
+		func getUri as string
+		func toJsonObject override as object
+		func fromJsonObject(o as object) override as bool
+		func fromJsonString(o as string) as bool
+		func toJsonString as string
+		func toString as string
+		func forJsonString(o as string) static as jk.cloud.twilio.TwilioSMSAPI.Message
+		func forJsonObject(o as object) static as jk.cloud.twilio.TwilioSMSAPI.Message
+	}
+	class name MessageList header extends jk.json.JSONObjectAdapter implements jk.lang.StringObject public static
+	{
+		import jk.json
+		ctor
+		func setUri(value as string) as jk.cloud.twilio.TwilioSMSAPI.MessageList
+		func getUri as string
+		func setFirst_page_uri(value as string) as jk.cloud.twilio.TwilioSMSAPI.MessageList
+		func getFirst_page_uri as string
+		func setNext_page_uri(value as string) as jk.cloud.twilio.TwilioSMSAPI.MessageList
+		func getNext_page_uri as string
+		func setPrevious_page_uri(value as string) as jk.cloud.twilio.TwilioSMSAPI.MessageList
+		func getPrevious_page_uri as string
+		func setPage(value as string) as jk.cloud.twilio.TwilioSMSAPI.MessageList
+		func getPage as string
+		func setPage_size(value as string) as jk.cloud.twilio.TwilioSMSAPI.MessageList
+		func getPage_size as string
+		func setMessages(value as vector<jk.cloud.twilio.TwilioSMSAPI.Message>) as jk.cloud.twilio.TwilioSMSAPI.MessageList
+		func getMessages as vector<jk.cloud.twilio.TwilioSMSAPI.Message>
+		func toJsonObject override as object
+		func fromJsonObject(o as object) override as bool
+		func fromJsonString(o as string) as bool
+		func toJsonString as string
+		func toString as string
+		func forJsonString(o as string) static as jk.cloud.twilio.TwilioSMSAPI.MessageList
+		func forJsonObject(o as object) static as jk.cloud.twilio.TwilioSMSAPI.MessageList
+	}
+	class name Criteria header extends jk.json.JSONObjectAdapter implements jk.lang.StringObject public static
+	{
+		import jk.json
+		ctor
+		func setLimitValue(value as int) as jk.cloud.twilio.TwilioSMSAPI.Criteria
+		func getLimitValue as int
+		func setLimit(value as jk.lang.IntegerObject) as jk.cloud.twilio.TwilioSMSAPI.Criteria
+		func getLimit as jk.lang.IntegerObject
+		func setTo(value as string) as jk.cloud.twilio.TwilioSMSAPI.Criteria
+		func getTo as string
+		func setFrom(value as string) as jk.cloud.twilio.TwilioSMSAPI.Criteria
+		func getFrom as string
+		func setDateSent(value as string) as jk.cloud.twilio.TwilioSMSAPI.Criteria
+		func getDateSent as string
+		func setOperator(value as string) as jk.cloud.twilio.TwilioSMSAPI.Criteria
+		func getOperator as string
+		func setFromDate(value as string) as jk.cloud.twilio.TwilioSMSAPI.Criteria
+		func getFromDate as string
+		func setToDate(value as string) as jk.cloud.twilio.TwilioSMSAPI.Criteria
+		func getToDate as string
+		func toJsonObject override as object
+		func fromJsonObject(o as object) override as bool
+		func fromJsonString(o as string) as bool
+		func toJsonString as string
+		func toString as string
+		func forJsonString(o as string) static as jk.cloud.twilio.TwilioSMSAPI.Criteria
+		func forJsonObject(o as object) static as jk.cloud.twilio.TwilioSMSAPI.Criteria
+	}
+	func sendMessage(message as jk.cloud.twilio.TwilioSMSAPI.Message) as jk.cloud.twilio.TwilioSMSAPI.Message
+	func getMessages(criteria as jk.cloud.twilio.TwilioSMSAPI.Criteria) as jk.cloud.twilio.TwilioSMSAPI.MessageList
+	func updateMessage(sid as string) as jk.cloud.twilio.TwilioSMSAPI.Message
+	func deleteMessage(sid as string) as bool
+}

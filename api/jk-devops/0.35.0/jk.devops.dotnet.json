@@ -1,0 +1,28 @@
+{
+	"moduleDescription" : "Support for Microsoft .NET and C# development and building.\n",
+	"type" : "module",
+	"moduleTitle" : "C# and .NET development",
+	"moduleId" : "jk.devops.dotnet",
+	"entities" : [
+		{
+			"type" : "class",
+			"name" : "MSBuildBuilder",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "Nupkg",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "CSProjUtil",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "NetCoreBuilder",
+			"description" : ""
+		}
+	]
+}

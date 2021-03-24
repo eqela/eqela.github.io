@@ -1,0 +1,13 @@
+{
+	"moduleDescription" : "Support for Java development and compiling.\n",
+	"type" : "module",
+	"moduleTitle" : "Java development",
+	"moduleId" : "jk.devops.java",
+	"entities" : [
+		{
+			"type" : "class",
+			"name" : "JavaMavenBuilder",
+			"description" : ""
+		}
+	]
+}

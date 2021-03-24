@@ -1,0 +1,23 @@
+{
+	"moduleDescription" : "Support for Kubernetes administration and deployment.\n",
+	"type" : "module",
+	"moduleTitle" : "Kubernetes administration",
+	"moduleId" : "jk.devops.kube",
+	"entities" : [
+		{
+			"type" : "class",
+			"name" : "Kubectl",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "KubeModel",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "KubeHelper",
+			"description" : ""
+		}
+	]
+}

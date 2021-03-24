@@ -1,0 +1,13 @@
+{
+	"moduleDescription" : "Support for HTML manipulation.\n",
+	"type" : "module",
+	"moduleTitle" : "HTML support",
+	"moduleId" : "jk.devops.html",
+	"entities" : [
+		{
+			"type" : "class",
+			"name" : "MarkupToHtmlConverter",
+			"description" : ""
+		}
+	]
+}

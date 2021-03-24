@@ -1,0 +1,13 @@
+{
+	"moduleDescription" : "Support for deploying to Google Cloud\n",
+	"type" : "module",
+	"moduleTitle" : "Google Cloud deployment",
+	"moduleId" : "jk.devops.gcp",
+	"entities" : [
+		{
+			"type" : "class",
+			"name" : "GcpDeployKit",
+			"description" : ""
+		}
+	]
+}

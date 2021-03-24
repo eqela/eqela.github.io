@@ -1,0 +1,19 @@
+class name jk.cloud.google.GoogleAccount header public
+{
+	import jk.lang
+	import jk.url
+	import jk.json
+	import jk.http.client
+	ctor
+	func getTokenInfo(token as string, listener as function<void,jk.lang.DynamicMap,jk.lang.Error>) static
+}
+class name jk.cloud.google.GoogleMaps header public
+{
+	import jk.lang
+	import jk.web
+	import jk.url
+	import jk.json
+	import jk.cloud.common
+	ctor
+	func getTravelDetails(apiKey as string, origin as string, destination as string, callback as function<void,jk.lang.DynamicMap,jk.lang.Error>) static
+}

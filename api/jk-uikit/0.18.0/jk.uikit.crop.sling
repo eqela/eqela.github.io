@@ -1,0 +1,46 @@
+class name jk.uikit.crop.CropRangeWidget header extends jk.widget.HorizontalBoxWidget public #widget
+{
+	import jk.lang
+	import jk.lang
+	import jk.ui
+	import jk.gfx
+	import jk.widget
+	import jk.uikit.boxicons
+	ctor(ctx as jk.ui.GuiApplicationContext)
+	func initializeWidget override
+	func resetControlWidget
+	func moveControl(value as double)
+	func setWidgetRoundingRadius(radius as int #notLiteral)
+	func createWidget override
+	func getWidgetControlChangeListener as function<void,double> #getterMethod
+	func setWidgetControlChangeListener(v as function<void,double>) as jk.uikit.crop.CropRangeWidget #setterMethod
+	func getWidgetRangeColor as jk.gfx.Color #getterMethod
+	func setWidgetRangeColor(v as jk.gfx.Color) as jk.uikit.crop.CropRangeWidget #setterMethod
+}
+class name jk.uikit.crop.CropImageWidget header extends jk.widget.LayerWidget public #widget
+{
+	import jk.lang
+	import jk.lang
+	import jk.ui
+	import jk.gfx
+	import jk.widget
+	import jk.widget.common
+	import jk.math
+	import jk.uikit.boxicons
+	import jk.uikit.dialog
+	import jk.uikit.core
+	ctor(ctx as jk.ui.GuiApplicationContext)
+	func initializeWidget override
+	func onWidgetHeightChanged(height as int #notLiteral) override
+	func onCancelClicked
+	func onStartHandler(x as double, y as double)
+	func onTouchHandler(x as double, y as double)
+	func onEndHandler(x as double, y as double)
+	func createWidget override
+	func getImage as jk.gfx.Image #getterMethod
+	func setImage(v as jk.gfx.Image) as jk.uikit.crop.CropImageWidget #setterMethod
+	func getDoneCroppedHandler as function<void,jk.gfx.Image> #getterMethod
+	func setDoneCroppedHandler(v as function<void,jk.gfx.Image>) as jk.uikit.crop.CropImageWidget #setterMethod
+	func getWidgetNegativeClickHandler as function<void> #getterMethod
+	func setWidgetNegativeClickHandler(v as function<void>) as jk.uikit.crop.CropImageWidget #setterMethod
+}

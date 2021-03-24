@@ -1,0 +1,13 @@
+class name jk.server.ws.WebSocketServer header extends jk.server.CommonServer abstract public
+{
+	import jk.lang
+	import jk.fs
+	import jk.server
+	import jk.ws.server
+	ctor
+	func configure(key as string, value as string, relativeTo as jk.fs.File, error as jk.lang.Error) override as bool
+	func createConnectionHandler abstract as jk.ws.server.WSServerConnectionHandler
+	func initializeServer(server as jk.ws.server.WSServer) virtual as bool
+	func initializeNetworkServer(server as jk.server.NetworkServer) override as bool
+	func createServer override as jk.server.NetworkServer
+}

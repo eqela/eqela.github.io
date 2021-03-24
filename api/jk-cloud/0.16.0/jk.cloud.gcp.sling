@@ -1,0 +1,365 @@
+class name jk.cloud.gcp.GCPAPI header public
+{
+	import jk.lang
+	import jk.log
+	import jk.url
+	import jk.json
+	import jk.cloud.common
+	ctor
+	macro INITIALIZE_GCP_OPERATION 
+	{
+		if not session:
+			CloudError.throw("noSession", "No GCP session")
+		var headers = new KeyValueList<string,string>()
+		var accessToken = session.getAccessToken()
+		if accessToken:
+			headers.add("Authorization", "Bearer " .. accessToken)
+	}
+	macro REQUIRE_PROJECT_NAME 
+	{
+		if String.isEmpty(project):
+			CloudError.throw("noProjectName", "No name given for project")
+	}
+	macro ON_INVALID_RESPONSE_DATA :
+		CloudError.throw("invalidDataFormat", "Unsupported data format in response")
+	macro ADD_CONTENT_TYPE_JSON :
+		headers.add("Content-Type", "application/json")
+	func safeName(name as string) as string
+	func request(method as string, url as string, headers as jk.lang.KeyValueList<string,string>, body as buffer) as jk.cloud.common.CloudClient.Response
+	func getSession as jk.cloud.gcp.GCPSession #getterMethod
+	func setSession(v as jk.cloud.gcp.GCPSession) as jk.cloud.gcp.GCPAPI #setterMethod
+}
+class name jk.cloud.gcp.GCPCloudRunAPI header extends jk.cloud.gcp.GCPAPI public
+{
+	import jk.lang
+	import jk.json
+	import jk.cloud.common
+	ctor(session as jk.cloud.gcp.GCPSession, region as string)
+	func listAuthorizedDomains
+	func getConfiguration
+	func listConfigurations
+	func createDomainMapping
+	func deleteDomainMapping
+	func getDomainMapping
+	func listDomainMappings
+	func deleteRevision
+	func getRevision
+	func listRevisions
+	func getRoute
+	func listRoutes
+	func createService
+	func deleteService
+	func getService
+	class name Container header extends jk.json.JSONObjectAdapter implements jk.lang.StringObject public static
+	{
+		import jk.json
+		ctor
+		func setName(value as string) as jk.cloud.gcp.GCPCloudRunAPI.Container
+		func getName as string
+		func setImage(value as string) as jk.cloud.gcp.GCPCloudRunAPI.Container
+		func getImage as string
+		func setCommand(value as vector<string>) as jk.cloud.gcp.GCPCloudRunAPI.Container
+		func getCommand as vector<string>
+		func setArgs(value as vector<string>) as jk.cloud.gcp.GCPCloudRunAPI.Container
+		func getArgs as vector<string>
+		func setWorkingDir(value as string) as jk.cloud.gcp.GCPCloudRunAPI.Container
+		func getWorkingDir as string
+		func setTerminationMessagePath(value as string) as jk.cloud.gcp.GCPCloudRunAPI.Container
+		func getTerminationMessagePath as string
+		func setTerminationMessagePolicy(value as string) as jk.cloud.gcp.GCPCloudRunAPI.Container
+		func getTerminationMessagePolicy as string
+		func setImagePullPolicy(value as string) as jk.cloud.gcp.GCPCloudRunAPI.Container
+		func getImagePullPolicy as string
+		func toJsonObject override as object
+		func fromJsonObject(o as object) override as bool
+		func fromJsonString(o as string) as bool
+		func toJsonString as string
+		func toString as string
+		func forJsonString(o as string) static as jk.cloud.gcp.GCPCloudRunAPI.Container
+		func forJsonObject(o as object) static as jk.cloud.gcp.GCPCloudRunAPI.Container
+	}
+	class name RevisionSpec header extends jk.json.JSONObjectAdapter implements jk.lang.StringObject public static
+	{
+		import jk.json
+		ctor
+		func setContainerConcurrencyValue(value as int) as jk.cloud.gcp.GCPCloudRunAPI.RevisionSpec
+		func getContainerConcurrencyValue as int
+		func setContainerConcurrency(value as jk.lang.IntegerObject) as jk.cloud.gcp.GCPCloudRunAPI.RevisionSpec
+		func getContainerConcurrency as jk.lang.IntegerObject
+		func setTimeoutSecondsValue(value as int) as jk.cloud.gcp.GCPCloudRunAPI.RevisionSpec
+		func getTimeoutSecondsValue as int
+		func setTimeoutSeconds(value as jk.lang.IntegerObject) as jk.cloud.gcp.GCPCloudRunAPI.RevisionSpec
+		func getTimeoutSeconds as jk.lang.IntegerObject
+		func setServiceAccountName(value as string) as jk.cloud.gcp.GCPCloudRunAPI.RevisionSpec
+		func getServiceAccountName as string
+		func setContainers(value as vector<jk.cloud.gcp.GCPCloudRunAPI.Container>) as jk.cloud.gcp.GCPCloudRunAPI.RevisionSpec
+		func getContainers as vector<jk.cloud.gcp.GCPCloudRunAPI.Container>
+		func toJsonObject override as object
+		func fromJsonObject(o as object) override as bool
+		func fromJsonString(o as string) as bool
+		func toJsonString as string
+		func toString as string
+		func forJsonString(o as string) static as jk.cloud.gcp.GCPCloudRunAPI.RevisionSpec
+		func forJsonObject(o as object) static as jk.cloud.gcp.GCPCloudRunAPI.RevisionSpec
+	}
+	class name RevisionTemplate header extends jk.json.JSONObjectAdapter implements jk.lang.StringObject public static
+	{
+		import jk.json
+		ctor
+		func setSpec(value as jk.cloud.gcp.GCPCloudRunAPI.RevisionSpec) as jk.cloud.gcp.GCPCloudRunAPI.RevisionTemplate
+		func getSpec as jk.cloud.gcp.GCPCloudRunAPI.RevisionSpec
+		func toJsonObject override as object
+		func fromJsonObject(o as object) override as bool
+		func fromJsonString(o as string) as bool
+		func toJsonString as string
+		func toString as string
+		func forJsonString(o as string) static as jk.cloud.gcp.GCPCloudRunAPI.RevisionTemplate
+		func forJsonObject(o as object) static as jk.cloud.gcp.GCPCloudRunAPI.RevisionTemplate
+	}
+	class name ServiceSpec header extends jk.json.JSONObjectAdapter implements jk.lang.StringObject public static
+	{
+		import jk.json
+		ctor
+		func setTemplate(value as jk.cloud.gcp.GCPCloudRunAPI.RevisionTemplate) as jk.cloud.gcp.GCPCloudRunAPI.ServiceSpec
+		func getTemplate as jk.cloud.gcp.GCPCloudRunAPI.RevisionTemplate
+		func toJsonObject override as object
+		func fromJsonObject(o as object) override as bool
+		func fromJsonString(o as string) as bool
+		func toJsonString as string
+		func toString as string
+		func forJsonString(o as string) static as jk.cloud.gcp.GCPCloudRunAPI.ServiceSpec
+		func forJsonObject(o as object) static as jk.cloud.gcp.GCPCloudRunAPI.ServiceSpec
+	}
+	class name ServiceResource header extends jk.json.JSONObjectAdapter implements jk.lang.StringObject public static
+	{
+		import jk.json
+		ctor
+		func setApiVersion(value as string) as jk.cloud.gcp.GCPCloudRunAPI.ServiceResource
+		func getApiVersion as string
+		func setKind(value as string) as jk.cloud.gcp.GCPCloudRunAPI.ServiceResource
+		func getKind as string
+		func setSpec(value as jk.cloud.gcp.GCPCloudRunAPI.ServiceSpec) as jk.cloud.gcp.GCPCloudRunAPI.ServiceResource
+		func getSpec as jk.cloud.gcp.GCPCloudRunAPI.ServiceSpec
+		func toJsonObject override as object
+		func fromJsonObject(o as object) override as bool
+		func fromJsonString(o as string) as bool
+		func toJsonString as string
+		func toString as string
+		func forJsonString(o as string) static as jk.cloud.gcp.GCPCloudRunAPI.ServiceResource
+		func forJsonObject(o as object) static as jk.cloud.gcp.GCPCloudRunAPI.ServiceResource
+	}
+	func listServices(project as string) as vector<jk.cloud.gcp.GCPCloudRunAPI.ServiceResource>
+	func replaceService
+	func getIamPolicy
+	func setIamPolicy
+	func testIamPermissions
+	func getRegion as string #getterMethod
+	func setRegion(v as string) as jk.cloud.gcp.GCPCloudRunAPI #setterMethod
+}
+class name jk.cloud.gcp.GCPScript header public
+{
+	import jk.lang
+	import jk.fs
+	import jk.log
+	import jk.mime
+	ctor
+	func saveToStorageBucket(ctx as jk.log.LoggingContext, params as map<string,object>) static as string
+}
+class name jk.cloud.gcp.GCPStorageUtil header public
+{
+	import jk.lang
+	import jk.sha
+	import jk.time
+	import jk.random
+	import jk.cloud.common
+	ctor(api as jk.cloud.gcp.GCPStorageAPI)
+	func createBucketByName(project as string, name as string) as jk.cloud.gcp.GCPStorageAPI.BucketResource
+	func createUniqueBucketForProject(project as string) as jk.cloud.gcp.GCPStorageAPI.BucketResource
+}
+class name jk.cloud.gcp.GCPComputeAPI header extends jk.cloud.gcp.GCPAPI public
+{
+	import jk.lang
+	import jk.json
+	import jk.cloud.common
+	ctor(session as jk.cloud.gcp.GCPSession)
+}
+class name jk.cloud.gcp.GCPStorageAPI header extends jk.cloud.gcp.GCPAPI public
+{
+	import jk.lang
+	import jk.json
+	import jk.cloud.common
+	class name ObjectResource header extends jk.json.JSONObjectAdapter implements jk.lang.StringObject public static
+	{
+		import jk.json
+		ctor
+		func setId(value as string) as jk.cloud.gcp.GCPStorageAPI.ObjectResource
+		func getId as string
+		func setSelfLink(value as string) as jk.cloud.gcp.GCPStorageAPI.ObjectResource
+		func getSelfLink as string
+		func setName(value as string) as jk.cloud.gcp.GCPStorageAPI.ObjectResource
+		func getName as string
+		func setBucket(value as string) as jk.cloud.gcp.GCPStorageAPI.ObjectResource
+		func getBucket as string
+		func setGenerationValue(value as long) as jk.cloud.gcp.GCPStorageAPI.ObjectResource
+		func getGenerationValue as long
+		func setGeneration(value as jk.lang.LongIntegerObject) as jk.cloud.gcp.GCPStorageAPI.ObjectResource
+		func getGeneration as jk.lang.LongIntegerObject
+		func setMetagenerationValue(value as long) as jk.cloud.gcp.GCPStorageAPI.ObjectResource
+		func getMetagenerationValue as long
+		func setMetageneration(value as jk.lang.LongIntegerObject) as jk.cloud.gcp.GCPStorageAPI.ObjectResource
+		func getMetageneration as jk.lang.LongIntegerObject
+		func setContentType(value as string) as jk.cloud.gcp.GCPStorageAPI.ObjectResource
+		func getContentType as string
+		func setTimeCreated(value as string) as jk.cloud.gcp.GCPStorageAPI.ObjectResource
+		func getTimeCreated as string
+		func setUpdated(value as string) as jk.cloud.gcp.GCPStorageAPI.ObjectResource
+		func getUpdated as string
+		func setTimeDeleted(value as string) as jk.cloud.gcp.GCPStorageAPI.ObjectResource
+		func getTimeDeleted as string
+		func setTemporaryHoldValue(value as bool) as jk.cloud.gcp.GCPStorageAPI.ObjectResource
+		func getTemporaryHoldValue as bool
+		func setTemporaryHold(value as jk.lang.BooleanObject) as jk.cloud.gcp.GCPStorageAPI.ObjectResource
+		func getTemporaryHold as jk.lang.BooleanObject
+		func setEventBasedHoldValue(value as bool) as jk.cloud.gcp.GCPStorageAPI.ObjectResource
+		func getEventBasedHoldValue as bool
+		func setEventBasedHold(value as jk.lang.BooleanObject) as jk.cloud.gcp.GCPStorageAPI.ObjectResource
+		func getEventBasedHold as jk.lang.BooleanObject
+		func setRetentionExpirationTime(value as string) as jk.cloud.gcp.GCPStorageAPI.ObjectResource
+		func getRetentionExpirationTime as string
+		func setStorageClass(value as string) as jk.cloud.gcp.GCPStorageAPI.ObjectResource
+		func getStorageClass as string
+		func setTimeStorageClassUpdated(value as string) as jk.cloud.gcp.GCPStorageAPI.ObjectResource
+		func getTimeStorageClassUpdated as string
+		func setSizeValue(value as long) as jk.cloud.gcp.GCPStorageAPI.ObjectResource
+		func getSizeValue as long
+		func setSize(value as jk.lang.LongIntegerObject) as jk.cloud.gcp.GCPStorageAPI.ObjectResource
+		func getSize as jk.lang.LongIntegerObject
+		func setMd5Hash(value as string) as jk.cloud.gcp.GCPStorageAPI.ObjectResource
+		func getMd5Hash as string
+		func setMediaLink(value as string) as jk.cloud.gcp.GCPStorageAPI.ObjectResource
+		func getMediaLink as string
+		func setContentEncoding(value as string) as jk.cloud.gcp.GCPStorageAPI.ObjectResource
+		func getContentEncoding as string
+		func setContentDisposition(value as string) as jk.cloud.gcp.GCPStorageAPI.ObjectResource
+		func getContentDisposition as string
+		func setContentLanguage(value as string) as jk.cloud.gcp.GCPStorageAPI.ObjectResource
+		func getContentLanguage as string
+		func setCacheControl(value as string) as jk.cloud.gcp.GCPStorageAPI.ObjectResource
+		func getCacheControl as string
+		func setCrc32c(value as string) as jk.cloud.gcp.GCPStorageAPI.ObjectResource
+		func getCrc32c as string
+		func setComponentCountValue(value as int) as jk.cloud.gcp.GCPStorageAPI.ObjectResource
+		func getComponentCountValue as int
+		func setComponentCount(value as jk.lang.IntegerObject) as jk.cloud.gcp.GCPStorageAPI.ObjectResource
+		func getComponentCount as jk.lang.IntegerObject
+		func setEtag(value as string) as jk.cloud.gcp.GCPStorageAPI.ObjectResource
+		func getEtag as string
+		func setKmsKeyName(value as string) as jk.cloud.gcp.GCPStorageAPI.ObjectResource
+		func getKmsKeyName as string
+		func toJsonObject override as object
+		func fromJsonObject(o as object) override as bool
+		func fromJsonString(o as string) as bool
+		func toJsonString as string
+		func toString as string
+		func forJsonString(o as string) static as jk.cloud.gcp.GCPStorageAPI.ObjectResource
+		func forJsonObject(o as object) static as jk.cloud.gcp.GCPStorageAPI.ObjectResource
+	}
+	class name BucketResource header extends jk.json.JSONObjectAdapter implements jk.lang.StringObject public static
+	{
+		import jk.json
+		ctor
+		func setId(value as string) as jk.cloud.gcp.GCPStorageAPI.BucketResource
+		func getId as string
+		func setSelfLink(value as string) as jk.cloud.gcp.GCPStorageAPI.BucketResource
+		func getSelfLink as string
+		func setProjectNumberValue(value as long) as jk.cloud.gcp.GCPStorageAPI.BucketResource
+		func getProjectNumberValue as long
+		func setProjectNumber(value as jk.lang.LongIntegerObject) as jk.cloud.gcp.GCPStorageAPI.BucketResource
+		func getProjectNumber as jk.lang.LongIntegerObject
+		func setName(value as string) as jk.cloud.gcp.GCPStorageAPI.BucketResource
+		func getName as string
+		func setTimeCreated(value as string) as jk.cloud.gcp.GCPStorageAPI.BucketResource
+		func getTimeCreated as string
+		func setUdpated(value as string) as jk.cloud.gcp.GCPStorageAPI.BucketResource
+		func getUdpated as string
+		func setDefaultEventBasedHoldValue(value as bool) as jk.cloud.gcp.GCPStorageAPI.BucketResource
+		func getDefaultEventBasedHoldValue as bool
+		func setDefaultEventBasedHold(value as jk.lang.BooleanObject) as jk.cloud.gcp.GCPStorageAPI.BucketResource
+		func getDefaultEventBasedHold as jk.lang.BooleanObject
+		func setMetagenerationValue(value as long) as jk.cloud.gcp.GCPStorageAPI.BucketResource
+		func getMetagenerationValue as long
+		func setMetageneration(value as jk.lang.LongIntegerObject) as jk.cloud.gcp.GCPStorageAPI.BucketResource
+		func getMetageneration as jk.lang.LongIntegerObject
+		func setLocation(value as string) as jk.cloud.gcp.GCPStorageAPI.BucketResource
+		func getLocation as string
+		func setLocationType(value as string) as jk.cloud.gcp.GCPStorageAPI.BucketResource
+		func getLocationType as string
+		func setStorageClass(value as string) as jk.cloud.gcp.GCPStorageAPI.BucketResource
+		func getStorageClass as string
+		func setEtag(value as string) as jk.cloud.gcp.GCPStorageAPI.BucketResource
+		func getEtag as string
+		func toJsonObject override as object
+		func fromJsonObject(o as object) override as bool
+		func fromJsonString(o as string) as bool
+		func toJsonString as string
+		func toString as string
+		func forJsonString(o as string) static as jk.cloud.gcp.GCPStorageAPI.BucketResource
+		func forJsonObject(o as object) static as jk.cloud.gcp.GCPStorageAPI.BucketResource
+	}
+	macro REQUIRE_BUCKET_NAME 
+	{
+		if String.isEmpty(bucket):
+			CloudError.throw("noBucketName", "No storage bucket name")
+	}
+	macro REQUIRE_OBJECT_NAME 
+	{
+		if String.isEmpty(name):
+			CloudError.throw("noBucketObjectName", "No name given for storage bucket object")
+	}
+	ctor(session as jk.cloud.gcp.GCPSession)
+	func deleteBucket(bucket as string)
+	func getBucketMetadata(bucket as string) as jk.cloud.gcp.GCPStorageAPI.BucketResource
+	func getBucketIamPolicy
+	func insertBucket(project as string, bucket as jk.cloud.gcp.GCPStorageAPI.BucketResource) as jk.cloud.gcp.GCPStorageAPI.BucketResource
+	func listBuckets(project as string) as vector<jk.cloud.gcp.GCPStorageAPI.BucketResource>
+	func lockBucketRetentionPolicy
+	func patchBucket
+	func setBucketIamPolicy
+	func testBucketIamPermissions
+	func updateBucket
+	func composeObject
+	func copyObject(bucket as string, name as string, destbucket as string, destname as string) as jk.cloud.gcp.GCPStorageAPI.ObjectResource
+	func deleteObject(bucket as string, name as string)
+	func getObjectMedia(bucket as string, object as string) as buffer
+	func getObjectMetadata(bucket as string, object as string) as jk.cloud.gcp.GCPStorageAPI.ObjectResource
+	func insertObject(bucket as string, name as string, data as buffer, mimetype as string) as jk.cloud.gcp.GCPStorageAPI.ObjectResource
+	func listObjects(bucket as string) as vector<jk.cloud.gcp.GCPStorageAPI.ObjectResource>
+	func patchObject
+	func rewriteObject
+	func updateObject
+	func watchAllObjects
+}
+class name jk.cloud.gcp.GCPSession header public
+{
+	import jk.lang
+	import jk.log
+	import jk.jwt
+	import jk.time
+	import jk.json
+	import jk.cloud.common
+	ctor
+	var SCOPE_READ_ONLY public static const as string
+	var SCOPE_READ_WRITE public static const as string
+	var SCOPE_FULL_CONTROL public static const as string
+	var SCOPE_CLOUD_PLATFORM_READ_ONLY public static const as string
+	var SCOPE_CLOUD_PLATFORM public static const as string
+	func forServiceAccount(ctx as jk.log.LoggingContext, config as string, permissions as array<string>) static as jk.cloud.gcp.GCPSession
+	func getCtx as jk.log.LoggingContext #getterMethod
+	func setCtx(v as jk.log.LoggingContext) as jk.cloud.gcp.GCPSession #setterMethod
+	func getAccessToken as string #getterMethod
+	func setAccessToken(v as string) as jk.cloud.gcp.GCPSession #setterMethod
+	func getAccessTokenType as string #getterMethod
+	func setAccessTokenType(v as string) as jk.cloud.gcp.GCPSession #setterMethod
+	func getAccessTokenExpiry as long #getterMethod
+	func setAccessTokenExpiry(v as long) as jk.cloud.gcp.GCPSession #setterMethod
+}

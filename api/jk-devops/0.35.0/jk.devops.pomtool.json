@@ -1,0 +1,43 @@
+{
+	"moduleDescription" : "Support for reading and manipulating Apache Maven POM files.\n",
+	"type" : "module",
+	"moduleTitle" : "POM support",
+	"moduleId" : "jk.devops.pomtool",
+	"entities" : [
+		{
+			"type" : "class",
+			"name" : "ActionCommand",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "FileEditor",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "POMFileEditor",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "POM",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "POMMaker",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "POMParser",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "PomtoolApp",
+			"description" : ""
+		}
+	]
+}

@@ -1,0 +1,43 @@
+{
+	"moduleDescription" : "Support for packing software applications to various package formats.\n",
+	"type" : "module",
+	"moduleTitle" : "Application packaging",
+	"moduleId" : "jk.devops.packager",
+	"entities" : [
+		{
+			"type" : "interface",
+			"name" : "PackageMaker",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "MsiMaker",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "PackagerApp",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "DebMaker",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "GuidGenerator",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "PkgMaker",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "PackageInfo",
+			"description" : ""
+		}
+	]
+}

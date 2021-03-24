@@ -1,0 +1,13 @@
+{
+	"moduleDescription" : "Support for Javascript development and compiling.\n",
+	"type" : "module",
+	"moduleTitle" : "Javascript development",
+	"moduleId" : "jk.devops.js",
+	"entities" : [
+		{
+			"type" : "class",
+			"name" : "NPMBuilder",
+			"description" : ""
+		}
+	]
+}

@@ -1,0 +1,358 @@
+class name jk.uikit.core.CardWidget header extends jk.uikit.core.CardFrameWidget public #widget
+{
+	import jk.lang
+	import jk.lang
+	import jk.ui
+	import jk.gfx
+	import jk.widget
+	ctor(ctx as jk.ui.GuiApplicationContext)
+	func setWidgetTitle(value as string) as jk.uikit.core.CardWidget
+	func addWidget(w as jk.widget.Widget) override as jk.widget.ContainerWidget
+	func createWidget override
+	func getWidgetSaveClickHandler as function<void> #getterMethod
+	func setWidgetSaveClickHandler(v as function<void>) as jk.uikit.core.CardWidget #setterMethod
+	func getWidgetCancelClickHandler as function<void> #getterMethod
+	func setWidgetCancelClickHandler(v as function<void>) as jk.uikit.core.CardWidget #setterMethod
+}
+interface name jk.uikit.core.InputFieldListener header public
+{
+	import jk.lang
+	func onValueChange(empty as bool)
+}
+class name jk.uikit.core.RoundedButtonWidget header extends jk.uikit.core.ButtonFrameWidget public #widget
+{
+	import jk.lang
+	import jk.lang
+	import jk.ui
+	import jk.gfx
+	import jk.widget
+	ctor(context as jk.ui.GuiApplicationContext)
+	func createWidget override
+}
+class name jk.uikit.core.TextFieldWidget header extends jk.widget.LayerWithBackgroundColorWidget public #widget
+{
+	import jk.lang
+	import jk.lang
+	import jk.ui
+	import jk.gfx
+	import jk.widget
+	import jk.widget.common
+	ctor(context as jk.ui.GuiApplicationContext)
+	var TYPE_DEFAULT public static const as int
+	var TYPE_NAME public static const as int
+	var TYPE_PHONE_NUMBER public static const as int
+	var TYPE_PASSWORD public static const as int
+	var TYPE_INTEGER public static const as int
+	func initializeWidget override
+	func setInputMaxLength(len as int) as jk.uikit.core.TextFieldWidget
+	func setInputMaxValue(val as int) as jk.uikit.core.TextFieldWidget
+	func setInputMinValue(val as int) as jk.uikit.core.TextFieldWidget
+	func setWidgetInputFieldListener(l as jk.uikit.core.InputFieldListener) as jk.uikit.core.TextFieldWidget
+	func setWidgetPlaceholder(value as string) as jk.uikit.core.TextFieldWidget
+	func setWidgetText(value as string) as jk.uikit.core.TextFieldWidget
+	func getWidgetText as string
+	func setWidgetType(type as int) as jk.uikit.core.TextFieldWidget
+	func setWidgetTextChangeHandler(handler as function<void>) as jk.uikit.core.TextFieldWidget
+	func setWidgetOnLoseFocusHandler(handler as function<void>) as jk.uikit.core.TextFieldWidget
+	func createWidget override
+}
+class name jk.uikit.core.VSeparatorWidget header extends jk.uikit.core.SeparatorWidget public #widget
+{
+	import jk.lang
+	import jk.lang
+	import jk.ui
+	import jk.gfx
+	import jk.widget
+	ctor(context as jk.ui.GuiApplicationContext)
+	func createWidget override
+}
+class name jk.uikit.core.AvatarWidget header extends jk.widget.LayerWithBackgroundColorWidget public #widget
+{
+	import jk.lang
+	import jk.lang
+	import jk.ui
+	import jk.gfx
+	import jk.widget
+	ctor(context as jk.ui.GuiApplicationContext)
+	var ALIGN_LEFT public static const as double
+	var ALIGN_RIGHT public static const as double
+	func setWidgetImageResource(resource as string) as jk.uikit.core.AvatarWidget
+	func setWidgetAvatarHeight(sz as int #notLiteral) as jk.uikit.core.AvatarWidget
+	func setWidgetAvatarWidth(sz as int #notLiteral) as jk.uikit.core.AvatarWidget
+	func setWidgetRounded(rounded as bool) as jk.uikit.core.AvatarWidget
+	func setWidgetBorderSize(sz as int #notLiteral) as jk.uikit.core.AvatarWidget
+	func setWidgetBorderColor(color as jk.gfx.Color) as jk.uikit.core.AvatarWidget
+	func setWidgetBoxShadowColor(color as jk.gfx.Color) as jk.uikit.core.AvatarWidget
+	func createWidget override
+}
+class name jk.uikit.core.ButtonFrameWidget header extends jk.widget.LayerWithBackgroundColorWidget public #widget
+{
+	import jk.lang
+	import jk.lang
+	import jk.ui
+	import jk.gfx
+	import jk.widget
+	ctor(ctx as jk.ui.GuiApplicationContext)
+	func initializeWidget override
+	func setWidgetBackgroundColor(color as jk.gfx.Color) as jk.uikit.core.ButtonFrameWidget
+	func setWidgetHoverBackgroundColor(color as jk.gfx.Color) as jk.uikit.core.ButtonFrameWidget
+	func setWidgetText(value as string) as jk.uikit.core.ButtonFrameWidget
+	func setWidgetTextColor(color as jk.gfx.Color) as jk.uikit.core.ButtonFrameWidget
+	func setWidgetFontSize(sz as int #notLiteral) as jk.uikit.core.ButtonFrameWidget
+	func setWidgetFixWidth(sz as int #notLiteral) as jk.uikit.core.ButtonFrameWidget
+	func setWidgetClickHandler(handler as function<void>) as jk.uikit.core.ButtonFrameWidget
+	func setWidgetPaddingLeft(padding as int #notLiteral) as jk.uikit.core.ButtonFrameWidget
+	func setWidgetPaddingRight(padding as int #notLiteral) as jk.uikit.core.ButtonFrameWidget
+	func setWidgetEnabled(v as bool) as jk.uikit.core.ButtonFrameWidget
+	func isEnabled as bool
+	func createWidget override
+}
+class name jk.uikit.core.PageWidget header extends jk.widget.LayerWithBackgroundColorWidget public #widget
+{
+	import jk.lang
+	import jk.lang
+	import jk.ui
+	import jk.gfx
+	import jk.widget
+	ctor(context as jk.ui.GuiApplicationContext)
+	func addWidget(w as jk.widget.Widget) override as jk.widget.ContainerWidget
+	func createWidget override
+}
+class name jk.uikit.core.HorizontalRulerWidget header extends jk.widget.LayerWithBackgroundColorWidget public #widget
+{
+	import jk.lang
+	import jk.lang
+	import jk.ui
+	import jk.gfx
+	import jk.widget
+	ctor(context as jk.ui.GuiApplicationContext)
+	func createWidget override
+}
+class name jk.uikit.core.BadgeWidget header extends jk.widget.LayerWithBackgroundColorWidget public #widget
+{
+	import jk.lang
+	import jk.lang
+	import jk.ui
+	import jk.gfx
+	import jk.widget
+	ctor(context as jk.ui.GuiApplicationContext)
+	func setWidgetText(value as string) as jk.uikit.core.BadgeWidget
+	func setWidgetFontSize(size as double #notLiteral) as jk.uikit.core.BadgeWidget
+	func createWidget override
+}
+class name jk.uikit.core.AutoSuggestTextFieldWidget header extends jk.widget.LayerWithBackgroundColorWidget public #widget
+{
+	import jk.lang
+	import jk.lang
+	import jk.ui
+	import jk.gfx
+	import jk.widget
+	import jk.widget.common
+	ctor(context as jk.ui.GuiApplicationContext)
+	func setWidgetOnLoseFocusHandler(handler as function<void>)
+	func setWidgetInputFieldListener(l as jk.uikit.core.InputFieldListener) as jk.uikit.core.AutoSuggestTextFieldWidget
+	func setWidgetText(value as string) as jk.uikit.core.AutoSuggestTextFieldWidget
+	func setWidgetSearchData(callback as function<void>) as jk.uikit.core.AutoSuggestTextFieldWidget
+	func setWidgetNoRecordFoundError(callback as function<void,string>)
+	func displaySuggestion(items as vector<string>) as jk.uikit.core.AutoSuggestTextFieldWidget
+	func getWidgetText as string
+	func getSelectedItem as string
+	func setWidgetItems(items as vector<string>)
+	func getWidgetItems as vector<string>
+	func setWidgetPlaceholder(value as string) as jk.uikit.core.AutoSuggestTextFieldWidget
+	func setWidgetTextChangeHandler(handler as function<void>) as jk.uikit.core.AutoSuggestTextFieldWidget
+	func setDefaultNoRecordMessage(errorMessage as string)
+	func setWidgetValueChangeHandler(handler as function<void>) as jk.uikit.core.AutoSuggestTextFieldWidget
+	func closeAutoSuggestPopup
+	func createWidget override
+}
+class name jk.uikit.core.TickBoxWidget header public #widget
+{
+	import jk.lang
+	import jk.lang
+	import jk.ui
+	import jk.gfx
+	import jk.widget
+	ctor(context as jk.ui.GuiApplicationContext)
+	func getWidgetChecked as bool
+	func setWidgetChecked(x as bool)
+	func setWidgetValue(value as object)
+	func getWidgetValue as object
+	func getWidgetCheckHandler as function<void> #getterMethod
+	func setWidgetCheckHandler(v as function<void>) as jk.uikit.core.TickBoxWidget #setterMethod
+}
+class name jk.uikit.core.CardFrameWidget header extends jk.widget.LayerWidget public #widget
+{
+	import jk.lang
+	import jk.lang
+	import jk.ui
+	import jk.gfx
+	import jk.widget
+	ctor(ctx as jk.ui.GuiApplicationContext)
+	func addWidget(w as jk.widget.Widget) override as jk.widget.ContainerWidget
+	func setWidgetDisableMargin(disable as bool) as jk.uikit.core.CardFrameWidget
+	func setWidgetDisableShadow(disable as bool) as jk.uikit.core.CardFrameWidget
+	func createWidget override
+}
+class name jk.uikit.core.HSeparatorWidget header extends jk.uikit.core.SeparatorWidget public #widget
+{
+	import jk.lang
+	import jk.lang
+	import jk.ui
+	import jk.gfx
+	import jk.widget
+	ctor(context as jk.ui.GuiApplicationContext)
+	func createWidget override
+}
+class name jk.uikit.core.InputStepperWidget header extends jk.widget.HorizontalBoxWidget public #widget
+{
+	import jk.lang
+	import jk.lang
+	import jk.ui
+	import jk.gfx
+	import jk.widget
+	import jk.uikit.boxicons
+	ctor(ctx as jk.ui.GuiApplicationContext)
+	func initializeWidget override
+	func onTextChange
+	func setWidgetText(value as string) as jk.uikit.core.InputStepperWidget
+	func getWidgetValue as int
+	func onMinusIconClicked
+	func onPlusIconClicked
+	func createWidget override
+	func getTextChangeHandler as function<void> #getterMethod
+	func setTextChangeHandler(v as function<void>) as jk.uikit.core.InputStepperWidget #setterMethod
+	func getMaxValue as int #getterMethod
+	func setMaxValue(v as int) as jk.uikit.core.InputStepperWidget #setterMethod
+}
+class name jk.uikit.core.IconWidget header extends jk.widget.LayerWidget public #widget
+{
+	import jk.lang
+	import jk.lang
+	import jk.ui
+	import jk.gfx
+	import jk.widget
+	ctor(context as jk.ui.GuiApplicationContext)
+	func setWidgetIcon(resource as string) as jk.uikit.core.IconWidget
+	func setWidgetIconHeight(sz as int #notLiteral) as jk.uikit.core.IconWidget
+	func createWidget override
+}
+class name jk.uikit.core.SeparatorWidget header extends jk.widget.LayerWithBackgroundColorWidget public #widget
+{
+	import jk.lang
+	import jk.lang
+	import jk.ui
+	import jk.gfx
+	import jk.widget
+	ctor(context as jk.ui.GuiApplicationContext)
+	var VERTICAL public static const as int
+	var HORIZONTAL public static const as int
+	var DASH public static const as int
+	func initializeWidget override
+	func createWidget override
+	func getWidgetOrientation as int #getterMethod
+	func setWidgetOrientation(v as int) as jk.uikit.core.SeparatorWidget #setterMethod
+	func getWidgetStyle as int #getterMethod
+	func setWidgetStyle(v as int) as jk.uikit.core.SeparatorWidget #setterMethod
+}
+class name jk.uikit.core.PrimaryButtonWidget header extends jk.uikit.core.ButtonFrameWidget public #widget
+{
+	import jk.lang
+	import jk.lang
+	import jk.ui
+	import jk.gfx
+	import jk.widget
+	ctor(context as jk.ui.GuiApplicationContext)
+	func createWidget override
+}
+class name jk.uikit.core.SelectFieldWidget header implements jk.widget.WidgetWithValue extends jk.widget.LayerWithBackgroundColorWidget public #widget
+{
+	import jk.lang
+	import jk.lang
+	import jk.ui
+	import jk.gfx
+	import jk.widget
+	import jk.widget.common
+	import jk.uikit.boxicons
+	ctor(context as jk.ui.GuiApplicationContext)
+	func setWidgetInputFieldListener(l as jk.uikit.core.InputFieldListener) as jk.uikit.core.SelectFieldWidget
+	func setWidgetItems(items as jk.lang.KeyValueList<string,string>) as jk.uikit.core.SelectFieldWidget
+	func setWidgetValueChangeHandler(handler as function<void>) as jk.uikit.core.SelectFieldWidget
+	func setWidgetValue(value as object)
+	func getWidgetValue as object
+	func getSelectedWidgetIndex as int
+	func getWidgetTextValue(index as int) as string
+	func createWidget override
+}
+class name jk.uikit.core.PopupManagerWidget header extends jk.widget.LayerWidget public #widget
+{
+	import jk.lang
+	import jk.lang
+	import jk.ui
+	import jk.gfx
+	import jk.widget
+	ctor(ctx as jk.ui.GuiApplicationContext)
+	func initializeWidget override
+	func showWidgetBelow(w as jk.widget.Widget, widgetToShow as jk.widget.Widget)
+	func hide
+	func isShown as bool
+	func createWidget override
+}
+class name jk.uikit.core.IconButtonWidget header extends jk.widget.LayerWithBackgroundColorWidget public #widget
+{
+	import jk.lang
+	import jk.lang
+	import jk.ui
+	import jk.gfx
+	import jk.widget
+	import jk.uikit.boxicons
+	ctor(ctx as jk.ui.GuiApplicationContext)
+	func setWidgetIcon(value as string) as jk.uikit.core.IconButtonWidget
+	func setWidgetText(value as string) as jk.uikit.core.IconButtonWidget
+	func createWidget override
+}
+class name jk.uikit.core.ExpanderWidget header extends jk.widget.LayerWithBackgroundColorWidget public #widget
+{
+	import jk.lang
+	import jk.lang
+	import jk.ui
+	import jk.gfx
+	import jk.widget
+	import jk.uikit.boxicons
+	ctor(ctx as jk.ui.GuiApplicationContext)
+	func initializeWidget override
+	func setWidgetTitle(value as string) as jk.uikit.core.ExpanderWidget
+	func setWidgetTitleMargin(margin as int #notLiteral) as jk.uikit.core.ExpanderWidget
+	func setWidgetContentMargin(margin as int #notLiteral) as jk.uikit.core.ExpanderWidget
+	func toggle
+	func createWidget override
+	func getWidgetContent as jk.widget.Widget #getterMethod
+	func setWidgetContent(v as jk.widget.Widget) as jk.uikit.core.ExpanderWidget #setterMethod
+	func getOnCloseContentHandler as function<void> #getterMethod
+	func setOnCloseContentHandler(v as function<void>) as jk.uikit.core.ExpanderWidget #setterMethod
+}
+class name jk.uikit.core.SecondaryButtonWidget header extends jk.uikit.core.ButtonFrameWidget public #widget
+{
+	import jk.lang
+	import jk.lang
+	import jk.ui
+	import jk.gfx
+	import jk.widget
+	ctor(context as jk.ui.GuiApplicationContext)
+	func createWidget override
+}
+class name jk.uikit.core.PopupDialogManager header public
+{
+	import jk.lang
+	import jk.ui
+	import jk.widget
+	import jk.widget.common
+	import jk.gfx
+	ctor
+	func initialize(ctx as jk.ui.GuiApplicationContext, parentWidget as jk.widget.Widget) static
+	func showErrorPopup(message as string, handler as function<void> = null) static
+	func showMessagePopup(message as string, handler as function<void> = null, positive as bool = true) static
+	func showContentWidgetPopup(widget as jk.widget.Widget, sz as int = 0, autoHeight as bool = false) static as jk.widget.common.PopupWidget
+	func showConfirmPopup(message as string, posText as string, negText as string, posHandler as function<void>, negHandler as function<void> = null) static
+	func showToastMessageDialog(message as string) static
+}

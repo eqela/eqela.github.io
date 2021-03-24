@@ -1,0 +1,65 @@
+class name jk.uikit.dialog.Dialog header public
+{
+	import jk.lang
+	import jk.ui
+	import jk.widget
+	import jk.widget.common
+	ctor
+	func message(context as jk.ui.GuiApplicationContext, message as string, widgetClickHandler as function<void> = null) static
+	func error(context as jk.ui.GuiApplicationContext, message as string, widgetClickHandler as function<void> = null) static
+	func yesno(context as jk.ui.GuiApplicationContext, message as string, widgetPositiveClickHandler as function<void>, widgetNegativeClickHandler as function<void> = null) static
+	func content(context as jk.ui.GuiApplicationContext, widget as jk.widget.Widget) static as jk.widget.common.PopupWidget
+}
+class name jk.uikit.dialog.MessageDialogWidget header extends jk.uikit.dialog.DialogFrameWidget public #widget
+{
+	import jk.lang
+	import jk.lang
+	import jk.ui
+	import jk.gfx
+	import jk.widget
+	import jk.widget.common
+	import jk.uikit.core
+	ctor(context as jk.ui.GuiApplicationContext)
+	func initializeWidget override
+	func onOkClicked
+	func setWidgetText(value as string) as jk.uikit.dialog.MessageDialogWidget
+	func createWidget override
+	func getWidgetClickHandler as function<void> #getterMethod
+	func setWidgetClickHandler(v as function<void>) as jk.uikit.dialog.MessageDialogWidget #setterMethod
+	func getWidgetPositiveDialog as bool #getterMethod
+	func setWidgetPositiveDialog(v as bool) as jk.uikit.dialog.MessageDialogWidget #setterMethod
+}
+class name jk.uikit.dialog.YesNoDialogWidget header extends jk.uikit.dialog.DialogFrameWidget public #widget
+{
+	import jk.lang
+	import jk.lang
+	import jk.ui
+	import jk.gfx
+	import jk.widget
+	import jk.widget.common
+	import jk.uikit.core
+	ctor(context as jk.ui.GuiApplicationContext)
+	func onNoClicked
+	func onYesClicked
+	func setWidgetText(value as string) as jk.uikit.dialog.YesNoDialogWidget
+	func createWidget override
+	func getWidgetPositiveClickHandler as function<void> #getterMethod
+	func setWidgetPositiveClickHandler(v as function<void>) as jk.uikit.dialog.YesNoDialogWidget #setterMethod
+	func getWidgetNegativeClickHandler as function<void> #getterMethod
+	func setWidgetNegativeClickHandler(v as function<void>) as jk.uikit.dialog.YesNoDialogWidget #setterMethod
+}
+class name jk.uikit.dialog.DialogFrameWidget header extends jk.uikit.core.CardFrameWidget public #widget
+{
+	import jk.lang
+	import jk.lang
+	import jk.ui
+	import jk.gfx
+	import jk.widget
+	import jk.widget.common
+	import jk.uikit.core
+	ctor(ctx as jk.ui.GuiApplicationContext)
+	func addWidget(w as jk.widget.Widget) override as jk.widget.ContainerWidget
+	func createWidget override
+	func getWidgetPopup as jk.widget.common.PopupWidget #getterMethod
+	func setWidgetPopup(v as jk.widget.common.PopupWidget) as jk.uikit.dialog.DialogFrameWidget #setterMethod
+}

@@ -1,0 +1,13 @@
+{
+	"moduleDescription" : "Client support for SQLite databases.\n",
+	"type" : "module",
+	"moduleTitle" : "SQLite support",
+	"moduleId" : "jk.sqlite",
+	"entities" : [
+		{
+			"type" : "class",
+			"name" : "SQLiteDatabase",
+			"description" : "SQLite database driver."
+		}
+	]
+}

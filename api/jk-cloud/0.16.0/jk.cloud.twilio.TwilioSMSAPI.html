@@ -1,0 +1,43 @@
+<html>
+<head>
+<title>jk.cloud.twilio.TwilioSMSAPI | JK Cloud [0.16.0] - API Reference</title>
+<link rel="stylesheet" type="text/css" href="style.css" />
+<meta name="viewport" content="initial-scale=1,maximum-scale=1" />
+<meta property="og:description" content="SOURCE :
+	https://www.twilio.com/docs/sms/api
+FORMAT :
+	dateSent : YYYY-MM-DD" />
+<meta property="og:title" content="jk.cloud.twilio.TwilioSMSAPI | JK Cloud [0.16.0] - API Reference" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:description" content="SOURCE :
+	https://www.twilio.com/docs/sms/api
+FORMAT :
+	dateSent : YYYY-MM-DD" />
+</head>
+<body><div class="content">
+<a class="back" href="index.html">&laquo; JK Cloud [0.16.0]</a><div class="intro">
+<h1><span class="keyword">class</span> <span class="symbol">jk.cloud.twilio.TwilioSMSAPI</span></h1>
+<p>SOURCE :
+	https://www.twilio.com/docs/sms/api
+FORMAT :
+	dateSent : YYYY-MM-DD</p>
+</div>
+<div class="list">
+<div class="title">Base Types</div>
+<div class="entry">
+<div class="name"><span class="keyword">extends</span> <a class="datatype" href="jk.cloud.twilio.TwilioAPI.html">jk.cloud.twilio.TwilioAPI</a></div></div>
+</div>
+<div class="list">
+<div class="title">Instance Methods</div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">sendMessage</span> ( message <span class="keyword">as</span> <span class="datatype">jk.cloud.twilio.TwilioSMSAPI.Message</span> ) <span class="keyword">as</span> <span class="datatype">jk.cloud.twilio.TwilioSMSAPI.Message</span></div><div class="description">To send a new outgoing message</div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getMessages</span> ( criteria <span class="keyword">as</span> <span class="datatype">jk.cloud.twilio.TwilioSMSAPI.Criteria</span> ) <span class="keyword">as</span> <span class="datatype">jk.cloud.twilio.TwilioSMSAPI.MessageList</span></div><div class="description">Get all messages associated with your account</div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">updateMessage</span> ( sid <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="keyword">as</span> <span class="datatype">jk.cloud.twilio.TwilioSMSAPI.Message</span></div><div class="description">This action is primarily used to redact messages. This API will only replace the message Body into empty string</div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">deleteMessage</span> ( sid <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="keyword">as</span> <span class="datatype">bool</span></div><div class="description">Deletes a message record from your account. Once the record is deleted, it will no longer appear in the API and Account Portal logs.</div></div>
+</div>
+</div>
+</body>
+</html>

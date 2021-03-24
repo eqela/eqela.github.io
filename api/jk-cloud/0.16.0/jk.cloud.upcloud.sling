@@ -1,0 +1,483 @@
+class name jk.cloud.upcloud.UpcloudAPI header public
+{
+	import jk.lang
+	import jk.log
+	import jk.json
+	import jk.base64
+	import jk.thread
+	import jk.cloud.common
+	class name NetworkIpNetwork header extends jk.json.JSONObjectAdapter implements jk.lang.StringObject public static
+	{
+		import jk.json
+		ctor
+		func setAddress(value as string) as jk.cloud.upcloud.UpcloudAPI.NetworkIpNetwork
+		func getAddress as string
+		func setDhcp(value as string) as jk.cloud.upcloud.UpcloudAPI.NetworkIpNetwork
+		func getDhcp as string
+		func setDhcp_default_route(value as string) as jk.cloud.upcloud.UpcloudAPI.NetworkIpNetwork
+		func getDhcp_default_route as string
+		func setDhcp_dns(value as vector<string>) as jk.cloud.upcloud.UpcloudAPI.NetworkIpNetwork
+		func getDhcp_dns as vector<string>
+		func setFamily(value as string) as jk.cloud.upcloud.UpcloudAPI.NetworkIpNetwork
+		func getFamily as string
+		func setGateway(value as string) as jk.cloud.upcloud.UpcloudAPI.NetworkIpNetwork
+		func getGateway as string
+		func toJsonObject override as object
+		func fromJsonObject(o as object) override as bool
+		func fromJsonString(o as string) as bool
+		func toJsonString as string
+		func toString as string
+		func forJsonString(o as string) static as jk.cloud.upcloud.UpcloudAPI.NetworkIpNetwork
+		func forJsonObject(o as object) static as jk.cloud.upcloud.UpcloudAPI.NetworkIpNetwork
+	}
+	class name NetworkIpNetworks header extends jk.json.JSONObjectAdapter implements jk.lang.StringObject public static
+	{
+		import jk.json
+		ctor
+		func setIp_network(value as vector<jk.cloud.upcloud.UpcloudAPI.NetworkIpNetwork>) as jk.cloud.upcloud.UpcloudAPI.NetworkIpNetworks
+		func getIp_network as vector<jk.cloud.upcloud.UpcloudAPI.NetworkIpNetwork>
+		func toJsonObject override as object
+		func fromJsonObject(o as object) override as bool
+		func fromJsonString(o as string) as bool
+		func toJsonString as string
+		func toString as string
+		func forJsonString(o as string) static as jk.cloud.upcloud.UpcloudAPI.NetworkIpNetworks
+		func forJsonObject(o as object) static as jk.cloud.upcloud.UpcloudAPI.NetworkIpNetworks
+	}
+	class name NetworkServer header extends jk.json.JSONObjectAdapter implements jk.lang.StringObject public static
+	{
+		import jk.json
+		ctor
+		func setUuid(value as string) as jk.cloud.upcloud.UpcloudAPI.NetworkServer
+		func getUuid as string
+		func setTitle(value as string) as jk.cloud.upcloud.UpcloudAPI.NetworkServer
+		func getTitle as string
+		func toJsonObject override as object
+		func fromJsonObject(o as object) override as bool
+		func fromJsonString(o as string) as bool
+		func toJsonString as string
+		func toString as string
+		func forJsonString(o as string) static as jk.cloud.upcloud.UpcloudAPI.NetworkServer
+		func forJsonObject(o as object) static as jk.cloud.upcloud.UpcloudAPI.NetworkServer
+	}
+	class name NetworkServers header extends jk.json.JSONObjectAdapter implements jk.lang.StringObject public static
+	{
+		import jk.json
+		ctor
+		func setServer(value as vector<jk.cloud.upcloud.UpcloudAPI.NetworkServer>) as jk.cloud.upcloud.UpcloudAPI.NetworkServers
+		func getServer as vector<jk.cloud.upcloud.UpcloudAPI.NetworkServer>
+		func toJsonObject override as object
+		func fromJsonObject(o as object) override as bool
+		func fromJsonString(o as string) as bool
+		func toJsonString as string
+		func toString as string
+		func forJsonString(o as string) static as jk.cloud.upcloud.UpcloudAPI.NetworkServers
+		func forJsonObject(o as object) static as jk.cloud.upcloud.UpcloudAPI.NetworkServers
+	}
+	class name Network header extends jk.json.JSONObjectAdapter implements jk.lang.StringObject public static
+	{
+		import jk.json
+		ctor
+		func setName(value as string) as jk.cloud.upcloud.UpcloudAPI.Network
+		func getName as string
+		func setZone(value as string) as jk.cloud.upcloud.UpcloudAPI.Network
+		func getZone as string
+		func setRouter(value as string) as jk.cloud.upcloud.UpcloudAPI.Network
+		func getRouter as string
+		func setType(value as string) as jk.cloud.upcloud.UpcloudAPI.Network
+		func getType as string
+		func setUuid(value as string) as jk.cloud.upcloud.UpcloudAPI.Network
+		func getUuid as string
+		func setIp_networks(value as jk.cloud.upcloud.UpcloudAPI.NetworkIpNetworks) as jk.cloud.upcloud.UpcloudAPI.Network
+		func getIp_networks as jk.cloud.upcloud.UpcloudAPI.NetworkIpNetworks
+		func setServers(value as jk.cloud.upcloud.UpcloudAPI.NetworkServers) as jk.cloud.upcloud.UpcloudAPI.Network
+		func getServers as jk.cloud.upcloud.UpcloudAPI.NetworkServers
+		func toJsonObject override as object
+		func fromJsonObject(o as object) override as bool
+		func fromJsonString(o as string) as bool
+		func toJsonString as string
+		func toString as string
+		func forJsonString(o as string) static as jk.cloud.upcloud.UpcloudAPI.Network
+		func forJsonObject(o as object) static as jk.cloud.upcloud.UpcloudAPI.Network
+	}
+	class name Zone header extends jk.json.JSONObjectAdapter implements jk.lang.StringObject public static
+	{
+		import jk.json
+		ctor
+		func setDescription(value as string) as jk.cloud.upcloud.UpcloudAPI.Zone
+		func getDescription as string
+		func setId(value as string) as jk.cloud.upcloud.UpcloudAPI.Zone
+		func getId as string
+		func setPublic(value as string) as jk.cloud.upcloud.UpcloudAPI.Zone
+		func getPublic as string
+		func toJsonObject override as object
+		func fromJsonObject(o as object) override as bool
+		func fromJsonString(o as string) as bool
+		func toJsonString as string
+		func toString as string
+		func forJsonString(o as string) static as jk.cloud.upcloud.UpcloudAPI.Zone
+		func forJsonObject(o as object) static as jk.cloud.upcloud.UpcloudAPI.Zone
+	}
+	class name ServerStorageDevice header extends jk.json.JSONObjectAdapter implements jk.lang.StringObject public static
+	{
+		import jk.json
+		ctor
+		func setAction(value as string) as jk.cloud.upcloud.UpcloudAPI.ServerStorageDevice
+		func getAction as string
+		func setStorage(value as string) as jk.cloud.upcloud.UpcloudAPI.ServerStorageDevice
+		func getStorage as string
+		func setTitle(value as string) as jk.cloud.upcloud.UpcloudAPI.ServerStorageDevice
+		func getTitle as string
+		func setSizeValue(value as int) as jk.cloud.upcloud.UpcloudAPI.ServerStorageDevice
+		func getSizeValue as int
+		func setSize(value as jk.lang.IntegerObject) as jk.cloud.upcloud.UpcloudAPI.ServerStorageDevice
+		func getSize as jk.lang.IntegerObject
+		func setTier(value as string) as jk.cloud.upcloud.UpcloudAPI.ServerStorageDevice
+		func getTier as string
+		func toJsonObject override as object
+		func fromJsonObject(o as object) override as bool
+		func fromJsonString(o as string) as bool
+		func toJsonString as string
+		func toString as string
+		func forJsonString(o as string) static as jk.cloud.upcloud.UpcloudAPI.ServerStorageDevice
+		func forJsonObject(o as object) static as jk.cloud.upcloud.UpcloudAPI.ServerStorageDevice
+	}
+	class name ServerStorageDevices header extends jk.json.JSONObjectAdapter implements jk.lang.StringObject public static
+	{
+		import jk.json
+		ctor
+		func setStorage_device(value as vector<jk.cloud.upcloud.UpcloudAPI.ServerStorageDevice>) as jk.cloud.upcloud.UpcloudAPI.ServerStorageDevices
+		func getStorage_device as vector<jk.cloud.upcloud.UpcloudAPI.ServerStorageDevice>
+		func toJsonObject override as object
+		func fromJsonObject(o as object) override as bool
+		func fromJsonString(o as string) as bool
+		func toJsonString as string
+		func toString as string
+		func forJsonString(o as string) static as jk.cloud.upcloud.UpcloudAPI.ServerStorageDevices
+		func forJsonObject(o as object) static as jk.cloud.upcloud.UpcloudAPI.ServerStorageDevices
+	}
+	class name ServerNetworkingInterfaceIpAddress header extends jk.json.JSONObjectAdapter implements jk.lang.StringObject public static
+	{
+		import jk.json
+		ctor
+		func setFamily(value as string) as jk.cloud.upcloud.UpcloudAPI.ServerNetworkingInterfaceIpAddress
+		func getFamily as string
+		func setAddress(value as string) as jk.cloud.upcloud.UpcloudAPI.ServerNetworkingInterfaceIpAddress
+		func getAddress as string
+		func toJsonObject override as object
+		func fromJsonObject(o as object) override as bool
+		func fromJsonString(o as string) as bool
+		func toJsonString as string
+		func toString as string
+		func forJsonString(o as string) static as jk.cloud.upcloud.UpcloudAPI.ServerNetworkingInterfaceIpAddress
+		func forJsonObject(o as object) static as jk.cloud.upcloud.UpcloudAPI.ServerNetworkingInterfaceIpAddress
+	}
+	class name ServerNetworkingInterfaceIpAddresses header extends jk.json.JSONObjectAdapter implements jk.lang.StringObject public static
+	{
+		import jk.json
+		ctor
+		func setIp_address(value as vector<jk.cloud.upcloud.UpcloudAPI.ServerNetworkingInterfaceIpAddress>) as jk.cloud.upcloud.UpcloudAPI.ServerNetworkingInterfaceIpAddresses
+		func getIp_address as vector<jk.cloud.upcloud.UpcloudAPI.ServerNetworkingInterfaceIpAddress>
+		func toJsonObject override as object
+		func fromJsonObject(o as object) override as bool
+		func fromJsonString(o as string) as bool
+		func toJsonString as string
+		func toString as string
+		func forJsonString(o as string) static as jk.cloud.upcloud.UpcloudAPI.ServerNetworkingInterfaceIpAddresses
+		func forJsonObject(o as object) static as jk.cloud.upcloud.UpcloudAPI.ServerNetworkingInterfaceIpAddresses
+	}
+	class name ServerNetworkingInterface header extends jk.json.JSONObjectAdapter implements jk.lang.StringObject public static
+	{
+		import jk.json
+		ctor
+		func setType(value as string) as jk.cloud.upcloud.UpcloudAPI.ServerNetworkingInterface
+		func getType as string
+		func setNetwork(value as string) as jk.cloud.upcloud.UpcloudAPI.ServerNetworkingInterface
+		func getNetwork as string
+		func setIndexValue(value as int) as jk.cloud.upcloud.UpcloudAPI.ServerNetworkingInterface
+		func getIndexValue as int
+		func setIndex(value as jk.lang.IntegerObject) as jk.cloud.upcloud.UpcloudAPI.ServerNetworkingInterface
+		func getIndex as jk.lang.IntegerObject
+		func setIp_addresses(value as jk.cloud.upcloud.UpcloudAPI.ServerNetworkingInterfaceIpAddresses) as jk.cloud.upcloud.UpcloudAPI.ServerNetworkingInterface
+		func getIp_addresses as jk.cloud.upcloud.UpcloudAPI.ServerNetworkingInterfaceIpAddresses
+		func setSource_ip_filtering(value as string) as jk.cloud.upcloud.UpcloudAPI.ServerNetworkingInterface
+		func getSource_ip_filtering as string
+		func setBootable(value as string) as jk.cloud.upcloud.UpcloudAPI.ServerNetworkingInterface
+		func getBootable as string
+		func toJsonObject override as object
+		func fromJsonObject(o as object) override as bool
+		func fromJsonString(o as string) as bool
+		func toJsonString as string
+		func toString as string
+		func forJsonString(o as string) static as jk.cloud.upcloud.UpcloudAPI.ServerNetworkingInterface
+		func forJsonObject(o as object) static as jk.cloud.upcloud.UpcloudAPI.ServerNetworkingInterface
+	}
+	class name ServerNetworkingInterfaces header extends jk.json.JSONObjectAdapter implements jk.lang.StringObject public static
+	{
+		import jk.json
+		ctor
+		func setInterface(value as vector<jk.cloud.upcloud.UpcloudAPI.ServerNetworkingInterface>) as jk.cloud.upcloud.UpcloudAPI.ServerNetworkingInterfaces
+		func getInterface as vector<jk.cloud.upcloud.UpcloudAPI.ServerNetworkingInterface>
+		func toJsonObject override as object
+		func fromJsonObject(o as object) override as bool
+		func fromJsonString(o as string) as bool
+		func toJsonString as string
+		func toString as string
+		func forJsonString(o as string) static as jk.cloud.upcloud.UpcloudAPI.ServerNetworkingInterfaces
+		func forJsonObject(o as object) static as jk.cloud.upcloud.UpcloudAPI.ServerNetworkingInterfaces
+	}
+	class name ServerNetworking header extends jk.json.JSONObjectAdapter implements jk.lang.StringObject public static
+	{
+		import jk.json
+		ctor
+		func setInterfaces(value as jk.cloud.upcloud.UpcloudAPI.ServerNetworkingInterfaces) as jk.cloud.upcloud.UpcloudAPI.ServerNetworking
+		func getInterfaces as jk.cloud.upcloud.UpcloudAPI.ServerNetworkingInterfaces
+		func toJsonObject override as object
+		func fromJsonObject(o as object) override as bool
+		func fromJsonString(o as string) as bool
+		func toJsonString as string
+		func toString as string
+		func forJsonString(o as string) static as jk.cloud.upcloud.UpcloudAPI.ServerNetworking
+		func forJsonObject(o as object) static as jk.cloud.upcloud.UpcloudAPI.ServerNetworking
+	}
+	class name ServerLoginUserSshKeys header extends jk.json.JSONObjectAdapter implements jk.lang.StringObject public static
+	{
+		import jk.json
+		ctor
+		func setSsh_key(value as vector<string>) as jk.cloud.upcloud.UpcloudAPI.ServerLoginUserSshKeys
+		func getSsh_key as vector<string>
+		func toJsonObject override as object
+		func fromJsonObject(o as object) override as bool
+		func fromJsonString(o as string) as bool
+		func toJsonString as string
+		func toString as string
+		func forJsonString(o as string) static as jk.cloud.upcloud.UpcloudAPI.ServerLoginUserSshKeys
+		func forJsonObject(o as object) static as jk.cloud.upcloud.UpcloudAPI.ServerLoginUserSshKeys
+	}
+	class name ServerLoginUser header extends jk.json.JSONObjectAdapter implements jk.lang.StringObject public static
+	{
+		import jk.json
+		ctor
+		func setUsername(value as string) as jk.cloud.upcloud.UpcloudAPI.ServerLoginUser
+		func getUsername as string
+		func setSsh_keys(value as jk.cloud.upcloud.UpcloudAPI.ServerLoginUserSshKeys) as jk.cloud.upcloud.UpcloudAPI.ServerLoginUser
+		func getSsh_keys as jk.cloud.upcloud.UpcloudAPI.ServerLoginUserSshKeys
+		func setCreate_password(value as string) as jk.cloud.upcloud.UpcloudAPI.ServerLoginUser
+		func getCreate_password as string
+		func toJsonObject override as object
+		func fromJsonObject(o as object) override as bool
+		func fromJsonString(o as string) as bool
+		func toJsonString as string
+		func toString as string
+		func forJsonString(o as string) static as jk.cloud.upcloud.UpcloudAPI.ServerLoginUser
+		func forJsonObject(o as object) static as jk.cloud.upcloud.UpcloudAPI.ServerLoginUser
+	}
+	class name Server header extends jk.json.JSONObjectAdapter implements jk.lang.StringObject public static
+	{
+		import jk.json
+		ctor
+		func setAvoid_host(value as string) as jk.cloud.upcloud.UpcloudAPI.Server
+		func getAvoid_host as string
+		func setHost(value as string) as jk.cloud.upcloud.UpcloudAPI.Server
+		func getHost as string
+		func setBoot_order(value as string) as jk.cloud.upcloud.UpcloudAPI.Server
+		func getBoot_order as string
+		func setCore_numberValue(value as int) as jk.cloud.upcloud.UpcloudAPI.Server
+		func getCore_numberValue as int
+		func setCore_number(value as jk.lang.IntegerObject) as jk.cloud.upcloud.UpcloudAPI.Server
+		func getCore_number as jk.lang.IntegerObject
+		func setLogin_user(value as jk.cloud.upcloud.UpcloudAPI.ServerLoginUser) as jk.cloud.upcloud.UpcloudAPI.Server
+		func getLogin_user as jk.cloud.upcloud.UpcloudAPI.ServerLoginUser
+		func setMemory_amountValue(value as int) as jk.cloud.upcloud.UpcloudAPI.Server
+		func getMemory_amountValue as int
+		func setMemory_amount(value as jk.lang.IntegerObject) as jk.cloud.upcloud.UpcloudAPI.Server
+		func getMemory_amount as jk.lang.IntegerObject
+		func setFirewall(value as string) as jk.cloud.upcloud.UpcloudAPI.Server
+		func getFirewall as string
+		func setHostname(value as string) as jk.cloud.upcloud.UpcloudAPI.Server
+		func getHostname as string
+		func setNetworking(value as jk.cloud.upcloud.UpcloudAPI.ServerNetworking) as jk.cloud.upcloud.UpcloudAPI.Server
+		func getNetworking as jk.cloud.upcloud.UpcloudAPI.ServerNetworking
+		func setNic_model(value as string) as jk.cloud.upcloud.UpcloudAPI.Server
+		func getNic_model as string
+		func setPassword_delivery(value as string) as jk.cloud.upcloud.UpcloudAPI.Server
+		func getPassword_delivery as string
+		func setPlan(value as string) as jk.cloud.upcloud.UpcloudAPI.Server
+		func getPlan as string
+		func setStorage_devices(value as jk.cloud.upcloud.UpcloudAPI.ServerStorageDevices) as jk.cloud.upcloud.UpcloudAPI.Server
+		func getStorage_devices as jk.cloud.upcloud.UpcloudAPI.ServerStorageDevices
+		func setTimezone(value as string) as jk.cloud.upcloud.UpcloudAPI.Server
+		func getTimezone as string
+		func setTitle(value as string) as jk.cloud.upcloud.UpcloudAPI.Server
+		func getTitle as string
+		func setUser_data(value as string) as jk.cloud.upcloud.UpcloudAPI.Server
+		func getUser_data as string
+		func setVideo_model(value as string) as jk.cloud.upcloud.UpcloudAPI.Server
+		func getVideo_model as string
+		func setRemote_access_type(value as string) as jk.cloud.upcloud.UpcloudAPI.Server
+		func getRemote_access_type as string
+		func setRemote_access_enabled(value as string) as jk.cloud.upcloud.UpcloudAPI.Server
+		func getRemote_access_enabled as string
+		func setRemote_access_password(value as string) as jk.cloud.upcloud.UpcloudAPI.Server
+		func getRemote_access_password as string
+		func setSimple_backup(value as string) as jk.cloud.upcloud.UpcloudAPI.Server
+		func getSimple_backup as string
+		func setUuid(value as string) as jk.cloud.upcloud.UpcloudAPI.Server
+		func getUuid as string
+		func setZone(value as string) as jk.cloud.upcloud.UpcloudAPI.Server
+		func getZone as string
+		func toJsonObject override as object
+		func fromJsonObject(o as object) override as bool
+		func fromJsonString(o as string) as bool
+		func toJsonString as string
+		func toString as string
+		func forJsonString(o as string) static as jk.cloud.upcloud.UpcloudAPI.Server
+		func forJsonObject(o as object) static as jk.cloud.upcloud.UpcloudAPI.Server
+	}
+	class name FirewallRule header extends jk.json.JSONObjectAdapter implements jk.lang.StringObject public static
+	{
+		import jk.json
+		ctor
+		func setPosition(value as string) as jk.cloud.upcloud.UpcloudAPI.FirewallRule
+		func getPosition as string
+		func setDirection(value as string) as jk.cloud.upcloud.UpcloudAPI.FirewallRule
+		func getDirection as string
+		func setFamily(value as string) as jk.cloud.upcloud.UpcloudAPI.FirewallRule
+		func getFamily as string
+		func setProtocol(value as string) as jk.cloud.upcloud.UpcloudAPI.FirewallRule
+		func getProtocol as string
+		func setSource_address_start(value as string) as jk.cloud.upcloud.UpcloudAPI.FirewallRule
+		func getSource_address_start as string
+		func setSource_address_end(value as string) as jk.cloud.upcloud.UpcloudAPI.FirewallRule
+		func getSource_address_end as string
+		func setSource_port_end(value as string) as jk.cloud.upcloud.UpcloudAPI.FirewallRule
+		func getSource_port_end as string
+		func setSource_port_start(value as string) as jk.cloud.upcloud.UpcloudAPI.FirewallRule
+		func getSource_port_start as string
+		func setDestination_address_start(value as string) as jk.cloud.upcloud.UpcloudAPI.FirewallRule
+		func getDestination_address_start as string
+		func setDestination_address_end(value as string) as jk.cloud.upcloud.UpcloudAPI.FirewallRule
+		func getDestination_address_end as string
+		func setDestination_port_start(value as string) as jk.cloud.upcloud.UpcloudAPI.FirewallRule
+		func getDestination_port_start as string
+		func setDestination_port_end(value as string) as jk.cloud.upcloud.UpcloudAPI.FirewallRule
+		func getDestination_port_end as string
+		func setIcmp_type(value as string) as jk.cloud.upcloud.UpcloudAPI.FirewallRule
+		func getIcmp_type as string
+		func setAction(value as string) as jk.cloud.upcloud.UpcloudAPI.FirewallRule
+		func getAction as string
+		func setComment(value as string) as jk.cloud.upcloud.UpcloudAPI.FirewallRule
+		func getComment as string
+		func toJsonObject override as object
+		func fromJsonObject(o as object) override as bool
+		func fromJsonString(o as string) as bool
+		func toJsonString as string
+		func toString as string
+		func forJsonString(o as string) static as jk.cloud.upcloud.UpcloudAPI.FirewallRule
+		func forJsonObject(o as object) static as jk.cloud.upcloud.UpcloudAPI.FirewallRule
+	}
+	property apiBaseUrl as string { hasset hasget }
+	property username as string { hasset hasget }
+	property password as string { hasset hasget }
+	property ctx as jk.log.LoggingContext { hasset hasget }
+	ctor(ctx as jk.log.LoggingContext)
+	func onInvalidResponse(response)
+	func toPostBody(data) as buffer
+	func call(method as string, path as string, postBody) as jk.lang.DynamicMap
+	func getAllNetworks as vector<jk.cloud.upcloud.UpcloudAPI.Network>
+	func getAllZones as vector<jk.cloud.upcloud.UpcloudAPI.Zone>
+	func getAllServers as vector<jk.cloud.upcloud.UpcloudAPI.Server>
+	func getServerDetails(id as string) as jk.cloud.upcloud.UpcloudAPI.Server
+	func createPrivateNetwork(name as string, zone as string, addressBlock as string, dhcp as bool) as string
+	func addFirewallRule(server as string, rule as jk.cloud.upcloud.UpcloudAPI.FirewallRule) as jk.cloud.upcloud.UpcloudAPI.FirewallRule
+	func addFirewallRuleDenyAll(server as string) as jk.cloud.upcloud.UpcloudAPI.FirewallRule
+	func addFirewallRuleAllowAll(server as string) as jk.cloud.upcloud.UpcloudAPI.FirewallRule
+	func addFirewallRuleAllowTcpPort(server as string, port as int) as jk.cloud.upcloud.UpcloudAPI.FirewallRule
+	func addFirewallRuleAllowDns(server as string, dnsServerAddress as string)
+	func addFirewallRuleAllowCommonDns(server as string)
+	func createServer(data as jk.cloud.upcloud.UpcloudServer) as string
+	class name StopServerRequest header extends jk.json.JSONObjectAdapter implements jk.lang.StringObject public static
+	{
+		import jk.json
+		ctor
+		func setStop_type(value as string) as jk.cloud.upcloud.UpcloudAPI.StopServerRequest
+		func getStop_type as string
+		func setTimeoutValue(value as int) as jk.cloud.upcloud.UpcloudAPI.StopServerRequest
+		func getTimeoutValue as int
+		func setTimeout(value as jk.lang.IntegerObject) as jk.cloud.upcloud.UpcloudAPI.StopServerRequest
+		func getTimeout as jk.lang.IntegerObject
+		func toJsonObject override as object
+		func fromJsonObject(o as object) override as bool
+		func fromJsonString(o as string) as bool
+		func toJsonString as string
+		func toString as string
+		func forJsonString(o as string) static as jk.cloud.upcloud.UpcloudAPI.StopServerRequest
+		func forJsonObject(o as object) static as jk.cloud.upcloud.UpcloudAPI.StopServerRequest
+	}
+	func stopServer(id as string)
+	func deleteServer(id as string)
+}
+class name jk.cloud.upcloud.UpcloudServer header public
+{
+	import jk.lang
+	ctor
+	var TEMPLATE_WINDOWS_SERVER_2016_DATACENTER public static const as string
+	var TEMPLATE_WINDOWS_SERVER_2016_STANDARD public static const as string
+	var TEMPLATE_WINDOWS_SERVER_2019_DATACENTER public static const as string
+	var TEMPLATE_WINDOWS_SERVER_2019_STANDARD public static const as string
+	var TEMPLATE_DEBIAN9 public static const as string
+	var TEMPLATE_DEBIAN10 public static const as string
+	var TEMPLATE_UBUNTU1604 public static const as string
+	var TEMPLATE_UBUNTU1804 public static const as string
+	var TEMPLATE_UBUNTU2004 public static const as string
+	var TEMPLATE_CENTOS6 public static const as string
+	var TEMPLATE_CENTOS7 public static const as string
+	var TEMPLATE_CENTOS8 public static const as string
+	var ZONE_DE_FRA1 public static const as string
+	var ZONE_FI_HEL1 public static const as string
+	var ZONE_FI_HEL2 public static const as string
+	var ZONE_NL_AMS1 public static const as string
+	var ZONE_SG_SIN1 public static const as string
+	var ZONE_UK_LON1 public static const as string
+	var ZONE_US_CHI1 public static const as string
+	var ZONE_US_NYC1 public static const as string
+	var ZONE_US_SJO1 public static const as string
+	var PLAN_1CPU_1GB public static const as string
+	var PLAN_1CPU_2GB public static const as string
+	var PLAN_2CPU_4GB public static const as string
+	var PLAN_4CPU_8GB public static const as string
+	var PLAN_6CPU_16GB public static const as string
+	var PLAN_8CPU_32GB public static const as string
+	var PLAN_12CPU_48GB public static const as string
+	var PLAN_16CPU_64GB public static const as string
+	var PLAN_20CPU_128GB public static const as string
+	var PLAN_20CPU_96GB public static const as string
+	class name PrivateNetworkConnection header extends jk.json.JSONObjectAdapter implements jk.lang.StringObject public static
+	{
+		import jk.json
+		ctor
+		func setNetwork(value as string) as jk.cloud.upcloud.UpcloudServer.PrivateNetworkConnection
+		func getNetwork as string
+		func setAddress(value as string) as jk.cloud.upcloud.UpcloudServer.PrivateNetworkConnection
+		func getAddress as string
+		func toJsonObject override as object
+		func fromJsonObject(o as object) override as bool
+		func fromJsonString(o as string) as bool
+		func toJsonString as string
+		func toString as string
+		func forJsonString(o as string) static as jk.cloud.upcloud.UpcloudServer.PrivateNetworkConnection
+		func forJsonObject(o as object) static as jk.cloud.upcloud.UpcloudServer.PrivateNetworkConnection
+	}
+	property hostname as string { hasset hasget }
+	property zone as string { hasset hasget }
+	property plan as string { hasset hasget }
+	property template as string { hasset hasget }
+	property size as int { hasset hasget }
+	property username as string { hasset hasget }
+	property sshKeys as vector<string> { hasset hasget }
+	property createPublicAddress as bool { hasset hasget }
+	property privateNetworks as vector<jk.cloud.upcloud.UpcloudServer.PrivateNetworkConnection> { hasset hasget }
+	property script as string { hasset hasget }
+	func addToSshKeys(key as string)
+	func addToPrivateNetworks(network as string, address as string)
+}

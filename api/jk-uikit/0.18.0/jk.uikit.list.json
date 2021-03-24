@@ -1,0 +1,13 @@
+{
+	"moduleDescription" : "",
+	"type" : "module",
+	"moduleTitle" : "",
+	"moduleId" : "jk.uikit.list",
+	"entities" : [
+		{
+			"type" : "class",
+			"name" : "ScrollableListWidget",
+			"description" : ""
+		}
+	]
+}

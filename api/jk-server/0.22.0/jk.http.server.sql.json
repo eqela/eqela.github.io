@@ -1,0 +1,18 @@
+{
+	"moduleDescription" : "Ability to serve content from an SQL database over an HTTP server.\n",
+	"type" : "module",
+	"moduleTitle" : "SQL database handler for HTTP server",
+	"moduleId" : "jk.http.server.sql",
+	"entities" : [
+		{
+			"type" : "class",
+			"name" : "HTTPServerSQLResultSetToJSONResponseWorker",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "HTTPServerSQLUtil",
+			"description" : ""
+		}
+	]
+}

@@ -1,0 +1,41 @@
+class name jk.devops.sling.SlingBuilderKit header public
+{
+	import jk.lang
+	import jk.fs
+	import jk.env
+	import jk.log
+	import jk.console
+	import jk.devops.eqela
+	var TYPE_LIBRARY public static const as int
+	var TYPE_APPLICATION public static const as int
+	property defaultTarget as string { hasset hasget }
+	property slingVersion as string { hasset hasget }
+	property webCompiler as string { hasset hasget }
+	property sourceDirectory as jk.fs.File { hasset hasget }
+	property disableSushiBuild as bool { hasset hasget }
+	var ctx public as jk.console.ConsoleApplicationContext
+	ctor
+	func addLibrary(path as string) as jk.devops.sling.SlingBuilderKit
+	func addApplication(path as string, options as map) as jk.devops.sling.SlingBuilderKit
+	func escapeString(data as string) as string
+	func translateError(e as jk.lang.Error) as string
+	func execute(args as array<string>) as int
+}
+class name jk.devops.sling.SlingBuilder header public
+{
+	import jk.lang
+	import jk.fs
+	import jk.env
+	import jk.process
+	ctor
+	func tryCreate(file as jk.fs.File) static as jk.devops.sling.SlingBuilder
+	func forFile(file as jk.fs.File) static as jk.devops.sling.SlingBuilder
+	func forDirectory(dir as jk.fs.File) static as jk.devops.sling.SlingBuilder
+	property eqelaRuntime as jk.fs.File { hasset hasget }
+	property buildFile as jk.fs.File { hasset hasget }
+	property buildScript as string { hasset hasget }
+	func getEqelaRuntimeFile as jk.fs.File
+	func generateSushiAppBuildScriptForModule(module as jk.fs.File, slingVersion as string)
+	func executeBuildForFile(file as jk.fs.File) as jk.fs.File
+	func executeBuild(result as jk.fs.File)
+}

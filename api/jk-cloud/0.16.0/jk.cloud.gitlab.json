@@ -1,0 +1,13 @@
+{
+	"moduleDescription" : "Support for the GitLab API\n",
+	"type" : "module",
+	"moduleTitle" : "GitLab API support",
+	"moduleId" : "jk.cloud.gitlab",
+	"entities" : [
+		{
+			"type" : "class",
+			"name" : "GitlabAPI",
+			"description" : ""
+		}
+	]
+}

@@ -1,0 +1,25 @@
+class name jk.server.common.ServerConfig header public
+{
+	import jk.lang
+	import jk.env
+	ctor
+	func require(key as string) static as string
+	func accept(key as string) static as string
+	func get(key as string, defaultValue as string) static as string
+}
+class name jk.server.common.ServerError header public
+{
+	import jk.lang
+	ctor
+	func invalidRequest static as jk.lang.Error
+	func internalError static as jk.lang.Error
+	func notAllowed static as jk.lang.Error
+	func notFound static as jk.lang.Error
+	func noData static as jk.lang.Error
+	func alreadyInUse static as jk.lang.Error
+	func failedToSave static as jk.lang.Error
+	func invalidSession static as jk.lang.Error
+	func invalidData static as jk.lang.Error
+	func invalidCredentials static as jk.lang.Error
+	func invalidInputFormat static as jk.lang.Error
+}

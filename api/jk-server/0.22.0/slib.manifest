@@ -1,0 +1,14 @@
+{
+	"license" : "",
+	"version" : "0.22.0",
+	"title" : "JK Server",
+	"libraries" : [
+		"jk-core:0.37.0",
+		"jk-net:0.39.0",
+		"jk-db:0.21.0"
+	],
+	"description" : "A server-side development frameworks\n",
+	"copyright" : "",
+	"name" : "jk-server",
+	"namespace" : "eqela"
+}

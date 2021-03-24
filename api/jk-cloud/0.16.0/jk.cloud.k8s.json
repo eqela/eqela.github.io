@@ -1,0 +1,18 @@
+{
+	"moduleDescription" : "Support for the Kubernetes (k8s) API\n",
+	"type" : "module",
+	"moduleTitle" : "Kubernetes API support",
+	"moduleId" : "jk.cloud.k8s",
+	"entities" : [
+		{
+			"type" : "class",
+			"name" : "KubeAPI",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "CurrentKubeCluster",
+			"description" : ""
+		}
+	]
+}

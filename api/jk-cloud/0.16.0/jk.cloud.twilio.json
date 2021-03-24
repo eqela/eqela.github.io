@@ -1,0 +1,28 @@
+{
+	"moduleDescription" : "Support for the Twilio API\n",
+	"type" : "module",
+	"moduleTitle" : "Twilio API support",
+	"moduleId" : "jk.cloud.twilio",
+	"entities" : [
+		{
+			"type" : "class",
+			"name" : "TwilioLookupAPI",
+			"description" : "SOURCE : https://www.twilio.com/docs/lookup/api"
+		},
+		{
+			"type" : "class",
+			"name" : "TwilioAPI",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "TwilioSMSAPI",
+			"description" : "SOURCE :\n\thttps://www.twilio.com/docs/sms/api\nFORMAT :\n\tdateSent : YYYY-MM-DD"
+		},
+		{
+			"type" : "class",
+			"name" : "TwilioVideoAPI",
+			"description" : "SOURCE : https://www.twilio.com/docs/video/api"
+		}
+	]
+}

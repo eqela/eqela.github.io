@@ -1,0 +1,27 @@
+class name jk.uikit.boxicons.BoxIconWidget header implements jk.widget.ParentAwareWidget extends jk.widget.Widget public #widget
+{
+	import jk.lang
+	import jk.lang
+	import jk.ui
+	import jk.gfx
+	import jk.widget
+	var SPIN_ANIMATION public static const as int
+	var TADA_ANIMATION public static const as int
+	var FLASHING_ANIMATION public static const as int
+	var BURST_ANIMATION public static const as int
+	var FADE_LEFT_ANIMATION public static const as int
+	var FADE_RIGHT_ANIMATION public static const as int
+	var FADE_UP_ANIMATION public static const as int
+	var FADE_DOWN_ANIMATION public static const as int
+	ctor(context as jk.ui.GuiApplicationContext)
+	func setWidgetColor(color as jk.gfx.Color)
+	func setWidgetFontSize(fontSize as double #notLiteral) as jk.uikit.boxicons.BoxIconWidget
+	func setWidgetIcon(resource as string) as jk.uikit.boxicons.BoxIconWidget
+	func setWidgetLogo(resource as string) as jk.uikit.boxicons.BoxIconWidget
+	func setWidgetHoverAnimation(type as int) as jk.uikit.boxicons.BoxIconWidget
+	func setWidgetAnimation(animation as int, hover as bool = false) as jk.uikit.boxicons.BoxIconWidget
+	func setWidgetRotate(rotate as int) as jk.uikit.boxicons.BoxIconWidget
+	func onWidgetAddingToParent
+	func onWidgetAddedToParent
+	func onWidgetRemovedFromParent
+}

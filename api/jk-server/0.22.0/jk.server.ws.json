@@ -1,0 +1,13 @@
+{
+	"moduleDescription" : "Common classes for implementing a websocket server.\n",
+	"type" : "module",
+	"moduleTitle" : "Websocket server framework",
+	"moduleId" : "jk.server.ws",
+	"entities" : [
+		{
+			"type" : "class",
+			"name" : "WebSocketServer",
+			"description" : ""
+		}
+	]
+}

@@ -1,0 +1,23 @@
+{
+	"moduleDescription" : "Support for the Sushi virtual machine.\n",
+	"type" : "module",
+	"moduleTitle" : "Sushi support",
+	"moduleId" : "jk.devops.sushi",
+	"entities" : [
+		{
+			"type" : "class",
+			"name" : "SushiVM",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "SushiVMCache",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "SushiDocker",
+			"description" : ""
+		}
+	]
+}

@@ -1,0 +1,85 @@
+class name jk.mysql.MySQLDatabaseGeneric header extends jk.mysql.MySQLDatabase public
+{
+	import jk.lang
+	import jk.sql
+	import jk.log
+	import jk.sha
+	import jk.time
+	import jk.thread
+	import jk.socket
+	import jk.socket.ssl
+	import jk.mypacket
+	ctor
+	func isSecureConnection as bool
+	func getMyCapabilityFlags as int
+	func createPacket as jk.mypacket.MyPacketBuilder
+	func finalizePacket(packet as jk.mypacket.MyPacketBuilder, seqnum as int) as buffer
+	func doInitialize(serverAddress as string, username as string, password as string, database as string, sslMode as string, protocol as string, enableUTF8 as bool) override as bool
+	func serverSupportsSSL as bool
+	func openSocketForAddress(address as string) as jk.socket.TCPSocket
+	func getHostName(address as string) as string
+	func getNextSequence as sbyte
+	func onSequenceReceived(number as int)
+	func createSSLRequest as buffer
+	func createComQuit as buffer
+	func createComInitDb(dbname as string) as buffer
+	func createComQuery(query as string) as buffer
+	func handleAuthenticationSync(authPlugin as string, authData as string, forAuthSwitch as bool = false) as bool
+	func receivePacketSync as buffer
+	func receivePacketsSync as vector<buffer>
+	func receivePacketDataSync as buffer
+	func sendSync(packet as buffer) as bool
+	func sendAndReceive(packet as buffer) as buffer
+	func executePacketSync(packet as buffer) as bool
+	func closeSync override
+	func prepareSync(sql as string) override as jk.sql.SQLStatement
+	func executeSync(stmt as jk.sql.SQLStatement) override as bool
+	func executeUpdateDeleteSync(stmt as jk.sql.SQLStatement) override as int
+	func querySync(stmt as jk.sql.SQLStatement) override as jk.sql.SQLResultSetIterator
+	func close(callback as function<void>) override
+	func execute(stmt as jk.sql.SQLStatement, callback as function<void,bool>) override
+	func executeUpdateDelete(stmt as jk.sql.SQLStatement, callback as function<void,int>) override
+	func query(stmt as jk.sql.SQLStatement, callback as function<void,jk.sql.SQLResultSetIterator>) override
+	func querySingleRow(stmt as jk.sql.SQLStatement, callback as function<void,jk.lang.DynamicMap>) override
+	func getAuthenticationPlugin as string #getterMethod
+	func setAuthenticationPlugin(v as string) as jk.mysql.MySQLDatabaseGeneric #setterMethod
+}
+class name jk.mysql.MySQLDatabase header extends jk.sql.SQLDatabase abstract public
+{
+	import jk.lang
+	import jk.sql
+	import jk.log
+	ctor
+	var SSL_MODE_PREFERRED public static const as string
+	var SSL_MODE_NONE public static const as string
+	var SSL_MODE_REQUIRED public static const as string
+	var SSL_MODE_VERIFYCA public static const as string
+	var SSL_MODE_VERIFYFULL public static const as string
+	var PROTOCOL_SOCKET public static const as string
+	var PROTOCOL_UNIX public static const as string
+	var PROTOCOL_PIPE public static const as string
+	var PROCOL_MEMORY public static const as string
+	func forConnectionStringSync(ctx as jk.log.LoggingContext, connectionString as string) static as jk.mysql.MySQLDatabase
+	func connectSync(ctx as jk.log.LoggingContext, serverAddress as string, username as string, password as string, database as string, sslMode as string, enableUTF8 as bool) static as jk.mysql.MySQLDatabase
+	func forConfig(logContext as jk.log.LoggingContext, config as jk.lang.DynamicMap) static as jk.mysql.MySQLDatabase
+	func getDatabaseTypeId override as string
+	func initializeSync(serverAddress as string, username as string, password as string, database as string, sslMode as string, protocol as string, enableUTF8 as bool) virtual as bool
+	func doInitialize(serverAddress as string, username as string, password as string, database as string, sslMode as string, protocol as string, enableUTF8 as bool) virtual as bool
+	func querySingleRowSync(stmt as jk.sql.SQLStatement) override as jk.lang.DynamicMap
+	func tableExistsSync(table as string) override as bool
+	func tableExists(table as string, callback as function<void,bool>) override
+	func queryAllTableNames(callback as function<void,vector>) override
+	func queryAllTableNamesSync override as vector
+	func prepareTypeAsString(tt as int, columnName as string, forDataTypeChecking as bool = false) as string
+	func prepareCreateTableStatementSync(table as string, columns as vector<jk.sql.SQLTableColumnInfo>) override as jk.sql.SQLStatement
+	func prepareDeleteTableStatementSync(table as string) override as jk.sql.SQLStatement
+	func prepareCreateColumnStatementSync(table as string, column as jk.sql.SQLTableColumnInfo) override as jk.sql.SQLStatement
+	func prepareUpdateColumnTypeStatementSync(table as string, column as jk.sql.SQLTableColumnInfo) override as jk.sql.SQLStatement
+	func getLastInsertIdSync(table as string) override as long
+	func getPrimaryKeyColumnNameSync(table as string) override as string
+	func getIdentityColumnNameSync(table as string) override as string
+	func columnExistsSync(table as string, column as string) override as bool
+	func isColumnTypeSameSync(table as string, column as jk.sql.SQLTableColumnInfo) override as bool
+	func getDatabaseName as string #getterMethod
+	func setDatabaseName(v as string) as jk.mysql.MySQLDatabase #setterMethod
+}

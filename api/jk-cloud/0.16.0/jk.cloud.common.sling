@@ -1,0 +1,37 @@
+class name jk.cloud.common.DataValidator header public
+{
+	import jk.lang
+	ctor
+	func toValidJSONString(response as string) static as string
+}
+class name jk.cloud.common.CloudError header public
+{
+	import jk.lang
+	ctor
+	func throw(code as string, message as string) static
+}
+class name jk.cloud.common.CloudClient header public
+{
+	import jk.lang
+	import jk.io
+	import jk.log
+	import jk.json
+	import jk.http.client
+	ctor
+	class name Response header public static
+	{
+		ctor
+		func getBodyAsBuffer as buffer
+		func getBodyAsString as string
+		func getBodyAsDynamicMap as jk.lang.DynamicMap
+		func getHttpStatus as string #getterMethod
+		func setHttpStatus(v as string) as jk.cloud.common.CloudClient.Response #setterMethod
+		func getHttpStatusDescription as string #getterMethod
+		func setHttpStatusDescription(v as string) as jk.cloud.common.CloudClient.Response #setterMethod
+		func getHeaders as jk.lang.KeyValueListForStrings #getterMethod
+		func setHeaders(v as jk.lang.KeyValueListForStrings) as jk.cloud.common.CloudClient.Response #setterMethod
+		func getBody as buffer #getterMethod
+		func setBody(v as buffer) as jk.cloud.common.CloudClient.Response #setterMethod
+	}
+	func request(ctx as jk.log.LoggingContext, method as string, url as string, headers as jk.lang.KeyValueList<string,string>, body as buffer) static as jk.cloud.common.CloudClient.Response
+}

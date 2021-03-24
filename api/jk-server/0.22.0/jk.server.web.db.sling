@@ -1,0 +1,20 @@
+class name jk.server.web.db.WebServerWithDatabase header extends jk.server.web.WebServer public
+{
+	import jk.lang
+	import jk.server
+	import jk.server.web
+	import jk.sql
+	import jk.sql.factory
+	import jk.fs
+	import jk.http.server
+	import jk.json
+	import jk.log
+	ctor
+	func configure(key as string, value as string, relativeTo as jk.fs.File, error as jk.lang.Error) override as bool
+	func ensureTableExists(table as jk.sql.SQLTableInfo) as bool
+	func initializeServer(server as jk.http.server.HTTPServer) override as bool
+	func initializeSQLDatabase(dbstring as string) virtual as jk.sql.SQLDatabase
+	func initializeSQLDatabase(config as jk.lang.DynamicMap) virtual as jk.sql.SQLDatabase
+	func getDb as jk.sql.SQLDatabase #getterMethod
+	func setDb(v as jk.sql.SQLDatabase) as jk.server.web.db.WebServerWithDatabase #setterMethod
+}

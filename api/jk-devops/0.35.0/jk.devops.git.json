@@ -1,0 +1,18 @@
+{
+	"moduleDescription" : "Support for Git version control\n",
+	"type" : "module",
+	"moduleTitle" : "Git support",
+	"moduleId" : "jk.devops.git",
+	"entities" : [
+		{
+			"type" : "class",
+			"name" : "GitRepo",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "Git",
+			"description" : ""
+		}
+	]
+}

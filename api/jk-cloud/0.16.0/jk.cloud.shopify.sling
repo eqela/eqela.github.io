@@ -1,0 +1,439 @@
+class name jk.cloud.shopify.ShopifyAPI header public
+{
+	import jk.lang
+	import jk.log
+	import jk.json
+	import jk.cloud.common
+	class name ProductImage header extends jk.json.JSONObjectAdapter implements jk.lang.StringObject public static
+	{
+		import jk.json
+		ctor
+		func setFilename(value as string) as jk.cloud.shopify.ShopifyAPI.ProductImage
+		func getFilename as string
+		func setAttachment(value as buffer) as jk.cloud.shopify.ShopifyAPI.ProductImage
+		func getAttachment as buffer
+		func toJsonObject override as object
+		func fromJsonObject(o as object) override as bool
+		func fromJsonString(o as string) as bool
+		func toJsonString as string
+		func toString as string
+		func forJsonString(o as string) static as jk.cloud.shopify.ShopifyAPI.ProductImage
+		func forJsonObject(o as object) static as jk.cloud.shopify.ShopifyAPI.ProductImage
+	}
+	class name ProductVariant header extends jk.json.JSONObjectAdapter implements jk.lang.StringObject public static
+	{
+		import jk.json
+		ctor
+		func setId(value as string) as jk.cloud.shopify.ShopifyAPI.ProductVariant
+		func getId as string
+		func setProduct_id(value as string) as jk.cloud.shopify.ShopifyAPI.ProductVariant
+		func getProduct_id as string
+		func setTitle(value as string) as jk.cloud.shopify.ShopifyAPI.ProductVariant
+		func getTitle as string
+		func setOption1(value as string) as jk.cloud.shopify.ShopifyAPI.ProductVariant
+		func getOption1 as string
+		func setPrice(value as string) as jk.cloud.shopify.ShopifyAPI.ProductVariant
+		func getPrice as string
+		func setSku(value as string) as jk.cloud.shopify.ShopifyAPI.ProductVariant
+		func getSku as string
+		func toJsonObject override as object
+		func fromJsonObject(o as object) override as bool
+		func fromJsonString(o as string) as bool
+		func toJsonString as string
+		func toString as string
+		func forJsonString(o as string) static as jk.cloud.shopify.ShopifyAPI.ProductVariant
+		func forJsonObject(o as object) static as jk.cloud.shopify.ShopifyAPI.ProductVariant
+	}
+	class name Product header extends jk.json.JSONObjectAdapter implements jk.lang.StringObject public static
+	{
+		import jk.json
+		ctor
+		func setId(value as string) as jk.cloud.shopify.ShopifyAPI.Product
+		func getId as string
+		func setTitle(value as string) as jk.cloud.shopify.ShopifyAPI.Product
+		func getTitle as string
+		func setBody_html(value as string) as jk.cloud.shopify.ShopifyAPI.Product
+		func getBody_html as string
+		func setProduct_type(value as string) as jk.cloud.shopify.ShopifyAPI.Product
+		func getProduct_type as string
+		func setVendor(value as string) as jk.cloud.shopify.ShopifyAPI.Product
+		func getVendor as string
+		func setImages(value as vector<jk.cloud.shopify.ShopifyAPI.ProductImage>) as jk.cloud.shopify.ShopifyAPI.Product
+		func getImages as vector<jk.cloud.shopify.ShopifyAPI.ProductImage>
+		func setVariants(value as vector<jk.cloud.shopify.ShopifyAPI.ProductVariant>) as jk.cloud.shopify.ShopifyAPI.Product
+		func getVariants as vector<jk.cloud.shopify.ShopifyAPI.ProductVariant>
+		func toJsonObject override as object
+		func fromJsonObject(o as object) override as bool
+		func fromJsonString(o as string) as bool
+		func toJsonString as string
+		func toString as string
+		func forJsonString(o as string) static as jk.cloud.shopify.ShopifyAPI.Product
+		func forJsonObject(o as object) static as jk.cloud.shopify.ShopifyAPI.Product
+	}
+	class name ScriptTag header extends jk.json.JSONObjectAdapter implements jk.lang.StringObject public static
+	{
+		import jk.json
+		ctor
+		func setEvent(value as string) as jk.cloud.shopify.ShopifyAPI.ScriptTag
+		func getEvent as string
+		func setSrc(value as string) as jk.cloud.shopify.ShopifyAPI.ScriptTag
+		func getSrc as string
+		func toJsonObject override as object
+		func fromJsonObject(o as object) override as bool
+		func fromJsonString(o as string) as bool
+		func toJsonString as string
+		func toString as string
+		func forJsonString(o as string) static as jk.cloud.shopify.ShopifyAPI.ScriptTag
+		func forJsonObject(o as object) static as jk.cloud.shopify.ShopifyAPI.ScriptTag
+	}
+	class name Token header extends jk.json.JSONObjectAdapter implements jk.lang.StringObject public static
+	{
+		import jk.json
+		ctor
+		func setAccess_token(value as string) as jk.cloud.shopify.ShopifyAPI.Token
+		func getAccess_token as string
+		func setScope(value as string) as jk.cloud.shopify.ShopifyAPI.Token
+		func getScope as string
+		func toJsonObject override as object
+		func fromJsonObject(o as object) override as bool
+		func fromJsonString(o as string) as bool
+		func toJsonString as string
+		func toString as string
+		func forJsonString(o as string) static as jk.cloud.shopify.ShopifyAPI.Token
+		func forJsonObject(o as object) static as jk.cloud.shopify.ShopifyAPI.Token
+	}
+	class name Shop header extends jk.json.JSONObjectAdapter implements jk.lang.StringObject public static
+	{
+		import jk.json
+		ctor
+		func setId(value as string) as jk.cloud.shopify.ShopifyAPI.Shop
+		func getId as string
+		func setName(value as string) as jk.cloud.shopify.ShopifyAPI.Shop
+		func getName as string
+		func setEmail(value as string) as jk.cloud.shopify.ShopifyAPI.Shop
+		func getEmail as string
+		func setDomain(value as string) as jk.cloud.shopify.ShopifyAPI.Shop
+		func getDomain as string
+		func setProvince(value as string) as jk.cloud.shopify.ShopifyAPI.Shop
+		func getProvince as string
+		func setCountry(value as string) as jk.cloud.shopify.ShopifyAPI.Shop
+		func getCountry as string
+		func setAddress1(value as string) as jk.cloud.shopify.ShopifyAPI.Shop
+		func getAddress1 as string
+		func setZip(value as string) as jk.cloud.shopify.ShopifyAPI.Shop
+		func getZip as string
+		func setCity(value as string) as jk.cloud.shopify.ShopifyAPI.Shop
+		func getCity as string
+		func setSource(value as string) as jk.cloud.shopify.ShopifyAPI.Shop
+		func getSource as string
+		func setPhone(value as string) as jk.cloud.shopify.ShopifyAPI.Shop
+		func getPhone as string
+		func setLatitude(value as string) as jk.cloud.shopify.ShopifyAPI.Shop
+		func getLatitude as string
+		func setLongitude(value as string) as jk.cloud.shopify.ShopifyAPI.Shop
+		func getLongitude as string
+		func setPrimary_locale(value as string) as jk.cloud.shopify.ShopifyAPI.Shop
+		func getPrimary_locale as string
+		func setAddress2(value as string) as jk.cloud.shopify.ShopifyAPI.Shop
+		func getAddress2 as string
+		func setCountry_code(value as string) as jk.cloud.shopify.ShopifyAPI.Shop
+		func getCountry_code as string
+		func setCountry_name(value as string) as jk.cloud.shopify.ShopifyAPI.Shop
+		func getCountry_name as string
+		func setCurrency(value as string) as jk.cloud.shopify.ShopifyAPI.Shop
+		func getCurrency as string
+		func setCustomer_email(value as string) as jk.cloud.shopify.ShopifyAPI.Shop
+		func getCustomer_email as string
+		func setShop_owner(value as string) as jk.cloud.shopify.ShopifyAPI.Shop
+		func getShop_owner as string
+		func setMyshopify_domain(value as string) as jk.cloud.shopify.ShopifyAPI.Shop
+		func getMyshopify_domain as string
+		func setEnabled_presentment_currencies(value as vector<string>) as jk.cloud.shopify.ShopifyAPI.Shop
+		func getEnabled_presentment_currencies as vector<string>
+		func setTaxes_includedValue(value as bool) as jk.cloud.shopify.ShopifyAPI.Shop
+		func getTaxes_includedValue as bool
+		func setTaxes_included(value as jk.lang.BooleanObject) as jk.cloud.shopify.ShopifyAPI.Shop
+		func getTaxes_included as jk.lang.BooleanObject
+		func setTax_shippingValue(value as bool) as jk.cloud.shopify.ShopifyAPI.Shop
+		func getTax_shippingValue as bool
+		func setTax_shipping(value as jk.lang.BooleanObject) as jk.cloud.shopify.ShopifyAPI.Shop
+		func getTax_shipping as jk.lang.BooleanObject
+		func toJsonObject override as object
+		func fromJsonObject(o as object) override as bool
+		func fromJsonString(o as string) as bool
+		func toJsonString as string
+		func toString as string
+		func forJsonString(o as string) static as jk.cloud.shopify.ShopifyAPI.Shop
+		func forJsonObject(o as object) static as jk.cloud.shopify.ShopifyAPI.Shop
+	}
+	class name Webhook header extends jk.json.JSONObjectAdapter implements jk.lang.StringObject public static
+	{
+		import jk.json
+		ctor
+		func setTopic(value as string) as jk.cloud.shopify.ShopifyAPI.Webhook
+		func getTopic as string
+		func setFormat(value as string) as jk.cloud.shopify.ShopifyAPI.Webhook
+		func getFormat as string
+		func setAddress(value as string) as jk.cloud.shopify.ShopifyAPI.Webhook
+		func getAddress as string
+		func toJsonObject override as object
+		func fromJsonObject(o as object) override as bool
+		func fromJsonString(o as string) as bool
+		func toJsonString as string
+		func toString as string
+		func forJsonString(o as string) static as jk.cloud.shopify.ShopifyAPI.Webhook
+		func forJsonObject(o as object) static as jk.cloud.shopify.ShopifyAPI.Webhook
+	}
+	class name CustomCollection header extends jk.json.JSONObjectAdapter implements jk.lang.StringObject public static
+	{
+		import jk.json
+		ctor
+		func setId(value as string) as jk.cloud.shopify.ShopifyAPI.CustomCollection
+		func getId as string
+		func setHandle(value as string) as jk.cloud.shopify.ShopifyAPI.CustomCollection
+		func getHandle as string
+		func setTitle(value as string) as jk.cloud.shopify.ShopifyAPI.CustomCollection
+		func getTitle as string
+		func setUpdated_at(value as string) as jk.cloud.shopify.ShopifyAPI.CustomCollection
+		func getUpdated_at as string
+		func setBody_html(value as string) as jk.cloud.shopify.ShopifyAPI.CustomCollection
+		func getBody_html as string
+		func setPublished_at(value as string) as jk.cloud.shopify.ShopifyAPI.CustomCollection
+		func getPublished_at as string
+		func setSort_order(value as string) as jk.cloud.shopify.ShopifyAPI.CustomCollection
+		func getSort_order as string
+		func setTemplate_suffix(value as string) as jk.cloud.shopify.ShopifyAPI.CustomCollection
+		func getTemplate_suffix as string
+		func setPublished_scope(value as string) as jk.cloud.shopify.ShopifyAPI.CustomCollection
+		func getPublished_scope as string
+		func toJsonObject override as object
+		func fromJsonObject(o as object) override as bool
+		func fromJsonString(o as string) as bool
+		func toJsonString as string
+		func toString as string
+		func forJsonString(o as string) static as jk.cloud.shopify.ShopifyAPI.CustomCollection
+		func forJsonObject(o as object) static as jk.cloud.shopify.ShopifyAPI.CustomCollection
+	}
+	class name RecurringApplicationCharge header extends jk.json.JSONObjectAdapter implements jk.lang.StringObject public static
+	{
+		import jk.json
+		ctor
+		func setActivated_on(value as string) as jk.cloud.shopify.ShopifyAPI.RecurringApplicationCharge
+		func getActivated_on as string
+		func setBilling_on(value as string) as jk.cloud.shopify.ShopifyAPI.RecurringApplicationCharge
+		func getBilling_on as string
+		func setCancelled_on(value as string) as jk.cloud.shopify.ShopifyAPI.RecurringApplicationCharge
+		func getCancelled_on as string
+		func setCapped_amount(value as string) as jk.cloud.shopify.ShopifyAPI.RecurringApplicationCharge
+		func getCapped_amount as string
+		func setConfirmation_url(value as string) as jk.cloud.shopify.ShopifyAPI.RecurringApplicationCharge
+		func getConfirmation_url as string
+		func setCreated_at(value as string) as jk.cloud.shopify.ShopifyAPI.RecurringApplicationCharge
+		func getCreated_at as string
+		func setId(value as string) as jk.cloud.shopify.ShopifyAPI.RecurringApplicationCharge
+		func getId as string
+		func setName(value as string) as jk.cloud.shopify.ShopifyAPI.RecurringApplicationCharge
+		func getName as string
+		func setPrice(value as string) as jk.cloud.shopify.ShopifyAPI.RecurringApplicationCharge
+		func getPrice as string
+		func setReturn_url(value as string) as jk.cloud.shopify.ShopifyAPI.RecurringApplicationCharge
+		func getReturn_url as string
+		func setStatus(value as string) as jk.cloud.shopify.ShopifyAPI.RecurringApplicationCharge
+		func getStatus as string
+		func setTerms(value as string) as jk.cloud.shopify.ShopifyAPI.RecurringApplicationCharge
+		func getTerms as string
+		func setTestValue(value as bool) as jk.cloud.shopify.ShopifyAPI.RecurringApplicationCharge
+		func getTestValue as bool
+		func setTest(value as jk.lang.BooleanObject) as jk.cloud.shopify.ShopifyAPI.RecurringApplicationCharge
+		func getTest as jk.lang.BooleanObject
+		func setTrial_days(value as string) as jk.cloud.shopify.ShopifyAPI.RecurringApplicationCharge
+		func getTrial_days as string
+		func setTrial_ends_on(value as string) as jk.cloud.shopify.ShopifyAPI.RecurringApplicationCharge
+		func getTrial_ends_on as string
+		func setUpdated_at(value as string) as jk.cloud.shopify.ShopifyAPI.RecurringApplicationCharge
+		func getUpdated_at as string
+		func toJsonObject override as object
+		func fromJsonObject(o as object) override as bool
+		func fromJsonString(o as string) as bool
+		func toJsonString as string
+		func toString as string
+		func forJsonString(o as string) static as jk.cloud.shopify.ShopifyAPI.RecurringApplicationCharge
+		func forJsonObject(o as object) static as jk.cloud.shopify.ShopifyAPI.RecurringApplicationCharge
+	}
+	class name UsageCharge header extends jk.json.JSONObjectAdapter implements jk.lang.StringObject public static
+	{
+		import jk.json
+		ctor
+		func setCreated_at(value as string) as jk.cloud.shopify.ShopifyAPI.UsageCharge
+		func getCreated_at as string
+		func setDescription(value as string) as jk.cloud.shopify.ShopifyAPI.UsageCharge
+		func getDescription as string
+		func setId(value as string) as jk.cloud.shopify.ShopifyAPI.UsageCharge
+		func getId as string
+		func setPrice(value as string) as jk.cloud.shopify.ShopifyAPI.UsageCharge
+		func getPrice as string
+		func setRecurring_application_charge_id(value as string) as jk.cloud.shopify.ShopifyAPI.UsageCharge
+		func getRecurring_application_charge_id as string
+		func setUpdated_at(value as string) as jk.cloud.shopify.ShopifyAPI.UsageCharge
+		func getUpdated_at as string
+		func toJsonObject override as object
+		func fromJsonObject(o as object) override as bool
+		func fromJsonString(o as string) as bool
+		func toJsonString as string
+		func toString as string
+		func forJsonString(o as string) static as jk.cloud.shopify.ShopifyAPI.UsageCharge
+		func forJsonObject(o as object) static as jk.cloud.shopify.ShopifyAPI.UsageCharge
+	}
+	class name Currency header extends jk.json.JSONObjectAdapter implements jk.lang.StringObject public static
+	{
+		import jk.json
+		ctor
+		func setCurrency(value as string) as jk.cloud.shopify.ShopifyAPI.Currency
+		func getCurrency as string
+		func setRate_updated_at(value as string) as jk.cloud.shopify.ShopifyAPI.Currency
+		func getRate_updated_at as string
+		func setEnabledValue(value as bool) as jk.cloud.shopify.ShopifyAPI.Currency
+		func getEnabledValue as bool
+		func setEnabled(value as jk.lang.BooleanObject) as jk.cloud.shopify.ShopifyAPI.Currency
+		func getEnabled as jk.lang.BooleanObject
+		func toJsonObject override as object
+		func fromJsonObject(o as object) override as bool
+		func fromJsonString(o as string) as bool
+		func toJsonString as string
+		func toString as string
+		func forJsonString(o as string) static as jk.cloud.shopify.ShopifyAPI.Currency
+		func forJsonObject(o as object) static as jk.cloud.shopify.ShopifyAPI.Currency
+	}
+	class name Country header extends jk.json.JSONObjectAdapter implements jk.lang.StringObject public static
+	{
+		import jk.json
+		ctor
+		func setId(value as string) as jk.cloud.shopify.ShopifyAPI.Country
+		func getId as string
+		func setCode(value as string) as jk.cloud.shopify.ShopifyAPI.Country
+		func getCode as string
+		func setName(value as string) as jk.cloud.shopify.ShopifyAPI.Country
+		func getName as string
+		func setTaxValue(value as double) as jk.cloud.shopify.ShopifyAPI.Country
+		func getTaxValue as double
+		func setTax(value as jk.lang.DoubleObject) as jk.cloud.shopify.ShopifyAPI.Country
+		func getTax as jk.lang.DoubleObject
+		func setTax_name(value as string) as jk.cloud.shopify.ShopifyAPI.Country
+		func getTax_name as string
+		func toJsonObject override as object
+		func fromJsonObject(o as object) override as bool
+		func fromJsonString(o as string) as bool
+		func toJsonString as string
+		func toString as string
+		func forJsonString(o as string) static as jk.cloud.shopify.ShopifyAPI.Country
+		func forJsonObject(o as object) static as jk.cloud.shopify.ShopifyAPI.Country
+	}
+	class name ShopTokenRequest header extends jk.json.JSONObjectAdapter implements jk.lang.StringObject public static
+	{
+		import jk.json
+		ctor
+		func setClient_id(value as string) as jk.cloud.shopify.ShopifyAPI.ShopTokenRequest
+		func getClient_id as string
+		func setClient_secret(value as string) as jk.cloud.shopify.ShopifyAPI.ShopTokenRequest
+		func getClient_secret as string
+		func setCode(value as string) as jk.cloud.shopify.ShopifyAPI.ShopTokenRequest
+		func getCode as string
+		func toJsonObject override as object
+		func fromJsonObject(o as object) override as bool
+		func fromJsonString(o as string) as bool
+		func toJsonString as string
+		func toString as string
+		func forJsonString(o as string) static as jk.cloud.shopify.ShopifyAPI.ShopTokenRequest
+		func forJsonObject(o as object) static as jk.cloud.shopify.ShopifyAPI.ShopTokenRequest
+	}
+	class name ProductRequest header extends jk.json.JSONObjectAdapter implements jk.lang.StringObject public static
+	{
+		import jk.json
+		ctor
+		func setProduct(value as jk.cloud.shopify.ShopifyAPI.Product) as jk.cloud.shopify.ShopifyAPI.ProductRequest
+		func getProduct as jk.cloud.shopify.ShopifyAPI.Product
+		func toJsonObject override as object
+		func fromJsonObject(o as object) override as bool
+		func fromJsonString(o as string) as bool
+		func toJsonString as string
+		func toString as string
+		func forJsonString(o as string) static as jk.cloud.shopify.ShopifyAPI.ProductRequest
+		func forJsonObject(o as object) static as jk.cloud.shopify.ShopifyAPI.ProductRequest
+	}
+	class name ScriptTagRequest header extends jk.json.JSONObjectAdapter implements jk.lang.StringObject public static
+	{
+		import jk.json
+		ctor
+		func setScript_tag(value as jk.cloud.shopify.ShopifyAPI.ScriptTag) as jk.cloud.shopify.ShopifyAPI.ScriptTagRequest
+		func getScript_tag as jk.cloud.shopify.ShopifyAPI.ScriptTag
+		func toJsonObject override as object
+		func fromJsonObject(o as object) override as bool
+		func fromJsonString(o as string) as bool
+		func toJsonString as string
+		func toString as string
+		func forJsonString(o as string) static as jk.cloud.shopify.ShopifyAPI.ScriptTagRequest
+		func forJsonObject(o as object) static as jk.cloud.shopify.ShopifyAPI.ScriptTagRequest
+	}
+	class name WebhookRequest header extends jk.json.JSONObjectAdapter implements jk.lang.StringObject public static
+	{
+		import jk.json
+		ctor
+		func setWebhook(value as jk.cloud.shopify.ShopifyAPI.Webhook) as jk.cloud.shopify.ShopifyAPI.WebhookRequest
+		func getWebhook as jk.cloud.shopify.ShopifyAPI.Webhook
+		func toJsonObject override as object
+		func fromJsonObject(o as object) override as bool
+		func fromJsonString(o as string) as bool
+		func toJsonString as string
+		func toString as string
+		func forJsonString(o as string) static as jk.cloud.shopify.ShopifyAPI.WebhookRequest
+		func forJsonObject(o as object) static as jk.cloud.shopify.ShopifyAPI.WebhookRequest
+	}
+	class name RecurringApplicationChargeRequest header extends jk.json.JSONObjectAdapter implements jk.lang.StringObject public static
+	{
+		import jk.json
+		ctor
+		func setRecurring_application_charge(value as jk.cloud.shopify.ShopifyAPI.RecurringApplicationCharge) as jk.cloud.shopify.ShopifyAPI.RecurringApplicationChargeRequest
+		func getRecurring_application_charge as jk.cloud.shopify.ShopifyAPI.RecurringApplicationCharge
+		func toJsonObject override as object
+		func fromJsonObject(o as object) override as bool
+		func fromJsonString(o as string) as bool
+		func toJsonString as string
+		func toString as string
+		func forJsonString(o as string) static as jk.cloud.shopify.ShopifyAPI.RecurringApplicationChargeRequest
+		func forJsonObject(o as object) static as jk.cloud.shopify.ShopifyAPI.RecurringApplicationChargeRequest
+	}
+	class name UsageChargeRequest header extends jk.json.JSONObjectAdapter implements jk.lang.StringObject public static
+	{
+		import jk.json
+		ctor
+		func setUsage_charge(value as jk.cloud.shopify.ShopifyAPI.UsageCharge) as jk.cloud.shopify.ShopifyAPI.UsageChargeRequest
+		func getUsage_charge as jk.cloud.shopify.ShopifyAPI.UsageCharge
+		func toJsonObject override as object
+		func fromJsonObject(o as object) override as bool
+		func fromJsonString(o as string) as bool
+		func toJsonString as string
+		func toString as string
+		func forJsonString(o as string) static as jk.cloud.shopify.ShopifyAPI.UsageChargeRequest
+		func forJsonObject(o as object) static as jk.cloud.shopify.ShopifyAPI.UsageChargeRequest
+	}
+	property ctx as jk.log.LoggingContext { hasset hasget }
+	property apiVersion as string { hasset hasget }
+	ctor(ctx as jk.log.LoggingContext)
+	func requestShopToken(shop as string, code as string) as jk.cloud.shopify.ShopifyAPI.Token
+	func getShopDetails(shop as string, token as string) as jk.cloud.shopify.ShopifyAPI.Shop
+	func insertScriptTag(shop as string, token as string, tag as jk.cloud.shopify.ShopifyAPI.ScriptTag) as jk.cloud.shopify.ShopifyAPI.ScriptTag
+	func insertProduct(shop as string, token as string, product as jk.cloud.shopify.ShopifyAPI.Product) as jk.cloud.shopify.ShopifyAPI.Product
+	func getProducts(shop as string, collectionId as string, token as string) as vector<jk.cloud.shopify.ShopifyAPI.Product>
+	func getProduct(productId as string, shop as string, token as string, fields as array<string>) as jk.cloud.shopify.ShopifyAPI.Product
+	func registerWebhook(shop as string, token as string, webhook as jk.cloud.shopify.ShopifyAPI.Webhook) as jk.cloud.shopify.ShopifyAPI.Webhook
+	func getCustomCollections(shop as string, token as string) as vector<jk.cloud.shopify.ShopifyAPI.CustomCollection>
+	func createRecurringCharge(shop as string, token as string, charge as jk.cloud.shopify.ShopifyAPI.RecurringApplicationCharge) as jk.cloud.shopify.ShopifyAPI.RecurringApplicationCharge
+	func deleteRecurringCharge(shop as string, token as string, recurringChargeId as string) as bool
+	func createUsageCharge(shop as string, token as string, recurringChargeId as string, charge as jk.cloud.shopify.ShopifyAPI.UsageCharge) as jk.cloud.shopify.ShopifyAPI.UsageCharge
+	func getCurrencies(shop as string, token as string) as vector<jk.cloud.shopify.ShopifyAPI.Currency>
+	func getCountries(shop as string, token as string) as vector<jk.cloud.shopify.ShopifyAPI.Country>
+	func getApiKey as string #getterMethod
+	func setApiKey(v as string) as jk.cloud.shopify.ShopifyAPI #setterMethod
+	func getApiSecret as string #getterMethod
+	func setApiSecret(v as string) as jk.cloud.shopify.ShopifyAPI #setterMethod
+}

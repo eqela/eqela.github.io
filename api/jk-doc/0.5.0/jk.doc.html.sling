@@ -1,0 +1,10 @@
+class name jk.doc.html.HtmlGenerator header public
+{
+	import jk.lang
+	import jk.xml
+	import jk.doc.model
+	ctor
+	func generate(document as jk.doc.model.DocumentNode) as string
+	func getCss as string #getterMethod
+	func setCss(v as string) as jk.doc.html.HtmlGenerator #setterMethod
+}

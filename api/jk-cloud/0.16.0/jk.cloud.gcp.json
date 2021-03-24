@@ -1,0 +1,43 @@
+{
+	"moduleDescription" : "Support for the Google Cloud Platform (GCP) APIs\n",
+	"type" : "module",
+	"moduleTitle" : "Google Cloud Platform API support",
+	"moduleId" : "jk.cloud.gcp",
+	"entities" : [
+		{
+			"type" : "class",
+			"name" : "GCPComputeAPI",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "GCPSession",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "GCPAPI",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "GCPStorageUtil",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "GCPScript",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "GCPStorageAPI",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "GCPCloudRunAPI",
+			"description" : ""
+		}
+	]
+}

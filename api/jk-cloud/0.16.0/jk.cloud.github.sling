@@ -1,0 +1,67 @@
+class name jk.cloud.github.GithubAPI header extends jk.cloud.common.CloudClient public
+{
+	import jk.lang
+	import jk.log
+	import jk.json
+	import jk.env
+	import jk.http.client
+	import jk.cloud.common
+	ctor
+	class name GithubUserDetails header extends jk.json.JSONObjectAdapter implements jk.lang.StringObject public static
+	{
+		import jk.json
+		ctor
+		func setId(value as string) as jk.cloud.github.GithubAPI.GithubUserDetails
+		func getId as string
+		func setName(value as string) as jk.cloud.github.GithubAPI.GithubUserDetails
+		func getName as string
+		func setLogin(value as string) as jk.cloud.github.GithubAPI.GithubUserDetails
+		func getLogin as string
+		func setAvatar_url(value as string) as jk.cloud.github.GithubAPI.GithubUserDetails
+		func getAvatar_url as string
+		func toJsonObject override as object
+		func fromJsonObject(o as object) override as bool
+		func fromJsonString(o as string) as bool
+		func toJsonString as string
+		func toString as string
+		func forJsonString(o as string) static as jk.cloud.github.GithubAPI.GithubUserDetails
+		func forJsonObject(o as object) static as jk.cloud.github.GithubAPI.GithubUserDetails
+	}
+	class name GithubRepositoryDetails header extends jk.json.JSONObjectAdapter implements jk.lang.StringObject public static
+	{
+		import jk.json
+		ctor
+		func setName(value as string) as jk.cloud.github.GithubAPI.GithubRepositoryDetails
+		func getName as string
+		func setFull_name(value as string) as jk.cloud.github.GithubAPI.GithubRepositoryDetails
+		func getFull_name as string
+		func setHtml_url(value as string) as jk.cloud.github.GithubAPI.GithubRepositoryDetails
+		func getHtml_url as string
+		func setDescription(value as string) as jk.cloud.github.GithubAPI.GithubRepositoryDetails
+		func getDescription as string
+		func setUrl(value as string) as jk.cloud.github.GithubAPI.GithubRepositoryDetails
+		func getUrl as string
+		func setForks_url(value as string) as jk.cloud.github.GithubAPI.GithubRepositoryDetails
+		func getForks_url as string
+		func setDownloads_url(value as string) as jk.cloud.github.GithubAPI.GithubRepositoryDetails
+		func getDownloads_url as string
+		func setGit_url(value as string) as jk.cloud.github.GithubAPI.GithubRepositoryDetails
+		func getGit_url as string
+		func setSsh_url(value as string) as jk.cloud.github.GithubAPI.GithubRepositoryDetails
+		func getSsh_url as string
+		func setClone_url(value as string) as jk.cloud.github.GithubAPI.GithubRepositoryDetails
+		func getClone_url as string
+		func toJsonObject override as object
+		func fromJsonObject(o as object) override as bool
+		func fromJsonString(o as string) as bool
+		func toJsonString as string
+		func toString as string
+		func forJsonString(o as string) static as jk.cloud.github.GithubAPI.GithubRepositoryDetails
+		func forJsonObject(o as object) static as jk.cloud.github.GithubAPI.GithubRepositoryDetails
+	}
+	func getUserDetails(accessToken as string) as jk.cloud.github.GithubAPI.GithubUserDetails
+	func getUserEmailAddress(accessToken as string) as string
+	func getUserRepositories(accessToken as string) as vector<jk.cloud.github.GithubAPI.GithubRepositoryDetails>
+	func getCtx as jk.log.LoggingContext #getterMethod
+	func setCtx(v as jk.log.LoggingContext) as jk.cloud.github.GithubAPI #setterMethod
+}

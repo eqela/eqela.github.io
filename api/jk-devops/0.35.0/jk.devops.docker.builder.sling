@@ -1,0 +1,13 @@
+class name jk.devops.docker.builder.DockerBuilder header public
+{
+	import jk.lang
+	import jk.fs
+	import jk.log
+	import jk.env
+	import jk.devops.docker
+	import jk.devops.sling
+	ctor(docker as jk.devops.docker.Docker)
+	property ctx as jk.log.LoggingContext { hasset hasget }
+	func executeSlingBuilder(dir as jk.fs.File, sb as jk.devops.sling.SlingBuilder) as string
+	func buildFromSourceDirectory(dir as jk.fs.File, tag as string, buildConfig as jk.lang.DynamicMap)
+}

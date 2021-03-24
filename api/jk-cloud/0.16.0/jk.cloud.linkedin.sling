@@ -1,0 +1,31 @@
+class name jk.cloud.linkedin.LinkedInAPI header extends jk.cloud.common.CloudClient public
+{
+	import jk.lang
+	import jk.json
+	import jk.cloud.common
+	import jk.log
+	ctor
+	class name LinkedInUserDetails header extends jk.json.JSONObjectAdapter implements jk.lang.StringObject public static
+	{
+		import jk.json
+		ctor
+		func setId(value as string) as jk.cloud.linkedin.LinkedInAPI.LinkedInUserDetails
+		func getId as string
+		func setLocalizedFirstName(value as string) as jk.cloud.linkedin.LinkedInAPI.LinkedInUserDetails
+		func getLocalizedFirstName as string
+		func setLocalizedLastName(value as string) as jk.cloud.linkedin.LinkedInAPI.LinkedInUserDetails
+		func getLocalizedLastName as string
+		func toJsonObject override as object
+		func fromJsonObject(o as object) override as bool
+		func fromJsonString(o as string) as bool
+		func toJsonString as string
+		func toString as string
+		func forJsonString(o as string) static as jk.cloud.linkedin.LinkedInAPI.LinkedInUserDetails
+		func forJsonObject(o as object) static as jk.cloud.linkedin.LinkedInAPI.LinkedInUserDetails
+	}
+	func getUserDetails(accessToken as string) as jk.cloud.linkedin.LinkedInAPI.LinkedInUserDetails
+	func getUserEmailAddress(accessToken as string) as string
+	func getUserProfilePictureUrl(accessToken as string) as string
+	func getCtx as jk.log.LoggingContext #getterMethod
+	func setCtx(v as jk.log.LoggingContext) as jk.cloud.linkedin.LinkedInAPI #setterMethod
+}

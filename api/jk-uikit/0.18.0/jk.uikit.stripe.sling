@@ -1,0 +1,36 @@
+class name jk.uikit.stripe.StripeWidget header extends jk.widget.VerticalBoxWidget public #widget
+{
+	import jk.lang
+	import jk.lang
+	import jk.ui
+	import jk.gfx
+	import jk.widget
+	import jk.widget.common
+	ctor(context as jk.ui.GuiApplicationContext)
+	func initializeWidget override
+	func confirmSetup(clientSecret as string, callback as function<void,string,jk.lang.Error>)
+	func createWidget override
+	func getWidgetKey as string #getterMethod
+	func setWidgetKey(v as string) as jk.uikit.stripe.StripeWidget #setterMethod
+}
+class name jk.uikit.stripe.StripeCardInputWidget header implements jk.widget.ParentAwareWidget extends jk.widget.Widget public #widget
+{
+	import jk.lang
+	import jk.lang
+	import jk.ui
+	import jk.gfx
+	import jk.widget
+	import jk.json
+	func forKey(context as jk.ui.GuiApplicationContext, secretKey as string) static as jk.uikit.stripe.StripeCardInputWidget
+	ctor(ctx as jk.ui.GuiApplicationContext)
+	func setCustomStyle(style as map) as jk.uikit.stripe.StripeCardInputWidget
+	func confirmCardPayment(paymentIntentClientSecret as string, callback as function<void,string,jk.lang.Error>)
+	func confirmCardSetup(setupIntentClientSecret as string, billingDetails as map<string,string>, callback as function<void,string,jk.lang.Error>)
+	func onWidgetAddingToParent
+	func onWidgetAddedToParent
+	func onWidgetRemovedFromParent
+	func getWidgetInitializedHandler as function<void> #getterMethod
+	func setWidgetInitializedHandler(v as function<void>) as jk.uikit.stripe.StripeCardInputWidget #setterMethod
+	func getWidgetSecretKey as string #getterMethod
+	func setWidgetSecretKey(v as string) as jk.uikit.stripe.StripeCardInputWidget #setterMethod
+}

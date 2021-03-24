@@ -1,0 +1,13 @@
+{
+	"moduleDescription" : "Support for the Firebase API\n",
+	"type" : "module",
+	"moduleTitle" : "Firebase API support",
+	"moduleId" : "jk.cloud.firebase",
+	"entities" : [
+		{
+			"type" : "class",
+			"name" : "FirebaseCloudMessaging",
+			"description" : ""
+		}
+	]
+}

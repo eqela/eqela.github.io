@@ -1,0 +1,85 @@
+<html>
+<head>
+<title>jk.cloud.template.SecurityGroupRule | JK Cloud [0.16.0] - API Reference</title>
+<link rel="stylesheet" type="text/css" href="style.css" />
+<meta name="viewport" content="initial-scale=1,maximum-scale=1" />
+<meta property="og:description" content="jk.cloud.template.SecurityGroupRule | JK Cloud [0.16.0] - API Reference" />
+<meta property="og:title" content="jk.cloud.template.SecurityGroupRule | JK Cloud [0.16.0] - API Reference" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:description" content="jk.cloud.template.SecurityGroupRule | JK Cloud [0.16.0] - API Reference" />
+</head>
+<body><div class="content">
+<a class="back" href="index.html">&laquo; JK Cloud [0.16.0]</a><div class="intro">
+<h1><span class="keyword">class</span> <span class="symbol">jk.cloud.template.SecurityGroupRule</span></h1>
+<p></p>
+</div>
+<div class="list">
+<div class="title">Base Types</div>
+<div class="entry">
+<div class="name"><span class="keyword">extends</span> <a class="datatype" href="jk.cloud.template.Resource.html">jk.cloud.template.Resource</a></div></div>
+</div>
+<div class="list">
+<div class="title">Constants</div>
+<div class="entry">
+<div class="name"><span class="keyword">const</span> <span class="symbol">TYPE_DEFAULT</span> <span class="keyword">as</span> <span class="datatype">var</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">const</span> <span class="symbol">TYPE_ALLOW</span> <span class="keyword">as</span> <span class="datatype">var</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">const</span> <span class="symbol">TYPE_DISALLOW</span> <span class="keyword">as</span> <span class="datatype">var</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">const</span> <span class="symbol">DIRCTION_DEFAULT</span> <span class="keyword">as</span> <span class="datatype">var</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">const</span> <span class="symbol">DIRECTION_INBOUND</span> <span class="keyword">as</span> <span class="datatype">var</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">const</span> <span class="symbol">DIRECTION_OUTBOUND</span> <span class="keyword">as</span> <span class="datatype">var</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">const</span> <span class="symbol">PROTOCOL_ANY</span> <span class="keyword">as</span> <span class="datatype">var</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">const</span> <span class="symbol">PROTOCOL_TCP</span> <span class="keyword">as</span> <span class="datatype">var</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">const</span> <span class="symbol">PROTOCOL_UDP</span> <span class="keyword">as</span> <span class="datatype">var</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">const</span> <span class="symbol">PROTOCOL_ICMP</span> <span class="keyword">as</span> <span class="datatype">var</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">const</span> <span class="symbol">PROTOCOL_ESP</span> <span class="keyword">as</span> <span class="datatype">var</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">const</span> <span class="symbol">PROTOCOL_AH</span> <span class="keyword">as</span> <span class="datatype">var</span></div></div>
+</div>
+<div class="list">
+<div class="title">Instance Methods</div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getPriority</span> <span class="keyword">as</span> <span class="datatype">int</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setPriority</span> ( v <span class="keyword">as</span> <span class="datatype">dynamic</span> ) <span class="keyword">as</span> <a class="datatype" href="jk.cloud.template.SecurityGroupRule.html">jk.cloud.template.SecurityGroupRule</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getType</span> <span class="keyword">as</span> <span class="datatype">int</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setType</span> ( v <span class="keyword">as</span> <span class="datatype">dynamic</span> ) <span class="keyword">as</span> <a class="datatype" href="jk.cloud.template.SecurityGroupRule.html">jk.cloud.template.SecurityGroupRule</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getDirection</span> <span class="keyword">as</span> <span class="datatype">int</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setDirection</span> ( v <span class="keyword">as</span> <span class="datatype">dynamic</span> ) <span class="keyword">as</span> <a class="datatype" href="jk.cloud.template.SecurityGroupRule.html">jk.cloud.template.SecurityGroupRule</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getProtocol</span> <span class="keyword">as</span> <span class="datatype">int</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setProtocol</span> ( v <span class="keyword">as</span> <span class="datatype">dynamic</span> ) <span class="keyword">as</span> <a class="datatype" href="jk.cloud.template.SecurityGroupRule.html">jk.cloud.template.SecurityGroupRule</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getSourceAddressBlock</span> <span class="keyword">as</span> <a class="datatype" href="jk.cloud.template.CidrBlock.html">jk.cloud.template.CidrBlock</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setSourceAddressBlock</span> ( v <span class="keyword">as</span> <span class="datatype">dynamic</span> ) <span class="keyword">as</span> <a class="datatype" href="jk.cloud.template.SecurityGroupRule.html">jk.cloud.template.SecurityGroupRule</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getDestinationAddressBlock</span> <span class="keyword">as</span> <a class="datatype" href="jk.cloud.template.CidrBlock.html">jk.cloud.template.CidrBlock</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setDestinationAddressBlock</span> ( v <span class="keyword">as</span> <span class="datatype">dynamic</span> ) <span class="keyword">as</span> <a class="datatype" href="jk.cloud.template.SecurityGroupRule.html">jk.cloud.template.SecurityGroupRule</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getSourcePortRange</span> <span class="keyword">as</span> <a class="datatype" href="jk.cloud.template.PortRange.html">jk.cloud.template.PortRange</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setSourcePortRange</span> ( v <span class="keyword">as</span> <span class="datatype">dynamic</span> ) <span class="keyword">as</span> <a class="datatype" href="jk.cloud.template.SecurityGroupRule.html">jk.cloud.template.SecurityGroupRule</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getDestinationPortRange</span> <span class="keyword">as</span> <a class="datatype" href="jk.cloud.template.PortRange.html">jk.cloud.template.PortRange</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setDestinationPortRange</span> ( v <span class="keyword">as</span> <span class="datatype">dynamic</span> ) <span class="keyword">as</span> <a class="datatype" href="jk.cloud.template.SecurityGroupRule.html">jk.cloud.template.SecurityGroupRule</a></div></div>
+</div>
+</div>
+</body>
+</html>

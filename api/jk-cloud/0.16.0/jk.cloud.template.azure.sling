@@ -1,0 +1,49 @@
+class name jk.cloud.template.azure.ArmTemplateGenerator header public
+{
+	import jk.lang
+	import jk.fs
+	import jk.json
+	import jk.cloud.template
+	ctor
+	func addToCustomTemplates(template as jk.cloud.template.CustomTemplate) as jk.cloud.template.CustomTemplate
+	func getCurrentGroup as string
+	func setTagForResource(resource as jk.lang.DynamicMap, key as string, value as string)
+	func addResource(resource as jk.lang.DynamicMap)
+	func getResourceTypeString(resource as jk.cloud.template.Resource) as string
+	func getResourceIdString(obj as jk.cloud.template.Resource) as string
+	func getSubnetResourceId(vnet as jk.cloud.template.Network, subnet as jk.cloud.template.Subnet) as string
+	func getCurrentSubnetResourceId as string
+	func getPublicIpAddressResourceId(ipname as string) as string
+	func validString(str as string, desc as string) as string
+	func cidrBlockToString(block as jk.cloud.template.CidrBlock, require as bool, desc as string = null) as string
+	func securityGroupRuleTypeToString(value as int) as string
+	func securityGroupDirectionToString(value as int) as string
+	func securityGroupProtocolToString(value as int) as string
+	func portRangeToString(range as jk.cloud.template.PortRange) as string
+	func getOsImageReference(osid as string) as jk.cloud.template.azure.ArmTemplateGenerator.OsImageReference
+	func translateVmSize(size as string) as string
+	func setMapValue(map as jk.lang.DynamicMap, key as string, value as string)
+	func getMapVector(map as jk.lang.DynamicMap, key as string) as jk.lang.DynamicVector
+	func addToMapVector(map as jk.lang.DynamicMap, key as string, data as object)
+	func getMapMap(map as jk.lang.DynamicMap, key as string) as jk.lang.DynamicMap
+	func addResourceDependency(data as jk.lang.DynamicMap, resource as jk.cloud.template.Resource)
+	func addExplicitDependency(data as jk.lang.DynamicMap, dependency as string)
+	func createResource(type as string, apiVersion as string, name as string, location as string = null) as jk.lang.DynamicMap
+	func dumpSecurityGroup(group as jk.cloud.template.SecurityGroup)
+	func createPublicIpAddress(name as string, publicName as string) as string
+	func createNetworkInterface(name as string, securityGroup as jk.cloud.template.SecurityGroup, hasPublicIp as bool, publicName as string) as string
+	func dumpVirtualMachine(vm as jk.cloud.template.VirtualMachine)
+	func generateNetworkProfileForContainer(name as string) as string
+	func dumpContainerInstance(instance as jk.cloud.template.ContainerInstance)
+	func createPrivateDnsZone(zonename as string, registrationEnabled as bool) as string
+	func dumpNetwork(network as jk.cloud.template.Network)
+	func dumpMsSqlServer(server as jk.cloud.template.MsSqlServer)
+	func dumpContainerRegistry(registry as jk.cloud.template.ContainerRegistry)
+	func dumpApiGateway(apigw as jk.cloud.template.ApiGateway)
+	func dumpResource(resource as jk.cloud.template.Resource)
+	func processResource(resource as jk.cloud.template.Resource, location as string)
+	func generateTemplate(group as string) as jk.lang.DynamicMap
+	func generateTemplateString(group as string) as string
+	func getTemplates as jk.lang.DynamicMap
+	func writeTemplates(dir, prefix as string = null) as vector<jk.fs.File>
+}

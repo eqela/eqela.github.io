@@ -1,0 +1,32 @@
+class name jk.http.server.sql.HTTPServerSQLResultSetToJSONResponseWorker header extends jk.http.server.HTTPServerResponseWorker public
+{
+	import jk.lang
+	import jk.sql
+	import jk.http.server
+	import jk.log
+	import jk.text
+	ctor
+	func forResultSet(results as jk.sql.SQLResultSetIterator) static as jk.http.server.sql.HTTPServerSQLResultSetToJSONResponseWorker
+	func getMimeType override as string
+	func getWorkerDescription override as string
+	func onStart override
+	func tick override as bool
+	func onEnd override
+	func getResultSet as jk.sql.SQLResultSetIterator #getterMethod
+	func setResultSet(v as jk.sql.SQLResultSetIterator) as jk.http.server.sql.HTTPServerSQLResultSetToJSONResponseWorker #setterMethod
+	func getRecordsPerPacket as int #getterMethod
+	func setRecordsPerPacket(v as int) as jk.http.server.sql.HTTPServerSQLResultSetToJSONResponseWorker #setterMethod
+}
+class name jk.http.server.sql.HTTPServerSQLUtil header public
+{
+	import jk.lang
+	import jk.sql
+	ctor
+	func getSQLParameterVectorFromQuery(req as jk.http.server.HTTPServerRequest) static as vector
+	func getSQLParameterVectorFromBody(req as jk.http.server.HTTPServerRequest) static as vector
+	func sendSQLReadResponse(req as jk.http.server.HTTPServerRequest, db as jk.sql.SQLDatabase, sql as string, params as vector) static
+	func sendSQLOperationResponse(req as jk.http.server.HTTPServerRequest, db as jk.sql.SQLDatabase, sql as string, params as vector) static
+	func addWildCards(params as vector, index as int) static
+	func addLeftWildCard(params as vector, index as int) static
+	func addRightWildCard(params as vector, index as int) static
+}

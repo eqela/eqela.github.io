@@ -1,0 +1,14 @@
+class name jk.uikit.notification.NotificationWidget header extends jk.uikit.core.CardFrameWidget public #widget
+{
+	import jk.lang
+	import jk.lang
+	import jk.ui
+	import jk.gfx
+	import jk.widget
+	import jk.uikit.core
+	ctor(context as jk.ui.GuiApplicationContext)
+	func addNotificationContent(widget as jk.widget.Widget)
+	func setWidgetFontUnderline(underline as bool)
+	func setWidgetClickHandler(handler as function<void>)
+	func createWidget override
+}

@@ -1,0 +1,14 @@
+class name jk.cloud.teams.TeamsWebhookClient header public
+{
+	import jk.lang
+	import jk.log
+	import jk.json
+	import jk.cloud.common
+	ctor
+	func forUrl(url as string) static as jk.cloud.teams.TeamsWebhookClient
+	func sendTextMessage(text as string) as bool
+	func getUrl as string #getterMethod
+	func setUrl(v as string) as jk.cloud.teams.TeamsWebhookClient #setterMethod
+	func getCtx as jk.log.LoggingContext #getterMethod
+	func setCtx(v as jk.log.LoggingContext) as jk.cloud.teams.TeamsWebhookClient #setterMethod
+}

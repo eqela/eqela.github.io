@@ -1,0 +1,68 @@
+{
+	"moduleDescription" : "Classes for implementing a common document model.\n",
+	"type" : "module",
+	"moduleTitle" : "Common document model",
+	"moduleId" : "jk.doc.model",
+	"entities" : [
+		{
+			"type" : "class",
+			"name" : "ParagraphNode",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "TableRowNode",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "TextNode",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "TableNode",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "HeadingNode",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "SectionNode",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "BulletListNode",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "DocumentNode",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "ItalicContainerNode",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "ContainerNode",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "BoldContainerNode",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "BaseNode",
+			"description" : ""
+		}
+	]
+}

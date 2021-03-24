@@ -1,0 +1,11 @@
+class name jk.cloud.fb.FacebookGraph header public
+{
+	import jk.lang
+	import jk.json
+	import jk.web.json
+	import jk.cloud.common
+	ctor
+	func getUserProfile(fbUserId as string, fbAccessToken as string, fields as jk.lang.DynamicVector, callback as function<void,jk.lang.DynamicMap,jk.lang.Error>) static
+	func getUserPhoto(fbUserId as string, width as int, height as int, callback as function<void,jk.lang.KeyValueList<string,string>,buffer,jk.lang.Error>) static
+	func replaceUnicodeChars(response as string) static as string
+}

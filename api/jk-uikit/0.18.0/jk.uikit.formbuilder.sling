@@ -1,0 +1,308 @@
+class name jk.uikit.formbuilder.FormFieldBlankContainerWidget header implements jk.widget.WidgetWithValue extends jk.widget.LayerWidget public #widget
+{
+	import jk.lang
+	import jk.lang
+	import jk.ui
+	import jk.gfx
+	import jk.widget
+	import jk.uikit.core
+	ctor(ctx as jk.ui.GuiApplicationContext)
+	func addWidget(w as jk.widget.Widget) override as jk.widget.ContainerWidget
+	func setWidgetLabelDisabled(disable as bool)
+	func setWidgetValue(value as object)
+	func getWidgetValue as object
+	func createWidget override
+}
+class name jk.uikit.formbuilder.FormFieldSelectWidget header implements jk.widget.WidgetWithValue extends jk.uikit.formbuilder.FormFieldWidget public #widget
+{
+	import jk.lang
+	import jk.lang
+	import jk.ui
+	import jk.gfx
+	import jk.widget
+	import jk.uikit.core
+	import jk.widget.common
+	ctor(ctx as jk.ui.GuiApplicationContext)
+	func setWidgetFormLabel(value as string) as jk.uikit.formbuilder.FormFieldSelectWidget
+	func setWidgetItems(items as jk.lang.KeyValueList<string,string>)
+	func setWidgetValueChangeHandler(handler as function<void>)
+	func setWidgetValue(value as object)
+	func getWidgetKey as object
+	func getWidgetValue as object
+	func getSelectedWidgetIndex as int
+	func validFeedback override
+	func invalidFeedback override
+	func createWidget override
+}
+class name jk.uikit.formbuilder.FormFieldCheckBoxWidget header extends jk.widget.HorizontalBoxWidget public #widget
+{
+	import jk.lang
+	import jk.lang
+	import jk.ui
+	import jk.gfx
+	import jk.widget
+	import jk.uikit.core
+	import jk.widget.common
+	ctor(ctx as jk.ui.GuiApplicationContext)
+	func setWidgetFormRowLabel(value as string) as jk.uikit.formbuilder.FormFieldCheckBoxWidget
+	func setWidgetFormLabel(value as string) as jk.uikit.formbuilder.FormFieldCheckBoxWidget
+	func setWidgetChecked(x as bool)
+	func getWidgetChecked as bool
+	func createWidget override
+}
+class name jk.uikit.formbuilder.FormFieldAutoSuggestWidget header implements jk.widget.WidgetWithValue extends jk.uikit.formbuilder.FormFieldWidget public #widget
+{
+	import jk.lang
+	import jk.lang
+	import jk.ui
+	import jk.gfx
+	import jk.widget
+	import jk.uikit.core
+	import jk.widget.common
+	ctor(ctx as jk.ui.GuiApplicationContext)
+	func initializeWidget override
+	func setWidgetOnLoseFocusHandler(handler as function<void>)
+	func setWidgetValueChangeHandler(handler as function<void>) as jk.uikit.formbuilder.FormFieldAutoSuggestWidget
+	func setWidgetSearchData(callback as function<void>) as jk.uikit.formbuilder.FormFieldAutoSuggestWidget
+	func displaySuggestion(items as vector<string>) as jk.uikit.formbuilder.FormFieldAutoSuggestWidget
+	func setWidgetPlaceholder(value as string) as jk.uikit.formbuilder.FormFieldAutoSuggestWidget
+	func setWidgetItems(items as vector<string>)
+	func getWidgetItems as vector<string>
+	func setWidgetText(str as string)
+	func getWidgetText as string
+	func getSelectedItem as string
+	func setWidgetFormLabel(value as string) as jk.uikit.formbuilder.FormFieldAutoSuggestWidget
+	func setDefaultNoRecordMessage(errorMessage as string)
+	func setWidgetValue(value as object)
+	func getWidgetValue as object
+	func validateInputValue override as jk.lang.Error
+	func validFeedback override
+	func invalidFeedback override
+	func closeAutoSuggestPopup
+	func createWidget override
+	func getWidgetValidator as function<jk.lang.Error,string> #getterMethod
+	func setWidgetValidator(v as function<jk.lang.Error,string>) as jk.uikit.formbuilder.FormFieldAutoSuggestWidget #setterMethod
+}
+class name jk.uikit.formbuilder.FormFieldWidget header implements jk.uikit.core.InputFieldListener extends jk.widget.VerticalBoxWidget abstract public #widget
+{
+	import jk.lang
+	import jk.lang
+	import jk.ui
+	import jk.gfx
+	import jk.widget
+	import jk.uikit.core
+	ctor(ctx as jk.ui.GuiApplicationContext)
+	func initializeWidget override
+	func onValueChange(empty as bool)
+	func validateInputValue virtual as jk.lang.Error
+	func validFeedback abstract
+	func invalidFeedback abstract
+	func createWidget override
+	func getRequired as bool #getterMethod
+	func setRequired(v as bool) as jk.uikit.formbuilder.FormFieldWidget #setterMethod
+	func getParentForm as jk.uikit.formbuilder.FormKitWidget #getterMethod
+	func setParentForm(v as jk.uikit.formbuilder.FormKitWidget) as jk.uikit.formbuilder.FormFieldWidget #setterMethod
+	func getFormFieldId as string #getterMethod
+	func setFormFieldId(v as string) as jk.uikit.formbuilder.FormFieldWidget #setterMethod
+	func getFormFieldError as string #getterMethod
+	func setFormFieldError(v as string) as jk.uikit.formbuilder.FormFieldWidget #setterMethod
+	func getLabelDisabled as bool #getterMethod
+	func setLabelDisabled(v as bool) as jk.uikit.formbuilder.FormFieldWidget #setterMethod
+}
+class name jk.uikit.formbuilder.FormFieldTextWidget header implements jk.widget.WidgetWithValue extends jk.uikit.formbuilder.FormFieldWidget public #widget
+{
+	import jk.lang
+	import jk.lang
+	import jk.ui
+	import jk.gfx
+	import jk.widget
+	import jk.uikit.core
+	import jk.uikit.boxicons
+	var TYPE_DEFAULT public static const as int
+	var TYPE_NAME public static const as int
+	var TYPE_PASSWORD public static const as int
+	var ALIGN_LEFT public static const as int
+	var ALIGN_RIGHT public static const as int
+	var ALIGN_CENTER public static const as int
+	ctor(ctx as jk.ui.GuiApplicationContext)
+	func setWidgetFormLabel(value as string) as jk.uikit.formbuilder.FormFieldTextWidget
+	func setWidgetFormValue(value as string) as jk.uikit.formbuilder.FormFieldTextWidget
+	func setWidgetAlignLabel(align as int #notLiteral) as jk.uikit.formbuilder.FormFieldTextWidget
+	func setWidgetPlaceholder(value as string) as jk.uikit.formbuilder.FormFieldTextWidget
+	func setWidgetRemoveLabel(remove as bool)
+	func setWidgetValue(value as object)
+	func getWidgetValue as object
+	func setWidgetType(type as int) as jk.uikit.formbuilder.FormFieldTextWidget
+	func validateInputValue override as jk.lang.Error
+	func validFeedback override
+	func invalidFeedback override
+	func createWidgetEyeBallIcon
+	func setWidgetOnLoseFocusHandler(handler as function<void>) as jk.uikit.formbuilder.FormFieldTextWidget
+	func createWidget override
+	func getIsTopLabel as bool #getterMethod
+	func setIsTopLabel(v as bool) as jk.uikit.formbuilder.FormFieldTextWidget #setterMethod
+	func getWidgetValidator as function<jk.lang.Error,string> #getterMethod
+	func setWidgetValidator(v as function<jk.lang.Error,string>) as jk.uikit.formbuilder.FormFieldTextWidget #setterMethod
+}
+class name jk.uikit.formbuilder.FormFieldStaticTextWidget header implements jk.widget.WidgetWithValue extends jk.widget.HorizontalBoxWidget public #widget
+{
+	import jk.lang
+	import jk.lang
+	import jk.ui
+	import jk.gfx
+	import jk.widget
+	import jk.uikit.core
+	ctor(ctx as jk.ui.GuiApplicationContext)
+	func setWidgetFormLabel(value as string) as jk.uikit.formbuilder.FormFieldStaticTextWidget
+	func setWidgetFormValue(str as string) as jk.uikit.formbuilder.FormFieldStaticTextWidget
+	func setWidgetValue(value as object)
+	func getWidgetValue as object
+	func setWidgetFontItalic(italic as bool) as jk.uikit.formbuilder.FormFieldStaticTextWidget
+	func setWidgetTextColor(color as jk.gfx.Color) as jk.uikit.formbuilder.FormFieldStaticTextWidget
+	func setWidgetFontSize(fontSize as double #notLiteral) as jk.uikit.formbuilder.FormFieldStaticTextWidget
+	func createWidget override
+	func getIsValueRequired as bool #getterMethod
+	func setIsValueRequired(v as bool) as jk.uikit.formbuilder.FormFieldStaticTextWidget #setterMethod
+}
+class name jk.uikit.formbuilder.FormFieldAvatarWidget header implements jk.widget.WidgetWithValue extends jk.widget.LayerWidget public #widget
+{
+	import jk.lang
+	import jk.lang
+	import jk.ui
+	import jk.gfx
+	import jk.widget
+	import jk.uikit.core
+	import jk.uikit.camera
+	import jk.widget.photo
+	import jk.uikit.dialog
+	import jk.widget.common
+	import jk.widget.camera
+	import jk.widget.file
+	import jk.uikit.boxicons
+	import jk.uikit.crop
+	var ALIGN_LEFT public static const as int
+	var ALIGN_RIGHT public static const as int
+	var ALIGN_CENTER public static const as int
+	ctor(ctx as jk.ui.GuiApplicationContext)
+	func initializeWidget override
+	func onOpenFileSelector
+	func onPictureTaken(img as jk.gfx.Image, error as jk.lang.Error)
+	func createLayerWithBackgroundColorWidget as jk.widget.Widget
+	func onChangeProfilePhoto
+	func onUpdateProfilePhoto
+	func getWidgetValue as object
+	func setWidgetValue(value as object)
+	func setWidgetRemoveLabel(remove as bool)
+	func setWidgetFormLabel(value as string) as jk.uikit.formbuilder.FormFieldAvatarWidget
+	func setWidgetImageResource(value as string) as jk.uikit.formbuilder.FormFieldAvatarWidget
+	func setWidgetAlignLabel(align as int #notLiteral) as jk.uikit.formbuilder.FormFieldAvatarWidget
+	func createWidget override
+}
+class name jk.uikit.formbuilder.FormKitWidget header extends jk.widget.form.FormWidget public #widget
+{
+	import jk.lang
+	import jk.lang
+	import jk.ui
+	import jk.gfx
+	import jk.widget
+	import jk.uikit.core
+	import jk.widget.form
+	import jk.uikit.stripe
+	ctor(ctx as jk.ui.GuiApplicationContext)
+	func setWidgetElementSpacing(sz as int #notLiteral) as jk.uikit.formbuilder.FormKitWidget
+	func removeWidgetFromForm(id as string)
+	func setWidgetForm(form as string) as jk.uikit.formbuilder.FormKitWidget
+	func setWidgetFormDeclaration(formDec as jk.widget.form.FormDeclaration) as jk.uikit.formbuilder.FormKitWidget
+	func setWidgetFormData(formData as jk.lang.DynamicMap) as jk.uikit.formbuilder.FormKitWidget
+	func setWidgetFormMargin(sz as int #notLiteral) as jk.uikit.formbuilder.FormKitWidget
+	func setWidgetValidators(vals as map) as jk.uikit.formbuilder.FormKitWidget
+	func getWidgetValidator(valname as string) as function<jk.lang.Error,string>
+	func addFormButton(button as jk.uikit.core.ButtonFrameWidget) as jk.uikit.formbuilder.FormKitWidget
+	func createFormFieldWidget(element as jk.widget.form.FormDeclaration.Element) virtual as jk.widget.Widget
+	func createWidgetForElement(element as jk.widget.form.FormDeclaration.Element) override as jk.widget.Widget
+	func notifyFormForFieldState(fieldId as string, empty as bool)
+	func onFormFieldsChanged
+	func getFormFieldCompleteness as bool
+	func onValidInputs(fieldId as string)
+	func isAllInputValid as bool
+	func getCompleteFields as jk.lang.StringSet #getterMethod
+	func setCompleteFields(v as jk.lang.StringSet) as jk.uikit.formbuilder.FormKitWidget #setterMethod
+	func getWidgetFormEditable as bool #getterMethod
+	func setWidgetFormEditable(v as bool) as jk.uikit.formbuilder.FormKitWidget #setterMethod
+	func getOnFieldChangeHandler as function<void> #getterMethod
+	func setOnFieldChangeHandler(v as function<void>) as jk.uikit.formbuilder.FormKitWidget #setterMethod
+}
+class name jk.uikit.formbuilder.FormFieldMobileWidget header implements jk.widget.WidgetWithValue extends jk.uikit.formbuilder.FormFieldWidget public #widget
+{
+	import jk.lang
+	import jk.lang
+	import jk.ui
+	import jk.gfx
+	import jk.widget
+	import jk.uikit.core
+	import jk.json
+	ctor(ctx as jk.ui.GuiApplicationContext)
+	func initializeWidget override
+	func setWidgetFormLabel(value as string) as jk.uikit.formbuilder.FormFieldMobileWidget
+	func setWidgetPlaceholder(value as string) as jk.uikit.formbuilder.FormFieldMobileWidget
+	func setWidgetAreaLabel(str as string) as jk.uikit.formbuilder.FormFieldMobileWidget
+	func setWidgetFormValue(value as string) as jk.uikit.formbuilder.FormFieldMobileWidget
+	func setInputMaxLength(len as int) as jk.uikit.formbuilder.FormFieldMobileWidget
+	func setWidgetValue(value as object)
+	func getWidgetValue as object
+	func setWidgetType(type as int) as jk.uikit.formbuilder.FormFieldMobileWidget
+	func validateInputValue override as jk.lang.Error
+	func validFeedback override
+	func invalidFeedback override
+	func createWidget override
+	func getCodeLabel as jk.widget.LabelWidget #getterMethod
+	func setCodeLabel(v as jk.widget.LabelWidget) as jk.uikit.formbuilder.FormFieldMobileWidget #setterMethod
+	func getSelect as jk.uikit.core.SelectFieldWidget #getterMethod
+	func setSelect(v as jk.uikit.core.SelectFieldWidget) as jk.uikit.formbuilder.FormFieldMobileWidget #setterMethod
+	func getCodeContainer as jk.widget.Widget #getterMethod
+	func setCodeContainer(v as jk.widget.Widget) as jk.uikit.formbuilder.FormFieldMobileWidget #setterMethod
+	func getCodeFieldDropDown as bool #getterMethod
+	func setCodeFieldDropDown(v as bool) as jk.uikit.formbuilder.FormFieldMobileWidget #setterMethod
+	func getCodeLabelValue as string #getterMethod
+	func setCodeLabelValue(v as string) as jk.uikit.formbuilder.FormFieldMobileWidget #setterMethod
+	func getPlaceholderValue as string #getterMethod
+	func setPlaceholderValue(v as string) as jk.uikit.formbuilder.FormFieldMobileWidget #setterMethod
+	func getWidgetValidator as function<jk.lang.Error,string> #getterMethod
+	func setWidgetValidator(v as function<jk.lang.Error,string>) as jk.uikit.formbuilder.FormFieldMobileWidget #setterMethod
+}
+class name jk.uikit.formbuilder.FormFieldStripeInputWidget header extends jk.widget.VerticalBoxWidget public #widget
+{
+	import jk.lang
+	import jk.lang
+	import jk.ui
+	import jk.gfx
+	import jk.widget
+	import jk.uikit.core
+	import jk.uikit.stripe
+	ctor(ctx as jk.ui.GuiApplicationContext)
+	func initializeWidget override
+	func setWidgetKey(value as string) as jk.uikit.formbuilder.FormFieldStripeInputWidget
+	func confirmCardPayment(paymentIntentClientSecret as string, callback as function<void,string,jk.lang.Error>)
+	func createWidget override
+}
+class name jk.uikit.formbuilder.FormFieldNameWidget header implements jk.widget.WidgetWithValue extends jk.widget.HorizontalBoxWidget public #widget
+{
+	import jk.lang
+	import jk.lang
+	import jk.ui
+	import jk.gfx
+	import jk.widget
+	import jk.uikit.core
+	import jk.json
+	ctor(ctx as jk.ui.GuiApplicationContext)
+	func setWidgetValidator(fnValidator as function<jk.lang.Error,string>, lnValidator as function<jk.lang.Error,string>) as jk.uikit.formbuilder.FormFieldNameWidget
+	func setWidgetFormLabel(value as string) as jk.uikit.formbuilder.FormFieldNameWidget
+	func getWidgetValue as object
+	func setWidgetValue(val as object)
+	func setWidgetId(fnId as string, lnId as string) as jk.uikit.formbuilder.FormFieldNameWidget
+	func setFormFieldNameIds(fnId as string, lnId as string)
+	func setFormFieldNameErrors(fnError as string, lnError as string)
+	func setWidgetRequired(fnRequired as bool, lnRequired as bool) as jk.uikit.formbuilder.FormFieldNameWidget
+	func setParentForm(widget as jk.uikit.formbuilder.FormKitWidget)
+	func createWidget override
+}

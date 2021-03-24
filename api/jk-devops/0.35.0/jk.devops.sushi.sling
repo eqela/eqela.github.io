@@ -1,0 +1,41 @@
+class name jk.devops.sushi.SushiDocker header public
+{
+	import jk.lang
+	import jk.fs
+	import jk.log
+	import jk.env
+	import jk.devops.docker
+	ctor
+	func buildImageFromCodeAndVM(ctx as jk.log.LoggingContext, codeFile as jk.fs.File, vmFile as jk.fs.File) as string
+}
+class name jk.devops.sushi.SushiVMCache header public
+{
+	import jk.lang
+	import jk.fs
+	import jk.env
+	import jk.log
+	import jk.web
+	import jk.archive
+	ctor
+	func forDefaultDirectory static as jk.devops.sushi.SushiVMCache
+	func forDirectory(dir as jk.fs.File) static as jk.devops.sushi.SushiVMCache
+	func downloadVM(version as string, platform as string) as jk.fs.File
+	func getVM(version as string, platform as string) as jk.fs.File
+	func getCtx as jk.log.LoggingContext #getterMethod
+	func setCtx(v as jk.log.LoggingContext) as jk.devops.sushi.SushiVMCache #setterMethod
+	func getCacheDirectory as jk.fs.File #getterMethod
+	func setCacheDirectory(v as jk.fs.File) as jk.devops.sushi.SushiVMCache #setterMethod
+}
+class name jk.devops.sushi.SushiVM header public
+{
+	import jk.lang
+	import jk.fs
+	import jk.log
+	ctor
+	func getCurrentVMFile static as jk.fs.File
+	func getVMCodeSizeForFile(file as jk.fs.File) static as long
+	func readSushiVMCodeFromFile(file as jk.fs.File) static as buffer
+	func compressIfNecessaryAndPossible(code as buffer) as buffer
+	func wrapCodeFileToVMFile(ctx as jk.log.LoggingContext, vm as jk.fs.File, program as jk.fs.File, target as jk.fs.File) as bool
+	func wrapCodeBufferToVMBuffer(ctx as jk.log.LoggingContext, sushi as buffer, code as buffer, target as jk.fs.File) as bool
+}

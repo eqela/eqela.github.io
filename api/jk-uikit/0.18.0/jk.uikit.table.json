@@ -1,0 +1,13 @@
+{
+	"moduleDescription" : "",
+	"type" : "module",
+	"moduleTitle" : "",
+	"moduleId" : "jk.uikit.table",
+	"entities" : [
+		{
+			"type" : "class",
+			"name" : "DataTableWidget",
+			"description" : ""
+		}
+	]
+}

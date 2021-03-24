@@ -1,0 +1,26 @@
+class name jk.devops.openssl.SslCertificateGenerator header public
+{
+	import jk.lang
+	import jk.fs
+	import jk.env
+	import jk.process
+	ctor
+	property openssl as jk.fs.File { hasset hasget }
+	property name as string { hasset hasget }
+	property csrDetails as string { hasset hasget }
+	property validity as int { hasset hasget }
+	func forName(name as string) static as jk.devops.openssl.SslCertificateGenerator
+	func generatePem as string
+}
+class name jk.devops.openssl.RsaKeyPair header public
+{
+	import jk.lang
+	import jk.os
+	import jk.fs
+	import jk.env
+	import jk.process
+	ctor
+	func generate static as jk.devops.openssl.RsaKeyPair
+	property privateKey as string { hasset hasget }
+	property publicKey as string { hasset hasget }
+}

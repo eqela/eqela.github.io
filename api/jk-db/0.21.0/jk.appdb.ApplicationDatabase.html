@@ -1,0 +1,31 @@
+<html>
+<head>
+<title>jk.appdb.ApplicationDatabase | JK DB [0.21.0] - API Reference</title>
+<link rel="stylesheet" type="text/css" href="style.css" />
+<meta name="viewport" content="initial-scale=1,maximum-scale=1" />
+<meta property="og:description" content="Base class for application-specific database schema declarations." />
+<meta property="og:title" content="jk.appdb.ApplicationDatabase | JK DB [0.21.0] - API Reference" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:description" content="Base class for application-specific database schema declarations." />
+</head>
+<body><div class="content">
+<a class="back" href="index.html">&laquo; JK DB [0.21.0]</a><div class="intro">
+<h1><span class="keyword">class</span> <span class="symbol">jk.appdb.ApplicationDatabase</span></h1>
+<p>Base class for application-specific database schema declarations.</p>
+</div>
+<div class="list">
+<div class="title">Instance Methods</div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">initialize</span> ( ctx <span class="keyword">as</span> <a class="datatype" href="../../jk-core/0.37.0/jk.log.LoggingContext.html">jk.log.LoggingContext</a> , connectionString <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">close</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">updateTable</span> ( table <span class="keyword">as</span> <a class="datatype" href="jk.sql.SQLTableInfo.html">jk.sql.SQLTableInfo</a> ) <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getTableDefinitions</span> ( tables <span class="keyword">as</span> <span class="datatype">vector&lt;jk.sql.SQLTableInfo&gt;</span> ) <span class="modifier">virtual</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">updateTables</span> <span class="modifier">virtual</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+</div>
+</div>
+</body>
+</html>

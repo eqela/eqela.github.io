@@ -1,0 +1,17 @@
+class name jk.uikit.state.EmptyStateWidget header extends jk.widget.LayerWidget public #widget
+{
+	import jk.lang
+	import jk.lang
+	import jk.ui
+	import jk.gfx
+	import jk.widget
+	import jk.uikit.core
+	ctor(context as jk.ui.GuiApplicationContext)
+	func setWidgetImageResource(resource as string) as jk.uikit.state.EmptyStateWidget
+	func setWidgetDescription(description as string) as jk.uikit.state.EmptyStateWidget
+	func setWidgetButtonText(text as string) as jk.uikit.state.EmptyStateWidget
+	func onBtnClicked
+	func createWidget override
+	func getWidgetClickHandler as function<void> #getterMethod
+	func setWidgetClickHandler(v as function<void>) as jk.uikit.state.EmptyStateWidget #setterMethod
+}

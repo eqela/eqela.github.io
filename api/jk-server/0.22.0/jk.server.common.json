@@ -1,0 +1,18 @@
+{
+	"moduleDescription" : "Common utilities for implementing server applications.\n",
+	"type" : "module",
+	"moduleTitle" : "Common server utilities",
+	"moduleId" : "jk.server.common",
+	"entities" : [
+		{
+			"type" : "class",
+			"name" : "ServerError",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "ServerConfig",
+			"description" : ""
+		}
+	]
+}

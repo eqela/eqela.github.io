@@ -1,0 +1,13 @@
+{
+	"moduleDescription" : "Support for generic IaaC templates in the Microsoft Azure environment.\n",
+	"type" : "module",
+	"moduleTitle" : "Generic IaaC template support for Azure",
+	"moduleId" : "jk.cloud.template.azure",
+	"entities" : [
+		{
+			"type" : "class",
+			"name" : "ArmTemplateGenerator",
+			"description" : ""
+		}
+	]
+}

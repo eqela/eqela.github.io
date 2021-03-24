@@ -1,0 +1,8 @@
+class name jk.cloud.firebase.FirebaseCloudMessaging header public
+{
+	import jk.lang
+	import jk.web
+	import jk.json
+	ctor
+	func send(fcmServerKey as string, registrationIds as jk.lang.DynamicVector, notification as jk.lang.DynamicMap, data as jk.lang.DynamicMap, callback as function<void,jk.lang.DynamicMap,jk.lang.Error>) static
+}

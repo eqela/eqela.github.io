@@ -1,0 +1,39 @@
+<html>
+<head>
+<title>jk.server.blog.ArticleRepository | JK Server [0.22.0] - API Reference</title>
+<link rel="stylesheet" type="text/css" href="style.css" />
+<meta name="viewport" content="initial-scale=1,maximum-scale=1" />
+<meta property="og:description" content="jk.server.blog.ArticleRepository | JK Server [0.22.0] - API Reference" />
+<meta property="og:title" content="jk.server.blog.ArticleRepository | JK Server [0.22.0] - API Reference" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:description" content="jk.server.blog.ArticleRepository | JK Server [0.22.0] - API Reference" />
+</head>
+<body><div class="content">
+<a class="back" href="index.html">&laquo; JK Server [0.22.0]</a><div class="intro">
+<h1><span class="modifier">abstract</span> <span class="keyword">class</span> <span class="symbol">jk.server.blog.ArticleRepository</span></h1>
+<p></p>
+</div>
+<div class="list">
+<div class="title">Instance Methods</div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getCategories</span> ( callback <span class="keyword">as</span> <span class="datatype">function&lt;void,vector&lt;jk.server.blog.Category&gt;&gt;</span> ) <span class="modifier">abstract</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getArticleCount</span> ( category <span class="keyword">as</span> <span class="datatype">string</span> , callback <span class="keyword">as</span> <span class="datatype">function&lt;void,int&gt;</span> ) <span class="modifier">abstract</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getArticles</span> ( category <span class="keyword">as</span> <span class="datatype">string</span> , offset <span class="keyword">as</span> <span class="datatype">int</span> , limit <span class="keyword">as</span> <span class="datatype">int</span> , callback <span class="keyword">as</span> <span class="datatype">function&lt;void,jk.server.blog.Category,vector&lt;jk.server.blog.Article&gt;&gt;</span> ) <span class="modifier">abstract</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getArticleById</span> ( id <span class="keyword">as</span> <span class="datatype">string</span> , callback <span class="keyword">as</span> <span class="datatype">function&lt;void,jk.server.blog.Article&gt;</span> ) <span class="modifier">abstract</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getArticleTitleSync</span> ( id <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="modifier">abstract</span> <span class="keyword">as</span> <span class="datatype">string</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getCategoryTitleSync</span> ( id <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="modifier">abstract</span> <span class="keyword">as</span> <span class="datatype">string</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getArticleAttachment</span> ( id <span class="keyword">as</span> <span class="datatype">string</span> , name <span class="keyword">as</span> <span class="datatype">string</span> , callback <span class="keyword">as</span> <span class="datatype">function&lt;void,string,buffer&gt;</span> ) <span class="modifier">abstract</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getIntroHtml</span> ( article <span class="keyword">as</span> <a class="datatype" href="jk.server.blog.Article.html">jk.server.blog.Article</a> , resolver <span class="keyword">as</span> <a class="datatype" href="../../jk-data/0.33.0/jk.template.RichTextDocumentReferenceResolver.html">jk.template.RichTextDocumentReferenceResolver</a> ) <span class="keyword">as</span> <span class="datatype">string</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getContentHtml</span> ( article <span class="keyword">as</span> <a class="datatype" href="jk.server.blog.Article.html">jk.server.blog.Article</a> , resolver <span class="keyword">as</span> <a class="datatype" href="../../jk-data/0.33.0/jk.template.RichTextDocumentReferenceResolver.html">jk.template.RichTextDocumentReferenceResolver</a> ) <span class="keyword">as</span> <span class="datatype">string</span></div></div>
+</div>
+</div>
+</body>
+</html>

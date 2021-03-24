@@ -1,0 +1,13 @@
+{
+	"moduleDescription" : "Support for the OAuth protocol\n",
+	"type" : "module",
+	"moduleTitle" : "OAuth support",
+	"moduleId" : "jk.cloud.oauth",
+	"entities" : [
+		{
+			"type" : "class",
+			"name" : "OAuthCredential",
+			"description" : ""
+		}
+	]
+}

@@ -1,0 +1,14 @@
+{
+	"license" : "",
+	"version" : "0.16.0",
+	"title" : "JK Cloud",
+	"libraries" : [
+		"jk-core:0.37.0",
+		"jk-data:0.33.0",
+		"jk-net:0.39.0"
+	],
+	"description" : "Support and implementation for APIs and integration features of various cloud-based\nor publicly accessible Internet-based products and services.\n",
+	"copyright" : "",
+	"name" : "jk-cloud",
+	"namespace" : "eqela"
+}

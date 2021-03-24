@@ -1,0 +1,44 @@
+<html>
+<head>
+<title>jk.uikit.list.ScrollableListWidget | JK UiKit [0.18.0] - API Reference</title>
+<link rel="stylesheet" type="text/css" href="style.css" />
+<meta name="viewport" content="initial-scale=1,maximum-scale=1" />
+<meta property="og:description" content="jk.uikit.list.ScrollableListWidget | JK UiKit [0.18.0] - API Reference" />
+<meta property="og:title" content="jk.uikit.list.ScrollableListWidget | JK UiKit [0.18.0] - API Reference" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:description" content="jk.uikit.list.ScrollableListWidget | JK UiKit [0.18.0] - API Reference" />
+</head>
+<body><div class="content">
+<a class="back" href="index.html">&laquo; JK UiKit [0.18.0]</a><div class="intro">
+<h1><span class="modifier">abstract</span> <span class="keyword">class</span> <span class="symbol">jk.uikit.list.ScrollableListWidget</span></h1>
+<p></p>
+</div>
+<div class="list">
+<div class="title">Base Types</div>
+<div class="entry">
+<div class="name"><span class="keyword">extends</span> <a class="datatype" href="../../jk-app/0.26.0/jk.widget.VerticalBoxWidget.html">jk.widget.VerticalBoxWidget</a></div></div>
+</div>
+<div class="list">
+<div class="title">Instance Methods</div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">initializeWidget</span> <span class="modifier">override</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">doGetData</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">populateList</span> ( records <span class="keyword">as</span> <a class="datatype" href="../../jk-core/0.37.0/jk.lang.DynamicVector.html">jk.lang.DynamicVector</a> ) <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">onNoDataReceived</span> <span class="modifier">virtual</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">onQueryFailed</span> ( error <span class="keyword">as</span> <a class="datatype" href="../../jk-core/0.37.0/jk.lang.Error.html">jk.lang.Error</a> ) <span class="modifier">virtual</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">createHeaderWidget</span> <span class="modifier">abstract</span> <span class="keyword">as</span> <a class="datatype" href="../../jk-app/0.26.0/jk.widget.Widget.html">jk.widget.Widget</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">createListItemWidget</span> ( item <span class="keyword">as</span> <a class="datatype" href="../../jk-core/0.37.0/jk.lang.DynamicMap.html">jk.lang.DynamicMap</a> ) <span class="modifier">abstract</span> <span class="keyword">as</span> <a class="datatype" href="../../jk-app/0.26.0/jk.widget.Widget.html">jk.widget.Widget</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">startQuery</span> ( page <span class="keyword">as</span> <span class="datatype">int</span> , callback <span class="keyword">as</span> <span class="datatype">function&lt;void,jk.lang.DynamicMap&gt;</span> , errorCallback <span class="keyword">as</span> <span class="datatype">function&lt;void,jk.lang.Error&gt;</span> ) <span class="modifier">abstract</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">createWidget</span> <span class="modifier">override</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+</div>
+</div>
+</body>
+</html>

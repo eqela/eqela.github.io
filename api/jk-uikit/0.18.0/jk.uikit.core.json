@@ -1,0 +1,128 @@
+{
+	"moduleDescription" : "",
+	"type" : "module",
+	"moduleTitle" : "",
+	"moduleId" : "jk.uikit.core",
+	"entities" : [
+		{
+			"type" : "class",
+			"name" : "SecondaryButtonWidget",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "HSeparatorWidget",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "SelectFieldWidget",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "TextFieldWidget",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "SeparatorWidget",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "CardFrameWidget",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "CardWidget",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "AutoSuggestTextFieldWidget",
+			"description" : ""
+		},
+		{
+			"type" : "interface",
+			"name" : "InputFieldListener",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "InputStepperWidget",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "RoundedButtonWidget",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "HorizontalRulerWidget",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "PopupDialogManager",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "PopupManagerWidget",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "AvatarWidget",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "IconButtonWidget",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "IconWidget",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "TickBoxWidget",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "BadgeWidget",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "PageWidget",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "ButtonFrameWidget",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "VSeparatorWidget",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "ExpanderWidget",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "PrimaryButtonWidget",
+			"description" : ""
+		}
+	]
+}

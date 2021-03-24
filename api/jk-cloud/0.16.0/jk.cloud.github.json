@@ -1,0 +1,13 @@
+{
+	"moduleDescription" : "Support for the GitHub API\n",
+	"type" : "module",
+	"moduleTitle" : "GitHub API support",
+	"moduleId" : "jk.cloud.github",
+	"entities" : [
+		{
+			"type" : "class",
+			"name" : "GithubAPI",
+			"description" : ""
+		}
+	]
+}

@@ -1,0 +1,59 @@
+<html>
+<head>
+<title>jk.devops.kube.KubeHelper | JK Devops [0.35.0] - API Reference</title>
+<link rel="stylesheet" type="text/css" href="style.css" />
+<meta name="viewport" content="initial-scale=1,maximum-scale=1" />
+<meta property="og:description" content="jk.devops.kube.KubeHelper | JK Devops [0.35.0] - API Reference" />
+<meta property="og:title" content="jk.devops.kube.KubeHelper | JK Devops [0.35.0] - API Reference" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:description" content="jk.devops.kube.KubeHelper | JK Devops [0.35.0] - API Reference" />
+</head>
+<body><div class="content">
+<a class="back" href="index.html">&laquo; JK Devops [0.35.0]</a><div class="intro">
+<h1><span class="keyword">class</span> <span class="symbol">jk.devops.kube.KubeHelper</span></h1>
+<p></p>
+</div>
+<div class="list">
+<div class="title">Instance Methods</div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">addToServices</span> ( service <span class="keyword">as</span> <span class="datatype">jk.devops.kube.KubeHelper.Service</span> ) <span class="keyword">as</span> <span class="datatype">jk.devops.kube.KubeHelper.Service</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">addGitService</span> ( name <span class="keyword">as</span> <span class="datatype">string</span> , repository <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="keyword">as</span> <span class="datatype">jk.devops.kube.KubeHelper.GitService</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">addLocalDirectoryService</span> ( name <span class="keyword">as</span> <span class="datatype">string</span> , dir <span class="keyword">as</span> <span class="datatype">dynamic</span> ) <span class="keyword">as</span> <span class="datatype">jk.devops.kube.KubeHelper.LocalDirectoryService</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">addPrebuiltService</span> ( name <span class="keyword">as</span> <span class="datatype">string</span> , image <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="keyword">as</span> <span class="datatype">jk.devops.kube.KubeHelper.PrebuiltService</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">buildAndPushContainer</span> ( srcdir <span class="keyword">as</span> <a class="datatype" href="../../jk-core/0.37.0/jk.fs.File.html">jk.fs.File</a> , tag <span class="keyword">as</span> <span class="datatype">string</span> , buildConfig <span class="keyword">as</span> <a class="datatype" href="../../jk-core/0.37.0/jk.lang.DynamicMap.html">jk.lang.DynamicMap</a> ) <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getCustomImageTagForName</span> ( name <span class="keyword">as</span> <span class="datatype">string</span> , version <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="keyword">as</span> <span class="datatype">string</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getCustomImageDownloadTagForName</span> ( name <span class="keyword">as</span> <span class="datatype">string</span> , version <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="keyword">as</span> <span class="datatype">string</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">buildAndPushGitService</span> ( service <span class="keyword">as</span> <span class="datatype">jk.devops.kube.KubeHelper.GitService</span> ) <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getImageForService</span> ( service <span class="keyword">as</span> <span class="datatype">jk.devops.kube.KubeHelper.Service</span> ) <span class="keyword">as</span> <span class="datatype">string</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">generateYamlForService</span> ( service <span class="keyword">as</span> <span class="datatype">jk.devops.kube.KubeHelper.Service</span> ) <span class="keyword">as</span> <span class="datatype">string</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">generateYamlForNamespace</span> ( name <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="keyword">as</span> <span class="datatype">string</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">applyYaml</span> ( yaml <span class="keyword">as</span> <span class="datatype">string</span> , identifier <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">prepareService</span> ( service <span class="keyword">as</span> <span class="datatype">jk.devops.kube.KubeHelper.Service</span> ) <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">createNamespace</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">initializeCluster</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">deployService</span> ( service <span class="keyword">as</span> <span class="datatype">jk.devops.kube.KubeHelper.Service</span> ) <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">deployServiceByName</span> ( name <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">deployServiceByVersion</span> ( name <span class="keyword">as</span> <span class="datatype">string</span> , version <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">updateDeploymentForService</span> ( service <span class="keyword">as</span> <span class="datatype">jk.devops.kube.KubeHelper.Service</span> , version <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+</div>
+</div>
+</body>
+</html>

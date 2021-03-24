@@ -1,0 +1,13 @@
+{
+	"moduleDescription" : "Support for administering and configuring HAProxy.\n",
+	"type" : "module",
+	"moduleTitle" : "HAProxy administration",
+	"moduleId" : "jk.devops.haproxy",
+	"entities" : [
+		{
+			"type" : "class",
+			"name" : "HaproxyConfig",
+			"description" : ""
+		}
+	]
+}

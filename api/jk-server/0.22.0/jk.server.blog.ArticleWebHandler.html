@@ -1,0 +1,93 @@
+<html>
+<head>
+<title>jk.server.blog.ArticleWebHandler | JK Server [0.22.0] - API Reference</title>
+<link rel="stylesheet" type="text/css" href="style.css" />
+<meta name="viewport" content="initial-scale=1,maximum-scale=1" />
+<meta property="og:description" content="jk.server.blog.ArticleWebHandler | JK Server [0.22.0] - API Reference" />
+<meta property="og:title" content="jk.server.blog.ArticleWebHandler | JK Server [0.22.0] - API Reference" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:description" content="jk.server.blog.ArticleWebHandler | JK Server [0.22.0] - API Reference" />
+</head>
+<body><div class="content">
+<a class="back" href="index.html">&laquo; JK Server [0.22.0]</a><div class="intro">
+<h1><span class="keyword">class</span> <span class="symbol">jk.server.blog.ArticleWebHandler</span></h1>
+<p></p>
+</div>
+<div class="list">
+<div class="title">Base Types</div>
+<div class="entry">
+<div class="name"><span class="keyword">extends</span> <a class="datatype" href="../../jk-net/0.39.0/jk.http.server.HTTPServerRequestHandlerAdapter.html">jk.http.server.HTTPServerRequestHandlerAdapter</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">implements</span> <a class="datatype" href="../../jk-data/0.33.0/jk.template.RichTextDocumentReferenceResolver.html">jk.template.RichTextDocumentReferenceResolver</a></div></div>
+</div>
+<div class="list">
+<div class="title">Static Methods</div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">forRepository</span> ( repository <span class="keyword">as</span> <a class="datatype" href="jk.server.blog.ArticleRepository.html">jk.server.blog.ArticleRepository</a> ) <span class="modifier">static</span> <span class="keyword">as</span> <a class="datatype" href="jk.server.blog.ArticleWebHandler.html">jk.server.blog.ArticleWebHandler</a></div></div>
+</div>
+<div class="list">
+<div class="title">Instance Methods</div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getReferenceHref</span> ( refid <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="keyword">as</span> <span class="datatype">string</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getReferenceTitle</span> ( refid <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="keyword">as</span> <span class="datatype">string</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getContentString</span> ( cid <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="keyword">as</span> <span class="datatype">string</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">isResponseHTML</span> ( req <span class="keyword">as</span> <a class="datatype" href="../../jk-net/0.39.0/jk.http.server.HTTPServerRequest.html">jk.http.server.HTTPServerRequest</a> ) <span class="keyword">as</span> <span class="datatype">bool</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">onGETCategoryList</span> ( req <span class="keyword">as</span> <a class="datatype" href="../../jk-net/0.39.0/jk.http.server.HTTPServerRequest.html">jk.http.server.HTTPServerRequest</a> , next <span class="keyword">as</span> <span class="datatype">function&lt;void&gt;</span> ) <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">processTimeStamp</span> ( values <span class="keyword">as</span> <a class="datatype" href="../../jk-core/0.37.0/jk.lang.DynamicMap.html">jk.lang.DynamicMap</a> ) <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">onGETCategoryArticles</span> ( req <span class="keyword">as</span> <a class="datatype" href="../../jk-net/0.39.0/jk.http.server.HTTPServerRequest.html">jk.http.server.HTTPServerRequest</a> , next <span class="keyword">as</span> <span class="datatype">function&lt;void&gt;</span> ) <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getBreadcrumbs</span> ( article <span class="keyword">as</span> <a class="datatype" href="jk.server.blog.Article.html">jk.server.blog.Article</a> ) <span class="keyword">as</span> <span class="datatype">vector</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">onGETArticle</span> ( req <span class="keyword">as</span> <a class="datatype" href="../../jk-net/0.39.0/jk.http.server.HTTPServerRequest.html">jk.http.server.HTTPServerRequest</a> , next <span class="keyword">as</span> <span class="datatype">function&lt;void&gt;</span> ) <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">sendResponse</span> ( req <span class="keyword">as</span> <a class="datatype" href="../../jk-net/0.39.0/jk.http.server.HTTPServerRequest.html">jk.http.server.HTTPServerRequest</a> , type <span class="keyword">as</span> <span class="datatype">string</span> , content <span class="keyword">as</span> <span class="datatype">object</span> ) <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">sendHTMLResponse</span> ( req <span class="keyword">as</span> <a class="datatype" href="../../jk-net/0.39.0/jk.http.server.HTTPServerRequest.html">jk.http.server.HTTPServerRequest</a> , data <span class="keyword">as</span> <a class="datatype" href="../../jk-core/0.37.0/jk.lang.DynamicMap.html">jk.lang.DynamicMap</a> , tt <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">onGET</span> ( req <span class="keyword">as</span> <a class="datatype" href="../../jk-net/0.39.0/jk.http.server.HTTPServerRequest.html">jk.http.server.HTTPServerRequest</a> , next <span class="keyword">as</span> <span class="datatype">function&lt;void&gt;</span> ) <span class="modifier">override</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getRepository</span> <span class="keyword">as</span> <a class="datatype" href="jk.server.blog.ArticleRepository.html">jk.server.blog.ArticleRepository</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setRepository</span> ( v <span class="keyword">as</span> <a class="datatype" href="jk.server.blog.ArticleRepository.html">jk.server.blog.ArticleRepository</a> ) <span class="keyword">as</span> <a class="datatype" href="jk.server.blog.ArticleWebHandler.html">jk.server.blog.ArticleWebHandler</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getArticlesPerPage</span> <span class="keyword">as</span> <span class="datatype">int</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setArticlesPerPage</span> ( v <span class="keyword">as</span> <span class="datatype">int</span> ) <span class="keyword">as</span> <a class="datatype" href="jk.server.blog.ArticleWebHandler.html">jk.server.blog.ArticleWebHandler</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getTemplateStorage</span> <span class="keyword">as</span> <a class="datatype" href="jk.server.blog.TemplateStorage.html">jk.server.blog.TemplateStorage</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setTemplateStorage</span> ( v <span class="keyword">as</span> <a class="datatype" href="jk.server.blog.TemplateStorage.html">jk.server.blog.TemplateStorage</a> ) <span class="keyword">as</span> <a class="datatype" href="jk.server.blog.ArticleWebHandler.html">jk.server.blog.ArticleWebHandler</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getTemplateData</span> <span class="keyword">as</span> <a class="datatype" href="../../jk-core/0.37.0/jk.lang.DynamicMap.html">jk.lang.DynamicMap</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setTemplateData</span> ( v <span class="keyword">as</span> <a class="datatype" href="../../jk-core/0.37.0/jk.lang.DynamicMap.html">jk.lang.DynamicMap</a> ) <span class="keyword">as</span> <a class="datatype" href="jk.server.blog.ArticleWebHandler.html">jk.server.blog.ArticleWebHandler</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getTemplatePrefix</span> <span class="keyword">as</span> <span class="datatype">string</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setTemplatePrefix</span> ( v <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="keyword">as</span> <a class="datatype" href="jk.server.blog.ArticleWebHandler.html">jk.server.blog.ArticleWebHandler</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getLanguages</span> <span class="keyword">as</span> <span class="datatype">vector&lt;string&gt;</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setLanguages</span> ( v <span class="keyword">as</span> <span class="datatype">vector&lt;string&gt;</span> ) <span class="keyword">as</span> <a class="datatype" href="jk.server.blog.ArticleWebHandler.html">jk.server.blog.ArticleWebHandler</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getEnableCategoryList</span> <span class="keyword">as</span> <span class="datatype">bool</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setEnableCategoryList</span> ( v <span class="keyword">as</span> <span class="datatype">bool</span> ) <span class="keyword">as</span> <a class="datatype" href="jk.server.blog.ArticleWebHandler.html">jk.server.blog.ArticleWebHandler</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getCategoryPathSuffix</span> <span class="keyword">as</span> <span class="datatype">string</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setCategoryPathSuffix</span> ( v <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="keyword">as</span> <a class="datatype" href="jk.server.blog.ArticleWebHandler.html">jk.server.blog.ArticleWebHandler</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getDefaultCategory</span> <span class="keyword">as</span> <span class="datatype">string</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setDefaultCategory</span> ( v <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="keyword">as</span> <a class="datatype" href="jk.server.blog.ArticleWebHandler.html">jk.server.blog.ArticleWebHandler</a></div></div>
+</div>
+</div>
+</body>
+</html>

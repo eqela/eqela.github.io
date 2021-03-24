@@ -1,0 +1,35 @@
+<html>
+<head>
+<title>jk.http.server.sql.HTTPServerSQLUtil | JK Server [0.22.0] - API Reference</title>
+<link rel="stylesheet" type="text/css" href="style.css" />
+<meta name="viewport" content="initial-scale=1,maximum-scale=1" />
+<meta property="og:description" content="jk.http.server.sql.HTTPServerSQLUtil | JK Server [0.22.0] - API Reference" />
+<meta property="og:title" content="jk.http.server.sql.HTTPServerSQLUtil | JK Server [0.22.0] - API Reference" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:description" content="jk.http.server.sql.HTTPServerSQLUtil | JK Server [0.22.0] - API Reference" />
+</head>
+<body><div class="content">
+<a class="back" href="index.html">&laquo; JK Server [0.22.0]</a><div class="intro">
+<h1><span class="keyword">class</span> <span class="symbol">jk.http.server.sql.HTTPServerSQLUtil</span></h1>
+<p></p>
+</div>
+<div class="list">
+<div class="title">Static Methods</div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getSQLParameterVectorFromQuery</span> ( req <span class="keyword">as</span> <a class="datatype" href="../../jk-net/0.39.0/jk.http.server.HTTPServerRequest.html">jk.http.server.HTTPServerRequest</a> ) <span class="modifier">static</span> <span class="keyword">as</span> <span class="datatype">vector</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getSQLParameterVectorFromBody</span> ( req <span class="keyword">as</span> <a class="datatype" href="../../jk-net/0.39.0/jk.http.server.HTTPServerRequest.html">jk.http.server.HTTPServerRequest</a> ) <span class="modifier">static</span> <span class="keyword">as</span> <span class="datatype">vector</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">sendSQLReadResponse</span> ( req <span class="keyword">as</span> <a class="datatype" href="../../jk-net/0.39.0/jk.http.server.HTTPServerRequest.html">jk.http.server.HTTPServerRequest</a> , db <span class="keyword">as</span> <a class="datatype" href="../../jk-db/0.21.0/jk.sql.SQLDatabase.html">jk.sql.SQLDatabase</a> , sql <span class="keyword">as</span> <span class="datatype">string</span> , params <span class="keyword">as</span> <span class="datatype">vector</span> ) <span class="modifier">static</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">sendSQLOperationResponse</span> ( req <span class="keyword">as</span> <a class="datatype" href="../../jk-net/0.39.0/jk.http.server.HTTPServerRequest.html">jk.http.server.HTTPServerRequest</a> , db <span class="keyword">as</span> <a class="datatype" href="../../jk-db/0.21.0/jk.sql.SQLDatabase.html">jk.sql.SQLDatabase</a> , sql <span class="keyword">as</span> <span class="datatype">string</span> , params <span class="keyword">as</span> <span class="datatype">vector</span> ) <span class="modifier">static</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">addWildCards</span> ( params <span class="keyword">as</span> <span class="datatype">vector</span> , index <span class="keyword">as</span> <span class="datatype">int</span> ) <span class="modifier">static</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">addLeftWildCard</span> ( params <span class="keyword">as</span> <span class="datatype">vector</span> , index <span class="keyword">as</span> <span class="datatype">int</span> ) <span class="modifier">static</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">addRightWildCard</span> ( params <span class="keyword">as</span> <span class="datatype">vector</span> , index <span class="keyword">as</span> <span class="datatype">int</span> ) <span class="modifier">static</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+</div>
+</div>
+</body>
+</html>

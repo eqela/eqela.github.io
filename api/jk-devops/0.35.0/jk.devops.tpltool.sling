@@ -1,0 +1,11 @@
+class name jk.devops.tpltool.TpltoolApp header extends jk.console.ConsoleApplicationMain public
+{
+	import jk.lang
+	import jk.fs
+	import jk.log
+	import jk.console
+	import jk.template
+	ctor
+	func initialize override as bool
+	func execute override as bool
+}

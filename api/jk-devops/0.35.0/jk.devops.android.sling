@@ -1,0 +1,37 @@
+class name jk.devops.android.AndroidSDK header public
+{
+	import jk.lang
+	import jk.fs
+	import jk.os
+	import jk.log
+	import jk.env
+	ctor
+	func getAndroidSDKDirectoryInEnvironmentVariables static as jk.fs.File
+	func findAndroidSDKDirectory(ctx as jk.log.LoggingContext, androidSdkPath as jk.fs.File) static as jk.fs.File
+	func autoDetect(ctx as jk.log.LoggingContext) static as jk.devops.android.AndroidSDK
+	func forPath(path as jk.fs.File) static as jk.devops.android.AndroidSDK
+	func getAvailablePlatforms as vector<string>
+	func getLatestAvailablePlatform as string
+	func getLatestAvailableApiLevel as int
+	func getAvailableBuildToolVersions as vector<string>
+	func getLatestAvailableBuildToolVersion as string
+	func getPath as jk.fs.File #getterMethod
+	func setPath(v as jk.fs.File) as jk.devops.android.AndroidSDK #setterMethod
+}
+class name jk.devops.android.AndroidGradleBuilder header public
+{
+	import jk.lang
+	import jk.fs
+	import jk.os
+	import jk.log
+	import jk.env
+	import jk.process
+	ctor
+	property gradleCommand as jk.fs.File { hasset hasget }
+	property androidStudioPath as jk.fs.File { hasset hasget }
+	property buildRelease as bool { hasset hasget }
+	func getGradleCommandFile as jk.fs.File
+	func getBuilderId as string
+	func canBuild(dir as jk.fs.File) as bool
+	func execute(ctx as jk.log.LoggingContext, sourceDirectory as jk.fs.File, destinationDirectory as jk.fs.File) as bool
+}

@@ -1,0 +1,103 @@
+class name jk.devops.packager.DebMaker header implements jk.devops.packager.PackageMaker public
+{
+	import jk.lang
+	import jk.fs
+	import jk.log
+	import jk.env
+	import jk.archive
+	ctor
+	func execute(ctx as jk.log.LoggingContext, sourceDir as jk.fs.File, destDir as jk.fs.File, packageInfo as jk.devops.packager.PackageInfo) as bool
+	func toDebianArchitecture(arch as string) as string
+	func appendStringToBuffer(buffer as buffer, offset as int, string as string, length as int)
+	func createFileComponent(file as jk.fs.File) as buffer
+}
+class name jk.devops.packager.PackageInfo header extends jk.json.JSONObjectAdapter implements jk.lang.StringObject public
+{
+	import jk.lang
+	import jk.json
+	ctor
+	func setVendor(value as string) as jk.devops.packager.PackageInfo
+	func getVendor as string
+	func setName(value as string) as jk.devops.packager.PackageInfo
+	func getName as string
+	func setTitle(value as string) as jk.devops.packager.PackageInfo
+	func getTitle as string
+	func setVersion(value as string) as jk.devops.packager.PackageInfo
+	func getVersion as string
+	func setPlatform(value as string) as jk.devops.packager.PackageInfo
+	func getPlatform as string
+	func setAuthorName(value as string) as jk.devops.packager.PackageInfo
+	func getAuthorName as string
+	func setAuthorEmail(value as string) as jk.devops.packager.PackageInfo
+	func getAuthorEmail as string
+	func setDescription(value as string) as jk.devops.packager.PackageInfo
+	func getDescription as string
+	func setExecutables(value as string) as jk.devops.packager.PackageInfo
+	func getExecutables as string
+	func toJsonObject override as object
+	func fromJsonObject(o as object) override as bool
+	func fromJsonString(o as string) as bool
+	func toJsonString as string
+	func toString as string
+	func forJsonString(o as string) static as jk.devops.packager.PackageInfo
+	func forJsonObject(o as object) static as jk.devops.packager.PackageInfo
+}
+class name jk.devops.packager.GuidGenerator header public
+{
+	import jk.lang
+	import jk.md5
+	ctor
+	func generate(src as string) static as string
+}
+class name jk.devops.packager.PackagerApp header extends jk.console.ConsoleApplicationMain public
+{
+	import jk.lang
+	import jk.fs
+	import jk.os
+	import jk.log
+	import jk.env
+	import jk.json
+	import jk.console
+	import jk.archive
+	ctor
+	func initialize override as bool
+	func execute override as bool
+	func doExecute(sourceDir as jk.fs.File) as bool
+}
+class name jk.devops.packager.MsiMaker header implements jk.devops.packager.PackageMaker public
+{
+	import jk.lang
+	import jk.fs
+	import jk.xml
+	import jk.log
+	import jk.env
+	import jk.process
+	ctor
+	func constructComponents(dir as jk.fs.File, xml as jk.xml.XMLMaker, componentMap as jk.lang.DynamicMap, prefix as string) as bool
+	func execute(ctx as jk.log.LoggingContext, sourceDir as jk.fs.File, destinationDir as jk.fs.File, packageInfo as jk.devops.packager.PackageInfo) as bool
+	func getInstallerVersion as string #getterMethod
+	func setInstallerVersion(v as string) as jk.devops.packager.MsiMaker #setterMethod
+	func getWixPath as jk.fs.File #getterMethod
+	func setWixPath(v as jk.fs.File) as jk.devops.packager.MsiMaker #setterMethod
+	func getUseInstallerGui as bool #getterMethod
+	func setUseInstallerGui(v as bool) as jk.devops.packager.MsiMaker #setterMethod
+}
+class name jk.devops.packager.PkgMaker header implements jk.devops.packager.PackageMaker public
+{
+	import jk.lang
+	import jk.fs
+	import jk.log
+	import jk.env
+	import jk.process
+	ctor
+	func execute(ctx as jk.log.LoggingContext, sourceDir as jk.fs.File, destinationDir as jk.fs.File, packageInfo as jk.devops.packager.PackageInfo) as bool
+	func getInstallDir as jk.fs.File #getterMethod
+	func setInstallDir(v as jk.fs.File) as jk.devops.packager.PkgMaker #setterMethod
+}
+interface name jk.devops.packager.PackageMaker header public
+{
+	import jk.lang
+	import jk.fs
+	import jk.log
+	func execute(ctx as jk.log.LoggingContext, sourceDir as jk.fs.File, destinationDir as jk.fs.File, packageInfo as jk.devops.packager.PackageInfo) as bool
+}

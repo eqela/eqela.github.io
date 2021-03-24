@@ -1,0 +1,13 @@
+{
+	"moduleDescription" : "Client support for Microsoft SQL Server products.\n",
+	"type" : "module",
+	"moduleTitle" : "Microsoft SQL Server support",
+	"moduleId" : "jk.mssql",
+	"entities" : [
+		{
+			"type" : "class",
+			"name" : "MSSQLDatabase",
+			"description" : "Microsoft SQL Server database driver."
+		}
+	]
+}

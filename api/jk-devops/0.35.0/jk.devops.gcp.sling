@@ -1,0 +1,11 @@
+class name jk.devops.gcp.GcpDeployKit header implements jk.devops.common.DeployFileHandler public
+{
+	import jk.lang
+	import jk.fs
+	import jk.log
+	import jk.mime
+	import jk.cloud.gcp
+	import jk.devops.common
+	ctor(ctx as jk.log.LoggingContext, serviceAccount as string, bucketName as string, prefix as string)
+	func deployFile(file as jk.fs.File) as string
+}

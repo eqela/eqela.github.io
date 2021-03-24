@@ -1,0 +1,13 @@
+{
+	"moduleDescription" : "Common classes for implementing a web server application that uses an SQL database.\n",
+	"type" : "module",
+	"moduleTitle" : "Web server framework with database",
+	"moduleId" : "jk.server.web.db",
+	"entities" : [
+		{
+			"type" : "class",
+			"name" : "WebServerWithDatabase",
+			"description" : ""
+		}
+	]
+}

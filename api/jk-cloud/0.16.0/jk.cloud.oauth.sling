@@ -1,0 +1,26 @@
+class name jk.cloud.oauth.OAuthCredential header extends jk.cloud.common.CloudClient public
+{
+	import jk.lang
+	import jk.cloud.common
+	import jk.log
+	ctor
+	class name OAuthTokenResponse header extends jk.json.JSONObjectAdapter implements jk.lang.StringObject public static
+	{
+		import jk.json
+		ctor
+		func setAccess_token(value as string) as jk.cloud.oauth.OAuthCredential.OAuthTokenResponse
+		func getAccess_token as string
+		func setRefresh_token(value as string) as jk.cloud.oauth.OAuthCredential.OAuthTokenResponse
+		func getRefresh_token as string
+		func setExpires_in(value as string) as jk.cloud.oauth.OAuthCredential.OAuthTokenResponse
+		func getExpires_in as string
+		func toJsonObject override as object
+		func fromJsonObject(o as object) override as bool
+		func fromJsonString(o as string) as bool
+		func toJsonString as string
+		func toString as string
+		func forJsonString(o as string) static as jk.cloud.oauth.OAuthCredential.OAuthTokenResponse
+		func forJsonObject(o as object) static as jk.cloud.oauth.OAuthCredential.OAuthTokenResponse
+	}
+	func getAccessToken(ctx as jk.log.LoggingContext, apiUrl as string, headers as jk.lang.KeyValueList<string,string>, body as buffer = null) as jk.cloud.oauth.OAuthCredential.OAuthTokenResponse
+}

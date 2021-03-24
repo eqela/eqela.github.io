@@ -1,0 +1,58 @@
+{
+	"moduleDescription" : "Generic framework for implementing a blog-type website.\n",
+	"type" : "module",
+	"moduleTitle" : "Blog server framework",
+	"moduleId" : "jk.server.blog",
+	"entities" : [
+		{
+			"type" : "class",
+			"name" : "Article",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "Category",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "ArticleWebHandler",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "TemplateStorageUsingSQLDatabase",
+			"description" : ""
+		},
+		{
+			"type" : "interface",
+			"name" : "TemplateStorage",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "ArticleUtil",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "ArticleRepository",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "TemplateStorageUsingFiles",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "ArticleRepositoryDirectory",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "BlogServer",
+			"description" : ""
+		}
+	]
+}

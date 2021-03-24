@@ -1,0 +1,78 @@
+<html>
+<head>
+<title>jk.sqlite.SQLiteDatabase | JK DB [0.21.0] - API Reference</title>
+<link rel="stylesheet" type="text/css" href="style.css" />
+<meta name="viewport" content="initial-scale=1,maximum-scale=1" />
+<meta property="og:description" content="SQLite database driver." />
+<meta property="og:title" content="jk.sqlite.SQLiteDatabase | JK DB [0.21.0] - API Reference" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:description" content="SQLite database driver." />
+</head>
+<body><div class="content">
+<a class="back" href="index.html">&laquo; JK DB [0.21.0]</a><div class="intro">
+<h1><span class="modifier">abstract</span> <span class="keyword">class</span> <span class="symbol">jk.sqlite.SQLiteDatabase</span></h1>
+<p>SQLite database driver.</p>
+</div>
+<div class="list">
+<div class="title">Base Types</div>
+<div class="entry">
+<div class="name"><span class="keyword">extends</span> <a class="datatype" href="jk.sql.SQLDatabase.html">jk.sql.SQLDatabase</a></div></div>
+</div>
+<div class="list">
+<div class="title">Static Methods</div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">forFile</span> ( file <span class="keyword">as</span> <a class="datatype" href="../../jk-core/0.37.0/jk.fs.File.html">jk.fs.File</a> , allowCreate <span class="keyword">as</span> <span class="datatype">bool</span> , logger <span class="keyword">as</span> <a class="datatype" href="../../jk-core/0.37.0/jk.log.LoggingContext.html">jk.log.LoggingContext</a> ) <span class="modifier">static</span> <span class="keyword">as</span> <a class="datatype" href="jk.sqlite.SQLiteDatabase.html">jk.sqlite.SQLiteDatabase</a></div><div class="description">Creates an instance of this class from the
+specified File object. If the object is not
+a file and the allowCreate property is set
+to true, then it will be created.</div></div>
+</div>
+<div class="list">
+<div class="title">Instance Methods</div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getDatabaseTypeId</span> <span class="modifier">override</span> <span class="keyword">as</span> <span class="datatype">string</span></div><div class="description">Returns a string with value 'sqlite'.</div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">initialize</span> ( file <span class="keyword">as</span> <a class="datatype" href="../../jk-core/0.37.0/jk.fs.File.html">jk.fs.File</a> , create <span class="keyword">as</span> <span class="datatype">bool</span> ) <span class="modifier">virtual</span> <span class="keyword">as</span> <span class="datatype">bool</span></div><div class="description">Returns the initialization status.</div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">querySingleRowSync</span> ( stmt <span class="keyword">as</span> <a class="datatype" href="jk.sql.SQLStatement.html">jk.sql.SQLStatement</a> ) <span class="modifier">override</span> <span class="keyword">as</span> <a class="datatype" href="../../jk-core/0.37.0/jk.lang.DynamicMap.html">jk.lang.DynamicMap</a></div><div class="description">Returns the first record as a DynamicMap object from the
+query() method call passing the supplied instance of
+SQLStatement class.</div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">tableExistsSync</span> ( table <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="modifier">override</span> <span class="keyword">as</span> <span class="datatype">bool</span></div><div class="description">Returns a boolean value which indicates if the
+supplied table name exists in the database.</div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">queryAllTableNames</span> ( callback <span class="keyword">as</span> <span class="datatype">function&lt;void,vector&gt;</span> ) <span class="modifier">override</span> <span class="keyword">as</span> <span class="datatype">void</span></div><div class="description">Calls the callback function parameter if supplied
+and passes the returned list of all table names
+from the queryAllTableNames() method call.</div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">queryAllTableNamesSync</span> <span class="modifier">override</span> <span class="keyword">as</span> <span class="datatype">vector</span></div><div class="description">Returns a list of all table names in the database as vector object.</div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">columnToCreateString</span> ( cc <span class="keyword">as</span> <a class="datatype" href="jk.sql.SQLTableColumnInfo.html">jk.sql.SQLTableColumnInfo</a> ) <span class="modifier">virtual</span> <span class="keyword">as</span> <span class="datatype">string</span></div><div class="description">Creates the column definition part of the create table
+statement as a string with the supplied instance of
+SQLTableColumnInfo class.</div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">prepareCreateTableStatementSync</span> ( table <span class="keyword">as</span> <span class="datatype">string</span> , columns <span class="keyword">as</span> <span class="datatype">vector&lt;jk.sql.SQLTableColumnInfo&gt;</span> ) <span class="modifier">override</span> <span class="keyword">as</span> <a class="datatype" href="jk.sql.SQLStatement.html">jk.sql.SQLStatement</a></div><div class="description">Creates the create table statement as a string
+with the supplied table name and the list of
+SQLTableColumnInfo objects that defines each
+column.</div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">prepareDeleteTableStatementSync</span> ( table <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="modifier">override</span> <span class="keyword">as</span> <a class="datatype" href="jk.sql.SQLStatement.html">jk.sql.SQLStatement</a></div><div class="description">Creates the drop table statement as a string
+with the supplied table name.</div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getLastInsertIdSync</span> ( table <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="modifier">override</span> <span class="keyword">as</span> <span class="datatype">long</span></div><div class="description">Returns the last insert ID as a long
+integer with the supplied table name.</div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getIdentityColumnNameSync</span> ( table <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="modifier">override</span> <span class="keyword">as</span> <span class="datatype">string</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getPrimaryKeyColumnNameSync</span> ( table <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="modifier">override</span> <span class="keyword">as</span> <span class="datatype">string</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">columnExistsSync</span> ( table <span class="keyword">as</span> <span class="datatype">string</span> , name <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="modifier">override</span> <span class="keyword">as</span> <span class="datatype">bool</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">isColumnTypeSameSync</span> ( table <span class="keyword">as</span> <span class="datatype">string</span> , column <span class="keyword">as</span> <a class="datatype" href="jk.sql.SQLTableColumnInfo.html">jk.sql.SQLTableColumnInfo</a> ) <span class="modifier">override</span> <span class="keyword">as</span> <span class="datatype">bool</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">prepareCreateColumnStatementSync</span> ( table <span class="keyword">as</span> <span class="datatype">string</span> , column <span class="keyword">as</span> <a class="datatype" href="jk.sql.SQLTableColumnInfo.html">jk.sql.SQLTableColumnInfo</a> ) <span class="modifier">override</span> <span class="keyword">as</span> <a class="datatype" href="jk.sql.SQLStatement.html">jk.sql.SQLStatement</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">prepareUpdateColumnTypeStatementSync</span> ( table <span class="keyword">as</span> <span class="datatype">string</span> , column <span class="keyword">as</span> <a class="datatype" href="jk.sql.SQLTableColumnInfo.html">jk.sql.SQLTableColumnInfo</a> ) <span class="modifier">override</span> <span class="keyword">as</span> <a class="datatype" href="jk.sql.SQLStatement.html">jk.sql.SQLStatement</a></div></div>
+</div>
+</div>
+</body>
+</html>

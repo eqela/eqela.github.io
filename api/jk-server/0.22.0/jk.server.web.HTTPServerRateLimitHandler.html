@@ -1,0 +1,54 @@
+<html>
+<head>
+<title>jk.server.web.HTTPServerRateLimitHandler | JK Server [0.22.0] - API Reference</title>
+<link rel="stylesheet" type="text/css" href="style.css" />
+<meta name="viewport" content="initial-scale=1,maximum-scale=1" />
+<meta property="og:description" content="jk.server.web.HTTPServerRateLimitHandler | JK Server [0.22.0] - API Reference" />
+<meta property="og:title" content="jk.server.web.HTTPServerRateLimitHandler | JK Server [0.22.0] - API Reference" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:description" content="jk.server.web.HTTPServerRateLimitHandler | JK Server [0.22.0] - API Reference" />
+</head>
+<body><div class="content">
+<a class="back" href="index.html">&laquo; JK Server [0.22.0]</a><div class="intro">
+<h1><span class="keyword">class</span> <span class="symbol">jk.server.web.HTTPServerRateLimitHandler</span></h1>
+<p></p>
+</div>
+<div class="list">
+<div class="title">Base Types</div>
+<div class="entry">
+<div class="name"><span class="keyword">implements</span> <a class="datatype" href="../../jk-net/0.39.0/jk.http.server.HTTPServerRequestHandler.html">jk.http.server.HTTPServerRequestHandler</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">implements</span> <a class="datatype" href="../../jk-net/0.39.0/jk.http.server.HTTPServerComponent.html">jk.http.server.HTTPServerComponent</a></div></div>
+</div>
+<div class="list">
+<div class="title">Instance Methods</div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">initialize</span> ( server <span class="keyword">as</span> <a class="datatype" href="../../jk-net/0.39.0/jk.http.server.HTTPServerBase.html">jk.http.server.HTTPServerBase</a> ) <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">onMaintenance</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">onRefresh</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">cleanup</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">handleRequest</span> ( req <span class="keyword">as</span> <a class="datatype" href="../../jk-net/0.39.0/jk.http.server.HTTPServerRequest.html">jk.http.server.HTTPServerRequest</a> , next <span class="keyword">as</span> <span class="datatype">function&lt;void&gt;</span> ) <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getCountLimit</span> <span class="keyword">as</span> <span class="datatype">int</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setCountLimit</span> ( v <span class="keyword">as</span> <span class="datatype">int</span> ) <span class="keyword">as</span> <a class="datatype" href="jk.server.web.HTTPServerRateLimitHandler.html">jk.server.web.HTTPServerRateLimitHandler</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getCountDuration</span> <span class="keyword">as</span> <span class="datatype">int</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setCountDuration</span> ( v <span class="keyword">as</span> <span class="datatype">int</span> ) <span class="keyword">as</span> <a class="datatype" href="jk.server.web.HTTPServerRateLimitHandler.html">jk.server.web.HTTPServerRateLimitHandler</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getIgnoreDuration</span> <span class="keyword">as</span> <span class="datatype">int</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setIgnoreDuration</span> ( v <span class="keyword">as</span> <span class="datatype">int</span> ) <span class="keyword">as</span> <a class="datatype" href="jk.server.web.HTTPServerRateLimitHandler.html">jk.server.web.HTTPServerRateLimitHandler</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getMaintenanceCleanupDelay</span> <span class="keyword">as</span> <span class="datatype">int</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setMaintenanceCleanupDelay</span> ( v <span class="keyword">as</span> <span class="datatype">int</span> ) <span class="keyword">as</span> <a class="datatype" href="jk.server.web.HTTPServerRateLimitHandler.html">jk.server.web.HTTPServerRateLimitHandler</a></div></div>
+</div>
+</div>
+</body>
+</html>

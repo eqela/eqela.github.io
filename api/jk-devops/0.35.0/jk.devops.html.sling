@@ -1,0 +1,10 @@
+class name jk.devops.html.MarkupToHtmlConverter header public
+{
+	import jk.lang
+	import jk.fs
+	import jk.log
+	import jk.template
+	ctor
+	func toHtml(doc as jk.template.RichTextDocument) as string
+	func execute(source as jk.fs.File, output as jk.fs.File)
+}

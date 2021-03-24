@@ -1,0 +1,23 @@
+{
+	"moduleDescription" : "Support for Docker actions.\n",
+	"type" : "module",
+	"moduleTitle" : "Docker support",
+	"moduleId" : "jk.devops.docker",
+	"entities" : [
+		{
+			"type" : "class",
+			"name" : "DockerKit",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "DockerImageRunner",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "Docker",
+			"description" : ""
+		}
+	]
+}

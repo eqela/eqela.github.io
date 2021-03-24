@@ -1,0 +1,31 @@
+<html>
+<head>
+<title>jk.sql.factory.SQLDatabaseFactory | JK DB [0.21.0] - API Reference</title>
+<link rel="stylesheet" type="text/css" href="style.css" />
+<meta name="viewport" content="initial-scale=1,maximum-scale=1" />
+<meta property="og:description" content="A generic utility class for establishing connections to any supported database
+based on a connection string." />
+<meta property="og:title" content="jk.sql.factory.SQLDatabaseFactory | JK DB [0.21.0] - API Reference" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:description" content="A generic utility class for establishing connections to any supported database
+based on a connection string." />
+</head>
+<body><div class="content">
+<a class="back" href="index.html">&laquo; JK DB [0.21.0]</a><div class="intro">
+<h1><span class="keyword">class</span> <span class="symbol">jk.sql.factory.SQLDatabaseFactory</span></h1>
+<p>A generic utility class for establishing connections to any supported database
+based on a connection string.</p>
+</div>
+<div class="list">
+<div class="title">Static Methods</div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getDatabase</span> ( ctx <span class="keyword">as</span> <a class="datatype" href="../../jk-core/0.37.0/jk.log.LoggingContext.html">jk.log.LoggingContext</a> , connectionString <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="modifier">static</span> <span class="keyword">as</span> <a class="datatype" href="jk.sql.SQLDatabase.html">jk.sql.SQLDatabase</a></div><div class="description">Allocates a driver and connects to the database as specified by the connectionString.
+Supported connection strings start with "mssql:", "mysql:" or "sqlite:".</div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getDatabaseWithConfig</span> ( ctx <span class="keyword">as</span> <a class="datatype" href="../../jk-core/0.37.0/jk.log.LoggingContext.html">jk.log.LoggingContext</a> , config <span class="keyword">as</span> <a class="datatype" href="../../jk-core/0.37.0/jk.lang.DynamicMap.html">jk.lang.DynamicMap</a> ) <span class="modifier">static</span> <span class="keyword">as</span> <a class="datatype" href="jk.sql.SQLDatabase.html">jk.sql.SQLDatabase</a></div><div class="description">Allocates a driver and connects to the database as specified by the config map.
+The "type" property in the config map specifies the type of the database. Currently
+only "mysql" is supported.</div></div>
+</div>
+</div>
+</body>
+</html>

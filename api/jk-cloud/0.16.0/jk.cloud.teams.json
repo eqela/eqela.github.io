@@ -1,0 +1,13 @@
+{
+	"moduleDescription" : "Support for the Microsoft Teams integration APIs\n",
+	"type" : "module",
+	"moduleTitle" : "Microsoft Teams integration support",
+	"moduleId" : "jk.cloud.teams",
+	"entities" : [
+		{
+			"type" : "class",
+			"name" : "TeamsWebhookClient",
+			"description" : ""
+		}
+	]
+}

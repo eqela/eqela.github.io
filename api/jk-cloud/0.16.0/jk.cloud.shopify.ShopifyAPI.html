@@ -1,0 +1,55 @@
+<html>
+<head>
+<title>jk.cloud.shopify.ShopifyAPI | JK Cloud [0.16.0] - API Reference</title>
+<link rel="stylesheet" type="text/css" href="style.css" />
+<meta name="viewport" content="initial-scale=1,maximum-scale=1" />
+<meta property="og:description" content="jk.cloud.shopify.ShopifyAPI | JK Cloud [0.16.0] - API Reference" />
+<meta property="og:title" content="jk.cloud.shopify.ShopifyAPI | JK Cloud [0.16.0] - API Reference" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:description" content="jk.cloud.shopify.ShopifyAPI | JK Cloud [0.16.0] - API Reference" />
+</head>
+<body><div class="content">
+<a class="back" href="index.html">&laquo; JK Cloud [0.16.0]</a><div class="intro">
+<h1><span class="keyword">class</span> <span class="symbol">jk.cloud.shopify.ShopifyAPI</span></h1>
+<p></p>
+</div>
+<div class="list">
+<div class="title">Instance Methods</div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">requestShopToken</span> ( shop <span class="keyword">as</span> <span class="datatype">string</span> , code <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="keyword">as</span> <span class="datatype">jk.cloud.shopify.ShopifyAPI.Token</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getShopDetails</span> ( shop <span class="keyword">as</span> <span class="datatype">string</span> , token <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="keyword">as</span> <span class="datatype">jk.cloud.shopify.ShopifyAPI.Shop</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">insertScriptTag</span> ( shop <span class="keyword">as</span> <span class="datatype">string</span> , token <span class="keyword">as</span> <span class="datatype">string</span> , tag <span class="keyword">as</span> <span class="datatype">jk.cloud.shopify.ShopifyAPI.ScriptTag</span> ) <span class="keyword">as</span> <span class="datatype">jk.cloud.shopify.ShopifyAPI.ScriptTag</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">insertProduct</span> ( shop <span class="keyword">as</span> <span class="datatype">string</span> , token <span class="keyword">as</span> <span class="datatype">string</span> , product <span class="keyword">as</span> <span class="datatype">jk.cloud.shopify.ShopifyAPI.Product</span> ) <span class="keyword">as</span> <span class="datatype">jk.cloud.shopify.ShopifyAPI.Product</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getProducts</span> ( shop <span class="keyword">as</span> <span class="datatype">string</span> , collectionId <span class="keyword">as</span> <span class="datatype">string</span> , token <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="keyword">as</span> <span class="datatype">vector&lt;jk.cloud.shopify.ShopifyAPI.Product&gt;</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getProduct</span> ( productId <span class="keyword">as</span> <span class="datatype">string</span> , shop <span class="keyword">as</span> <span class="datatype">string</span> , token <span class="keyword">as</span> <span class="datatype">string</span> , fields <span class="keyword">as</span> <span class="datatype">array&lt;string&gt;</span> ) <span class="keyword">as</span> <span class="datatype">jk.cloud.shopify.ShopifyAPI.Product</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">registerWebhook</span> ( shop <span class="keyword">as</span> <span class="datatype">string</span> , token <span class="keyword">as</span> <span class="datatype">string</span> , webhook <span class="keyword">as</span> <span class="datatype">jk.cloud.shopify.ShopifyAPI.Webhook</span> ) <span class="keyword">as</span> <span class="datatype">jk.cloud.shopify.ShopifyAPI.Webhook</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getCustomCollections</span> ( shop <span class="keyword">as</span> <span class="datatype">string</span> , token <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="keyword">as</span> <span class="datatype">vector&lt;jk.cloud.shopify.ShopifyAPI.CustomCollection&gt;</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">createRecurringCharge</span> ( shop <span class="keyword">as</span> <span class="datatype">string</span> , token <span class="keyword">as</span> <span class="datatype">string</span> , charge <span class="keyword">as</span> <span class="datatype">jk.cloud.shopify.ShopifyAPI.RecurringApplicationCharge</span> ) <span class="keyword">as</span> <span class="datatype">jk.cloud.shopify.ShopifyAPI.RecurringApplicationCharge</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">deleteRecurringCharge</span> ( shop <span class="keyword">as</span> <span class="datatype">string</span> , token <span class="keyword">as</span> <span class="datatype">string</span> , recurringChargeId <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="keyword">as</span> <span class="datatype">bool</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">createUsageCharge</span> ( shop <span class="keyword">as</span> <span class="datatype">string</span> , token <span class="keyword">as</span> <span class="datatype">string</span> , recurringChargeId <span class="keyword">as</span> <span class="datatype">string</span> , charge <span class="keyword">as</span> <span class="datatype">jk.cloud.shopify.ShopifyAPI.UsageCharge</span> ) <span class="keyword">as</span> <span class="datatype">jk.cloud.shopify.ShopifyAPI.UsageCharge</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getCurrencies</span> ( shop <span class="keyword">as</span> <span class="datatype">string</span> , token <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="keyword">as</span> <span class="datatype">vector&lt;jk.cloud.shopify.ShopifyAPI.Currency&gt;</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getCountries</span> ( shop <span class="keyword">as</span> <span class="datatype">string</span> , token <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="keyword">as</span> <span class="datatype">vector&lt;jk.cloud.shopify.ShopifyAPI.Country&gt;</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getApiKey</span> <span class="keyword">as</span> <span class="datatype">string</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setApiKey</span> ( v <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="keyword">as</span> <a class="datatype" href="jk.cloud.shopify.ShopifyAPI.html">jk.cloud.shopify.ShopifyAPI</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getApiSecret</span> <span class="keyword">as</span> <span class="datatype">string</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setApiSecret</span> ( v <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="keyword">as</span> <a class="datatype" href="jk.cloud.shopify.ShopifyAPI.html">jk.cloud.shopify.ShopifyAPI</a></div></div>
+</div>
+</div>
+</body>
+</html>

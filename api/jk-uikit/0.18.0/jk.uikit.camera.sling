@@ -1,0 +1,28 @@
+class name jk.uikit.camera.PhotoCaptureWidget header extends jk.widget.VerticalBoxWidget public #widget
+{
+	import jk.lang
+	import jk.lang
+	import jk.ui
+	import jk.gfx
+	import jk.widget
+	import jk.uikit.core
+	import jk.widget.common
+	ctor(context as jk.ui.GuiApplicationContext)
+	func onButtonClicked
+	func onCloseCamera
+	func createWidget override
+	func getWidgetCallback as function<void,jk.gfx.Image> #getterMethod
+	func setWidgetCallback(v as function<void,jk.gfx.Image>) as jk.uikit.camera.PhotoCaptureWidget #setterMethod
+}
+class name jk.uikit.camera.CameraWidget header extends jk.widget.Widget public #widget
+{
+	import jk.lang
+	import jk.lang
+	import jk.ui
+	import jk.gfx
+	import jk.widget
+	ctor(context as jk.ui.GuiApplicationContext)
+	func takePicture(callback as function<void,jk.gfx.Image,jk.lang.Error>)
+	func takePicture(callback as function<void,buffer,jk.lang.Error>)
+	func stopStream
+}

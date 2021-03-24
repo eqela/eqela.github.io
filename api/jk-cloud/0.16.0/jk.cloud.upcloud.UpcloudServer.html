@@ -1,0 +1,90 @@
+<html>
+<head>
+<title>jk.cloud.upcloud.UpcloudServer | JK Cloud [0.16.0] - API Reference</title>
+<link rel="stylesheet" type="text/css" href="style.css" />
+<meta name="viewport" content="initial-scale=1,maximum-scale=1" />
+<meta property="og:description" content="jk.cloud.upcloud.UpcloudServer | JK Cloud [0.16.0] - API Reference" />
+<meta property="og:title" content="jk.cloud.upcloud.UpcloudServer | JK Cloud [0.16.0] - API Reference" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:description" content="jk.cloud.upcloud.UpcloudServer | JK Cloud [0.16.0] - API Reference" />
+</head>
+<body><div class="content">
+<a class="back" href="index.html">&laquo; JK Cloud [0.16.0]</a><div class="intro">
+<h1><span class="keyword">class</span> <span class="symbol">jk.cloud.upcloud.UpcloudServer</span></h1>
+<p></p>
+</div>
+<div class="list">
+<div class="title">Constants</div>
+<div class="entry">
+<div class="name"><span class="keyword">const</span> <span class="symbol">TEMPLATE_WINDOWS_SERVER_2016_DATACENTER</span> <span class="keyword">as</span> <span class="datatype">var</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">const</span> <span class="symbol">TEMPLATE_WINDOWS_SERVER_2016_STANDARD</span> <span class="keyword">as</span> <span class="datatype">var</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">const</span> <span class="symbol">TEMPLATE_WINDOWS_SERVER_2019_DATACENTER</span> <span class="keyword">as</span> <span class="datatype">var</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">const</span> <span class="symbol">TEMPLATE_WINDOWS_SERVER_2019_STANDARD</span> <span class="keyword">as</span> <span class="datatype">var</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">const</span> <span class="symbol">TEMPLATE_DEBIAN9</span> <span class="keyword">as</span> <span class="datatype">var</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">const</span> <span class="symbol">TEMPLATE_DEBIAN10</span> <span class="keyword">as</span> <span class="datatype">var</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">const</span> <span class="symbol">TEMPLATE_UBUNTU1604</span> <span class="keyword">as</span> <span class="datatype">var</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">const</span> <span class="symbol">TEMPLATE_UBUNTU1804</span> <span class="keyword">as</span> <span class="datatype">var</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">const</span> <span class="symbol">TEMPLATE_UBUNTU2004</span> <span class="keyword">as</span> <span class="datatype">var</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">const</span> <span class="symbol">TEMPLATE_CENTOS6</span> <span class="keyword">as</span> <span class="datatype">var</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">const</span> <span class="symbol">TEMPLATE_CENTOS7</span> <span class="keyword">as</span> <span class="datatype">var</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">const</span> <span class="symbol">TEMPLATE_CENTOS8</span> <span class="keyword">as</span> <span class="datatype">var</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">const</span> <span class="symbol">ZONE_DE_FRA1</span> <span class="keyword">as</span> <span class="datatype">var</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">const</span> <span class="symbol">ZONE_FI_HEL1</span> <span class="keyword">as</span> <span class="datatype">var</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">const</span> <span class="symbol">ZONE_FI_HEL2</span> <span class="keyword">as</span> <span class="datatype">var</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">const</span> <span class="symbol">ZONE_NL_AMS1</span> <span class="keyword">as</span> <span class="datatype">var</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">const</span> <span class="symbol">ZONE_SG_SIN1</span> <span class="keyword">as</span> <span class="datatype">var</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">const</span> <span class="symbol">ZONE_UK_LON1</span> <span class="keyword">as</span> <span class="datatype">var</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">const</span> <span class="symbol">ZONE_US_CHI1</span> <span class="keyword">as</span> <span class="datatype">var</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">const</span> <span class="symbol">ZONE_US_NYC1</span> <span class="keyword">as</span> <span class="datatype">var</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">const</span> <span class="symbol">ZONE_US_SJO1</span> <span class="keyword">as</span> <span class="datatype">var</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">const</span> <span class="symbol">PLAN_1CPU_1GB</span> <span class="keyword">as</span> <span class="datatype">var</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">const</span> <span class="symbol">PLAN_1CPU_2GB</span> <span class="keyword">as</span> <span class="datatype">var</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">const</span> <span class="symbol">PLAN_2CPU_4GB</span> <span class="keyword">as</span> <span class="datatype">var</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">const</span> <span class="symbol">PLAN_4CPU_8GB</span> <span class="keyword">as</span> <span class="datatype">var</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">const</span> <span class="symbol">PLAN_6CPU_16GB</span> <span class="keyword">as</span> <span class="datatype">var</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">const</span> <span class="symbol">PLAN_8CPU_32GB</span> <span class="keyword">as</span> <span class="datatype">var</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">const</span> <span class="symbol">PLAN_12CPU_48GB</span> <span class="keyword">as</span> <span class="datatype">var</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">const</span> <span class="symbol">PLAN_16CPU_64GB</span> <span class="keyword">as</span> <span class="datatype">var</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">const</span> <span class="symbol">PLAN_20CPU_128GB</span> <span class="keyword">as</span> <span class="datatype">var</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">const</span> <span class="symbol">PLAN_20CPU_96GB</span> <span class="keyword">as</span> <span class="datatype">var</span></div></div>
+</div>
+<div class="list">
+<div class="title">Instance Methods</div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">addToSshKeys</span> ( key <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">addToPrivateNetworks</span> ( network <span class="keyword">as</span> <span class="datatype">string</span> , address <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+</div>
+</div>
+</body>
+</html>

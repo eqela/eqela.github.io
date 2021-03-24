@@ -1,0 +1,68 @@
+{
+	"moduleDescription" : "",
+	"type" : "module",
+	"moduleTitle" : "",
+	"moduleId" : "jk.uikit.formbuilder",
+	"entities" : [
+		{
+			"type" : "class",
+			"name" : "FormFieldStaticTextWidget",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "FormFieldAutoSuggestWidget",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "FormFieldAvatarWidget",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "FormKitWidget",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "FormFieldNameWidget",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "FormFieldTextWidget",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "FormFieldSelectWidget",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "FormFieldStripeInputWidget",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "FormFieldMobileWidget",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "FormFieldWidget",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "FormFieldCheckBoxWidget",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "FormFieldBlankContainerWidget",
+			"description" : ""
+		}
+	]
+}

@@ -1,0 +1,95 @@
+<html>
+<head>
+<title>jk.mysql.MySQLDatabaseGeneric | JK DB [0.21.0] - API Reference</title>
+<link rel="stylesheet" type="text/css" href="style.css" />
+<meta name="viewport" content="initial-scale=1,maximum-scale=1" />
+<meta property="og:description" content="A generic MySQL client implementation, fully written in Sling. This class is not
+normally meant to be used directly but through MySQLDatabase." />
+<meta property="og:title" content="jk.mysql.MySQLDatabaseGeneric | JK DB [0.21.0] - API Reference" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:description" content="A generic MySQL client implementation, fully written in Sling. This class is not
+normally meant to be used directly but through MySQLDatabase." />
+</head>
+<body><div class="content">
+<a class="back" href="index.html">&laquo; JK DB [0.21.0]</a><div class="intro">
+<h1><span class="keyword">class</span> <span class="symbol">jk.mysql.MySQLDatabaseGeneric</span></h1>
+<p>A generic MySQL client implementation, fully written in Sling. This class is not
+normally meant to be used directly but through MySQLDatabase.</p>
+</div>
+<div class="list">
+<div class="title">Base Types</div>
+<div class="entry">
+<div class="name"><span class="keyword">extends</span> <a class="datatype" href="jk.mysql.MySQLDatabase.html">jk.mysql.MySQLDatabase</a></div></div>
+</div>
+<div class="list">
+<div class="title">Instance Methods</div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">isSecureConnection</span> <span class="keyword">as</span> <span class="datatype">bool</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getMyCapabilityFlags</span> <span class="keyword">as</span> <span class="datatype">int</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">createPacket</span> <span class="keyword">as</span> <a class="datatype" href="../../jk-data/0.33.0/jk.mypacket.MyPacketBuilder.html">jk.mypacket.MyPacketBuilder</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">finalizePacket</span> ( packet <span class="keyword">as</span> <a class="datatype" href="../../jk-data/0.33.0/jk.mypacket.MyPacketBuilder.html">jk.mypacket.MyPacketBuilder</a> , seqnum <span class="keyword">as</span> <span class="datatype">int</span> ) <span class="keyword">as</span> <span class="datatype">buffer</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">doInitialize</span> ( serverAddress <span class="keyword">as</span> <span class="datatype">string</span> , username <span class="keyword">as</span> <span class="datatype">string</span> , password <span class="keyword">as</span> <span class="datatype">string</span> , database <span class="keyword">as</span> <span class="datatype">string</span> , sslMode <span class="keyword">as</span> <span class="datatype">string</span> , protocol <span class="keyword">as</span> <span class="datatype">string</span> , enableUTF8 <span class="keyword">as</span> <span class="datatype">bool</span> ) <span class="modifier">override</span> <span class="keyword">as</span> <span class="datatype">bool</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">serverSupportsSSL</span> <span class="keyword">as</span> <span class="datatype">bool</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">openSocketForAddress</span> ( address <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="keyword">as</span> <a class="datatype" href="../../jk-net/0.39.0/jk.socket.TCPSocket.html">jk.socket.TCPSocket</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getHostName</span> ( address <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="keyword">as</span> <span class="datatype">string</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getNextSequence</span> <span class="keyword">as</span> <span class="datatype">sbyte</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">onSequenceReceived</span> ( number <span class="keyword">as</span> <span class="datatype">int</span> ) <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">createSSLRequest</span> <span class="keyword">as</span> <span class="datatype">buffer</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">createComQuit</span> <span class="keyword">as</span> <span class="datatype">buffer</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">createComInitDb</span> ( dbname <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="keyword">as</span> <span class="datatype">buffer</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">createComQuery</span> ( query <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="keyword">as</span> <span class="datatype">buffer</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">handleAuthenticationSync</span> ( authPlugin <span class="keyword">as</span> <span class="datatype">string</span> , authData <span class="keyword">as</span> <span class="datatype">string</span> , forAuthSwitch <span class="keyword">as</span> <span class="datatype">bool</span> ) <span class="keyword">as</span> <span class="datatype">bool</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">receivePacketSync</span> <span class="keyword">as</span> <span class="datatype">buffer</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">receivePacketsSync</span> <span class="keyword">as</span> <span class="datatype">vector&lt;buffer&gt;</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">receivePacketDataSync</span> <span class="keyword">as</span> <span class="datatype">buffer</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">sendSync</span> ( packet <span class="keyword">as</span> <span class="datatype">buffer</span> ) <span class="keyword">as</span> <span class="datatype">bool</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">sendAndReceive</span> ( packet <span class="keyword">as</span> <span class="datatype">buffer</span> ) <span class="keyword">as</span> <span class="datatype">buffer</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">executePacketSync</span> ( packet <span class="keyword">as</span> <span class="datatype">buffer</span> ) <span class="keyword">as</span> <span class="datatype">bool</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">closeSync</span> <span class="modifier">override</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">prepareSync</span> ( sql <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="modifier">override</span> <span class="keyword">as</span> <a class="datatype" href="jk.sql.SQLStatement.html">jk.sql.SQLStatement</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">executeSync</span> ( stmt <span class="keyword">as</span> <a class="datatype" href="jk.sql.SQLStatement.html">jk.sql.SQLStatement</a> ) <span class="modifier">override</span> <span class="keyword">as</span> <span class="datatype">bool</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">executeUpdateDeleteSync</span> ( stmt <span class="keyword">as</span> <a class="datatype" href="jk.sql.SQLStatement.html">jk.sql.SQLStatement</a> ) <span class="modifier">override</span> <span class="keyword">as</span> <span class="datatype">int</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">querySync</span> ( stmt <span class="keyword">as</span> <a class="datatype" href="jk.sql.SQLStatement.html">jk.sql.SQLStatement</a> ) <span class="modifier">override</span> <span class="keyword">as</span> <a class="datatype" href="jk.sql.SQLResultSetIterator.html">jk.sql.SQLResultSetIterator</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">close</span> ( callback <span class="keyword">as</span> <span class="datatype">function&lt;void&gt;</span> ) <span class="modifier">override</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">execute</span> ( stmt <span class="keyword">as</span> <a class="datatype" href="jk.sql.SQLStatement.html">jk.sql.SQLStatement</a> , callback <span class="keyword">as</span> <span class="datatype">function&lt;void,bool&gt;</span> ) <span class="modifier">override</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">executeUpdateDelete</span> ( stmt <span class="keyword">as</span> <a class="datatype" href="jk.sql.SQLStatement.html">jk.sql.SQLStatement</a> , callback <span class="keyword">as</span> <span class="datatype">function&lt;void,int&gt;</span> ) <span class="modifier">override</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">query</span> ( stmt <span class="keyword">as</span> <a class="datatype" href="jk.sql.SQLStatement.html">jk.sql.SQLStatement</a> , callback <span class="keyword">as</span> <span class="datatype">function&lt;void,jk.sql.SQLResultSetIterator&gt;</span> ) <span class="modifier">override</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">querySingleRow</span> ( stmt <span class="keyword">as</span> <a class="datatype" href="jk.sql.SQLStatement.html">jk.sql.SQLStatement</a> , callback <span class="keyword">as</span> <span class="datatype">function&lt;void,jk.lang.DynamicMap&gt;</span> ) <span class="modifier">override</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getAuthenticationPlugin</span> <span class="keyword">as</span> <span class="datatype">string</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setAuthenticationPlugin</span> ( v <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="keyword">as</span> <a class="datatype" href="jk.mysql.MySQLDatabaseGeneric.html">jk.mysql.MySQLDatabaseGeneric</a></div></div>
+</div>
+</div>
+</body>
+</html>

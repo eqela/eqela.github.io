@@ -1,0 +1,72 @@
+<html>
+<head>
+<title>jk.cloud.gcp.GCPStorageAPI | JK Cloud [0.16.0] - API Reference</title>
+<link rel="stylesheet" type="text/css" href="style.css" />
+<meta name="viewport" content="initial-scale=1,maximum-scale=1" />
+<meta property="og:description" content="jk.cloud.gcp.GCPStorageAPI | JK Cloud [0.16.0] - API Reference" />
+<meta property="og:title" content="jk.cloud.gcp.GCPStorageAPI | JK Cloud [0.16.0] - API Reference" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:description" content="jk.cloud.gcp.GCPStorageAPI | JK Cloud [0.16.0] - API Reference" />
+</head>
+<body><div class="content">
+<a class="back" href="index.html">&laquo; JK Cloud [0.16.0]</a><div class="intro">
+<h1><span class="keyword">class</span> <span class="symbol">jk.cloud.gcp.GCPStorageAPI</span></h1>
+<p></p>
+</div>
+<div class="list">
+<div class="title">Base Types</div>
+<div class="entry">
+<div class="name"><span class="keyword">extends</span> <a class="datatype" href="jk.cloud.gcp.GCPAPI.html">jk.cloud.gcp.GCPAPI</a></div></div>
+</div>
+<div class="list">
+<div class="title">Instance Methods</div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">deleteBucket</span> ( bucket <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="keyword">as</span> <span class="datatype">void</span></div><div class="description">Permanently deletes an empty bucket.</div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getBucketMetadata</span> ( bucket <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="keyword">as</span> <span class="datatype">jk.cloud.gcp.GCPStorageAPI.BucketResource</span></div><div class="description">Returns metadata for the specified bucket.</div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getBucketIamPolicy</span> <span class="keyword">as</span> <span class="datatype">void</span></div><div class="description">Returns an IAM policy for the specified bucket.</div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">insertBucket</span> ( project <span class="keyword">as</span> <span class="datatype">string</span> , bucket <span class="keyword">as</span> <span class="datatype">jk.cloud.gcp.GCPStorageAPI.BucketResource</span> ) <span class="keyword">as</span> <span class="datatype">jk.cloud.gcp.GCPStorageAPI.BucketResource</span></div><div class="description">Creates a new bucket.</div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">listBuckets</span> ( project <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="keyword">as</span> <span class="datatype">vector&lt;jk.cloud.gcp.GCPStorageAPI.BucketResource&gt;</span></div><div class="description">Retrieves a list of buckets for a given project.</div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">lockBucketRetentionPolicy</span> <span class="keyword">as</span> <span class="datatype">void</span></div><div class="description">Irreversibly sets the retention policy on a bucket.</div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">patchBucket</span> <span class="keyword">as</span> <span class="datatype">void</span></div><div class="description">Updates a bucket. Changes to the bucket will be readable immediately after writing,
+but configuration changes may take time to propagate.</div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setBucketIamPolicy</span> <span class="keyword">as</span> <span class="datatype">void</span></div><div class="description">Updates an IAM policy for the specified bucket.</div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">testBucketIamPermissions</span> <span class="keyword">as</span> <span class="datatype">void</span></div><div class="description">Tests a set of permissions on the given bucket to see which, if any, are held by the caller.</div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">updateBucket</span> <span class="keyword">as</span> <span class="datatype">void</span></div><div class="description">Updates a bucket. Changes to the bucket will be readable immediately after writing, but configuration
+changes may take time to propagate. This method sets the complete metadata of a bucket. If you want to
+change some of the metadata while leaving other parts unaffected, use the patchBucket method instead.</div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">composeObject</span> <span class="keyword">as</span> <span class="datatype">void</span></div><div class="description">Concatenates a list of existing objects into a new object in the same bucket.</div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">copyObject</span> ( bucket <span class="keyword">as</span> <span class="datatype">string</span> , name <span class="keyword">as</span> <span class="datatype">string</span> , destbucket <span class="keyword">as</span> <span class="datatype">string</span> , destname <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="keyword">as</span> <span class="datatype">jk.cloud.gcp.GCPStorageAPI.ObjectResource</span></div><div class="description">Copies a source object to a destination object.</div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">deleteObject</span> ( bucket <span class="keyword">as</span> <span class="datatype">string</span> , name <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="keyword">as</span> <span class="datatype">void</span></div><div class="description">Deletes an object and its metadata. Deletions are permanent if versioning is
+not enabled for the bucket, or if the generation parameter is used. </div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getObjectMedia</span> ( bucket <span class="keyword">as</span> <span class="datatype">string</span> , object <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="keyword">as</span> <span class="datatype">buffer</span></div><div class="description">Retrieves an object.</div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getObjectMetadata</span> ( bucket <span class="keyword">as</span> <span class="datatype">string</span> , object <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="keyword">as</span> <span class="datatype">jk.cloud.gcp.GCPStorageAPI.ObjectResource</span></div><div class="description">Retrieves the metadata of an object.</div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">insertObject</span> ( bucket <span class="keyword">as</span> <span class="datatype">string</span> , name <span class="keyword">as</span> <span class="datatype">string</span> , data <span class="keyword">as</span> <span class="datatype">buffer</span> , mimetype <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="keyword">as</span> <span class="datatype">jk.cloud.gcp.GCPStorageAPI.ObjectResource</span></div><div class="description">Stores a new object and metadata.</div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">listObjects</span> ( bucket <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="keyword">as</span> <span class="datatype">vector&lt;jk.cloud.gcp.GCPStorageAPI.ObjectResource&gt;</span></div><div class="description">Retrieves a list of objects.</div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">patchObject</span> <span class="keyword">as</span> <span class="datatype">void</span></div><div class="description">Updates a data blob's associated metadata. This method supports patch semantics.</div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">rewriteObject</span> <span class="keyword">as</span> <span class="datatype">void</span></div><div class="description">Rewrites a source object to a destination object. Optionally overrides metadata.</div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">updateObject</span> <span class="keyword">as</span> <span class="datatype">void</span></div><div class="description">Updates an object's metadata.</div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">watchAllObjects</span> <span class="keyword">as</span> <span class="datatype">void</span></div><div class="description">Watch for changes on all objects in a bucket.</div></div>
+</div>
+</div>
+</body>
+</html>

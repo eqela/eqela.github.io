@@ -1,0 +1,65 @@
+<html>
+<head>
+<title>jk.devops.pomtool.POMParser | JK Devops [0.35.0] - API Reference</title>
+<link rel="stylesheet" type="text/css" href="style.css" />
+<meta name="viewport" content="initial-scale=1,maximum-scale=1" />
+<meta property="og:description" content="jk.devops.pomtool.POMParser | JK Devops [0.35.0] - API Reference" />
+<meta property="og:title" content="jk.devops.pomtool.POMParser | JK Devops [0.35.0] - API Reference" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:description" content="jk.devops.pomtool.POMParser | JK Devops [0.35.0] - API Reference" />
+</head>
+<body><div class="content">
+<a class="back" href="index.html">&laquo; JK Devops [0.35.0]</a><div class="intro">
+<h1><span class="keyword">class</span> <span class="symbol">jk.devops.pomtool.POMParser</span></h1>
+<p></p>
+</div>
+<div class="list">
+<div class="title">Base Types</div>
+<div class="entry">
+<div class="name"><span class="keyword">extends</span> <a class="datatype" href="../../jk-data/0.33.0/jk.xml.XMLParserAdapter.html">jk.xml.XMLParserAdapter</a></div></div>
+</div>
+<div class="list">
+<div class="title">Static Methods</div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">parseFile</span> ( ctx <span class="keyword">as</span> <a class="datatype" href="../../jk-core/0.37.0/jk.log.LoggingContext.html">jk.log.LoggingContext</a> , file <span class="keyword">as</span> <a class="datatype" href="../../jk-core/0.37.0/jk.fs.File.html">jk.fs.File</a> , fileName <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="modifier">static</span> <span class="keyword">as</span> <a class="datatype" href="jk.devops.pomtool.POM.html">jk.devops.pomtool.POM</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">parseString</span> ( ctx <span class="keyword">as</span> <a class="datatype" href="../../jk-core/0.37.0/jk.log.LoggingContext.html">jk.log.LoggingContext</a> , data <span class="keyword">as</span> <span class="datatype">string</span> , fileName <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="modifier">static</span> <span class="keyword">as</span> <a class="datatype" href="jk.devops.pomtool.POM.html">jk.devops.pomtool.POM</a></div></div>
+</div>
+<div class="list">
+<div class="title">Instance Methods</div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">parseLicenses</span> ( ee <span class="keyword">as</span> <a class="datatype" href="../../jk-data/0.33.0/jk.xml.MarkupLanguageParser.StartElement.html">jk.xml.MarkupLanguageParser.StartElement</a> ) <span class="keyword">as</span> <span class="datatype">vector&lt;jk.devops.pomtool.POM.License&gt;</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">parseBuildExecutions</span> ( ee <span class="keyword">as</span> <a class="datatype" href="../../jk-data/0.33.0/jk.xml.MarkupLanguageParser.StartElement.html">jk.xml.MarkupLanguageParser.StartElement</a> ) <span class="keyword">as</span> <span class="datatype">vector&lt;jk.devops.pomtool.POM.BuildExecution&gt;</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">parseDependencies</span> ( ee <span class="keyword">as</span> <a class="datatype" href="../../jk-data/0.33.0/jk.xml.MarkupLanguageParser.StartElement.html">jk.xml.MarkupLanguageParser.StartElement</a> ) <span class="keyword">as</span> <span class="datatype">vector&lt;jk.devops.pomtool.POM.Dependency&gt;</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">parseParentElement</span> ( ee <span class="keyword">as</span> <a class="datatype" href="../../jk-data/0.33.0/jk.xml.MarkupLanguageParser.StartElement.html">jk.xml.MarkupLanguageParser.StartElement</a> ) <span class="keyword">as</span> <span class="datatype">jk.devops.pomtool.POM.Parent</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">acceptStringList</span> ( ee <span class="keyword">as</span> <a class="datatype" href="../../jk-data/0.33.0/jk.xml.MarkupLanguageParser.StartElement.html">jk.xml.MarkupLanguageParser.StartElement</a> , subTag <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="keyword">as</span> <span class="datatype">vector&lt;string&gt;</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">acceptPropertyList</span> ( ee <span class="keyword">as</span> <a class="datatype" href="../../jk-data/0.33.0/jk.xml.MarkupLanguageParser.StartElement.html">jk.xml.MarkupLanguageParser.StartElement</a> ) <span class="keyword">as</span> <a class="datatype" href="../../jk-core/0.37.0/jk.lang.KeyValueListForStrings.html">jk.lang.KeyValueListForStrings</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">parsePersonList</span> ( ee <span class="keyword">as</span> <a class="datatype" href="../../jk-data/0.33.0/jk.xml.MarkupLanguageParser.StartElement.html">jk.xml.MarkupLanguageParser.StartElement</a> , subTag <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="keyword">as</span> <span class="datatype">vector&lt;jk.devops.pomtool.POM.Person&gt;</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">parseMailingLists</span> ( ee <span class="keyword">as</span> <a class="datatype" href="../../jk-data/0.33.0/jk.xml.MarkupLanguageParser.StartElement.html">jk.xml.MarkupLanguageParser.StartElement</a> ) <span class="keyword">as</span> <span class="datatype">vector&lt;jk.devops.pomtool.POM.MailingList&gt;</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">parseRepositoryComponent</span> ( ee <span class="keyword">as</span> <a class="datatype" href="../../jk-data/0.33.0/jk.xml.MarkupLanguageParser.StartElement.html">jk.xml.MarkupLanguageParser.StartElement</a> ) <span class="keyword">as</span> <span class="datatype">jk.devops.pomtool.POM.RepositoryComponent</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">parseRepositoryList</span> ( ee <span class="keyword">as</span> <a class="datatype" href="../../jk-data/0.33.0/jk.xml.MarkupLanguageParser.StartElement.html">jk.xml.MarkupLanguageParser.StartElement</a> , subTag <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="keyword">as</span> <span class="datatype">vector&lt;jk.devops.pomtool.POM.Repository&gt;</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">parseConfigurationElement</span> ( ee <span class="keyword">as</span> <a class="datatype" href="../../jk-data/0.33.0/jk.xml.MarkupLanguageParser.StartElement.html">jk.xml.MarkupLanguageParser.StartElement</a> ) <span class="keyword">as</span> <span class="datatype">jk.devops.pomtool.POM.Configuration</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">parseReportingElement</span> ( ee <span class="keyword">as</span> <a class="datatype" href="../../jk-data/0.33.0/jk.xml.MarkupLanguageParser.StartElement.html">jk.xml.MarkupLanguageParser.StartElement</a> ) <span class="keyword">as</span> <span class="datatype">jk.devops.pomtool.POM.Reporting</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">parseBuildElement</span> ( ee <span class="keyword">as</span> <a class="datatype" href="../../jk-data/0.33.0/jk.xml.MarkupLanguageParser.StartElement.html">jk.xml.MarkupLanguageParser.StartElement</a> ) <span class="keyword">as</span> <span class="datatype">jk.devops.pomtool.POM.Build</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">execute</span> <span class="modifier">override</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getPom</span> <span class="keyword">as</span> <a class="datatype" href="jk.devops.pomtool.POM.html">jk.devops.pomtool.POM</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setPom</span> ( v <span class="keyword">as</span> <a class="datatype" href="jk.devops.pomtool.POM.html">jk.devops.pomtool.POM</a> ) <span class="keyword">as</span> <a class="datatype" href="jk.devops.pomtool.POMParser.html">jk.devops.pomtool.POMParser</a></div></div>
+</div>
+</div>
+</body>
+</html>

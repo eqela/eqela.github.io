@@ -1,0 +1,34 @@
+<html>
+<head>
+<title>jk.cloud.k8s.KubeAPI | JK Cloud [0.16.0] - API Reference</title>
+<link rel="stylesheet" type="text/css" href="style.css" />
+<meta name="viewport" content="initial-scale=1,maximum-scale=1" />
+<meta property="og:description" content="jk.cloud.k8s.KubeAPI | JK Cloud [0.16.0] - API Reference" />
+<meta property="og:title" content="jk.cloud.k8s.KubeAPI | JK Cloud [0.16.0] - API Reference" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:description" content="jk.cloud.k8s.KubeAPI | JK Cloud [0.16.0] - API Reference" />
+</head>
+<body><div class="content">
+<a class="back" href="index.html">&laquo; JK Cloud [0.16.0]</a><div class="intro">
+<h1><span class="keyword">class</span> <span class="symbol">jk.cloud.k8s.KubeAPI</span></h1>
+<p></p>
+</div>
+<div class="list">
+<div class="title">Static Methods</div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">forCurrentCluster</span> ( ctx <span class="keyword">as</span> <a class="datatype" href="../../jk-core/0.37.0/jk.log.LoggingContext.html">jk.log.LoggingContext</a> ) <span class="modifier">static</span> <span class="keyword">as</span> <a class="datatype" href="jk.cloud.k8s.KubeAPI.html">jk.cloud.k8s.KubeAPI</a></div></div>
+</div>
+<div class="list">
+<div class="title">Instance Methods</div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">request</span> ( method <span class="keyword">as</span> <span class="datatype">string</span> , path <span class="keyword">as</span> <span class="datatype">string</span> , body <span class="keyword">as</span> <span class="datatype">buffer</span> ) <span class="keyword">as</span> <span class="datatype">jk.cloud.common.CloudClient.Response</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">toFinalNamespace</span> ( namespace <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="keyword">as</span> <span class="datatype">string</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">createJobConfigForContainer</span> ( name <span class="keyword">as</span> <span class="datatype">string</span> , image <span class="keyword">as</span> <span class="datatype">string</span> , command <span class="keyword">as</span> <span class="datatype">vector&lt;string&gt;</span> , envs <span class="keyword">as</span> <span class="datatype">map&lt;string,string&gt;</span> ) <span class="keyword">as</span> <span class="datatype">jk.cloud.k8s.KubeAPI.Job</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">createJob</span> ( namespace <span class="keyword">as</span> <span class="datatype">string</span> , job <span class="keyword">as</span> <span class="datatype">jk.cloud.k8s.KubeAPI.Job</span> ) <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,56 @@
+class name jk.cloud.gitlab.GitlabAPI header extends jk.cloud.common.CloudClient public
+{
+	import jk.lang
+	import jk.log
+	import jk.json
+	import jk.cloud.common
+	class name GitlabUserDetails header extends jk.json.JSONObjectAdapter implements jk.lang.StringObject public static
+	{
+		import jk.json
+		ctor
+		func setId(value as string) as jk.cloud.gitlab.GitlabAPI.GitlabUserDetails
+		func getId as string
+		func setName(value as string) as jk.cloud.gitlab.GitlabAPI.GitlabUserDetails
+		func getName as string
+		func setUsername(value as string) as jk.cloud.gitlab.GitlabAPI.GitlabUserDetails
+		func getUsername as string
+		func setAvatar_url(value as string) as jk.cloud.gitlab.GitlabAPI.GitlabUserDetails
+		func getAvatar_url as string
+		func setEmail(value as string) as jk.cloud.gitlab.GitlabAPI.GitlabUserDetails
+		func getEmail as string
+		func toJsonObject override as object
+		func fromJsonObject(o as object) override as bool
+		func fromJsonString(o as string) as bool
+		func toJsonString as string
+		func toString as string
+		func forJsonString(o as string) static as jk.cloud.gitlab.GitlabAPI.GitlabUserDetails
+		func forJsonObject(o as object) static as jk.cloud.gitlab.GitlabAPI.GitlabUserDetails
+	}
+	class name GitlabRepositoryDetails header extends jk.json.JSONObjectAdapter implements jk.lang.StringObject public static
+	{
+		import jk.json
+		ctor
+		func setId(value as string) as jk.cloud.gitlab.GitlabAPI.GitlabRepositoryDetails
+		func getId as string
+		func setName(value as string) as jk.cloud.gitlab.GitlabAPI.GitlabRepositoryDetails
+		func getName as string
+		func setDescription(value as string) as jk.cloud.gitlab.GitlabAPI.GitlabRepositoryDetails
+		func getDescription as string
+		func setSsh_url_to_repo(value as string) as jk.cloud.gitlab.GitlabAPI.GitlabRepositoryDetails
+		func getSsh_url_to_repo as string
+		func setHttp_url_to_repo(value as string) as jk.cloud.gitlab.GitlabAPI.GitlabRepositoryDetails
+		func getHttp_url_to_repo as string
+		func setWeb_url(value as string) as jk.cloud.gitlab.GitlabAPI.GitlabRepositoryDetails
+		func getWeb_url as string
+		func toJsonObject override as object
+		func fromJsonObject(o as object) override as bool
+		func fromJsonString(o as string) as bool
+		func toJsonString as string
+		func toString as string
+		func forJsonString(o as string) static as jk.cloud.gitlab.GitlabAPI.GitlabRepositoryDetails
+		func forJsonObject(o as object) static as jk.cloud.gitlab.GitlabAPI.GitlabRepositoryDetails
+	}
+	ctor(ctx as jk.log.LoggingContext)
+	func getUserDetails(accessToken as string) as jk.cloud.gitlab.GitlabAPI.GitlabUserDetails
+	func getUserRepositories(accessToken as string, gitlabUserId as string) as vector<jk.cloud.gitlab.GitlabAPI.GitlabRepositoryDetails>
+}

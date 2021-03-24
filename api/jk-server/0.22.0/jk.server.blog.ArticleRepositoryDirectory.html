@@ -1,0 +1,69 @@
+<html>
+<head>
+<title>jk.server.blog.ArticleRepositoryDirectory | JK Server [0.22.0] - API Reference</title>
+<link rel="stylesheet" type="text/css" href="style.css" />
+<meta name="viewport" content="initial-scale=1,maximum-scale=1" />
+<meta property="og:description" content="jk.server.blog.ArticleRepositoryDirectory | JK Server [0.22.0] - API Reference" />
+<meta property="og:title" content="jk.server.blog.ArticleRepositoryDirectory | JK Server [0.22.0] - API Reference" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:description" content="jk.server.blog.ArticleRepositoryDirectory | JK Server [0.22.0] - API Reference" />
+</head>
+<body><div class="content">
+<a class="back" href="index.html">&laquo; JK Server [0.22.0]</a><div class="intro">
+<h1><span class="keyword">class</span> <span class="symbol">jk.server.blog.ArticleRepositoryDirectory</span></h1>
+<p></p>
+</div>
+<div class="list">
+<div class="title">Base Types</div>
+<div class="entry">
+<div class="name"><span class="keyword">extends</span> <a class="datatype" href="jk.server.blog.ArticleRepository.html">jk.server.blog.ArticleRepository</a></div></div>
+</div>
+<div class="list">
+<div class="title">Static Methods</div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">forDirectory</span> ( ctx <span class="keyword">as</span> <a class="datatype" href="../../jk-core/0.37.0/jk.log.LoggingContext.html">jk.log.LoggingContext</a> , dir <span class="keyword">as</span> <a class="datatype" href="../../jk-core/0.37.0/jk.fs.File.html">jk.fs.File</a> ) <span class="modifier">static</span> <span class="keyword">as</span> <a class="datatype" href="jk.server.blog.ArticleRepositoryDirectory.html">jk.server.blog.ArticleRepositoryDirectory</a></div></div>
+</div>
+<div class="list">
+<div class="title">Instance Methods</div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">refreshArticles</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">sortArticleLists</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">updateArticleLists</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">addArticleToCategory</span> ( article <span class="keyword">as</span> <span class="datatype">string</span> , category <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getCategoryMap</span> <span class="keyword">as</span> <span class="datatype">map&lt;string,jk.server.blog.Category&gt;</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getCategoryById</span> ( id <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="keyword">as</span> <a class="datatype" href="jk.server.blog.Category.html">jk.server.blog.Category</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getArticleListForCategory</span> ( categoryName <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="keyword">as</span> <span class="datatype">vector&lt;string&gt;</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getCategories</span> ( callback <span class="keyword">as</span> <span class="datatype">function&lt;void,vector&lt;jk.server.blog.Category&gt;&gt;</span> ) <span class="modifier">override</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getArticleCount</span> ( category <span class="keyword">as</span> <span class="datatype">string</span> , callback <span class="keyword">as</span> <span class="datatype">function&lt;void,int&gt;</span> ) <span class="modifier">override</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getArticles</span> ( category <span class="keyword">as</span> <span class="datatype">string</span> , offset <span class="keyword">as</span> <span class="datatype">int</span> , limit <span class="keyword">as</span> <span class="datatype">int</span> , callback <span class="keyword">as</span> <span class="datatype">function&lt;void,jk.server.blog.Category,vector&lt;jk.server.blog.Article&gt;&gt;</span> ) <span class="modifier">override</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">doGetArticleById</span> ( id <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="keyword">as</span> <a class="datatype" href="jk.server.blog.Article.html">jk.server.blog.Article</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getArticleById</span> ( id <span class="keyword">as</span> <span class="datatype">string</span> , callback <span class="keyword">as</span> <span class="datatype">function&lt;void,jk.server.blog.Article&gt;</span> ) <span class="modifier">override</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getArticleTitleSync</span> ( id <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="modifier">override</span> <span class="keyword">as</span> <span class="datatype">string</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getCategoryTitleSync</span> ( id <span class="keyword">as</span> <span class="datatype">string</span> ) <span class="modifier">override</span> <span class="keyword">as</span> <span class="datatype">string</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getArticleAttachment</span> ( id <span class="keyword">as</span> <span class="datatype">string</span> , name <span class="keyword">as</span> <span class="datatype">string</span> , callback <span class="keyword">as</span> <span class="datatype">function&lt;void,string,buffer&gt;</span> ) <span class="modifier">override</span> <span class="keyword">as</span> <span class="datatype">void</span></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getContext</span> <span class="keyword">as</span> <a class="datatype" href="../../jk-core/0.37.0/jk.log.LoggingContext.html">jk.log.LoggingContext</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setContext</span> ( v <span class="keyword">as</span> <a class="datatype" href="../../jk-core/0.37.0/jk.log.LoggingContext.html">jk.log.LoggingContext</a> ) <span class="keyword">as</span> <a class="datatype" href="jk.server.blog.ArticleRepositoryDirectory.html">jk.server.blog.ArticleRepositoryDirectory</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">getDirectory</span> <span class="keyword">as</span> <a class="datatype" href="../../jk-core/0.37.0/jk.fs.File.html">jk.fs.File</a></div></div>
+<div class="entry">
+<div class="name"><span class="keyword">func</span> <span class="symbol">setDirectory</span> ( v <span class="keyword">as</span> <a class="datatype" href="../../jk-core/0.37.0/jk.fs.File.html">jk.fs.File</a> ) <span class="keyword">as</span> <a class="datatype" href="jk.server.blog.ArticleRepositoryDirectory.html">jk.server.blog.ArticleRepositoryDirectory</a></div></div>
+</div>
+</div>
+</body>
+</html>

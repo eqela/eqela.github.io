@@ -1,0 +1,18 @@
+{
+	"moduleDescription" : "",
+	"type" : "module",
+	"moduleTitle" : "",
+	"moduleId" : "jk.uikit.stripe",
+	"entities" : [
+		{
+			"type" : "class",
+			"name" : "StripeCardInputWidget",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "StripeWidget",
+			"description" : ""
+		}
+	]
+}

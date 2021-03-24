@@ -1,0 +1,88 @@
+{
+	"moduleDescription" : "Generic and abstract templates for infrastructuer as code (IaaC) components.\n",
+	"type" : "module",
+	"moduleTitle" : "Common infrastructure-as-code templates",
+	"moduleId" : "jk.cloud.template",
+	"entities" : [
+		{
+			"type" : "class",
+			"name" : "CustomTemplate",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "ContainerRegistry",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "Subnet",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "SecurityGroupRule",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "MsSqlDatabase",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "ApiGateway",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "ContainerInstance",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "PortRange",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "CidrBlock",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "PrivateDnsZone",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "SecurityGroup",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "MsSqlServer",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "IpAddress",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "VirtualMachine",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "Network",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "Resource",
+			"description" : ""
+		}
+	]
+}

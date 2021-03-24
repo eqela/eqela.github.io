@@ -1,0 +1,103 @@
+class name jk.devops.check.HttpTransactionResultHeader header extends jk.json.JSONObjectAdapter implements jk.lang.StringObject public
+{
+	import jk.lang
+	import jk.json
+	ctor
+	func setName(value as string) as jk.devops.check.HttpTransactionResultHeader
+	func getName as string
+	func setValue(value as string) as jk.devops.check.HttpTransactionResultHeader
+	func getValue as string
+	func toJsonObject override as object
+	func fromJsonObject(o as object) override as bool
+	func fromJsonString(o as string) as bool
+	func toJsonString as string
+	func toString as string
+	func forJsonString(o as string) static as jk.devops.check.HttpTransactionResultHeader
+	func forJsonObject(o as object) static as jk.devops.check.HttpTransactionResultHeader
+}
+class name jk.devops.check.HttpTransaction header public
+{
+	import jk.lang
+	import jk.log
+	import jk.url
+	import jk.time
+	import jk.http.client
+	ctor
+	func forGet(url as string) static as jk.devops.check.HttpTransaction
+	func forPost(url as string) static as jk.devops.check.HttpTransaction
+	func execute(ctx as jk.log.LoggingContext) as jk.devops.check.HttpTransactionResult
+	func getMethod as string #getterMethod
+	func setMethod(v as string) as jk.devops.check.HttpTransaction #setterMethod
+	func getUrl as string #getterMethod
+	func setUrl(v as string) as jk.devops.check.HttpTransaction #setterMethod
+	func getHeaders as jk.lang.KeyValueList<string,string> #getterMethod
+	func setHeaders(v as jk.lang.KeyValueList<string,string>) as jk.devops.check.HttpTransaction #setterMethod
+	func getBody as buffer #getterMethod
+	func setBody(v as buffer) as jk.devops.check.HttpTransaction #setterMethod
+}
+class name jk.devops.check.HttpHealthCheck header public
+{
+	import jk.lang
+	import jk.log
+	import jk.url
+	import jk.http.client
+	ctor
+	class name HealthCheckResult header extends jk.json.JSONObjectAdapter implements jk.lang.StringObject public static
+	{
+		import jk.json
+		ctor
+		func setStatusValue(value as bool) as jk.devops.check.HttpHealthCheck.HealthCheckResult
+		func getStatusValue as bool
+		func setStatus(value as jk.lang.BooleanObject) as jk.devops.check.HttpHealthCheck.HealthCheckResult
+		func getStatus as jk.lang.BooleanObject
+		func setErrorCode(value as string) as jk.devops.check.HttpHealthCheck.HealthCheckResult
+		func getErrorCode as string
+		func setErrorDetail(value as string) as jk.devops.check.HttpHealthCheck.HealthCheckResult
+		func getErrorDetail as string
+		func setTransactionResult(value as jk.devops.check.HttpTransactionResult) as jk.devops.check.HttpHealthCheck.HealthCheckResult
+		func getTransactionResult as jk.devops.check.HttpTransactionResult
+		func toJsonObject override as object
+		func fromJsonObject(o as object) override as bool
+		func fromJsonString(o as string) as bool
+		func toJsonString as string
+		func toString as string
+		func forJsonString(o as string) static as jk.devops.check.HttpHealthCheck.HealthCheckResult
+		func forJsonObject(o as object) static as jk.devops.check.HttpHealthCheck.HealthCheckResult
+	}
+	func execute(ctx as jk.log.LoggingContext, http as jk.devops.check.HttpTransaction) static as jk.devops.check.HttpHealthCheck.HealthCheckResult
+}
+class name jk.devops.check.HttpTransactionResult header extends jk.json.JSONObjectAdapter implements jk.lang.StringObject public
+{
+	import jk.lang
+	import jk.json
+	ctor
+	func setUrl(value as string) as jk.devops.check.HttpTransactionResult
+	func getUrl as string
+	func setFinalUrl(value as string) as jk.devops.check.HttpTransactionResult
+	func getFinalUrl as string
+	func setStatus(value as string) as jk.devops.check.HttpTransactionResult
+	func getStatus as string
+	func setHeaders(value as vector<jk.devops.check.HttpTransactionResultHeader>) as jk.devops.check.HttpTransactionResult
+	func getHeaders as vector<jk.devops.check.HttpTransactionResultHeader>
+	func setBody(value as buffer) as jk.devops.check.HttpTransactionResult
+	func getBody as buffer
+	func setRedirectCountValue(value as int) as jk.devops.check.HttpTransactionResult
+	func getRedirectCountValue as int
+	func setRedirectCount(value as jk.lang.IntegerObject) as jk.devops.check.HttpTransactionResult
+	func getRedirectCount as jk.lang.IntegerObject
+	func setTotalRequestTimeValue(value as int) as jk.devops.check.HttpTransactionResult
+	func getTotalRequestTimeValue as int
+	func setTotalRequestTime(value as jk.lang.IntegerObject) as jk.devops.check.HttpTransactionResult
+	func getTotalRequestTime as jk.lang.IntegerObject
+	func setFinalRequestTimeValue(value as int) as jk.devops.check.HttpTransactionResult
+	func getFinalRequestTimeValue as int
+	func setFinalRequestTime(value as jk.lang.IntegerObject) as jk.devops.check.HttpTransactionResult
+	func getFinalRequestTime as jk.lang.IntegerObject
+	func toJsonObject override as object
+	func fromJsonObject(o as object) override as bool
+	func fromJsonString(o as string) as bool
+	func toJsonString as string
+	func toString as string
+	func forJsonString(o as string) static as jk.devops.check.HttpTransactionResult
+	func forJsonObject(o as object) static as jk.devops.check.HttpTransactionResult
+}

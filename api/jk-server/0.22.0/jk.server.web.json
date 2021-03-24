@@ -1,0 +1,28 @@
+{
+	"moduleDescription" : "Common classes for implementing a web server application.\n",
+	"type" : "module",
+	"moduleTitle" : "Web server framework",
+	"moduleId" : "jk.server.web",
+	"entities" : [
+		{
+			"type" : "class",
+			"name" : "HTTPServerRateLimitHandler",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "WebServer",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "WebSiteServerHandler",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "WebSiteServerMain",
+			"description" : ""
+		}
+	]
+}

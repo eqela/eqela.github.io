@@ -1,0 +1,85 @@
+class name jk.cloud.azure.AzureApi header public
+{
+	import jk.lang
+	import jk.url
+	import jk.log
+	import jk.cloud.common
+	ctor
+	macro INITIALIZE_AZURE_OPERATION 
+	{
+		if not session:
+			CloudError.throw("noSession", "No Azure session")
+		var headers = new KeyValueList<string,string>()
+		var accessToken = session.getAccessToken()
+		if accessToken:
+			headers.add("Authorization", "Bearer " .. accessToken)
+	}
+	macro ON_INVALID_RESPONSE_DATA :
+		CloudError.throw("invalidDataFormat", "Unsupported data format in response")
+	macro ADD_CONTENT_TYPE_JSON :
+		headers.add("Content-Type", "application/json")
+	func safeName(name as string) as string
+	func request(method as string, url as string, headers as jk.lang.KeyValueList<string,string>, body as buffer) as jk.cloud.common.CloudClient.Response
+	func getSession as jk.cloud.azure.AzureSession #getterMethod
+	func setSession(v as jk.cloud.azure.AzureSession) as jk.cloud.azure.AzureApi #setterMethod
+}
+class name jk.cloud.azure.AzureResourceManagerApi header extends jk.cloud.azure.AzureApi public
+{
+	import jk.lang
+	import jk.cloud.common
+	class name ResourceGroupProperties header extends jk.json.JSONObjectAdapter implements jk.lang.StringObject public static
+	{
+		import jk.json
+		ctor
+		func setProvisioningState(value as string) as jk.cloud.azure.AzureResourceManagerApi.ResourceGroupProperties
+		func getProvisioningState as string
+		func toJsonObject override as object
+		func fromJsonObject(o as object) override as bool
+		func fromJsonString(o as string) as bool
+		func toJsonString as string
+		func toString as string
+		func forJsonString(o as string) static as jk.cloud.azure.AzureResourceManagerApi.ResourceGroupProperties
+		func forJsonObject(o as object) static as jk.cloud.azure.AzureResourceManagerApi.ResourceGroupProperties
+	}
+	class name ResourceGroup header extends jk.json.JSONObjectAdapter implements jk.lang.StringObject public static
+	{
+		import jk.json
+		ctor
+		func setId(value as string) as jk.cloud.azure.AzureResourceManagerApi.ResourceGroup
+		func getId as string
+		func setName(value as string) as jk.cloud.azure.AzureResourceManagerApi.ResourceGroup
+		func getName as string
+		func setType(value as string) as jk.cloud.azure.AzureResourceManagerApi.ResourceGroup
+		func getType as string
+		func setLocation(value as string) as jk.cloud.azure.AzureResourceManagerApi.ResourceGroup
+		func getLocation as string
+		func setProperties(value as jk.cloud.azure.AzureResourceManagerApi.ResourceGroupProperties) as jk.cloud.azure.AzureResourceManagerApi.ResourceGroup
+		func getProperties as jk.cloud.azure.AzureResourceManagerApi.ResourceGroupProperties
+		func toJsonObject override as object
+		func fromJsonObject(o as object) override as bool
+		func fromJsonString(o as string) as bool
+		func toJsonString as string
+		func toString as string
+		func forJsonString(o as string) static as jk.cloud.azure.AzureResourceManagerApi.ResourceGroup
+		func forJsonObject(o as object) static as jk.cloud.azure.AzureResourceManagerApi.ResourceGroup
+	}
+	ctor(session as jk.cloud.azure.AzureSession)
+	func listResourceGroups(subscriptionId as string) as vector<jk.cloud.azure.AzureResourceManagerApi.ResourceGroup>
+}
+class name jk.cloud.azure.AzureSession header public
+{
+	import jk.lang
+	import jk.log
+	import jk.url
+	import jk.cloud.common
+	ctor
+	func forClientCredentials(ctx as jk.log.LoggingContext, tenantId as string, clientId as string, clientSecret as string, resource as string) static as jk.cloud.azure.AzureSession
+	func getCtx as jk.log.LoggingContext #getterMethod
+	func setCtx(v as jk.log.LoggingContext) as jk.cloud.azure.AzureSession #setterMethod
+	func getAccessToken as string #getterMethod
+	func setAccessToken(v as string) as jk.cloud.azure.AzureSession #setterMethod
+	func getAccessTokenType as string #getterMethod
+	func setAccessTokenType(v as string) as jk.cloud.azure.AzureSession #setterMethod
+	func getAccessTokenExpiry as long #getterMethod
+	func setAccessTokenExpiry(v as long) as jk.cloud.azure.AzureSession #setterMethod
+}

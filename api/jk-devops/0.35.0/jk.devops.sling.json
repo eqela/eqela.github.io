@@ -1,0 +1,18 @@
+{
+	"moduleDescription" : "Support for Sling development and compiling.\n",
+	"type" : "module",
+	"moduleTitle" : "Sling development",
+	"moduleId" : "jk.devops.sling",
+	"entities" : [
+		{
+			"type" : "class",
+			"name" : "SlingBuilder",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "SlingBuilderKit",
+			"description" : ""
+		}
+	]
+}

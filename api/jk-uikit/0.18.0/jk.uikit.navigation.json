@@ -1,0 +1,38 @@
+{
+	"moduleDescription" : "",
+	"type" : "module",
+	"moduleTitle" : "",
+	"moduleId" : "jk.uikit.navigation",
+	"entities" : [
+		{
+			"type" : "class",
+			"name" : "AppBarWidget",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "NavSideMenuWidget",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "NavSideBarWidget",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "SidebarItemWidget",
+			"description" : ""
+		},
+		{
+			"type" : "class",
+			"name" : "NavWidget",
+			"description" : ""
+		},
+		{
+			"type" : "interface",
+			"name" : "SidebarItem",
+			"description" : ""
+		}
+	]
+}
